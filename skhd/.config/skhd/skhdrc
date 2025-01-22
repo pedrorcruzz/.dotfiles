@@ -1,5 +1,5 @@
 #### Manage Spaces and Windows #####
-#
+
 ### Change Spaces ####
 rshift + alt - 1 : yabai -m space --focus 1
 rshift + alt - 2 : yabai -m space --focus 2
@@ -79,6 +79,9 @@ ctrl + alt - k : yabai -m window --warp north
 ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - l : yabai -m window --warp east
 
+
+
+
 ### Stack Windows ###
 rcmd + rshift - w : yabai -m window --stack north
 rcmd + rshift - a : yabai -m window --stack west
@@ -138,5 +141,6 @@ lshift + rshift - s : open -a Spotify
 lshift + rshift - t : open -a Warp
 lshift + rshift - a: open -a Arc
 lshift + rshift - o: open -a Obsidian
+lshift + rshift - f: open -a Finder
 
 
