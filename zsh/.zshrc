@@ -42,11 +42,11 @@ bindkey '^[[B' history-search-forward
 
 
 #Alias Directory
-alias P="~/Projects"
-alias SP="~/Projects/studies-py"
-alias ST="~/Projects/studies-ts"
-alias NN="~/Projects/studies-py/neural-networks"
-alias S="~/Projects/studies"
+alias D="~/Dev"
+alias SP="~/Dev/studies-py"
+alias ST="~/Dev/studies-ts"
+alias NN="~/Dev/studies-py/neural-networks"
+alias S="~/Dev/studies"
 alias C="~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias PC="~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects"
 alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
