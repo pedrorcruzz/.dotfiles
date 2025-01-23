@@ -43,8 +43,8 @@ bindkey '^[[B' history-search-forward
 
 #Alias Directory
 alias D="~/Dev"
-alias SP="~/Dev/studies-py"
-alias ST="~/Dev/studies-ts"
+alias SSP="~/Dev/py-studies"
+alias SST="~/Dev/ts-studies"
 alias NN="~/Dev/studies-py/neural-networks"
 alias S="~/Dev/studies"
 alias C="~/Library/Mobile\ Documents/com~apple~CloudDocs"
