@@ -64,6 +64,8 @@ alias ff='fastfetch'
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="lvim ~/.zshrc"
 alias lg='lazygit'
+alias sv='source venv/bin/activate'
+alias dv='deactivate'
 
 
 #Alias Docker
@@ -138,6 +140,7 @@ export PATH="/opt/homebrew/opt/ripgrep/bin:$PATH"
 # python
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$(pyenv root)/shims:$PATH"
+eval "$(pyenv init -)"
 
 # JAVA 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
