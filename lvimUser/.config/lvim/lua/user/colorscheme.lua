@@ -1,4 +1,4 @@
-lvim.colorscheme = "kanagawa-dragon"
+lvim.colorscheme = "dracula"
 lvim.transparent_window = false
 
 require("nvim-highlight-colors").setup({})
