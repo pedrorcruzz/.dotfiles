@@ -17,6 +17,7 @@ lvim.plugins = {
    { "MunifTanjim/nui.nvim" },
    { "folke/twilight.nvim" },
    { "ThePrimeagen/harpoon" },
+   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
    { "szw/vim-maximizer" },
    { "akinsho/git-conflict.nvim" },
    {

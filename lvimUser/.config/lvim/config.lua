@@ -16,6 +16,7 @@ reload('user.neotest')
 reload('user.obsidian')
 reload('user.dap')
 reload('user.incline')
+reload('user.telescope_fzf')
 require("mason-nvim-dap").setup()
 require('avante_lib').load()
 vim.opt.clipboard = "unnamedplus"
