@@ -324,6 +324,7 @@ lvim.plugins = {
    { "olivercederborg/poimandres.nvim" },
    { "killitar/obscure.nvim" },
    { "aktersnurra/no-clown-fiesta.nvim" },
+   { "Mofiqul/vscode.nvim" },
    { "Mofiqul/dracula.nvim" },
    { "datsfilipe/min-theme.nvim" },
    { "rebelot/kanagawa.nvim" },
