@@ -25,15 +25,29 @@ vim.opt.shiftwidth = 3   -- Tamanho do indent (equivale ao tamanho do tab)
 vim.opt.tabstop = 3      -- Número de espaços que um tab representa
 vim.opt.expandtab = true -- Converter tabs para espaços
 
--- Configuração para abrir o Telescope File Browser ao iniciar no diretório
+
+-- Configuração para abrir o Telescope ao iniciar no diretório
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--    callback = function()
+--       local args = vim.fn.argv()
+--       if #args == 1 and vim.fn.isdirectory(args[1]) == 1 then
+--          require('telescope.builtin').find_files({ cwd = args[1] })
+--       end
+--    end,
+-- })
+
+
+-- Configuração para abrir o FZF automaticamente ao iniciar no diretório
 vim.api.nvim_create_autocmd("VimEnter", {
    callback = function()
       local args = vim.fn.argv()
       if #args == 1 and vim.fn.isdirectory(args[1]) == 1 then
-         require('telescope.builtin').find_files({ cwd = args[1] })
+         vim.cmd("cd " .. vim.fn.fnameescape(args[1])) -- Muda para o diretório especificado
+         vim.cmd("FZF")                                -- Executa o comando FZF
       end
    end,
 })
+
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = false
