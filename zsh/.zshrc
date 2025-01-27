@@ -7,11 +7,11 @@ ZSH_THEME="minimal"
 
 ## oh my posh
 # alguns temas - tokyonight_storm, catppuccin_mocha, star, json
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
 
 # CONFIG PESSOAL DO ohmyposh 
 # bubblesboth.toml, zen.toml, bubblesleft.toml, seta.toml
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 
 
