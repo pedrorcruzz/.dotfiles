@@ -6,7 +6,6 @@ lvim.plugins = {
    { "alvan/vim-closetag" },
    { "windwp/nvim-ts-autotag" },
    { "andweeb/presence.nvim" },
-   { "b0o/schemastore.nvim" },
    { "andymass/vim-matchup" },
    -- { "MunifTanjim/prettier.nvim" },
    -- { "MunifTanjim/eslint.nvim" },
@@ -24,7 +23,7 @@ lvim.plugins = {
    {
       'b0o/incline.nvim',
       config = function()
-         require('incline').setup()
+         -- require('incline').setup()
       end,
       -- Optional: Lazy load Incline
       event = 'VeryLazy',
@@ -56,22 +55,22 @@ lvim.plugins = {
          { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
       },
    },
-   {
-      'j-hui/fidget.nvim',
-      tag = 'legacy', -- Usar essa tag é recomendado, já que versões futuras podem mudar a API
-      config = function()
-         require('fidget').setup {
-            text = {
-               spinner = "dots", -- O estilo do spinner (há várias opções, como "dots", "line", etc.)
-            },
-            window = {
-               relative = "win",   -- Onde a janela de status será posicionada
-               blend = 0,          -- Transparência da janela
-               border = "rounded", -- Estilo da borda da janela
-            },
-         }
-      end,
-   },
+   -- {
+   --    'j-hui/fidget.nvim',
+   --    tag = 'legacy', -- Usar essa tag é recomendado, já que versões futuras podem mudar a API
+   --    config = function()
+   --       require('fidget').setup {
+   --          text = {
+   --             spinner = "dots", -- O estilo do spinner (há várias opções, como "dots", "line", etc.)
+   --          },
+   --          window = {
+   --             relative = "win",   -- Onde a janela de status será posicionada
+   --             blend = 0,          -- Transparência da janela
+   --             border = "rounded", -- Estilo da borda da janela
+   --          },
+   --       }
+   --    end,
+   -- },
    ---@type LazySpec
    {
       "mikavilpas/yazi.nvim",
@@ -121,8 +120,8 @@ lvim.plugins = {
       ft = "markdown",
       -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
       event = {
-         "BufReadPre ~/Projects/obsidian-palacio-mental/*.md",
-         "BufNewFile ~/Projects/obsidian-palacio-mental/*.md",
+         "BufReadPre ~/Dev/obsidian-palacio-mental/*.md",
+         "BufNewFile ~/Dev/obsidian-palacio-mental/*.md",
       },
       dependencies = {
          -- Required.
