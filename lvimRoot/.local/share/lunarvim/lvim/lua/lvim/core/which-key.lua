@@ -290,7 +290,7 @@ M.config = function()
          s = {
             name = "Search",
             s = { "<cmd>Telescope symbols<cr>", "Symbols" },
-            c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+            -- c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
             f = { "<cmd>Telescope find_files<cr>", "Find File" },
             w = { "<cmd>Telescope file_browser<cr>", "File Browser" },
             m = { "<cmd>FZF<cr>", "Search With FZF" },
@@ -306,10 +306,10 @@ M.config = function()
             C = { "<cmd>Telescope commands<cr>", "Commands" },
             l = { "<cmd>Telescope resume<cr>", "Resume last search" },
             p = { "<cmd>Telescope projects<cr>", "Projects" },
-            -- P = {
-            --    "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-            --    "Colorscheme with Preview",
-            -- },
+            c = {
+               "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+               "Colorscheme",
+            },
          },
          -- T = {
          --    name = "Treesitter",
