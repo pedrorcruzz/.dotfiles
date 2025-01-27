@@ -99,6 +99,21 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 
+# ---- FZF -----
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
+
+
 # Dependências de programação 
 
 # node
