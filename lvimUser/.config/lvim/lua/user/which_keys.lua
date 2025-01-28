@@ -106,13 +106,12 @@ lvim.builtin.which_key.mappings["v"] = {
    F = { "<cmd>CopilotChatExplain<cr>", "Copilot Chat Explain" }
 }
 
-
 lvim.builtin.which_key.mappings["m"] = {
    name = "+Window",
    h = { "<cmd>wincmd H<cr>", "Swap Left" },
    l = { "<cmd>wincmd L<cr>", "Swap Right" },
    k = { "<cmd>wincmd K<cr>", "Swap Up" },
-   j = { "<cmd>wincmd J<cr>", " Swap Down" },
+   j = { "<cmd>wincmd J<cr>", "Swap Down" },
    c = { "<cmd>only<cr>", "Close all others" },
    p = { "<cmd>wincmd ><cr>", "Resize Left" },
    o = { "<cmd>wincmd <<cr>", "Resize Right" },
@@ -126,7 +125,12 @@ lvim.builtin.which_key.mappings["m"] = {
    r = { "<cmd>tabnext<cr>", "Tab Next" },
    w = { "<cmd>tabclose<cr>", "Tab Close" },
    y = { "<cmd>tabonly<cr>", "Tab Only" },
-   u = { "<cmd>tabnew<cr>", "Tab New" }
+   u = { "<cmd>tabnew<cr>", "Tab New" },
+   ["1"] = { function() vim.cmd("vertical resize " .. math.floor(vim.o.columns / 3)) end, "Resize Left 1/3" },
+   ["2"] = { function() vim.cmd("vertical resize " .. math.floor(vim.o.columns * 2 / 3)) end, "Resize Right 1/3" },
+   ["3"] = { function() vim.cmd("resize " .. math.floor(vim.o.lines / 3)) end, "Resize Top 1/3" },
+   ["4"] = { function() vim.cmd("resize " .. math.floor(vim.o.lines * 2 / 3)) end, "Resize Bottom 1/3" },
+   ["0"] = { "<cmd>resize | vertical resize | wincmd =<cr>", "Reset Window Sizes" }
 }
 
 lvim.builtin.which_key.mappings["N"] = {
