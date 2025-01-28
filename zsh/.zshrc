@@ -47,7 +47,7 @@ alias SSP="~/Dev/py-studies"
 alias SST="~/Dev/ts-studies"
 alias NN="~/Dev/studies-py/neural-networks"
 alias S="~/Dev/studies"
-alias C="~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias C="~/Dev/cesmac"
 alias PC="~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects"
 alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
