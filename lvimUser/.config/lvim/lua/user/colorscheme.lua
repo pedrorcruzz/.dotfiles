@@ -1,4 +1,4 @@
-lvim.colorscheme = "dracula"
+lvim.colorscheme = "github_dark_high_contrast"
 lvim.transparent_window = false
 
 require("nvim-highlight-colors").setup({})
