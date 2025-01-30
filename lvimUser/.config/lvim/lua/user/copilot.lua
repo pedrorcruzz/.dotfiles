@@ -2,13 +2,12 @@ local ok, copilot = pcall(require, "copilot")
 if not ok then
    return
 end
-
 copilot.setup({
    suggestion = {
       enabled = true,
       auto_trigger = true, -- Ativar sugestões automáticas
       keymap = {
-         accept = "<C-l>",
+         accept = "<tab>",
          next = "<C-]>",
          prev = "<C-[>",
          dismiss = "<C-d>",
