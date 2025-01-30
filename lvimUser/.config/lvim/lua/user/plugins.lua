@@ -120,8 +120,9 @@ lvim.plugins = {
       ft = "markdown",
       -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
       event = {
-         "BufReadPre ~/Dev/obsidian-palacio-mental/PALÁCIO MENTAL.md",
-         "BufNewFile ~/Dev/obsidian-palacio-mental/PALÁCIO MENTAL.md",
+         "BufReadPre ~/Developer/second-brain/Segundo Cérebro.md",
+         "BufNewFile ~/Developer/second-brain/Segundo Cérebro.md",
+
       },
       dependencies = {
          -- Required.
@@ -133,11 +134,11 @@ lvim.plugins = {
          workspaces = {
             {
                name = "Pessoal",
-               path = "~/Dev/obsidian-palacio-mental",
+               path = "~/Developer/second-brain",
             },
             {
                name = "work",
-               path = "~/Dev/obsidian-palacio-mental",
+               path = "~/Developer/second-brain",
             },
          },
          ui = {
