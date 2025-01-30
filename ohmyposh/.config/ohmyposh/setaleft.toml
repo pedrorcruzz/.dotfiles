@@ -141,15 +141,16 @@ final_space = true
     type = 'dart'
     style = 'diamond'
 
-  [[blocks.segments]]
-    leading_diamond = ' '
-    trailing_diamond = ''
-    template = '  {{ .CurrentDate | date .Format }} '
-    foreground = '#ffffff'
-    background = '#181818'
-    type = 'time'
-    style = 'diamond'
-    invert_powerline = true
+#Horario
+  # [[blocks.segments]]
+  #   leading_diamond = ' '
+  #   trailing_diamond = ''
+  #   template = '  {{ .CurrentDate | date .Format }} '
+  #   foreground = '#ffffff'
+  #   background = '#181818'
+  #   type = 'time'
+  #   style = 'diamond'
+  #   invert_powerline = true
 
   [[blocks.segments]]
     template = '{{ .FormattedMs }}'
