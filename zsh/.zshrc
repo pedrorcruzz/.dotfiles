@@ -4,6 +4,11 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="minimal"
 
+# plugins oh my zsh 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 ## oh my posh
 # alguns temas - tokyonight_storm, catppuccin_mocha, star, json
@@ -17,11 +22,6 @@ eval "$(starship init zsh)"
 # set Starship PATH
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
-# plugins oh my zsh 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
 
 
 #lunar vim
