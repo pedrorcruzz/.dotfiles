@@ -8,12 +8,14 @@ ZSH_THEME="minimal"
 ## oh my posh
 # alguns temas - tokyonight_storm, catppuccin_mocha, star, json
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
-
 # CONFIG PESSOAL DO ohmyposh 
 # bubblesboth.toml, zen.toml, bubblesleft.toml, seta.toml
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/setaleft.toml)"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/setaleft.toml)"
 
-
+# Starship 
+eval "$(starship init zsh)"
+# set Starship PATH
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # plugins oh my zsh 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -35,7 +37,6 @@ bindkey '^[[B' history-search-forward
 # iniciar o tmux
 if command -v tmux &> /dev/null; then
     if [ -z "$TMUX" ]; then
-       sleep 0.5
         tmux attach || (cd ~ && tmux new-session -s Home)
     fi
 fi
@@ -103,6 +104,15 @@ alias cd="z"
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+
+# Setup fzf previews
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+
+# fzf preview for tmux
+export FZF_TMUX_OPTS=" -p90%,70% "  
 
 # --- setup fzf theme ---
 fg="#CBE0F0"
@@ -176,3 +186,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
+
+
