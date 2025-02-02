@@ -19,7 +19,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Starship 
 eval "$(starship init zsh)"
-# set Starship PATH
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 
@@ -59,7 +58,7 @@ alias psqlu='psql -U postgres'
 
 #Alias System
 alias rn="lvim"
-alias cls='clear'
+alias c='clear'
 alias live='live-server'
 alias ff='fastfetch'
 alias reload-zsh="source ~/.zshrc"

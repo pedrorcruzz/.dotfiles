@@ -65,18 +65,18 @@ final_space = true
   type = 'prompt'
   alignment = 'right'
 
+
   [[blocks.segments]]
     leading_diamond = ' '
     trailing_diamond = ''
-   [blocks.segments.properties]
-    prefix = " \uE235 "
-    display_virtual_env = true
-    virtual_env_icon = '🐍'
-    template = '  {{ .Major }}.{{ .Minor }} '
-    foreground = '#E4F34A'
-    background = '#181818'
-    type = 'python'
-    style = 'diamond'
+    type = "python"
+    style = "diamond"
+    foreground = "#FED25A"
+    background = "#181818"
+   default_venv_names = [".venv", "venv"]
+   fetch_virtual_env = true
+   template = "  {{ .Full }} "
+
 
   [[blocks.segments]]
     leading_diamond = ' '

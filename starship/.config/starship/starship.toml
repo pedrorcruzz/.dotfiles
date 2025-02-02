@@ -1,51 +1,47 @@
 command_timeout = 1000
 
+palette = "dracula"
+
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
 
 format = """
+$env_var\
 $os ➜\
 $directory\
 ${custom.giturl}\
 $git_branch\
 $git_state\
 $git_status\
+$fill\
+$python\
+$elixir\
+$dart\
+$lua\
+$nodejs\
+${custom.typescript}\
+$golang\
+$haskell\
+$kotlin\
+$java\
+$php\
+$swift\
+$rust\
+$ruby\
+${custom.docker}\
+${custom.yarn}\
+${custom.pnpm}\
+$bun\
+$package\
+$aws\
+$docker_context\
+$cmd_duration\
+$time\
 $line_break\
-$character
-"""
+$character"""
 
-right_format = """$all"""
-
-palette = "catppuccin_mocha"
-
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
 
 [os.symbols]
 Windows = "󰍲"
@@ -68,6 +64,11 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+
+[fill]
+symbol = " "  
+style = "none" 
+
 [username]
 # show_always = true
 # style_user = "bg:surface0 fg:text"
@@ -77,15 +78,25 @@ RedHatEnterprise = "󱄛"
 [directory]
 style = "sapphire"
 format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = '…/'
+truncate_to_repo = false
+
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"Developer" = "󰲋"
+
+[line_break]
+disabled = false
 
 [os]
+# symbol = "    " 
+# style = "fg:white bg:#090909"
+# format = "[](#090909)[$symbol]($style)[](#090909)"
 disabled = false
 
 [custom.giturl]
@@ -108,10 +119,11 @@ echo "$GIT_REMOTE_SYMBOL "
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 format = "at $output"
 
+
 [git_branch]
-symbol = "[](black) "
-style = "fg:lavender bg:black"
-format =  '  on [$symbol$branch]($style)[](black)'
+symbol = "[](#090909) "
+style = "fg:white bg:#090909"
+format =  ' on [$symbol$branch]($style)[](#090909)'
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
@@ -121,7 +133,6 @@ cherry_pick = '[🍒 PICKING](bold red)'
 commit_hash_length = 4
 tag_symbol = '🔖 '
 
-# ~/.config/starship.toml
 
 # [git_status]
 # conflicted = '🏳'
@@ -129,35 +140,69 @@ tag_symbol = '🔖 '
 # behind = '😰'
 # diverged = '😵'
 # up_to_date = '✓'
-# untracked = '🤷'
+# untracked = '[?\($count\)](purple)' 
 # stashed = '📦'
 # modified = '[!\($count\)](yellow)'  
-# # modified = '[!\($count\)](yellow)'
 # staged = '[++\($count\)](green)'
 # renamed = '👅'
 # deleted = '🗑'
 
+
 [git_status]
 format = ' [($all_status$ahead_behind )]($style)'
 
+
+[aws]
+format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+disabled = false
+style = 'bold blue'
+symbol = " "
+
+[lua]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+
 [dart]
-format = 'via [🔰 $version](bold red) '
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
 
 [elixir]
-symbol = '🔮 '
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
 
 [nodejs]
-symbol = ""
+symbol = "[](#090909) "
+style = "fg:green bg:#090909"
+format = '[$symbol( $version) ]($style)[](#090909)'
+# [nodejs]
+# symbol = ' '
+# format = '[ $symbol( $version) ]($style)'
+
+[custom.pnpm]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+[custom.yarn]
+symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
 [bun]
-format = 'via [🍔 $version](bold green) '
+symbol = '🍔 '
+format = '[ $symbol( $version) ]($style)'
+
+[package]
+# symbol = '󰏗 '
+symbol = '📦 '
+format = '[ $symbol( $version) ]($style)'
+
 
 [custom.typescript]
-description = "Detect TypeScript project"
-command = "if [ -f tsconfig.json ]; then echo ''; fi"
-when = "test -f tsconfig.json"
-format = " $output "
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+detect_extensions = ["ts", "tsx"]
+
 
 [c]
 symbol = " "
@@ -189,33 +234,124 @@ symbol = ""
 format = '[[ $symbol( $version) ]]($style)'
 
 [ruby]
-symbol = '🔺 '
+symbol = ' '
+format = '[[ $symbol( $version) ]]($style)'
+
 
 [python]
-symbol = ""
-format = '[ $symbol( $version) ]($style)'
+symbol = "[](#090909) "
+style = "fg:yellow bg:#090909"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](#090909)'
+pyenv_version_name = true
+pyenv_prefix = ''
+
+# [python]
+# symbol = ' '
+# format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+# pyenv_version_name = true
+# pyenv_prefix = ''
 
 [swift]
-format = 'via [🏎  $version](red bold)'
+symbol = ' '
+format = '[[ $symbol( $version) ]]($style)'
 
 [docker_context]
-symbol = ""
-format = '[ $symbol( $context) ]($style)'
+# symbol = ' '
+symbol = ' 🐳 '
+style = 'fg:#06969A'
+format = '[$symbol]($style) $path'
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+detect_extensions = ['Dockerfile']
+
+[custom.docker]
+symbol = '🐳 '
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
 
 [time]
-disabled = true
+disabled = false
 time_format = "%R"
 style = "bg:peach"
-format = '[[  $time ](fg:mantle bg:foam)]($style)'
+format = '[[  $time ](fg:white bg:foam)]($style)'
 
-[line_break]
-disabled = true
+[env_var]
+symbol = "[╭╴](bold fg:white)"
+variable = 'SHELL'
+format = "$symbol"
+disabled = false
 
 [character]
 disabled = false
-# success_symbol = '[✔](bold fg:green)'
-error_symbol = '[✘](bold fg:red)'
-vimcmd_symbol = '[](bold fg:green)'
+# success_symbol = '[❯](bold fg:white)' 
+success_symbol = '[╰⎯](bold fg:white)'
+error_symbol = '[╰⎯](bold fg:red)'
+# error_symbol = '[✘](bold fg:red)'
+vimcmd_symbol = '[](bold fg:purple)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "purple"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[palettes.nord]
+dark_blue = '#5E81AC'
+blue = '#81A1C1'
+teal = '#88C0D0'
+red = '#BF616A'
+orange = '#D08770'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+purple = '#B48EAD'
+gray = '#434C5E'
+black = '#2E3440'
+white='#D8DEE9'
+
+
+[palettes.dracula]
+sapphire = "#bd93f9"
+blue = "#89b4fa"
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+
+
