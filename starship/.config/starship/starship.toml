@@ -1,6 +1,6 @@
 command_timeout = 1000
 
-palette = "dracula"
+palette = "custom"
 
 
 "$schema" = 'https://starship.rs/config-schema.json'
@@ -8,7 +8,6 @@ palette = "dracula"
 add_newline = false
 
 format = """
-$env_var\
 $os ➜\
 $directory\
 ${custom.giturl}\
@@ -125,6 +124,12 @@ symbol = "[](#090909) "
 style = "fg:white bg:#090909"
 format =  ' on [$symbol$branch]($style)[](#090909)'
 
+
+# [git_branch]
+# style = 'fg:white'
+# symbol = ' '
+# format = ' [on] [$symbol$branch ]($style)'
+
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = '[🍒 PICKING](bold red)'
@@ -134,22 +139,22 @@ commit_hash_length = 4
 tag_symbol = '🔖 '
 
 
-# [git_status]
-# conflicted = '🏳'
-# ahead = '🏎💨'
-# behind = '😰'
-# diverged = '😵'
-# up_to_date = '✓'
-# untracked = '[?\($count\)](purple)' 
-# stashed = '📦'
-# modified = '[!\($count\)](yellow)'  
-# staged = '[++\($count\)](green)'
-# renamed = '👅'
-# deleted = '🗑'
-
-
 [git_status]
-format = ' [($all_status$ahead_behind )]($style)'
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '[?\($count\)](purple)' 
+stashed = '📦'
+modified = '[!\($count\)](yellow)'  
+staged = '[+\($count\)](green)'
+renamed = '👅'
+deleted = '[-\($count\)](red)'
+
+
+# [git_status]
+# format = ' [($all_status$ahead_behind )]($style)'
 
 
 [aws]
@@ -264,8 +269,10 @@ detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
 [custom.docker]
+disabled = false
 symbol = '🐳 '
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+
 
 
 [cmd_duration]
@@ -274,7 +281,7 @@ style = 'fg:gray'
 format = '[$duration]($style)'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R"
 style = "bg:peach"
 format = '[[  $time ](fg:white bg:foam)]($style)'
@@ -285,17 +292,20 @@ variable = 'SHELL'
 format = "$symbol"
 disabled = false
 
+
 [character]
 disabled = false
-# success_symbol = '[❯](bold fg:white)' 
-success_symbol = '[╰⎯](bold fg:white)'
-error_symbol = '[╰⎯](bold fg:red)'
-# error_symbol = '[✘](bold fg:red)'
+success_symbol = '[❯](bold fg:purple)' 
+error_symbol = '[✘](bold fg:red)'
+# success_symbol = '[╰⎯](bold fg:white)'
+# error_symbol = '[╰⎯](bold fg:red)'
 vimcmd_symbol = '[](bold fg:purple)'
 vimcmd_replace_one_symbol = '[](bold fg:purple)'
 vimcmd_replace_symbol = '[](bold fg:purple)'
 vimcmd_visual_symbol = '[](bold fg:lavender)'
 
+
+#palettes
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -351,7 +361,22 @@ green = "#50fa7b"
 orange = "#ffb86c"
 pink = "#ff79c6"
 purple = "#bd93f9"
-red = "#ff5555"
+red = "#BF616A"
+yellow = "#f1fa8c"
+
+[palettes.custom]
+sapphire = "#bd93f9"
+blue = "#89b4fa"
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = '#50fa7b'
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = 'gray'
 yellow = "#f1fa8c"
 
 
