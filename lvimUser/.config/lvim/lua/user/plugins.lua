@@ -329,6 +329,7 @@ lvim.plugins = {
    { "Mofiqul/dracula.nvim" },
    { "datsfilipe/min-theme.nvim" },
    { "rebelot/kanagawa.nvim" },
+   { "thesimonho/kanagawa-paper.nvim" },
    { "tomasr/molokai" },
    { "bluz71/vim-moonfly-colors" },
    { "tiagovla/tokyodark.nvim" },

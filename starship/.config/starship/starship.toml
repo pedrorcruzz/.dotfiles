@@ -5,7 +5,7 @@ palette = "custom"
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = false
+add_newline = true
 
 format = """
 $os ➜\
@@ -35,7 +35,6 @@ ${custom.pnpm}\
 $bun\
 $package\
 $aws\
-$docker_context\
 $cmd_duration\
 $time\
 $line_break\
@@ -147,10 +146,10 @@ diverged = '😵'
 up_to_date = '✓'
 untracked = '[?\($count\)](purple)' 
 stashed = '📦'
-modified = '[!\($count\)](yellow)'  
-staged = '[+\($count\)](green)'
+modified = '[!\($count\)](#00FFFF)'  
+staged = '[+\($count\)](#00FF00)'
 renamed = '👅'
-deleted = '[-\($count\)](red)'
+deleted = '[-\($count\)](#FF0000)'
 
 
 # [git_status]

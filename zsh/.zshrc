@@ -69,6 +69,7 @@ alias dv='deactivate'
 
 
 #Alias Docker
+alias ldk='lazydocker'
 # alias start_project="cd /caminho/do/projeto && docker compose up"
 
 

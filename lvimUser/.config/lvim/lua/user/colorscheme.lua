@@ -1,5 +1,5 @@
-lvim.colorscheme = "github_dark_high_contrast"
-lvim.transparent_window = false
+lvim.colorscheme = "min-theme"
+lvim.transparent_window = true
 
 require("nvim-highlight-colors").setup({})
 

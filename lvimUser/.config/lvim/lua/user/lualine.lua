@@ -1,9 +1,9 @@
 require('gitsigns').setup()
 
 -- Definição das cores
-vim.cmd([[highlight GitSignsStagedAdd guifg=#50b200]])    -- Cor para adição
-vim.cmd([[highlight GitSignsStagedChange guifg=#426B8E]]) -- Cor para mudança
-vim.cmd([[highlight GitSignsStagedDelete guifg=#f00000]]) -- Cor para remoção
+vim.cmd([[highlight GitSignsStagedAdd guifg=#00FF00]])    -- Cor para adição
+vim.cmd([[highlight GitSignsStagedChange guifg=#00FFFF]]) -- Cor para mudança
+vim.cmd([[highlight GitSignsStagedDelete guifg=#FF0000]]) -- Cor para remoção
 
 -- Função para obter o estado do git diff
 local function git_diff()
