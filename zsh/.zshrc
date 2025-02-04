@@ -42,12 +42,12 @@ fi
 
 
 #Alias Directory
-alias D="~/Developer"
-alias SSP="~/Developer/py-studies"
-alias SST="~/Developer/ts-studies"
-alias NN="~/Developer/studies-py/neural-networks"
-alias S="~/Developer/studies"
-alias C="~/Developer/cesmac"
+alias D="~/Workspace"
+alias SSP="~/Workspace/py-studies"
+alias SST="~/Workspace/ts-studies"
+alias NN="~/Workspace/studies-py/neural-networks"
+alias S="~/Workspace/studies"
+alias C="~/Workspace/cesmac"
 alias PC="~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects"
 alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
