@@ -9,7 +9,7 @@ local header = {
    val = require("user.banners").dashboard(),
    opts = {
       position = "center",
-      hl = "String",
+      hl = "Function",
    },
 }
 
@@ -17,7 +17,7 @@ local plugins = #lvim.plugins
 local date = os.date("%a %d %b")
 local plugin_count = {
    type = "text",
-   val = "└─ " .. kind.cmp_kind.Module .. " " .. plugins .. " plugins in total ─┘",
+   val = "└─ " .. kind.icons.hint .. " " .. plugins .. " plugins in total ─┘",
    opts = {
       position = "center",
       hl = "String",
@@ -29,7 +29,7 @@ local org = {
    val = "",
    opts = {
       position = "center",
-      hl = "String",
+      hl = "Comment",
    },
 }
 
@@ -38,7 +38,7 @@ local heading = {
    val = "┌─ " .. kind.icons.calendar .. " Today is " .. date .. " ─┐",
    opts = {
       position = "center",
-      hl = "String",
+      hl = "Comment",
    },
 }
 
@@ -65,7 +65,7 @@ local function button(sc, txt, keybind)
       width = 50,
       align_shortcut = "right",
       hl_shortcut = "Number",
-      hl = "Function",
+      hl = "String",
    }
    if keybind then
       opts.keymap = { "n", sc_, keybind, { noremap = true, silent = true } }
@@ -97,38 +97,39 @@ local buttons = {
       button("r", " " .. kind.cmp_kind.Folder .. " Recents", ":Telescope oldfiles<CR>"),
       button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
       button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/user/colorscheme.lua<CR>"),
+      button("y", " " .. lvim.icons.ui.Folder .. " Yazi", "<CMD>Yazi<CR>"),
       button("l", " " .. kind.icons.git .. " Lazy", "<CMD>Lazy<CR>"),
       button("q", " " .. kind.icons.magic .. " Quit", ":q<CR>"),
    }
 }
 
 local section = {
+   footer = footer,
    header = header,
    org = org,
-   heading = heading,
    buttons = buttons,
+   heading = heading,
    plugin_count = plugin_count,
-   footer = footer,
 }
 
 lvim.builtin.alpha.custom = {
    config = {
       layout = {
-         { type = "padding", val = 3 },
+         { type = "padding", val = 0 },
          section.header,
          { type = "padding", val = 1 },
          section.org,
-         { type = "padding", val = 3 },
+         { type = "padding", val = 0 },
          section.heading,
-         { type = "padding", val = 1 },
+         { type = "padding", val = 0 },
          section.plugin_count,
-         { type = "padding", val = 4 },
+         { type = "padding", val = 2 },
          section.buttons,
-         { type = "padding", val = 5 },
+         { type = "padding", val = 1 },
          section.footer,
       },
       opts = {
-         margin = 5,
+         margin = 0,
       },
    }
 }
