@@ -16,7 +16,27 @@ lvim.plugins = {
    { "MunifTanjim/nui.nvim" },
    { "folke/twilight.nvim" },
    { "ThePrimeagen/harpoon" },
-   { "junegunn/fzf" },
+   -- { "junegunn/fzf" },
+   -- {
+   --    "junegunn/fzf.vim",
+   --    config = function()
+   --       vim.env.FZF_DEFAULT_OPTS = table.concat({
+   --          "--preview 'bat --style=numbers --color=always --line-range :500 {}'",
+   --          "--preview-window=right:60%", -- Aumenta o preview para 70% da largura
+   --          "--height=100%",              -- Faz o fzf ocupar 90% da altura da tela
+   --          "--layout=reverse",           -- Mantém a lista no topo e entrada no fim
+   --          "--border=rounded"            -- Bordas arredondadas para um visual mais clean
+   --       }, " ")
+   --    end,
+   -- },
+   {
+      "ibhagwan/fzf-lua",
+      -- optional for icon support
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      -- or if using mini.icons/mini.nvim
+      -- dependencies = { "echasnovski/mini.icons" },
+      opts = {}
+   },
    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
    { "szw/vim-maximizer" },
    { "akinsho/git-conflict.nvim" },

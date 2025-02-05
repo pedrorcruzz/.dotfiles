@@ -20,11 +20,10 @@ reload('user.telescope_fzf')
 require("mason-nvim-dap").setup()
 require('avante_lib').load()
 vim.opt.clipboard = "unnamedplus"
--- lvim.format_on_save.enabled = true
+lvim.format_on_save.enabled = true
 vim.opt.shiftwidth = 3   -- Tamanho do indent (equivale ao tamanho do tab)
 vim.opt.tabstop = 3      -- Número de espaços que um tab representa
 vim.opt.expandtab = true -- Converter tabs para espaços
-
 
 -- Configuração para abrir o Telescope ao iniciar no diretório
 -- vim.api.nvim_create_autocmd("VimEnter", {
@@ -43,7 +42,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
       local args = vim.fn.argv()
       if #args == 1 and vim.fn.isdirectory(args[1]) == 1 then
          vim.cmd("cd " .. vim.fn.fnameescape(args[1])) -- Muda para o diretório especificado
-         vim.cmd("FZF")                                -- Executa o comando FZF
+         vim.cmd("FzfLua files")                       -- Executa o comando FZF
       end
    end,
 })

@@ -4,6 +4,7 @@ require('gitsigns').setup()
 vim.cmd([[highlight GitSignsStagedAdd guifg=#00FF00]])    -- Cor para adição
 vim.cmd([[highlight GitSignsStagedChange guifg=#00FFFF]]) -- Cor para mudança
 vim.cmd([[highlight GitSignsStagedDelete guifg=#FF0000]]) -- Cor para remoção
+vim.cmd([[highlight GitSignsUntracked guifg=#8A2BE2]])    -- Cor para remoção
 
 -- Função para obter o estado do git diff
 local function git_diff()
@@ -12,10 +13,16 @@ local function git_diff()
       return ''
    end
 
+   -- local diff_icons = {
+   --    added = { icon = '', color = 'GitSignsStagedAdd' },
+   --    changed = { icon = '', color = 'GitSignsStagedChange' },
+   --    removed = { icon = '', color = 'GitSignsStagedDelete' }
+   -- }
    local diff_icons = {
-      added = { icon = '', color = 'GitSignsStagedAdd' },
-      changed = { icon = '', color = 'GitSignsStagedChange' },
-      removed = { icon = '', color = 'GitSignsStagedDelete' }
+      added = { icon = '✚', color = 'GitSignsStagedAdd' }, -- Ícone para adição
+      changed = { icon = '●', color = 'GitSignsStagedChange' }, -- Ícone para mudança
+      removed = { icon = '✖', color = 'GitSignsStagedDelete' } -- Ícone para remoção
+      untracked = { icon = '✱', color = 'GitSignsUntracked' } -- Ícone para untracked (não rastreado)
    }
    local diff_strs = {}
 
