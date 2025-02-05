@@ -9,26 +9,12 @@ lvim.plugins = {
    { "andymass/vim-matchup" },
    -- { "MunifTanjim/prettier.nvim" },
    -- { "MunifTanjim/eslint.nvim" },
-   { "Mohammed-Taher/AdvancedNewFile.nvim" },
    { "folke/zen-mode.nvim" },
    { "filipdutescu/renamer.nvim" },
    { "VonHeikemen/fine-cmdline.nvim" },
    { "MunifTanjim/nui.nvim" },
    { "folke/twilight.nvim" },
    { "ThePrimeagen/harpoon" },
-   -- { "junegunn/fzf" },
-   -- {
-   --    "junegunn/fzf.vim",
-   --    config = function()
-   --       vim.env.FZF_DEFAULT_OPTS = table.concat({
-   --          "--preview 'bat --style=numbers --color=always --line-range :500 {}'",
-   --          "--preview-window=right:60%", -- Aumenta o preview para 70% da largura
-   --          "--height=100%",              -- Faz o fzf ocupar 90% da altura da tela
-   --          "--layout=reverse",           -- Mantém a lista no topo e entrada no fim
-   --          "--border=rounded"            -- Bordas arredondadas para um visual mais clean
-   --       }, " ")
-   --    end,
-   -- },
    {
       "ibhagwan/fzf-lua",
       -- optional for icon support
@@ -335,6 +321,7 @@ lvim.plugins = {
    },
    { "shaunsingh/nord.nvim" },
    { "luisiacc/gruvbox-baby" },
+   { "savq/melange-nvim" },
    { "ellisonleao/gruvbox.nvim" },
    { "scottmckendry/cyberdream.nvim" },
    { "nyoom-engineering/oxocarbon.nvim" },

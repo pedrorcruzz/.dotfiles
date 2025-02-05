@@ -20,7 +20,7 @@ reload('user.telescope_fzf')
 require("mason-nvim-dap").setup()
 require('avante_lib').load()
 vim.opt.clipboard = "unnamedplus"
-lvim.format_on_save.enabled = true
+-- lvim.format_on_save.enabled = true
 vim.opt.shiftwidth = 3   -- Tamanho do indent (equivale ao tamanho do tab)
 vim.opt.tabstop = 3      -- Número de espaços que um tab representa
 vim.opt.expandtab = true -- Converter tabs para espaços
