@@ -245,7 +245,7 @@ format = '[[ $symbol( $version) ]]($style)'
 
 [python]
 symbol = "[](#090909) "
-style = "fg:yellow bg:#090909"
+style = "fg:#FFDE58 bg:#090909"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](#090909)'
 pyenv_version_name = true
 pyenv_prefix = ''
