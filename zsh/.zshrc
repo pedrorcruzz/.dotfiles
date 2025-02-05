@@ -30,13 +30,13 @@ PATH=~/.console-ninja/.bin:$PATH
 
 
 # completion using arrow keys (based on history)
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+# bindkey '^[[A' history-search-backward
+# bindkey '^[[B' history-search-forward
 
 # iniciar o tmux
 if command -v tmux &> /dev/null; then
     if [ -z "$TMUX" ]; then
-        tmux attach || (cd ~ && tmux new-session -s Home)
+        tmux attach || (cd ~ && tmux new-session -s Workspace)
     fi
 fi
 
