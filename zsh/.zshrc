@@ -1,7 +1,4 @@
-
 export ZSH="$HOME/.oh-my-zsh"
-
-
 ZSH_THEME="minimal"
 
 # plugins oh my zsh 
@@ -187,5 +184,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
-
 
