@@ -139,16 +139,16 @@ tag_symbol = '🔖 '
 
 
 [git_status]
-conflicted = '🏳'
-ahead = '🏎💨'
-behind = '😰'
-diverged = '😵'
-up_to_date = '✓'
-untracked = '[?\($count\)](purple)' 
-stashed = '📦'
+conflicted = '[✖(#FF0000)]'
+ahead = '[⬆ \($count\)](#C98BFF)'  
+behind = '[⬇ \($count)\](#FF6B84)'
+diverged = '[⇵](#FF4500)'
+up_to_date = '[✔](#cacaca)'
+untracked = '[?\($count\)](#800080)' 
+stashed = '[⧉](#FFD700)'
 modified = '[!\($count\)](#00FFFF)'  
 staged = '[+\($count\)](#00FF00)'
-renamed = '👅'
+renamed = '[≡](#8A2BE2)'
 deleted = '[-\($count\)](#FF0000)'
 
 
