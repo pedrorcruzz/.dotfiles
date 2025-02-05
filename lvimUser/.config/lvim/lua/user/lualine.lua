@@ -21,7 +21,7 @@ local function git_diff()
    local diff_icons = {
       added = { icon = '✚', color = 'GitSignsStagedAdd' }, -- Ícone para adição
       changed = { icon = '●', color = 'GitSignsStagedChange' }, -- Ícone para mudança
-      removed = { icon = '✖', color = 'GitSignsStagedDelete' } -- Ícone para remoção
+      removed = { icon = '✖', color = 'GitSignsStagedDelete' }, -- Ícone para remoção
       untracked = { icon = '✱', color = 'GitSignsUntracked' } -- Ícone para untracked (não rastreado)
    }
    local diff_strs = {}
