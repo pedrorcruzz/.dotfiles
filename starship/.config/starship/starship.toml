@@ -140,8 +140,9 @@ tag_symbol = '🔖 '
 
 [git_status]
 conflicted = '[✖(#FF0000)]'
-ahead = '[⬆ \($count\)](#C98BFF)'  
-behind = '[⬇ \($count)\](#FF6B84)'
+ahead = '[⬆\($count\)](#C98BFF)'  
+behind = '[⬇\($count\)](#FF6B84)'
+# behind = "[⬇ ({count})](#FF6B84)"
 diverged = '[⇵](#FF4500)'
 up_to_date = '[✔](#cacaca)'
 untracked = '[?\($count\)](#800080)' 

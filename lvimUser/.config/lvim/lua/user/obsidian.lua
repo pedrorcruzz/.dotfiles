@@ -2,7 +2,7 @@ require("obsidian").setup({
    workspaces = {
       {
          name = "personal",
-         path = "~/Developer/second-brain",
+         path = "~/Workspace/second-brain",
       },
       {
          name = "work",
