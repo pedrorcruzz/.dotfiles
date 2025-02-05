@@ -34,11 +34,11 @@ PATH=~/.console-ninja/.bin:$PATH
 # bindkey '^[[B' history-search-forward
 
 # iniciar o tmux
-if command -v tmux &> /dev/null; then
-    if [ -z "$TMUX" ]; then
-        tmux attach || (cd ~ && tmux new-session -s Workspace)
-    fi
-fi
+# if command -v tmux &> /dev/null; then
+#     if [ -z "$TMUX" ]; then
+#         tmux attach || (cd ~ && tmux new-session -s Workspace)
+#     fi
+# fi
 
 
 #Alias Directory
@@ -82,6 +82,7 @@ alias tls="tmux list-sessions"
 alias TH="tmux attach-session -t home"
 alias TN="tmux new-session -s home "
 alias taa="tmux attach-session -t "
+alias taw="tmux attach-session -t Workspace || tmux new-session -s Workspace"
 alias tnn="tmux new-session -s "
 alias tks="tmux kill-session -t "
 
