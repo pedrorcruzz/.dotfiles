@@ -85,21 +85,22 @@ end
 local buttons = {
    type = "group",
    val = {
-      button("p", " " .. lvim.icons.ui.Project .. " Projects", "<CMD>Telescope projects<CR>"),
-      button("f", " " .. kind.cmp_kind.Folder .. " Explore", ":Telescope find_files<CR>"),
-      button("n", " " .. lvim.icons.ui.Project .. " New file", ":ene <BAR> startinsert <CR>"),
+      button("p", " " .. '󰔸' .. " Projects", "<CMD>Telescope projects<CR>"),
+      button("f", " " .. '󰈞' .. " Find file", ":FzfLua files<CR>"),
+      button("n", " " .. '' .. " New file", ":ene <BAR> startinsert <CR>"),
       -- button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
       -- button(
       --   "g",
       --   " " .. kind.icons.git .. " Git Status",
       --   ":lua require('lvim.core.terminal')._exec_toggle({cmd = 'lazygit', count = 1, direction = 'float'})<CR>"
       -- ),
-      button("r", " " .. kind.cmp_kind.Folder .. " Recents", ":Telescope oldfiles<CR>"),
-      button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
+      button("r", " " .. kind.cmp_kind.Folder .. " Recent files", ":FzfLua oldfiles<CR>"),
+      button("c", " " .. '' .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
       button("C", " " .. kind.cmp_kind.Color .. " Colorscheme Config", ":e ~/.config/lvim/lua/user/colorscheme.lua<CR>"),
-      button("y", " " .. lvim.icons.ui.Folder .. " Yazi", "<CMD>Yazi<CR>"),
+      button("g", " " .. '' .. " LazyGit", "<CMD> projects<CR>"),
+      button("y", " " .. '󰄛' .. " Yazi", "<CMD>Yazi<CR>"),
       button("l", " " .. kind.icons.git .. " Lazy", "<CMD>Lazy<CR>"),
-      button("q", " " .. kind.icons.magic .. " Quit", ":q<CR>"),
+      button("q", " " .. '󰩈' .. " Quit", ":q<CR>"),
    }
 }
 

@@ -13,17 +13,18 @@ local function git_diff()
       return ''
    end
 
-   -- local diff_icons = {
-   --    added = { icon = '', color = 'GitSignsStagedAdd' },
-   --    changed = { icon = '', color = 'GitSignsStagedChange' },
-   --    removed = { icon = '', color = 'GitSignsStagedDelete' }
-   -- }
    local diff_icons = {
       added = { icon = '✚', color = 'GitSignsStagedAdd' }, -- Ícone para adição
       changed = { icon = '●', color = 'GitSignsStagedChange' }, -- Ícone para mudança
       removed = { icon = '✖', color = 'GitSignsStagedDelete' }, -- Ícone para remoção
       untracked = { icon = '✱', color = 'GitSignsUntracked' } -- Ícone para untracked (não rastreado)
    }
+   -- local diff_icons = {
+   --    added = { icon = '', color = 'GitSignsStagedAdd' }, -- Ícone para adição
+   --    changed = { icon = '', color = 'GitSignsStagedChange' }, -- Ícone para mudança
+   --    removed = { icon = '', color = 'GitSignsStagedDelete' }, -- Ícone para remoção
+   --    untracked = { icon = '✱', color = 'GitSignsUntracked' } -- Ícone para untracked (não rastreado)
+   -- }
    local diff_strs = {}
 
    for name, data in pairs(diff_icons) do

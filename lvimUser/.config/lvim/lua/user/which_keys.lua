@@ -1,15 +1,15 @@
 lvim.builtin.which_key.mappings["t"] = {
-   name = "+Todo",
-   j = { "<cmd>TodoTrouble<cr>", "Trouble" },
-   t = { "<cmd>TodoTelescope<cr>", "Telescope" },
-   l = { "<cmd>TodoLocList<cr>", "LocList" },
-   q = { "<cmd>TodoQuickFix<cr>", "QuickFix" },
+   name = "  Todo",
+   j = { "<cmd>TodoTrouble<cr>", "  Trouble" },
+   t = { "<cmd>TodoTelescope<cr>", "  Find Todo" },
+   l = { "<cmd>TodoLocList<cr>", "  LocList" },
+   q = { "<cmd>TodoQuickFix<cr>", " 󰁨 QuickFix" },
 }
 
 
 
 lvim.builtin.which_key.mappings["n"] = {
-   name = "+DiffView",
+   name = "  DiffView",
    d = { "<cmd>DiffviewOpen<cr>", "Open DiffView" },
    c = { "<cmd>DiffviewClose<cr>", "Close DiffView" },
    r = { "<cmd>DiffviewRefresh<cr>", "Refresh DiffView" },
@@ -20,10 +20,10 @@ lvim.builtin.which_key.mappings["n"] = {
 }
 
 
-lvim.builtin.which_key.mappings[":"] = {
-   name = "+ZenMode",
-   e = { "<cmd>ZenMode<cr>", "Toggle" },
-}
+-- lvim.builtin.which_key.mappings["x"] = {
+--    name = " ⏾ ZenMode",
+--    e = { "<cmd>ZenMode<cr>", "Toggle" },
+-- }
 
 
 -- lvim.builtin.which_key.mappings["o"] = {
@@ -34,39 +34,33 @@ lvim.builtin.which_key.mappings[":"] = {
 
 
 lvim.builtin.which_key.mappings["J"] = {
-   name = "+Twilight",
+   name = "  Twilight",
    e = { "<cmd>TwilightEnable<cr>", "Twilight Enable" },
    d = { "<cmd>TwilightDisable<cr>", "Twilight Disable" },
 }
 
 
-lvim.builtin.which_key.mappings["x"] = {
-   name = "+New File",
-   a = { "<cmd>AdvancedNewFile<cr>", "New File" }
-}
 
 
-lvim.builtin.which_key.mappings["z"] = {
-   name = "+file explorer",
-   f = { "<cmd>Yazi<cr>", "yazi" },
-   -- o = { "<cmd>Oil<cr>", "Oil" },
-}
+-- lvim.builtin.which_key.mappings["1"] = {
+--    f = { "<cmd>Yazi<cr>", "yazi" },
+-- }
 
 
-lvim.builtin.which_key.mappings["r"] = {
-   name = "+Renamer",
-   r = { "<cmd>lua require('renamer').rename()<cr>", "Rename" }
-}
+-- lvim.builtin.which_key.mappings["r"] = {
+--    name = " 󰑕 Renamer",
+--    r = { "<cmd>lua require('renamer').rename()<cr>", "Rename" }
+-- }
 
 
-lvim.builtin.which_key.mappings["W"] = {
-   name = "+Wrap",
-   w = { "<cmd>set wrap<cr>", "Wrap" }
-}
+-- lvim.builtin.which_key.mappings["W"] = {
+--    name = " 󰖶 Wrap",
+--    w = { "<cmd>set wrap<cr>", "Wrap" }
+-- }
 
 
 lvim.builtin.which_key.mappings["j"] = {
-   name = "+Codi",
+   name = " 󰞷 Codi",
    c = { "<cmd>Codi<cr>", "Codi" },
    e = { "<cmd>CodiExpand<cr>", "Codi Expand" },
    u = { "<cmd>CodiUpdate<cr>", "Codi Update" },
@@ -76,18 +70,18 @@ lvim.builtin.which_key.mappings["j"] = {
 
 
 lvim.builtin.which_key.mappings["S"] = {
-   name = "+Sticky Scroll",
+   name = "  Sticky Scroll",
    e = { "<cmd>TSContextToggle<cr>", "Sticky Scroll Toggle" }
 }
 
 
 lvim.builtin.which_key.mappings["K"] = {
-   name = "+AutoSave",
+   name = "  AutoSave",
    e = { "<cmd>ASToggle<cr>", "Enable/Disable" }
 }
 
 lvim.builtin.which_key.mappings["v"] = {
-   name = "+Copilot",
+   name = "  Copilot",
    d = { "<cmd>Copilot disable<cr>", "Disable" },
    e = { "<cmd>Copilot enable<cr>", "Enable" },
    p = { "<cmd>Copilot panel<cr>", "Panel" },
@@ -107,7 +101,7 @@ lvim.builtin.which_key.mappings["v"] = {
 }
 
 lvim.builtin.which_key.mappings["m"] = {
-   name = "+Window",
+   name = "  Window",
    h = { "<cmd>wincmd H<cr>", "Swap Left" },
    l = { "<cmd>wincmd L<cr>", "Swap Right" },
    k = { "<cmd>wincmd K<cr>", "Swap Up" },
@@ -134,7 +128,7 @@ lvim.builtin.which_key.mappings["m"] = {
 }
 
 lvim.builtin.which_key.mappings["N"] = {
-   name = "+Neotest",
+   name = "  Neotest",
 
    r = { "<cmd>Neotest run<cr>", "Run" },
    s = { "<cmd>Neotest stop<cr>", "Stop" },
@@ -146,7 +140,7 @@ lvim.builtin.which_key.mappings["N"] = {
 }
 
 lvim.builtin.which_key.mappings["a"] = {
-   name = "+Avante",
+   name = " 󱜙 Avante",
    c = { "<cmd>AvanteChat<cr>", "Open Chat" },
    a = { "<cmd>AvanteAsk<cr>", "Avante Ask" },
    d = { "<cmd>AvanteClear<cr>", "Avante Clear" },
