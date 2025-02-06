@@ -50,7 +50,9 @@ rm -rf ~/.config/lvim \
        ~/.config/fastfetch/config.jsonc \
        ~/.config/yabai \
        ~/.config/skhd \
-       ~/.config/ohmyposh
+       ~/.config/ohmyposh\
+      ~/.config/starship
+
 
 ```
 
