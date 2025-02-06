@@ -310,9 +310,7 @@ lvim.plugins = {
    -- | PLUGINS DE TEMA |
    -- *=================*
    --
-   { "AlexvZyl/nordic.nvim" },
    { "projekt0n/github-nvim-theme" },
-   { "rose-pine/neovim" },
    {
       "killitar/obscure.nvim",
       lazy = false,
@@ -321,15 +319,9 @@ lvim.plugins = {
    },
    { "shaunsingh/nord.nvim" },
    { "luisiacc/gruvbox-baby" },
-   { "savq/melange-nvim" },
    { "ellisonleao/gruvbox.nvim" },
-   { "scottmckendry/cyberdream.nvim" },
    { "nyoom-engineering/oxocarbon.nvim" },
-   { "loctvl842/monokai-pro.nvim" },
    { "gmr458/vscode_modern_theme.nvim" },
-   { "savq/melange-nvim" },
-   { "frenzyexists/aquarium-vim" },
-   { "olivercederborg/poimandres.nvim" },
    { "killitar/obscure.nvim" },
    { "aktersnurra/no-clown-fiesta.nvim" },
    { "Mofiqul/vscode.nvim" },
@@ -337,14 +329,11 @@ lvim.plugins = {
    { "datsfilipe/min-theme.nvim" },
    { "rebelot/kanagawa.nvim" },
    { "thesimonho/kanagawa-paper.nvim" },
-   { "tomasr/molokai" },
    { "bluz71/vim-moonfly-colors" },
-   { "tiagovla/tokyodark.nvim" },
    { "mellow-theme/mellow.nvim" },
+   { "catppuccin/nvim" },
    { "Yazeed1s/minimal.nvim" },
    { "sekke276/dark_flat.nvim" },
-   { "nyngwang/nvimgelion" },
-   { "Yazeed1s/oh-lucy.nvim" },
    ---------------------------------------
    --
    --
@@ -356,7 +345,6 @@ lvim.plugins = {
    { "nvim-tree/nvim-web-devicons" },
    { "brenoprata10/nvim-highlight-colors" },
    { "akinsho/bufferline.nvim" },
-   { "catppuccin/nvim" },
    { "iamcco/markdown-preview.nvim" },
    { "folke/noice.nvim" },
    { 'rcarriga/nvim-notify' },
@@ -468,7 +456,7 @@ lvim.plugins = {
                css = { "prettier" },
                javascriptreact = { "prettier", "biome", "biome-check" },
                typescriptreact = { "prettier", "biome", "biome-check" },
-               python = { "black", "autopep8", "isort" },
+               python = { "black", "autopep8" },
                ruby = { "rubocop" },
                lua = { "stylua" },
                php = { "php_cs_fixer", }, --[[ "phpcbf" ]]
