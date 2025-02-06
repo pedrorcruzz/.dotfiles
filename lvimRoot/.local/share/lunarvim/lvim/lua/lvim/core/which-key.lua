@@ -187,7 +187,7 @@ M.config = function()
          g = {
             name = " 󰊢 Git",
             G = { "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle()<cr>", "Lazygit another window" },
-            g = { "<cmd>  LazyGit<cr>", "Lazygit" },
+            g = { "<cmd>LazyGit<cr>", " 󰊢 Lazygit" },
             j = { "<cmd>lua require 'gitsigns'.nav_hunk('next', {navigation_message = false})<cr>", "Next Hunk" },
             v = { "<cmd>lua require 'gitsigns'.toggle_current_line_blame()<cr>", "Toggle Blame" },
             k = { "<cmd>lua require 'gitsigns'.nav_hunk('prev', {navigation_message = false})<cr>", "Prev Hunk" },

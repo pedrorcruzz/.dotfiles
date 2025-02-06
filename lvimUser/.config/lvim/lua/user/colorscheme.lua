@@ -1,5 +1,5 @@
 lvim.colorscheme = "min-theme"
-lvim.transparent_window = false
+lvim.transparent_window = true
 
 require("nvim-highlight-colors").setup({})
 
