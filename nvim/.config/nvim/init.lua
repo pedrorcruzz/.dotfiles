@@ -17,6 +17,7 @@ require('lazy').setup({
 
    { import = 'custom.plugins.env' },
    { import = 'custom.plugins.ui' },
+   { import = 'custom.plugins.coding' },
 }, {
    ui = {
       -- If you are using a Nerd Font: set icons to an empty table which will use the

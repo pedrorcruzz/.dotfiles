@@ -2,22 +2,33 @@ return {
    {
       "datsfilipe/min-theme.nvim",
       config = function()
-         local transparent_background = true
+         local transparent_background = true      -- Defina como true ou false conforme sua preferência
          require('min-theme').setup({
-            theme = 'dark',                                  -- Escolha entre 'dark' ou 'light'
-            transparent_background = transparent_background, -- Ativa o fundo transparente
+            theme = 'dark',                       -- Escolha entre 'dark' ou 'light'
+            transparent = transparent_background, -- Aplica a transparência baseado na variável
             italics = {
-               comments = true,                              -- Itálico para comentários
-               keywords = true,                              -- Itálico para palavras-chave
-               functions = true,                             -- Itálico para funções
-               strings = true,                               -- Itálico para strings
-               variables = true,                             -- Itálico para variáveis
+               comments = true,                   -- Itálico para comentários
+               keywords = true,                   -- Itálico para palavras-chave
+               functions = true,                  -- Itálico para funções
+               strings = true,                    -- Itálico para strings
+               variables = true,                  -- Itálico para variáveis
             },
             overrides = {
-               Normal = { bg = transparent_background and 'NONE' or '#202020' },     -- Cor do fundo
-               Visual = { bg = transparent_background and 'NONE' or '#606060' },     -- Cor da seleção
-               CursorLine = { bg = transparent_background and 'NONE' or '#323232' }, -- Linha do cursor
-               -- Adicione outras customizações conforme necessário...
+               Normal = { bg = transparent_background and 'NONE' or '#202020' },                      -- Cor do fundo
+               Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },                   -- Cor da seleção
+               CursorLine = { bg = transparent_background and 'NONE' or '#323232' },                  -- Linha do cursor
+               LineNr = { fg = "#4B5263" },                                                           -- Gutter foreground
+               NormalFloat = { fg = "#ABB2BF", bg = transparent_background and 'NONE' or "#202020" }, -- Cor do float normal
+               Search = { bg = "#606060", fg = "#ABB2BF" },                                           -- Cor de destaque da busca
+               IncSearch = { bg = "#606060", fg = "#FF657E" },                                        -- Cor de destaque da busca incremental
+               NvimTreeNormal = { bg = "#1A1A1A" },                                                   -- Fundo do NvimTree
+               NvimTreeEndOfBuffer = { fg = "#1A1A1A", bg = nil },                                    -- Fundo para o final do buffer no NvimTree
+               NvimTreeEmptyFolderName = { fg = "#666666" },                                          -- Nome de pastas vazias no NvimTree
+               NvimTreeOpenedFolderName = { fg = "#579FDC" },                                         -- Nome de pastas abertas no NvimTree
+               NvimTreeFolderName = { fg = "#AAAAAA" },                                               -- Nome de pastas no NvimTree
+               WinBarNC = { fg = "#202020", bg = "#202020" },                                         -- Barra de janelas não ativa
+               BufferLineFill = { bg = "#1A1A1A" },                                                   -- Cor de fundo do BufferLine
+               EndOfBuffer = { fg = "#202020", bg = 'NONE' },                                         -- Garantindo que o final do buffer seja transparente
             },
          })
          vim.cmd("colorscheme min-theme") -- Aplica o tema
@@ -26,7 +37,6 @@ return {
    {
       "catppuccin/nvim",
       config = function()
-         -- Se você quiser configurar o Catppuccin, você pode seguir o modelo acima.
          local transparent_background = true
          require('catppuccin').setup {
             background = { light = 'latte', dark = 'mocha' },
