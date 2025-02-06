@@ -1,9 +1,7 @@
--- Definir leader
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
-
 -- Require
 require 'config.keybinds'
+require 'config.autocmds'
+require 'config.options'
 
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -16,10 +14,9 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-   -- require 'kickstart.plugins.debug',
-   -- require 'kickstart.plugins.lint',
 
    { import = 'custom.plugins.env' },
+   { import = 'custom.plugins.ui' },
 }, {
    ui = {
       -- If you are using a Nerd Font: set icons to an empty table which will use the

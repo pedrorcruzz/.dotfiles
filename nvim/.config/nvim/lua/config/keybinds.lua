@@ -21,6 +21,3 @@ vim.keymap.set('n', '<A-Down>', [[:m .+1<CR>==]], { noremap = true, silent = tru
 
 -- Comando para FineCmdline
 -- vim.keymap.set('n', ':', '<cmd>FineCmdline<CR>', { noremap = true, silent = true })
-
--- Ativar numeração relativa
-vim.opt.relativenumber = true
