@@ -29,7 +29,6 @@ vim.opt.tabstop = 3      -- Número de espaços que um tab representa
 vim.opt.expandtab = true -- Converter tabs para espaços
 
 
-
 -- Configuração para abrir o FZF automaticamente ao iniciar no diretório
 vim.api.nvim_create_autocmd("VimEnter", {
    callback = function()

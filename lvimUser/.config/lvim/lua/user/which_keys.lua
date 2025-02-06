@@ -110,13 +110,13 @@ lvim.builtin.which_key.mappings["m"] = {
    p = { "<cmd>wincmd ><cr>", "Resize Left" },
    o = { "<cmd>wincmd <<cr>", "Resize Right" },
    t = { "<cmd>resize 9<cr>", "Resize Top" },
-   f = { "<cmd>resize 0<cr>", "Hide Toggle" },
+   e = { "<cmd>resize 0<cr>", "Hide Toggle" },
    b = { "<cmd>resize 18<cr>", "Resize Bottom" },
    m = { "<cmd>MaximizerToggle<cr>", "Maximize Toggle" },
    q = { "<cmd>vsplit<cr>", "Vertical Split" },
    n = { "<cmd>split<cr>", "Horizontal Split" },
-   e = { "<cmd>tabprevious<cr>", "Tab Previous" },
-   r = { "<cmd>tabnext<cr>", "Tab Next" },
+   f = { "<cmd>tabprevious<cr>", "Tab Previous" },
+   d = { "<cmd>tabnext<cr>", "Tab Next" },
    w = { "<cmd>tabclose<cr>", "Tab Close" },
    y = { "<cmd>tabonly<cr>", "Tab Only" },
    u = { "<cmd>tabnew<cr>", "Tab New" },
@@ -124,7 +124,7 @@ lvim.builtin.which_key.mappings["m"] = {
    ["2"] = { function() vim.cmd("vertical resize " .. math.floor(vim.o.columns * 2 / 3)) end, "Resize Right 1/3" },
    ["3"] = { function() vim.cmd("resize " .. math.floor(vim.o.lines / 3)) end, "Resize Top 1/3" },
    ["4"] = { function() vim.cmd("resize " .. math.floor(vim.o.lines * 2 / 3)) end, "Resize Bottom 1/3" },
-   ["0"] = { "<cmd>resize | vertical resize | wincmd =<cr>", "Reset Window Sizes" }
+   r = { "<cmd>resize | vertical resize | wincmd =<cr>", "Reset Window Sizes" }
 }
 
 lvim.builtin.which_key.mappings["N"] = {

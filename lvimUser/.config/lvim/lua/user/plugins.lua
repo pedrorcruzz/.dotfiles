@@ -1,5 +1,4 @@
 lvim.plugins = {
-   { "lunarvim/colorschemes" },
    { "jose-elias-alvarez/typescript.nvim" },
    { "mattn/emmet-vim" },
    { "AndrewRadev/tagalong.vim" },
@@ -7,8 +6,6 @@ lvim.plugins = {
    { "windwp/nvim-ts-autotag" },
    { "andweeb/presence.nvim" },
    { "andymass/vim-matchup" },
-   -- { "MunifTanjim/prettier.nvim" },
-   -- { "MunifTanjim/eslint.nvim" },
    { "folke/zen-mode.nvim" },
    { "filipdutescu/renamer.nvim" },
    { "VonHeikemen/fine-cmdline.nvim" },
@@ -23,7 +20,6 @@ lvim.plugins = {
       -- dependencies = { "echasnovski/mini.icons" },
       opts = {}
    },
-   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
    { "szw/vim-maximizer" },
    { "akinsho/git-conflict.nvim" },
    {
@@ -197,11 +193,6 @@ lvim.plugins = {
    -- },
 
    {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      event = "InsertEnter",
-   },
-   {
       "zbirenbaum/copilot-cmp",
       after = { "copilot.lua" },
       config = function()
@@ -337,18 +328,10 @@ lvim.plugins = {
    ---------------------------------------
    --
    --
-   { "nvim-lua/plenary.nvim" },
-   { "nvim-lualine/lualine.nvim" },
-   { "sindrets/diffview.nvim" },
-   { "neovim/nvim-lspconfig" },
    { "jose-elias-alvarez/null-ls.nvim" },
-   { "nvim-tree/nvim-web-devicons" },
    { "brenoprata10/nvim-highlight-colors" },
-   { "akinsho/bufferline.nvim" },
-   { "iamcco/markdown-preview.nvim" },
    { "folke/noice.nvim" },
    { 'rcarriga/nvim-notify' },
-   { "nvim-telescope/telescope.nvim" },
    { "mg979/vim-visual-multi" },
    { "tpope/vim-commentary" },
    { "norcalli/nvim-colorizer.lua" },
@@ -369,17 +352,6 @@ lvim.plugins = {
          })
       end,
    },
-   -- {
-   --   "NeogitOrg/neogit",
-
-   --   dependencies = {
-   --     "nvim-lua/plenary.nvim",         -- required
-   --     "sindrets/diffview.nvim",        -- optional - Diff integration
-   --     -- Only one of these is needed, not both.
-   --     "nvim-telescope/telescope.nvim", -- optional
-   --   },
-   --   config = true,
-   -- },
    {
       "mfussenegger/nvim-lint",
       event = {
@@ -475,58 +447,6 @@ lvim.plugins = {
             })
          end, { desc = "Format current file" })
       end,
-   },
-   -- {
-   --    'stevearc/oil.nvim',
-   --    opts = {
-   --       view_options = {
-   --          -- Show files and directories that start with "."
-   --          show_hidden = false,
-   --          -- This function defines what is considered a "hidden" file
-   --          is_hidden_file = function(name, bufnr)
-   --             return vim.startswith(name, ".")
-   --          end,
-   --          -- This function defines what will never be shown, even when `show_hidden` is set
-   --          is_always_hidden = function(name, bufnr)
-   --             return false
-   --          end,
-   --          -- Sort file names in a more intuitive order for humans. Is less performant,
-   --          -- so you may want to set to false if you work with large directories.
-   --          natural_order = true,
-   --          -- Sort file and directory names case insensitive
-   --          case_insensitive = false,
-   --          sort = {
-   --             -- sort order can be "asc" or "desc"
-   --             -- see :help oil-columns to see which columns are sortable
-   --             { "type", "asc" },
-   --             { "name", "asc" },
-   --          },
-   --       },
-   --       keymaps = {
-   --          ["g?"] = "actions.show_help",
-   --          ["<CR>"] = "actions.select",
-   --          ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
-   --          ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
-   --          ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
-   --          ["<C-p>"] = "actions.preview",
-   --          ["<C-c>"] = "actions.close",
-   --          ["<C-l>"] = "actions.refresh",
-   --          ["-"] = "actions.parent",
-   --          ["_"] = "actions.open_cwd",
-   --          ["`"] = "actions.cd",
-   --          ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
-   --          ["gs"] = "actions.change_sort",
-   --          ["gx"] = "actions.open_external",
-   --          ["g."] = "actions.toggle_hidden",
-   --          ["g\\"] = "actions.toggle_trash",
-   --       },
-   --    },
-   --    -- Optional dependencies
-   --    dependencies = { "nvim-tree/nvim-web-devicons" },
-   -- },
-   {
-      "nvim-telescope/telescope-file-browser.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
    },
    {
       "folke/flash.nvim",
