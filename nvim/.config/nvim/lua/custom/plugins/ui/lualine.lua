@@ -18,6 +18,23 @@ return {
       git = "#FFFFFF",
     }
 
+    -- Função para exibir os servidores LSP ativos
+    local function lsp_status()
+      local msg = "No Active Lsp"
+      local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+      local clients = vim.lsp.get_active_clients()
+      if next(clients) == nil then
+        return msg
+      end
+      for _, client in ipairs(clients) do
+        local filetypes = client.config.filetypes
+        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+          return client.name
+        end
+      end
+      return msg
+    end
+
     -- Configuração do Lualine
     require("lualine").setup({
       options = {
@@ -48,8 +65,7 @@ return {
       },
       sections = {
         lualine_a = {
-          { "mode", separator = { left = "", right = "" }, right_padding = 2 },
-          -- { "mode"}
+          { "mode", separator = { left = "", right = "" }, right_padding = 2, color = { gui = "bold" } },
         },
         lualine_b = { "branch" },
         lualine_c = {
@@ -61,6 +77,12 @@ return {
         lualine_x = {
           "diagnostics",
           "copilot",
+          {
+            function()
+              return " LSP: " .. lsp_status() -- Exibe o status do LSP
+            end,
+            color = { fg = "#ffffff", gui = "bold" },
+          },
         },
         lualine_y = { "progress", "filetype", "filename" },
         lualine_z = {
@@ -78,13 +100,3 @@ return {
     })
   end,
 }
-
--- Icones para o Lualine
--- 
--- 
--- 
--- 
--- 
--- 
--- 
--- 
