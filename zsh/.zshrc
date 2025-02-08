@@ -55,6 +55,7 @@ alias psqlu='psql -U postgres'
 
 #Alias System
 alias rn="nvim"
+alias rfswap= "rm -rf ~/.local/state/nvim/swap/*"
 alias c='clear'
 alias live='live-server'
 alias ff='fastfetch'
