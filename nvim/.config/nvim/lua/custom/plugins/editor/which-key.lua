@@ -8,6 +8,7 @@ return {
     -- Document existing key chains
     require("which-key").add({
       { "<leader>e", group = "File Explorer", icon = "" },
+      { "<leader>n", group = "Neotest", icon = "" },
       { "<leader>y", group = "Yazi", icon = "" },
       { "<leader>;", group = "Home", icon = "" },
       { "<leader>w", group = "Save", icon = "" },
@@ -20,18 +21,11 @@ return {
       { "<leader>d", group = "Debug" },
       { "<leader>d_", hidden = true },
       { "<leader>f", group = "Find" },
-      { "<leader>f_", hidden = true },
       { "<leader>p_", hidden = true },
       { "<leader>h", group = "Hover Git Actions", icon = { name = "git", cat = "filetype" } },
-      { "<leader>h_", hidden = true },
       { "<leader>g", group = "Git", icon = { name = "git", cat = "filetype" } },
-      { "<leader>g_", hidden = true },
-      { "<leader>o_", hidden = true },
-      { "<leader>a_", hidden = true },
       { "<leader>r", group = "Refactor" },
-      { "<leader>r_", hidden = true },
       { "<leader>s", group = "Search" },
-      { "<leader>s_", hidden = true },
     })
   end,
 
@@ -49,6 +43,15 @@ return {
     --Bufers
     { "<leader>[", "<cmd>bprevious<cr>", desc = "Previous" },
     { "<leader>]", "<cmd>bnext<cr>", desc = "Next" },
+
+    -- Neotest
+    { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
+    { "<leader>ns", "<cmd>NeoTest stop<cr>", desc = "Stop" },
+    { "<leader>nj", "<cmd>NeoTest jump<cr>", desc = "Jump" },
+    { "<leader>na", "<cmd>NeoTest attach<cr>", desc = "Attach" },
+    { "<leader>no", "<cmd>NeoTest output<cr>", desc = "Output" },
+    { "<leader>np", "<cmd>NeoTest output-panel<cr>", desc = "Output Panel" },
+    { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
 
     -- Nvim-tree
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },

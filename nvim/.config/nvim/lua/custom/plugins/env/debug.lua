@@ -1,11 +1,25 @@
 return {
   {
-
     -- Instalar o plugin nvim-dap para depuração
     "mfussenegger/nvim-dap",
     dependencies = {
+
       -- Cria uma interface de depuração bonita
       "rcarriga/nvim-dap-ui",
+
+      -- Python
+      {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        dependencies = {
+          "mfussenegger/nvim-dap",
+          "rcarriga/nvim-dap-ui",
+        },
+        config = function(_, opts)
+          local path = vim.fn.expand("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+          require("dap-python").setup(path)
+        end,
+      },
 
       -- Dependência obrigatória para o nvim-dap-ui
       "nvim-neotest/nvim-nio",
@@ -14,8 +28,12 @@ return {
       {
         "williamboman/mason.nvim",
         opts = function(_, opts)
-          opts.ensure_installed = opts.ensure_installed or {}
-          table.insert(opts.ensure_installed, "js-debug-adapter")
+          -- Garantir que os pacotes necessários sejam instalados
+          opts.ensure_installed = {
+            "js-debug-adapter",
+            "debugpy",
+            "delve",
+          }
         end,
       },
 
@@ -119,16 +137,6 @@ return {
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
-
-      require("mason-nvim-dap").setup({
-        automatic_setup = true,
-        handlers = {},
-        ensure_installed = {
-          "delve", -- Para Go
-          "js-debug-adapter", -- Para JavaScript/TypeScript
-          "debugpy", -- Para Python
-        },
-      })
 
       -- Keymaps para depuração
       vim.keymap.set("n", "<leader>ds", dap.continue, { desc = "Debug: Start/Continue" })
