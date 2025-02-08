@@ -22,7 +22,7 @@ lvim.builtin.bufferline.animation = true
 lvim.builtin.bufferline.icons = true
 lvim.builtin.bufferline.icon_custom_colors = true
 
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+-- vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
 
 
 vim.cmd([[set relativenumber]])

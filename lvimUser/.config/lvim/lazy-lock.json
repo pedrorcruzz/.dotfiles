@@ -18,7 +18,6 @@
   "dracula.nvim": { "branch": "main", "commit": "515acae4fd294fcefa5b15237a333c2606e958d1" },
   "dressing.nvim": { "branch": "master", "commit": "56ef6a969a4990d938c5fed40c370f65e125fc97" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
-  "fine-cmdline.nvim": { "branch": "main", "commit": "aec9efebf6f4606a5204d49ffa3ce2eeb7e08a3e" },
   "flash.nvim": { "branch": "main", "commit": "f899265876ecdcf7352dbc9f0adf87068cedefbb" },
   "friendly-snippets": { "branch": "main", "commit": "3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a" },
   "fzf-lua": { "branch": "main", "commit": "394ddb2b80c58731c09b5775ca5d05d578b1de3d" },

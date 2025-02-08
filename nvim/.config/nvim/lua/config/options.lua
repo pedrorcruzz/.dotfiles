@@ -1,56 +1,55 @@
 -- Array of file names indicating root directory. Modify to your liking.
-local root_names = { '.git', 'Makefile' }
+local root_names = { ".git", "Makefile" }
 
 -- Cache to use for speed up (at cost of possibly outdated results)
 local root_cache = {}
 
 local set_root = function()
-   -- Get directory path to start search from
-   local path = vim.api.nvim_buf_get_name(0)
-   if path == '' then
-      return
-   end
-   path = vim.fs.dirname(path)
+	-- Get directory path to start search from
+	local path = vim.api.nvim_buf_get_name(0)
+	if path == "" then
+		return
+	end
+	path = vim.fs.dirname(path)
 
-   -- Try cache and resort to searching upward for root directory
-   local root = root_cache[path]
-   if root == nil then
-      local root_file = vim.fs.find(root_names, { path = path, upward = true })[1]
-      if root_file == nil then
-         return
-      end
-      root = vim.fs.dirname(root_file)
-      root_cache[path] = root
-   end
+	-- Try cache and resort to searching upward for root directory
+	local root = root_cache[path]
+	if root == nil then
+		local root_file = vim.fs.find(root_names, { path = path, upward = true })[1]
+		if root_file == nil then
+			return
+		end
+		root = vim.fs.dirname(root_file)
+		root_cache[path] = root
+	end
 
-   -- Set current directory
-   vim.fn.chdir(root)
+	-- Set current directory
+	vim.fn.chdir(root)
 end
 
-local root_augroup = vim.api.nvim_create_augroup('MyAutoRoot', {})
-vim.api.nvim_create_autocmd('BufEnter', { group = root_augroup, callback = set_root })
+local root_augroup = vim.api.nvim_create_augroup("MyAutoRoot", {})
+vim.api.nvim_create_autocmd("BufEnter", { group = root_augroup, callback = set_root })
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ';'
-vim.g.maplocalleader = ';'
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
-vim.opt.shiftwidth = 3
-vim.opt.tabstop = 3
-vim.opt.expandtab = true -- Converter tabs para espaços
-
+-- Define atalhos para navegar entre splits usando Ctrl + h/j/k/l
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true }) -- Esquerda
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true }) -- Direita
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true }) -- Baixo
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true }) -- Cima
 
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
 -- Disables netrw
 -- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrw = 1
 
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- vim.g.loaded_netrwPlugin = 1
 
 -- Make line numbers default
 vim.opt.number = true
@@ -59,7 +58,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.mousemoveevent = true
 
 -- Don't show the mode, since it's already in the status line
@@ -68,7 +67,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -81,7 +80,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -97,15 +96,15 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.list = false
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+vim.opt.cursorcolumn = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10

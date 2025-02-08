@@ -13,6 +13,7 @@ reload('user.renamer')
 reload('user.telescope_browser')
 reload('user.harpoon')
 reload('user.neotest')
+reload('user.noice')
 reload('user.obsidian')
 reload('user.dap')
 reload('user.incline')
@@ -43,3 +44,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = false
+vim.defer_fn(function()
+   vim.cmd([[highlight NoiceCmdlinePopupBorder guifg=#808080]])
+end, 100)

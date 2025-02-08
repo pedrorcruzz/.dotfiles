@@ -1,7 +1,17 @@
 vim.notify = require("notify")
 require("notify").setup({
-  background_colour = "#000000",
-  timeout = 50,
+   stages = "fade",
+   timeout = 5000,
+   background_colour = "#000000",
+   text_colour = "#ffffff",
+   icons = {
+      ERROR = "",
+      WARN = "",
+      INFO = "",
+      DEBUG = "",
+      TRACE = "✎",
+   },
+
 })
 
 

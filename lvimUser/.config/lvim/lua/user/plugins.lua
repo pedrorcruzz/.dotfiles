@@ -8,7 +8,7 @@ lvim.plugins = {
    { "andymass/vim-matchup" },
    { "folke/zen-mode.nvim" },
    { "filipdutescu/renamer.nvim" },
-   { "VonHeikemen/fine-cmdline.nvim" },
+   -- { "VonHeikemen/fine-cmdline.nvim" },
    { "MunifTanjim/nui.nvim" },
    { "folke/twilight.nvim" },
    { "ThePrimeagen/harpoon" },
@@ -330,7 +330,21 @@ lvim.plugins = {
    --
    { "jose-elias-alvarez/null-ls.nvim" },
    { "brenoprata10/nvim-highlight-colors" },
-   { "folke/noice.nvim" },
+   {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {
+         -- add any options here
+      },
+      dependencies = {
+         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+         "MunifTanjim/nui.nvim",
+         -- OPTIONAL:
+         --   `nvim-notify` is only needed, if you want to use the notification view.
+         --   If not available, we use `mini` as the fallback
+         "rcarriga/nvim-notify",
+      }
+   },
    { 'rcarriga/nvim-notify' },
    { "mg979/vim-visual-multi" },
    { "tpope/vim-commentary" },
