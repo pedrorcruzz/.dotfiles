@@ -1,12 +1,16 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    enabled = vim.g.have_nerd_font,
+    { "AndreM222/copilot-lualine" },
+  },
   config = function()
     local colors = {
       darkgray = "#16161d",
       gray = "#727169",
       branchfg = "#a9a9a9",
-      branchbg = nil,
+      branchbg = "#2d2d2d",
       innerbg = nil,
       outerbg = nil,
       normal = "#64BAFF",
@@ -40,6 +44,7 @@ return {
             a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
             b = { fg = colors.branchfg, bg = colors.branchbg },
             c = { fg = colors.gray, bg = colors.innerbg },
+            y = { fg = colors.branchfg, bg = colors.branchbg },
           },
           insert = {
             a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
@@ -62,18 +67,25 @@ return {
       },
       sections = {
         lualine_a = {
-          { "mode", separator = { left = "", right = "" }, right_padding = 2, color = { gui = "bold" } },
+          {
+            "mode",
+            fmt = function(mode)
+              return "󰊠 " .. mode --  󰨈 
+            end,
+            separator = { left = "", right = "" },
+            right_padding = 2,
+            color = { gui = "bold" },
+          },
         },
         lualine_b = { "branch" },
         lualine_c = {
           {
             "diff",
-            symbols = { added = " ", modified = "󰝤 ", removed = " " },
+            symbols = { added = " ", modified = "● ", removed = "✖ ", untracked = "✱" },
+            -- symbols = { added = " ", modified = "󰝤 ", removed = " " },
           },
         },
         lualine_x = {
-          "diagnostics",
-          "copilot",
           {
             function()
               return " LSP: " .. lsp_status()
@@ -81,9 +93,10 @@ return {
             color = { fg = "#ffffff", gui = "bold" },
           },
         },
-        lualine_y = { "progress", "filetype", "filename" },
+        lualine_y = { "copilot", "progress", "filetype", "filename" },
         lualine_z = {
           { "location", separator = { right = "" }, left_padding = 2 },
+          -- { "location", separator = { right = "" } },
         },
       },
       inactive_sections = {
