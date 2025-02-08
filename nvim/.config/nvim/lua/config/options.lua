@@ -5,26 +5,26 @@ local root_names = { ".git", "Makefile" }
 local root_cache = {}
 
 local set_root = function()
-	-- Get directory path to start search from
-	local path = vim.api.nvim_buf_get_name(0)
-	if path == "" then
-		return
-	end
-	path = vim.fs.dirname(path)
+  -- Get directory path to start search from
+  local path = vim.api.nvim_buf_get_name(0)
+  if path == "" then
+    return
+  end
+  path = vim.fs.dirname(path)
 
-	-- Try cache and resort to searching upward for root directory
-	local root = root_cache[path]
-	if root == nil then
-		local root_file = vim.fs.find(root_names, { path = path, upward = true })[1]
-		if root_file == nil then
-			return
-		end
-		root = vim.fs.dirname(root_file)
-		root_cache[path] = root
-	end
+  -- Try cache and resort to searching upward for root directory
+  local root = root_cache[path]
+  if root == nil then
+    local root_file = vim.fs.find(root_names, { path = path, upward = true })[1]
+    if root_file == nil then
+      return
+    end
+    root = vim.fs.dirname(root_file)
+    root_cache[path] = root
+  end
 
-	-- Set current directory
-	vim.fn.chdir(root)
+  -- Set current directory
+  vim.fn.chdir(root)
 end
 
 local root_augroup = vim.api.nvim_create_augroup("MyAutoRoot", {})
@@ -36,7 +36,6 @@ vim.api.nvim_create_autocmd("BufEnter", { group = root_augroup, callback = set_r
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
--- Define atalhos para navegar entre splits usando Ctrl + h/j/k/l
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true }) -- Esquerda
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true }) -- Direita
 vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true }) -- Baixo

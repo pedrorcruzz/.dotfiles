@@ -41,8 +41,6 @@ require("lazy").setup({
   },
 })
 
--- Configuração para abrir o FZF automaticamente ao iniciar no diretório
-
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     local arg = vim.fn.argv(0) -- Obtém o primeiro argumento passado para o Neovim
@@ -56,23 +54,20 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.opt.termguicolors = true
 require("nvim-tree").setup({
   disable_netrw = false,
-  hijack_netrw = false, -- Desativa a substituição do comportamento padrão
+  hijack_netrw = false,
 })
 
--- Configuração de indentação para arquivos Lua
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWritePre" }, {
   pattern = "*.lua",
   callback = function()
-    vim.bo.tabstop = 3 -- Número de espaços por tabulação
-    vim.bo.shiftwidth = 3 -- Número de espaços para indentação
-    vim.bo.expandtab = true -- Usar espaços ao invés de tabulação
+    vim.bo.tabstop = 3
+    vim.bo.shiftwidth = 3
+    vim.bo.expandtab = true
   end,
 })
 
--- Ativa a confirmação ao tentar sair de um arquivo modificado
 vim.opt.confirm = true
 
--- Garantir que a indentação será aplicada globalmente
 vim.bo.tabstop = 3
 vim.bo.shiftwidth = 3
 vim.bo.expandtab = true

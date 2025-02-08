@@ -38,20 +38,20 @@ return {
     { "<leader>q", "<cmd>confirm q<cr>", desc = "Exit" },
 
     -- Yazi
-    { "<leader>y", "<cmd>Yazi<cr>", desc = "Yazi" },
+    -- { "<leader>y", "<cmd>Yazi<cr>", desc = "Yazi" },
 
     --Bufers
     { "<leader>[", "<cmd>bprevious<cr>", desc = "Previous" },
     { "<leader>]", "<cmd>bnext<cr>", desc = "Next" },
 
     -- Neotest
-    { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
-    { "<leader>ns", "<cmd>NeoTest stop<cr>", desc = "Stop" },
-    { "<leader>nj", "<cmd>NeoTest jump<cr>", desc = "Jump" },
-    { "<leader>na", "<cmd>NeoTest attach<cr>", desc = "Attach" },
-    { "<leader>no", "<cmd>NeoTest output<cr>", desc = "Output" },
-    { "<leader>np", "<cmd>NeoTest output-panel<cr>", desc = "Output Panel" },
-    { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
+    -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
+    -- { "<leader>ns", "<cmd>NeoTest stop<cr>", desc = "Stop" },
+    -- { "<leader>nj", "<cmd>NeoTest jump<cr>", desc = "Jump" },
+    -- { "<leader>na", "<cmd>NeoTest attach<cr>", desc = "Attach" },
+    -- { "<leader>no", "<cmd>NeoTest output<cr>", desc = "Output" },
+    -- { "<leader>np", "<cmd>NeoTest output-panel<cr>", desc = "Output Panel" },
+    -- { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
 
     -- Nvim-tree
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
