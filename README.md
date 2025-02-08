@@ -8,8 +8,7 @@ Welcome to my personal dotfiles repository, where I manage all my configuration 
 ### Included Configurations
 Here are the configurations managed in this repository and their respective destinations:
 
-- **lvimUser**: `~/.config/lvim`
-- **LvimRoot**: `~/.local/share/lunarvim/lvim/lua/lvim/core`
+- **nvim**: `~/.config/nvim`
 - **zsh**: `~/.zshrc`
 - **git**: `~/.gitconfig`
 - **tmux**: `~/.tmux.conf`
@@ -42,7 +41,7 @@ Before applying the configurations, ensure that the original files are removed t
 
 ```bash
 
-rm -rf ~/.config/lvim \
+rm -rf ~/.config/nvim \
        ~/.local/share/lunarvim/lvim/lua/lvim/core \
        ~/.zshrc \
        ~/.gitconfig \
@@ -68,16 +67,9 @@ rm -rf ~/.config/lvim \
     stow <directory>
     ```
 
-    Example: Apply lvimUser and LvimRoot
+    Example: Apply Neovim
     ```bash
-    stow LvimUser
-    ```
-    ```bash
-    stow lvimRoot
-    ```
-
-    ```bash
-    stow lvimUser && stow lvimRoot
+    stow nvim
     ```
 
 6. **Apply all configurations at once**:
