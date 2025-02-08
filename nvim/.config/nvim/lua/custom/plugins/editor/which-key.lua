@@ -7,19 +7,28 @@ return {
 
     -- Document existing key chains
     require("which-key").add({
+      { "<leader>e", group = "File Explorer", icon = "" },
+      { "<leader>y", group = "Yazi", icon = "" },
+      { "<leader>;", group = "Home", icon = "" },
+      { "<leader>w", group = "Save", icon = "" },
+      { "<leader>[", group = "Previous", icon = "󰙣" },
+      { "<leader>]", group = "Next", icon = "󰙡" },
+      { "<leader>a", group = "Avante", icon = "" },
+      { "<leader>l", group = "LSP", icon = "" },
+      { "<leader>o", group = "Harpoon", icon = "󱝩" },
+      { "<leader>p", group = "Pane", icon = "󰶛" },
+      { "<leader>d", group = "Debug" },
+      { "<leader>d_", hidden = true },
       { "<leader>f", group = "Find" },
       { "<leader>f_", hidden = true },
-      { "<leader>t", group = "Terminal" },
-      { "<leader>t_", hidden = true },
-      { "<leader>p", group = "Pane" },
       { "<leader>p_", hidden = true },
       { "<leader>h", group = "Hover Git Actions", icon = { name = "git", cat = "filetype" } },
       { "<leader>h_", hidden = true },
       { "<leader>g", group = "Git", icon = { name = "git", cat = "filetype" } },
       { "<leader>g_", hidden = true },
-      { "<leader>l", group = "LSP" },
-      print({ "<leader>o", group = "Harpoon" }),
       { "<leader>o_", hidden = true },
+      { "<leader>a_", hidden = true },
+      { "<leader>r", group = "Refactor" },
       { "<leader>r_", hidden = true },
       { "<leader>s", group = "Search" },
       { "<leader>s_", hidden = true },
@@ -29,17 +38,20 @@ return {
   keys = {
     { "<c-j>", "<c-j>", ft = "fzf", mode = "t", nowait = true },
     { "<c-k>", "<c-k>", ft = "fzf", mode = "t", nowait = true },
-    { "<leader>w", "<cmd>w!<cr>", desc = " Save" },
+    { "<leader>w", "<cmd>w!<cr>", desc = "Save" },
     { "<leader>c", "<cmd>close<cr>", desc = "Close Window" },
-    { "<leader>;", "<cmd>Dashboard<cr>", desc = " Rosa Nvim" },
+    { "<leader>;", "<cmd>Dashboard<cr>", desc = "Home" },
     { "<leader>q", "<cmd>confirm q<cr>", desc = "Exit" },
 
+    -- Yazi
+    { "<leader>y", "<cmd>Yazi<cr>", desc = "Yazi" },
+
     --Bufers
-    { "<leader>[", "<cmd>bprevious<cr>", desc = "󰙣 Previous" },
-    { "<leader>]", "<cmd>bnext<cr>", desc = "󰙡 Next" },
+    { "<leader>[", "<cmd>bprevious<cr>", desc = "Previous" },
+    { "<leader>]", "<cmd>bnext<cr>", desc = "Next" },
 
     -- Nvim-tree
-    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
+    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
 
     --Pane
     { "<leader>pq", "<cmd>vsplit<cr>", desc = "Split Vertical" },

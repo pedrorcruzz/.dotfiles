@@ -54,7 +54,7 @@ alias psqlu='psql -U postgres'
 
 
 #Alias System
-alias rn="lvim"
+alias rn="nvim"
 alias c='clear'
 alias live='live-server'
 alias ff='fastfetch'

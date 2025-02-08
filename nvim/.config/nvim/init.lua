@@ -93,3 +93,6 @@ end, 100)
 vim.defer_fn(function()
   vim.cmd([[highlight NoiceCmdlineIcon guifg=#FFFFFF]])
 end, 100)
+
+-- Emmet
+vim.g.user_emmet_leader_key = "<C-y>"
