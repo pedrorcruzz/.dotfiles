@@ -8,8 +8,8 @@ return {
   config = function()
     require("noice").setup({
       cmdline = {
-        enabled = true, -- Habilita a interface de linha de comando do Noice
-        view = "cmdline_popup", -- Usa um popup para a linha de comando
+        enabled = true,
+        view = "cmdline_popup",
         opts = {}, -- Opções globais para a linha de comando
         format = {
           cmdline = { pattern = "^:", icon = "", lang = "vim" },
@@ -22,17 +22,17 @@ return {
         },
       },
       messages = {
-        enabled = true, -- Habilita a substituição de mensagens pelo Noice
-        view = "notify", -- Usa o nvim-notify para mensagens
-        view_error = "notify", -- Usa o nvim-notify para mensagens de erro
-        view_warn = "notify", -- Usa o nvim-notify para mensagens de aviso
-        view_history = "messages", -- Usa o histórico de mensagens
-        view_search = "virtualtext", -- Usa texto virtual para mensagens de busca
+        enabled = true,
+        view = "notify",
+        view_error = "notify",
+        view_warn = "notify",
+        view_history = "messages",
+        view_search = "virtualtext",
       },
       popupmenu = {
-        enabled = true, -- Habilita a substituição do menu popup pelo Noice
-        backend = "nui", -- Usa o backend 'nui' para o menu popup
-        kind_icons = {}, -- Ícones para diferentes tipos de itens
+        enabled = true,
+        backend = "nui",
+        kind_icons = {},
       },
       history = {
         enabled = true,

@@ -4,13 +4,11 @@ return {
   lazy = false,
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "lewis6991/gitsigns.nvim", -- Adiciona suporte ao Git Signs
+    "lewis6991/gitsigns.nvim",
   },
   config = function()
-    -- Configuração do Git Signs
     require("gitsigns").setup()
 
-    -- Configuração do Nvim Tree
     require("nvim-tree").setup({
       disable_netrw = false,
       hijack_netrw = true,
@@ -25,14 +23,14 @@ return {
         relativenumber = false,
       },
       renderer = {
-        highlight_git = true, -- Habilita destaque para Git
+        highlight_git = true,
         highlight_opened_files = "name",
         indent_markers = {
           enable = false,
           inline_arrows = true,
         },
         icons = {
-          git_placement = "signcolumn", -- Mostra os ícones do Git na coluna de sinais
+          git_placement = "signcolumn",
           show = {
             file = true,
             folder = true,
@@ -41,13 +39,13 @@ return {
           },
           glyphs = {
             git = {
-              unstaged = "", -- Arquivo modificado
-              staged = "", -- Arquivo adicionado ao staging
-              unmerged = "", -- Conflito de merge
-              renamed = "➜", -- Arquivo renomeado
-              deleted = "", -- Arquivo deletado
-              untracked = "★", -- Arquivo não rastreado
-              ignored = "◌", -- Arquivo ignorado pelo Git
+              unstaged = "",
+              staged = "",
+              unmerged = "",
+              renamed = "➜",
+              deleted = "",
+              untracked = "★",
+              ignored = "◌",
             },
           },
         },

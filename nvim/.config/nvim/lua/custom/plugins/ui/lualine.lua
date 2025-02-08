@@ -2,7 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   config = function()
-    -- Definição das cores
     local colors = {
       darkgray = "#16161d",
       gray = "#727169",
@@ -18,7 +17,6 @@ return {
       git = "#FFFFFF",
     }
 
-    -- Função para exibir os servidores LSP ativos
     local function lsp_status()
       local msg = "No Active Lsp"
       local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
@@ -35,7 +33,6 @@ return {
       return msg
     end
 
-    -- Configuração do Lualine
     require("lualine").setup({
       options = {
         theme = {
@@ -79,7 +76,7 @@ return {
           "copilot",
           {
             function()
-              return " LSP: " .. lsp_status() -- Exibe o status do LSP
+              return " LSP: " .. lsp_status()
             end,
             color = { fg = "#ffffff", gui = "bold" },
           },
