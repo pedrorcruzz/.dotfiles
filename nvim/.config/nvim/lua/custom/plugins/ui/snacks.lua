@@ -23,6 +23,7 @@ return {
     },
     explorer = {
       enabled = true,
+      cycle = false,
     },
     indent = { enabled = true },
     input = { enabled = true },
@@ -72,6 +73,13 @@ return {
         require("snacks").lazygit()
       end,
       desc = "LazyGit",
+    },
+    {
+      "<leader>lf",
+      function()
+        require("snacks").rename.rename_file()
+      end,
+      desc = "LSP: Rename current file",
     },
   },
 }
