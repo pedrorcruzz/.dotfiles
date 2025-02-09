@@ -20,6 +20,13 @@ return {
         ghost_text = true, -- Ativar ghost text
       },
     },
+    keys = {
+      { "<leader>pa", "<cmd>Copilot auth<cr>", desc = "Copilot: Auth" },
+      { "<leader>pe", "<cmd>Copilot enablecr>", desc = "Copilot: Enable" },
+      { "<leader>pd", "<cmd>Copilot disable<cr>", desc = "Copilot: Disable" },
+      { "<leader>pt", "<cmd>Copilot toggle<cr>", desc = "Copilot: Toggle" },
+      { "<leader>pp", "<cmd>Copilot panel<cr>", desc = "Copilot: Panel" },
+    },
   },
 
   {

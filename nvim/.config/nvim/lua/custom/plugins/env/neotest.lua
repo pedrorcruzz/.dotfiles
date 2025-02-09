@@ -33,13 +33,13 @@ return {
       })
     end,
     keys = {
-      { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
-      { "<leader>ns", "<cmd>NeoTest stop<cr>", desc = "Stop" },
-      { "<leader>nj", "<cmd>NeoTest jump<cr>", desc = "Jump" },
-      { "<leader>na", "<cmd>NeoTest attach<cr>", desc = "Attach" },
-      { "<leader>no", "<cmd>NeoTest output<cr>", desc = "Output" },
-      { "<leader>np", "<cmd>NeoTest output-panel<cr>", desc = "Output Panel" },
-      { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
+      { "<leader>nr", "<cmd>Neotest run<cr>", desc = "NeoTest: Run" },
+      { "<leader>ns", "<cmd>Neotest stop<cr>", desc = "NeoTest: Stop" },
+      { "<leader>nj", "<cmd>Neotest jump<cr>", desc = "NeoTest: Jump" },
+      { "<leader>na", "<cmd>Neotest attach<cr>", desc = "NeoTest: Attach" },
+      { "<leader>no", "<cmd>Neotest output<cr>", desc = "NeoTest: Output" },
+      { "<leader>np", "<cmd>Neotest output-panel<cr>", desc = "NeoTest: Output Panel" },
+      { "<leader>nh", "<cmd>Neotest summary<cr>", desc = "NeoTest: Summary" },
     },
   },
 }

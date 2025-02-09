@@ -176,9 +176,6 @@ return {
     -- 	"<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",
     -- 	desc = "Switch Buffer",
     -- },
-    -- { "<leader>/", "<cmd>FzfLua live_grep<cr>", desc = "Grep (Root Dir)" },
-    -- { "<leader>:", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
-    -- Global which-key mappings
 
     -- find
     { "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
@@ -203,6 +200,7 @@ return {
     { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
     { "<leader>fd", "<cmd>FzfLua lsp_definitions<cr>", desc = "Definitions" },
     { "<leader>fq", "<cmd>FzfLua colorschemes<cr>", desc = "Colorschemes" },
+    { "<leader>fh", "<cmd>FzfLua registers<cr>", desc = "Registers" },
     { "<leader>fe", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find Text in Buffer" },
     {
       "<leader>fc",
@@ -225,14 +223,6 @@ return {
       end,
       desc = "Recent (cwd)",
     },
-
-    -- git
-    { "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
-    { "<leader>gg", "<cmd>LazyGit<CR>", desc = "LazyGit" },
-    { "<leader>gb", "<cmd>FzfLua git_branches<CR>", desc = "Branches" },
-    { "<leader>gs", "<cmd>FzfLua git_status<CR>", desc = "Status" },
-    { "<leader>gl", "<cmd>FzfLua git_blame<CR>", desc = "Blame" },
-    { "<leader>gt", "<cmd>FzfLua git_stash<CR>", desc = "Stash" },
 
     -- search
     { "<leader>sa", "<cmd>FzfLua autocmds<cr>", desc = "Auto Commands" },

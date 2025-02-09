@@ -146,14 +146,14 @@ return {
         },
         window = {
           completion = {
-            border = "rounded", -- ou "rounded", "double", single.
-            winhighlight = "Normal:Pmenu,NormalNC:Pmenu", -- Altera o destaque da janela
+            border = "rounded", -- ou "rounded", "double", single. none
+            winhighlight = "Normal:Pmenu,NormalNC:Pmenu", -- Normal:Pmenu,NormalNC:Pmenu
             col_offset = 0,
             side_padding = 1,
           },
           documentation = {
             border = "rounded", -- ou "rounded", "double", etc.
-            winhighlight = "Normal:Pmenu,NormalNC:Pmenu", -- Altera o destaque da janela de documentação
+            winhighlight = "Normal:Pmenu,NormalNC:Pmenu", -- Normal:Pmenu,NormalNC:Pmenu
           },
         },
       })

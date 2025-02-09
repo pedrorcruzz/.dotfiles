@@ -71,6 +71,10 @@ vim.opt.clipboard = "unnamedplus"
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Enable line wrap
+-- vim.opt.wrap = true
+-- vim.opt.textwidth = 80
+
 -- Save undo history
 vim.opt.undofile = true
 

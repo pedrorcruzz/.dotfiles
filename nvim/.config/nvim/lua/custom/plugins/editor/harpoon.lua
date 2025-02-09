@@ -23,30 +23,30 @@ return {
         function()
           harpoon:list():add()
         end,
-        desc = "Add File",
+        desc = "Harpoon: Add File",
       },
       {
         "<leader>od",
         function()
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
-        desc = "Delete",
+        desc = "Harpoon: Delete",
       },
       {
         "<leader>ok",
         function()
           harpoon:list():next()
         end,
-        desc = "Nav Next",
+        desc = "Harpoon: Nav Next",
       },
       {
         "<leader>oj",
         function()
           harpoon:list():prev()
         end,
-        desc = "Nav Prev",
+        desc = "Harpoon: Nav Prev",
       },
-      { "<leader>of", "<cmd>Telescope harpoon marks<cr>", desc = "Harpoon Marks" },
+      { "<leader>of", "<cmd>Telescope harpoon marks<cr>", desc = "Harpoon: Marks" },
 
       -- Navegação de arquivos
       {
@@ -55,7 +55,7 @@ return {
           harpoon:list():prev()
         end,
         mode = "n",
-        desc = "Previous Harpoon Buffer",
+        desc = "Harpoon: Previous Buffer",
       },
       {
         "<C-n>",
@@ -63,7 +63,7 @@ return {
           harpoon:list():next()
         end,
         mode = "n",
-        desc = "Next Harpoon Buffer",
+        desc = "Harpoon: Next Buffer",
       },
 
       -- Splits e Tabs no menu do Harpoon

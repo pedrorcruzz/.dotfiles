@@ -81,8 +81,8 @@ return {
         lualine_c = {
           {
             "diff",
-            symbols = { added = " ", modified = "● ", removed = "✖ ", untracked = "✱" },
-            -- symbols = { added = " ", modified = "󰝤 ", removed = " " },
+            -- symbols = { added = " ", modified = "● ", removed = "✖ ", untracked = "✱" },
+            symbols = { added = " ", modified = "󰝤 ", removed = " ", untracked = "✱" },
           },
         },
         lualine_x = {
@@ -93,10 +93,15 @@ return {
             color = { fg = "#ffffff", gui = "bold" },
           },
         },
-        lualine_y = { "copilot", "progress", "filetype", "filename" },
         lualine_z = {
           { "location", separator = { right = "" }, left_padding = 2 },
           -- { "location", separator = { right = "" } },
+        },
+        lualine_y = {
+          "copilot",
+          "progress",
+          "filetype",
+          { "filename", symbols = { modified = "●", readonly = "" } },
         },
       },
       inactive_sections = {

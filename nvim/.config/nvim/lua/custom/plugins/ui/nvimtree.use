@@ -14,7 +14,7 @@ return {
       hijack_netrw = true,
       sync_root_with_cwd = true,
       view = {
-        width = 34,
+        width = 37,
         side = "left",
         centralize_selection = true,
         cursorline = true,

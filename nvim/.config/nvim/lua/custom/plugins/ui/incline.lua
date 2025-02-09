@@ -16,13 +16,13 @@ return {
             filename = "[No Name]"
           end
           local ft_icon, ft_color = devicons.get_icon_color(filename)
-          local modified = vim.bo[props.buf].modified
+          local modified = vim.bo[props.buf].modified and " ●" or ""
           return {
             ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
             " ",
-            { filename, gui = modified and "bold,italic" or "bold" },
+            { filename .. modified, gui = "bold" },
             " ",
-            guibg = "#1A1A1A", -- #1A1A1A
+            guibg = "#1A1A1A",
           }
         end,
       })

@@ -50,13 +50,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
--- Global
-vim.opt.termguicolors = true
-require("nvim-tree").setup({
-  disable_netrw = false,
-  hijack_netrw = false,
-})
-
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWritePre" }, {
   pattern = "*.lua",
   callback = function()

@@ -1,4 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="/usr/local/bin:$PATH"
+
 ZSH_THEME="minimal"
 
 # plugins oh my zsh 
@@ -20,8 +22,6 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 
 
-#lunar vim
-export PATH=/Users/phrosa/.local/bin:$PATH
 # CONSOLE NINJA 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -55,7 +55,7 @@ alias psqlu='psql -U postgres'
 
 #Alias System
 alias rn="nvim"
-alias rfswap= "rm -rf ~/.local/state/nvim/swap/*"
+alias rfswap="rm -rf ~/.local/state/nvim/swap/*"
 alias c='clear'
 alias live='live-server'
 alias ff='fastfetch'
@@ -122,6 +122,11 @@ purple="#B388FF"
 blue="#06BCE4"
 cyan="#2CF9ED"
 
+# ---- TheFuck -----
+
+# thefuck alias
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
 
 
 # Dependências de programação 
