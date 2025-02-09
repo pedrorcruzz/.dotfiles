@@ -86,18 +86,26 @@ return {
           },
         },
         lualine_x = {
-          {
-            function()
-              return " LSP: " .. lsp_status()
-            end,
-            color = { fg = "#ffffff", gui = "bold" },
-          },
+          "diagnostics",
+          -- {
+          --   function()
+          --     return " LSP: " .. lsp_status()
+          --   end,
+          --   color = { fg = "#ffffff", gui = "bold" },
+          -- },
         },
         lualine_z = {
           { "location", separator = { right = "" }, left_padding = 2 },
           -- { "location", separator = { right = "" } },
         },
         lualine_y = {
+          {
+            function()
+              return " LSP: " .. lsp_status()
+            end,
+            color = { fg = "#ffffff", gui = "bold" },
+          },
+
           "copilot",
           "progress",
           "filetype",

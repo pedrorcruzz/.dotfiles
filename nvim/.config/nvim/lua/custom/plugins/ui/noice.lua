@@ -10,7 +10,10 @@ return {
       cmdline = {
         enabled = true,
         view = "cmdline_popup",
-        opts = {}, -- Opções globais para a linha de comando
+        opts = {
+          -- position = { row = 0.2, col = 0.5 }, -- Centraliza a popup (50% da altura e largura da tela)
+          -- size = { width = 55, height = 1 },
+        }, -- Opções globais para a linha de comando
         format = {
           cmdline = { pattern = "^:", icon = "", lang = "vim" },
           search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
