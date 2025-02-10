@@ -1,10 +1,10 @@
 return { -- LSP Configuration & Plugins
-  "neovim/nvim-lspconfig",
+  'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -12,14 +12,14 @@ return { -- LSP Configuration & Plugins
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    { "folke/neodev.nvim", opts = {} },
-    { "folke/neoconf.nvim", opts = {} },
+    { 'folke/neodev.nvim', opts = {} },
+    { 'folke/neoconf.nvim', opts = {} },
     {
-      "b0o/SchemaStore.nvim",
+      'b0o/SchemaStore.nvim',
       lazy = true,
       version = false,
     },
-    { "SmiteshP/nvim-navic", opts = {
+    { 'SmiteshP/nvim-navic', opts = {
       lsp = {
         auto_attach = true,
       },
@@ -56,8 +56,8 @@ return { -- LSP Configuration & Plugins
     --    That is to say, every time a new file is opened that is associated with
     --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
     --    function will be executed to configure the current buffer
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
         -- NOTE: Remember that Lua is a real programming language, and as such it is possible
         -- to define small helper and utility functions so you don't have to repeat yourself.
@@ -65,58 +65,43 @@ return { -- LSP Configuration & Plugins
         -- In this case, we create a function that lets us more easily define mappings specific
         -- for LSP related items. It sets the mode, buffer and description for us each time.
         local map = function(keys, func, desc)
-          vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+          vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
         -- -- Jump to the definition of the word under your cursor.
         -- --  This is where a variable was first declared, or where a function is defined, etc.
         -- --  To jump back, press <C-t>.
-        map(
-          "gd",
-          "<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>",
-          "Goto Definition"
-        )
+        map('gd', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
+        map('<leader>lg', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
         --
         -- -- Find references for the word under your cursor.
-        map(
-          "gr",
-          "<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>",
-          "Goto References"
-        )
+        map('gr', '<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>', 'Goto References')
         --
         -- -- Jump to the implementation of the word under your cursor.
         -- --  Useful when your language has ways of declaring types without an actual implementation.
-        map(
-          "gI",
-          "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>",
-          "Goto Implementation"
-        )
+        map('gI', '<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Implementation')
         --
         -- -- Jump to the type of the word under your cursor.
         -- --  Useful when you're not sure what type a variable is and you want to see
         -- --  the definition of its *type*, not where it was *defined*.
-        map(
-          "<leader>lD",
-          "<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>",
-          "Type Definition"
-        )
+        map('<leader>lD', '<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>', 'Type Definition')
         --
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        map("<leader>lr", vim.lsp.buf.rename, "Rename")
+        map('<leader>lr', vim.lsp.buf.rename, 'Rename')
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        map("<leader>la", vim.lsp.buf.code_action, "Code Action")
+        map('<leader>la', vim.lsp.buf.code_action, 'Code Action')
 
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
-        map("K", vim.lsp.buf.hover, "Hover Documentation")
+        map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+        map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -125,12 +110,12 @@ return { -- LSP Configuration & Plugins
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
-          vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             buffer = event.buf,
             callback = vim.lsp.buf.document_highlight,
           })
 
-          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
             buffer = event.buf,
             callback = vim.lsp.buf.clear_references,
           })
@@ -151,7 +136,7 @@ return { -- LSP Configuration & Plugins
     --     'additionalTextEdits',
     --   },
     -- }
-    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -177,38 +162,38 @@ return { -- LSP Configuration & Plugins
 
       tailwindcss = {
         filetypes = {
-          "css",
-          "scss",
-          "sass",
-          "html",
-          "htmldjango",
-          "heex",
-          "elixir",
-          "eruby",
-          "javascript",
-          "javascriptreact",
-          "typescript",
-          "typescriptreact",
-          "rust",
-          "svelte",
+          'css',
+          'scss',
+          'sass',
+          'html',
+          'htmldjango',
+          'heex',
+          'elixir',
+          'eruby',
+          'javascript',
+          'javascriptreact',
+          'typescript',
+          'typescriptreact',
+          'rust',
+          'svelte',
         },
         init_options = {
           userLanguages = {
-            elixir = "html-eex",
-            eelixir = "html-eex",
-            heex = "html-eex",
+            elixir = 'html-eex',
+            eelixir = 'html-eex',
+            heex = 'html-eex',
           },
         },
         settings = {
           tailwindCSS = {
             lint = {
-              cssConflict = "warning",
-              invalidApply = "error",
-              invalidConfigPath = "error",
-              invalidScreen = "error",
-              invalidTailwindDirective = "error",
-              invalidVariant = "error",
-              recommendedVariantOrder = "warning",
+              cssConflict = 'warning',
+              invalidApply = 'error',
+              invalidConfigPath = 'error',
+              invalidScreen = 'error',
+              invalidTailwindDirective = 'error',
+              invalidVariant = 'error',
+              recommendedVariantOrder = 'warning',
             },
             experimental = {
               classRegex = {
@@ -223,7 +208,7 @@ return { -- LSP Configuration & Plugins
           },
         },
         tsserver = {
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         },
         intelephense = {
           -- init_options = {
@@ -232,28 +217,28 @@ return { -- LSP Configuration & Plugins
         },
         emmet_language_server = {
           filetypes = {
-            "html",
-            "css",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-            "vue",
-            "blade",
-            "heex",
-            "eelixr",
+            'html',
+            'css',
+            'javascript',
+            'javascriptreact',
+            'typescript',
+            'typescriptreact',
+            'vue',
+            'blade',
+            'heex',
+            'eelixr',
           },
         },
         prettier = {
-          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+          filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
         },
         eslint_d = {
-          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+          filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
         },
         jsonls = {
           on_new_config = function(new_config)
             new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-            vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+            vim.list_extend(new_config.settings.json.schemas, require('schemastore').json.schemas())
           end,
           settings = {
             json = {
@@ -272,7 +257,7 @@ return { -- LSP Configuration & Plugins
           settings = {
             Lua = {
               completion = {
-                callSnippet = "Replace",
+                callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
@@ -288,53 +273,57 @@ return { -- LSP Configuration & Plugins
     --    :Mason
     --
     --  You can press `g?` for help in this menu.
-    require("mason").setup()
+    require('mason').setup()
 
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      "stylua", -- Used to format Lua code
-      "lua_ls",
-      "prettier",
-      "pyright",
-      "debugpy",
-      "black",
-      "tailwindcss-language-server",
-      "js-debug-adapter",
+      'stylua', -- Used to format Lua code
+      'lua_ls',
+      'prettier',
+      'pyright',
+      'black',
+      'tailwindcss-language-server',
+      'intelephense',
+      'php-cs-fixer',
+      'php-debug-adapter',
+      'js-debug-adapter',
+      'bash-language-server',
+      'debugpy',
     })
-    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-    require("mason-lspconfig").setup({
+    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+    require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
-          if server_name == "tsserver" then
-            server_name = "ts_ls"
+          if server_name == 'tsserver' then
+            server_name = 'ts_ls'
           end
           -- This handles overriding only values explicitly passed
           -- by the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off formatting for tsserver)
-          server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-          require("lspconfig")[server_name].setup(server)
+          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+          require('lspconfig')[server_name].setup(server)
         end,
       },
-    })
+    }
 
-    local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+    local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
     for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
+      local hl = 'DiagnosticSign' .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
-    vim.diagnostic.config({
+    vim.diagnostic.config {
       virtual_text = {
         spacing = 4,
-        prefix = "",
+        prefix = '',
       },
       signs = true,
       underline = true,
       update_in_insert = false,
       severity_sort = false,
-    })
+    }
   end,
 }

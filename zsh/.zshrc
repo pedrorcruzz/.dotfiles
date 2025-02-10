@@ -178,17 +178,17 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
-# php
-# Herd injected PHP 8.3 configuration.
-# export HERD_PHP_83_INI_SCAN_DIR="/Users/phrosa/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP binary.
-# export PATH="/Users/phrosa/Library/Application Support/Herd/bin/":$PATH
-
 
 # Postgresql
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
 
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/phrosa/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/phrosa/Library/Application Support/Herd/bin/":$PATH

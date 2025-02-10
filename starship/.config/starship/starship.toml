@@ -177,13 +177,13 @@ symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
 
-[nodejs]
-symbol = "[](#090909) "
-style = "fg:green bg:#090909"
-format = '[$symbol( $version) ]($style)[](#090909)'
 # [nodejs]
-# symbol = ' '
-# format = '[ $symbol( $version) ]($style)'
+# symbol = "[](#090909) "
+# style = "fg:green bg:#090909"
+# format = '[$symbol( $version) ]($style)[](#090909)'
+[nodejs]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
 
 [custom.pnpm]
 symbol = ' '
@@ -224,7 +224,7 @@ detect_files = ["go.mod"]
 
 [php]
 symbol = ""
-format = '[[ $symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [java]
 symbol = " "
@@ -243,18 +243,18 @@ symbol = ' '
 format = '[[ $symbol( $version) ]]($style)'
 
 
-[python]
-symbol = "[](#090909) "
-style = "fg:#FFDE58 bg:#090909"
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](#090909)'
-pyenv_version_name = true
-pyenv_prefix = ''
-
 # [python]
-# symbol = ' '
-# format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+# symbol = "[](#090909) "
+# style = "fg:#FFDE58 bg:#090909"
+# format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)[](#090909)'
 # pyenv_version_name = true
 # pyenv_prefix = ''
+
+[python]
+symbol = ' '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
 
 [swift]
 symbol = ' '

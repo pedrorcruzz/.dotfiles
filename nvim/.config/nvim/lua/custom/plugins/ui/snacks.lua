@@ -1,5 +1,5 @@
 return {
-  "folke/snacks.nvim",
+  'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
@@ -9,21 +9,14 @@ return {
       enabled = true,
       preset = {
         keys = {
-          { icon = " ", key = "p", desc = "Projects", action = ":NeovimProjectDiscover" },
-          { icon = " ", key = "f", desc = "Find File", action = ":FzfLua files" },
-          { icon = " ", key = "r", desc = "Recent Files", action = ":FzfLua oldfiles" },
-          { icon = " ", key = "w", desc = "Worktree", action = ":Yazi cwd" },
-          {
-            icon = " ",
-            key = "c",
-            desc = "Config",
-            action = function()
-              require("fzf-lua").files({ cwd = vim.fn.stdpath("config") })
-            end,
-          },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+          { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
+          { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = ' ', key = 'w', desc = 'Worktree', action = ':Yazi cwd' },
+          { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+          { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
+          { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+          { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
         },
         header = {
           [[
@@ -35,71 +28,201 @@ return {
 ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
           ]],
         },
-        formats = {
-          icon = function(item)
-            if item.file and item.icon == "file" or item.icon == "directory" then
-              return M.icon(item.file, item.icon)
-            end
-            return { item.icon, width = 2, hl = "icon" }
-          end,
-          footer = { "%s", align = "center" },
-          header = { "%s", align = "center" },
-          file = function(item, ctx)
-            local fname = vim.fn.fnamemodify(item.file, ":~")
-            fname = ctx.width and #fname > ctx.width and vim.fn.pathshorten(fname) or fname
-            if #fname > ctx.width then
-              local dir = vim.fn.fnamemodify(fname, ":h")
-              local file = vim.fn.fnamemodify(fname, ":t")
-              if dir and file then
-                file = file:sub(-(ctx.width - #dir - 2))
-                fname = dir .. "/…" .. file
-              end
-            end
-            local dir, file = fname:match("^(.*)/(.+)$")
-            return dir and { { dir .. "/", hl = "dir" }, { file, hl = "file" } } or { { fname, hl = "file" } }
-          end,
-        },
       },
+      width = 60,
       sections = {
-        { pane = 1, { section = "header" }, gap = 0 },
+        -- { pane = 1, section = 'header', gap = 0, padding = 1 },
         {
-          pane = 2,
-          section = "terminal",
-          cmd = "chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg --format symbols --size 70x70;",
+          pane = 1,
+          section = 'terminal',
+          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/onepieceflag-nobg.png --format symbols --size 60x60; sleep .1',
           -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
           height = 25,
           padding = 1,
         },
         {
-          pane = 1,
-          icon = " ",
-          -- title = "Config",
-          section = "keys",
-          indent = 1,
-          gap = 0,
+          pane = 2,
+          section = 'startup',
           padding = 1,
-          { section = "startup" },
+          enabled = function()
+            return not (vim.o.columns > 135)
+          end,
         },
-        -- {
-        --   pane = 2,
-        --   icon = " ",
-        --   title = "Recent Files",
-        --   section = "recent_files",
-        --   limit = 10,
-        --   indent = 2,
-        -- },
+        {
+          pane = 2,
+          icon = ' ',
+          section = 'keys',
+          indent = 2,
+          gap = 1,
+          padding = 1,
+        },
+        {
+          pane = 2,
+          -- icon = '',
+          title = 'Projects',
+          section = 'projects',
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+          opts = { limit = 3 },
+          indent = 1,
+          padding = 2,
+        },
+        {
+          pane = 2,
+          -- icon = '',
+          title = 'Recent Files',
+          section = 'recent_files',
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+          opts = { limit = 3 },
+          indent = 2,
+          padding = 1,
+        },
+        {
+          section = 'startup',
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+        },
       },
-      width = 70,
     },
     explorer = {
       enabled = true,
       cycle = false,
+      replace_netrw = false,
+      git_status_open = true,
+      auto_close = false,
+      git_untracked = true,
+      follow_file = true,
+      hidden = false,
+      jump = { close = false },
+      layout = { preset = 'sidebar', preview = true },
     },
-    indent = { enabled = true },
-    input = { enabled = true },
+    indent = {
+      enabled = true,
+      indent = {
+        priority = 1,
+        enabled = true, -- enable indent guides
+        char = '│',
+        only_scope = false, -- only show indent guides of the scope
+        only_current = false, -- only show indent guides in the current window
+        hl = 'SnacksIndent', ---@type string|string[] hl groups for indent guides
+        -- can be a list of hl groups to cycle through
+        -- hl = {
+        --     "SnacksIndent1",
+        --     "SnacksIndent2",
+        --     "SnacksIndent3",
+        --     "SnacksIndent4",
+        --     "SnacksIndent5",
+        --     "SnacksIndent6",
+        --     "SnacksIndent7",
+        --     "SnacksIndent8",
+        -- },
+      },
+      -- animate scopes. Enabled by default for Neovim >= 0.10
+      -- Works on older versions but has to trigger redraws during animation.
+      ---@class snacks.indent.animate: snacks.animate.Config
+      ---@field enabled? boolean
+      --- * out: animate outwards from the cursor
+      --- * up: animate upwards from the cursor
+      --- * down: animate downwards from the cursor
+      --- * up_down: animate up or down based on the cursor position
+      ---@field style? "out"|"up_down"|"down"|"up"
+      animate = {
+        enabled = vim.fn.has 'nvim-0.10' == 1,
+        style = 'down',
+        easing = 'linear',
+        duration = {
+          step = 1, -- ms per step 20
+          total = 1, --  maximum duration 500
+        },
+      },
+      ---@class snacks.indent.Scope.Config: snacks.scope.Config
+      scope = {
+        enabled = true, -- enable highlighting the current scope
+        priority = 200,
+        char = '│',
+        underline = true, -- underline the start of the scope
+        only_current = false, -- only show scope in the current window
+        hl = 'SnacksIndentScope', ---@type string|string[] hl group for scopes
+      },
+      chunk = {
+        -- when enabled, scopes will be rendered as chunks, except for the
+        -- top-level scope which will be rendered as a scope.
+        enabled = false,
+        -- only show chunk scopes in the current window
+        only_current = false,
+        priority = 200,
+        hl = 'SnacksIndentChunk', ---@type string|string[] hl group for chunk scopes
+        char = {
+          corner_top = '┌',
+          corner_bottom = '└',
+          -- corner_top = "╭",
+          -- corner_bottom = "╰",
+          horizontal = '─',
+          vertical = '│',
+          arrow = '>',
+        },
+      },
+      -- filter for buffers to enable indent guides
+      filter = function(buf)
+        return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ''
+      end,
+    },
+    input = {
+      enabled = true,
+      backdrop = false,
+      position = 'float',
+      border = 'rounded',
+      title_pos = 'center',
+      height = 1,
+      width = 60,
+      relative = 'editor',
+      noautocmd = true,
+      row = 2,
+      wo = {
+        winhighlight = 'NormalFloat:SnacksInputNormal,FloatBorder:SnacksInputBorder,FloatTitle:SnacksInputTitle',
+        cursorline = false,
+      },
+      bo = {
+        filetype = 'snacks_input',
+        buftype = 'prompt',
+      },
+      b = {
+        completion = false,
+      },
+      keys = {
+        n_esc = { '<esc>', { 'cmp_close', 'cancel' }, mode = 'n', expr = true },
+        i_esc = { '<esc>', { 'cmp_close', 'stopinsert' }, mode = 'i', expr = true },
+        i_cr = { '<cr>', { 'cmp_accept', 'confirm' }, mode = 'i', expr = true },
+        i_tab = { '<tab>', { 'cmp_select_next', 'cmp' }, mode = 'i', expr = true },
+        i_ctrl_w = { '<c-w>', '<c-s-w>', mode = 'i', expr = true },
+        i_up = { '<up>', { 'hist_up' }, mode = { 'i', 'n' } },
+        i_down = { '<down>', { 'hist_down' }, mode = { 'i', 'n' } },
+        q = 'cancel',
+      },
+    },
     picker = { enabled = true },
+    quickfile = { enabled = true },
+    scope = { enabled = true },
+    statuscolumn = { enabled = true },
+    words = { enabled = true },
+    scroll = { enabled = false },
+    rename = { enabled = true },
     toggle = { enabled = true },
     lazygit = { enabled = true },
+    git = {
+
+      enabled = true,
+      width = 0.6,
+      height = 0.6,
+      border = 'rounded',
+      title = ' Git Blame ',
+      title_pos = 'center',
+      ft = 'git',
+    },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -107,48 +230,438 @@ return {
       height = { min = 1, max = 0.6 },
       margin = { top = 1, right = 1, bottom = 1 },
       padding = true,
-      sort = { "level", "added" },
+      sort = { 'level', 'added' },
       level = vim.log.levels.TRACE,
-      style = "compact",
+      style = 'compact',
       top_down = true,
-      date_format = "%R",
-      more_format = " ↓ %d lines ",
+      date_format = '%R',
+      more_format = ' ↓ %d lines ',
       refresh = 50,
     },
-    quickfile = { enabled = true },
-    scope = { enabled = true },
-    scroll = { enabled = true },
-    statuscolumn = { enabled = true },
-    words = { enabled = true },
   },
   keys = {
+    -- Top Pickers & Explorer
     {
-      "<leader>e",
+      '<leader><cr>',
       function()
-        require("snacks").explorer()
+        Snacks.picker.smart()
       end,
-      desc = "Open Snacks Explorer",
+      desc = 'Smart Find Files',
     },
     {
-      "<leader>;",
+      '<leader><space>',
       function()
-        require("snacks").dashboard()
+        Snacks.picker.smart()
       end,
-      desc = "Home",
+      desc = 'Smart Find Files',
     },
     {
-      "<leader>gg",
+      '<leader>,',
       function()
-        require("snacks").lazygit()
+        Snacks.picker.buffers()
       end,
-      desc = "Snacks: LazyGit",
+      desc = 'Buffers',
     },
     {
-      "<leader>lf",
+      '<leader>/',
       function()
-        require("snacks").rename.rename_file()
+        Snacks.picker.grep()
       end,
-      desc = "Snacks: Rename current file",
+      desc = 'Grep',
+    },
+    {
+      '<leader>:',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>N',
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = 'Notification History',
+    },
+    -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+    {
+      '<leader><space>',
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = 'Smart Find Files',
+    },
+    {
+      '<leader>,',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Buffers',
+    },
+    {
+      '<leader>/',
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = 'Grep',
+    },
+    {
+      '<leader>:',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>n',
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = 'Notification History',
+    },
+    {
+      '<leader>e',
+      function()
+        Snacks.explorer()
+      end,
+      desc = 'File Explorer',
+    },
+    -- find
+    {
+      '<leader>fb',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Buffers',
+    },
+    {
+      '<leader>fc',
+      function()
+        Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+      end,
+      desc = 'Find Config File',
+    },
+    {
+      '<leader>ff',
+      function()
+        Snacks.picker.files()
+      end,
+      desc = 'Find Files',
+    },
+    {
+      '<leader>fg',
+      function()
+        Snacks.picker.git_files()
+      end,
+      desc = 'Find Git Files',
+    },
+    {
+      '<leader>f',
+      function()
+        Snacks.picker.projects()
+      end,
+      desc = 'Projects',
+    },
+    {
+      '<leader>fr',
+      function()
+        Snacks.picker.recent()
+      end,
+      desc = 'Recent',
+    },
+    -- git
+    {
+      '<leader>gb',
+      function()
+        Snacks.picker.git_branches()
+      end,
+      desc = 'Git Branches',
+    },
+    {
+      '<leader>gl',
+      function()
+        Snacks.picker.git_log()
+      end,
+      desc = 'Git Log',
+    },
+    {
+      '<leader>gL',
+      function()
+        Snacks.picker.git_log_line()
+      end,
+      desc = 'Git Log Line',
+    },
+    {
+      '<leader>gs',
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = 'Git Status',
+    },
+    {
+      '<leader>gS',
+      function()
+        Snacks.picker.git_stash()
+      end,
+      desc = 'Git Stash',
+    },
+    {
+      '<leader>gd',
+      function()
+        Snacks.picker.git_diff()
+      end,
+      desc = 'Git Diff (Hunks)',
+    },
+    {
+      '<leader>gf',
+      function()
+        Snacks.picker.git_log_file()
+      end,
+      desc = 'Git Log File',
+    },
+    -- Grep
+    {
+      '<leader>sb',
+      function()
+        Snacks.picker.lines()
+      end,
+      desc = 'Buffer Lines',
+    },
+    {
+      '<leader>sB',
+      function()
+        Snacks.picker.grep_buffers()
+      end,
+      desc = 'Grep Open Buffers',
+    },
+    {
+      '<leader>sg',
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = 'Grep',
+    },
+    {
+      '<leader>sw',
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = 'Visual selection or word',
+      mode = { 'n', 'x' },
+    },
+    -- search
+    {
+      '<leader>s"',
+      function()
+        Snacks.picker.registers()
+      end,
+      desc = 'Registers',
+    },
+    {
+      '<leader>s/',
+      function()
+        Snacks.picker.search_history()
+      end,
+      desc = 'Search History',
+    },
+    {
+      '<leader>sa',
+      function()
+        Snacks.picker.autocmds()
+      end,
+      desc = 'Autocmds',
+    },
+    {
+      '<leader>sb',
+      function()
+        Snacks.picker.lines()
+      end,
+      desc = 'Buffer Lines',
+    },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command History',
+    },
+    {
+      '<leader>sC',
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = 'Commands',
+    },
+    {
+      '<leader>sd',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = 'Diagnostics',
+    },
+    {
+      '<leader>sD',
+      function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = 'Buffer Diagnostics',
+    },
+    {
+      '<leader>sH',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = 'Help Pages',
+    },
+    {
+      '<leader>sh',
+      function()
+        Snacks.picker.highlights()
+      end,
+      desc = 'Highlights',
+    },
+    {
+      '<leader>si',
+      function()
+        Snacks.picker.icons()
+      end,
+      desc = 'Icons',
+    },
+    {
+      '<leader>sj',
+      function()
+        Snacks.picker.jumps()
+      end,
+      desc = 'Jumps',
+    },
+    {
+      '<leader>sk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = 'Keymaps',
+    },
+    {
+      '<leader>sl',
+      function()
+        Snacks.picker.loclist()
+      end,
+      desc = 'Location List',
+    },
+    {
+      '<leader>sm',
+      function()
+        Snacks.picker.marks()
+      end,
+      desc = 'Marks',
+    },
+    {
+      '<leader>sM',
+      function()
+        Snacks.picker.man()
+      end,
+      desc = 'Man Pages',
+    },
+    {
+      '<leader>sp',
+      function()
+        Snacks.picker.lazy()
+      end,
+      desc = 'Search for Plugin Spec',
+    },
+    {
+      '<leader>sq',
+      function()
+        Snacks.picker.qflist()
+      end,
+      desc = 'Quickfix List',
+    },
+    {
+      '<leader>sR',
+      function()
+        Snacks.picker.resume()
+      end,
+      desc = 'Resume',
+    },
+    {
+      '<leader>su',
+      function()
+        Snacks.picker.undo()
+      end,
+      desc = 'Undo History',
+    },
+    {
+      '<leader>uC',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = 'Colorschemes',
+    },
+    -- LSP
+    {
+      'gd',
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+      desc = 'Goto Definition',
+    },
+    {
+      'gD',
+      function()
+        Snacks.picker.lsp_declarations()
+      end,
+      desc = 'Goto Declaration',
+    },
+    {
+      'gr',
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      nowait = true,
+      desc = 'References',
+    },
+    {
+      'gI',
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+      desc = 'Goto Implementation',
+    },
+    {
+      'gy',
+      function()
+        Snacks.picker.lsp_type_definitions()
+      end,
+      desc = 'Goto T[y]pe Definition',
+    },
+    {
+      '<leader>ss',
+      function()
+        Snacks.picker.lsp_symbols()
+      end,
+      desc = 'LSP Symbols',
+    },
+    {
+      '<leader>sS',
+      function()
+        Snacks.picker.lsp_workspace_symbols()
+      end,
+      desc = 'LSP Workspace Symbols',
+    },
+    -- Lazygit
+    {
+      '<leader>gl',
+      function()
+        Snacks.lazygit.open()
+      end,
+      desc = 'Lazygit',
+    },
+    {
+      '<leader>;',
+      function()
+        Snacks.dashboard()
+      end,
+      desc = 'Dashboard',
     },
   },
 }
