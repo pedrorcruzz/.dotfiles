@@ -79,4 +79,8 @@ return {
       -- vim.cmd 'colorscheme catppuccin'
     end,
   },
+  {
+    'ellisonleao/gruvbox.nvim',
+    config = function() end,
+  },
 }
