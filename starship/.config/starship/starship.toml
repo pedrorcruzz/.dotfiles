@@ -5,10 +5,11 @@ palette = "custom"
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
-add_newline = true
+add_newline = false
 
+# $os ➜\
 format = """
-$os ➜\
+$os\
 $directory\
 ${custom.giturl}\
 $git_branch\
@@ -36,8 +37,8 @@ $bun\
 $package\
 $aws\
 $cmd_duration\
-$time\
 $line_break\
+$time\
 $character"""
 
 
@@ -47,7 +48,7 @@ Ubuntu = "󰕈"
 SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
-Macos = " "
+Macos = ""
 Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
@@ -76,20 +77,21 @@ style = "none"
 [directory]
 style = "sapphire"
 format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = '…/'
+truncation_length = 4
+truncation_symbol = ' / ' #../
 truncate_to_repo = false
 
 
 [directory.substitutions]
+"~" = " " 
+".dotfiles" =" "
+"Workspace" = " " 
 "Documents" = "󰈙"
 "Downloads" = ""
 "Music" = "󰝚"
 "Pictures" = ""
 "Developer" = "󰲋"
 
-[line_break]
-disabled = false
 
 [os]
 # symbol = "    " 
@@ -115,13 +117,13 @@ fi
 echo "$GIT_REMOTE_SYMBOL "
 """
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
-format = "at $output"
+format = "$output"
 
 
 [git_branch]
 symbol = "[](#090909) "
 style = "fg:white bg:#090909"
-format =  ' on [$symbol$branch]($style)[](#090909)'
+format =  ' [$symbol$branch]($style)[](#090909)'
 
 
 # [git_branch]
@@ -145,12 +147,12 @@ behind = '[⬇\($count\)](#FF6B84)'
 # behind = "[⬇ ({count})](#FF6B84)"
 diverged = '[⇵](#FF4500)'
 up_to_date = '[✔](#cacaca)'
-untracked = '[?\($count\)](#800080)' 
+untracked = '[?\($count\)](#8A2BE2)' 
 stashed = '[⧉](#FFD700)'
-modified = '[!\($count\)](#00FFFF)'  
-staged = '[+\($count\)](#00FF00)'
+modified = '[!\($count\)](#85FCF9)'  
+staged = '[+\($count\)](#B3F8C5)'
 renamed = '[≡](#8A2BE2)'
-deleted = '[-\($count\)](#FF0000)'
+deleted = '[-\($count\)](#FFC4C0)'
 
 
 # [git_status]
@@ -165,7 +167,7 @@ symbol = " "
 
 [lua]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = 'via [ $symbol( $version) ]($style)'
 
 
 [dart]
@@ -183,7 +185,7 @@ format = '[ $symbol( $version) ]($style)'
 # format = '[$symbol( $version) ]($style)[](#090909)'
 [nodejs]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = 'via [ $symbol( $version) ]($style)'
 
 [custom.pnpm]
 symbol = ' '
@@ -250,16 +252,16 @@ format = '[[ $symbol( $version) ]]($style)'
 # pyenv_version_name = true
 # pyenv_prefix = ''
 
-
 [python]
 symbol = ' '
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "fg:#F1CA81"
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = true
 pyenv_prefix = ''
 
 [swift]
 symbol = ' '
-format = '[[ $symbol( $version) ]]($style)'
+format = 'via [[ $symbol( $version) ]]($style)'
 
 [docker_context]
 # symbol = ' '
@@ -293,10 +295,13 @@ variable = 'SHELL'
 format = "$symbol"
 disabled = false
 
+[line_break]
+disabled = false
+
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:purple)' 
+success_symbol = '[➜](bold fg:purple)' # ➜ ❯
 error_symbol = '[✘](bold fg:red)'
 # success_symbol = '[╰⎯](bold fg:white)'
 # error_symbol = '[╰⎯](bold fg:red)'
