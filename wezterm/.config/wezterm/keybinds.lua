@@ -40,13 +40,23 @@ function module.apply_to_config(config)
 
 	config.keys = {
 		{
+			key = "y",
+			mods = "OPT|CMD",
+			action = wezterm.action.SwitchToWorkspace({
+				name = "home",
+			}),
+		},
+
+		{
 			mods = "LEADER",
-			key = "-",
+			-- key = "-",
+			key = "[",
 			action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
 		{
 			mods = "LEADER",
-			key = "\\",
+			-- key = "\\",
+			key = "]",
 			action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 		},
 		{
@@ -61,7 +71,8 @@ function module.apply_to_config(config)
 		},
 		{
 			mods = "LEADER",
-			key = "0",
+			-- key = "0",
+			key = "\\",
 			action = wezterm.action.PaneSelect({
 				mode = "SwapWithActive",
 			}),
@@ -69,7 +80,7 @@ function module.apply_to_config(config)
 		{ key = "{", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(-1) },
 		{ key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
 		{
-			mods = "CTRL | SHIFT",
+			mods = "CMD",
 			key = "w",
 			action = wezterm.action.CloseCurrentPane({ confirm = false }),
 		},
@@ -104,13 +115,6 @@ function module.apply_to_config(config)
 						)
 					end
 				end),
-			}),
-		},
-		{
-			key = "y",
-			mods = "CTRL|CMD",
-			action = wezterm.action.SwitchToWorkspace({
-				name = "default",
 			}),
 		},
 	}
