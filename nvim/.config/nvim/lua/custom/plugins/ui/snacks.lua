@@ -35,7 +35,7 @@ return {
         {
           pane = 1,
           section = 'terminal',
-          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/onepieceflag-nobg.png --format symbols --size 60x60; sleep .1',
+          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq-nobg.png --format symbols --size 60x60; sleep .1',
           -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
           height = 25,
           padding = 1,
@@ -204,7 +204,23 @@ return {
         q = 'cancel',
       },
     },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      win = {
+        -- input window
+        input = {
+          keys = {
+            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+          },
+        },
+
+        list = {
+          keys = {
+            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+          },
+        },
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
@@ -242,7 +258,7 @@ return {
   keys = {
     -- Top Pickers & Explorer
     {
-      '<leader><cr>',
+      '<leader>fs',
       function()
         Snacks.picker.smart()
       end,
@@ -255,20 +271,20 @@ return {
       end,
       desc = 'Smart Find Files',
     },
-    {
-      '<leader>,',
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = 'Buffers',
-    },
-    {
-      '<leader>/',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
-    },
+    -- {
+    --   '<leader>,',
+    --   function()
+    --     Snacks.picker.buffers()
+    --   end,
+    --   desc = 'Buffers',
+    -- },
+    -- {
+    --   '<leader>/',
+    --   function()
+    --     Snacks.picker.grep()
+    --   end,
+    --   desc = 'Grep',
+    -- },
     {
       '<leader>:',
       function()
@@ -327,13 +343,13 @@ return {
       desc = 'File Explorer',
     },
     -- find
-    {
-      '<leader>fb',
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = 'Buffers',
-    },
+    -- {
+    --   '<leader>fb',
+    --   function()
+    --     Snacks.picker.buffers()
+    --   end,
+    --   desc = 'Buffers',
+    -- },
     {
       '<leader>fc',
       function()
@@ -355,13 +371,13 @@ return {
       end,
       desc = 'Find Git Files',
     },
-    {
-      '<leader>f',
-      function()
-        Snacks.picker.projects()
-      end,
-      desc = 'Projects',
-    },
+    -- {
+    --   '<leader>f',
+    --   function()
+    --     Snacks.picker.projects()
+    --   end,
+    --   desc = 'Projects',
+    -- },
     {
       '<leader>fr',
       function()
@@ -380,7 +396,14 @@ return {
     {
       '<leader>gl',
       function()
-        Snacks.picker.git_log()
+        Snacks.git.blame_line()
+      end,
+      desc = 'Git Blame Line',
+    },
+    {
+      '<leader>gc',
+      function()
+        Snacks.lazygit.log()
       end,
       desc = 'Git Log',
     },
@@ -450,13 +473,13 @@ return {
       mode = { 'n', 'x' },
     },
     -- search
-    {
-      '<leader>s"',
-      function()
-        Snacks.picker.registers()
-      end,
-      desc = 'Registers',
-    },
+    -- {
+    --   '<leader>s"',
+    --   function()
+    --     Snacks.picker.registers()
+    --   end,
+    --   desc = 'Registers',
+    -- },
     {
       '<leader>s/',
       function()
@@ -591,7 +614,7 @@ return {
       desc = 'Undo History',
     },
     {
-      '<leader>uC',
+      '<leader>sx',
       function()
         Snacks.picker.colorschemes()
       end,
@@ -650,7 +673,7 @@ return {
     },
     -- Lazygit
     {
-      '<leader>gl',
+      '<leader>gg',
       function()
         Snacks.lazygit.open()
       end,
@@ -662,6 +685,20 @@ return {
         Snacks.dashboard()
       end,
       desc = 'Dashboard',
+    },
+    {
+      '<leader>/',
+      function()
+        Snacks.notifier.hide()
+      end,
+      desc = 'Dimiss Notification',
+    },
+    {
+      '<leader>lf',
+      function()
+        Snacks.rename.rename_file()
+      end,
+      desc = 'Snacks: Rename Current File',
     },
   },
 }

@@ -50,8 +50,8 @@ alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 
 #Alias Postgresql
-alias psqlu='psql -U postgres'
-
+alias psqlu='psql -U phrosa -d postgres'
+export LC_MESSAGES=en_US.UTF-8
 
 #Alias System
 alias rn="nvim"

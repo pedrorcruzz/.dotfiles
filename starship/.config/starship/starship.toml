@@ -250,6 +250,7 @@ format = '[[ $symbol( $version) ]]($style)'
 # pyenv_version_name = true
 # pyenv_prefix = ''
 
+
 [python]
 symbol = ' '
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'

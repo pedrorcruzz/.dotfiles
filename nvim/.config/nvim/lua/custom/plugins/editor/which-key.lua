@@ -67,12 +67,13 @@ return {
     -- { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
 
     --Git
-    { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Git: Commits' },
+    -- { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Git: Commits' },
     -- { "<leader>gg", "<cmd>LazyGit<CR>", desc = "Git: LazyGit" },
-    { '<leader>gb', '<cmd>FzfLua git_branches<CR>', desc = 'Git: Branches' },
-    { '<leader>gs', '<cmd>FzfLua git_status<CR>', desc = 'Git: Status' },
-    { '<leader>gl', '<cmd>FzfLua git_blame<CR>', desc = 'Git: Blame' },
-    { '<leader>gt', '<cmd>FzfLua git_stash<CR>', desc = 'Git: Stash' },
+    { '<leader>gt', '<cmd>Gitsigns toggle_current_line_blame<CR>', desc = 'Git: Toggle Current Line Blame' },
+    -- { '<leader>gb', '<cmd>FzfLua git_branches<CR>', desc = 'Git: Branches' },
+    -- { '<leader>gs', '<cmd>FzfLua git_status<CR>', desc = 'Git: Status' },
+    -- { '<leader>gl', '<cmd>FzfLua git_blame<CR>', desc = 'Git: Blame' },
+    -- { '<leader>gt', '<cmd>FzfLua git_stash<CR>', desc = 'Git: Stash' },
 
     -- Nvim-tree
     -- { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },

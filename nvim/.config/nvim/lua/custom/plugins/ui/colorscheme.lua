@@ -43,8 +43,6 @@ return {
           WhichKeyTitle = { fg = '#FFFFFF' },
           WhichKeyGroup = { fg = '#FF657E' }, --#FF657E #C18EFE
 
-          -- CMP
-
           -- NVIM TREE
           NvimTreeNormal = { bg = transparent_background and 'NONE' or '#1A1A1A' },
           NvimTreeEndOfBuffer = { fg = '#1A1A1A', bg = nil }, -- Fundo para o final do buffer no NvimTree

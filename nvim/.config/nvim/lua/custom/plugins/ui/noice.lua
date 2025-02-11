@@ -1,60 +1,60 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
+  'folke/noice.nvim',
+  event = 'VeryLazy',
   dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    'MunifTanjim/nui.nvim',
+    -- "rcarriga/nvim-notify",
   },
   config = function()
-    require("noice").setup({
+    require('noice').setup {
       cmdline = {
         enabled = true,
-        view = "cmdline_popup",
+        view = 'cmdline_popup',
         opts = {
           -- position = { row = 0.2, col = 0.5 }, -- Centraliza a popup (50% da altura e largura da tela)
           -- size = { width = 55, height = 1 },
         }, -- Opções globais para a linha de comando
         format = {
-          cmdline = { pattern = "^:", icon = "", lang = "vim" },
-          search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-          search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
-          filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-          lua = { pattern = "^:%s*lua%s+", icon = "", lang = "lua" },
-          help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+          cmdline = { pattern = '^:', icon = '', lang = 'vim' },
+          search_down = { kind = 'search', pattern = '^/', icon = ' ', lang = 'regex' },
+          search_up = { kind = 'search', pattern = '^%?', icon = ' ', lang = 'regex' },
+          filter = { pattern = '^:%s*!', icon = '$', lang = 'bash' },
+          lua = { pattern = '^:%s*lua%s+', icon = '', lang = 'lua' },
+          help = { pattern = '^:%s*he?l?p?%s+', icon = '' },
           input = {}, -- Usado por comandos de entrada
         },
       },
       messages = {
         enabled = true,
-        view = "notify",
-        view_error = "notify",
-        view_warn = "notify",
-        view_history = "messages",
-        view_search = "virtualtext",
+        view = 'notify',
+        view_error = 'notify',
+        view_warn = 'notify',
+        view_history = 'messages',
+        view_search = 'virtualtext',
       },
       popupmenu = {
         enabled = true,
-        backend = "nui",
+        backend = 'nui',
         kind_icons = {},
       },
       history = {
         enabled = true,
-        view = "split",
+        view = 'split',
         opts = { enter = true },
-        filter = { event = "msg_show", ["not"] = { kind = { "search_count", "echo" } } },
+        filter = { event = 'msg_show', ['not'] = { kind = { 'search_count', 'echo' } } },
       },
       lsp = {
         progress = {
           enabled = true,
-          format = "lsp_progress",
-          format_done = "lsp_progress_done",
+          format = 'lsp_progress',
+          format_done = 'lsp_progress_done',
           throttle = 1000 / 30,
-          view = "mini",
+          view = 'mini',
         },
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
         hover = {
           enabled = true,
@@ -75,32 +75,32 @@ return {
         },
         message = {
           enabled = true,
-          view = "notify",
+          view = 'notify',
           opts = {},
         },
         documentation = {
-          view = "hover",
+          view = 'hover',
           opts = {
-            lang = "markdown",
+            lang = 'markdown',
             replace = true,
-            render = "plain",
-            format = { "{message}" },
-            win_options = { concealcursor = "n", conceallevel = 3 },
+            render = 'plain',
+            format = { '{message}' },
+            win_options = { concealcursor = 'n', conceallevel = 3 },
           },
         },
       },
       markdown = {
         hover = {
-          ["|(%S-)|"] = vim.cmd.help,
-          ["%[.-%]%((%S-)%)"] = require("noice.util").open,
+          ['|(%S-)|'] = vim.cmd.help,
+          ['%[.-%]%((%S-)%)'] = require('noice.util').open,
         },
         highlights = {
-          ["|%S-|"] = "@text.reference",
-          ["@%S+"] = "@parameter",
-          ["^%s*(Parameters:)"] = "@text.title",
-          ["^%s*(Return:)"] = "@text.title",
-          ["^%s*(See also:)"] = "@text.title",
-          ["{%S-}"] = "@parameter",
+          ['|%S-|'] = '@text.reference',
+          ['@%S+'] = '@parameter',
+          ['^%s*(Parameters:)'] = '@text.title',
+          ['^%s*(Return:)'] = '@text.title',
+          ['^%s*(See also:)'] = '@text.title',
+          ['{%S-}'] = '@parameter',
         },
       },
       health = {
@@ -108,7 +108,7 @@ return {
       },
       smart_move = {
         enabled = true,
-        excluded_filetypes = { "cmp_menu", "cmp_docs", "notify" },
+        excluded_filetypes = { 'cmp_menu', 'cmp_docs', 'notify' },
       },
       presets = {
         bottom_search = true,
@@ -122,22 +122,22 @@ return {
       routes = {
         {
           filter = {
-            event = "msg_show",
-            kind = "",
-            find = "written",
+            event = 'msg_show',
+            kind = '',
+            find = 'written',
           },
           opts = { skip = true },
         },
         {
           filter = {
-            event = "msg_show",
-            kind = "search_count",
+            event = 'msg_show',
+            kind = 'search_count',
           },
           opts = { skip = true },
         },
       },
       status = {},
       format = {},
-    })
+    }
   end,
 }
