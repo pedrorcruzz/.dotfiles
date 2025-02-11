@@ -16,6 +16,7 @@ Here are the configurations managed in this repository and their respective dest
 - **yabai**: `~/.config/yabai`
 - **skhd**: `~/.config/skhd`
 - **ohmyposh**: `~/.config/ohmyposh`
+- **wezterm**: `~/.config/wezterm`
 
 ### Usage
 Follow these steps to use this repository and apply the configurations:
@@ -50,7 +51,8 @@ rm -rf ~/.config/nvim \
        ~/.config/yabai \
        ~/.config/skhd \
        ~/.config/ohmyposh\
-      ~/.config/starship
+      ~/.config/starship \
+      ~/.config/wezterm \
 
 
 ```
