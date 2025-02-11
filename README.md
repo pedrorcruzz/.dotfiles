@@ -15,6 +15,7 @@ Here are the configurations managed in this repository and their respective dest
 - **fastfetch**: `~/.config/fastfetch`
 - **yabai**: `~/.config/yabai`
 - **skhd**: `~/.config/skhd`
+- **starship**: `~/.config/starship`
 - **wezterm**: `~/.config/wezterm`
 
 ### Usage
@@ -42,11 +43,10 @@ Before applying the configurations, ensure that the original files are removed t
 ```bash
 
 rm -rf ~/.config/nvim \
-       ~/.local/share/lunarvim/lvim/lua/lvim/core \
        ~/.zshrc \
        ~/.gitconfig \
        ~/.tmux.conf \
-       ~/.config/fastfetch/config.jsonc \
+       ~/.config/fastfetch\
        ~/.config/yabai \
        ~/.config/skhd \
       ~/.config/starship \
