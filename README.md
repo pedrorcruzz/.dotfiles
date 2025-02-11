@@ -15,7 +15,6 @@ Here are the configurations managed in this repository and their respective dest
 - **fastfetch**: `~/.config/fastfetch`
 - **yabai**: `~/.config/yabai`
 - **skhd**: `~/.config/skhd`
-- **ohmyposh**: `~/.config/ohmyposh`
 - **wezterm**: `~/.config/wezterm`
 
 ### Usage
@@ -50,7 +49,6 @@ rm -rf ~/.config/nvim \
        ~/.config/fastfetch/config.jsonc \
        ~/.config/yabai \
        ~/.config/skhd \
-       ~/.config/ohmyposh\
       ~/.config/starship \
       ~/.config/wezterm \
 
