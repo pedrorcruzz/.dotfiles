@@ -21,8 +21,7 @@ return {
 
     -- Toggle root dir / cwd
     config.defaults.actions.files['ctrl-r'] = function(_, ctx)
-      local cwd_path = nil
-      if ctx.cwd == nil then
+      local cwd_path = nil if ctx.cwd == nil then
         cwd_path = vim.fn.expand '%:p:h'
       end
 

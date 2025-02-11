@@ -5,7 +5,7 @@ return {
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup {
       win = {
-        border = 'double', -- none, single, double, shadow
+        border = 'single', -- none, single, double, shadow
       },
     }
 
@@ -68,7 +68,7 @@ return {
 
     --Git
     -- { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Git: Commits' },
-    -- { "<leader>gg", "<cmd>LazyGit<CR>", desc = "Git: LazyGit" },
+    { '<leader>gg', '<cmd>LazyGit<CR>', desc = 'Git: LazyGit' },
     { '<leader>gt', '<cmd>Gitsigns toggle_current_line_blame<CR>', desc = 'Git: Toggle Current Line Blame' },
     -- { '<leader>gb', '<cmd>FzfLua git_branches<CR>', desc = 'Git: Branches' },
     -- { '<leader>gs', '<cmd>FzfLua git_status<CR>', desc = 'Git: Status' },

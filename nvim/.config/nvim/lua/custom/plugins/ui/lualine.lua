@@ -1,29 +1,29 @@
 return {
-  "nvim-lualine/lualine.nvim",
+  'nvim-lualine/lualine.nvim',
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    'nvim-tree/nvim-web-devicons',
     enabled = vim.g.have_nerd_font,
-    { "AndreM222/copilot-lualine" },
+    { 'AndreM222/copilot-lualine' },
   },
   config = function()
     local colors = {
-      darkgray = "#16161d",
-      gray = "#727169",
-      branchfg = "#a9a9a9",
-      branchbg = "#2d2d2d",
+      darkgray = '#16161d',
+      gray = '#727169',
+      branchfg = '#a9a9a9',
+      branchbg = '#2d2d2d',
       innerbg = nil,
       outerbg = nil,
-      normal = "#64BAFF",
-      insert = "#FF7081",
-      visual = "#B990F7",
-      replace = "#ffa066",
-      command = "#75bf63",
-      git = "#FFFFFF",
+      normal = '#64BAFF',
+      insert = '#FF7081',
+      visual = '#B990F7',
+      replace = '#ffa066',
+      command = '#75bf63',
+      git = '#FFFFFF',
     }
 
     local function lsp_status()
-      local msg = "No Active Lsp"
-      local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+      local msg = 'No Active Lsp'
+      local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
       local clients = vim.lsp.get_active_clients()
       if next(clients) == nil then
         return msg
@@ -37,56 +37,56 @@ return {
       return msg
     end
 
-    require("lualine").setup({
+    require('lualine').setup {
       options = {
         theme = {
           normal = {
-            a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
+            a = { fg = colors.darkgray, bg = colors.normal, gui = 'bold' },
             b = { fg = colors.branchfg, bg = colors.branchbg },
             c = { fg = colors.gray, bg = colors.innerbg },
             y = { fg = colors.branchfg, bg = colors.branchbg },
           },
           insert = {
-            a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
+            a = { fg = colors.darkgray, bg = colors.insert, gui = 'bold' },
           },
           visual = {
-            a = { fg = colors.darkgray, bg = colors.visual, gui = "bold" },
+            a = { fg = colors.darkgray, bg = colors.visual, gui = 'bold' },
           },
           replace = {
-            a = { fg = colors.darkgray, bg = colors.replace, gui = "bold" },
+            a = { fg = colors.darkgray, bg = colors.replace, gui = 'bold' },
           },
           command = {
-            a = { fg = colors.darkgray, bg = colors.command, gui = "bold" },
+            a = { fg = colors.darkgray, bg = colors.command, gui = 'bold' },
           },
           inactive = {
-            a = { fg = colors.gray, bg = colors.outerbg, gui = "bold" },
+            a = { fg = colors.gray, bg = colors.outerbg, gui = 'bold' },
           },
         },
-        section_separators = { left = "", right = "" },
-        component_separators = { left = "", right = "" },
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
       },
       sections = {
         lualine_a = {
           {
-            "mode",
+            'mode',
             fmt = function(mode)
-              return "󰊠 " .. mode --  󰨈 
+              return '󰊠 ' .. mode --  󰨈 
             end,
-            separator = { left = "", right = "" },
+            separator = { left = '', right = '' },
             right_padding = 2,
-            color = { gui = "bold" },
+            color = { gui = 'bold' },
           },
         },
-        lualine_b = { "branch" },
+        lualine_b = { 'branch' },
         lualine_c = {
           {
-            "diff",
+            'diff',
             -- symbols = { added = " ", modified = "● ", removed = "✖ ", untracked = "✱" },
-            symbols = { added = " ", modified = "󰝤 ", removed = " ", untracked = "✱" },
+            symbols = { added = ' ', modified = '󰝤 ', removed = ' ', untracked = '✱' },
           },
         },
         lualine_x = {
-          "diagnostics",
+          'diagnostics',
           -- {
           --   function()
           --     return " LSP: " .. lsp_status()
@@ -95,31 +95,31 @@ return {
           -- },
         },
         lualine_z = {
-          { "location", separator = { right = "" }, left_padding = 2 },
+          { 'location', separator = { right = '' }, left_padding = 2 },
           -- { "location", separator = { right = "" } },
         },
         lualine_y = {
           {
             function()
-              return " LSP: " .. lsp_status()
+              return ' LSP: ' .. lsp_status()
             end,
-            color = { fg = "#ffffff", gui = "bold" },
+            color = { fg = '#ffffff', gui = 'bold' },
           },
 
-          "copilot",
-          "progress",
-          "filetype",
-          { "filename", symbols = { modified = "●", readonly = "" } },
+          'copilot',
+          'progress',
+          'filetype',
+          { 'filename', symbols = { modified = '●', readonly = '' } },
         },
       },
       inactive_sections = {
-        lualine_a = { "filename" },
+        lualine_a = { 'filename' },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { "location" },
+        lualine_z = { 'location' },
       },
-    })
+    }
   end,
 }

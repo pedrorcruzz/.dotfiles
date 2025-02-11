@@ -2,47 +2,54 @@ return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = true -- Defina como true ou false conforme sua preferência
+      local transparent_background = true
       require('min-theme').setup {
-        theme = 'dark', -- Escolha entre 'dark' ou 'light'
-        transparent = transparent_background, -- Aplica a transparência baseado na variável
+        theme = 'dark',
+        transparent = transparent_background,
         italics = {
-          comments = true, -- Itálico para comentários
-          keywords = true, -- Itálico para palavras-chave
-          functions = true, -- Itálico para funções
-          strings = true, -- Itálico para strings
-          variables = true, -- Itálico para variáveis
+          comments = true,
+          keywords = true,
+          functions = true,
+          strings = true,
+          variables = true,
         },
         overrides = {
-          Normal = { bg = transparent_background and 'NONE' or '#202020' }, -- Cor do fundo
-          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' }, -- Cor da seleção
-          -- CursorLine = { bg = transparent_background and "NONE" or "#323232" }, -- Linha do cursor
-          CursorLine = { bg = '#323232' }, -- Linha do cursor
-          LineNr = { fg = '#4B5263' }, -- Gutter foreground
-          NormalFloat = { fg = '#ABB2BF', bg = transparent_background and 'NONE' or '#202020' }, -- Cor do float normal
-          FloatBorder = { fg = '#4c4c4c' }, -- Cor da borda do float
-          Search = { bg = '#606060', fg = '#ABB2BF' }, -- Cor de destaque da busca
-          IncSearch = { bg = '#606060', fg = '#FF657E' }, -- Cor de destaque da busca incremental
+          Normal = { bg = transparent_background and 'NONE' or '#202020' },
+          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
+          -- CursorLine = { bg = transparent_background and "NONE" or "#323232" },
+          CursorLine = { bg = '#323232' },
+          LineNr = { fg = '#4B5263' },
+          NormalFloat = { fg = '#ABB2BF', bg = transparent_background and 'NONE' or '#202020' },
+          FloatBorder = { fg = '#4c4c4c' },
+          Search = { bg = '#606060', fg = '#ABB2BF' },
+          IncSearch = { bg = '#606060', fg = '#FF657E' },
 
           -- FZF
-          FzfLuaBorder = { fg = '#4c4c4c' }, -- Cor da borda do float
+          FzfLuaBorder = { fg = '#4c4c4c' },
+
           -- SNACKS
-          SnacksIndent = { fg = '#4c4c4c' }, -- Cor do indent guides
+          SnacksIndent = { fg = '#4c4c4c' },
           SnacksIndentScope = { fg = '#ABB2BF' },
+          SnacksIndentBlank = { fg = '#ABB2BF' },
+
           SnacksNotifierBorderInfo = { fg = '#444d4c' },
-          SnacksNotifierBorderWarn = { fg = '#D19a66' },
+          SnacksNotifierBorderWarn = { fg = '#c69a71' },
           SnacksNotifierBorderError = { fg = '#BE5046' },
+
           SnacksInputBorder = { fg = '#4c4c4c' },
           SnacksInputTitle = { fg = '#ABB2BF' },
           SnacksInputIcon = { fg = '#FF657E' },
-          SnacksIndentBlank = { fg = '#ABB2BF' }, -- Cor do indent guides
-          SnacksPickerPreviewTitle = { fg = '#FF657E' }, -- Cor do indent guides
-          SnacksPickerTitle = { fg = '#ABB2BF' }, -- Cor do indent guides
+
+          SnacksPickerInputBorder = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#181818' },
+          SnacksPicker = { bg = transparent_background and 'NONE' or '#181818' },
+          SnacksPickerPreviewTitle = { fg = '#FF657E' },
+          SnacksPickerTitle = { fg = '#ABB2BF' },
+          SnacksPickerAuEvent = { fg = '#ABB2BF' },
+          SnacksPickerLinkBroken = { fg = '#ABB2BF' },
 
           -- Which Key
           WhichKeyTitle = { fg = '#FFFFFF' },
           WhichKeyGroup = { fg = '#FF657E' }, --#FF657E #C18EFE
-
           -- NVIM TREE
           NvimTreeNormal = { bg = transparent_background and 'NONE' or '#1A1A1A' },
           NvimTreeEndOfBuffer = { fg = '#1A1A1A', bg = nil }, -- Fundo para o final do buffer no NvimTree
@@ -79,6 +86,10 @@ return {
   },
   {
     'ellisonleao/gruvbox.nvim',
+    config = function() end,
+  },
+  {
+    'Mofiqul/dracula.nvim',
     config = function() end,
   },
 }

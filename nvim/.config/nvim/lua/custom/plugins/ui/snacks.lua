@@ -35,7 +35,7 @@ return {
         {
           pane = 1,
           section = 'terminal',
-          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq-nobg.png --format symbols --size 60x60; sleep .1',
+          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/sakamoto-skinny.jpg --format symbols --size 60x60; --align center; sleep .1',
           -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
           height = 25,
           padding = 1,
@@ -56,18 +56,18 @@ return {
           gap = 1,
           padding = 1,
         },
-        {
-          pane = 2,
-          -- icon = '',
-          title = 'Projects',
-          section = 'projects',
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-          opts = { limit = 3 },
-          indent = 1,
-          padding = 2,
-        },
+        -- {
+        --   pane = 2,
+        --   -- icon = '',
+        --   title = 'Projects',
+        --   section = 'projects',
+        --   enabled = function()
+        --     return not (vim.o.columns < 135)
+        --   end,
+        --   opts = { limit = 3 },
+        --   indent = 1,
+        --   padding = 2,
+        -- },
         {
           pane = 2,
           -- icon = '',
@@ -76,7 +76,7 @@ return {
           enabled = function()
             return not (vim.o.columns < 135)
           end,
-          opts = { limit = 3 },
+          opts = { limit = 10 },
           indent = 2,
           padding = 1,
         },
@@ -90,6 +90,7 @@ return {
     },
     explorer = {
       enabled = true,
+      finder = 'explorer',
       cycle = false,
       replace_netrw = false,
       git_status_open = true,
@@ -97,7 +98,7 @@ return {
       git_untracked = true,
       follow_file = true,
       hidden = false,
-      jump = { close = false },
+      jump = { close = true },
       layout = { preset = 'sidebar', preview = true },
     },
     indent = {
@@ -672,13 +673,13 @@ return {
       desc = 'LSP Workspace Symbols',
     },
     -- Lazygit
-    {
-      '<leader>gg',
-      function()
-        Snacks.lazygit.open()
-      end,
-      desc = 'Lazygit',
-    },
+    -- {
+    --   '<leader>gg',
+    --   function()
+    --     Snacks.lazygit.open()
+    --   end,
+    --   desc = 'Lazygit',
+    -- },
     {
       '<leader>;',
       function()

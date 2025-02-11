@@ -1,101 +1,93 @@
 return {
-  "ThePrimeagen/harpoon",
-  branch = "harpoon2",
-  dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+  'ThePrimeagen/harpoon',
+  branch = 'harpoon2',
+  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
   config = function()
-    local harpoon = require("harpoon")
+    local harpoon = require 'harpoon'
 
     -- Configuração do Harpoon
-    harpoon:setup({
+    harpoon:setup {
       menu = {
         width = vim.api.nvim_win_get_width(0) - 4,
       },
       settings = {
         save_on_toggle = true,
       },
-    })
+    }
 
     -- Mapeamento dos atalhos para Harpoon
     local keys = {
       -- Harpoon Group
       {
-        "<leader>oa",
+        '<leader>oa',
         function()
           harpoon:list():add()
         end,
-        desc = "Harpoon: Add File",
+        desc = 'Harpoon: Add File',
       },
       {
-        "<leader>od",
+        '<leader>od',
         function()
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
-        desc = "Harpoon: Delete",
+        desc = 'Harpoon: Delete',
       },
       {
-        "<leader>ok",
+        '<leader>ok',
         function()
           harpoon:list():next()
         end,
-        desc = "Harpoon: Nav Next",
+        desc = 'Harpoon: Nav Next',
       },
       {
-        "<leader>oj",
+        '<leader>oj',
         function()
           harpoon:list():prev()
         end,
-        desc = "Harpoon: Nav Prev",
+        desc = 'Harpoon: Nav Prev',
       },
-      { "<leader>of", "<cmd>Telescope harpoon marks<cr>", desc = "Harpoon: Marks" },
+      { '<leader>of', '<cmd>Telescope harpoon marks<cr>', desc = 'Harpoon: Marks' },
 
       -- Navegação de arquivos
       {
-        "<C-p>",
+        '<C-p>',
         function()
           harpoon:list():prev()
         end,
-        mode = "n",
-        desc = "Harpoon: Previous Buffer",
+        mode = 'n',
+        desc = 'Harpoon: Previous Buffer',
       },
       {
-        "<C-n>",
+        '<C-n>',
         function()
           harpoon:list():next()
         end,
-        mode = "n",
-        desc = "Harpoon: Next Buffer",
+        mode = 'n',
+        desc = 'Harpoon: Next Buffer',
       },
 
       -- Splits e Tabs no menu do Harpoon
-      {
-        "<C-v>",
-        function()
-          harpoon.ui:select_menu_item({ vsplit = true })
-        end,
-        mode = "n",
-        desc = "Vertical Split",
-      },
-      {
-        "<C-x>",
-        function()
-          harpoon.ui:select_menu_item({ split = true })
-        end,
-        mode = "n",
-        desc = "Horizontal Split",
-      },
-      {
-        "<C-t>",
-        function()
-          harpoon.ui:select_menu_item({ tabedit = true })
-        end,
-        mode = "n",
-        desc = "Open in New Tab",
-      },
+      -- {
+      --   "<C-v>",
+      --   function()
+      --     harpoon.ui:select_menu_item({ vsplit = true })
+      --   end,
+      --   mode = "n",
+      --   desc = "Vertical Split",
+      -- },
+      -- {
+      --   "<C-x>",
+      --   function()
+      --     harpoon.ui:select_menu_item({ split = true })
+      --   end,
+      --   mode = "n",
+      --   desc = "Horizontal Split",
+      -- },
     }
 
     -- Registrar as teclas de atalho
     for _, key in ipairs(keys) do
-      vim.keymap.set(key.mode or "n", key[1], key[2], { desc = key.desc })
+      vim.keymap.set(key.mode or 'n', key[1], key[2], { desc = key.desc })
     end
   end,
 }
