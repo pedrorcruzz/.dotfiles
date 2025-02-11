@@ -46,6 +46,13 @@ function module.apply_to_config(config)
 				name = "home",
 			}),
 		},
+		{
+			key = "w",
+			mods = "OPT|CMD",
+			action = wezterm.action.SwitchToWorkspace({
+				name = "workspace",
+			}),
+		},
 
 		{
 			mods = "LEADER",
