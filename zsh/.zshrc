@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/bin:$PATH"
 
+
 ZSH_THEME="minimal"
 
 # plugins oh my zsh 

@@ -21,7 +21,8 @@ return {
 
     -- Toggle root dir / cwd
     config.defaults.actions.files['ctrl-r'] = function(_, ctx)
-      local cwd_path = nil if ctx.cwd == nil then
+      local cwd_path = nil
+      if ctx.cwd == nil then
         cwd_path = vim.fn.expand '%:p:h'
       end
 
@@ -179,6 +180,7 @@ return {
     -- find
     -- { '<leader>fb', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
     { '<leader>ft', '<cmd>TodoFzfLua<cr>', desc = 'Todo' },
+    { '<leader>fb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Find Buffer' },
     {
       '<leader>fp',
       '<cmd>NeovimProjectDiscover<cr>',
@@ -225,7 +227,7 @@ return {
 
     -- search
     -- { "<leader>sa", "<cmd>FzfLua autocmds<cr>", desc = "Auto Commands" },
-    { '<leader>sb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Buffer' },
+    { '<leader>sb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Search Buffer' },
     -- { "<leader>sc", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
     -- { "<leader>sC", "<cmd>FzfLua commands<cr>", desc = "Commands" },
     -- { "<leader>sd", "<cmd>FzfLua diagnostics_document<cr>", desc = "Document Diagnostics" },
