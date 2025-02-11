@@ -24,11 +24,31 @@ return {
           Search = { bg = '#606060', fg = '#ABB2BF' },
           IncSearch = { bg = '#606060', fg = '#FF657E' },
 
+          --TODO
+          TodoBgTODO = { bg = '#64BAFF', fg = '#111111', bold = true },
+          TodoBgNOTE = { bg = '#C18EFE', fg = '#111111', bold = true },
+          TodoBgWARN = { bg = '#FFA868', fg = '#111111', bold = true },
+          TodoBgFIX = { bg = '#FF657E', fg = '#111111', bold = true },
+          -- TodoBgHACK = { bg = '#C18EFE', fg = '#111111', bold = true },
+
+          --Diagnostic
+          -- DiagnosticError = { fg = '#BE5046' },
+          DiagnosticWarn = { fg = '#FFA868' },
+          DiagnosticInfo = { fg = '#64BAFF' },
+          DiagnosticHint = { fg = '#C18EFE' },
+
+          TodoFgTODO = { fg = '#64BAFF' },
+          TodoFgNOTE = { fg = '#C18EFE' },
+          TodoFgWARN = { fg = '#FFA868' },
+          TodoFgFIX = { fg = '#FF657E' },
+          -- TodoFgHACK = { fg = '#C18EFE' },
+
           -- FZF
           FzfLuaBorder = { fg = '#4c4c4c' },
 
           -- SNACKS
           SnacksIndent = { fg = '#4c4c4c' },
+          SnacksWinKey = { fg = '#4c4c4c' },
           SnacksIndentScope = { fg = '#ABB2BF' },
           SnacksIndentBlank = { fg = '#ABB2BF' },
 
@@ -41,6 +61,7 @@ return {
           SnacksInputIcon = { fg = '#FF657E' },
 
           SnacksPickerInputBorder = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#181818' },
+          SnacksPickerInputSearch = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#181818' },
           SnacksPicker = { bg = transparent_background and 'NONE' or '#181818' },
           SnacksPickerPreviewTitle = { fg = '#FF657E' },
           SnacksPickerTitle = { fg = '#ABB2BF' },

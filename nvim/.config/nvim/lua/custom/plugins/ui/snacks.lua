@@ -1,5 +1,6 @@
 return {
   'folke/snacks.nvim',
+  branch = 'main',
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
@@ -225,6 +226,7 @@ return {
     quickfile = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
+    image = { enabled = true },
     words = { enabled = true },
     scroll = { enabled = false },
     rename = { enabled = true },
@@ -674,7 +676,7 @@ return {
     },
     -- Lazygit
     -- {
-    --   '<leader>gg',
+    --   '<leader>gG',
     --   function()
     --     Snacks.lazygit.open()
     --   end,
