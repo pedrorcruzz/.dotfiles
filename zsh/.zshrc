@@ -10,13 +10,6 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-## oh my posh
-# alguns temas - tokyonight_storm, catppuccin_mocha, star, json
-# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tokyonight_storm.omp.json)"
-# CONFIG PESSOAL DO ohmyposh 
-# bubblesboth.toml, zen.toml, bubblesleft.toml, seta.toml
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/setaleft.toml)"
-
 # Starship 
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
