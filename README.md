@@ -16,6 +16,7 @@ Here are the configurations managed in this repository and their respective dest
 - **yabai**: `~/.config/yabai`
 - **skhd**: `~/.config/skhd`
 - **starship**: `~/.config/starship`
+- **yazi**: `~/.config/yazi`
 - **wezterm**: `~/.config/wezterm`
 
 ### Usage
@@ -47,6 +48,7 @@ rm -rf ~/.config/nvim \
        ~/.gitconfig \
        ~/.tmux.conf \
        ~/.config/fastfetch\
+       ~/.config/yabai \
        ~/.config/yabai \
        ~/.config/skhd \
       ~/.config/starship \
