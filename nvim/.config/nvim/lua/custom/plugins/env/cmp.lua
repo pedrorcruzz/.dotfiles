@@ -147,11 +147,12 @@ return {
             winhighlight = 'Normal:Pmenu,NormalNC:Pmenu', -- Normal:Pmenu,NormalNC:Pmenu
             col_offset = 0,
             side_padding = 1,
-            scrollbar = true,
+            scrollbar = false,
           },
           documentation = {
             border = 'rounded', -- ou "rounded", "double", etc.
             winhighlight = 'Normal:Pmenu,NormalNC:Pmenu', -- Normal:Pmenu,NormalNC:Pmenu
+            scrollbar = false,
           },
         },
       }
