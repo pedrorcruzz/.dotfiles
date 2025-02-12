@@ -40,6 +40,24 @@ function module.apply_to_config(config)
 
 	config.keys = {
 		{
+			key = "o",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action_callback(function(window, _)
+				local overrides = window:get_config_overrides() or {}
+
+				if overrides.window_background_opacity == 0.90 then
+					overrides.window_background_opacity = 1.0
+					overrides.macos_window_background_blur = 0
+				else
+					overrides.window_background_opacity = 0.90
+					overrides.macos_window_background_blur = 25
+				end
+
+				window:set_config_overrides(overrides)
+			end),
+		},
+
+		{
 			key = "y",
 			mods = "OPT|CMD",
 			action = wezterm.action.SwitchToWorkspace({

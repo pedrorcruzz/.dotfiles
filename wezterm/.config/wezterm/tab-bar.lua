@@ -3,15 +3,15 @@ local wezterm = require("wezterm")
 local module = {}
 
 function module.apply_to_config(config)
-	config.tab_bar_at_bottom = true
+	config.tab_bar_at_bottom = false
 	config.use_fancy_tab_bar = true
 	config.hide_tab_bar_if_only_one_tab = true
 	config.show_new_tab_button_in_tab_bar = false
 	config.tab_and_split_indices_are_zero_based = false
 
 	config.window_frame = {
-		inactive_titlebar_bg = "none",
-		active_titlebar_bg = "none",
+		inactive_titlebar_bg = "#1a1a1a", --none
+		active_titlebar_bg = "#1a1a1a", --none
 	}
 
 	local LEFT_END = utf8.char(0xE0B6)

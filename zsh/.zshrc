@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/bin:$PATH"
 
 
-ZSH_THEME="minimal"
+# ZSH_THEME="headline"
 
 # plugins oh my zsh 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Starship 
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+export STARSHIP_CONFIG=$HOME/.config/starship/headline.toml
 
 
 

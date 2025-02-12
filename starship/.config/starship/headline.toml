@@ -1,0 +1,354 @@
+
+command_timeout = 1000
+
+palette = "custom"
+
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+# $os ➜\
+format = """
+$username\
+$directory\
+$fill\
+${custom.giturl}\
+$git_branch\
+$git_state\
+$git_status\
+$python\
+$elixir\
+$dart\
+$lua\
+$nodejs\
+${custom.typescript}\
+$golang\
+$haskell\
+$kotlin\
+$java\
+$php\
+$swift\
+$rust\
+$ruby\
+${custom.docker}\
+${custom.yarn}\
+${custom.pnpm}\
+$bun\
+$package\
+$aws\
+$cmd_duration\
+$line_break\
+$time\
+$character"""
+
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+# ━━
+[fill]
+symbol = " ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
+style = "#52676B" 
+
+[username]
+show_always = true
+style_user = "bold #DB6E9D"  # pink
+style_root = "bold #DB6E9D"
+format = '[](#DB6E9D)[ $user ]($style)'
+
+
+[directory]
+style = "bold #4788C1"
+# format = "in  [$path ]($style)"
+format = "[in](#52676B) [ $path]($style)"
+truncation_length = 1
+truncation_symbol = '' #../
+truncate_to_repo = false
+
+
+[directory.substitutions]
+"~" = "root" 
+# ".dotfiles" =" "
+# "Workspace" = " " 
+# "Documents" = "󰈙"
+# "Downloads" = ""
+# "Music" = "󰝚"
+# "Pictures" = ""
+# "Developer" = "󰲋"
+
+
+[os]
+# symbol = "    " 
+# style = "fg:white bg:#090909"
+# format = "[](#090909)[$symbol]($style)[](#090909)"
+disabled = false
+
+[custom.giturl]
+description = "Display symbol for remote Git server"
+command = """
+GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
+if [[ "$GIT_REMOTE" =~ "github" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "git" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+else
+    GIT_REMOTE_SYMBOL=" "
+fi
+echo "$GIT_REMOTE_SYMBOL "
+"""
+when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+format = "$output"
+
+
+[git_branch]
+symbol = "[](#090909) "
+style = "fg:white bg:#090909"
+format =  ' [$symbol$branch]($style)[](#090909)'
+
+
+# [git_branch]
+# style = 'fg:white'
+# symbol = ' '
+# format = ' [on] [$symbol$branch ]($style)'
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = '🔖 '
+
+
+[git_status]
+conflicted = '[✖(#FF0000)]'
+ahead = '[⬆\($count\)](#ffffff)'  
+behind = '[⬇\($count\)](#8A2BE2)'
+diverged = '[⇵](#FF4500)'
+up_to_date = '[✔](#cacaca)'
+untracked = '[?\($count\)](#3CBDFF)' 
+stashed = '[⧉](#FFD700)'
+modified = '[!\($count\)](#85FCF9)'  
+staged = '[+\($count\)](#B3F8C5)'
+renamed = '[≡](#8A2BE2)'
+deleted = '[-\($count\)](#FFC4C0)'
+
+
+# [git_status]
+# format = ' [($all_status$ahead_behind )]($style)'
+
+
+[aws]
+format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+disabled = false
+style = 'bold blue'
+symbol = " "
+
+[lua]
+symbol = ' '
+format = 'via [ $symbol( $version) ]($style)'
+
+
+[dart]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+[elixir]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+[nodejs]
+symbol = ' '
+format = '[via](#52676B) [ $symbol( $version) ]($style)'
+
+[custom.pnpm]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+[custom.yarn]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+[bun]
+symbol = '🍔 '
+format = '[ $symbol( $version) ]($style)'
+
+[package]
+# symbol = '󰏗 '
+symbol = '📦 '
+format = '[ $symbol( $version) ]($style)'
+
+
+[custom.typescript]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+detect_extensions = ["ts", "tsx"]
+
+
+[c]
+symbol = " "
+format = '[[ $symbol( $version) ]]($style)'
+
+[rust]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[golang]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+detect_files = ["go.mod"]
+
+[php]
+symbol = ""
+format = '[ $symbol( $version) ]($style)'
+
+[java]
+symbol = " "
+format = '[[ $symbol( $version) ]]($style)'
+
+[kotlin]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[haskell]
+symbol = ""
+format = '[[ $symbol( $version) ]]($style)'
+
+[ruby]
+symbol = ' '
+format = '[[ $symbol( $version) ]]($style)'
+
+
+
+[python]
+symbol = ' '
+style = "fg:#F1CA81"
+format = '[via](#52676B) [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
+
+[swift]
+symbol = ' '
+format = 'via [[ $symbol( $version) ]]($style)'
+
+[docker_context]
+# symbol = ' '
+symbol = ' 🐳 '
+style = 'fg:#06969A'
+format = '[$symbol]($style) $path'
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+detect_extensions = ['Dockerfile']
+
+[custom.docker]
+disabled = false
+symbol = '🐳 '
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+
+
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
+
+[time]
+disabled = true
+time_format = "%R"
+style = "bg:peach"
+format = '[[  $time ](fg:white bg:foam)]($style)'
+
+[env_var]
+symbol = "[╭╴](bold fg:white)"
+variable = 'SHELL'
+format = "$symbol"
+disabled = false
+
+[line_break]
+disabled = false
+
+
+[character]
+disabled = false
+success_symbol = '[➜](bold fg:white)' # ➜ ❯
+error_symbol = '[✘](bold fg:red)'
+# success_symbol = '[╰⎯](bold fg:white)'
+# error_symbol = '[╰⎯](bold fg:red)'
+vimcmd_symbol = '[](bold fg:purple)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:lavender)'
+
+
+#palettes
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "purple"
+text = "#111111"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+
+
+
+[palettes.custom]
+sapphire = "#bd93f9"
+text = "#bd93f9"
+blue = "#89b4fa"
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#111111"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = '#50fa7b'
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = 'gray'
+yellow = "#f1fa8c"
+
+
