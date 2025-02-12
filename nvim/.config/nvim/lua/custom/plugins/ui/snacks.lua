@@ -280,11 +280,18 @@ return {
       desc = 'Smart Find Files',
     },
     {
-      '<leader><space>',
+      '<leader><cr>',
       function()
         Snacks.picker.smart()
       end,
       desc = 'Smart Find Files',
+    },
+    {
+      '<leader><space>',
+      function()
+        Snacks.picker.files()
+      end,
+      desc = 'Find Files',
     },
     -- {
     --   '<leader>,',
@@ -315,13 +322,6 @@ return {
       desc = 'Notification History',
     },
     -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-    {
-      '<leader><space>',
-      function()
-        Snacks.picker.smart()
-      end,
-      desc = 'Smart Find Files',
-    },
     {
       '<leader>,',
       function()

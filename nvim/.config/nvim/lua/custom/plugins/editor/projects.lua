@@ -5,8 +5,11 @@ return {
       projects = { -- define project roots
         '~/Workspace/Projects/Work*',
         '~/Workspace/Projects/Personal*',
+        '~/Workspace/Projects/Work/*',
+        '~/Workspace/Projects/Personal/*',
         '~/Workspace/Studies/py-studies*',
         '~/Workspace/Studies/ts-studies*',
+        '~/Workspace*',
       },
       -- Path to store history and sessions
       datapath = vim.fn.stdpath 'data', -- ~/.local/share/nvim/
