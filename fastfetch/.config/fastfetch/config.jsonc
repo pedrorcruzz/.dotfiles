@@ -86,7 +86,7 @@
     {
       "type": "terminal",
 	  "format": "WezTerm",
-      "key": " ├  {#white}TERM",
+      "key": " ├  {#white}TERM",
       "keyColor": "green",
     },
     {
@@ -99,7 +99,7 @@
       "type": "custom",
 	  "format": "Neovim",
       "shell": "/bin/zsh",
-      "key": " ├ 󰅩 {#white}CODE",
+      "key": " ├  {#white}CODE",
       "keyColor": "green",
     },
     // {
@@ -159,7 +159,7 @@
     },
     {
       "type": "battery",
-      "key": " ├ 󱧦 {#white}BAT",
+      "key": " ├ 󱧦 {#white}BATT",
       "keyColor": "yellow",
     },
     "break",
