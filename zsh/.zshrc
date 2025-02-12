@@ -15,7 +15,6 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/headline.toml
 
 
-
 # CONSOLE NINJA 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -120,6 +119,19 @@ cyan="#2CF9ED"
 # thefuck alias
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
+
+# yazi
+export EDITOR="nvim"
+alias y ="yazi"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 
 # Dependências de programação 
