@@ -40,6 +40,18 @@ return {
           -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
           height = 31, --25
           padding = 1,
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+        },
+        {
+          pane = 2,
+          section = 'header',
+          gap = 0,
+          padding = 1,
+          -- enabled = function()
+          --   return not (vim.o.columns < 135)
+          -- end,
         },
         {
           pane = 2,
@@ -51,18 +63,9 @@ return {
         },
         {
           pane = 2,
-          section = 'header',
-          gap = 0,
-          padding = 1,
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
-        {
-          pane = 2,
           icon = ' ',
           section = 'keys',
-          indent = 2,
+          indent = 1,
           gap = 1,
           padding = 1,
         },
@@ -83,11 +86,11 @@ return {
           icon = '',
           title = 'Recent Files',
           section = 'recent_files',
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
+          -- enabled = function()
+          --   return not (vim.o.columns < 135)
+          -- end,
           opts = { limit = 10 },
-          indent = 2,
+          indent = 1,
           padding = 1,
         },
         {
