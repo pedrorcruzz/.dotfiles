@@ -58,7 +58,7 @@ function module.apply_to_config(config)
 		},
 
 		{
-			key = "y",
+			key = "q",
 			mods = "OPT|CMD",
 			action = wezterm.action.SwitchToWorkspace({
 				name = "home",

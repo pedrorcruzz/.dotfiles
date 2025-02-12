@@ -34,12 +34,11 @@ PATH=~/.console-ninja/.bin:$PATH
 
 #Alias Directory
 alias D="~/Workspace"
-alias SSP="~/Workspace/py-studies"
-alias SST="~/Workspace/ts-studies"
-alias NN="~/Workspace/studies-py/neural-networks"
-alias S="~/Workspace/studies"
-alias C="~/Workspace/cesmac"
-alias PC="~/Library/Mobile\ Documents/com~apple~CloudDocs/Projects"
+alias S="~/Workspace/Studies"
+alias C="~/Workspace/Cesmac"
+alias P="~/Workspace/Projects"
+alias PP="~/Workspace/Projects/Personal/"
+alias PW="~/Workspace/Projects/Work/"
 alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 
