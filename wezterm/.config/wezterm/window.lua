@@ -1,9 +1,9 @@
 local module = {}
 
 function module.apply_to_config(config)
-	-- config.window_decorations = "RESIZE"
-	-- config.window_background_opacity = 0.92
-	-- config.macos_window_background_blur = 35
+	config.window_decorations = "RESIZE"
+	config.window_background_opacity = 0.90
+	config.macos_window_background_blur = 35
 	config.window_padding = {
 		left = 0, --16
 		right = 0, --16

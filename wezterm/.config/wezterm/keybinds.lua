@@ -50,7 +50,7 @@ function module.apply_to_config(config)
 					overrides.macos_window_background_blur = 0
 				else
 					overrides.window_background_opacity = 0.90
-					overrides.macos_window_background_blur = 25
+					overrides.macos_window_background_blur = 35
 				end
 
 				window:set_config_overrides(overrides)

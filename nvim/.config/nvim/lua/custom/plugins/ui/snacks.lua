@@ -30,15 +30,15 @@ return {
           ]],
         },
       },
-      width = 60,
+      width = 70,
       sections = {
-        -- { pane = 1, section = 'header', gap = 0, padding = 1 },
         {
           pane = 1,
           section = 'terminal',
-          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/sakamoto-skinny.jpg --format symbols --size 60x60; --align center; sleep .1',
+          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 58x58; --align center; sleep .1',
+
           -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
-          height = 25,
+          height = 31, --25
           padding = 1,
         },
         {
@@ -47,6 +47,15 @@ return {
           padding = 1,
           enabled = function()
             return not (vim.o.columns > 135)
+          end,
+        },
+        {
+          pane = 2,
+          section = 'header',
+          gap = 0,
+          padding = 1,
+          enabled = function()
+            return not (vim.o.columns < 135)
           end,
         },
         {
@@ -71,7 +80,7 @@ return {
         -- },
         {
           pane = 2,
-          -- icon = '',
+          icon = '',
           title = 'Recent Files',
           section = 'recent_files',
           enabled = function()
