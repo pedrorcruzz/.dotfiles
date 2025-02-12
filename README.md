@@ -7,6 +7,7 @@ Welcome to my personal dotfiles repository, where I manage all my configuration 
 
 ### Included Configurations
 Here are the configurations managed in this repository and their respective destinations:
+##### here the ones i use the most:
 
 - **nvim**: `~/.config/nvim`
 - **zsh**: `~/.zshrc`
