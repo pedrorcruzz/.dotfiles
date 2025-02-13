@@ -45,7 +45,7 @@ return {
 
     return {
       'default-title',
-      fzf_colors = true,
+      fzf_colors = false,
       fzf_opts = {
         ['--no-scrollbar'] = true,
       },
@@ -113,13 +113,13 @@ return {
         cwd_prompt = false,
         actions = {
           ['ctrl-i'] = { actions.toggle_ignore },
-          ['ctrl-h'] = { actions.toggle_hidden },
+          ['ctrl-o'] = { actions.toggle_hidden },
         },
       },
       grep = {
         actions = {
           ['ctrl-i'] = { actions.toggle_ignore },
-          ['ctrl-h'] = { actions.toggle_hidden },
+          ['ctrl-o'] = { actions.toggle_hidden },
         },
       },
       lsp = {

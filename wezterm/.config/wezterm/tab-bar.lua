@@ -4,8 +4,8 @@ local module = {}
 
 function module.apply_to_config(config)
 	config.tab_bar_at_bottom = true
-	config.use_fancy_tab_bar = false
-	config.hide_tab_bar_if_only_one_tab = false
+	config.use_fancy_tab_bar = true
+	config.hide_tab_bar_if_only_one_tab = true
 	config.show_new_tab_button_in_tab_bar = false
 	config.tab_and_split_indices_are_zero_based = false
 

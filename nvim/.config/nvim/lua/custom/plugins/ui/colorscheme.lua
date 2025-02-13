@@ -92,8 +92,9 @@ return {
           Underlined = { bg = nil }, -- Sublinhado
         },
       }
-      vim.cmd 'colorscheme min-theme'
-      -- vim.cmd 'colorscheme lunaperche'
+      -- NOTE: COLOCAR O TEMA
+      -- vim.cmd 'colorscheme min-theme'
+      vim.cmd 'colorscheme lunaperche'
     end,
   },
   {
