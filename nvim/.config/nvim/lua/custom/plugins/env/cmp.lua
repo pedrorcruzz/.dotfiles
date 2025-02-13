@@ -7,16 +7,12 @@ return {
       {
         'L3MON4D3/LuaSnip',
         build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
           end
           return 'make install_jsregexp'
         end)(),
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
           {
             'rafamadriz/friendly-snippets',
             config = function()
@@ -26,7 +22,6 @@ return {
               luasnip.filetype_extend('vue', { 'vue' })
               luasnip.filetype_extend('django', { 'django' })
               luasnip.filetype_extend('django', { 'python' })
-              luasnip.filetype_extend('vue', { 'javascript' })
               require('luasnip.loaders.from_vscode').lazy_load()
             end,
           },
@@ -36,6 +31,7 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'onsails/lspkind-nvim',
+      'kristijanhusak/vim-dadbod-completion',
       {
         'roobert/tailwindcss-colorizer-cmp.nvim',
         config = function()
@@ -62,18 +58,18 @@ return {
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
         mapping = cmp.mapping.preset.insert {
-          ['<C-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-          ['<C-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<S-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+          ['<S-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+          ['<S-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<S-f>'] = cmp.mapping.scroll_docs(4),
           ['<CR>'] = cmp.mapping.confirm { select = true },
           ['<C-Space>'] = cmp.mapping.complete {},
-          ['<C-l>'] = cmp.mapping(function()
+          ['<S-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
             end
           end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
+          ['<S-h>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             end
@@ -143,19 +139,26 @@ return {
         },
         window = {
           completion = {
-            border = 'rounded', -- ou "rounded", "double", single. none
-            winhighlight = 'Normal:Pmenu,NormalNC:Pmenu', -- Normal:Pmenu,NormalNC:Pmenu
+            border = 'rounded',
+            winhighlight = 'Normal:Pmenu,NormalNC:Pmenu',
             col_offset = 0,
             side_padding = 1,
             scrollbar = false,
           },
           documentation = {
-            border = 'rounded', -- ou "rounded", "double", etc.
-            winhighlight = 'Normal:Pmenu,NormalNC:Pmenu', -- Normal:Pmenu,NormalNC:Pmenu
+            border = 'rounded',
+            winhighlight = 'Normal:Pmenu,NormalNC:Pmenu',
             scrollbar = false,
           },
         },
       }
+      --DBUI SQL
+      cmp.setup.filetype({ 'sql', 'mysql', 'plsql' }, {
+        sources = {
+          { name = 'vim-dadbod-completion' },
+          { name = 'buffer' },
+        },
+      })
     end,
   },
 }
