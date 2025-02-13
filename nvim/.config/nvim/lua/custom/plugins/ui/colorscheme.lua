@@ -49,6 +49,12 @@ return {
           TodoFgWARN = { fg = '#FFA868' },
           TodoFgFIX = { fg = '#FF657E' },
           -- TodoFgHACK = { fg = '#C18EFE' },
+          --
+          -- Snacks Notifier
+          SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
+          SnacksNotifierBorderWarn = { fg = '#FFA868' },
+          SnacksNotifierBorderError = { fg = '#FF657E' },
+          SnacksNotifierTitleInfo = { fg = '#ABB2BF' },
 
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },

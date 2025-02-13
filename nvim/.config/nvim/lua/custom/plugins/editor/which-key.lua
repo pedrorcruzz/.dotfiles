@@ -28,6 +28,7 @@ return {
       { '<leader>l', group = 'LSP', icon = '' },
       { '<leader>o', group = 'Harpoon', icon = '󱝩' },
       { '<leader>m', group = 'Window', icon = '󰶛' },
+      { '<leader>c', group = 'Tabs', icon = '󱦞' },
       { '<leader>p', group = 'Copilot', icon = '' },
       { '<leader>d', group = 'Debug' },
       { '<leader>d_', hidden = true },
@@ -45,7 +46,7 @@ return {
 
   keys = {
     { '<leader>w', '<cmd>w!<cr>', desc = 'Save' },
-    { '<leader>c', '<cmd>close<cr>', desc = 'Close Window' },
+    -- { '<leader>c', '<cmd>close<cr>', desc = 'Close Window' },
     -- { "<leader>;", "<cmd>Dashboard<cr>", desc = "Home" },
     { '<leader>h', '<cmd>nohlsearch<cr>', desc = 'No Highlight' },
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
@@ -59,6 +60,13 @@ return {
     --Bufers
     { '<leader>[', '<cmd>bprevious<cr>', desc = 'Previous' },
     { '<leader>]', '<cmd>bnext<cr>', desc = 'Next' },
+
+    --Tabs
+    { '<leader>ca', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
+    { '<leader>ch', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
+    { '<leader>cl', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
+    { '<leader>cc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
+    { '<leader>cC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
 
     -- Neotest
     -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
