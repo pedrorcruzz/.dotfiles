@@ -1,3 +1,9 @@
+local function set_theme(theme)
+  vim.cmd('colorscheme ' .. theme)
+end
+
+local default_theme = 'min-theme'
+
 return {
   {
     'datsfilipe/min-theme.nvim',
@@ -54,31 +60,6 @@ return {
           -- FZF
           FzfLuaBorder = { fg = '#4c4c4c' },
 
-          -- SNACKS
-          SnacksIndent = { fg = '#4c4c4c' },
-          SnacksWinKey = { fg = '#4c4c4c' },
-          SnacksIndentScope = { fg = '#ABB2BF' },
-          SnacksIndentBlank = { fg = '#ABB2BF' },
-
-          SnacksNotifierBorderInfo = { fg = '#444d4c' },
-          SnacksNotifierBorderWarn = { fg = '#c69a71' },
-          SnacksNotifierBorderError = { fg = '#BE5046' },
-
-          SnacksInputBorder = { fg = '#4c4c4c' },
-          SnacksInputTitle = { fg = '#ABB2BF' },
-          SnacksInputIcon = { fg = '#FF657E' },
-
-          SnacksPickerInputBorder = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#181818' },
-          SnacksPickerInputSearch = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#181818' },
-          SnacksPicker = { bg = transparent_background and 'NONE' or '#181818' },
-          SnacksPickerPreviewTitle = { fg = '#FF657E' },
-          SnacksPickerTitle = { fg = '#ABB2BF' },
-          SnacksPickerAuEvent = { fg = '#ABB2BF' },
-          SnacksPickerLinkBroken = { fg = '#ABB2BF' },
-
-          -- Which Key
-          WhichKeyTitle = { fg = '#FFFFFF' },
-          WhichKeyGroup = { fg = '#FF657E' }, --#FF657E #C18EFE
           -- NVIM TREE
           NvimTreeNormal = { bg = transparent_background and 'NONE' or '#1A1A1A' },
           NvimTreeEndOfBuffer = { fg = '#1A1A1A', bg = nil }, -- Fundo para o final do buffer no NvimTree
@@ -92,57 +73,51 @@ return {
           Underlined = { bg = nil }, -- Sublinhado
         },
       }
-      -- NOTE: COLOCAR O TEMA
-      -- vim.cmd 'colorscheme min-theme'
-      vim.cmd 'colorscheme lunaperche'
+      set_theme(default_theme)
     end,
   },
   {
     'catppuccin/nvim',
     config = function()
-      local transparent_background = true
       require('catppuccin').setup {
         background = { light = 'latte', dark = 'mocha' },
-        transparent_background = transparent_background, -- Ativa o fundo transparente
+        transparent_background = true,
         term_colors = true,
         styles = {
           comments = { 'italic' },
           functions = { 'bold' },
           keywords = { 'italic' },
-          -- Outras configurações...
         },
       }
-      -- vim.cmd 'colorscheme catppuccin'
     end,
   },
   {
     'ellisonleao/gruvbox.nvim',
-    config = function()
-      -- vim.cmd 'colorscheme gruvbox'
-    end,
+    config = function() end,
   },
   {
     'Mofiqul/dracula.nvim',
-    config = function()
-      -- vim.cmd 'colorscheme dracula'
-    end,
+    config = function() end,
   },
   {
     'killitar/obscure.nvim',
     lazy = false,
     priority = 1000,
     opts = {},
-    config = function()
-      -- vim.cmd 'colorscheme obscure'
-    end,
+    config = function() end,
   },
   {
     'aktersnurra/no-clown-fiesta.nvim',
     lazy = false,
     priority = 1000,
     opts = {},
-    config = function()
-      -- vim.cmd 'colorscheme obscure'
-    end,
+    config = function() end,
+  },
+  {
+    'projekt0n/github-nvim-theme',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function() end,
   },
 }
