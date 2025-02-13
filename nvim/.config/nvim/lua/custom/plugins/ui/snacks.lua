@@ -296,9 +296,9 @@ return {
     {
       '<leader>/',
       function()
-        Snacks.picker.grep_buffers()
+        Snacks.picker.lines()
       end,
-      desc = 'Grep Buffers',
+      desc = 'Buffer Lines',
     },
     -- {
     --   '<leader>/',

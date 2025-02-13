@@ -56,6 +56,10 @@ return {
           SnacksNotifierBorderError = { fg = '#FF657E' },
           SnacksNotifierTitleInfo = { fg = '#ABB2BF' },
 
+          SnacksPickerTitle = { fg = '#FFFFFF' },
+          SnacksPickerInputTitle = { fg = '#ABB2BF' },
+          SnacksPickerToggle = { fg = '#FF657E' },
+
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
           NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
