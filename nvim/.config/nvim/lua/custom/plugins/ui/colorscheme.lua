@@ -54,17 +54,21 @@ return {
           SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
           SnacksNotifierBorderWarn = { fg = '#FFA868' },
           SnacksNotifierBorderError = { fg = '#FF657E' },
-          SnacksNotifierTitleInfo = { fg = '#ABB2BF' },
+          SnacksNotifierTitleInfo = { fg = '#FFFFFF' },
 
           SnacksPickerTitle = { fg = '#FFFFFF' },
           SnacksPickerInputTitle = { fg = '#ABB2BF' },
           SnacksPickerToggle = { fg = '#FF657E' },
 
+          SnacksInputIcon = { fg = '#FF657E' },
+          SnacksInputTitle = { fg = '#FFFFFF' },
+          SnacksInputBorder = { fg = '#4c4c4c' },
+
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
           NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
-          NoiceCmdlinePopupTitleCmdline = { fg = '#ABB2BF' },
-          NoiceCmdlineTitle = { fg = '#ABB2BF' },
+          NoiceCmdlinePopupTitleCmdline = { fg = '#FFFFFF' },
+          NoiceCmdlineTitle = { fg = '#FFFFFF' },
           NoiceCmdlineIcon = { fg = '#FF657E' }, --#FFFFFF
 
           -- FZF
