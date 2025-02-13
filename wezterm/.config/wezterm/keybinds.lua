@@ -56,16 +56,15 @@ function module.apply_to_config(config)
 				window:set_config_overrides(overrides)
 			end),
 		},
-
 		{
-			key = "q",
+			key = "[",
 			mods = "OPT|CMD",
 			action = wezterm.action.SwitchToWorkspace({
-				name = "home",
+				name = "default",
 			}),
 		},
 		{
-			key = "w",
+			key = "]",
 			mods = "OPT|CMD",
 			action = wezterm.action.SwitchToWorkspace({
 				name = "workspace",

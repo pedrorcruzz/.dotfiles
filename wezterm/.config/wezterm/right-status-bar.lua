@@ -102,6 +102,7 @@ function module.apply_to_config(config)
 		local workspace_icon = ""
 		if window:active_workspace() == "default" then
 			workspace_icon = SATURN_ICON
+			workspace_name = "Home"
 		else
 			workspace_icon = ROBOT_ICON
 			workspace_name = window:active_workspace()
@@ -120,7 +121,7 @@ function module.apply_to_config(config)
 		end
 
 		-- Foreground color for the text across the fade
-		local text_fg = "#c0c0c0"
+		local text_fg = "#fff"
 
 		-- The elements to be formatted
 		local elements = {}
@@ -144,7 +145,7 @@ function module.apply_to_config(config)
 				table.insert(elements, { Text = " " .. tostring(battery_value) .. " " })
 			else
 				if is_last then
-					text_fg = "#cba6f7"
+					text_fg = "#fff"
 				end
 
 				table.insert(elements, { Foreground = { Color = text_fg } })

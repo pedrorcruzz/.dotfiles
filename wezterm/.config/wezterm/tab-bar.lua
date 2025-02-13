@@ -3,9 +3,9 @@ local wezterm = require("wezterm")
 local module = {}
 
 function module.apply_to_config(config)
-	config.tab_bar_at_bottom = false
-	config.use_fancy_tab_bar = true
-	config.hide_tab_bar_if_only_one_tab = true
+	config.tab_bar_at_bottom = true
+	config.use_fancy_tab_bar = false
+	config.hide_tab_bar_if_only_one_tab = false
 	config.show_new_tab_button_in_tab_bar = false
 	config.tab_and_split_indices_are_zero_based = false
 
@@ -17,10 +17,10 @@ function module.apply_to_config(config)
 	local LEFT_END = utf8.char(0xE0B6)
 	local RIGHT_END = utf8.char(0xE0B4)
 
-	local active_tab_bg_color = "#1a1a1a" -- "#bac2de"
-	local inactive_tab_text_color = "#585b70"
-	local active_tab_fg_color = "#fff" -- "#22222B"
-	local inactive_tab_bg_color = "#22222B"
+	local active_tab_bg_color = "#4c4c4c" -- "#bac2de"
+	local inactive_tab_text_color = "#999999"
+	local active_tab_fg_color = "#ffffff" -- "#22222B"
+	local inactive_tab_bg_color = "#1a1a1a"
 
 	local function tab_title(tab_info)
 		local title = tab_info.tab_title

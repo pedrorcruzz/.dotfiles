@@ -36,6 +36,10 @@ return {
       { '<leader>g', group = 'Git', icon = { name = 'git', cat = 'filetype' } },
       { '<leader>r', group = 'Refactor' },
       { '<leader>s', group = 'Search' },
+      { '<leader>1', group = 'Focus Left', icon = '󰛁' },
+      { '<leader>2', group = 'Focus Right', icon = '󰛂' },
+      { '<leader>3', group = 'Focus Down', icon = '󰛀' },
+      { '<leader>4', group = 'Focus Up', icon = '󰛃' },
     }
   end,
 
@@ -47,8 +51,7 @@ return {
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
 
     --Wrap
-    { "<leader>'e", '<cmd>:set wrap<cr>', desc = 'Wrap: Enable' },
-    { "<leader>'d", '<cmd>Dashboard<cr>', desc = 'Wrap: Disable' },
+    { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
 
     -- Yazi
     -- { "<leader>y", "<cmd>Yazi<cr>", desc = "Yazi" },
@@ -79,6 +82,10 @@ return {
     -- { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
 
     --Window
+    { '<leader>1', '<cmd>wincmd h<cr>', desc = 'Focus Left' },
+    { '<leader>2', '<cmd>wincmd l<cr>', desc = 'Focus Right' },
+    { '<leader>3', '<cmd>wincmd j<cr>', desc = 'Focus Down' },
+    { '<leader>4', '<cmd>wincmd k<cr>', desc = 'Focus Up' },
     { '<leader>mq', '<cmd>vsplit<cr>', desc = 'Split Vertical' },
     { '<leader>mn', '<cmd>split<cr>', desc = 'Split Horizontal' },
     { '<leader>mc', '<cmd>only<cr>', desc = 'Close all Others' },

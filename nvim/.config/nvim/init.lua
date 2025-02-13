@@ -41,31 +41,3 @@ require('lazy').setup({
   },
 })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function()
-    if vim.fn.bufname() == 'snacks_dashboard' then
-      vim.cmd 'quit'
-    end
-  end,
-})
-
-vim.opt.confirm = true
-
--- vim.bo.tabstop = 3
--- vim.bo.shiftwidth = 3
--- vim.bo.expandtab = true
-
---Color cmdline
-
--- Borders
-vim.defer_fn(function()
-  vim.cmd [[highlight NoiceCmdlinePopupBorder guifg=#808080]]
-end, 100)
-
--- Arrow
-vim.defer_fn(function()
-  vim.cmd [[highlight NoiceCmdlineIcon guifg=#FFFFFF]]
-end, 100)
-
--- Emmet
-vim.g.user_emmet_leader_key = '<C-y>'

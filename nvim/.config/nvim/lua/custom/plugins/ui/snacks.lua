@@ -1,6 +1,6 @@
 return {
   'folke/snacks.nvim',
-  branch = 'main',
+  -- branch = 'main',
   priority = 1000,
   lazy = false,
   ---@type snacks.Config
@@ -86,9 +86,9 @@ return {
           icon = '',
           title = 'Recent Files',
           section = 'recent_files',
-          -- enabled = function()
-          --   return not (vim.o.columns < 135)
-          -- end,
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
           opts = { limit = 10 },
           indent = 1,
           padding = 1,
@@ -293,13 +293,13 @@ return {
       end,
       desc = 'Find Files',
     },
-    -- {
-    --   '<leader>,',
-    --   function()
-    --     Snacks.picker.buffers()
-    --   end,
-    --   desc = 'Buffers',
-    -- },
+    {
+      '<leader>/',
+      function()
+        Snacks.picker.grep_buffers()
+      end,
+      desc = 'Grep Buffers',
+    },
     -- {
     --   '<leader>/',
     --   function()
@@ -322,20 +322,6 @@ return {
       desc = 'Notification History',
     },
     -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-    {
-      '<leader>,',
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = 'Buffers',
-    },
-    {
-      '<leader>/',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
-    },
     {
       '<leader>:',
       function()
@@ -466,7 +452,7 @@ return {
       desc = 'Buffer Lines',
     },
     {
-      '<leader>sB',
+      '<leader>sb',
       function()
         Snacks.picker.grep_buffers()
       end,
@@ -702,7 +688,7 @@ return {
       desc = 'Dashboard',
     },
     {
-      '<leader>/',
+      '<leader>,',
       function()
         Snacks.notifier.hide()
       end,

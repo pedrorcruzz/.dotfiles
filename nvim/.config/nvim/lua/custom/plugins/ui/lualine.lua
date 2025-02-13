@@ -19,6 +19,8 @@ return {
       replace = '#ffa066',
       command = '#75bf63',
       git = '#FFFFFF',
+      fgBlack = '#FEFEFE',
+      bgBlack = '#1a1a1a',
     }
 
     local function lsp_status()
@@ -41,25 +43,25 @@ return {
       options = {
         theme = {
           normal = {
-            a = { fg = colors.darkgray, bg = colors.normal, gui = 'bold' },
+            a = { fg = colors.fgBlack, bg = colors.bgBlack, gui = 'bold' },
             b = { fg = colors.branchfg, bg = colors.branchbg },
             c = { fg = colors.gray, bg = colors.innerbg },
             y = { fg = colors.branchfg, bg = colors.branchbg },
           },
           insert = {
-            a = { fg = colors.darkgray, bg = colors.insert, gui = 'bold' },
+            a = { fg = colors.fgBlack, bg = colors.bgBlack, gui = 'bold' },
           },
           visual = {
-            a = { fg = colors.darkgray, bg = colors.visual, gui = 'bold' },
+            a = { fg = colors.fgBlack, bg = colors.bgBlack, gui = 'bold' },
           },
           replace = {
-            a = { fg = colors.darkgray, bg = colors.replace, gui = 'bold' },
+            a = { fg = colors.fgBlack, bg = colors.bgBlack, gui = 'bold' },
           },
           command = {
-            a = { fg = colors.darkgray, bg = colors.command, gui = 'bold' },
+            a = { fg = colors.fgBlack, bg = colors.bgBlack, gui = 'bold' },
           },
           inactive = {
-            a = { fg = colors.gray, bg = colors.outerbg, gui = 'bold' },
+            a = { fg = colors.fgBlack, bg = colors.outerbg, gui = 'bold' },
           },
         },
         section_separators = { left = '', right = '' },
@@ -70,7 +72,7 @@ return {
           {
             'mode',
             fmt = function(mode)
-              return '󰊠 ' .. mode --  󰨈   󰠥 󰊠
+              return ' ' .. mode --  󰨈   󰠥 󰊠
             end,
             separator = { left = '', right = '' },
             right_padding = 2,

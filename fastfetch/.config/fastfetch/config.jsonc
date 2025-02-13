@@ -99,7 +99,7 @@
       "type": "custom",
 	  "format": "Neovim",
       "shell": "/bin/zsh",
-      "key": " ├  {#white}CODE",
+      "key": " ├ 󰲌 {#white}EDIT",
       "keyColor": "green",
     },
     // {
@@ -111,7 +111,7 @@
     {
       "type": "media",
       // "format": "Spotify",
-      "key": " ├  {#white}PLAY",
+      "key": " ├ 󰴙 {#white}PLAY",
       "keyColor": "green",
     },
     // {

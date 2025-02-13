@@ -23,6 +23,7 @@ return {
           FloatBorder = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#ABB2BF' },
           IncSearch = { bg = '#606060', fg = '#FF657E' },
+          AvanteInlineHint = { fg = '#ABB2BF' },
 
           --TODO
           TodoBgTODO = { bg = '#64BAFF', fg = '#111111', bold = true },
@@ -42,6 +43,13 @@ return {
           TodoFgWARN = { fg = '#FFA868' },
           TodoFgFIX = { fg = '#FF657E' },
           -- TodoFgHACK = { fg = '#C18EFE' },
+
+          -- Noice
+          NoiceConfirmBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePopupTitleCmdline = { fg = '#ABB2BF' },
+          NoiceCmdlineTitle = { fg = '#ABB2BF' },
+          NoiceCmdlineIcon = { fg = '#FF657E' }, --#FFFFFF
 
           -- FZF
           FzfLuaBorder = { fg = '#4c4c4c' },
@@ -84,7 +92,8 @@ return {
           Underlined = { bg = nil }, -- Sublinhado
         },
       }
-      vim.cmd 'colorscheme min-theme' -- Aplica o tema
+      vim.cmd 'colorscheme min-theme'
+      -- vim.cmd 'colorscheme lunaperche'
     end,
   },
   {
@@ -107,10 +116,32 @@ return {
   },
   {
     'ellisonleao/gruvbox.nvim',
-    config = function() end,
+    config = function()
+      -- vim.cmd 'colorscheme gruvbox'
+    end,
   },
   {
     'Mofiqul/dracula.nvim',
-    config = function() end,
+    config = function()
+      -- vim.cmd 'colorscheme dracula'
+    end,
+  },
+  {
+    'killitar/obscure.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      -- vim.cmd 'colorscheme obscure'
+    end,
+  },
+  {
+    'aktersnurra/no-clown-fiesta.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      -- vim.cmd 'colorscheme obscure'
+    end,
   },
 }

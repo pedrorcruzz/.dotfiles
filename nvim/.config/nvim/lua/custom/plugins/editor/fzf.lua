@@ -180,7 +180,14 @@ return {
     -- find
     -- { '<leader>fb', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
     { '<leader>ft', '<cmd>TodoFzfLua<cr>', desc = 'Todo' },
-    { '<leader>fb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Find Buffer' },
+    {
+      '<leader>fb',
+      function()
+        Snacks.picker.grep_buffers()
+      end,
+      desc = 'Find Buffers',
+    },
+
     {
       '<leader>fp',
       '<cmd>NeovimProjectDiscover<cr>',
@@ -227,7 +234,7 @@ return {
 
     -- search
     -- { "<leader>sa", "<cmd>FzfLua autocmds<cr>", desc = "Auto Commands" },
-    { '<leader>sb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Search Buffer' },
+    -- { '<leader>sb', '<cmd>FzfLua grep_curbuf<cr>', desc = 'Search Buffer' },
     -- { "<leader>sc", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
     -- { "<leader>sC", "<cmd>FzfLua commands<cr>", desc = "Commands" },
     -- { "<leader>sd", "<cmd>FzfLua diagnostics_document<cr>", desc = "Document Diagnostics" },
