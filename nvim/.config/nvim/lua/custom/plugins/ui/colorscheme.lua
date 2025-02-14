@@ -73,6 +73,10 @@ return {
           NoiceCmdlineTitle = { fg = '#FFFFFF' },
           NoiceCmdlineIcon = { fg = '#FF657E' }, --#FFFFFF
 
+          -- WhichKey
+          WhichKeyTitle = { fg = '#ABB2BF' },
+          WhichKeyGroup = { fg = '#FF657E' },
+
           -- FZF
           FzfLuaBorder = { fg = '#4c4c4c' },
 
