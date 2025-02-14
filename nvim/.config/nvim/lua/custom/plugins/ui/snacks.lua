@@ -39,7 +39,7 @@ return {
           cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 58x58; --align center; sleep .1',
 
           -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
-          height = 31, --25
+          height = 37, --25
           padding = 1,
           enabled = function()
             return not (vim.o.columns < 135)
@@ -57,9 +57,9 @@ return {
         {
           pane = 2,
           section = 'startup',
-          padding = 1,
+          padding = 3,
           enabled = function()
-            return not (vim.o.columns > 135)
+            return not (vim.o.columns < 135)
           end,
         },
         {
@@ -72,7 +72,7 @@ return {
         },
         -- {
         --   pane = 2,
-        --   -- icon = '',
+        --   icon = '',
         --   title = 'Projects',
         --   section = 'projects',
         --   enabled = function()
@@ -95,9 +95,11 @@ return {
           padding = 1,
         },
         {
+          pane = 2,
           section = 'startup',
+          padding = 1,
           enabled = function()
-            return not (vim.o.columns < 135)
+            return not (vim.o.columns > 135)
           end,
         },
       },

@@ -60,9 +60,9 @@ return {
 
           SnacksPickerTitle = { fg = '#FFFFFF' },
           SnacksPickerInputTitle = { fg = '#ABB2BF' },
-          SnacksPickerToggle = { fg = '#FF657E' },
+          SnacksPickerToggle = { fg = '#ABB2BF' },
 
-          SnacksInputIcon = { fg = '#FF657E' },
+          SnacksInputIcon = { fg = '#ABB2BF' }, --#FF657E
           SnacksInputTitle = { fg = '#FFFFFF' },
           SnacksInputBorder = { fg = '#4c4c4c' },
 
@@ -85,14 +85,19 @@ return {
           NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
           NoiceCmdlinePopupTitleCmdline = { fg = '#FFFFFF' },
           NoiceCmdlineTitle = { fg = '#FFFFFF' },
-          NoiceCmdlineIcon = { fg = '#FF657E' }, --#FFFFFF
+          NoiceCmdlineIcon = { fg = '#ABB2BF' }, --#FFFFFF
 
           -- WhichKey
           WhichKeyTitle = { fg = '#ABB2BF' },
-          WhichKeyGroup = { fg = '#FF657E' },
+          WhichKeyGroup = { fg = '#ABB2BF' },
 
           -- FZF
           FzfLuaBorder = { fg = '#4c4c4c' },
+          FzfLuaHeaderText = { fg = '#ABB2BF' },
+          FzfLuaDirIcon = { fg = '#ABB2BF' },
+          FzfLuaHeaderBind = { fg = '#FFFFFF' },
+          FzfLuaTabTitle = { fg = '#FFFFFF' },
+          FzfLuaSearch = { fg = '#FFFFFF' },
 
           -- NVIM TREE
           NvimTreeNormal = { bg = transparent_background and 'NONE' or '#1A1A1A' },
