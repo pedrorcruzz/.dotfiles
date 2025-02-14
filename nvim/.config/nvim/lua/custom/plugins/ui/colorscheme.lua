@@ -66,6 +66,10 @@ return {
           SnacksInputTitle = { fg = '#FFFFFF' },
           SnacksInputBorder = { fg = '#4c4c4c' },
 
+          SnacksIndent = { fg = '#4c4c4c' },
+          SnacksIndentScope = { fg = '#ABB2BF' },
+          SnacksIndentUnderline_SnacksIndentScope = { fg = '#ABB2BF' },
+
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
           NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },

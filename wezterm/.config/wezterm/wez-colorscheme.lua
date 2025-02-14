@@ -8,7 +8,7 @@ function module.apply_to_config(config)
 		},
 		cursor_bg = "#FFF",
 		cursor_border = "#FFF",
-		background = "#1A1A1A", -- "#1E1E1E",
+		background = "#1A1A1A", -- "#1E1E1E", #1A1A1A
 	}
 end
 
