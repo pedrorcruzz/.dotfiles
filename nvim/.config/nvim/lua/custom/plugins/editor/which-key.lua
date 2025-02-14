@@ -61,7 +61,7 @@ return {
     --Obsidian
 
     { '<leader>zo', '<cmd>e ~/Workspace/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
-    { '<leader>zO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obisidian' },
+    { '<leader>zO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
     { '<leader>zd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
     { '<leader>zf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
     { '<leader>zs', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
