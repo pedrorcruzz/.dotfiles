@@ -70,6 +70,16 @@ return {
           SnacksIndentScope = { fg = '#ABB2BF' },
           SnacksIndentUnderline_SnacksIndentScope = { fg = '#ABB2BF' },
 
+          SnacksDashboardDesc = { fg = '#FFFFFF' },
+          SnacksDashboardDir = { fg = '#4c4c4c' },
+          SnacksDashboardHeader = { fg = '#FF657E' },
+          SnacksDashboardFooter = { fg = '#FF657E' },
+          SnacksDashboardIcon = { fg = '#FF657E' },
+          SnacksDashboardFile = { fg = '#FFFFFF' },
+          SnacksDashboardTitle = { fg = '#FFFFFF' },
+          -- SnacksDashboardSpecial = { fg = '#FF657E' },
+          SnacksDashboardNormal = { fg = '#111111' },
+
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
           NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
