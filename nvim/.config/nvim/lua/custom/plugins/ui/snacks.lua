@@ -11,6 +11,7 @@ return {
       preset = {
         keys = {
           { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
+          { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Workspace/second-brain/Segundo\\ Cérebro.md' },
           { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
           { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = ' ', key = 'w', desc = 'Worktree', action = ':Yazi cwd' },
@@ -67,7 +68,7 @@ return {
           section = 'keys',
           indent = 1,
           gap = 1,
-          padding = 1,
+          padding = 3,
         },
         -- {
         --   pane = 2,

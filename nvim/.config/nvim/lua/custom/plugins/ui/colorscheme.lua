@@ -31,6 +31,9 @@ return {
           IncSearch = { bg = '#606060', fg = '#FF657E' },
           AvanteInlineHint = { fg = '#ABB2BF' },
 
+          --UNDERLINE CMP PREVIEW
+          ['@punctuation.special'] = { fg = '#323232' },
+
           --TODO
           TodoBgTODO = { bg = '#64BAFF', fg = '#111111', bold = true },
           TodoBgNOTE = { bg = '#C18EFE', fg = '#111111', bold = true },
@@ -43,7 +46,6 @@ return {
           DiagnosticWarn = { fg = '#FFA868' },
           DiagnosticInfo = { fg = '#64BAFF' },
           DiagnosticHint = { fg = '#C18EFE' },
-
           TodoFgTODO = { fg = '#64BAFF' },
           TodoFgNOTE = { fg = '#C18EFE' },
           TodoFgWARN = { fg = '#FFA868' },

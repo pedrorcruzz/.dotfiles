@@ -14,6 +14,7 @@ return {
       { '<leader>', group = ' 󰠥 ROSA NVIM' }, --󰧵
       { '<leader>e', group = 'File Explorer', icon = '' },
       { "<leader>'", group = 'Wrap', icon = '󰭷' },
+      { '<leader>z', group = 'Obsidian', icon = '' },
       { '<leader>v', group = 'Auto Save', icon = '' },
       { '<leader>b', group = 'DBUI', icon = '' },
       { '<leader>x', group = 'Mini Explorer', icon = '' },
@@ -56,6 +57,18 @@ return {
 
     -- Yazi
     -- { "<leader>y", "<cmd>Yazi<cr>", desc = "Yazi" },
+
+    --Obsidian
+
+    { '<leader>zo', '<cmd>e ~/Workspace/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
+    { '<leader>zO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obisidian' },
+    { '<leader>zd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
+    { '<leader>zf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
+    { '<leader>zs', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
+    { '<leader>zr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
+    { '<leader>za', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note' },
+    { '<leader>zm', '<cmd>ObsidianToggleCheckbox<cr>', desc = 'Toggle Checkbox' },
+    { '<leader>zp', '<cmd>ObsidianPasteImage<cr>', desc = 'Paste Image' },
 
     --Bufers
     { '<leader>[', '<cmd>bprevious<cr>', desc = 'Previous' },
