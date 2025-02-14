@@ -31,6 +31,7 @@ return {
           IncSearch = { bg = '#606060', fg = '#FF657E' },
           AvanteInlineHint = { fg = '#ABB2BF' },
 
+          ['@markup.heading.1.markdown'] = { fg = '#ABB2BF' },
           --UNDERLINE CMP PREVIEW
           ['@punctuation.special'] = { fg = '#323232' },
 
@@ -82,8 +83,10 @@ return {
 
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePrompt = { fg = '#4c4c4c' },
           NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
           NoiceCmdlinePopupTitleCmdline = { fg = '#FFFFFF' },
+          NoiceCmdlinePopupTitle = { fg = '#FFFFFF' },
           NoiceCmdlineTitle = { fg = '#FFFFFF' },
           NoiceCmdlineIcon = { fg = '#ABB2BF' }, --#FFFFFF
 
