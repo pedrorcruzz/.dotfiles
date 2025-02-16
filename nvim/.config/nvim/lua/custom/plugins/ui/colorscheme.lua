@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'lunaperche'
 
 return {
   {

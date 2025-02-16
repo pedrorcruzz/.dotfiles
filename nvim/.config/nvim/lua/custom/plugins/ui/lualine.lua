@@ -84,7 +84,7 @@ return {
           {
             'diff',
             -- symbols = { added = " ", modified = "● ", removed = "✖ ", untracked = "✱" },
-            symbols = { added = ' ', modified = '󰝤 ', removed = ' ', untracked = '✱' },
+            symbols = { added = ' ', modified = ' ', removed = ' ', untracked = '󰝤' },
           },
         },
         lualine_x = {

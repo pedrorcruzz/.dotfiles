@@ -149,11 +149,11 @@ return {
       ---@field style? "out"|"up_down"|"down"|"up"
       animate = {
         enabled = vim.fn.has 'nvim-0.10' == 1,
-        style = 'down',
+        style = 'out',
         easing = 'linear',
         duration = {
-          step = 1, -- ms per step 20
-          total = 1, --  maximum duration 500
+          step = 20, -- ms per step 20
+          total = 500, --  maximum duration 500
         },
       },
       ---@class snacks.indent.Scope.Config: snacks.scope.Config
@@ -242,6 +242,7 @@ return {
     scope = { enabled = true },
     statuscolumn = { enabled = true },
     image = { enabled = true },
+    animate = { enabled = true },
     words = { enabled = true },
     scroll = { enabled = false },
     rename = { enabled = true },
@@ -450,9 +451,9 @@ return {
     {
       '<leader>sb',
       function()
-        Snacks.picker.lines()
+        Snacks.picker.grep_buffers()
       end,
-      desc = 'Buffer Lines',
+      desc = 'Search Buffers',
     },
     {
       '<leader>sb',
