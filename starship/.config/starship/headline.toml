@@ -115,7 +115,7 @@ elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
 elif [[ "$GIT_REMOTE" =~ "git" ]]; then
     GIT_REMOTE_SYMBOL=" "
 else
-    GIT_REMOTE_SYMBOL=" "
+    GIT_REMOTE_SYMBOL=" " 
 fi
 echo "$GIT_REMOTE_SYMBOL "
 """
@@ -169,77 +169,78 @@ symbol = " "
 
 [lua]
 symbol = ' '
-format = '[via](#52676b) [ $symbol( $version) ]($style)'
+format = '[via](#52676b) [$symbol($version) ]($style)'
 
 
 [dart]
 symbol = ' '
-format = '[via](#52676b)[ $symbol( $version) ]($style)'
+format = '[via](#52676b)[$symbol($version) ]($style)'
 
 [elixir]
 symbol = ' '
-format = '[via](#52676b)[ $symbol( $version) ]($style)'
+format = '[via](#52676b)[$symbol($version) ]($style)'
 
 [nodejs]
 symbol = ' '
-format = '[via](#52676B) [ $symbol( $version) ]($style)'
+format = '[via](#52676B) [$symbol($version)]($style)'
 
 [custom.pnpm]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [custom.yarn]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [bun]
 symbol = '🍔 '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [package]
 # symbol = '󰏗 '
 symbol = '📦 '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 
 [custom.typescript]
-symbol = ""
-format = '[[ $symbol( $version) ]]($style)'
+style = "bold #007ACC"  
+symbol = " " 
+format = '[ $symbol($version) ]($style)'
 detect_extensions = ["ts", "tsx"]
 
 
 [c]
 symbol = " "
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [rust]
 symbol = ""
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [golang]
 symbol = ""
-format = '[via](#52676b)[ $symbol( $version) ]($style)'
+format = '[via](#52676b)[$symbol($version) ]($style)'
 detect_files = ["go.mod"]
 
 [php]
 symbol = ""
-format = '[via](#52676b)[ $symbol( $version) ]($style)'
+format = '[via](#52676b)[$symbol($version) ]($style)'
 
 [java]
 symbol = " "
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [kotlin]
 symbol = ""
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [haskell]
 symbol = ""
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [ruby]
 symbol = ' '
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 
 
@@ -252,7 +253,7 @@ pyenv_prefix = ''
 
 [swift]
 symbol = ' '
-format = '[via](#52676b) [[ $symbol( $version) ]]($style)'
+format = '[via](#52676b) [[$symbol( $version) ]]($style)'
 
 [docker_context]
 # symbol = ' '

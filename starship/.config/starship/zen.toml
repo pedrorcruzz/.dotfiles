@@ -112,7 +112,7 @@ elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
 elif [[ "$GIT_REMOTE" =~ "git" ]]; then
     GIT_REMOTE_SYMBOL=" "
 else
-    GIT_REMOTE_SYMBOL=" "
+    GIT_REMOTE_SYMBOL=" " 
 fi
 echo "$GIT_REMOTE_SYMBOL "
 """
@@ -184,7 +184,7 @@ format = '[ $symbol( $version) ]($style)'
 # format = '[$symbol( $version) ]($style)[](#090909)'
 [nodejs]
 symbol = ' '
-format = 'via [ $symbol( $version) ]($style)'
+format = 'via [$symbol($version) ]($style)'
 
 [custom.pnpm]
 symbol = ' '
@@ -205,8 +205,9 @@ format = '[ $symbol( $version) ]($style)'
 
 
 [custom.typescript]
-symbol = ""
-format = '[[ $symbol( $version) ]]($style)'
+style = "bold #007ACC"  
+symbol = " " 
+format = '[$symbol($version) ]($style)'
 detect_extensions = ["ts", "tsx"]
 
 
