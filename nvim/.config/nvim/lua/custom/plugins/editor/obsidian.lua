@@ -106,7 +106,7 @@ return {
         -- Transformar o título em um nome de arquivo válido (sem espaços e caracteres especiais).
         suffix = title:gsub(' ', '-'):gsub('[^A-Za-z0-9-]', ''):lower()
       end
-      return suffix
+      return '' --suffix
     end,
 
     -- Optional, customize how note file names are generated given the ID, target directory, and title.
