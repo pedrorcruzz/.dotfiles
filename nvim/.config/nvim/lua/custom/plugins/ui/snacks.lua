@@ -699,7 +699,7 @@ return {
       desc = 'Dimiss Notification',
     },
     {
-      '<leader>lf',
+      '<leader>lc',
       function()
         Snacks.rename.rename_file()
       end,
