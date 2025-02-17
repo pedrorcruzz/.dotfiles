@@ -24,6 +24,9 @@ return {
     if has_exe 'pylint' then
       table.insert(python_linters, 'pylint')
     end
+    if has_exe 'mypy' then
+      table.insert(python_linters, 'mypy')
+    end
     python_linters = #python_linters > 0 and python_linters or nil
 
     local markdown_linters = {}

@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'lunaperche'
 
 return {
   {
@@ -73,13 +73,13 @@ return {
 
           SnacksDashboardDesc = { fg = '#FFFFFF' },
           SnacksDashboardDir = { fg = '#4c4c4c' },
-          SnacksDashboardHeader = { fg = '#FF657E' },
-          SnacksDashboardFooter = { fg = '#FF657E' },
-          SnacksDashboardIcon = { fg = '#FF657E' },
+          SnacksDashboardHeader = { fg = '#C18EFE' },
+          SnacksDashboardFooter = { fg = '#C18EFE' },
+          SnacksDashboardIcon = { fg = '#C18EFE' },
           SnacksDashboardFile = { fg = '#FFFFFF' },
           SnacksDashboardTitle = { fg = '#FFFFFF' },
           -- SnacksDashboardSpecial = { fg = '#FF657E' },
-          SnacksDashboardNormal = { fg = '#111111' },
+          SnacksDashboardNormal = { fg = '#4B4F6B' },
 
           -- Noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
@@ -138,25 +138,7 @@ return {
     config = function() end,
   },
   {
-    'Mofiqul/dracula.nvim',
-    config = function() end,
-  },
-  {
     'killitar/obscure.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function() end,
-  },
-  {
-    'aktersnurra/no-clown-fiesta.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function() end,
-  },
-  {
-    'projekt0n/github-nvim-theme',
     lazy = false,
     priority = 1000,
     opts = {},

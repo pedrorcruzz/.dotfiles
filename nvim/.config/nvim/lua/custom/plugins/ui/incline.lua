@@ -23,7 +23,8 @@ return {
             ' ',
             { filename .. modified, gui = 'bold' },
             ' ',
-            guibg = '#1A1A1A',
+            -- guibg = '#1A1A1A',
+            -- guifg = '#abb2bf',
           }
         end,
       }

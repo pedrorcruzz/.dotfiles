@@ -60,8 +60,8 @@ return {
         mapping = cmp.mapping.preset.insert {
           ['<S-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
           ['<S-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-          ['<S-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<S-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<CR>'] = cmp.mapping.confirm { select = true },
           ['<C-Space>'] = cmp.mapping.complete {},
           ['<S-l>'] = cmp.mapping(function()

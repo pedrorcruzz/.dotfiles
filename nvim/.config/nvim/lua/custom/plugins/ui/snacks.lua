@@ -35,12 +35,21 @@ return {
       sections = {
         {
           pane = 1,
+          section = 'header',
+          padding = 5,
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+        },
+        {
+          pane = 1,
           section = 'terminal',
-          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 58x58; --align center; sleep .1',
-
-          -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
-          height = 37, --25
-          padding = 1,
+          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color',
+          height = 26, --25
+          width = 65,
+          padding = 2,
+          -- indent = 1,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -53,6 +62,15 @@ return {
           -- enabled = function()
           --   return not (vim.o.columns < 135)
           -- end,
+        },
+        -- Narrow screen
+        {
+          pane = 1,
+          section = 'startup',
+          padding = 2,
+          enabled = function()
+            return not (vim.o.columns > 135)
+          end,
         },
         {
           pane = 2,
@@ -67,21 +85,21 @@ return {
           icon = ' ',
           section = 'keys',
           indent = 1,
-          gap = 1,
+          gap = 0,
           padding = 3,
         },
-        -- {
-        --   pane = 2,
-        --   icon = '',
-        --   title = 'Projects',
-        --   section = 'projects',
-        --   enabled = function()
-        --     return not (vim.o.columns < 135)
-        --   end,
-        --   opts = { limit = 3 },
-        --   indent = 1,
-        --   padding = 2,
-        -- },
+        {
+          pane = 2,
+          icon = '',
+          title = 'Projects',
+          section = 'projects',
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+          opts = { limit = 5 },
+          indent = 1,
+          padding = 2,
+        },
         {
           pane = 2,
           icon = '',
@@ -94,13 +112,18 @@ return {
           indent = 1,
           padding = 1,
         },
+
+        -- Narrow screen
         {
-          pane = 2,
-          section = 'startup',
-          padding = 1,
+          pane = 1,
+          icon = '',
+          title = 'Recent Files',
+          section = 'recent_files',
           enabled = function()
             return not (vim.o.columns > 135)
           end,
+          opts = { limit = 10 },
+          indent = 1,
         },
       },
     },
