@@ -31,11 +31,11 @@ return {
           ]],
         },
       },
-      width = 70,
+      width = 74,
       sections = {
         {
           pane = 1,
-          section = 'header',
+          -- section = 'header',
           padding = 5,
           enabled = function()
             return not (vim.o.columns < 135)
@@ -54,18 +54,33 @@ return {
             return not (vim.o.columns < 135)
           end,
         },
+
+        --Narrow screen
+        {
+          pane = 1,
+          section = 'terminal',
+          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color',
+          height = 20, --25
+          width = 65,
+          padding = 2,
+          -- indent = 1,
+          enabled = function()
+            return not (vim.o.columns > 135)
+          end,
+        },
         {
           pane = 2,
-          section = 'header',
+          -- section = 'header',
           gap = 0,
           padding = 1,
-          -- enabled = function()
-          --   return not (vim.o.columns < 135)
-          -- end,
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
         },
         -- Narrow screen
         {
-          pane = 1,
+          pane = 2,
           section = 'startup',
           padding = 2,
           enabled = function()
@@ -114,17 +129,17 @@ return {
         },
 
         -- Narrow screen
-        {
-          pane = 1,
-          icon = '',
-          title = 'Recent Files',
-          section = 'recent_files',
-          enabled = function()
-            return not (vim.o.columns > 135)
-          end,
-          opts = { limit = 10 },
-          indent = 1,
-        },
+        -- {
+        --   pane = 1,
+        --   icon = '',
+        --   title = 'Recent Files',
+        --   section = 'recent_files',
+        --   enabled = function()
+        --     return not (vim.o.columns > 135)
+        --   end,
+        --   opts = { limit = 10 },
+        --   indent = 1,
+        -- },
       },
     },
     explorer = {
@@ -722,7 +737,7 @@ return {
       desc = 'Dimiss Notification',
     },
     {
-      '<leader>lc',
+      '<leader>lv',
       function()
         Snacks.rename.rename_file()
       end,
