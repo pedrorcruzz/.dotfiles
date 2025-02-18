@@ -286,6 +286,7 @@ return { -- LSP Configuration & Plugins
       'pyright',
       'black',
       'tailwindcss-language-server',
+      'typescript-language-server',
       'intelephense',
       'php-cs-fixer',
       'php-debug-adapter',
