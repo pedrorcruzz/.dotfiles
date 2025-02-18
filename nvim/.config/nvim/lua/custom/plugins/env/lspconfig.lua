@@ -160,7 +160,7 @@ return { -- LSP Configuration & Plugins
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-
+      --
       tailwindcss = {
         filetypes = {
           'css',
@@ -171,9 +171,9 @@ return { -- LSP Configuration & Plugins
           'heex',
           'elixir',
           'eruby',
-          'javascript',
+          -- 'javascript',
           'javascriptreact',
-          'typescript',
+          -- 'typescript',
           'typescriptreact',
           'rust',
           'svelte',
@@ -229,6 +229,9 @@ return { -- LSP Configuration & Plugins
             'heex',
             'eelixr',
           },
+        },
+        prettierd = {
+          filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
         },
         prettier = {
           filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
