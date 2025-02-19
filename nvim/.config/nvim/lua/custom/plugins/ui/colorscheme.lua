@@ -123,7 +123,7 @@ return {
     config = function()
       require('catppuccin').setup {
         background = { light = 'latte', dark = 'mocha' },
-        transparent_background = true,
+        transparent_background = false,
         term_colors = true,
         styles = {
           comments = { 'italic' },
