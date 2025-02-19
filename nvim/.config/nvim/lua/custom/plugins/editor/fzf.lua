@@ -206,7 +206,7 @@ return {
     { '<leader>fa', '<cmd>FzfLua files<cr>', desc = 'FzfLua: Find Files' },
     -- { '<leader>fg', '<cmd>FzfLua git_files<cr>', desc = 'Find Files (git-files)' },
     -- { '<leader>fr', '<cmd>FzfLua oldfiles<cr>', desc = 'Recent' },
-    -- { '<leader>fd', '<cmd>FzfLua lsp_definitions<cr>', desc = 'Definitions' },
+    { '<leader>fd', '<cmd>FzfLua lsp_definitions<cr>', desc = 'FzfLua: Definitions' },
     -- { '<leader>fq', '<cmd>FzfLua colorschemes<cr>', desc = 'Colorschemes' },
     { '<leader>s]', '<cmd>FzfLua registers<cr>', desc = 'Registers' },
     -- { '<leader>fe', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Find Text in Buffer' },
