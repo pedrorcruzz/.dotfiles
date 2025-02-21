@@ -14,6 +14,7 @@ return {
           typescript = { 'biome', 'prettierd', 'prettier', 'biome-check' },
           html = { 'prettierd', 'prettier' },
           css = { 'prettierd', 'prettier' },
+          htmldjango = { 'djlint' },
           javascriptreact = { 'biome', 'prettierd', 'prettier', 'biome-check' },
           typescriptreact = { 'biome', 'prettierd', 'prettier', 'biome-check' },
           python = { 'black', 'autopep8' },

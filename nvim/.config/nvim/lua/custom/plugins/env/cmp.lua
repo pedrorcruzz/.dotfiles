@@ -157,6 +157,18 @@ return {
         sources = {
           { name = 'vim-dadbod-completion' },
           { name = 'buffer' },
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+        },
+      })
+
+      --Django
+      cmp.setup.filetype({ 'htmldjango' }, {
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = 'buffer' },
+          { name = 'path' },
         },
       })
     end,

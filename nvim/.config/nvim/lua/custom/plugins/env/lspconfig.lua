@@ -286,8 +286,10 @@ return { -- LSP Configuration & Plugins
       'stylua', -- Used to format Lua code
       'lua_ls',
       'prettierd',
-      'pyright',
-      'black',
+      'djlint',
+      'django-template-lsp',
+      'python-lsp-server',
+      'emmet_language_server',
       'tailwindcss-language-server',
       'typescript-language-server',
       'intelephense',
