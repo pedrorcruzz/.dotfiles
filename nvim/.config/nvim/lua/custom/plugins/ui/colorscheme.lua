@@ -31,7 +31,7 @@ return {
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#ff657e' },
           AvanteInlineHint = { fg = '#abb2bf' },
-          EndofBuffer = { fg = '#202020', bg = 'none' }, -- garantindo que o final do buffer seja transparente
+          EndOfBuffer = { fg = '#1A1A1A', bg = 'none' }, -- garantindo que o final do buffer seja transparente
           Underlined = { bg = nil }, -- sublinhado
 
           MatchParen = { fg = '#abb2bf' },
@@ -39,8 +39,25 @@ return {
           --underline cmp preview
           ['@punctuation.special'] = { fg = '#323232' },
 
+          --variable
+          ['@variable'] = { fg = '#BCBBBB' },
+          ['@variable.builtin'] = { fg = '#BCBBBB' },
+
+          --html
+          ['@none.html'] = { fg = '#B0AFB0' },
+          ['@markup.heading.1.html'] = { fg = '#AAA9AA' },
+          ['@markup.heading.2.html'] = { fg = '#AAA9AA' },
+          ['@markup.heading.3.html'] = { fg = '#AAA9AA' },
+          ['@markup.heading.4.html'] = { fg = '#AAA9AA' },
+          ['@markup.heading.5.html'] = { fg = '#AAA9AA' },
+          ['@markup.heading.6.html'] = { fg = '#AAA9AA' },
+
           --htmldjango
-          ['@punctuation.special.htmldjango'] = { fg = '#abb2bf' },
+          ['@punctuation.special.htmldjango'] = { fg = '#FED600' },
+          ['@variable.htmldjango'] = { fg = '#92A4B6' },
+          ['@function.htmldjango'] = { fg = '#ff657e' },
+          ['@keyword.repeat.htmldjango'] = { fg = '#ff657e' },
+          ['@keyword.operator.htmldjango'] = { fg = '#ff657e' },
 
           --todo
           TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },

@@ -8,6 +8,7 @@ function module.apply_to_config(config)
 	config.cell_width = 0.9
 	config.freetype_load_flags = "NO_HINTING"
 	config.front_end = "OpenGL"
+	config.font_shaper = "Harfbuzz"
 end
 
 return module
