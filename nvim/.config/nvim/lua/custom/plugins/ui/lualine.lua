@@ -1,3 +1,11 @@
+-- Other separator symbols:
+-- █
+--   
+--   
+--   
+--   
+--   
+
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
@@ -22,6 +30,11 @@ return {
       fgBlack = '#FEFEFE',
       bgBlack = '#1a1a1a',
     }
+
+    local function get_venv_name()
+      local venv = os.getenv 'VIRTUAL_ENV'
+      return venv and venv:match '([^/]+)$' or ''
+    end
 
     local function lsp_status()
       local msg = 'None'
@@ -83,22 +96,14 @@ return {
         lualine_c = {
           {
             'diff',
-            -- symbols = { added = " ", modified = "● ", removed = "✖ ", untracked = "✱" },
             symbols = { added = ' ', modified = ' ', removed = ' ', untracked = '󰝤' },
           },
         },
         lualine_x = {
           'diagnostics',
-          -- {
-          --   function()
-          --     return " LSP: " .. lsp_status()
-          --   end,
-          --   color = { fg = "#ffffff", gui = "bold" },
-          -- },
         },
         lualine_z = {
           { 'location', separator = { right = '' }, left_padding = 2 },
-          -- { "location", separator = { right = "" } },
         },
         lualine_y = {
           {
@@ -107,11 +112,18 @@ return {
             end,
             color = { fg = '#ffffff', gui = 'bold' },
           },
-
           'copilot',
           'progress',
           'filetype',
           { 'filename', symbols = { modified = '●', readonly = '' } },
+          {
+            function()
+              return get_venv_name() ~= '' and ' ' .. get_venv_name() or ''
+            end,
+            color = { fg = '#F7CD88', gui = 'bold' }, -- Pode customizar a cor aqui
+            separator = { right = '' },
+            left_padding = 2,
+          },
         },
       },
       inactive_sections = {
