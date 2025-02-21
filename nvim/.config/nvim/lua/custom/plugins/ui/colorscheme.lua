@@ -31,8 +31,8 @@ return {
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#ff657e' },
           AvanteInlineHint = { fg = '#abb2bf' },
-          EndOfBuffer = { fg = '#1A1A1A', bg = 'none' }, -- garantindo que o final do buffer seja transparente
-          Underlined = { bg = nil }, -- sublinhado
+          EndOfBuffer = { fg = '#1A1A1A', bg = 'none' },
+          Underlined = { bg = nil },
 
           MatchParen = { fg = '#abb2bf' },
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
@@ -42,6 +42,18 @@ return {
           --variable
           ['@variable'] = { fg = '#BCBBBB' },
           ['@variable.builtin'] = { fg = '#BCBBBB' },
+
+          --constant
+          ['@constant'] = { fg = '#B3B2B3' },
+
+          --module
+          ['@module'] = { fg = '#B6B5B6' },
+
+          --constructor
+          ['@constructor'] = { fg = '#c18efe' },
+
+          --Documentation
+          ['@string.documentation'] = { fg = '#646B73' },
 
           --html
           ['@none.html'] = { fg = '#B0AFB0' },
