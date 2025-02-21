@@ -20,18 +20,19 @@ return {
           variables = true,
         },
         overrides = {
-          normal = { bg = transparent_background and 'none' or '#202020' },
-          visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
+          Normal = { bg = transparent_background and 'none' or '#202020' },
+          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           -- cursorline = { bg = transparent_background and "none" or "#323232" },
-          cursorline = { bg = '#323232' },
-          linenr = { fg = '#4b5263' },
-          normalfloat = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
-          floatborder = { fg = '#4c4c4c' },
-          search = { bg = '#606060', fg = '#abb2bf' },
-          incsearch = { bg = '#606060', fg = '#ff657e' },
-          avanteinlinehint = { fg = '#abb2bf' },
+          CursorLine = { bg = '#323232' },
+          LineNr = { fg = '#4b5263' },
+          NormalFloat = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
+          FloatBorder = { fg = '#4c4c4c' },
+          FloatShadow = { fg = '#4c4c4c' },
+          Search = { bg = '#606060', fg = '#abb2bf' },
+          IncSearch = { bg = '#606060', fg = '#ff657e' },
+          AvanteInlineHint = { fg = '#abb2bf' },
 
-          matchparen = { fg = '#abb2bf' },
+          MatchParen = { fg = '#abb2bf' },
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
           --underline cmp preview
           ['@punctuation.special'] = { fg = '#323232' },
@@ -40,71 +41,71 @@ return {
           ['@punctuation.special.htmldjango'] = { fg = '#abb2bf' },
 
           --todo
-          todobgtodo = { bg = '#64baff', fg = '#111111', bold = true },
-          todobgnote = { bg = '#c18efe', fg = '#111111', bold = true },
-          todobgwarn = { bg = '#ffa868', fg = '#111111', bold = true },
-          todobgfix = { bg = '#ff657e', fg = '#111111', bold = true },
+          TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },
+          TodoBgNOTE = { bg = '#c18efe', fg = '#111111', bold = true },
+          TodoBgWARN = { bg = '#ffa868', fg = '#111111', bold = true },
+          TodoBgFIX = { bg = '#ff657e', fg = '#111111', bold = true },
+          TodoFgTODO = { fg = '#64baff' },
+          TodoFgNOTE = { fg = '#c18efe' },
+          TodoFgWARN = { fg = '#ffa868' },
+          TodoFgFIX = { fg = '#ff657e' },
           -- todobghack = { bg = '#c18efe', fg = '#111111', bold = true },
+          -- todofghack = { fg = '#c18efe' },
 
           --diagnostic
           -- diagnosticerror = { fg = '#be5046' },
-          diagnosticwarn = { fg = '#ffa868' },
-          diagnosticinfo = { fg = '#64baff' },
-          diagnostichint = { fg = '#c18efe' },
-          todofgtodo = { fg = '#64baff' },
-          todofgnote = { fg = '#c18efe' },
-          todofgwarn = { fg = '#ffa868' },
-          todofgfix = { fg = '#ff657e' },
-          -- todofghack = { fg = '#c18efe' },
+          DiagnosticWarn = { fg = '#ffa868' },
+          DiagnosticInfo = { fg = '#64baff' },
+          DiagnosticHint = { fg = '#c18efe' },
           --
           -- snacks notifier
-          snacksnotifierborderinfo = { fg = '#4c4c4c' },
-          snacksnotifierborderwarn = { fg = '#ffa868' },
-          snacksnotifierbordererror = { fg = '#ff657e' },
-          snacksnotifiertitleinfo = { fg = '#ffffff' },
+          SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
+          SnacksNotifierBorderWarn = { fg = '#ffa868' },
+          SnacksNotifierBorderError = { fg = '#ff657e' },
+          SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
-          snackspickertitle = { fg = '#ffffff' },
-          snackspickerinputtitle = { fg = '#abb2bf' },
-          snackspickertoggle = { fg = '#abb2bf' },
+          SnacksPickerTitle = { fg = '#ffffff' },
+          SnacksPickerInputTitle = { fg = '#abb2bf' },
+          SnacksPickerToggle = { fg = '#abb2bf' },
 
-          snacksinputicon = { fg = '#abb2bf' }, --#ff657e
-          snacksinputtitle = { fg = '#ffffff' },
-          snacksinputborder = { fg = '#4c4c4c' },
+          SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
+          SnacksInputTitle = { fg = '#ffffff' },
+          SnacksInputBorder = { fg = '#4c4c4c' },
 
-          snacksindent = { fg = '#4c4c4c' },
-          snacksindentscope = { fg = '#abb2bf' },
-          snacksindentunderline_snacksindentscope = { fg = '#abb2bf' },
+          SnacksIndent = { fg = '#4c4c4c' },
+          SnacksIndentScope = { fg = '#abb2bf' },
+          SnacksIndentUnderline_SnacksIndentScope = { fg = '#abb2bf' },
 
-          snacksdashboarddesc = { fg = '#ffffff' },
-          snacksdashboarddir = { fg = '#4c4c4c' },
-          snacksdashboardheader = { fg = '#c18efe' },
-          snacksdashboardfooter = { fg = '#c18efe' },
-          snacksdashboardicon = { fg = '#c18efe' },
-          snacksdashboardfile = { fg = '#ffffff' },
-          snacksdashboardtitle = { fg = '#ffffff' },
+          SnacksDashboardDesc = { fg = '#ffffff' },
+          SnacksDashboardDir = { fg = '#4c4c4c' },
+          SnacksDashboardHeader = { fg = '#c18efe' },
+          SnacksDashboardFooter = { fg = '#c18efe' },
+          SnacksDashboardIcon = { fg = '#c18efe' },
+          SnacksDashboardFile = { fg = '#ffffff' },
+          SnacksDashboardTitle = { fg = '#ffffff' },
           -- snacksdashboardspecial = { fg = '#ff657e' },
-          snacksdashboardnormal = { fg = '#4b4f6b' },
+          SnacksDashboardNormal = { fg = '#4b4f6b' },
 
           -- noice
-          noiceconfirmborder = { fg = '#4c4c4c' },
-          noicecmdlineprompt = { fg = '#4c4c4c' },
-          noicecmdlinepopupborder = { fg = '#4c4c4c' },
-          noicecmdlinepopuptitlecmdline = { fg = '#ffffff' },
-          noicecmdlinepopuptitle = { fg = '#ffffff' },
-          noicecmdlinetitle = { fg = '#ffffff' },
-          noicecmdlineicon = { fg = '#abb2bf' }, --#ffffff
+          NoiceConfirmBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePrompt = { fg = '#4c4c4c' },
+          NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePopupTitleCmdline = { fg = '#ffffff' },
+          NoiceCmdlinePopupTitle = { fg = '#ffffff' },
+          NoiceCmdlineTitle = { fg = '#ffffff' },
+          NoiceCmdlineIcon = { fg = '#abb2bf' }, --#ffffff
 
           -- whichkey
-          whichkeytitle = { fg = '#abb2bf' },
-          whichkeygroup = { fg = '#abb2bf' },
+          WhichkeyTitle = { fg = '#abb2bf' },
+          WhichkeyGroup = { fg = '#abb2bf' },
 
           -- fzf
-          fzfluaborder = { fg = '#4c4c4c' },
-          fzfluaheadertext = { fg = '#abb2bf' },
-          fzfluadiricon = { fg = '#abb2bf' },
-          fzfluaheaderbind = { fg = '#ffffff' },
-          fzfluatabtitle = { fg = '#ffffff' },
-          fzfluasearch = { fg = '#ffffff' },
+          FzfLuaBorder = { fg = '#4c4c4c' },
+          FzfLuaHeaderText = { fg = '#abb2bf' },
+          FzfLuaDirIcon = { fg = '#abb2bf' },
+          FzfLuaHeaderBind = { fg = '#ffffff' },
+          FzfLuaTabTitle = { fg = '#ffffff' },
+          FzfLuaSearch = { fg = '#ffffff' },
 
           -- nvim tree
           nvimtreenormal = { bg = transparent_background and 'none' or '#1a1a1a' },
@@ -115,8 +116,8 @@ return {
 
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           bufferlinefill = { bg = '#1a1a1a' }, -- cor de fundo do bufferline
-          endofbuffer = { fg = '#202020', bg = 'none' }, -- garantindo que o final do buffer seja transparente
-          underlined = { bg = nil }, -- sublinhado
+          EndofBuffer = { fg = '#202020', bg = 'none' }, -- garantindo que o final do buffer seja transparente
+          Underlined = { bg = nil }, -- sublinhado
         },
       }
       set_theme(default_theme)
