@@ -31,9 +31,13 @@ return {
           IncSearch = { bg = '#606060', fg = '#FF657E' },
           AvanteInlineHint = { fg = '#ABB2BF' },
 
+          MatchParen = { fg = '#ABB2BF' },
           ['@markup.heading.1.markdown'] = { fg = '#ABB2BF' },
           --UNDERLINE CMP PREVIEW
           ['@punctuation.special'] = { fg = '#323232' },
+
+          --HTMLDJANGO
+          ['@punctuation.special.htmldjango'] = { fg = '#ABB2BF' },
 
           --TODO
           TodoBgTODO = { bg = '#64BAFF', fg = '#111111', bold = true },
