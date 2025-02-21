@@ -11,7 +11,7 @@ return {
 
     -- Document existing key chains
     require('which-key').add {
-      { '<leader>', group = ' 󰠥 ROSA NVIM' }, --󰧵
+      { '<leader>', group = ' 󰠥 ROSAVIM' }, --󰧵
       { '<leader>e', group = 'File Explorer', icon = '' },
       { "<leader>'", group = 'Wrap', icon = '󰭷' },
       { '<leader>z', group = 'Obsidian', icon = '' },

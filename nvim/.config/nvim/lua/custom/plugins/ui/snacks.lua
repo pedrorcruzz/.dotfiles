@@ -22,12 +22,12 @@ return {
         },
         header = {
           [[
-██████╗  ██████╗ ███████╗ █████╗     ███╗   ██╗██╗   ██╗██╗███╗   ███╗
-██╔══██╗██╔═══██╗██╔════╝██╔══██╗    ████╗  ██║██║   ██║██║████╗ ████║
-██████╔╝██║   ██║███████╗███████║    ██╔██╗ ██║██║   ██║██║██╔████╔██║
-██╔══██╗██║   ██║╚════██║██╔══██║    ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
-██║  ██║╚██████╔╝███████║██║  ██║    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
-╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+██████╗  ██████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗
+██╔══██╗██╔═══██╗██╔════╝██╔══██╗██║   ██║██║████╗ ████║
+██████╔╝██║   ██║███████╗███████║██║   ██║██║██╔████╔██║
+██╔══██╗██║   ██║╚════██║██╔══██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║  ██║╚██████╔╝███████║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
           ]],
         },
       },
@@ -167,7 +167,8 @@ return {
       enabled = true,
       indent = {
         priority = 1,
-        enabled = true, -- enable indent guides
+        ignore_empty = true,
+        enabled = true,
         char = '│',
         only_scope = false, -- only show indent guides of the scope
         only_current = false, -- only show indent guides in the current window
@@ -231,7 +232,9 @@ return {
       },
       -- filter for buffers to enable indent guides
       filter = function(buf)
-        return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ''
+        --   return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ''
+        -- end,
+        return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
       end,
     },
     input = {
