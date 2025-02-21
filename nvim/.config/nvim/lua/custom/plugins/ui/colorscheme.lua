@@ -31,6 +31,8 @@ return {
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#ff657e' },
           AvanteInlineHint = { fg = '#abb2bf' },
+          EndofBuffer = { fg = '#202020', bg = 'none' }, -- garantindo que o final do buffer seja transparente
+          Underlined = { bg = nil }, -- sublinhado
 
           MatchParen = { fg = '#abb2bf' },
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
@@ -116,8 +118,6 @@ return {
 
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           bufferlinefill = { bg = '#1a1a1a' }, -- cor de fundo do bufferline
-          EndofBuffer = { fg = '#202020', bg = 'none' }, -- garantindo que o final do buffer seja transparente
-          Underlined = { bg = nil }, -- sublinhado
         },
       }
       set_theme(default_theme)
