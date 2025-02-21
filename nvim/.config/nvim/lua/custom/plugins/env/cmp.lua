@@ -157,8 +157,6 @@ return {
         sources = {
           { name = 'vim-dadbod-completion' },
           { name = 'buffer' },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
         },
       })
 

@@ -115,7 +115,7 @@ return {
           SnacksDashboardFile = { fg = '#ffffff' },
           SnacksDashboardTitle = { fg = '#ffffff' },
           -- snacksdashboardspecial = { fg = '#ff657e' },
-          SnacksDashboardNormal = { fg = '#4b4f6b' },
+          SnacksDashboardNormal = { fg = '#4b4f6b' }, --4b4f6b
 
           -- noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
@@ -125,6 +125,7 @@ return {
           NoiceCmdlinePopupTitle = { fg = '#ffffff' },
           NoiceCmdlineTitle = { fg = '#ffffff' },
           NoiceCmdlineIcon = { fg = '#abb2bf' }, --#ffffff
+          -- NoiceCmdlineIconSearch = { fg = '#abb2bf' }, --#ffffff
 
           -- whichkey
           WhichkeyTitle = { fg = '#abb2bf' },
