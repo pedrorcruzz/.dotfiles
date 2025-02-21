@@ -120,8 +120,8 @@ return {
             function()
               return get_venv_name() ~= '' and ' ' .. get_venv_name() or ''
             end,
-            color = { fg = '#F7CD88', gui = 'bold' }, -- Pode customizar a cor aqui
-            separator = { right = '' },
+            color = { fg = '#ffffff', gui = 'bold' }, -- Pode customizar a cor aqui
+            -- separator = { right = '' },
             left_padding = 2,
           },
         },
