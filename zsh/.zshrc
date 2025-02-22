@@ -54,6 +54,7 @@ alias ff='pushd $(pwd) > /dev/null && cd ~/.config/fastfetch && fastfetch && pop
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="lvim ~/.zshrc"
 alias lg='lazygit'
+alias ldc='lazydocker'
 alias sv='source venv/bin/activate'
 alias dv='deactivate'
 

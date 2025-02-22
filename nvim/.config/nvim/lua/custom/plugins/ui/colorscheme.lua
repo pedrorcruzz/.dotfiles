@@ -11,7 +11,7 @@ return {
       local transparent_background = true
       require('min-theme').setup {
         theme = 'dark',
-        transparent = transparent_background,
+       transparent = transparent_background,
         italics = {
           comments = true,
           keywords = true,

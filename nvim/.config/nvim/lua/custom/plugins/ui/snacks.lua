@@ -31,7 +31,7 @@ return {
           ]],
         },
       },
-      width = 73,
+      width = 74,
       sections = {
         {
           pane = 1,
@@ -79,7 +79,7 @@ return {
         },
         {
           pane = 2,
-          section = 'header',
+          -- section = 'header',
           gap = 0,
           padding = 1, --1
           enabled = function()
