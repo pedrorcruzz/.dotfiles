@@ -1,4 +1,5 @@
-theme = rose-pine
+# ghostty +list-themes
+theme = dark:Dracula+,light:catppuccin-latte
 background = #1A1A1A
 background-opacity = 0.65
 background-blur-radius = 15
@@ -67,6 +68,3 @@ keybind = super+s>j=goto_split:bottom
 keybind = super+s>k=goto_split:top
 keybind = super+s>l=goto_split:right
 
-#Shaders
-# custom-shader = shaders/bettercrt.glsl
-# custom-shader = shaders/retro-terminal.glsl
