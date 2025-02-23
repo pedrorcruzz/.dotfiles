@@ -8,10 +8,10 @@ return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = true
+      local transparent_background = false
       require('min-theme').setup {
         theme = 'dark',
-       transparent = transparent_background,
+        transparent = transparent_background,
         italics = {
           comments = true,
           keywords = true,
@@ -22,16 +22,16 @@ return {
         overrides = {
           Normal = { bg = transparent_background and 'none' or '#202020' },
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
-          -- cursorline = { bg = transparent_background and "none" or "#323232" },
           CursorLine = { bg = '#323232' },
           LineNr = { fg = '#4b5263' },
           NormalFloat = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
           FloatBorder = { fg = '#4c4c4c' },
+          Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#ff657e' },
           AvanteInlineHint = { fg = '#abb2bf' },
-          EndOfBuffer = { fg = '#1A1A1A', bg = 'none' },
+          EndOfBuffer = { fg = '#202020', bg = 'none' },
           Underlined = { bg = nil },
 
           MatchParen = { fg = '#abb2bf' },
@@ -95,9 +95,11 @@ return {
           SnacksNotifierBorderError = { fg = '#ff657e' },
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
-          SnacksPickerTitle = { fg = '#ffffff' },
-          SnacksPickerInputTitle = { fg = '#abb2bf' },
-          SnacksPickerToggle = { fg = '#abb2bf' },
+          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
+          SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' },
+          SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
+          SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
+          SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },

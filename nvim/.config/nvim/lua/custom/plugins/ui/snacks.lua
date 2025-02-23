@@ -77,11 +77,12 @@ return {
             return not (vim.o.columns > 135)
           end,
         },
+        --Right Rosavim
         {
           pane = 2,
           -- section = 'header',
           gap = 0,
-          padding = 1, --1
+          padding = 2, --1
           enabled = function()
             return not (vim.o.columns < 135)
           end,

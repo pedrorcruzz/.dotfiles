@@ -42,8 +42,17 @@ alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 
 #Alias Postgresql
-alias psqlu='psql -U phrosa -d postgres'
+#Usuario Postgres
+alias joinpostgresp='psql -U postgres -d postgres'
+alias joindpostgresp='docker exec -it postgres-container psql -U postgres -d postgres'
+
+#Digitar Usario
+alias joinpostgres='psql -U'
+alias joindpostgres='docker exec -it postgres-container psql -U'
 export LC_MESSAGES=en_US.UTF-8
+
+#Alias MongoDB
+alias joinmongo='mongosh -u phrosa -p mongo --authenticationDatabase admin'
 
 #Alias System
 alias rn="nvim"
@@ -57,6 +66,11 @@ alias lg='lazygit'
 alias ldc='lazydocker'
 alias sv='source venv/bin/activate'
 alias dv='deactivate'
+
+
+#Python
+alias pipu='pip install --upgrade pip'
+alias pyvenv='python3 -m venv venv'
 
 
 #Alias Docker

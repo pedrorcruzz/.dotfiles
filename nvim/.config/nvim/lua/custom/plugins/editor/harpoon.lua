@@ -19,28 +19,28 @@ return {
     local keys = {
       -- Harpoon Group
       {
-        '<leader>oa',
+        '<leader>oo',
         function()
           harpoon:list():add()
         end,
         desc = 'Harpoon: Add File',
       },
       {
-        '<leader>od',
+        '<leader>oe',
         function()
           harpoon.ui:toggle_quick_menu(harpoon:list())
         end,
         desc = 'Harpoon: Delete',
       },
       {
-        '<leader>ok',
+        '<leader>od',
         function()
           harpoon:list():next()
         end,
         desc = 'Harpoon: Nav Next',
       },
       {
-        '<leader>oj',
+        '<leader>oa',
         function()
           harpoon:list():prev()
         end,
