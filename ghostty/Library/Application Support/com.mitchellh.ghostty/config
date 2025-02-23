@@ -1,5 +1,5 @@
 # ghostty +list-themes
-theme = dark:Dracula+,light:catppuccin-latte
+theme = dark:rose-pine,light:catppuccin-latte
 background = #1A1A1A
 background-opacity = 0.65
 background-blur-radius = 15
