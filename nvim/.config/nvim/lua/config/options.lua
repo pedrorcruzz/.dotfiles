@@ -32,6 +32,7 @@ vim.g.user_emmet_leader_key = '<C-y>'
 
 -- Terminal toggle term
 vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
+vim.api.nvim_set_keymap('t', '<C-o>', [[<C-\><C-n>]], { noremap = true })
 --Confirm before closing unsaved buffer
 vim.opt.confirm = true
 

@@ -21,6 +21,7 @@ return {
           ruby = { 'rubocop' },
           lua = { 'stylua' },
           php = { 'php_cs_fixer' }, --[[ "phpcbf" ]]
+          go = { 'gofmt' },
         },
         format_on_save = {
           lsp_fallback = true,

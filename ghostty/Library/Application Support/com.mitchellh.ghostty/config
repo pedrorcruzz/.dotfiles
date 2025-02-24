@@ -1,26 +1,32 @@
 # ghostty +list-themes
 theme = dark:rose-pine,light:catppuccin-latte
+window-colorspace = "display-p3"
 background = #1A1A1A
-background-opacity = 0.65
+background-opacity = 0.9
 background-blur-radius = 15
+cursor-style = block
 
-font-size = 14
+font-size = 13
+font-feature = -liga
 font-family = JetBrainsMono Nerd Font
-#font-style = default
-#font-style-bold = default
-#font-style-italic = default
-#font-style-bold-italic = default
-#font-thicken = false
-#font-thicken-strength = 255
+adjust-cell-height = 20%
+# font-style = default
+# font-style-bold = default
+# font-style-italic = default
+# font-style-bold-italic = default
+# font-thicken = false
+# font-thicken-strength = 255
 
 keybind = global:cmd+/=toggle_quick_terminal
 
 mouse-hide-while-typing = true
 macos-option-as-alt = true
-macos-titlebar-style = hidden
+# tabs, native, transparent, hidden
+macos-titlebar-style = hidden 
+window-subtitle = false
 confirm-close-surface = false
 
-#window-decoration = true
+window-decoration = true
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
@@ -29,7 +35,7 @@ auto-update = check
 auto-update-channel = stable
 
 # extras
-shell-integration-features = no-cursor 
+shell-integration-features = no-cursor , no-title, sudo
 copy-on-select = clipboard
 
 # Custom Keybinds & Config (super represents cmd key on mac)

@@ -277,13 +277,13 @@ return {
         -- input window
         input = {
           keys = {
-            ['<c-o>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
           },
         },
 
         list = {
           keys = {
-            ['<c-o>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
           },
         },
       },

@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Starship 
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.config/starship/headline.toml
+export STARSHIP_CONFIG=$HOME/.config/starship/zen.toml
 
 
 # CONSOLE NINJA 
@@ -149,10 +149,9 @@ function y() {
 }
 
 
-# Dependências de programação 
 
 # node
-#Homebrew
+# homebrew
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -168,7 +167,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/danielmac/Library/pnpm"
+export PNPM_HOME="/Users/phrosa/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -198,6 +197,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
+# Golang
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOENV_ROOT/shims:$PATH"
 
 # Postgresql
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"

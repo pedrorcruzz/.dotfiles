@@ -29,7 +29,7 @@ return {
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
-          IncSearch = { bg = '#606060', fg = '#ff657e' },
+          IncSearch = { bg = '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#abb2bf' },
           EndOfBuffer = { fg = '#202020', bg = 'none' },
           Underlined = { bg = nil },
@@ -45,6 +45,12 @@ return {
 
           --constant
           ['@constant'] = { fg = '#B3B2B3' },
+
+          --bash
+          ['@string.bash'] = { fg = '#BAB9BA' },
+          ['@number.bash'] = { fg = '#BAB9BA' },
+          ['@variable.bash'] = { fg = '#F67582' },
+          ['@constant.bash'] = { fg = '#F67582' },
 
           --module
           ['@module'] = { fg = '#B6B5B6' },
@@ -67,19 +73,19 @@ return {
           --htmldjango
           ['@punctuation.special.htmldjango'] = { fg = '#FED600' },
           ['@variable.htmldjango'] = { fg = '#92A4B6' },
-          ['@function.htmldjango'] = { fg = '#ff657e' },
-          ['@keyword.repeat.htmldjango'] = { fg = '#ff657e' },
-          ['@keyword.operator.htmldjango'] = { fg = '#ff657e' },
+          ['@function.htmldjango'] = { fg = '#F67582' },
+          ['@keyword.repeat.htmldjango'] = { fg = '#F67582' },
+          ['@keyword.operator.htmldjango'] = { fg = '#F67582' },
 
           --todo
           TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },
           TodoBgNOTE = { bg = '#c18efe', fg = '#111111', bold = true },
           TodoBgWARN = { bg = '#ffa868', fg = '#111111', bold = true },
-          TodoBgFIX = { bg = '#ff657e', fg = '#111111', bold = true },
+          TodoBgFIX = { bg = '#F67582', fg = '#111111', bold = true },
           TodoFgTODO = { fg = '#64baff' },
           TodoFgNOTE = { fg = '#c18efe' },
           TodoFgWARN = { fg = '#ffa868' },
-          TodoFgFIX = { fg = '#ff657e' },
+          TodoFgFIX = { fg = '#F67582' },
           -- todobghack = { bg = '#c18efe', fg = '#111111', bold = true },
           -- todofghack = { fg = '#c18efe' },
 
@@ -92,7 +98,7 @@ return {
           -- snacks notifier
           SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
           SnacksNotifierBorderWarn = { fg = '#ffa868' },
-          SnacksNotifierBorderError = { fg = '#ff657e' },
+          SnacksNotifierBorderError = { fg = '#F67582' },
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
           SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },

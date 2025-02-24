@@ -47,6 +47,12 @@ return {
     end
     php_linters = #php_linters > 0 and php_linters or nil
 
+    local go_linters = {}
+    if has_exe 'golangcilint' then
+      table.insert(go_linters, 'golangcilint')
+    end
+    go_linters = #go_linters > 0 and go_linters or nil
+
     local dockerfile_linters = {}
     if has_exe 'hadolint' then
       table.insert(dockerfile_linters, 'hadolint')
@@ -62,6 +68,7 @@ return {
       javascriptreact = js_linters,
       python = python_linters,
       php = php_linters,
+      go = go_linters,
       dockerfile = dockerfile_linters,
     }
 

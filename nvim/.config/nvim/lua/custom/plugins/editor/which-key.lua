@@ -51,6 +51,7 @@ return {
     -- { "<leader>;", "<cmd>Dashboard<cr>", desc = "Home" },
     { '<leader>h', '<cmd>nohlsearch<cr>', desc = 'No Highlight' },
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
+    { '<leader>le', '<cmd>GrugFar<cr>', desc = 'GrugFar' },
 
     --Wrap
     { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
@@ -109,7 +110,8 @@ return {
     { '<leader>4', '<cmd>wincmd k<cr>', desc = 'Focus Up' },
     { '<leader>mq', '<cmd>vsplit<cr>', desc = 'Split Vertical' },
     { '<leader>mn', '<cmd>split<cr>', desc = 'Split Horizontal' },
-    { '<leader>mc', '<cmd>only<cr>', desc = 'Close all Others' },
+    { '<leader>mx', '<cmd>only<cr>', desc = 'Close all Others' },
+    { '<leader>mc', '<cmd>close<cr>', desc = 'Close Window' },
     { '<leader>mh', '<cmd>wincmd H<cr>', desc = 'Swap Left' },
     { '<leader>ml', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
     { '<leader>mk', '<cmd>wincmd K<cr>', desc = 'Swap Up' },
