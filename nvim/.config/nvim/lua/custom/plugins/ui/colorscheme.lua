@@ -20,20 +20,23 @@ return {
           variables = true,
         },
         overrides = {
+          Directory = { fg = '#DAE7EC' }, --#A1BCC5
           Normal = { bg = transparent_background and 'none' or '#202020' },
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
-          LineNr = { fg = '#4b5263' },
+          CursorLineNr = { fg = '#C6C6C6' },
+          SignColumn = { bg = '#323232' },
+          LineNr = { fg = '#727272' }, --#4b5263
           NormalFloat = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
-          AvanteInlineHint = { fg = '#abb2bf' },
+          AvanteInlineHint = { fg = '#606060' }, --#abb2bf
           EndOfBuffer = { fg = '#202020', bg = 'none' },
           Underlined = { bg = nil },
-
+          winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
           --underline cmp preview
@@ -105,7 +108,9 @@ return {
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' },
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
           SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
+          -- SnacksPicker = { bg = '#1A1A1A' },
           SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
+          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
@@ -154,7 +159,6 @@ return {
           nvimtreeopenedfoldername = { fg = '#579fdc' }, -- nome de pastas abertas no nvimtree
           nvimtreefoldername = { fg = '#aaaaaa' }, -- nome de pastas no nvimtree
 
-          winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           bufferlinefill = { bg = '#1a1a1a' }, -- cor de fundo do bufferline
         },
       }
@@ -173,6 +177,11 @@ return {
           functions = { 'bold' },
           keywords = { 'italic' },
         },
+        custom_highlights = function(colors)
+          return {
+            -- CursorLine = { bg = '#45475C' },
+          }
+        end,
       }
     end,
   },

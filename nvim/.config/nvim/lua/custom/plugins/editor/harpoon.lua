@@ -67,22 +67,22 @@ return {
       },
 
       -- Splits e Tabs no menu do Harpoon
-      -- {
-      --   "<C-v>",
-      --   function()
-      --     harpoon.ui:select_menu_item({ vsplit = true })
-      --   end,
-      --   mode = "n",
-      --   desc = "Vertical Split",
-      -- },
-      -- {
-      --   "<C-x>",
-      --   function()
-      --     harpoon.ui:select_menu_item({ split = true })
-      --   end,
-      --   mode = "n",
-      --   desc = "Horizontal Split",
-      -- },
+      {
+        '<C-v>',
+        function()
+          harpoon.ui:select_menu_item { vsplit = true }
+        end,
+        mode = 'n',
+        desc = 'Vertical Split',
+      },
+      {
+        '<C-n>',
+        function()
+          harpoon.ui:select_menu_item { split = true }
+        end,
+        mode = 'n',
+        desc = 'Horizontal Split',
+      },
     }
 
     -- Registrar as teclas de atalho

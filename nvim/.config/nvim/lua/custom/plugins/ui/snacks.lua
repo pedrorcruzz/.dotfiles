@@ -31,7 +31,7 @@ return {
           ]],
         },
       },
-      width = 74,
+      width = 72,
       sections = {
         {
           pane = 1,
@@ -232,10 +232,24 @@ return {
         },
       },
       -- filter for buffers to enable indent guides
+      -- filter = function(buf)
+      --   return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
+      -- end,
       filter = function(buf)
-        --   return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ''
-        -- end,
-        return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
+        if not vim.api.nvim_buf_is_valid(buf) or vim.fn.bufexists(buf) == 0 then
+          return false
+        end
+
+        local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+        if #lines == 0 or (#lines == 1 and lines[1] == '') then
+          return false
+        end
+
+        local status, result = pcall(function()
+          return vim.g.snacks_indent ~= false and vim.b[buf] ~= nil and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
+        end)
+
+        return status and result
       end,
     },
     input = {

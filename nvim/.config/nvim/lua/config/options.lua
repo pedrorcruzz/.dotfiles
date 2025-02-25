@@ -1,5 +1,5 @@
 -- Array of file names indicating root directory. Modify to your liking.
-local root_names = { '.git', 'Makefile' }
+local root_names = { '.git', 'Makefile', '.rn' }
 
 -- Cache to use for speed up (at cost of possibly outdated results)
 local root_cache = {}

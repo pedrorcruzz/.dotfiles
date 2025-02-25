@@ -59,6 +59,7 @@ alias rn="nvim"
 alias rfswap="rm -rf ~/.local/state/nvim/swap/*"
 alias c='clear'
 alias live='live-server'
+alias ghosttyconfig='pushd "$(pwd)" > /dev/null && cd ~/Library/Application\ Support/com.mitchellh.ghostty/ && nvim config && popd > /dev/null'
 alias ff='pushd $(pwd) > /dev/null && cd ~/.config/fastfetch && fastfetch && popd > /dev/null'
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="lvim ~/.zshrc"

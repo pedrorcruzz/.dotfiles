@@ -41,3 +41,81 @@ require('lazy').setup({
   },
 })
 
+require('nvim-web-devicons').setup {
+  override = {
+    go = {
+      icon = ' ',
+      color = '#00ADD8',
+      cterm_color = '74',
+      name = 'Go',
+    },
+    html = {
+      icon = ' ',
+      color = '#EA580B',
+      cterm_color = '74',
+      name = 'Html',
+    },
+    css = {
+      icon = ' ',
+      color = '#8B5CF6',
+      cterm_color = '74',
+      name = 'Css',
+    },
+  },
+  override_by_filename = {
+    ['go.mod'] = {
+      icon = '󰟓 ',
+      color = '#F471B5',
+      cterm_color = '74',
+      name = 'GoMod',
+    },
+    ['go.sum'] = {
+      icon = '󰟓 ',
+      color = '#F471B5',
+      cterm_color = '74',
+      name = 'GoSum',
+    },
+    ['README.md'] = {
+      icon = ' ',
+      color = '#ffffff',
+      cterm_color = '74',
+      name = 'Readme',
+    },
+    ['Makefile'] = {
+      icon = ' ',
+      color = '#F471B5',
+      cterm_color = '74',
+      name = 'Makefile',
+    },
+    ['package-lock.json'] = {
+      icon = ' ',
+      color = '#2DD4BF',
+      cterm_color = '74',
+      name = 'PackageLock',
+    },
+    ['package.json'] = {
+      icon = ' ',
+      color = '#2DD4BF',
+      cterm_color = '74',
+      name = 'PackageJson',
+    },
+    ['.gitignore'] = {
+      icon = ' ',
+      color = '#F87171',
+      cterm_color = '74',
+      name = 'Gitignore',
+    },
+    ['tailwind.config.js'] = {
+      icon = '󱏿',
+      color = '#38BDF8',
+      cterm_color = '74',
+      name = 'TailwindConfig',
+    },
+    ['tailwind.config.ts'] = {
+      icon = '󱏿',
+      color = '#38BDF8',
+      cterm_color = '74',
+      name = 'TailwindConfigTS',
+    },
+  },
+}

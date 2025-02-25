@@ -214,16 +214,16 @@ symbol = " "
 format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [rust]
-symbol = ""
+symbol = " "
 format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [golang]
-symbol = ""
+symbol = " " #  
 format = '[via](#52676b)[$symbol($version) ]($style)'
 detect_files = ["go.mod"]
 
 [php]
-symbol = ""
+symbol = " "
 format = '[via](#52676b)[$symbol($version) ]($style)'
 
 [java]
@@ -231,11 +231,11 @@ symbol = " "
 format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [kotlin]
-symbol = ""
+symbol = " "
 format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [haskell]
-symbol = ""
+symbol = " "
 format = '[via](#52676b)[[$symbol($version) ]]($style)'
 
 [ruby]

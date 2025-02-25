@@ -3,12 +3,14 @@ theme = dark:rose-pine,light:catppuccin-latte
 window-colorspace = "display-p3"
 background = #1A1A1A
 background-opacity = 0.9
-background-blur-radius = 15
+background-blur-radius = 25
 cursor-style = block
 
 font-size = 13
 font-feature = -liga
-font-family = JetBrainsMono Nerd Font
+font-family = JetBrainsMono Nerd Font Mono
+
+# font-family = MesloLGLDZ Nerd Font Mono
 adjust-cell-height = 20%
 # font-style = default
 # font-style-bold = default
@@ -27,8 +29,8 @@ window-subtitle = false
 confirm-close-surface = false
 
 window-decoration = true
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 1
+window-padding-y = 1
 window-padding-balance = true
 
 auto-update = check
