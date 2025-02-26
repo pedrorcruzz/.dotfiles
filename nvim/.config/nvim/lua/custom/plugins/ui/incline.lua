@@ -12,7 +12,7 @@ return {
     local harpoon = require 'harpoon'
 
     require('incline').setup {
-      hide = { cursorline = false },
+      hide = { cursorline = true },
       window = {
         padding = 0,
         margin = { horizontal = 0, vertical = 0 },
@@ -33,11 +33,8 @@ return {
           -- ft_icon and { '', guifg = '#202020' } or '',
           ' ', --sempre 1
           ' ',
-          ' ',
-          ' ',
           { filename .. modified, gui = 'bold' },
           ' ', -- nao tem nada
-          ' ',
           ' ',
           ' ',
           -- guibg = '#1A1A1A',

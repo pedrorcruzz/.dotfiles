@@ -46,6 +46,26 @@ return {
       harpoon:list():select(5)
     end, { desc = 'Harpoon: Fifth Mark' })
 
+    vim.keymap.set('n', '<leader>o6', function()
+      harpoon:list():select(6)
+    end, { desc = 'Harpoon: Sixth Mark' })
+
+    vim.keymap.set('n', '<leader>o7', function()
+      harpoon:list():select(7)
+    end, { desc = 'Harpoon: Seventh Mark' })
+
+    vim.keymap.set('n', '<leader>o8', function()
+      harpoon:list():select(8)
+    end, { desc = 'Harpoon: Eighth Mark' })
+
+    vim.keymap.set('n', '<leader>o9', function()
+      harpoon:list():select(9)
+    end, { desc = 'Harpoon: Ninth Mark' })
+
+    vim.keymap.set('n', '<leader>o10', function()
+      harpoon:list():select(10)
+    end, { desc = 'Harpoon: Tenth Mark' })
+
     -- Toggle previous & next buffers stored within Harpoon list
     vim.keymap.set('n', '<leader>oa', function()
       harpoon:list():prev()

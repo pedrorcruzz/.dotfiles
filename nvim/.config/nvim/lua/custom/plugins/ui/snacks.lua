@@ -166,7 +166,9 @@ return {
     },
     indent = {
       enabled = true,
-      underline = true, -- Sublinhado no início do escopo
+      char = '│',
+      only_scope = false, -- only show indent guides of the scope
+      only_current = false, -- only show indent guides in the current window
       animate = {
         enabled = vim.fn.has 'nvim-0.10' == 1,
         style = 'out',

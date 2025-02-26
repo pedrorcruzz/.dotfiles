@@ -28,9 +28,11 @@ return {
       { '<leader>a', group = 'Avante', icon = ' ' },
       { '<leader>l', group = 'Tools', icon = ' ' },
       { '<leader>o', group = 'Harpoon', icon = '󱝩' },
-      { '<leader>m', group = 'Window', icon = '󰶛' },
-      { '<leader>c', group = 'Tabs', icon = '󱦞' },
-      { '<leader>p', group = 'Copilot', icon = '' },
+      { '<leader>m', group = 'Codi', icon = '' },
+      { '<leader>p', group = 'PHPtools', icon = '' },
+      { '<leader>c', group = 'Window', icon = '󰶛' },
+      { '<leader>t', group = 'Tabs', icon = '󱦞' },
+      { '<leader>i', group = 'Copilot', icon = '' },
       { '<leader>d', group = 'Debug' },
       { '<leader>d_', hidden = true },
       { '<leader>f', group = 'Find' },
@@ -76,11 +78,11 @@ return {
     { '<leader>]', '<cmd>bnext<cr>', desc = 'Next' },
 
     --Tabs
-    { '<leader>ca', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
-    { '<leader>ch', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
-    { '<leader>cl', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
-    { '<leader>cc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
-    { '<leader>cC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
+    { '<leader>tt', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
+    { '<leader>ta', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
+    { '<leader>td', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
+    { '<leader>tc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
+    { '<leader>tC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
 
     -- Neotest
     -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
@@ -108,43 +110,43 @@ return {
     { '<leader>2', '<cmd>wincmd l<cr>', desc = 'Focus Right' },
     { '<leader>3', '<cmd>wincmd j<cr>', desc = 'Focus Down' },
     { '<leader>4', '<cmd>wincmd k<cr>', desc = 'Focus Up' },
-    { '<leader>mq', '<cmd>vsplit<cr>', desc = 'Split Vertical' },
-    { '<leader>mn', '<cmd>split<cr>', desc = 'Split Horizontal' },
-    { '<leader>mx', '<cmd>only<cr>', desc = 'Close all Others' },
-    { '<leader>mc', '<cmd>close<cr>', desc = 'Close Window' },
-    { '<leader>mh', '<cmd>wincmd H<cr>', desc = 'Swap Left' },
-    { '<leader>ml', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
-    { '<leader>mk', '<cmd>wincmd K<cr>', desc = 'Swap Up' },
-    { '<leader>mj', '<cmd>wincmd J<cr>', desc = 'Swap Down' },
-    { '<leader>mm', '<cmd>MaximizerToggle<cr>', desc = 'Maximizer' },
+    { '<leader>cq', '<cmd>vsplit<cr>', desc = 'Split Vertical' },
+    { '<leader>ce', '<cmd>split<cr>', desc = 'Split Horizontal' },
+    { '<leader>cx', '<cmd>only<cr>', desc = 'Close all Others' },
+    { '<leader>cc', '<cmd>close<cr>', desc = 'Close Window' },
+    { '<leader>ca', '<cmd>wincmd H<cr>', desc = 'Swap Left' },
+    { '<leader>cd', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
+    { '<leader>cw', '<cmd>wincmd K<cr>', desc = 'Swap Up' },
+    { '<leader>cs', '<cmd>wincmd J<cr>', desc = 'Swap Down' },
+    { '<leader>cf', '<cmd>MaximizerToggle<cr>', desc = 'Maximizer' },
     {
-      '<leader>m1',
+      '<leader>c1',
       function()
         vim.cmd('vertical resize ' .. math.floor(vim.o.columns / 3))
       end,
       desc = 'Resize Left 1/3',
     },
     {
-      '<leader>m2',
+      '<leader>c2',
       function()
         vim.cmd('vertical resize ' .. math.floor(vim.o.columns * 2 / 3))
       end,
       desc = 'Resize Right 2/3',
     },
     {
-      '<leader>m3',
+      '<leader>c3',
       function()
         vim.cmd('resize ' .. math.floor(vim.o.lines / 3))
       end,
       desc = 'Resize Up 1/3',
     },
     {
-      '<leader>m4',
+      '<leader>c4',
       function()
         vim.cmd('resize ' .. math.floor(vim.o.lines * 2 / 3))
       end,
       desc = 'Resize Down 2/3',
     },
-    { '<leader>mr', '<cmd>resize | vertical resize | wincmd =<cr>', desc = 'Reset Window Sizes' },
+    { '<leader>cr', '<cmd>resize | vertical resize | wincmd =<cr>', desc = 'Reset Window Sizes' },
   },
 }
