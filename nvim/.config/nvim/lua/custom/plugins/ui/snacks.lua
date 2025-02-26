@@ -166,12 +166,7 @@ return {
     },
     indent = {
       enabled = true,
-      char = '│', -- Caracter para as guias de indentação
-      hl = 'SnacksIndent', -- Grupo de destaque para indentação
-      priority = 1,
-      ignore_empty = true, -- Ignorar linhas vazias
-      only_scope = false, -- Mostrar apenas no escopo atual
-      only_current = false, -- Mostrar na janela atual
+      underline = true, -- Sublinhado no início do escopo
       animate = {
         enabled = vim.fn.has 'nvim-0.10' == 1,
         style = 'out',
@@ -181,45 +176,14 @@ return {
           total = 500, -- duração máxima
         },
       },
-      scope = {
-        enabled = true, -- Habilitar destaque do escopo atual
-        priority = 200,
-        char = '│',
-        underline = true, -- Sublinhado no início do escopo
-        only_current = false, -- Mostrar apenas no escopo atual
-        hl = 'SnacksIndentScope', -- Grupo de destaque para o escopo
-      },
-      chunk = {
-        enabled = false, -- Não renderizar escopos como "chunks"
-        only_current = false, -- Mostrar apenas no escopo atual
-        priority = 200,
-        hl = 'SnacksIndentChunk', -- Grupo de destaque para os chunks
-        char = {
-          corner_top = '┌',
-          corner_bottom = '└',
-          horizontal = '─',
-          vertical = '│',
-          arrow = '>',
-        },
-      },
-      -- filter = function(buf)
-      --   return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
-      -- end,
+      -- scope = {
+      --   enabled = true, -- Habilitar destaque do escopo atual
+      --   priority = 200,
+      --   char = '│',
+      --   underline = true, -- Sublinhado no início do escopo
+      -- },
       filter = function(buf)
-        if not vim.api.nvim_buf_is_valid(buf) or vim.fn.bufexists(buf) == 0 then
-          return false
-        end
-
-        local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
-        if #lines == 0 or (#lines == 1 and lines[1] == '') then
-          return false
-        end
-
-        local status, result = pcall(function()
-          return vim.g.snacks_indent ~= false and vim.b[buf] ~= nil and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
-        end)
-
-        return status and result
+        return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
       end,
     },
     input = {
