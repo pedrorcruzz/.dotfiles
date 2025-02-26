@@ -2,6 +2,7 @@
 require 'config.keybinds'
 require 'config.autocmds'
 require 'config.options'
+require 'config.filetypes'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
