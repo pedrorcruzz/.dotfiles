@@ -27,7 +27,7 @@ return {
       { '<leader>]', group = 'Next', icon = '󰙡' },
       { '<leader>a', group = 'Avante', icon = ' ' },
       { '<leader>l', group = 'Tools', icon = ' ' },
-      { '<leader>o', group = 'Harpoon', icon = '󱝩' },
+      { '<leader>o', group = 'Grapple', icon = '󱝩' },
       { '<leader>m', group = 'Window', icon = '󰶛' },
       { '<leader>c', group = 'Tabs', icon = '󱦞' },
       { '<leader>p', group = 'Copilot', icon = '' },

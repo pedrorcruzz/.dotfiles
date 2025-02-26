@@ -21,13 +21,13 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
-          Normal = { bg = transparent_background and 'none' or '#202020' },
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#727272' }, --#4b5263
-          NormalFloat = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
+          NormalFloat = { bg = transparent_background and 'none' or '#202020' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
@@ -79,6 +79,21 @@ return {
           ['@function.htmldjango'] = { fg = '#F67582' },
           ['@keyword.repeat.htmldjango'] = { fg = '#F67582' },
           ['@keyword.operator.htmldjango'] = { fg = '#F67582' },
+
+          --Grapple
+          GrappleHint = { fg = '#ffffff' },
+          GrappleNormal = { fg = '#606060' },
+          GrappleFooter = { fg = '#4c4c4c' },
+          GrappleBold = { fg = '#abb2bf' },
+          GrappleCurrent = { fg = '#abb2bf' },
+          GrappleName = { fg = '#ffffff' },
+          GrappleTitle = { fg = '#ffffff' },
+
+          --Telescope
+          TelescopeBorder = { fg = '#ffffff' },
+          TelescopePreviewBorder = { fg = '#4c4c4c' },
+          TelescopePromptBorder = { fg = '#4c4c4c' },
+          TelescopeResultsBorder = { fg = '#4c4c4c' },
 
           --todo
           TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },

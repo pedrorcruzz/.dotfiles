@@ -55,12 +55,6 @@ require('nvim-web-devicons').setup {
       cterm_color = '74',
       name = 'Html',
     },
-    css = {
-      icon = ' ',
-      color = '#8B5CF6',
-      cterm_color = '74',
-      name = 'Css',
-    },
   },
   override_by_filename = {
     ['go.mod'] = {
@@ -104,18 +98,6 @@ require('nvim-web-devicons').setup {
       color = '#F87171',
       cterm_color = '74',
       name = 'Gitignore',
-    },
-    ['tailwind.config.js'] = {
-      icon = '󱏿',
-      color = '#38BDF8',
-      cterm_color = '74',
-      name = 'TailwindConfig',
-    },
-    ['tailwind.config.ts'] = {
-      icon = '󱏿',
-      color = '#38BDF8',
-      cterm_color = '74',
-      name = 'TailwindConfigTS',
     },
   },
 }
