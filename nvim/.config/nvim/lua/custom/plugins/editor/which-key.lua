@@ -17,7 +17,7 @@ return {
       { '<leader>z', group = 'Obsidian', icon = '' },
       { '<leader>v', group = 'Auto Save', icon = '' },
       { '<leader>b', group = 'DBUI', icon = '' },
-      { '<leader>x', group = 'Mini Explorer', icon = '' },
+      { '<leader>x', group = 'Explorer Tools', icon = '' },
       { '<leader>n', group = 'Neotest', icon = '' },
       { '<leader>y', group = 'Yazi', icon = '' },
       { '<leader>;', group = 'Home', icon = '' },
@@ -29,10 +29,11 @@ return {
       { '<leader>l', group = 'Tools', icon = ' ' },
       { '<leader>o', group = 'Harpoon', icon = '󱝩' },
       { '<leader>m', group = 'Codi', icon = '' },
-      { '<leader>p', group = 'PHPtools', icon = '' },
+      { '<leader>p', group = 'PHP Tools', icon = '' },
       { '<leader>c', group = 'Window', icon = '󰶛' },
       { '<leader>t', group = 'Tabs', icon = '󱦞' },
       { '<leader>i', group = 'Copilot', icon = '' },
+      { '<leader>u', group = 'Markdown', icon = '' },
       { '<leader>d', group = 'Debug' },
       { '<leader>d_', hidden = true },
       { '<leader>f', group = 'Find' },
@@ -112,7 +113,7 @@ return {
     { '<leader>4', '<cmd>wincmd k<cr>', desc = 'Focus Up' },
     { '<leader>cq', '<cmd>vsplit<cr>', desc = 'Split Vertical' },
     { '<leader>ce', '<cmd>split<cr>', desc = 'Split Horizontal' },
-    { '<leader>cx', '<cmd>only<cr>', desc = 'Close all Others' },
+    { '<leader>cC', '<cmd>only<cr>', desc = 'Close all Others' },
     { '<leader>cc', '<cmd>close<cr>', desc = 'Close Window' },
     { '<leader>ca', '<cmd>wincmd H<cr>', desc = 'Swap Left' },
     { '<leader>cd', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
@@ -148,5 +149,29 @@ return {
       desc = 'Resize Down 2/3',
     },
     { '<leader>cr', '<cmd>resize | vertical resize | wincmd =<cr>', desc = 'Reset Window Sizes' },
+
+    --Delete and Create Files
+    {
+      '<leader>xa',
+      function()
+        local new_file_path = vim.fn.input('New file path: ', vim.fn.expand '%:p:h' .. '/', 'file')
+        if new_file_path ~= '' then
+          vim.fn.execute('edit ' .. new_file_path)
+        end
+      end,
+      desc = 'Create New File',
+    },
+
+    {
+      '<leader>xd',
+      function()
+        local file_name = vim.api.nvim_buf_get_name(0)
+        if vim.fn.confirm('Are you sure you want to delete this file?', '&Yes\n&No', 2) == 1 then
+          vim.fn.delete(file_name)
+          vim.api.nvim_command 'bdelete!'
+        end
+      end,
+      desc = 'Delete File',
+    },
   },
 }

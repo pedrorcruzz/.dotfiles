@@ -133,8 +133,8 @@ cyan="#2CF9ED"
 # ---- TheFuck -----
 
 # thefuck alias
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
+# eval $(thefuck --alias)
+# eval $(thefuck --alias fk)
 
 # yazi
 export EDITOR="nvim"
@@ -192,10 +192,6 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$(pyenv root)/shims:$PATH"
 eval "$(pyenv init -)"
 
-# JAVA 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 # Golang
@@ -218,3 +214,8 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/phrosa/Library/Application Support/Herd/
 # Herd injected PHP binary.
 export PATH="/Users/phrosa/Library/Application Support/Herd/bin/":$PATH
 
+
+# JAVA 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
