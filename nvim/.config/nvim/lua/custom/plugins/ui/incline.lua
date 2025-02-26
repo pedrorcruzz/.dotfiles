@@ -15,8 +15,8 @@ return {
       hide = { cursorline = false },
       window = {
         padding = 0,
-        margin = { horizontal = 0, vertical = 1 },
-        placement = { vertical = 'top', horizontal = 'right' },
+        margin = { horizontal = 0, vertical = 0 },
+        placement = { vertical = 'top', horizontal = 'center' },
       },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
@@ -27,15 +27,22 @@ return {
         local ft_icon, ft_color = devicons.get_icon_color(filename)
         local modified = vim.bo[props.buf].modified and ' ●' or ''
         local res = {
-          ft_icon and { '', guifg = ft_color } or '',
-          ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
+          -- ft_icon and { '', guifg = '#202020' } or '', --ft_color
+          -- ft_icon and { ' ', ft_icon, ' ', guibg = '#202020', guifg = helpers.contrast_color(ft_color) } or '',
+          ft_icon and { ' ', ft_icon, ' ', guibg = nil, guifg = ft_color } or '',
+          -- ft_icon and { '', guifg = '#202020' } or '',
+          ' ', --sempre 1
+          ' ',
+          ' ',
           ' ',
           { filename .. modified, gui = 'bold' },
+          ' ', -- nao tem nada
+          ' ',
+          ' ',
           ' ',
           -- guibg = '#1A1A1A',
           -- guifg = '#abb2bf',
         }
-
         -- if props.focused then
         --   for _, item in ipairs(navic.get_data(props.buf) or {}) do
         --     table.insert(res, {
@@ -60,12 +67,22 @@ return {
           end
 
           if #label > 0 then
-            table.insert(label, 1, { '󰛢 ', guifg = '#61AfEf' })
+            table.insert(label, 1, { '󰛢 ', guifg = '#CA8BFF' })
           end
           return label
         end
+        local harpoon_items = get_harpoon_items()
+        for _, item in ipairs(harpoon_items) do
+          table.insert(res, item)
+        end
 
-        table.insert(res, get_harpoon_items())
+        -- if ft_icon then
+        --   table.insert(res, ' ')
+        --   -- table.insert(res, { '', guifg = '#1A1A1A' })
+        --   table.insert(res, { ' ', ' ', guibg = '#1A1A1A', guifg = helpers.contrast_color '#1A1A1A' })
+        --   table.insert(res, { '', guifg = '#1A1A1A' })
+        -- end
+
         return res
       end,
     }
