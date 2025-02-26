@@ -62,7 +62,7 @@ return {
       harpoon:list():select(9)
     end, { desc = 'Harpoon: Ninth Mark' })
 
-    vim.keymap.set('n', '<leader>o10', function()
+    vim.keymap.set('n', '<leader>o0', function()
       harpoon:list():select(10)
     end, { desc = 'Harpoon: Tenth Mark' })
 
