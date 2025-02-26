@@ -22,6 +22,7 @@ return {
       { '<leader>y', group = 'Yazi', icon = '' },
       { '<leader>;', group = 'Home', icon = '' },
       { '<leader>w', group = 'Save', icon = '' },
+      { '<leader>W', group = 'Save Without Formatter', icon = '' },
       { '<leader>[', group = 'Previous', icon = '󰙣' },
       { '<leader>h', group = 'No Highlight', icon = '󰸱' },
       { '<leader>]', group = 'Next', icon = '󰙡' },
@@ -50,6 +51,7 @@ return {
 
   keys = {
     { '<leader>w', '<cmd>w!<cr>', desc = 'Save' },
+    { '<leader>W', '<cmd>noa w<cr>', desc = 'Save Without Formatter' },
     -- { '<leader>c', '<cmd>close<cr>', desc = 'Close Window' },
     -- { "<leader>;", "<cmd>Dashboard<cr>", desc = "Home" },
     { '<leader>h', '<cmd>nohlsearch<cr>', desc = 'No Highlight' },
