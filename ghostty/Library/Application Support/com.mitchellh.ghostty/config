@@ -1,12 +1,13 @@
-# ghostty +list-themes
-theme = dark:rose-pine,light:catppuccin-latte
+# ghostty +list-themes rose-pine
+theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
-background = #1A1A1A
+# 1A1A1A
+background = #1E1E2F 
 background-opacity = 0.9
-background-blur-radius = 25
+background-blur-radius = 26
 cursor-style = block
 
-font-size = 13
+font-size = 14
 font-feature = -liga
 font-family = JetBrainsMono Nerd Font Mono
 
