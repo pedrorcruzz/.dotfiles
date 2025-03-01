@@ -4,6 +4,33 @@
 
 [manager]
 
+[[manager.prepend_keymap]]
+on   = [ "g", "w" ]
+run  = "cd ~/Workspace"
+desc = "Go Workspace"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = "cd ~/Workspace/Projects/Personal"
+desc = "Go Personal Projects"
+
+
+[[manager.prepend_keymap]]
+on   = [ "g", "o" ]
+run  = "cd ~/Workspace/Projects/Work"
+desc = "Go Work Projects"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "s" ]
+run  = "cd ~/Workspace/Studies"
+desc = "Go Studies Projects"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "t" ]
+run  = "cd ~/Workspace/Cesmac"
+desc = "Go Cesmac Projects"
+
+
 keymap = [
 	{ on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = "<C-[>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
