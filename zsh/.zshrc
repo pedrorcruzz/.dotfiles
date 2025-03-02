@@ -2,7 +2,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
-
 # ZSH_THEME="headline"
 
 # plugins oh my zsh 
@@ -154,7 +153,7 @@ function y() {
 }
 
 
-# Postgresql
+# Postgresql with homebrew
 # export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 # export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
@@ -179,6 +178,7 @@ case ":$PATH:" in
   *":$YARN_HOME/bin:"*) ;;
   *) export PATH="$YARN_HOME/bin:$PATH" ;;
 esac
+
 
 # Version Managers
 

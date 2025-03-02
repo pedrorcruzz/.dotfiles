@@ -121,7 +121,7 @@ return {
     { '<leader>cd', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
     { '<leader>cw', '<cmd>wincmd K<cr>', desc = 'Swap Up' },
     { '<leader>cs', '<cmd>wincmd J<cr>', desc = 'Swap Down' },
-    { '<leader>cf', '<cmd>MaximizerToggle<cr>', desc = 'Maximizer' },
+    { '<leader>cm', '<cmd>MaximizerToggle<cr>', desc = 'Maximizer' },
     {
       '<leader>c1',
       function()

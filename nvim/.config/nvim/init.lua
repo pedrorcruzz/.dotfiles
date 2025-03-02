@@ -56,6 +56,12 @@ require('nvim-web-devicons').setup {
       cterm_color = '74',
       name = 'Html',
     },
+    css = {
+      icon = ' ',
+      color = '#c18efe',
+      cterm_color = '74',
+      name = 'Css',
+    },
   },
   override_by_filename = {
     ['go.mod'] = {

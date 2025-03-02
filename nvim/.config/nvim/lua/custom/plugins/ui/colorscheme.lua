@@ -34,7 +34,7 @@ return {
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
-          EndOfBuffer = { fg = '#202020', bg = 'none' },
+          EndOfBuffer = { fg = '#202020', bg = transparent_background and 'none' },
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
@@ -112,7 +112,7 @@ return {
           DiagnosticWarn = { fg = '#ffa868' },
           DiagnosticInfo = { fg = '#64baff' },
           DiagnosticHint = { fg = '#c18efe' },
-          --
+
           -- snacks notifier
           SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
           SnacksNotifierBorderWarn = { fg = '#ffa868' },
@@ -122,10 +122,10 @@ return {
           SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' },
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
-          SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
-          -- SnacksPicker = { bg = '#1A1A1A' },
-          SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
-          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
+          -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
+          SnacksPicker = { bg = '#1A1A1A' },
+          -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
+          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
@@ -185,7 +185,7 @@ return {
     config = function()
       require('catppuccin').setup {
         background = { light = 'latte', dark = 'mocha' },
-        transparent_background = false,
+        transparent_background = true,
         term_colors = true,
         styles = {
           comments = { 'italic' },
@@ -195,6 +195,17 @@ return {
         custom_highlights = function(colors)
           return {
             -- CursorLine = { bg = '#45475C' },
+
+            -- Snacks
+            SnacksPicker = { bg = '#181826' },
+            SnacksPickerBorder = { fg = '#7DB6FF', bg = '#181826' },
+
+            ['@punctuation.special'] = { fg = '#4c4c4c' },
+            ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },
+            ['@punctuation.special.javascript'] = { fg = '#FFC0EA' },
+            ['@punctuation.special.typescript'] = { fg = '#FFC0EA' },
+
+            GitSignsCurrentLineBlame = { fg = '#abb2bf' },
           }
         end,
       }

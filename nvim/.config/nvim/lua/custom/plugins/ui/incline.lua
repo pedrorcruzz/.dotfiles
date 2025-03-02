@@ -12,11 +12,11 @@ return {
     local harpoon = require 'harpoon'
 
     require('incline').setup {
-      hide = { cursorline = true },
+      hide = { cursorline = false },
       window = {
         padding = 0,
         margin = { horizontal = 0, vertical = 0 },
-        placement = { vertical = 'top', horizontal = 'center' },
+        placement = { vertical = 'top', horizontal = 'right' },
       },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
@@ -27,15 +27,13 @@ return {
         local ft_icon, ft_color = devicons.get_icon_color(filename)
         local modified = vim.bo[props.buf].modified and ' ●' or ''
         local res = {
-          -- ft_icon and { '', guifg = '#202020' } or '', --ft_color
-          -- ft_icon and { ' ', ft_icon, ' ', guibg = '#202020', guifg = helpers.contrast_color(ft_color) } or '',
+          -- ft_icon and { '', guifg = ft_color } or '', --ft_color
+          -- ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
           ft_icon and { ' ', ft_icon, ' ', guibg = nil, guifg = ft_color } or '',
           -- ft_icon and { '', guifg = '#202020' } or '',
           ' ', --sempre 1
-          ' ',
           { filename .. modified, gui = 'bold' },
           ' ', -- nao tem nada
-          ' ',
           ' ',
           -- guibg = '#1A1A1A',
           -- guifg = '#abb2bf',

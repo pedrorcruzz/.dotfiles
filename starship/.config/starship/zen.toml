@@ -18,6 +18,7 @@ $git_status\
 $fill\
 $python\
 $elixir\
+$erlang\
 $dart\
 $lua\
 $nodejs\
@@ -175,6 +176,10 @@ format = '[ $symbol( $version) ]($style)'
 
 [elixir]
 symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
+[erlang]
+symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
 

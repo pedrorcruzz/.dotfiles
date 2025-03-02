@@ -244,7 +244,12 @@ return {
     image = { enabled = true },
     animate = { enabled = true },
     words = { enabled = true },
-    scroll = { enabled = false },
+    scroll = {
+        enabled = true,
+        animate = {
+        duration = { step = 20, total = 120 },
+        },
+      },
     rename = { enabled = true },
     toggle = { enabled = true },
     lazygit = { enabled = true },
