@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/bin:$PATH"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
 
 # ZSH_THEME="headline"
@@ -18,10 +19,6 @@ export STARSHIP_CONFIG=$HOME/.config/starship/zen.toml
 # CONSOLE NINJA 
 PATH=~/.console-ninja/.bin:$PATH
 
-
-# completion using arrow keys (based on history)
-# bindkey '^[[A' history-search-backward
-# bindkey '^[[B' history-search-forward
 
 # iniciar o tmux
 # if command -v tmux &> /dev/null; then
@@ -42,16 +39,23 @@ alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 
 #Alias Postgresql
-#Usuario Postgres
-alias joinpostgresp='psql -U postgres -d postgres'
-alias joindpostgresp='docker exec -it postgres-container psql -U postgres -d postgres'
+#Start and Stop Postgres
+alias startpg="/Users/phrosa/.asdf/installs/postgres/17.4/bin/pg_ctl -D /Users/phrosa/.asdf/installs/postgres/17.4/data start"
+alias stoppg="/Users/phrosa/.asdf/installs/postgres/17.4/bin/pg_ctl -D /Users/phrosa/.asdf/installs/postgres/17.4/data stop"
 
-#Digitar Usario
-alias joinpostgres='psql -U'
-alias joindpostgres='docker exec -it postgres-container psql -U'
+#User Postgres
+alias joinpgp='psql -U postgres -d postgres'
+alias joindpgp='docker exec -it postgres-container psql -U postgres -d postgres'
+
+#Input User
+alias joinpg='psql -U'
+alias joindpg='docker exec -it postgres-container psql -U'
 export LC_MESSAGES=en_US.UTF-8
 
 #Alias MongoDB
+alias startmongo='mongod --dbpath ~/.asdf/installs/mongodb/8.0.5/data/db'
+alias startmongod='mongod --dbpath ~/.asdf/installs/mongodb/8.0.5/data/db --fork --logpath ~/.asdf/installs/mongodb/8.0.5/mongo_logs/mongo.log'
+alias stopmongo= 'ps aux | grep mongod'
 alias joinmongo='mongosh -u phrosa -p mongo --authenticationDatabase admin'
 
 #Alias System
@@ -150,19 +154,14 @@ function y() {
 }
 
 
-
-# node
-# homebrew
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# Se for pelo curl
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Postgresql
+# export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
 
 
+
+# Node Version Manager
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -181,41 +180,43 @@ case ":$PATH:" in
   *) export PATH="$YARN_HOME/bin:$PATH" ;;
 esac
 
+# Version Managers
 
-# ruby
-export PATH="$HOME/.rbenv/shims:$PATH"
-export PATH="/opt/homebrew/opt/ripgrep/bin:$PATH"
-
-
-# python
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="$(pyenv root)/shims:$PATH"
-eval "$(pyenv init -)"
+# ASDF
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 
-
-# Golang
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOENV_ROOT/shims:$PATH"
-
-# Postgresql
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
+# NVM 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
+# GOENV
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
+# export PATH="$GOENV_ROOT/shims:$PATH"
 
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/phrosa/Library/Application Support/Herd/config/php/84/"
+# RBENV
+# export PATH="$HOME/.rbenv/shims:$PATH"
+# export PATH="/opt/homebrew/opt/ripgrep/bin:$PATH"
+
+
+# PYENV
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# export PATH="$(pyenv root)/shims:$PATH"
+# eval "$(pyenv init -)"
+
+
+# SDKMAN
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 # Herd injected PHP binary.
 export PATH="/Users/phrosa/Library/Application Support/Herd/bin/":$PATH
 
-
-# JAVA 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/phrosa/Library/Application Support/Herd/config/php/84/"
