@@ -83,8 +83,8 @@ alias ldk='lazydocker'
 # alias start_project="cd /caminho/do/projeto && docker compose up"
 
 #Alias automate sync with git
-alias synco='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./obsidian-sync.sh && popd > /dev/null'
-alias syncd='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./dotfiles-sync.sh && popd > /dev/null'
+alias syo='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./obsidian-sync.sh && popd > /dev/null'
+alias syd='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./dotfiles-sync.sh && popd > /dev/null'
 
 #Alias Git
 alias gcn="git clone"
