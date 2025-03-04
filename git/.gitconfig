@@ -9,3 +9,5 @@
 	defaultBranch = main
 [credential]
 	helper = store
+[commit]
+	gpgSign = true
