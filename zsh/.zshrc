@@ -82,12 +82,14 @@ alias pyvenv='python3 -m venv venv'
 alias ldk='lazydocker'
 # alias start_project="cd /caminho/do/projeto && docker compose up"
 
+#Alias automate sync with git
+alias synco='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./obsidian-sync.sh && popd > /dev/null'
+alias syncd='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./dotfiles-sync.sh && popd > /dev/null'
 
 #Alias Git
 alias gcn="git clone"
 alias gcmsg="git commit -m"
 alias gcmsgs="git commit --gpg-sign -m"
-
 
 #Alias Tmux
 alias tls="tmux list-sessions"
