@@ -1,0 +1,65 @@
+
+    dashboard = {
+      enabled = true,
+      preset = {
+        keys = {
+          { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
+          { icon = ' ', key = 'f', desc = 'Find File', action = ':FzfLua files' },
+          { icon = ' ', key = 'r', desc = 'Recent Files', action = ':FzfLua oldfiles' },
+          { icon = ' ', key = 'w', desc = 'Worktree', action = ':Yazi cwd' },
+          {
+            icon = ' ',
+            key = 'c',
+            desc = 'Config',
+            action = function()
+              require('fzf-lua').files { cwd = vim.fn.stdpath 'config' }
+            end,
+          },
+          { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
+          { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+          { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+        },
+        header = {
+          [[
+██████╗  ██████╗ ███████╗ █████╗     ███╗   ██╗██╗   ██╗██╗███╗   ███╗
+██╔══██╗██╔═══██╗██╔════╝██╔══██╗    ████╗  ██║██║   ██║██║████╗ ████║
+██████╔╝██║   ██║███████╗███████║    ██╔██╗ ██║██║   ██║██║██╔████╔██║
+██╔══██╗██║   ██║╚════██║██╔══██║    ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║  ██║╚██████╔╝███████║██║  ██║    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+          ]],
+        },
+      },
+      sections = {
+        { pane = 1, section = 'header', gap = 0 },
+        {
+          pane = 2,
+          section = 'terminal',
+          cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg --format symbols --size 70x70 --align center; sleep .1',
+          -- cmd = "ascii-image-converter ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear-5.jpeg -C -c -d 60,30",
+          height = 25,
+          padding = 1,
+          enabled = function()
+            return not (vim.o.columns > 100 and vim.o.columns < 150)
+          end,
+        },
+        { section = 'startup' },
+        {
+          pane = 1,
+          icon = ' ',
+          section = 'keys',
+          indent = 1,
+          gap = 0,
+          padding = 1,
+        },
+        {
+          -- icon = '',
+          title = 'Projects',
+          section = 'projects',
+          opts = { limit = 3 },
+          indent = 2,
+          padding = 1,
+        },
+      },
+      width = 70,
+    },

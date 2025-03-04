@@ -1,0 +1,173 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+      "source": "./images/anime-girl-mask-nobg.png",
+      "type": "kitty",
+      "position": "left",
+      "padding": {
+       "top": 2,
+      "left": 3
+      },
+      "width": 40
+   },
+   "display": {
+      "separator": " "
+   },
+  "display": {
+    "separator": " ➜  ",
+    "color": {
+      "separator": "30",
+    },
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "{#magenta}ウィリアンさん{#default}",
+      "keyWidth": 10,
+    },
+    "break",
+    {
+      "type": "title",
+      "format": " ┌➜ SYSTEM",
+      "outputColor": "red",
+    },
+    {
+      "type": "os",
+      "key": " ├  {#white}HOST",
+      "keyColor": "red",
+    },
+    {
+      "type": "command",
+      "text": "uname -r | sed 's/-.*//'",
+      "shell": "/bin/fish",
+      "format": "Linux {1}-WSL",
+      "key": " ├  {#white}KERN",
+      "keyColor": "red",
+    },
+    {
+      "type": "packages",
+      "key": " ├ 󰏖 {#white}PKGS",
+      "keyColor": "red",
+    },
+    {
+      "type": "processes",
+      "format": "{} running",
+      "key": " ├  {#white}PROC",
+      "keyColor": "red",
+    },
+    {
+      "type": "wm",
+      "key": " ├  {#white}GUI ",
+      "keyColor": "red",
+    },
+    // {
+    //   "type": "localip",
+    //   "key": " ├  {#white}LIP ",
+    //   "keyColor": "red",
+    // },
+    {
+      "type": "uptime",
+      "key": " └  {#white}UPT ",
+      "keyColor": "red",
+    },
+    {
+      "type": "datetime",
+     "format": "{1}-{3}-{11}",
+      "key": " └  {#white}DATE ",
+      "keyColor": "red",
+    },
+    "break",
+    {
+      "type": "title",
+      "format": " ┌➜ APPS",
+      "outputColor": "green",
+    },
+    {
+      "type": "terminal",
+	  "format": "WezTerm",
+      "key": " ├  {#white}TERM",
+      "keyColor": "green",
+    },
+    {
+      "type": "shell",
+      "key": " ├  {#white}SHELL",
+      "format": "{6} + Starship",
+      "keyColor": "green",
+    },
+    {
+      "type": "custom",
+	  "format": "Neovim",
+      "shell": "/bin/zsh",
+      "key": " ├ 󰲌 {#white}EDIT",
+      "keyColor": "green",
+    },
+    // {
+    //   "type": "custom",
+    //   "format": "Yazi",
+    //   "key": " ├  {#white}FILE",
+    //   "keyColor": "green",
+    // },
+    {
+      "type": "media",
+      // "format": "Spotify",
+      "key": " ├ 󰴙 {#white}PLAY",
+      "keyColor": "green",
+    },
+    // {
+    //   "type": "custom",
+    //   "format": "GCC + CMake",
+    //   "key": " ├  {#white}COMP",
+    //   "keyColor": "green",
+    // },
+    "break",
+    {
+      "type": "title",
+      "format": " ┌➜ PC",
+      "outputColor": "yellow",
+    },
+    {
+      "type": "memory",
+      "key": " ├  {#white}MEM ",
+      "format": "{1} / {2} ({3}/16 GiB)",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "cpu",
+      "format": "{1}",
+      "key": " ├  {#white}CPU ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "gpu",
+      "format": "{2}",
+      "key": " ├ 󰢮 {#white}GPU ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "disk",
+      // "format": "{2}",
+      "key": " ├  {#white}DISK",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "command",
+      "text": "df --output=pcent /mnt/c | tr -dc '0-9'",
+      "shell": "/bin/zsh",
+      "key": " ├ 󰋊 {#white}DISK",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "battery",
+      "key": " ├ 󱧦 {#white}BATT",
+      "keyColor": "yellow",
+    },
+    "break",
+    {
+      "type": "title",
+      "format": "{#black}-⬤-{#red}-⬤-{#green}-⬤-{#yellow}-⬤-{#blue}-⬤-{#magenta}-⬤-{#cyan}-⬤-{#white}-⬤-{#bright_white}-⬤-{#bright_cyan}-⬤-{#bright_magenta}-⬤-{#bright_blue}-⬤-{#bright_yellow}-⬤-{#bright_green}-⬤-{#bright_red}-⬤-{#bright_black}-⬤-",
+      "outputColor": "green",
+    },
+    "break",
+  ],
+}

@@ -1,0 +1,13 @@
+
+[core]
+	editor = vim
+[user]
+	name = pedrorcruzz
+	email = phrosa.dev@gmail.com
+	signingkey = F7E56D7B80596028AF409E7BCC7807B26CB2DE27
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[commit]
+	gpgSign = true
