@@ -1,7 +1,7 @@
 #!/bin/bash
 export GPG_TTY=$(tty)
 
-commit_message="Atualizações automáticas - $(date '+%Y-%m-%d %H:%M:%S')"
+commit_message="sync: atualizações automáticas - $(date '+%Y-%m-%d %H:%M:%S')"
 
 
 cd ~/Workspace/second-brain
