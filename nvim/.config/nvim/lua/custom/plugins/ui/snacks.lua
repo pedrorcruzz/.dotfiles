@@ -120,13 +120,13 @@ return {
           enabled = function()
             return not (vim.o.columns < 135)
           end,
-          opts = { limit = 10 },
           indent = 1,
+          limit = 5,
           padding = 2,
         },
         {
           pane = 2,
-          opts = { limit = 4 },
+          limit = 5,
           icon = '',
           title = 'Projects',
           section = 'projects',
