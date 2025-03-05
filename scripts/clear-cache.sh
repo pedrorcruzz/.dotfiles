@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/Workspace/nuke-macOS-caches
+cd ~/Workspace/Scripts/nuke-macOS-caches
 
 
 sleep 2
