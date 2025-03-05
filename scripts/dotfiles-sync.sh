@@ -1,7 +1,7 @@
 #!/bin/bash
 export GPG_TTY=$(tty)
 
-commit_message="sync: auto updates - $(date '+%Y-%m-%d %H:%M:%S')"
+commit_message="auto-sync: $(date '+%Y-%m-%d %H:%M:%S')"
 
 
 cd ~/.dotfiles
