@@ -11,3 +11,6 @@ git add .
 git commit -S -m "$commit_message"
 
 git push origin main
+
+sleep 1
+clear
