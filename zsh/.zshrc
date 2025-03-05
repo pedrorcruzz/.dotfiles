@@ -24,8 +24,9 @@ export STARSHIP_CONFIG=$HOME/.config/starship/zen.toml
 
 
 #Alias Directory
-alias D="~/Workspace"
+alias W="~/Workspace"
 alias S="~/Workspace/Studies"
+alias SRC="~/Workspace/Scripts"
 alias C="~/Workspace/Cesmac"
 alias P="~/Workspace/Projects"
 alias PP="~/Workspace/Projects/Personal/"
@@ -70,7 +71,7 @@ alias lg='lazygit'
 alias ldc='lazydocker'
 alias sv='source venv/bin/activate'
 alias dv='deactivate'
-# alias cleacache='pushd "$(pwd)" > /dev/null && cd ~/Workspace/nuke-macOS-caches && make run && clear && popd > /dev/null'
+# alias cleacache='pushd "$(pwd)" > /dev/null && cd ~/Workspace/Scripts/nuke-macOS-caches && make run && clear && popd > /dev/null'
 
 #Alias Python
 alias pipu='pip install --upgrade pip'
