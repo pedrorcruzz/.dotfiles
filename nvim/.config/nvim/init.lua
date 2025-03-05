@@ -45,19 +45,19 @@ require('lazy').setup({
 require('nvim-web-devicons').setup {
   override = {
     go = {
-      icon = ' ',
+      icon = '',
       color = '#00ADD8',
       cterm_color = '74',
       name = 'Go',
     },
     html = {
-      icon = ' ',
+      icon = '',
       color = '#EA580B',
       cterm_color = '74',
       name = 'Html',
     },
     css = {
-      icon = ' ',
+      icon = '',
       color = '#c18efe',
       cterm_color = '74',
       name = 'Css',
@@ -65,43 +65,49 @@ require('nvim-web-devicons').setup {
   },
   override_by_filename = {
     ['go.mod'] = {
-      icon = '󰟓 ',
+      icon = '',
       color = '#F471B5',
       cterm_color = '74',
       name = 'GoMod',
     },
     ['go.sum'] = {
-      icon = '󰟓 ',
+      icon = '',
       color = '#F471B5',
       cterm_color = '74',
       name = 'GoSum',
     },
+    ['go-test'] = {
+      icon = '',
+      color = '#606060',
+      cterm_color = '74',
+      name = 'GoTest',
+    },
     ['README.md'] = {
-      icon = ' ',
+      icon = '',
       color = '#ffffff',
       cterm_color = '74',
       name = 'Readme',
     },
     ['Makefile'] = {
-      icon = ' ',
+      icon = '',
       color = '#F471B5',
       cterm_color = '74',
       name = 'Makefile',
     },
     ['package-lock.json'] = {
-      icon = ' ',
+      icon = '',
       color = '#2DD4BF',
       cterm_color = '74',
       name = 'PackageLock',
     },
     ['package.json'] = {
-      icon = ' ',
+      icon = '',
       color = '#2DD4BF',
       cterm_color = '74',
       name = 'PackageJson',
     },
     ['.gitignore'] = {
-      icon = ' ',
+      icon = '',
       color = '#F87171',
       cterm_color = '74',
       name = 'Gitignore',

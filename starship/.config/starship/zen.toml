@@ -221,7 +221,7 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [golang]
-symbol = " " # 
+symbol = " " # 
 format = '[ $symbol( $version) ]($style)'
 detect_files = ["go.mod"]
 

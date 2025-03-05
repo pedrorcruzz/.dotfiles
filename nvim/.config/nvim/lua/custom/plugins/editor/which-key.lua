@@ -27,13 +27,19 @@ return {
       { '<leader>h', group = 'No Highlight', icon = '󰸱' },
       { '<leader>]', group = 'Next', icon = '󰙡' },
       { '<leader>a', group = 'Avante', icon = ' ' },
-      { '<leader>l', group = 'Tools', icon = ' ' },
       { '<leader>lx', group = 'Virtual Environment', icon = ' ' },
       { '<leader>o', group = 'Harpoon', icon = '󱝩' },
       { '<leader>m', group = 'Codi', icon = '' },
-      { '<leader>p', group = 'PHP Tools', icon = '' },
+
+      { '<leader>l', group = 'Tools', icon = ' ' },
+      { '<leader>p', group = 'Languages Tools', icon = ' ' },
+      { '<leader>pp', group = 'PHP Tools', icon = ' ' },
+      { '<leader>pg', group = 'GO Tools', icon = ' ' },
+      { '<leader>pgd', group = 'Debug', icon = ' ' },
+
       { '<leader>c', group = 'Window', icon = '󰶛' },
       { '<leader>t', group = 'Tabs', icon = '󱦞' },
+
       { '<leader>i', group = 'Copilot', icon = '' },
       { '<leader>u', group = 'Markdown', icon = '' },
       { '<leader>d', group = 'Debug' },

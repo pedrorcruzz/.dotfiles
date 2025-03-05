@@ -28,11 +28,11 @@ return {
         local modified = vim.bo[props.buf].modified and ' ●' or ''
         local res = {
           -- with color
-          ft_icon and { '', guifg = ft_color } or '', --ft_color
-          ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
+          -- ft_icon and { '', guifg = ft_color } or '', --ft_color
+          -- ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
 
           -- without color
-          -- ft_icon and { ' ', ft_icon, ' ', guibg = nil, guifg = ft_color } or '',
+          ft_icon and { ' ', ft_icon, ' ', guibg = nil, guifg = ft_color } or '',
           -- ft_icon and { '', guifg = '#202020' } or '',
 
           ' ', --sempre 1

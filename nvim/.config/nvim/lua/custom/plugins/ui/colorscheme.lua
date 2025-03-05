@@ -220,11 +220,4 @@ return {
     'luisiacc/gruvbox-baby',
     config = function() end,
   },
-  {
-    'killitar/obscure.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function() end,
-  },
 }

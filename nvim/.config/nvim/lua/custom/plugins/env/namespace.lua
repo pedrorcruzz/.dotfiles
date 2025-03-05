@@ -1,10 +1,10 @@
 return { -- lazy
   'ccaglak/namespace.nvim',
   keys = {
-    { '<leader>pa', '<cmd>Php classes<cr>', desc = 'Find all classes, traits, implementations, and attributes from Composer or local search' },
-    { '<leader>pc', '<cmd>Php class<cr>', desc = 'Get the class under the cursor' },
-    { '<leader>pn', '<cmd>Php namespace<cr>', desc = 'Generate namespace for the current file' },
-    { '<leader>ps', '<cmd>Php sort<cr>', desc = 'Sorts namespaces in current file with 6 options' },
+    { '<leader>ppa', '<cmd>Php classes<cr>', desc = 'Find all classes, traits, implementations, and attributes from Composer or local search' },
+    { '<leader>ppc', '<cmd>Php class<cr>', desc = 'Get the class under the cursor' },
+    { '<leader>ppn', '<cmd>Php namespace<cr>', desc = 'Generate namespace for the current file' },
+    { '<leader>pps', '<cmd>Php sort<cr>', desc = 'Sorts namespaces in current file with 6 options' },
   },
   dependencies = {
     'ccaglak/phptools.nvim', -- optional
