@@ -15,11 +15,6 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/zen.toml
 
-
-# CONSOLE NINJA 
-PATH=~/.console-ninja/.bin:$PATH
-
-
 # iniciar o tmux
 # if command -v tmux &> /dev/null; then
 #     if [ -z "$TMUX" ]; then
@@ -37,6 +32,10 @@ alias PP="~/Workspace/Projects/Personal/"
 alias PW="~/Workspace/Projects/Work/"
 alias PH="/Applications/XAMPP/xamppfiles/htdocs/projects"
 
+#Alias Scripts
+alias syo='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./obsidian-sync.sh && popd > /dev/null'
+alias syd='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./dotfiles-sync.sh && popd > /dev/null'
+alias ccache='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./clear-cache.sh && popd > /dev/null'
 
 #Alias Postgresql
 #Start and Stop Postgres
@@ -71,22 +70,15 @@ alias lg='lazygit'
 alias ldc='lazydocker'
 alias sv='source venv/bin/activate'
 alias dv='deactivate'
-alias clearcache='pushd "$(pwd)" > /dev/null && cd ~/Workspace/nuke-macOS-caches && make run && clear && popd > /dev/null'
+# alias cleacache='pushd "$(pwd)" > /dev/null && cd ~/Workspace/nuke-macOS-caches && make run && clear && popd > /dev/null'
 
-
-
-#Python
+#Alias Python
 alias pipu='pip install --upgrade pip'
 alias pyvenv='python3 -m venv venv'
-
 
 #Alias Docker
 alias ldk='lazydocker'
 # alias start_project="cd /caminho/do/projeto && docker compose up"
-
-#Alias automate sync with git
-alias syo='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./obsidian-sync.sh && popd > /dev/null'
-alias syd='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./dotfiles-sync.sh && popd > /dev/null'
 
 #Alias Git
 alias gcn="git clone"
@@ -109,7 +101,6 @@ alias tnn="tmux new-session -s "
 alias tks="tmux kill-session -t "
 
 
-
 # ----- Bat (better cat) -----
 alias cat="bat"
 
@@ -121,7 +112,6 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 
 alias cd="z"
-
 
 # ---- FZF -----
 
@@ -145,12 +135,6 @@ purple="#B388FF"
 blue="#06BCE4"
 cyan="#2CF9ED"
 
-# ---- TheFuck -----
-
-# thefuck alias
-# eval $(thefuck --alias)
-# eval $(thefuck --alias fk)
-
 # yazi
 export EDITOR="nvim"
 alias y ="yazi"
@@ -163,13 +147,6 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
-
-
-# Postgresql with homebrew
-# export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-# export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
-
 
 
 # Node Version Manager
@@ -192,7 +169,7 @@ case ":$PATH:" in
 esac
 
 
-# Version Managers
+# Stacks Managers
 
 # ASDF
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -226,6 +203,10 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # export SDKMAN_DIR="$HOME/.sdkman"
 # [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# Postgresql with homebrew
+# export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
 
 # Herd injected PHP binary.
 export PATH="/Users/phrosa/Library/Application Support/Herd/bin/":$PATH
