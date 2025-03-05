@@ -50,6 +50,7 @@ return {
           ['@constant'] = { fg = '#B3B2B3' },
 
           --bash
+          ['@punctuation.special.bash'] = { fg = '#F67582' },
           ['@string.bash'] = { fg = '#BAB9BA' },
           ['@number.bash'] = { fg = '#BAB9BA' },
           ['@variable.bash'] = { fg = '#F67582' },
