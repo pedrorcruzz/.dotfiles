@@ -91,7 +91,12 @@ alias syd='pushd "$(pwd)" > /dev/null && cd ~/.dotfiles/scripts && ./dotfiles-sy
 #Alias Git
 alias gcn="git clone"
 alias gcmsg="git commit -m"
-alias gcmsgs="git commit --gpg-sign -m"
+alias gcmsgs="git commit -S -m"
+alias gcmsgs="git commit -S -m"
+alias gtags="git tag -s"
+alias gtag="git tag -a"
+alias gtagp="git push origin"
+alias gtagpa="git push origin --tags"
 
 #Alias Tmux
 alias tls="tmux list-sessions"
