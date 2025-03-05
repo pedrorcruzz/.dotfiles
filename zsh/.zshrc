@@ -71,7 +71,7 @@ alias lg='lazygit'
 alias ldc='lazydocker'
 alias sv='source venv/bin/activate'
 alias dv='deactivate'
-alias clearcache='pushd "$(pwd)" > /dev/null && cd ~/Workspace/nuke-macOS-caches && make run && popd > /dev/null'
+alias clearcache='pushd "$(pwd)" > /dev/null && cd ~/Workspace/nuke-macOS-caches && make run && clear && popd > /dev/null'
 
 
 
