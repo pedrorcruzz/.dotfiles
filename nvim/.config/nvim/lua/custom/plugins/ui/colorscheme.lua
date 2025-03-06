@@ -48,7 +48,7 @@ return {
           ['@punctuation.special.python'] = { fg = '#DA70D6' },
           ['@punctuation.special.javascript'] = { fg = '#DA70D6' },
           ['@punctuation.special.typescript'] = { fg = '#DA70D6' },
-          ['@punctuation.special.golang'] = { fg = '#DA70D6' },
+          ['@punctuation.special.go'] = { fg = '#DA70D6' },
           ['@punctuation.special.elixir'] = { fg = '#DA70D6' },
           ['@punctuation.special.c'] = { fg = '#DA70D6' },
           ['@punctuation.special.lua'] = { fg = '#DA70D6' },
