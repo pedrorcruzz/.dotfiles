@@ -39,8 +39,20 @@ return {
           MatchParen = { fg = '#abb2bf' },
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
           --underline cmp preview
-          ['@punctuation.special'] = { fg = '#323232' },
           ['@punctuation.bracket'] = { fg = '#abb2bf' },
+
+          --Punctuation Special
+          ['@punctuation.special'] = { fg = '#323232' },
+          ['@punctuation.special.bash'] = { fg = '#DA70D6' },
+          ['@punctuation.special.python'] = { fg = '#DA70D6' },
+          ['@punctuation.special.javascript'] = { fg = '#DA70D6' },
+          ['@punctuation.special.typescript'] = { fg = '#DA70D6' },
+          ['@punctuation.special.golang'] = { fg = '#DA70D6' },
+          ['@punctuation.special.elixir'] = { fg = '#DA70D6' },
+          ['@punctuation.special.c'] = { fg = '#DA70D6' },
+          ['@punctuation.special.lua'] = { fg = '#DA70D6' },
+          ['@punctuation.special.php'] = { fg = '#DA70D6' },
+          ['@punctuation.special.json'] = { fg = '#DA70D6' },
 
           --variable
           ['@variable'] = { fg = '#BCBBBB' },
@@ -50,10 +62,9 @@ return {
           ['@constant'] = { fg = '#B3B2B3' },
 
           --bash
-          ['@punctuation.special.bash'] = { fg = '#F67582' },
           ['@string.bash'] = { fg = '#BAB9BA' },
           ['@number.bash'] = { fg = '#BAB9BA' },
-          ['@variable.bash'] = { fg = '#F67582' },
+          ['@variable.bash'] = { fg = '#BAB9BA' },
           ['@constant.bash'] = { fg = '#F67582' },
 
           --module

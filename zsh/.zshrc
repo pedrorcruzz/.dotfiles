@@ -214,3 +214,5 @@ export PATH="/Users/phrosa/Library/Application Support/Herd/bin/":$PATH
 
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/phrosa/Library/Application Support/Herd/config/php/84/"
+
+PATH=~/.console-ninja/.bin:$PATH

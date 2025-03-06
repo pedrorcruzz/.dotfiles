@@ -12,5 +12,5 @@ git commit -S -m "$commit_message"
 
 git push origin main
 
-sleep 1
+sleep 1.2
 clear

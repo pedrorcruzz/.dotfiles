@@ -2,5 +2,7 @@
 
 cd ~/Workspace/Scripts/nuke-macOS-caches
 
-sleep 1
+make run
+
+sleep 1.3
 clear
