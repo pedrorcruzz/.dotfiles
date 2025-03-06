@@ -5,7 +5,6 @@
 --   
 --   
 --   
-
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
@@ -22,8 +21,8 @@ return {
       colors = {
         min_fg_branch = '#a9a9a9',
         min_bg_branch = '#2d2d2d',
-        min_innerbg = nil,
-        min_outerbg = nil,
+        -- min_bar_bg = '#2d2d2d',
+        min_bar_bg = nil,
         min_normal = '#64BAFF',
         min_insert = '#FF7081',
         min_visual = '#B990F7',
@@ -43,8 +42,9 @@ return {
         default_branch_bg = '#202020', -- 2d2d2d
         default_fg_color = '#1A1A1A',
         default_y_bg = nil,
+        -- default_bar_bg = '#2d2d2d',
+        default_bar_bg = nil,
         default_y_fg = '#a9a9a9',
-        default_outerbg = nil,
         default_normal = '#64BAFF',
         default_insert = '#FF7081',
         default_visual = '#B990F7',
@@ -82,35 +82,35 @@ return {
           normal = {
             a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_normal, gui = 'bold' },
             b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_innerbg },
+            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
             y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
             z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
           },
           insert = {
             a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_insert, gui = 'bold' },
             b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_innerbg },
+            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
             y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
             z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
           },
           visual = {
             a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_visual, gui = 'bold' },
             b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_innerbg },
+            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
             y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
             z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
           },
           replace = {
             a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_replace, gui = 'bold' },
             b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_innerbg },
+            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
             y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
             z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
           },
           command = {
             a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_command, gui = 'bold' },
             b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_innerbg },
+            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
             y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
             z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
           },

@@ -13,7 +13,7 @@ return {
     require('which-key').add {
       { '<leader>', group = ' 󰠥 ROSAVIM' }, --󰧵
       { '<leader>e', group = 'File Explorer', icon = '' },
-      { "<leader>'", group = 'Wrap', icon = '󰭷' },
+      -- { "<leader>'", group = 'Wrap', icon = '󰭷' },
       { '<leader>z', group = 'Obsidian', icon = '' },
       { '<leader>v', group = 'Auto Save', icon = '' },
       { '<leader>b', group = 'DBUI', icon = '' },
@@ -68,10 +68,7 @@ return {
     { '<leader>fp', '<cmd>NeovimProjectDiscover<cr>', desc = 'Discover Projects' },
 
     --Wrap
-    { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
-
-    -- Yazi
-    -- { "<leader>y", "<cmd>Yazi<cr>", desc = "Yazi" },
+    -- { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
 
     --Obsidian
 

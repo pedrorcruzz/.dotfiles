@@ -157,7 +157,7 @@ return {
       replace_netrw = false,
     },
     indent = {
-      enabled = true,
+      enabled = false,
       char = '│',
       only_scope = false, -- only show indent guides of the scope
       only_current = false, -- only show indent guides in the current window

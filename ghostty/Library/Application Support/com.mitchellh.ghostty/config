@@ -25,8 +25,9 @@ keybind = global:cmd+/=toggle_quick_terminal
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 # tabs, native, transparent, hidden
-macos-titlebar-style = hidden 
-window-subtitle = false
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = hidden
+title = " "
 confirm-close-surface = false
 
 window-decoration = true
