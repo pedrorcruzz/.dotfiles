@@ -234,7 +234,7 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [kotlin]
-symbol = ""
+symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [haskell]

@@ -182,30 +182,30 @@ format = '[via](#52676b)[$symbol( $version) ]($style)'
 
 [nodejs]
 symbol = ' '
-format = '[via](#52676B) [$symbol( k$version)]($style)'
+format = '[via](#52676B)[$symbol( $version) ]($style)'
 
 [custom.pnpm]
 symbol = ' '
-format = '[ $symbol($version) ]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [custom.yarn]
 symbol = ' '
-format = '[ $symbol($version) ]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [bun]
 symbol = '🍔 '
-format = '[ $symbol($version) ]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [package]
 # symbol = '󰏗 '
 symbol = '📦 '
-format = '[ $symbol($version) ]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 
 [custom.typescript]
 style = "bold #007ACC"  
 symbol = " " 
-format = '[ $symbol($version) ]($style)'
+format = '[ $symbol ($version) ]($style)'
 detect_extensions = ["ts", "tsx"]
 
 
@@ -247,13 +247,13 @@ format = '[via](#52676b)[[$symbol( $version) ]]($style)'
 [python]
 symbol = ' '
 style = "fg:#F1CA81"
-format = '[via](#52676B) [${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
+format = '[via](#52676B)[${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
 # pyenv_version_name = true
 # pyenv_prefix = ''
 
 [swift]
 symbol = ' '
-format = '[via](#52676b) [[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[$symbol( $version) ]]($style)'
 
 [docker_context]
 # symbol = ' '
