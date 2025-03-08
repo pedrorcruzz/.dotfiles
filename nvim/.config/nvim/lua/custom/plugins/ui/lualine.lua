@@ -21,8 +21,8 @@ return {
       colors = {
         min_fg_branch = '#a9a9a9',
         min_bg_branch = '#2d2d2d',
-        -- min_bar_bg = '#2d2d2d',
-        min_bar_bg = nil,
+        min_bar_bg = '#2d2d2d',
+        -- min_bar_bg = nil,
         min_normal = '#64BAFF',
         min_insert = '#FF7081',
         min_visual = '#B990F7',

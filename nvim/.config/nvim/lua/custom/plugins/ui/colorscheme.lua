@@ -20,8 +20,8 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' },
-          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' }, --#202020
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020
+          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
@@ -137,7 +137,7 @@ return {
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
           -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
 
-          SnacksPicker = { bg = '#000000' },
+          SnacksPicker = { bg = '#1A1A1A' },
           -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
           SnacksPickerBorder = { fg = '#606060', bg = '#1A1A1A' },
 
