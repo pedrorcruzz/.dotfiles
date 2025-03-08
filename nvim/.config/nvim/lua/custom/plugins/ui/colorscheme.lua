@@ -8,7 +8,7 @@ return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = true
+      local transparent_background = false
       require('min-theme').setup {
         transparent = transparent_background,
         italics = {
@@ -20,20 +20,20 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#202020' },
-          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' },
+          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' }, --#202020
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#727272' }, --#4b5263
-          NormalFloat = { bg = transparent_background and 'none' or '#202020' },
+          NormalFloat = { bg = transparent_background and 'none' or '#000000' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
-          EndOfBuffer = { fg = '#202020', bg = transparent_background and 'none' },
+          EndOfBuffer = { fg = '#000000', bg = 'none' },
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
@@ -136,9 +136,10 @@ return {
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' },
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
           -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
-          SnacksPicker = { bg = '#1A1A1A' },
+
+          SnacksPicker = { bg = '#000000' },
           -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
-          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
+          SnacksPickerBorder = { fg = '#606060', bg = '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },

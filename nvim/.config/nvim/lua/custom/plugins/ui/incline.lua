@@ -10,6 +10,7 @@ return {
     local navic = require 'nvim-navic'
     local devicons = require 'nvim-web-devicons'
     local harpoon = require 'harpoon'
+    -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'NONE' })
 
     require('incline').setup {
       hide = { cursorline = false },

@@ -2,8 +2,8 @@
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
 # 1A1A1A 1E1E2F
-background = #1A1A1A 
-background-opacity = 0.9
+background = #000000
+background-opacity = 0.7
 background-blur-radius = 26
 cursor-style = block
 
@@ -24,7 +24,7 @@ keybind = global:cmd+/=toggle_quick_terminal
 
 mouse-hide-while-typing = true
 macos-option-as-alt = true
-# tabs, native, transparent, hidden
+# tabs, native, visible, hidden
 macos-titlebar-style = transparent
 macos-titlebar-proxy-icon = hidden
 title = " "

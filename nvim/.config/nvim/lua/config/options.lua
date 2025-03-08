@@ -27,25 +27,15 @@ local set_root = function()
   vim.fn.chdir(root)
 end
 
+
 -- Emmet
 vim.g.user_emmet_leader_key = '<C-y>'
 
 -- Terminal toggle term
-vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
+-- vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
 vim.api.nvim_set_keymap('t', '<C-o>', [[<C-\><C-n>]], { noremap = true })
 --Confirm before closing unsaved buffer
 vim.opt.confirm = true
-
---Color cmdline
--- Borders
--- vim.defer_fn(function()
---   vim.cmd [[highlight NoiceCmdlinePopupBorder guifg=#808080]]
--- end, 100)
-
--- Arrow
--- vim.defer_fn(function()
---   vim.cmd [[highlight NoiceCmdlineIcon guifg=#FFFFFF]]
--- end, 100)
 
 local root_augroup = vim.api.nvim_create_augroup('MyAutoRoot', {})
 vim.api.nvim_create_autocmd('BufEnter', { group = root_augroup, callback = set_root })

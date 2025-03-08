@@ -114,3 +114,17 @@ require('nvim-web-devicons').setup {
     },
   },
 }
+
+local lualine_visible = true
+
+function ToggleLualine()
+  if lualine_visible then
+    require('lualine').hide { unhide = false }
+    lualine_visible = false
+  else
+    require('lualine').hide { unhide = true }
+    lualine_visible = true
+  end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>ll', ':lua ToggleLualine()<CR>', { noremap = true, silent = true })
