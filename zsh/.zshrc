@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Starship 
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=$HOME/.config/starship/zen.toml
+export STARSHIP_CONFIG=$HOME/.config/starship/headline.toml
 
 # iniciar o tmux
 # if command -v tmux &> /dev/null; then

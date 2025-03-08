@@ -10,7 +10,7 @@ add_newline = false
 
 # $os ➜\
 format = """
-$username\
+$os\
 $directory\
 $fill\
 ${custom.giturl}\
@@ -19,6 +19,7 @@ $git_state\
 $git_status\
 $python\
 $elixir\
+$erlang\
 $dart\
 $lua\
 $php\
@@ -64,42 +65,40 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
-# ━━
+
 [fill]
-symbol = " ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────"
-style = "#52676B" 
+symbol = " "  
+style = "none" 
 
 [username]
-show_always = true
-style_user = "bold #ffffff"
-style_root = "bold #ffffff"
-format = '[](#ffffff)[ $user ]($style)'
-
+# show_always = true
+# style_user = "bg:surface0 fg:text"
+# style_root = "bg:surface0 fg:text"
+# format = '[ $user ]($style)'
 
 [directory]
-style = "bold #72879D"   #72879D #c18efe
-# format = "in  [$path ]($style)"
-format = "[in](#52676B) [ $path]($style)"
-truncation_length = 2
-truncation_symbol = '' #../
+style = "fg:#000000 bg:#72849B"
+format = "[](#ffffff)[](#72849B)[ $path ]($style)[](#72849B)"
+truncation_length = 3
+truncation_symbol = ' / ' #../
 truncate_to_repo = false
 
 
 [directory.substitutions]
-"~" = "Root" 
-".dotfiles" ="Dotfiles"
-# "Workspace" = " " 
-# "Documents" = "󰈙"
-# "Downloads" = ""
-# "Music" = "󰝚"
-# "Pictures" = ""
-# "Developer" = "󰲋"
+"~" = " " 
+".dotfiles" =" "
+"Workspace" = " " 
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"Developer" = "󰲋"
 
 
 [os]
-# symbol = "    " 
-# style = "fg:white bg:#090909"
-# format = "[](#090909)[$symbol]($style)[](#090909)"
+# symbol = " " 
+style = "fg:#000000 bg:#ffffff"
+format = "[](#ffffff)[ $symbol ]($style )"
 disabled = false
 
 [custom.giturl]
@@ -169,97 +168,101 @@ symbol = " "
 
 [lua]
 symbol = ' '
-format = '[via](#52676b) [$symbol( $version) ]($style)'
+format = ' [ $symbol( $version) ]($style)'
 
 
 [dart]
 symbol = ' '
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [elixir]
 symbol = ' '
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
+
+[erlang]
+symbol = ' '
+format = '[ $symbol( $version) ]($style)'
+
 
 [nodejs]
 symbol = ' '
-format = '[via](#52676B)[$symbol( $version) ]($style)'
+format = ' [$symbol( $version) ]($style)'
 
 [custom.pnpm]
 symbol = ' '
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [custom.yarn]
 symbol = ' '
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [bun]
 symbol = '🍔 '
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [package]
 # symbol = '󰏗 '
 symbol = '📦 '
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 
 [custom.typescript]
 style = "bold #007ACC"  
 symbol = " " 
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version) ]($style)'
 detect_extensions = ["ts", "tsx"]
 
 
 [c]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [rust]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [golang]
-symbol = " " #  
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+symbol = " " # 
+format = '[ $symbol( $version) ]($style)'
 detect_files = ["go.mod"]
 
 [php]
 symbol = " "
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [java]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [kotlin]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [haskell]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [ruby]
 symbol = ' '
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
-
+format = '[ $symbol( $version) ]($style)'
 
 
 [python]
 symbol = ' '
 style = "fg:#F1CA81"
-format = '[via](#52676B)[${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
-# pyenv_version_name = true
-# pyenv_prefix = ''
+format = '[${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
+# asdf_version_name = true
+# asdf_prefix = ''
 
 [swift]
 symbol = ' '
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [docker_context]
 # symbol = ' '
 symbol = ' 🐳 '
 style = 'fg:#06969A'
-format = '[$symbol]( $style) $path'
+format = '[$symbol]($style) $path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
@@ -320,7 +323,7 @@ sky = "#89dceb"
 sapphire = "#74c7ec"
 blue = "#89b4fa"
 lavender = "purple"
-text = "#111111"
+text = "#cdd6f4"
 subtext1 = "#bac2de"
 subtext0 = "#a6adc8"
 overlay2 = "#9399b2"
@@ -333,16 +336,41 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
+[palettes.nord]
+dark_blue = '#5E81AC'
+blue = '#81A1C1'
+teal = '#88C0D0'
+red = '#BF616A'
+orange = '#D08770'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+purple = '#B48EAD'
+gray = '#434C5E'
+black = '#2E3440'
+white='#D8DEE9'
 
 
-
-[palettes.custom]
+[palettes.dracula]
 sapphire = "#bd93f9"
-text = "#bd93f9"
 blue = "#89b4fa"
 background = "#282a36"
 current_line = "#44475a"
-foreground = "#111111"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#BF616A"
+yellow = "#f1fa8c"
+
+[palettes.custom]
+sapphire = "#bd93f9"
+blue = "#89b4fa"
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
 comment = "#6272a4"
 cyan = "#8be9fd"
 green = '#50fa7b'
