@@ -145,16 +145,16 @@ tag_symbol = '🔖 '
 
 [git_status]
 conflicted = '[✖(#FF0000)]'
-ahead = '[⬆\($count\)](#ffffff)'  
-behind = '[⬇\($count\)](#8A2BE2)'
+ahead = '[ ⬆ \($count\)](#ffffff)'  
+behind = '[ ⬇ \($count\)](#8A2BE2)'
 diverged = '[⇵](#FF4500)'
 up_to_date = '[✔](#cacaca)'
-untracked = '[?\($count\)](#3CBDFF)' 
+untracked = '[ \($count\)](#3CBDFF)' 
 stashed = '[⧉ \($count\)](#D69CFF)'
-modified = '[!\($count\)](#85FCF9)'  
-staged = '[+\($count\)](#B3F8C5)'
+modified = '[ \($count\)](#85FCF9)'  
+staged = '[ \($count\)](#B3F8C5)'
 renamed = '[≡](#8A2BE2)'
-deleted = '[-\($count\)](#FFC4C0)'
+deleted = '[ \($count\)](#FFC4C0)'
 
 
 # [git_status]
