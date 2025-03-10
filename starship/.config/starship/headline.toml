@@ -169,20 +169,20 @@ symbol = " "
 
 [lua]
 symbol = ' '
-format = '[via](#52676b) [$symbol( $version) ]($style)'
+format = '[via](#52676b) [ $symbol( $version) ]($style)'
 
 
 [dart]
 symbol = ' '
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[via](#52676b)[ $symbol( $version) ]($style)'
 
 [elixir]
 symbol = ' '
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[via](#52676b)[ $symbol( $version) ]($style)'
 
 [nodejs]
 symbol = ' '
-format = '[via](#52676B)[$symbol( $version) ]($style)'
+format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 [custom.pnpm]
 symbol = ' '
@@ -211,49 +211,49 @@ detect_extensions = ["ts", "tsx"]
 
 [c]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 [rust]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 [golang]
 symbol = " " #  
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[via](#52676b)[ $symbol( $version) ]($style)'
 detect_files = ["go.mod"]
 
 [php]
 symbol = " "
-format = '[via](#52676b)[$symbol( $version) ]($style)'
+format = '[via](#52676b)[ $symbol( $version) ]($style)'
 
 [java]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 [kotlin]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 [haskell]
 symbol = " "
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 [ruby]
 symbol = ' '
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 
 
 [python]
 symbol = ' '
 style = "fg:#F1CA81"
-format = '[via](#52676B)[${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
+format = '[via](#52676B)[ ${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
 # pyenv_version_name = true
 # pyenv_prefix = ''
 
 [swift]
 symbol = ' '
-format = '[via](#52676b)[[$symbol( $version) ]]($style)'
+format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
 
 [docker_context]
 # symbol = ' '
