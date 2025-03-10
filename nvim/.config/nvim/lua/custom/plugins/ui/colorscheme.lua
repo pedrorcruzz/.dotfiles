@@ -20,20 +20,22 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020
+
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020 #000000
+          EndOfBuffer = { fg = '#000000', bg = 'none' },
+          NormalFloat = { bg = transparent_background and 'none' or '#000000' },
+
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#727272' }, --#4b5263
-          NormalFloat = { bg = transparent_background and 'none' or '#000000' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
-          EndOfBuffer = { fg = '#000000', bg = 'none' },
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
@@ -139,7 +141,7 @@ return {
 
           SnacksPicker = { bg = '#1A1A1A' },
           -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
-          SnacksPickerBorder = { fg = '#606060', bg = '#1A1A1A' },
+          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
@@ -167,7 +169,7 @@ return {
           NoiceCmdlinePopupTitle = { fg = '#ffffff' },
           NoiceCmdlineTitle = { fg = '#ffffff' },
           NoiceCmdlineIcon = { fg = '#abb2bf' }, --#ffffff
-          -- NoiceCmdlineIconSearch = { fg = '#abb2bf' }, --#ffffff
+          NoiceCmdlineIconSearch = { fg = '#c18efe' }, --#ffffff
 
           -- whichkey
           WhichkeyTitle = { fg = '#abb2bf' },
@@ -199,7 +201,7 @@ return {
     config = function()
       require('catppuccin').setup {
         background = { light = 'latte', dark = 'mocha' },
-        transparent_background = true,
+        transparent_background = false,
         term_colors = true,
         styles = {
           comments = { 'italic' },
