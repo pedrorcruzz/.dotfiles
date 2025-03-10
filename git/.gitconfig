@@ -4,7 +4,6 @@
 [user]
 	name = pedrorcruzz
 	email = phrosa.dev@gmail.com
-	signingkey = 9089C082915BF7EFF5A3E50026EF06D2DAE31E07
 [init]
 	defaultBranch = main
 [credential]
