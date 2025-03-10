@@ -284,7 +284,7 @@ return {
       desc = 'Find Files',
     },
     {
-      '<leader>/',
+      '<leader>sb',
       function()
         -- Snacks.picker.lines()
         Snacks.picker.grep_buffers()
@@ -480,7 +480,7 @@ return {
       desc = 'Autocmds',
     },
     {
-      '<leader>sb',
+      '<leader>/',
       function()
         Snacks.picker.lines()
       end,
