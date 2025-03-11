@@ -85,7 +85,6 @@ alias ldk='lazydocker'
 alias gcn="git clone"
 alias gcmsg="git commit -m"
 alias gcmsgs="git commit -S -m"
-alias gcmsgs="git commit -S -m"
 alias gtags="git tag -s"
 alias gtag="git tag -a"
 alias gtagp="git push origin"
