@@ -92,6 +92,8 @@ return {
     { '<leader>td', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
     { '<leader>tc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
     { '<leader>tC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
+    { '<leader>tf', '<cmd>FzfLua tabs<cr>', desc = 'Tabs: Find' },
+    { '<leader>fv', '<cmd>FzfLua tabs<cr>', desc = 'Find Tabs' },
 
     -- Neotest
     -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
