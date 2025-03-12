@@ -81,7 +81,13 @@ alias pyvenv='python3 -m venv venv'
 alias ldk='lazydocker'
 # alias start_project="cd /caminho/do/projeto && docker compose up"
 
-#Alias Git
+#Alias Git CLI
+alias gh-c-pri='git add . && git commit -m "chore: upload project to GitHub" && gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
+alias gh-c-pub='git add . && git commit -m "chore: upload project to GitHub" && gh repo create --public --source=. --remote=origin && git push -u --all && gh browse'
+alias gh-c-pri-w='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
+alias gh-c-pub-w='gh repo create --public --source=. --remote=origin && git push -u --all && gh browse'
+
+#Alias Git 
 alias gcn="git clone"
 alias gcmsg="git commit -m"
 alias gcmsgs="git commit -S -m"
