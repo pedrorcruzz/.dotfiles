@@ -181,7 +181,7 @@ return {
       end,
     },
     input = {
-      enabled = true,
+      enabled = false,
     },
     picker = {
       enabled = true,

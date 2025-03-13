@@ -40,6 +40,8 @@ return {
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
           NonText = { fg = '#727272' },
+          Title = { fg = '#FFFFFF' },
+          Question = { fg = '#FFFFFF' },
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
           --underline cmp preview
           ['@punctuation.bracket'] = { fg = '#abb2bf' },
