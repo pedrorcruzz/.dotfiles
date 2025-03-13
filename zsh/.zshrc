@@ -95,6 +95,7 @@ alias gtags="git tag -s"
 alias gtag="git tag -a"
 alias gtagp="git push origin"
 alias gtagpa="git push origin --tags"
+alias gbdr="git push origin --delete"
 
 #Alias Tmux
 alias tls="tmux list-sessions"
