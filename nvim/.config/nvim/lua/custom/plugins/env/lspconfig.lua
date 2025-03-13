@@ -301,12 +301,14 @@ return { -- LSP Configuration & Plugins
       'stylua',
       'prettierd',
       'black',
-      'djlint',
       'php-cs-fixer',
       'php-cs-fixer',
       'goimports',
 
       -- Linters
+      'djlint',
+
+      --LSP
       'django-template-lsp',
       'lua_ls',
       'pyright',
