@@ -115,17 +115,13 @@ require('nvim-web-devicons').setup {
   },
 }
 
-local lualine_visible = true
-
-function ToggleLualine()
-  if lualine_visible then
-    require('lualine').hide { unhide = false }
-    lualine_visible = false
-  else
-    require('lualine').hide { unhide = true }
-    lualine_visible = true
-  end
+local function is_online()
+  local handle = io.popen 'ping -c 1 github.com -c 1 > /dev/null 2>&1 && echo online || echo offline'
+  local result = handle:read '*a'
+  handle:close()
+  return result:match 'online'
 end
 
-vim.api.nvim_set_keymap('n', '<leader>ll', ':lua ToggleLualine()<CR>', { noremap = true, silent = true })
-
+if not is_online() then
+  vim.cmd 'Copilot disable'
+end

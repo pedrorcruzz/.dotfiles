@@ -46,13 +46,3 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal nolist',
 })
 
-local function is_online()
-  local handle = io.popen 'ping -c 1 github.com -c 1 > /dev/null 2>&1 && echo online || echo offline'
-  local result = handle:read '*a'
-  handle:close()
-  return result:match 'online'
-end
-
-if not is_online() then
-  vim.cmd 'Copilot disable'
-end
