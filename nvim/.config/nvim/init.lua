@@ -129,11 +129,11 @@ end
 
 vim.api.nvim_set_keymap('n', '<leader>ll', ':lua ToggleLualine()<CR>', { noremap = true, silent = true })
 
--- local snacks = require 'snacks'
---
--- snacks.notifier = function(msg, level, opts)
---   if msg:match 'RPC%[Error%]' then
---     return
---   end
---   return snacks.default_notifier(msg, level, opts)
--- end
+local snacks = require 'snacks'
+
+snacks.notifier = function(msg, level, opts)
+  if msg:match 'RPC%[Error%]' then
+    return
+  end
+  return snacks.default_notifier(msg, level, opts)
+end
