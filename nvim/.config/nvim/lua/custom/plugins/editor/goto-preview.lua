@@ -1,18 +1,8 @@
 return {
-  "rmagatti/goto-preview",
-  opts = {
-    default_mappings = true,
-    post_open_hook = function(buf, win)
-      local orig_state = vim.api.nvim_buf_get_option(buf, "modifiable")
-      vim.api.nvim_buf_set_option(buf, "modifiable", false)
-      vim.api.nvim_create_autocmd({ "WinLeave" }, {
-        buffer = buf,
-        callback = function()
-          vim.api.nvim_win_close(win, false)
-          vim.api.nvim_buf_set_option(buf, "modifiable", orig_state)
-          return true
-        end,
-      })
-    end,
-  },
+  'rmagatti/goto-preview',
+  dependencies = { 'rmagatti/logger.nvim' },
+  event = 'BufEnter',
+  config = true, -- necessary as per https://github.com/rmagatti/goto-preview/issues/88
+  vim.keymap.set('n', 'gp', "<cmd>lua require('goto-preview').goto_preview_definition()<CR>,", { noremap = true }),
+  vim.keymap.set('n', 'gP', "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true }),
 }

@@ -21,7 +21,7 @@ return {
     },
     keys = {
       { '<leader>ia', '<cmd>Copilot auth<cr>', desc = 'Copilot: Auth' },
-      { '<leader>ie', '<cmd>Copilot enablecr>', desc = 'Copilot: Enable' },
+      { '<leader>ie', '<cmd>Copilot enable<cr>', desc = 'Copilot: Enable' },
       { '<leader>id', '<cmd>Copilot disable<cr>', desc = 'Copilot: Disable' },
       { '<leader>it', '<cmd>Copilot toggle<cr>', desc = 'Copilot: Toggle' },
       { '<leader>ip', '<cmd>Copilot panel<cr>', desc = 'Copilot: Panel' },

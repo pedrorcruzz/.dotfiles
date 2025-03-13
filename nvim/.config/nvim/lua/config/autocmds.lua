@@ -46,23 +46,13 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal nolist',
 })
 
--- vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWritePre" }, {
---   pattern = "*.lua",
---   callback = function()
---     vim.bo.tabstop = 3
---     vim.bo.shiftwidth = 3
---     vim.bo.expandtab = true
---   end,
--- })
+local function is_online()
+  local handle = io.popen 'ping -c 1 github.com -c 1 > /dev/null 2>&1 && echo online || echo offline'
+  local result = handle:read '*a'
+  handle:close()
+  return result:match 'online'
+end
 
-vim.filetype.add {
-  pattern = {
-    ['.*%.html'] = function(path, bufnr)
-      if vim.fn.globpath(vim.fn.getcwd(), 'manage.py') ~= '' then
-        return 'htmldjango'
-      else
-        return 'html'
-      end
-    end,
-  },
-}
+if not is_online() then
+  vim.cmd 'Copilot disable'
+end

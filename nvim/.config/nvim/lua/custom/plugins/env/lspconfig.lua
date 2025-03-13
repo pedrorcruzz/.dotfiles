@@ -69,35 +69,17 @@ return { -- LSP Configuration & Plugins
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        -- -- Jump to the definition of the word under your cursor.
-        -- --  This is where a variable was first declared, or where a function is defined, etc.
-        -- --  To jump back, press <C-t>.
-        map('gd', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
-        map('<leader>lg', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
-        --
-        -- -- Find references for the word under your cursor.
-        map('gr', '<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>', 'Goto References')
-        --
-        -- -- Jump to the implementation of the word under your cursor.
-        -- --  Useful when your language has ways of declaring types without an actual implementation.
-        map('gI', '<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Implementation')
-        --
-        -- -- Jump to the type of the word under your cursor.
-        -- --  Useful when you're not sure what type a variable is and you want to see
-        -- --  the definition of its *type*, not where it was *defined*.
-        map('<leader>lD', '<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>', 'Type Definition')
-        --
+        -- map('gd', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
+        -- map('<leader>lg', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
+        -- map('gr', '<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>', 'Goto References')
+        -- map('gI', '<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Implementation')
+        -- map('<leader>lD', '<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>', 'Type Definition')
 
-        -- Rename the variable under your cursor.
-        --  Most Language Servers support renaming across files, etc.
         map('<leader>lr', vim.lsp.buf.rename, 'Rename')
+        map('<leader>ld', '<cmd>FzfLua lsp_finder<cr>', 'Find Definition')
 
-        -- Execute a code action, usually your cursor needs to be on top of an error
-        -- or a suggestion from your LSP for this to activate.
         map('<leader>la', vim.lsp.buf.code_action, 'Code Action')
 
-        -- Opens a popup that displays documentation about the word under your cursor
-        --  See `:help K` for why this keymap.
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.

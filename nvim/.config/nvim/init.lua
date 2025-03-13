@@ -128,3 +128,4 @@ function ToggleLualine()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>ll', ':lua ToggleLualine()<CR>', { noremap = true, silent = true })
+

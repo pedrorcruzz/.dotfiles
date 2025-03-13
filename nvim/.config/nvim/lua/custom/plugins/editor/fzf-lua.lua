@@ -36,6 +36,7 @@ return {
       { cmd = 'ueberzug', args = {} },
       { cmd = 'chafa', args = { '{file}', '--format=symbols' } },
       { cmd = 'viu', args = { '-b' } },
+      { cmd = 'magick', args = { 'convert', '{file}', 'png:-' } },
     } do
       if vim.fn.executable(v.cmd) == 1 then
         img_previewer = vim.list_extend({ v.cmd }, v.args)
@@ -157,20 +158,20 @@ return {
     require('fzf-lua').setup(opts)
   end,
   keys = {
-    {
-      '<c-j>',
-      '<c-j>',
-      ft = 'fzf',
-      mode = 't',
-      nowait = true,
-    },
-    {
-      '<c-k>',
-      '<c-k>',
-      ft = 'fzf',
-      mode = 't',
-      nowait = true,
-    },
+    -- {
+    --   '<c-j>',
+    --   '<c-j>',
+    --   ft = 'fzf',
+    --   mode = 't',
+    --   nowait = true,
+    -- },
+    -- {
+    --   '<c-k>',
+    --   '<c-k>',
+    --   ft = 'fzf',
+    --   mode = 't',
+    --   nowait = true,
+    -- },
     -- {
     -- 	"<leader>,",
     -- 	"<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",
@@ -179,36 +180,36 @@ return {
 
     -- find
     -- { '<leader>fb', '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>', desc = 'Buffers' },
-    { '<leader>ft', '<cmd>TodoFzfLua<cr>', desc = 'Todo' },
-    {
-      '<leader>fb',
-      function()
-        Snacks.picker.grep_buffers()
-      end,
-      desc = 'Find Buffers',
-    },
-
-    {
-      '<leader>fp',
-      '<cmd>NeovimProjectDiscover<cr>',
-      desc = 'Projects',
-    },
-    {
-      '<leader>fw',
-      '<cmd>FzfLua live_grep_native<cr>',
-      desc = 'Word (cwd)',
-    },
+    -- { '<leader>ft', '<cmd>TodoFzfLua<cr>', desc = 'Todo' },
+    -- {
+    --   '<leader>fb',
+    --   function()
+    --     Snacks.picker.grep_buffers()
+    --   end,
+    --   desc = 'Find Buffers',
+    -- },
+    --
+    -- {
+    --   '<leader>fp',
+    --   '<cmd>NeovimProjectDiscover<cr>',
+    --   desc = 'Projects',
+    -- },
+    -- {
+    --   '<leader>fw',
+    --   '<cmd>FzfLua live_grep_native<cr>',
+    --   desc = 'Word (cwd)',
+    -- },
     -- {
     --   '<leader>fw',
     --   '<cmd>Telescope current_buffer_fuzzy_find<cr>',
     --   desc = 'Word',
     -- },
-    { '<leader>fa', '<cmd>FzfLua files<cr>', desc = 'FzfLua: Find Files' },
+    -- { '<leader>fa', '<cmd>FzfLua files<cr>', desc = 'FzfLua: Find Files' },
     -- { '<leader>fg', '<cmd>FzfLua git_files<cr>', desc = 'Find Files (git-files)' },
     -- { '<leader>fr', '<cmd>FzfLua oldfiles<cr>', desc = 'Recent' },
-    { '<leader>fd', '<cmd>FzfLua lsp_definitions<cr>', desc = 'FzfLua: Definitions' },
+    -- { '<leader>fd', '<cmd>FzfLua lsp_definitions<cr>', desc = 'FzfLua: Definitions' },
     -- { '<leader>fq', '<cmd>FzfLua colorschemes<cr>', desc = 'Colorschemes' },
-    { '<leader>s]', '<cmd>FzfLua registers<cr>', desc = 'Registers' },
+    -- { '<leader>s]', '<cmd>FzfLua registers<cr>', desc = 'Registers' },
     -- { '<leader>fe', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Find Text in Buffer' },
     -- {
     --   '<leader>fc',
