@@ -175,6 +175,7 @@ return { -- LSP Configuration & Plugins
       emmet_language_server = {
         filetypes = {
           'html',
+          'htmldjango',
           'javascriptreact',
           'typescriptreact',
           'vue',
@@ -296,10 +297,17 @@ return { -- LSP Configuration & Plugins
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua code
+      --Formatters
+      'stylua',
       'lua_ls',
       'prettierd',
+      'black',
       'djlint',
+      'php-cs-fixer',
+      'php-cs-fixer',
+      'goimports',
+
+      -- Linters
       'django-template-lsp',
       'pyright',
       'gopls',
@@ -307,6 +315,8 @@ return { -- LSP Configuration & Plugins
       'tailwindcss-language-server',
       'typescript-language-server',
       'intelephense',
+
+      -- Debuggers
       'php-debug-adapter',
       'js-debug-adapter',
       'go-debug-adapter',
