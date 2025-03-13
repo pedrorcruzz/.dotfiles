@@ -299,7 +299,6 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       --Formatters
       'stylua',
-      'lua_ls',
       'prettierd',
       'black',
       'djlint',
@@ -309,6 +308,7 @@ return { -- LSP Configuration & Plugins
 
       -- Linters
       'django-template-lsp',
+      'lua_ls',
       'pyright',
       'gopls',
       'emmet-language-server',

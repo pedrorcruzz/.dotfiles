@@ -11,8 +11,8 @@ return {
 
       conform.setup {
         formatters_by_ft = {
-          javascript = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
-          typescript = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
+          javascript = has_biome() and { 'biome', 'prettierd', 'prettier' } or { 'prettierd', 'prettier' },
+          typescript = has_biome() and { 'biome', 'prettierd', 'prettier' } or { 'prettierd', 'prettier' },
           javascriptreact = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
           typescriptreact = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
           html = { 'prettierd', 'prettier' },
