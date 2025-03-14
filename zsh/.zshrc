@@ -91,10 +91,11 @@ alias gh-c-pub-w='gh repo create --public --source=. --remote=origin && git push
 alias gcn="git clone"
 alias gcmsg="git commit -m"
 alias gcmsgs="git commit -S -m"
-alias gtags="git tag -s"
 alias gtag="git tag -a"
 alias gtagp="git push origin"
 alias gtagpa="git push origin --tags"
+alias gtagd="git tag -d"
+alias gtagdr="git push origin --delete refs/tags/"
 alias gbdr="git push origin --delete"
 
 #Alias Tmux
