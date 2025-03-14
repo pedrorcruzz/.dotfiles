@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'vesper'
 
 return {
   {
@@ -30,6 +30,7 @@ return {
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#727272' }, --#4b5263
+          VertSplit = { fg = '#000000' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
@@ -42,8 +43,9 @@ return {
           NonText = { fg = '#727272' },
           Title = { fg = '#FFFFFF' },
           Question = { fg = '#FFFFFF' },
-          ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
           --underline cmp preview
+          ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
+
           ['@punctuation.bracket'] = { fg = '#abb2bf' },
 
           --Punctuation Special
@@ -137,11 +139,12 @@ return {
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
           SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
-          SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' },
+          SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' }, --explorer
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
-          -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
 
+          -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
           SnacksPicker = { bg = '#1A1A1A' },
+
           -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
           SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 
@@ -236,5 +239,191 @@ return {
   {
     'luisiacc/gruvbox-baby',
     config = function() end,
+  },
+
+  {
+    'datsfilipe/vesper.nvim',
+    config = function()
+      local transparent_background = false
+      require('vesper').setup {
+        transparent = transparent_background,
+        italics = {
+          comments = true,
+          keywords = true,
+          functions = true,
+          strings = true,
+          variables = true,
+        },
+        overrides = {
+          Directory = { fg = '#DAE7EC' }, --#A1BCC5
+
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#0D0D0D' }, --#202020 #000000
+          EndOfBuffer = { fg = '#0D0D0D', bg = 'none' },
+          NormalFloat = { bg = transparent_background and 'none' or '#0D0D0D' },
+
+          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
+          CursorLine = { bg = '#323232' },
+          CursorLineNr = { fg = '#C6C6C6' },
+          SignColumn = { bg = '#323232' },
+          LineNr = { fg = '#727272' }, --#4b5263
+          FloatBorder = { fg = '#323232' },
+          VertSplit = { fg = '#0D0D0D' },
+          Border = { fg = '#0D0D0D' },
+          FloatShadow = { fg = '#0D0D0D' },
+          Search = { bg = '#606060', fg = '#abb2bf' },
+          IncSearch = { bg = '#606060', fg = '#FFCDA2' },
+          AvanteInlineHint = { fg = '#606060' }, --#abb2bf
+          Underlined = { bg = nil },
+          winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
+          MatchParen = { fg = '#abb2bf' },
+          NonText = { fg = '#727272' },
+          Title = { fg = '#FFFFFF' },
+          Question = { fg = '#FFFFFF' },
+          --underline cmp preview
+          ['@markup.heading.1.markdown'] = { fg = '#323232' },
+
+          -- ['@punctuation.bracket'] = { fg = '#323232' },
+
+          --Punctuation Special
+          -- ['@punctuation.special'] = { fg = '#323232' },
+          -- ['@punctuation.special.bash'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.python'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.javascript'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.typescript'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.go'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.elixir'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.c'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.lua'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.php'] = { fg = '#DA70D6' },
+          -- ['@punctuation.special.json'] = { fg = '#DA70D6' },
+
+          --variable
+          -- ['@variable'] = { fg = '#BCBBBB' },
+          -- ['@variable.builtin'] = { fg = '#BCBBBB' },
+
+          --constant
+          -- ['@constant'] = { fg = '#B3B2B3' },
+
+          --bash
+          -- ['@string.bash'] = { fg = '#BAB9BA' },
+          -- ['@number.bash'] = { fg = '#BAB9BA' },
+          -- ['@variable.bash'] = { fg = '#BAB9BA' },
+          -- ['@constant.bash'] = { fg = '#F67582' },
+
+          --module
+          -- ['@module'] = { fg = '#B6B5B6' },
+
+          --constructor
+          -- ['@constructor'] = { fg = '#c18efe' },
+
+          --Documentation
+          -- ['@string.documentation'] = { fg = '#646B73' },
+
+          --html
+          -- ['@none.html'] = { fg = '#B0AFB0' },
+          -- ['@markup.heading.1.html'] = { fg = '#AAA9AA' },
+          -- ['@markup.heading.2.html'] = { fg = '#AAA9AA' },
+          -- ['@markup.heading.3.html'] = { fg = '#AAA9AA' },
+          -- ['@markup.heading.4.html'] = { fg = '#AAA9AA' },
+          -- ['@markup.heading.5.html'] = { fg = '#AAA9AA' },
+          -- ['@markup.heading.6.html'] = { fg = '#AAA9AA' },
+
+          --htmldjango
+          -- ['@punctuation.special.htmldjango'] = { fg = '#FED600' },
+          -- ['@variable.htmldjango'] = { fg = '#92A4B6' },
+          -- ['@function.htmldjango'] = { fg = '#F67582' },
+          -- ['@keyword.repeat.htmldjango'] = { fg = '#F67582' },
+          -- ['@keyword.operator.htmldjango'] = { fg = '#F67582' },
+
+          --Telescope
+          TelescopeBorder = { fg = '#ffffff' },
+          TelescopePreviewBorder = { fg = '#4c4c4c' },
+          TelescopePromptBorder = { fg = '#4c4c4c' },
+          TelescopeResultsBorder = { fg = '#4c4c4c' },
+
+          --todo
+          TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },
+          TodoBgNOTE = { bg = '#c18efe', fg = '#111111', bold = true },
+          TodoBgWARN = { bg = '#ffa868', fg = '#111111', bold = true },
+          TodoBgFIX = { bg = '#F67582', fg = '#111111', bold = true },
+          TodoFgTODO = { fg = '#64baff' },
+          TodoFgNOTE = { fg = '#c18efe' },
+          TodoFgWARN = { fg = '#ffa868' },
+          TodoFgFIX = { fg = '#F67582' },
+          -- todobghack = { bg = '#c18efe', fg = '#111111', bold = true },
+          -- todofghack = { fg = '#c18efe' },
+
+          --diagnostic
+          -- diagnosticerror = { fg = '#be5046' },
+          DiagnosticWarn = { fg = '#ffa868' },
+          DiagnosticInfo = { fg = '#64baff' },
+          DiagnosticHint = { fg = '#c18efe' },
+
+          -- snacks notifier
+          SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
+          SnacksNotifierBorderWarn = { fg = '#ffa868' },
+          SnacksNotifierBorderError = { fg = '#F67582' },
+          SnacksNotifierTitleInfo = { fg = '#ffffff' },
+
+          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
+          SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1A1A1A' }, --explorer
+          SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
+
+          SnacksPicker = { bg = transparent_background and 'none' or '#0D0D0D' },
+          SnacksPickerBorder = { fg = '#0D0D0D', bg = transparent_background and 'none' or '#0D0D0D' }, --#323232
+          -- SnacksPicker = { bg = '#1A1A1A' },
+          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
+
+          SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
+          SnacksInputTitle = { fg = '#ffffff' },
+          SnacksInputBorder = { fg = '#4c4c4c' },
+
+          SnacksIndent = { fg = '#4c4c4c' },
+          SnacksIndentScope = { fg = '#abb2bf' },
+          SnacksIndentUnderline_SnacksIndentScope = { fg = '#abb2bf' },
+
+          SnacksDashboardDesc = { fg = '#ffffff' },
+          SnacksDashboardDir = { fg = '#4c4c4c' },
+          SnacksDashboardHeader = { fg = '#60DCC1' },
+          SnacksDashboardFooter = { fg = '#60DCC1' },
+          SnacksDashboardIcon = { fg = '#60DCC1' },
+          SnacksDashboardFile = { fg = '#ffffff' },
+          SnacksDashboardTitle = { fg = '#ffffff' },
+          -- snacksdashboardspecial = { fg = '#ff657e' },
+          SnacksDashboardNormal = { fg = '#4b4f6b' }, --4b4f6b
+
+          -- noice
+          NoiceConfirmBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePrompt = { fg = '#4c4c4c' },
+          NoiceCmdlinePopupBorder = { fg = '#4c4c4c' },
+          NoiceCmdlinePopupTitleCmdline = { fg = '#ffffff' },
+          NoiceCmdlinePopupTitle = { fg = '#ffffff' },
+          NoiceCmdlineTitle = { fg = '#ffffff' },
+          NoiceCmdlineIcon = { fg = '#abb2bf' }, --#ffffff
+          NoiceCmdlineIconSearch = { fg = '#FFCDA2' }, --#ffffff
+
+          -- whichkey
+          WhichkeyTitle = { fg = '#abb2bf' },
+          WhichkeyGroup = { fg = '#abb2bf' },
+
+          -- fzf
+          FzfLuaBorder = { fg = '#4c4c4c' },
+          FzfLuaHeaderText = { fg = '#abb2bf' },
+          FzfLuaDirIcon = { fg = '#abb2bf' },
+          FzfLuaHeaderBind = { fg = '#ffffff' },
+          FzfLuaTabTitle = { fg = '#ffffff' },
+          FzfLuaSearch = { fg = '#ffffff' },
+
+          -- nvim tree
+          nvimtreenormal = { bg = transparent_background and 'none' or '#1a1a1a' },
+          nvimtreeendofbuffer = { fg = '#1a1a1a', bg = nil }, -- fundo para o final do buffer no nvimtree
+          nvimtreeemptyfoldername = { fg = '#666666' }, -- nome de pastas vazias no nvimtree
+          nvimtreeopenedfoldername = { fg = '#579fdc' }, -- nome de pastas abertas no nvimtree
+          nvimtreefoldername = { fg = '#aaaaaa' }, -- nome de pastas no nvimtree
+
+          bufferlinefill = { bg = '#1a1a1a' }, -- cor de fundo do bufferline
+        },
+      }
+    end,
   },
 }
