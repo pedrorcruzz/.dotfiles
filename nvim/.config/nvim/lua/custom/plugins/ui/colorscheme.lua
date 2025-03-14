@@ -272,17 +272,20 @@ return {
           FloatShadow = { fg = '#101010' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#FFCDA2' },
-          AvanteInlineHint = { fg = '#606060' }, --#abb2bf
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
           NonText = { fg = '#727272' },
           Title = { fg = '#FFFFFF' },
+          Comment = { fg = '#585858' },
           Question = { fg = '#FFFFFF' },
           --underline cmp preview
           ['@markup.heading.1.markdown'] = { fg = '#323232' },
 
           -- ['@punctuation.bracket'] = { fg = '#323232' },
+
+          -- Avante
+          AvanteInlineHint = { fg = '#606060' }, --#abb2bf
 
           --Punctuation Special
           ['@punctuation.special'] = { fg = transparent_background and '#323232' or '#323232' },

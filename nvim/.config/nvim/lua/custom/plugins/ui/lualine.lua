@@ -41,14 +41,14 @@ return {
     elseif custom_vesper then
       colors = {
         vesper_fg_branch = '#b0c4de',
-        vesper_bg_branch = '#1A1A1A',
+        vesper_bg_branch = '#101010', --#1A1A1A
         -- vesper_bar_bg = '#121212',
         vesper_bar_bg = nil,
         vesper_git = '#ECEFF4',
-        vesper_y_bg = '#1A1A1A',
+        vesper_y_bg = '#101010',
         vesper_y_fg = '#b0c4de',
         vesper_uni_fg_color = '#D8DEE9',
-        vesper_uni_bg_color = '#0D0D0D',
+        vesper_uni_bg_color = '#101010', --#0D0D0D
         vesper_uni_bg_color_z = '#3B4252',
       }
     else

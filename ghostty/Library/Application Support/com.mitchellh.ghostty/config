@@ -10,7 +10,7 @@ cursor-style = block
 font-size = 13
 font-feature = -liga
 font-family = JetBrainsMono Nerd Font Mono
-font-thicken = false
+font-thicken = true
 adjust-cell-height = 20%
 
 # font-family = MesloLGLDZ Nerd Font Mono
@@ -25,7 +25,7 @@ keybind = global:cmd+/=toggle_quick_terminal
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 # tabs, native, hidden, transparent
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
 title = " "
 confirm-close-surface = false
