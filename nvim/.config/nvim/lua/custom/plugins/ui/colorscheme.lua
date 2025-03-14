@@ -29,7 +29,7 @@ return {
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
-          LineNr = { fg = '#727272' }, --#4b5263
+          LineNr = { fg = '#505050' }, --#4b5263 #727272
           VertSplit = { fg = '#000000' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
@@ -257,19 +257,19 @@ return {
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
 
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#0D0D0D' }, --#202020 #000000
-          EndOfBuffer = { fg = '#0D0D0D', bg = 'none' },
-          NormalFloat = { bg = transparent_background and 'none' or '#0D0D0D' },
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#101010' }, --#202020 #000000 #0D0D0D
+          EndOfBuffer = { fg = '#101010', bg = 'none' },
+          NormalFloat = { bg = transparent_background and 'none' or '#101010' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
-          LineNr = { fg = '#727272' }, --#4b5263
+          LineNr = { fg = '#727272' }, --#4b5263 #727272
           FloatBorder = { fg = '#323232' },
-          VertSplit = { fg = '#0D0D0D' },
-          Border = { fg = '#0D0D0D' },
-          FloatShadow = { fg = '#0D0D0D' },
+          VertSplit = { fg = '#101010' },
+          Border = { fg = '#101010' },
+          FloatShadow = { fg = '#101010' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#FFCDA2' },
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
@@ -285,7 +285,7 @@ return {
           -- ['@punctuation.bracket'] = { fg = '#323232' },
 
           --Punctuation Special
-          -- ['@punctuation.special'] = { fg = '#323232' },
+          ['@punctuation.special'] = { fg = '#A0A0A0' },
           -- ['@punctuation.special.bash'] = { fg = '#DA70D6' },
           -- ['@punctuation.special.python'] = { fg = '#DA70D6' },
           -- ['@punctuation.special.javascript'] = { fg = '#DA70D6' },
@@ -296,6 +296,9 @@ return {
           -- ['@punctuation.special.lua'] = { fg = '#DA70D6' },
           -- ['@punctuation.special.php'] = { fg = '#DA70D6' },
           -- ['@punctuation.special.json'] = { fg = '#DA70D6' },
+
+          --number
+          Number = { fg = '#FFCDA2' },
 
           --variable
           -- ['@variable'] = { fg = '#BCBBBB' },
@@ -369,8 +372,8 @@ return {
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1A1A1A' }, --explorer
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
-          SnacksPicker = { bg = transparent_background and 'none' or '#0D0D0D' },
-          SnacksPickerBorder = { fg = '#0D0D0D', bg = transparent_background and 'none' or '#0D0D0D' }, --#323232
+          SnacksPicker = { bg = transparent_background and 'none' or '#101010' },
+          SnacksPickerBorder = { fg = '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           -- SnacksPicker = { bg = '#1A1A1A' },
           -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 
