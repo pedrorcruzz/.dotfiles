@@ -267,7 +267,7 @@ return {
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#727272' }, --#4b5263 #727272
           FloatBorder = { fg = '#323232' },
-          VertSplit = { fg = '#101010' },
+          VertSplit = { fg = transparent_background and '#101010' or '#101010' },
           Border = { fg = '#101010' },
           FloatShadow = { fg = '#101010' },
           Search = { bg = '#606060', fg = '#abb2bf' },
@@ -299,6 +299,9 @@ return {
 
           --number
           Number = { fg = '#FFCDA2' },
+
+          --punctuation
+          ['@punctuation'] = { fg = '#ffffff' },
 
           --variable
           -- ['@variable'] = { fg = '#BCBBBB' },
@@ -373,7 +376,7 @@ return {
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
           SnacksPicker = { bg = transparent_background and 'none' or '#101010' },
-          SnacksPickerBorder = { fg = '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
+          SnacksPickerBorder = { fg = transparent_background and '#101010' or '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           -- SnacksPicker = { bg = '#1A1A1A' },
           -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 

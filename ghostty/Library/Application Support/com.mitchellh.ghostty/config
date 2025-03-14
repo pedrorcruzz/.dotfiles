@@ -2,30 +2,30 @@
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
 # 1A1A1A 1E1E2F
-background = #000000
-background-opacity = 0.7
+background = #101010
+background-opacity = 0.8
 background-blur-radius = 26
 cursor-style = block
 
-font-size = 14
+font-size = 13
 font-feature = -liga
 font-family = JetBrainsMono Nerd Font Mono
+font-thicken = false
+adjust-cell-height = 20%
 
 # font-family = MesloLGLDZ Nerd Font Mono
-adjust-cell-height = 20%
 # font-style = default
 # font-style-bold = default
 # font-style-italic = default
 # font-style-bold-italic = default
-font-thicken = true
-font-thicken-strength = 255
+# font-thicken-strength = 255
 
 keybind = global:cmd+/=toggle_quick_terminal
 
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 # tabs, native, hidden, transparent
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 title = " "
 confirm-close-surface = false

@@ -1,11 +1,3 @@
--- Other separator symbols:
--- █
---   
---   
---   
---   
---   
-
 local lualine_visible = true
 
 function ToggleLualine()
@@ -28,7 +20,8 @@ return {
     { 'AndreM222/copilot-lualine' },
   },
   config = function()
-    local custom_min_theme = true
+    local custom_min_theme = false
+    local custom_vasper = true
 
     local colors = {}
 
@@ -38,18 +31,25 @@ return {
         min_bg_branch = '#2d2d2d',
         -- min_bar_bg = '#2d2d2d',
         min_bar_bg = nil,
-        min_normal = '#64BAFF',
-        min_insert = '#FF7081',
-        min_visual = '#B990F7',
-        min_replace = '#ffa066',
-        min_command = '#75bf63',
         min_git = '#FFFFFF',
         min_y_bg = '#2d2d2d',
         min_y_fg = '#a9a9a9',
-
         min_uni_fg_color = '#FEFEFE',
         min_uni_bg_color = '#1a1a1a',
         min_uni_bg_color_z = nil,
+      }
+    elseif custom_vasper then
+      colors = {
+        vasper_fg_branch = '#b0c4de',
+        vasper_bg_branch = '#1A1A1A',
+        -- vasper_bar_bg = '#121212',
+        vasper_bar_bg = nil,
+        vasper_git = '#ECEFF4',
+        vasper_y_bg = '#1A1A1A',
+        vasper_y_fg = '#b0c4de',
+        vasper_uni_fg_color = '#D8DEE9',
+        vasper_uni_bg_color = '#0D0D0D',
+        vasper_uni_bg_color_z = '#3B4252',
       }
     else
       colors = {
@@ -95,41 +95,133 @@ return {
       options = {
         theme = {
           normal = {
-            a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_normal, gui = 'bold' },
-            b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
-            y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
-            z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
+            a = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_normal,
+              gui = 'bold',
+            },
+            b = {
+              fg = colors.min_fg_branch or colors.vasper_fg_branch or colors.default_branch_fg,
+              bg = colors.min_bg_branch or colors.vasper_bg_branch or colors.default_branch_bg,
+              gui = 'bold',
+            },
+            c = { fg = colors.min_git or colors.vasper_git, bg = colors.min_bar_bg or colors.vasper_bar_bg or colors.default_bar_bg },
+            y = {
+              fg = colors.min_y_fg or colors.vasper_y_fg or colors.default_y_fg,
+              bg = colors.min_y_bg or colors.vasper_y_bg or colors.default_y_bg,
+              gui = 'bold',
+            },
+            z = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_location_fg,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_location_bg,
+              gui = 'bold',
+            },
           },
           insert = {
-            a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_insert, gui = 'bold' },
-            b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
-            y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
-            z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
+            a = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_normal,
+              gui = 'bold',
+            },
+            b = {
+              fg = colors.min_fg_branch or colors.vasper_fg_branch or colors.default_branch_fg,
+              bg = colors.min_bg_branch or colors.vasper_bg_branch or colors.default_branch_bg,
+              gui = 'bold',
+            },
+            c = { fg = colors.min_git or colors.vasper_git, bg = colors.min_bar_bg or colors.vasper_bar_bg or colors.default_bar_bg },
+            y = {
+              fg = colors.min_y_fg or colors.vasper_y_fg or colors.default_y_fg,
+              bg = colors.min_y_bg or colors.vasper_y_bg or colors.default_y_bg,
+              gui = 'bold',
+            },
+            z = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_location_fg,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_location_bg,
+              gui = 'bold',
+            },
           },
           visual = {
-            a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_visual, gui = 'bold' },
-            b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
-            y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
-            z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
+            a = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_normal,
+              gui = 'bold',
+            },
+            b = {
+              fg = colors.min_fg_branch or colors.vasper_fg_branch or colors.default_branch_fg,
+              bg = colors.min_bg_branch or colors.vasper_bg_branch or colors.default_branch_bg,
+              gui = 'bold',
+            },
+            c = { fg = colors.min_git or colors.vasper_git, bg = colors.min_bar_bg or colors.vasper_bar_bg or colors.default_bar_bg },
+            y = {
+              fg = colors.min_y_fg or colors.vasper_y_fg or colors.default_y_fg,
+              bg = colors.min_y_bg or colors.vasper_y_bg or colors.default_y_bg,
+              gui = 'bold',
+            },
+            z = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_location_fg,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_location_bg,
+              gui = 'bold',
+            },
           },
           replace = {
-            a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_replace, gui = 'bold' },
-            b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
-            y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
-            z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
+            a = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_normal,
+              gui = 'bold',
+            },
+            b = {
+              fg = colors.min_fg_branch or colors.vasper_fg_branch or colors.default_branch_fg,
+              bg = colors.min_bg_branch or colors.vasper_bg_branch or colors.default_branch_bg,
+              gui = 'bold',
+            },
+            c = { fg = colors.min_git or colors.vasper_git, bg = colors.min_bar_bg or colors.vasper_bar_bg or colors.default_bar_bg },
+            y = {
+              fg = colors.min_y_fg or colors.vasper_y_fg or colors.default_y_fg,
+              bg = colors.min_y_bg or colors.vasper_y_bg or colors.default_y_bg,
+              gui = 'bold',
+            },
+            z = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_location_fg,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_location_bg,
+              gui = 'bold',
+            },
           },
           command = {
-            a = { fg = colors.min_uni_fg_color or colors.default_fg_color, bg = colors.min_uni_bg_color or colors.default_command, gui = 'bold' },
-            b = { fg = colors.min_fg_branch or colors.default_branch_fg, bg = colors.min_bg_branch or colors.default_branch_bg, gui = 'bold' },
-            c = { fg = colors.min_git, bg = colors.min_bar_bg or colors.default_bar_bg },
-            y = { fg = colors.min_y_fg or colors.default_y_fg, bg = colors.min_y_bg or colors.default_y_bg, gui = 'bold' },
-            z = { fg = colors.min_uni_fg_color or colors.default_location_fg, bg = colors.min_uni_bg_color or colors.default_location_bg, gui = 'bold' },
+            a = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_normal,
+              gui = 'bold',
+            },
+            b = {
+              fg = colors.min_fg_branch or colors.vasper_fg_branch or colors.default_branch_fg,
+              bg = colors.min_bg_branch or colors.vasper_bg_branch or colors.default_branch_bg,
+              gui = 'bold',
+            },
+            c = { fg = colors.min_git or colors.vasper_git, bg = colors.min_bar_bg or colors.vasper_bar_bg or colors.default_bar_bg },
+            y = {
+              fg = colors.min_y_fg or colors.vasper_y_fg or colors.default_y_fg,
+              bg = colors.min_y_bg or colors.vasper_y_bg or colors.default_y_bg,
+              gui = 'bold',
+            },
+            z = {
+              fg = colors.min_uni_fg_color or colors.vasper_uni_fg_color or colors.default_location_fg,
+              bg = colors.min_uni_bg_color or colors.vasper_uni_bg_color or colors.default_location_bg,
+              gui = 'bold',
+            },
           },
         },
+        -- Other separator symbols:
+        -- █
+        --   
+        --   
+        --   
+        --   
+        --   
+        --   
+        --   
+        --   
+        --   
+
         section_separators = { left = '', right = '' },
         component_separators = { left = '', right = '' },
       },
