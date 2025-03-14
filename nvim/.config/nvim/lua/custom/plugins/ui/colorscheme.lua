@@ -291,6 +291,7 @@ return {
           ['@punctuation.special'] = { fg = transparent_background and '#323232' or '#323232' },
           ['@punctuation.special.bash'] = { fg = '#62747F' },
           ['@punctuation.special.python'] = { fg = '#62747F' },
+          ['@punctuation.special.htmldjango'] = { fg = '#FED600' },
           ['@punctuation.special.javascript'] = { fg = '#62747F' },
           ['@punctuation.special.typescript'] = { fg = '#62747F' },
           ['@punctuation.special.go'] = { fg = '#62747F' },
@@ -326,7 +327,7 @@ return {
           -- ['@constructor'] = { fg = '#c18efe' },
 
           --Documentation
-          ['@string.documentation'] = { fg = '#646B73' },
+          ['@string.documentation'] = { fg = '#585858' },
 
           --html
           -- ['@none.html'] = { fg = '#B0AFB0' },
