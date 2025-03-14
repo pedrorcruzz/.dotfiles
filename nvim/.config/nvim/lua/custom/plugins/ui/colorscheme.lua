@@ -285,17 +285,17 @@ return {
           -- ['@punctuation.bracket'] = { fg = '#323232' },
 
           --Punctuation Special
-          ['@punctuation.special'] = { fg = '#A0A0A0' },
-          -- ['@punctuation.special.bash'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.python'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.javascript'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.typescript'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.go'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.elixir'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.c'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.lua'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.php'] = { fg = '#DA70D6' },
-          -- ['@punctuation.special.json'] = { fg = '#DA70D6' },
+          ['@punctuation.special'] = { fg = transparent_background and '#323232' or '#323232' },
+          ['@punctuation.special.bash'] = { fg = '#62747F' },
+          ['@punctuation.special.python'] = { fg = '#62747F' },
+          ['@punctuation.special.javascript'] = { fg = '#62747F' },
+          ['@punctuation.special.typescript'] = { fg = '#62747F' },
+          ['@punctuation.special.go'] = { fg = '#62747F' },
+          ['@punctuation.special.elixir'] = { fg = '#62747F' },
+          ['@punctuation.special.c'] = { fg = '#62747F' },
+          ['@punctuation.special.lua'] = { fg = '#62747F' },
+          ['@punctuation.special.php'] = { fg = '#62747F' },
+          ['@punctuation.special.json'] = { fg = '#62747F' },
 
           --number
           Number = { fg = '#FFCDA2' },
@@ -323,7 +323,7 @@ return {
           -- ['@constructor'] = { fg = '#c18efe' },
 
           --Documentation
-          -- ['@string.documentation'] = { fg = '#646B73' },
+          ['@string.documentation'] = { fg = '#646B73' },
 
           --html
           -- ['@none.html'] = { fg = '#B0AFB0' },

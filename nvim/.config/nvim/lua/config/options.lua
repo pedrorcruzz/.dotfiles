@@ -28,9 +28,6 @@ local set_root = function()
 end
 
 
--- Emmet
-vim.g.user_emmet_leader_key = '<C-y>'
-
 -- Terminal toggle term
 -- vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
 vim.api.nvim_set_keymap('t', '<C-o>', [[<C-\><C-n>]], { noremap = true })
@@ -39,17 +36,6 @@ vim.opt.confirm = true
 
 local root_augroup = vim.api.nvim_create_augroup('MyAutoRoot', {})
 vim.api.nvim_create_autocmd('BufEnter', { group = root_augroup, callback = set_root })
-
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ';'
-vim.g.maplocalleader = ';'
-
-vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true }) -- Esquerda
-vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true }) -- Direita
-vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true }) -- Baixo
-vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true }) -- Cima
 
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true

@@ -76,7 +76,7 @@ style = "none"
 # format = '[ $user ]($style)'
 
 [directory]
-style = "bold #c18efe"   #72879D #c18efe
+style = "bold #72879D"   #72879D #c18efe
 format = "[ $path ]($style)"
 truncation_length = 4
 truncation_symbol = ' / ' #../
@@ -296,7 +296,7 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[➜](bold fg:purple)' # ➜ ❯
+success_symbol = '[➜](bold fg:#72879D)' # ➜ ❯ #72879D purple
 error_symbol = '[✘](bold fg:red)'
 # success_symbol = '[╰⎯](bold fg:white)'
 # error_symbol = '[╰⎯](bold fg:red)'
