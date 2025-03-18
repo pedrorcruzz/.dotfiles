@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'vesper'
 
 return {
   {
@@ -138,15 +138,15 @@ return {
           SnacksNotifierBorderError = { fg = '#F67582' },
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
-          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
-          SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' }, --explorer
+          SnacksPickerTitle = { fg = '#ffffff', bg = '#323232' },
+          SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' }, --explorer 202020 or 1A1A1A
+          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' }, -- fg 323232
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
           -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
           SnacksPicker = { bg = '#1A1A1A' },
 
           -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
-          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
@@ -377,10 +377,10 @@ return {
 
           SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1A1A1A' }, --explorer
+          SnacksPickerBorder = { fg = transparent_background and '#101010' or '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
           SnacksPicker = { bg = transparent_background and 'none' or '#101010' },
-          SnacksPickerBorder = { fg = transparent_background and '#101010' or '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           -- SnacksPicker = { bg = '#1A1A1A' },
           -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
 

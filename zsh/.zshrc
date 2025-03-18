@@ -104,7 +104,7 @@ alias TH="tmux attach-session -t home"
 alias TN="tmux new-session -s home "
 alias tas="tmux attach-session -t "
 alias tda="tmux detach"
-alias taw="tmux attach-session -t Home || tmux new-session -s Home"
+alias taa="tmux attach-session -t Home || tmux new-session -s Home"
 alias tnn="tmux new-session -s "
 alias tks="tmux kill-session -t "
 
