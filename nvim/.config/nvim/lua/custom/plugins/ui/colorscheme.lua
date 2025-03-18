@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'vesper'
+local default_theme = 'min-theme'
 
 return {
   {
@@ -21,16 +21,16 @@ return {
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
 
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020 #000000
-          EndOfBuffer = { fg = '#000000', bg = 'none' },
-          NormalFloat = { bg = transparent_background and 'none' or '#000000' },
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1F1F1F' }, --#202020 #000000 #1F1F1F
+          EndOfBuffer = { fg = '#1F1F1F', bg = 'none' },
+          NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },
+          VertSplit = { fg = '#1F1F1F' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#505050' }, --#4b5263 #727272
-          VertSplit = { fg = '#000000' },
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
@@ -260,6 +260,7 @@ return {
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#101010' }, --#202020 #000000 #0D0D0D
           EndOfBuffer = { fg = '#101010', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#101010' },
+          VertSplit = { fg = transparent_background and '#101010' or '#101010' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
@@ -267,7 +268,6 @@ return {
           SignColumn = { bg = '#323232' },
           LineNr = { fg = '#727272' }, --#4b5263 #727272
           FloatBorder = { fg = '#323232' },
-          VertSplit = { fg = transparent_background and '#101010' or '#101010' },
           Border = { fg = '#101010' },
           FloatShadow = { fg = '#101010' },
           Search = { bg = '#606060', fg = '#abb2bf' },

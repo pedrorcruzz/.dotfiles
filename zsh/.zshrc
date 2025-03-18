@@ -109,6 +109,10 @@ alias tnn="tmux new-session -s "
 alias tks="tmux kill-session -t "
 
 
+
+# Alias Games
+alias stardew='cd ~/Library/Application\ Support/Steam/steamapps/common/Stardew\ Valley/Contents/MacOS && ./StardewModdingAPI'
+
 # ----- Bat (better cat) -----
 alias cat="bat"
 
