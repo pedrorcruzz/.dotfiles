@@ -6,7 +6,7 @@ return {
         '~/Workspace/Projects/Work/*',
         '~/Workspace/Projects/Personal/*',
         '~/Workspace/Studies/*',
-        '~/Workspace/Scripts/*',
+        -- '~/Workspace/Scripts/*',
         '~/Workspace/Cesmac/*',
       },
       -- Path to store history and sessions

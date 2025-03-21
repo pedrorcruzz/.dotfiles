@@ -1,7 +1,7 @@
 # ghostty +list-themes rose-pine
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
-# 1A1A1A 1E1E2F
+# 1A1A1A 1E1E2F 
 background = #101010
 background-opacity = 0.8
 background-blur-radius = 26

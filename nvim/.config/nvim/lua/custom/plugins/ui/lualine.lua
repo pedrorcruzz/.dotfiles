@@ -20,8 +20,8 @@ return {
     { 'AndreM222/copilot-lualine' },
   },
   config = function()
-    local custom_min_theme = false
-    local custom_vesper = true
+    local custom_min_theme = true
+    local custom_vesper = false
 
     local colors = {}
 
@@ -29,8 +29,8 @@ return {
       colors = {
         min_fg_branch = '#a9a9a9',
         min_bg_branch = '#2d2d2d',
-        -- min_bar_bg = '#2d2d2d',
-        min_bar_bg = nil,
+        min_bar_bg = '#2d2d2d',
+        -- min_bar_bg = nil,
         min_git = '#FFFFFF',
         min_y_bg = '#2d2d2d',
         min_y_fg = '#a9a9a9',

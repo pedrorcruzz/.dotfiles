@@ -33,14 +33,14 @@ return {
       },
       width = 72,
       sections = {
-        {
-          pane = 1,
-          -- section = 'header',
-          padding = 1,
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
+        -- {
+        --   pane = 1,
+        -- section = 'header',
+        --   padding = 1,
+        --   enabled = function()
+        --     return not (vim.o.columns < 135)
+        --   end,
+        -- },
         {
           pane = 1,
           section = 'terminal',
@@ -78,15 +78,15 @@ return {
           end,
         },
         --Right Rosavim
-        {
-          pane = 2,
-          -- section = 'header',
-          gap = 0,
-          padding = 0, --1
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
+        -- {
+        --   pane = 2,
+        --   -- section = 'header',
+        --   gap = 0,
+        --   padding = 0, --1
+        --   enabled = function()
+        --     return not (vim.o.columns < 135)
+        --   end,
+        -- },
         -- Narrow screen
         {
           pane = 2,
