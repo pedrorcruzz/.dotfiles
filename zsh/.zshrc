@@ -3,6 +3,8 @@ export PATH="/usr/local/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
 export GPG_TTY=$(tty)
 
+
+
 # ZSH_THEME="headline"
 
 # plugins oh my zsh 
@@ -185,6 +187,8 @@ esac
 
 # ASDF
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$HOME/.asdf/installs/python/3.13.2/bin:$PATH"
+
 
 
 # NVM 

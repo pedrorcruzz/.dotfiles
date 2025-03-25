@@ -33,23 +33,23 @@ return {
       },
       width = 72,
       sections = {
-        -- {
-        --   pane = 1,
-        -- section = 'header',
-        --   padding = 1,
-        --   enabled = function()
-        --     return not (vim.o.columns < 135)
-        --   end,
-        -- },
+        {
+          pane = 1,
+          -- section = 'header',
+          padding = 2,
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+        },
         {
           pane = 1,
           section = 'terminal',
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
+          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color',
-          height = 28, --26
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color', -- --no-with-color
+          height = 26, --26
           width = 65,
           padding = 2,
           -- indent = 1,
@@ -63,11 +63,11 @@ return {
           pane = 1,
           section = 'terminal',
 
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
+          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
-          --
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color',
+
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color',
 
           height = 20, --25
           width = 65,
