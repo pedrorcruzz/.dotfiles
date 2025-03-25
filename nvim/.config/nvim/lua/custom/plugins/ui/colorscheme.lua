@@ -218,8 +218,8 @@ return {
             -- CursorLine = { bg = '#45475C' },
 
             -- Snacks
-            SnacksPicker = { bg = '#181826' },
-            SnacksPickerBorder = { fg = '#7DB6FF', bg = '#181826' },
+            -- SnacksPicker = { bg = '#181826' },
+            -- SnacksPickerBorder = { fg = '#7DB6FF', bg = '#181826' },
 
             ['@punctuation.special'] = { fg = '#4c4c4c' },
             ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },
