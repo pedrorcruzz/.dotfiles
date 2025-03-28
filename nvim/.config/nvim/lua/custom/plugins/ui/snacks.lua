@@ -36,7 +36,7 @@ return {
         {
           pane = 1,
           -- section = 'header',
-          padding = 2,
+          padding = 3,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -48,7 +48,7 @@ return {
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
-          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color', -- --no-with-color
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .22 --quant 16 --with-color', -- --no-with-color --scale 24
           height = 26, --26
           width = 65,
           padding = 2,
@@ -67,12 +67,12 @@ return {
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
-          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .24 --quant 16 --with-color',
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .17 --quant 16 --with-color',
 
-          height = 20, --25
-          width = 65,
+          height = 16, --25
+          width = 56,
           padding = 2,
-          -- indent = 1,
+          indent = 12,
           enabled = function()
             return not (vim.o.columns > 135)
           end,
@@ -138,17 +138,17 @@ return {
         },
 
         -- Narrow screen
-        -- {
-        --   pane = 1,
-        --   icon = '',
-        --   title = 'Recent Files',
-        --   section = 'recent_files',
-        --   enabled = function()
-        --     return not (vim.o.columns > 135)
-        --   end,
-        --   opts = { limit = 10 },
-        --   indent = 1,
-        -- },
+        {
+          pane = 1,
+          icon = '',
+          title = 'Recent Files',
+          section = 'recent_files',
+          enabled = function()
+            return not (vim.o.columns > 135)
+          end,
+          indent = 1,
+          limit = 5,
+        },
       },
     },
     explorer = {
