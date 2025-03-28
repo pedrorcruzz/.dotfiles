@@ -46,13 +46,13 @@ return {
           section = 'terminal',
           -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
 
-          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
+          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --format symbols --size 54x55 --align center; sleep .1',
 
           cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .22 --quant 16 --with-color', -- --no-with-color --scale 24
           height = 26, --26
           width = 65,
           padding = 2,
-          -- indent = 1,
+          -- indent = 6,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
