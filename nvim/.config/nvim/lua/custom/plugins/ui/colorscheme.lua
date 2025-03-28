@@ -140,12 +140,11 @@ return {
 
           SnacksPickerTitle = { fg = '#ffffff', bg = '#323232' },
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' }, --explorer 202020 or 1A1A1A
-          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' }, -- fg 323232
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
-          -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
           SnacksPicker = { bg = '#1A1A1A' },
-
+          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' }, -- fg 323232
+          -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
           -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e

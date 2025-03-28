@@ -1,17 +1,18 @@
-export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
 export GPG_TTY=$(tty)
 
 
 
-# ZSH_THEME="headline"
 
-# plugins oh my zsh 
+# plugins zsh 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# oh my zsh
 plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# ZSH_THEME="headline"
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Starship 
 eval "$(starship init zsh)"
