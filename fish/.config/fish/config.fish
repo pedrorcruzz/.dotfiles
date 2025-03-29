@@ -8,12 +8,16 @@ if status is-interactive
     fish_add_path /bin
     fish_add_path /usr/sbin
     fish_add_path /sbin
+    fish_add_path "$HOME/.local/bin"
 
     starship init fish | source
+    set -Ux STARSHIP_CONFIG $HOME/.config/starship/zen.toml
+
     zoxide init fish | source
     set -U fish_greeting
     set -gx EDITOR nvim
-    set -Ux PATH ~/.console-ninja/.bin $PATH
+    set -gx PATH ~/.console-ninja/.bin $PATH
+
 
 end
 
