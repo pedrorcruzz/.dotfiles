@@ -8,6 +8,7 @@ return {
         '~/Workspace/Studies/*',
         -- '~/Workspace/Scripts/*',
         '~/Workspace/Cesmac/*',
+        '~/Workspace/Guru/*',
       },
       -- Path to store history and sessions
       datapath = vim.fn.stdpath 'data', -- ~/.local/share/nvim/

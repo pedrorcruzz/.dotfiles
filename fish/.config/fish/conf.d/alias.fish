@@ -6,6 +6,7 @@ abbr -a C "cd ~/Workspace/Cesmac"
 abbr -a P "cd ~/Workspace/Projects"
 abbr -a PP "cd ~/Workspace/Projects/Personal"
 abbr -a PW "cd ~/Workspace/Projects/Work"
+abbr -a G "cd ~/Workspace/Guru"
 abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 #Alias System
