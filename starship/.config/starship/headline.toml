@@ -102,24 +102,48 @@ truncate_to_repo = false
 # format = "[](#090909)[$symbol]($style)[](#090909)"
 disabled = false
 
+#ZSH
+# [custom.giturl]
+# description = "Display symbol for remote Git server"
+# command = """
+# GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
+# if [[ "$GIT_REMOTE" =~ "github" ]]; then
+#     GIT_REMOTE_SYMBOL=" "
+# elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
+#     GIT_REMOTE_SYMBOL=" "
+# elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
+#     GIT_REMOTE_SYMBOL=" "
+# elif [[ "$GIT_REMOTE" =~ "git" ]]; then
+#     GIT_REMOTE_SYMBOL=" "
+# else
+#     GIT_REMOTE_SYMBOL=" " 
+# fi
+# echo "$GIT_REMOTE_SYMBOL "
+# """
+# when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+# format = "$output"
+
+#FISH
 [custom.giturl]
 description = "Display symbol for remote Git server"
 command = """
-GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
-if [[ "$GIT_REMOTE" =~ "github" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "git" ]]; then
-    GIT_REMOTE_SYMBOL=" "
+set GIT_REMOTE (git ls-remote --get-url 2> /dev/null)
+
+if string match -q "*github*" $GIT_REMOTE
+    set GIT_REMOTE_SYMBOL " "
+else if string match -q "*gitlab*" $GIT_REMOTE
+    set GIT_REMOTE_SYMBOL " "
+else if string match -q "*bitbucket*" $GIT_REMOTE
+    set GIT_REMOTE_SYMBOL " "
+else if string match -q "*git*" $GIT_REMOTE
+    set GIT_REMOTE_SYMBOL " "
 else
-    GIT_REMOTE_SYMBOL=" " 
-fi
-echo "$GIT_REMOTE_SYMBOL "
+    set GIT_REMOTE_SYMBOL " "
+end
+
+echo $GIT_REMOTE_SYMBOL
 """
-when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+when = "git rev-parse --is-inside-work-tree 2> /dev/null"
 format = "$output"
 
 

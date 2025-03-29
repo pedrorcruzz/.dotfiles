@@ -81,8 +81,7 @@ alias pipu='pip install --upgrade pip'
 alias pyvenv='python3 -m venv venv'
 
 #Alias Docker
-alias ldk='lazydocker'
-# alias start_project="cd /caminho/do/projeto && docker compose up"
+alias start_project="cd /caminho/do/projeto && docker compose up"
 
 #Alias Git CLI
 alias gh-c-pri='git add . && git commit -m "chore: upload project to GitHub" && gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
