@@ -27,7 +27,6 @@ local set_root = function()
   vim.fn.chdir(root)
 end
 
-
 -- Terminal toggle term
 -- vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
 vim.api.nvim_set_keymap('t', '<C-o>', [[<C-\><C-n>]], { noremap = true })
