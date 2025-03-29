@@ -1,3 +1,4 @@
+set -x LC_MESSAGES en_US.UTF-8
 #PostgreSQL
 #Start and Stop PostgreSQL
 function startpg
@@ -7,25 +8,25 @@ end
 function stoppg
     /Users/phrosa/.asdf/installs/postgres/17.4/bin/pg_ctl -D /Users/phrosa/.asdf/installs/postgres/17.4/data stop
 end
+
 #User PostgreSQL
 function joinpgp
     psql -U postgres -d postgres
-end
 
-function joindpgp
-    docker exec -it postgres-container psql -U postgres -d postgres
 end
-
 #Input User
 function joinpg
     psql -U $argv
 end
 
+#Docker PostgreSQL
+function joindpgp
+    docker exec -it postgres-container psql -U postgres -d postgres
+end
 function joindpg
     docker exec -it postgres-container psql -U $argv
 end
 
-set -x LC_MESSAGES en_US.UTF-8
 
 #MongoDB
 function startmongo

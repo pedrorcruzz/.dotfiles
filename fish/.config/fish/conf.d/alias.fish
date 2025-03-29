@@ -34,6 +34,11 @@ abbr -a gtagp "git push origin --tags"
 abbr -a gtagd "git tag -d"
 abbr -a gtagdr "git push origin --delete refs/tags/"
 
+#Alias Git CLI COPILOT
+abbr -a ghcs "gh copilot suggest"
+abbr -a ghcf "gh copilot fix"
+abbr -a ghce "gh copilot explain"
+
 
 #Alias Tmux
 abbr -a tls "tmux list-sessions"
