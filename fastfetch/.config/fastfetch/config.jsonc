@@ -98,7 +98,7 @@
 		{
 			"type": "custom",
 			"format": "Neovim",
-			"shell": "/bin/zsh",
+			"shell": "/opt/homebrew/bin/fish",
 			"key": " ├ 󰲌 {#white}EDIT",
 			"keyColor": "green",
 		},
