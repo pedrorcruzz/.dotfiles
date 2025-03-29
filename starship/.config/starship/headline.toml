@@ -251,8 +251,10 @@ symbol = " "
 format = '[via](#52676b)[ $symbol( $version) ]($style)'
 
 [java]
-symbol = " "
-format = '[via](#52676b)[[ $symbol( $version) ]]($style)'
+style = "fg:#EC7063"
+symbol = " "
+format = '[ $symbol( $version) ]($style)'
+
 
 [kotlin]
 symbol = " "

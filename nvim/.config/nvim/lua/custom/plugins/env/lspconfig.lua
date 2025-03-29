@@ -286,6 +286,7 @@ return { -- LSP Configuration & Plugins
       'php-cs-fixer',
       'php-cs-fixer',
       'goimports',
+      'google-java-format',
 
       -- Linters
       'djlint',
@@ -299,12 +300,14 @@ return { -- LSP Configuration & Plugins
       'tailwindcss-language-server',
       'typescript-language-server',
       'intelephense',
+      'jdtls',
 
       -- Debuggers
       'php-debug-adapter',
       'js-debug-adapter',
       'go-debug-adapter',
       'debugpy',
+      'java-debug-adapter',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     require('mason-lspconfig').setup {

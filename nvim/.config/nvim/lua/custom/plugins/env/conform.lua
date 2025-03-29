@@ -23,6 +23,7 @@ return {
           lua = { 'stylua' },
           php = { 'php_cs_fixer' },
           go = { 'goimports' },
+          java = { 'google-java-format' },
         },
         format_on_save = {
           lsp_fallback = true,

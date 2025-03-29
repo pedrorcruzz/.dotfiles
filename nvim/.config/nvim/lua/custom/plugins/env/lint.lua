@@ -53,6 +53,12 @@ return {
     end
     go_linters = #go_linters > 0 and go_linters or nil
 
+    local java_linters = {}
+    if has_exe 'checkstyle' then
+      table.insert(java_linters, 'checkstyle')
+    end
+    java_linters = #java_linters > 0 and java_linters or nil
+
     local dockerfile_linters = {}
     if has_exe 'hadolint' then
       table.insert(dockerfile_linters, 'hadolint')
@@ -69,6 +75,7 @@ return {
       python = python_linters,
       php = php_linters,
       go = go_linters,
+      java = java_linters,
       dockerfile = dockerfile_linters,
     }
 
