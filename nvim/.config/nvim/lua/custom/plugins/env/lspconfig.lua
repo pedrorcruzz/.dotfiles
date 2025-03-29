@@ -242,15 +242,15 @@ return { -- LSP Configuration & Plugins
           -- },
         },
       },
-      prettierd = {
-        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
-      },
+      -- prettierd = {
+      --   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
+      -- },
       -- eslint_d = {
       --   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
       -- },
-      prettier = {
-        filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
-      },
+      -- prettier = {
+      --   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
+      -- },
       jsonls = {
         on_new_config = function(new_config)
           new_config.settings.json.schemas = new_config.settings.json.schemas or {}
@@ -281,7 +281,7 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       --Formatters
       'stylua',
-      'prettierd',
+      -- 'prettierd',
       'black',
       'php-cs-fixer',
       'php-cs-fixer',

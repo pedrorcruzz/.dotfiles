@@ -19,6 +19,12 @@ abbr -a live "live-server"
 abbr -a sv "source venv/bin/activate"
 abbr -a dv "deactivate"
 
+#Alias Kill Process
+abbr -a klsp "kill (pgrep -f 'n')"
+abbr -a kls5 'kill -9 (lsof -t -i:5432)'
+abbr -a kls6 'kill -9 (lsof -t -i:6060)'
+abbr -a kls8 'kill -9 (lsof -t -i:8000)'
+
 
 #Alias Python
 abbr -a pipu "pip install --upgrade pip"
