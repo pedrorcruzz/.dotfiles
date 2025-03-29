@@ -9,7 +9,6 @@ function l
     ls -la
 end
 
-
     function cat
         command bat $argv
     end
@@ -44,10 +43,11 @@ function ghosttyconfig
 end
 
 function ff
-    set prev_dir (pwd)
-    cd ~/.config/fastfetch
+    set current_dir (pwd)
+    pushd ~/.config/fastfetch > /dev/null
     fastfetch
-    cd $prev_dir
+    popd > /dev/null
+    cd $current_dir
 end
 
 #Docker Compose
