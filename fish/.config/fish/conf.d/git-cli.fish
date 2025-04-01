@@ -25,3 +25,12 @@ function gh-c-pub-w
     git push -u --all
     gh browse
 end
+
+function gh-repo-pub
+	gh repo list --visibility=public
+end
+
+function gh-repo-pri
+	gh repo list --visibility=private
+end
+
