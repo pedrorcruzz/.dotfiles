@@ -92,7 +92,8 @@
 		{
 			"type": "shell",
 			"key": " ├  {#white}SHELL",
-			"format": "{6} + Starship",
+			// "format": "{6} + Starship",
+			"format": "Fish + Starship",
 			"keyColor": "green",
 		},
 		{
@@ -102,12 +103,12 @@
 			"key": " ├ 󰲌 {#white}EDIT",
 			"keyColor": "green",
 		},
-		// {
-		//   "type": "custom",
-		//   "format": "Yazi",
-		//   "key": " ├  {#white}FILE",
-		//   "keyColor": "green",
-		// },
+		{
+			"type": "custom",
+			"format": "Yazi",
+			"key": " ├  {#white}FILE",
+			"keyColor": "green",
+		},
 		{
 			"type": "media",
 			// "format": "Spotify",
