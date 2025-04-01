@@ -16,7 +16,7 @@ abbr -a rn "nvim"
 abbr -a vim "nvim"
 abbr -a y "yazi"
 abbr -a live "live-server"
-abbr -a sv "source venv/bin/activate"
+abbr -a sv "source venv/bin/activate.fish"
 abbr -a dv "deactivate"
 
 #Alias Kill Process
