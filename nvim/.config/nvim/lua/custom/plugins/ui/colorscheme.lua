@@ -29,7 +29,7 @@ return {
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
-          SignColumn = { bg = '#323232' },
+          SignColumn = { bg = transparent_background and 'none' or '#323232' },
           LineNr = { fg = '#505050' }, --#4b5263 #727272
           FloatBorder = { fg = '#4c4c4c' },
           Border = { fg = '#4c4c4c' },

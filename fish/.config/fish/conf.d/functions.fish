@@ -9,9 +9,9 @@ function l
     ls -la
 end
 
-function cd
-    z $argv
-end
+# function cd
+#     z $argv
+# end
 
     function cat
         command bat $argv

@@ -3,11 +3,10 @@ return {
     'coffebar/neovim-project',
     opts = {
       projects = { -- define project roots
-        '~/Workspace/Projects/Work/*',
-        '~/Workspace/Projects/Personal/*',
+        '~/Workspace/Projects/*',
         '~/Workspace/Studies/*',
-        -- '~/Workspace/Scripts/*',
         '~/Workspace/Cesmac/*',
+        '~/Workspace/Seven/*',
         '~/Workspace/Guru/*',
       },
       -- Path to store history and sessions
