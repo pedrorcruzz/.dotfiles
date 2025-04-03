@@ -3,6 +3,7 @@ local function set_theme(theme)
 end
 
 local default_theme = 'min-theme'
+-- teste
 
 return {
   {
