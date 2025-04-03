@@ -36,7 +36,7 @@ return {
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
-          AvanteInlineHint = { fg = '#606060' }, --#abb2bf
+          AvanteInlineHint = { fg = '#606060', bg = 'none' }, --#abb2bf
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
