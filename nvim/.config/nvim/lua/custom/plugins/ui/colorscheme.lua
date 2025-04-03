@@ -37,6 +37,8 @@ return {
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060', bg = 'none' }, --#abb2bf
+          -- Keyword = { fg = '#606060' }, --#abb2bf
+
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
@@ -286,6 +288,7 @@ return {
 
           -- Avante
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
+          -- Keyword = { fg = '#606060' }, --#abb2bf
 
           --Punctuation Special
           ['@punctuation.special'] = { fg = transparent_background and '#323232' or '#323232' },
