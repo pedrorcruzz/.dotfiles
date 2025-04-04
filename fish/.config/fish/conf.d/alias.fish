@@ -34,6 +34,7 @@ abbr -a pyvenv "python3 -m venv venv"
 #Alias Git
 abbr -a gcn "git clone"
 abbr -a gbdr "git push origin --delete"
+abbr -a gcmsg "git commit -m"
 abbr -a gcmsgs "git commit -S -m"
 abbr -a gtag "git tag -a"
 abbr -a gtagp "git push origin --tags"
