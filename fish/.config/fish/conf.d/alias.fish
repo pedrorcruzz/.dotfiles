@@ -1,9 +1,9 @@
 #Alias Directory
-abbr -a W "cd ~/Workspace"
+abbr -a D "cd ~/Workspace"
 abbr -a S "cd ~/Workspace/Studies"
 abbr -a SRC "cd ~/Workspace/Scripts"
 abbr -a C "cd ~/Workspace/Cesmac"
-abbr -a T "cd ~/Workspace/Seven"
+abbr -a W "cd ~/Workspace/Seven"
 abbr -a P "cd ~/Workspace/Projects"
 abbr -a G "cd ~/Workspace/Guru"
 abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"

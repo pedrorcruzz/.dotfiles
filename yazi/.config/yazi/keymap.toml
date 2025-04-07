@@ -5,7 +5,7 @@
 [manager]
 
 [[manager.prepend_keymap]]
-on   = [ "g", "w" ]
+on   = [ "g", "d" ]
 run  = "cd ~/Workspace"
 desc = "Go Workspace"
 
@@ -17,8 +17,8 @@ desc = "Go Personal Projects"
 
 
 [[manager.prepend_keymap]]
-on   = [ "g", "o" ]
-run  = "cd ~/Workspace/Projects/Work"
+on   = [ "g", "w" ]
+run  = "cd ~/Workspace/Seven"
 desc = "Go Work Projects"
 
 [[manager.prepend_keymap]]
