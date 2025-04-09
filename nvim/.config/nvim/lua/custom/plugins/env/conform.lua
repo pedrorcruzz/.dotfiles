@@ -15,6 +15,7 @@ return {
           typescript = has_biome() and { 'biome', 'prettierd', 'prettier' } or { 'prettierd', 'prettier' },
           javascriptreact = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
           typescriptreact = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
+          json = has_biome() and { 'biome' } or { 'prettierd' },
           html = { 'prettierd', 'prettier' },
           css = { 'prettierd', 'prettier' },
           htmldjango = { 'djlint' },
