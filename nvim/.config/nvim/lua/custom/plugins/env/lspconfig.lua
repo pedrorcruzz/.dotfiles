@@ -281,12 +281,11 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       --Formatters
       'stylua',
-      'prettierd',
-      'black',
-      'php-cs-fixer',
-      'php-cs-fixer',
-      'goimports',
-      'google-java-format',
+      -- 'prettierd',
+      -- 'black',
+      -- 'php-cs-fixer',
+      -- 'goimports',
+      -- 'google-java-format',
 
       -- Linters
       'djlint',
@@ -349,21 +348,21 @@ return { -- LSP Configuration & Plugins
       severity_sort = false,
     }
 
-    -- local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
-    -- for type, icon in pairs(signs) do
-    --   local hl = 'DiagnosticSign' .. type
-    --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    -- end
+    local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+    for type, icon in pairs(signs) do
+      local hl = 'DiagnosticSign' .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
 
-    -- vim.diagnostic.config {
-    --   virtual_text = {
-    --     spacing = 4,
-    --     prefix = '',
-    --   },
-    --   signs = true,
-    --   underline = true,
-    --   update_in_insert = false,
-    --   severity_sort = false,
-    -- }
+    vim.diagnostic.config {
+      virtual_text = {
+        spacing = 4,
+        prefix = '',
+      },
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = false,
+    }
   end,
 }

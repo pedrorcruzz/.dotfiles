@@ -12,14 +12,19 @@ desc = "Go Workspace"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "p" ]
-run  = "cd ~/Workspace/Projects/Personal"
-desc = "Go Personal Projects"
+run  = "cd ~/Workspace/Projects"
+desc = "Go Projects"
 
 
 [[manager.prepend_keymap]]
 on   = [ "g", "w" ]
 run  = "cd ~/Workspace/Seven"
 desc = "Go Work Projects"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "f" ]
+run  = "cd ~/Workspace/Freelas"
+desc = "Go Freelas Projects"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "s" ]
@@ -30,6 +35,7 @@ desc = "Go Studies Projects"
 on   = [ "g", "t" ]
 run  = "cd ~/Workspace/Cesmac"
 desc = "Go Cesmac Projects"
+
 
 
 keymap = [

@@ -259,8 +259,8 @@ return {
           -- },
           'copilot',
           'progress',
+          { 'filename', symbols = { modified = '●', readonly = '' } },
           'filetype',
-          -- { 'filename', symbols = { modified = '●', readonly = '' } },
           {
             function()
               return get_venv_name() ~= '' and ' ' .. get_venv_name() or ''
