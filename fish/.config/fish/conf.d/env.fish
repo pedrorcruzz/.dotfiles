@@ -24,3 +24,8 @@ set -gx PATH $HOME/.asdf/bin $PATH
 set -gx PATH "$HOME/.asdf/installs/python/3.13.2/bin" $PATH
 
 
+# Set up for tcl-tk
+set -x LDFLAGS "-L/opt/homebrew/opt/tcl-tk/lib"
+set -x CPPFLAGS "-I/opt/homebrew/opt/tcl-tk/include"
+set -x PKG_CONFIG_PATH "/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+set -x PATH /opt/homebrew/opt/tcl-tk/bin $PATH
