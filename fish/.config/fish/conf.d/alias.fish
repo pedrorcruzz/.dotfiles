@@ -9,6 +9,7 @@ abbr -a P "cd ~/Workspace/Projects"
 abbr -a G "cd ~/Workspace/Guru"
 abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"
 
+
 #Alias System
 abbr -a lg "lazygit"
 abbr -a cd "z"
@@ -18,22 +19,13 @@ abbr -a vim "nvim"
 abbr -a y "yazi"
 abbr -a live "live-server"
 
+
 #Alias Kill Process
 abbr -a klsp "kill (pgrep -f 'n')"
 abbr -a kls5 'kill -9 (lsof -t -i:5432)'
 abbr -a kls6 'kill -9 (lsof -t -i:6060)'
 abbr -a kls8 'kill -9 (lsof -t -i:8000)'
 
-
-#Alias Python
-abbr -a pipu "pip install --upgrade pip"
-abbr -a pyvenv "python3 -m venv venv"
-abbr -a sv "source venv/bin/activate.fish"
-abbr -a dv "deactivate"
-
-
-#Alias Laravel
-abbr -a laravelc "composer create-project --prefer-dist laravel/laravel"
 
 #Alias Git
 abbr -a gcn "git clone"
@@ -60,8 +52,3 @@ abbr -a tda "tmux detach"
 abbr -a taa "tmux attach-session -t Home || tmux new-session -s Home"
 abbr -a tnn "tmux new-session -s"
 abbr -a tks "tmux kill-session -t"
-
-
-
-
-
