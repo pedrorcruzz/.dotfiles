@@ -12,7 +12,7 @@ return {
     document_color = {
       enabled = true,
       kind = 'inline', -- "inline" | "foreground" | "background"
-      inline_symbol = '󰝤 ',
+      inline_symbol = '󰝤 ', --󰝤  
       debounce = 200,
     },
 
