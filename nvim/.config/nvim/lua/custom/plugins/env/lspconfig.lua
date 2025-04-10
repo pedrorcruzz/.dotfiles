@@ -281,6 +281,7 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       --Formatters
       'stylua',
+      'superhtml',
       -- 'prettierd',
       -- 'black',
       -- 'php-cs-fixer',
