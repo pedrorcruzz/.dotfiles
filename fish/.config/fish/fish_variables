@@ -38,4 +38,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/phrosa/\x2easdf/installs/python/3\x2e13\x2e2/bin\x1e/Users/phrosa/\x2eyarn/bin\x1e/Users/phrosa/Library/Application\x20Support/Herd/bin\x1e/sbin\x1e/usr/sbin\x1e/bin\x1e/usr/bin\x1e/opt/homebrew/bin\x1e/usr/local/bin\x1e/Users/phrosa/\x2elocal/bin
+SETUVAR fish_user_paths:/Users/phrosa/Library/pnpm\x1e/Users/phrosa/\x2easdf/installs/python/3\x2e13\x2e2/bin\x1e/Users/phrosa/\x2eyarn/bin\x1e/Users/phrosa/Library/Application\x20Support/Herd/bin\x1e/sbin\x1e/usr/sbin\x1e/bin\x1e/usr/bin\x1e/opt/homebrew/bin\x1e/usr/local/bin\x1e/Users/phrosa/\x2elocal/bin
