@@ -15,7 +15,7 @@ return {
       { '<leader>e', group = 'File Explorer', icon = '' },
       -- { "<leader>'", group = 'Wrap', icon = '󰭷' },
       { '<leader>z', group = 'Obsidian', icon = '' },
-      { '<leader>v', group = 'Auto Save', icon = '' },
+      -- { '<leader>v', group = 'Auto Save', icon = '' },
       { '<leader>b', group = 'DBUI', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
       { '<leader>n', group = 'Neotest', icon = '' },
@@ -65,7 +65,7 @@ return {
     { '<leader>h', '<cmd>nohlsearch<cr>', desc = 'No Highlight' },
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
     { '<leader>le', '<cmd>GrugFar<cr>', desc = 'GrugFar' },
-    { '<leader>.', '<cmd>TSContextToggle<cr>', desc = 'Toggle:TSContext' },
+    { '<leader>v', '<cmd>TSContextToggle<cr>', desc = 'Toggle:TSContext' },
     { '<leader>fp', '<cmd>NeovimProjectDiscover<cr>', desc = 'Discover Projects' },
 
     --Wrap

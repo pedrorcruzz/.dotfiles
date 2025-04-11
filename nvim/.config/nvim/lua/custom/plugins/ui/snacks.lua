@@ -667,7 +667,7 @@ return {
       desc = 'Dashboard',
     },
     {
-      '<leader>,',
+      '<leader>.',
       function()
         Snacks.notifier.hide()
       end,

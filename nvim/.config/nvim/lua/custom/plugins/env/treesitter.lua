@@ -107,7 +107,7 @@ return {
       --   }
       -- end
 
-      -- vim.keymap.set('n', '<leader>.', toggle_context, { silent = true, desc = 'Toggle: Sticky Scroll' })
+      -- vim.keymap.set('n', '<leader>v', toggle_context, { silent = true, desc = 'Toggle: Sticky Scroll' })
     end,
   },
 }

@@ -23,6 +23,6 @@ return {
     debug = false,
   },
   keys = {
-    { '<leader>v', '<cmd>ASToggle<cr>', desc = 'Toggle AutoSave' },
+    { '<leader>ls', '<cmd>ASToggle<cr>', desc = 'Auto Save: Toggle' },
   },
 }
