@@ -219,8 +219,8 @@ symbol = '🧶'
 format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 [bun]
-style = "bold #9B59B6"
-symbol = '🐝'
+style = "bold #E1A06E"
+symbol = '🧅'
 format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 [package]

@@ -223,10 +223,12 @@ style = "bold #2e8b57"
 symbol = '🧶'
 format = '[ $symbol( $version) ]($style)'
 
+
 [bun]
-style = "bold #9B59B6"
-symbol = '🐝'
-format = '[ $symbol( $version) ]($style)'
+style = "bold #E1A06E"
+symbol = '🧅'
+format = '[via](#52676B)[ $symbol( $version) ]($style)'
+
 
 [package]
 style = "bold #8B4513"
