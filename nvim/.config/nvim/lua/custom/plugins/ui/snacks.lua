@@ -222,7 +222,7 @@ return {
     quickfile = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
-    image = { enabled = true },
+    image = { enabled = false },
     animate = { enabled = true },
     words = { enabled = true },
     scroll = {
