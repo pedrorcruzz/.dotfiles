@@ -225,7 +225,7 @@ format = '[ $symbol( $version) ]($style)'
 
 
 [bun]
-style = "bold #E1A06E"
+style = "bold #EDDBD0"
 symbol = '🧅'
 format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
