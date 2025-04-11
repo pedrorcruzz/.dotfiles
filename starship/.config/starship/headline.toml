@@ -231,7 +231,7 @@ format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 [custom.typescript]
 style = "bold #007ACC"  
-symbol = "" 
+symbol = " " 
 format = '[$symbol($version) ]($style)'
 detect_extensions = ["ts", "tsx"]
 
