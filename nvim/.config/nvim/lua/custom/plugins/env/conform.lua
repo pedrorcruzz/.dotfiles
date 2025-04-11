@@ -11,10 +11,10 @@ return {
 
       conform.setup {
         formatters_by_ft = {
-          javascript = has_biome() and { 'biome', 'prettierd', 'prettier' } or { 'prettierd', 'prettier' },
-          typescript = has_biome() and { 'biome', 'prettierd', 'prettier' } or { 'prettierd', 'prettier' },
-          javascriptreact = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
-          typescriptreact = has_biome() and { 'biome', 'prettierd' } or { 'prettierd' },
+          javascript = has_biome() and { 'biome' } or { 'prettierd', 'prettier' },
+          typescript = has_biome() and { 'biome' } or { 'prettierd', 'prettier' },
+          javascriptreact = has_biome() and { 'biome' } or { 'prettierd', 'prettier' },
+          typescriptreact = has_biome() and { 'biome' } or { 'prettierd', 'prettier' },
           json = has_biome() and { 'biome' } or { 'prettierd' },
           html = { 'prettierd', 'prettier' },
           css = { 'prettierd', 'prettier' },
