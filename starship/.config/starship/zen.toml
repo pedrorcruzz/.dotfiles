@@ -215,25 +215,23 @@ format = ' [$symbol( $version) ]($style)'
 
 [custom.pnpm]
 style = "bold #FFC4C0"
-symbol = '🎨'
-format = '[ $symbol( $version) ]($style)'
+symbol = ''
+format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 [custom.yarn]
 style = "bold #2e8b57"
-symbol = '🧶'
-format = '[ $symbol( $version) ]($style)'
-
+symbol = ''
+format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 [bun]
 style = "bold #EDDBD0"
-symbol = '🧅'
+symbol = ''
 format = '[via](#52676B)[ $symbol( $version) ]($style)'
-
 
 [package]
 style = "bold #8B4513"
-symbol = '📦'
-format = '[ $symbol( $version) ]($style)'
+symbol = ''
+format = '[via](#52676B)[ $symbol( $version) ]($style)'
 
 
 [custom.typescript]
