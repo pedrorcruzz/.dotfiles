@@ -5,6 +5,7 @@ return {
       projects = { -- define project roots
         '~/Workspace/Projects/*',
         '~/Workspace/Studies/*',
+        '~/Workspace/Freelas/*',
         '~/Workspace/Cesmac/*',
         '~/Workspace/Seven/*',
         '~/Workspace/Guru/*',
