@@ -46,3 +46,10 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal nolist',
 })
 
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = function()
+    vim.api.nvim_set_hl(0, 'AvanteInlineHint', {})
+    vim.api.nvim_set_hl(0, 'AvanteInlineHint', { fg = '#606060', bg = 'none' })
+  end,
+})

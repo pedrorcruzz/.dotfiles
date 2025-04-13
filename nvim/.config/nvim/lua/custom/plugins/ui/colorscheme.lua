@@ -1,3 +1,4 @@
+
 local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end

@@ -341,6 +341,7 @@ return { -- LSP Configuration & Plugins
         },
       },
       virtual_text = {
+        true,
         spacing = 4,
         prefix = '',
       },
