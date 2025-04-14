@@ -1,4 +1,3 @@
-
 local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
@@ -42,7 +41,7 @@ return {
 
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
-          MatchParen = { fg = '#abb2bf' },
+          MatchParen = { fg = '#abb2bf' }, --quando coloca o cursor em cima de um parênteses / tag
           NonText = { fg = '#727272' },
           Title = { fg = '#FFFFFF' },
           Question = { fg = '#FFFFFF' },
@@ -94,6 +93,9 @@ return {
           ['@markup.heading.4.html'] = { fg = '#AAA9AA' },
           ['@markup.heading.5.html'] = { fg = '#AAA9AA' },
           ['@markup.heading.6.html'] = { fg = '#AAA9AA' },
+
+          --JSX and TSX
+          ['@tag.jsx.element'] = { fg = '#B0AFB0' },
 
           --htmldjango
           ['@punctuation.special.htmldjango'] = { fg = '#FED600' },
