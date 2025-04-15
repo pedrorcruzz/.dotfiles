@@ -29,10 +29,11 @@ return {
       colors = {
         min_fg_branch = '#a9a9a9',
         min_bg_branch = '#2d2d2d',
-        min_bar_bg = '#2d2d2d',
-        -- min_bar_bg = nil,
+        -- min_bar_bg = '#2d2d2d',
+        min_bar_bg = nil,
         min_git = '#FFFFFF',
         min_y_bg = '#2d2d2d',
+        -- min_y_bg = nil,
         min_y_fg = '#a9a9a9',
         min_uni_fg_color = '#FEFEFE',
         min_uni_bg_color = '#1a1a1a',

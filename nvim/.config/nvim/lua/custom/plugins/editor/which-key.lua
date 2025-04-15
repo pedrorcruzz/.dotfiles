@@ -65,7 +65,7 @@ return {
     { '<leader>h', '<cmd>nohlsearch<cr>', desc = 'No Highlight' },
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
     { '<leader>le', '<cmd>GrugFar<cr>', desc = 'GrugFar' },
-    { '<leader>v', '<cmd>TSContextToggle<cr>', desc = 'Toggle:TSContext' },
+    { '<leader>lg', '<cmd>TSContextToggle<cr>', desc = 'TSCOntext: Toggle' },
     { '<leader>fp', '<cmd>NeovimProjectDiscover<cr>', desc = 'Discover Projects' },
 
     --Wrap

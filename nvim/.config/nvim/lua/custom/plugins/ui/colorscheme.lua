@@ -95,7 +95,7 @@ return {
           ['@markup.heading.6.html'] = { fg = '#AAA9AA' },
 
           --JSX and TSX
-          ['@tag.jsx.element'] = { fg = '#B0AFB0' },
+          -- ['@tag.jsx.element'] = { fg = '#B0AFB0' },
 
           --htmldjango
           ['@punctuation.special.htmldjango'] = { fg = '#FED600' },
@@ -147,10 +147,10 @@ return {
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = '#1A1A1A' }, --explorer 202020 or 1A1A1A
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
-          SnacksPicker = { bg = '#1A1A1A' },
-          SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' }, -- fg 323232
-          -- SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
-          -- SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
+          -- SnacksPicker = { bg = '#1A1A1A' },
+          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' }, -- fg 323232
+          SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
+          SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
