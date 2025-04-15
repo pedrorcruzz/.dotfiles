@@ -5,7 +5,7 @@
 
 
 function l
-    echo (date) 
+    # echo (date) 
     ls -la
 end
 
