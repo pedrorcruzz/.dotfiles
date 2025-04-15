@@ -4,7 +4,9 @@ abbr -a bun-add-husky-lint "bun add -D @commitlint/cli @commitlint/config-conven
 abbr -a bun-add-tailwind-vite "bun add -D tailwindcss @tailwindcss/vite"
 abbr -a bun-add-biome "bun add -D @biomejs/biome && bunx biome init"
 abbr -a bun-add-react-libs "bun add react-router-dom"
-abbr -a bun-add-next "bunx create-next-app@latest"
+abbr -a bun-create-react "bunx create react-app@latest"
+abbr -a bun-create-next "bunx create next-app@latest"
+abbr -a bun-create-vite "bunx create vite@latest"
 
 #npm
 abbr -a npm-remove-eslint "npm remove @eslint/js eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint && rm eslint.config.js eslint.config.cjs"
@@ -12,7 +14,9 @@ abbr -a npm-add-husky-lint "npm install --save-dev @commitlint/cli @commitlint/c
 abbr -a npm-add-tailwind-vite "npm install --save-dev tailwindcss @tailwindcss/vite"
 abbr -a npm-add-biome "npm install --save-dev @biomejs/biome && npx biome init"
 abbr -a npm-add-react-libs "npm install react-router-dom"
-abbr -a npm-add-next "npx create-next-app@latest"
+abbr -a npm-create-react "npx create-react-app@latest"
+abbr -a npm-create-next "npx create-next-app@latest"
+abbr -a npm-create-vite "npx create-vite@latest"
 
 
 #pnpm
@@ -21,7 +25,9 @@ abbr -a pnpm-add-husky-lint "pnpm add -D @commitlint/cli @commitlint/config-conv
 abbr -a pnpm-add-tailwind-vite "pnpm add -D tailwindcss @tailwindcss/vite"
 abbr -a pnpm-add-biome "pnpm add -D @biomejs/biome && pnpm exec biome init"
 abbr -a pnpm-add-react-libs "pnpm add react-router-dom"
-abbr -a pnpm-add-next "pnpm create next-app@latest"
+abbr -a pnpm-create-react "pnpm create react-app@latest"
+abbr -a pnpm-create-next "pnpm create next-app@latest"
+abbr -a pnpm-create-vite "pnpm create vite@latest"
 
 #yarn
 abbr -a yarn-remove-eslint "yarn remove @eslint/js eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint && rm eslint.config.js eslint.config.cjs"
@@ -29,4 +35,6 @@ abbr -a yarn-add-husky-lint "yarn add -D @commitlint/cli @commitlint/config-conv
 abbr -a yarn-add-tailwind-vite "yarn add -D tailwindcss @tailwindcss/vite"
 abbr -a yarn-add-biome "yarn add -D @biomejs/biome && yarn dlx biome init"
 abbr -a yarn-add-react-libs "yarn add react-router-dom"
-abbr -a yarn-add-next "yarn create next-app@latest"
+abbr -a yarn-create-react "yarn create react-app@latest"
+abbr -a yarn-create-next "yarn create next-app@latest"
+abbr -a yarn-create-vite "yarn create vite@latest"
