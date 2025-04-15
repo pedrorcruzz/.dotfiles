@@ -4,9 +4,9 @@ abbr -a bun-add-husky-lint "bun add -D @commitlint/cli @commitlint/config-conven
 abbr -a bun-add-tailwind-vite "bun add -D tailwindcss @tailwindcss/vite"
 abbr -a bun-add-biome "bun add -D @biomejs/biome && bunx biome init"
 abbr -a bun-add-react-libs "bun add react-router-dom"
-abbr -a bun-create-react "bunx create react-app@latest"
-abbr -a bun-create-next "bunx create next-app@latest"
-abbr -a bun-create-vite "bunx create vite@latest"
+abbr -a bun-create-react "bunx create-react-app@latest"
+abbr -a bun-create-next "bunx create-next-app@latest"
+abbr -a bun-create-vite "bunx create-vite@latest"
 
 #npm
 abbr -a npm-remove-eslint "npm remove @eslint/js eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint && rm eslint.config.js eslint.config.cjs"
