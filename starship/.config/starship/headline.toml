@@ -85,15 +85,17 @@ truncation_symbol = '' #../
 truncate_to_repo = false
 
 
+
+
 [directory.substitutions]
+
 "~" = "Root" 
 ".dotfiles" ="Dotfiles"
-# "Workspace" = " " 
 # "Documents" = "󰈙"
 # "Downloads" = ""
 # "Music" = "󰝚"
 # "Pictures" = ""
-# "Developer" = "󰲋"
+# "Developer" = ""
 
 
 [os]
