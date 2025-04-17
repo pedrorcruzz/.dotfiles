@@ -1,4 +1,3 @@
-
 command_timeout = 1000
 
 palette = "custom"
@@ -100,7 +99,7 @@ style = "fg:#000000 bg:#ffffff"
 format = "[](#ffffff)[ $symbol ]($style )"
 disabled = false
 
-#ZSh
+#ZSH
 # [custom.giturl]
 # description = "Display symbol for remote Git server"
 # command = """
@@ -120,7 +119,6 @@ disabled = false
 # """
 # when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 # format = "$output"
-
 
 #FISH
 [custom.giturl]
@@ -209,28 +207,29 @@ format = '[ $symbol( $version) ]($style)'
 
 
 [nodejs]
-symbol = ' '
-format = '[via](#52676B)[ $symbol( $version) ]($style)'
+style = "fg:#00FC71 bg:#111111"
+symbol = " "
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [custom.pnpm]
 style = "bold #FFC4C0"
 symbol = ' '
-format = '[via](#52676B)[ $symbol( $version) ]($style)'
+format = '(#52676B)[ $symbol( $version) ]($style)'
 
 [custom.yarn]
 style = "bold #2e8b57"
 symbol = ' '
-format = '[via](#52676B)[ $symbol( $version) ]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [bun]
-style = "bold #EDDBD0"
-symbol = ' '
-format = '[via](#52676B)[ $symbol( $version) ]($style)'
+style = "fg:#EDDBD0 bg:#111111"
+symbol = " "
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [package]
-style = "bold #8B4513"
+style = "fg:#8B4513 bg:#111111"
 symbol = ' '
-format = '[via](#52676B)[ $symbol( $version) ]($style)'
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 
 [custom.typescript]
@@ -249,19 +248,20 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [golang]
-symbol = " " # 
-format = '[ $symbol( $version) ]($style)'
-detect_files = ["go.mod"]
+style = "fg:#00C1FF bg:#111111"
+symbol = ' '
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [php]
+style = "fg:#AFAFFF bg:#111111"
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
-
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [java]
-style = "fg:#EC7063"
+style = "fg:#EC7063 bg:#111111"
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
+
 
 [kotlin]
 symbol = " "
@@ -272,21 +272,24 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [ruby]
+style = "fg:#E0115F bg:#111111"
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
+
 
 
 [python]
-symbol = ' '
-style = "fg:#F1CA81"
-format = '[via](#52676B)[ ${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
+style = "fg:#F1CA81 bg:#111111"
+symbol = " "
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111))"
 # pyenv_version_name = true
 # pyenv_prefix = ''
 
 
 [swift]
-symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+style = "fg:#FF6B83 bg:#111111"
+symbol = " "
+format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [docker_context]
 # symbol = ' '
