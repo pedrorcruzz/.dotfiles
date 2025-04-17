@@ -309,7 +309,7 @@ detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 [cmd_duration]
 min_time = 500
 style = 'fg:gray'
-format = '[$duration]($style)'
+format = '[ $duration]($style)'
 
 [time]
 disabled = true
