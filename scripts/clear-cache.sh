@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/Workspace/Scripts/nuke-macOS-caches
+cd ~/Developer/Scripts/nuke-macOS-caches
 
 make run
 

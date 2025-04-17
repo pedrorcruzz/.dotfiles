@@ -4,7 +4,7 @@ export GPG_TTY=$(tty)
 commit_message="auto-sync: $(date '+%Y-%m-%d %H:%M:%S')"
 
 
-cd ~/Workspace/second-brain
+cd ~/Developer/second-brain
 
 git add .
 
