@@ -85,12 +85,12 @@ truncate_to_repo = false
 
 [directory.substitutions]
 "~" = " " 
-".dotfiles" =""
-"Documents" = "󰈙"
-"Downloads" = ""
-"Music" = "󰝚"
-"Pictures" = ""
-"Developer" = ""
+".dotfiles" =" "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = " "
 
 
 [os]

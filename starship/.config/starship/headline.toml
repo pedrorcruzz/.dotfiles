@@ -91,11 +91,11 @@ truncate_to_repo = false
 
 "~" = "Root" 
 ".dotfiles" ="Dotfiles"
-# "Documents" = "󰈙"
-# "Downloads" = ""
-# "Music" = "󰝚"
-# "Pictures" = ""
-# "Developer" = ""
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = "󰝚 "
+# "Pictures" = " "
+# "Developer" = " "
 
 
 [os]
