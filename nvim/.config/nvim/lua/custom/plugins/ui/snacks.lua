@@ -192,7 +192,7 @@ return {
           finder = 'explorer',
           diagnostics = true,
           diagnostics_open = false,
-          layout = { layout = { position = 'left' }, preview = false }, --explorer side
+          layout = { layout = { position = 'right', width = 35 }, preview = false }, --explorer side width 40 default
           focus = 'list',
           auto_close = false,
           git_untracked = true,

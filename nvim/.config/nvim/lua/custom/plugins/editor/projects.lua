@@ -3,12 +3,12 @@ return {
     'coffebar/neovim-project',
     opts = {
       projects = { -- define project roots
-        '~/Workspace/Projects/*',
-        '~/Workspace/Studies/*',
-        '~/Workspace/Freelas/*',
-        '~/Workspace/Cesmac/*',
-        '~/Workspace/Seven/*',
-        '~/Workspace/Guru/*',
+        '~/Developer/Projects/*',
+        '~/Developer/Studies/*',
+        '~/Developer/Freelas/*',
+        '~/Developer/Cesmac/*',
+        '~/Developer/Seven/*',
+        '~/Developer/Guru/*',
       },
       -- Path to store history and sessions
       datapath = vim.fn.stdpath 'data', -- ~/.local/share/nvim/

@@ -21,6 +21,16 @@ if status is-interactive
 
 end
 
+#Start Tmux automatically
+if type -q tmux
+    if not set -q TMUX
+        tmux attach || begin
+            cd ~
+            tmux new-session -s Home
+        end
+    end
+end
+
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.

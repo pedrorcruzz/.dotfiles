@@ -64,3 +64,4 @@ function stardew
     cd ~/Library/Application\ Support/Steam/steamapps/common/Stardew\ Valley/Contents/MacOS
     ./StardewModdingAPI
 end
+

@@ -9,6 +9,10 @@ return {
     behaviour = {
       auto_suggestions = false,
     },
+    windows = {
+      position = 'left', -- 'left', 'right'
+      width = 27, -- width of the window
+    },
     mappings = {
       --- @class AvanteConflictMappings
       diff = {
@@ -76,16 +80,16 @@ return {
     --     },
     --   },
     -- },
-    {
-      -- Make sure to set this up properly if you have lazy=true
-      'MeanderingProgrammer/render-markdown.nvim',
-      opts = {
-        file_types = { 'markdown', 'Avante' },
-      },
-      ft = { 'markdown', 'Avante' },
-      keys = {
-        { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
-      },
-    },
+    -- {
+    --   -- Make sure to set this up properly if you have lazy=true
+    --   'MeanderingProgrammer/render-markdown.nvim',
+    --   opts = {
+    --     file_types = { 'markdown', 'Avante' },
+    --   },
+    --   ft = { 'markdown', 'Avante' },
+    --   keys = {
+    --     { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
+    --   },
+    -- },
   },
 }

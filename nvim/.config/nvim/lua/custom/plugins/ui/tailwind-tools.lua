@@ -5,7 +5,7 @@ return {
   build = ':UpdateRemotePlugins',
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
-    'nvim-telescope/telescope.nvim', -- opcional
+    -- 'nvim-telescope/telescope.nvim', -- opcional
     'neovim/nvim-lspconfig', -- opcional
   },
   opts = {

@@ -21,11 +21,11 @@ return {
     workspaces = {
       {
         name = 'personal',
-        path = '~/Workspace/second-brain',
+        path = '~/Developer/second-brain',
       },
       {
         name = 'work',
-        path = '~/Workspace/second-brain',
+        path = '~/Developer/second-brain',
         -- Optional, override certain settings.
         overrides = {
           notes_subdir = 'notes',

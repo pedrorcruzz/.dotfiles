@@ -24,20 +24,22 @@ return {
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1F1F1F' }, --#202020 #000000 #1F1F1F
           EndOfBuffer = { fg = '#1F1F1F', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },
-          VertSplit = { fg = '#1F1F1F' },
+          -- VertSplit = { fg = '#4c4c4c' },
+          VertSplit = { fg = transparent_background and '#1F1F1F' or '#1F1F1F' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = transparent_background and 'none' or '#323232' },
           LineNr = { fg = '#505050' }, --#4b5263 #727272
-          FloatBorder = { fg = '#4c4c4c' },
+          FloatBorder = { fg = '#1f1f1f' }, --#4c4c4c
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060', bg = 'none' }, --#abb2bf
           -- Keyword = { fg = '#606060' }, --#abb2bf
+          Folded = { fg = '#B990F6', bg = '#1a1a1a' },
 
           Underlined = { bg = nil },
           winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
@@ -56,6 +58,8 @@ return {
           ['@punctuation.special.python'] = { fg = '#DA70D6' },
           ['@punctuation.special.javascript'] = { fg = '#DA70D6' },
           ['@punctuation.special.typescript'] = { fg = '#DA70D6' },
+          ['@punctuation.special.jsx'] = { fg = '#DA70D6' },
+          ['@punctuation.special.tsx'] = { fg = '#DA70D6' },
           ['@punctuation.special.go'] = { fg = '#DA70D6' },
           ['@punctuation.special.elixir'] = { fg = '#DA70D6' },
           ['@punctuation.special.c'] = { fg = '#DA70D6' },

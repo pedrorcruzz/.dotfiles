@@ -113,15 +113,15 @@ return {
               gui = 'bold',
             },
             z = {
-              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_location_fg,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_location_bg,
+              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
               gui = 'bold',
             },
           },
           insert = {
             a = {
               fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_insert,
               gui = 'bold',
             },
             b = {
@@ -136,15 +136,15 @@ return {
               gui = 'bold',
             },
             z = {
-              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_location_fg,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_location_bg,
+              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_insert,
               gui = 'bold',
             },
           },
           visual = {
             a = {
               fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_visual,
               gui = 'bold',
             },
             b = {
@@ -159,15 +159,15 @@ return {
               gui = 'bold',
             },
             z = {
-              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_location_fg,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_location_bg,
+              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_visual,
               gui = 'bold',
             },
           },
           replace = {
             a = {
               fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_replace,
               gui = 'bold',
             },
             b = {
@@ -182,15 +182,15 @@ return {
               gui = 'bold',
             },
             z = {
-              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_location_fg,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_location_bg,
+              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_replace,
               gui = 'bold',
             },
           },
           command = {
             a = {
               fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_command,
               gui = 'bold',
             },
             b = {
@@ -205,8 +205,8 @@ return {
               gui = 'bold',
             },
             z = {
-              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_location_fg,
-              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_location_bg,
+              fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+              bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_command,
               gui = 'bold',
             },
           },
