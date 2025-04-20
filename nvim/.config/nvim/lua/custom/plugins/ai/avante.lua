@@ -10,8 +10,8 @@ return {
       auto_suggestions = false,
     },
     windows = {
-      position = 'left', -- 'left', 'right'
-      width = 27, -- width of the window
+      position = 'right', -- 'left', 'right'
+      width = 30, -- width of the window
     },
     mappings = {
       --- @class AvanteConflictMappings
