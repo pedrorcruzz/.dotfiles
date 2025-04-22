@@ -6,4 +6,5 @@ abbr -a dv "deactivate"
 
 
 #Alias Laravel
-abbr -a laravel-create-composer "composer create-project --prefer-dist laravel/laravel"
+abbr -a laravel-composer "composer create-project --prefer-dist laravel/laravel"
+abbr -a laravel-inertia "composer require inertiajs/inertia-laravel"

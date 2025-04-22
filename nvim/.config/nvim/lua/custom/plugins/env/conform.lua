@@ -25,6 +25,7 @@ return {
           php = { 'php_cs_fixer' },
           go = { 'goimports' },
           java = { 'google-java-format' },
+          blade = { 'blade-formatter' },
         },
         format_on_save = {
           lsp_fallback = true,

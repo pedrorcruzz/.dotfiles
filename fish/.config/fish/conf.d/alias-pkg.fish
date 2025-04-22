@@ -7,6 +7,7 @@ abbr -a bun-add-react-libs "bun add react-router-dom"
 abbr -a bun-create-react "bunx create-react-app@latest"
 abbr -a bun-create-next "bunx create-next-app@latest"
 abbr -a bun-create-vite "bunx create-vite@latest"
+abbr -a bun-create-vite-react "bun add react react-dom @vitejs/plugin-react"
 
 #npm
 abbr -a npm-remove-eslint "npm remove @eslint/js eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint && rm eslint.config.js eslint.config.cjs"
@@ -17,6 +18,7 @@ abbr -a npm-add-react-libs "npm install react-router-dom"
 abbr -a npm-create-react "npx create-react-app@latest"
 abbr -a npm-create-next "npx create-next-app@latest"
 abbr -a npm-create-vite "npx create-vite@latest"
+abbr -a npm-create-vite-react "npm install react react-dom @vitejs/plugin-react"
 
 
 #pnpm
@@ -28,6 +30,7 @@ abbr -a pnpm-add-react-libs "pnpm add react-router-dom"
 abbr -a pnpm-create-react "pnpm create react-app@latest"
 abbr -a pnpm-create-next "pnpm create next-app@latest"
 abbr -a pnpm-create-vite "pnpm create vite@latest"
+abbr -a pnpm-create-vite-react "pnpm add react react-dom @vitejs/plugin-react"
 
 #yarn
 abbr -a yarn-remove-eslint "yarn remove @eslint/js eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint && rm eslint.config.js eslint.config.cjs"
@@ -38,3 +41,4 @@ abbr -a yarn-add-react-libs "yarn add react-router-dom"
 abbr -a yarn-create-react "yarn create react-app@latest"
 abbr -a yarn-create-next "yarn create next-app@latest"
 abbr -a yarn-create-vite "yarn create vite@latest"
+abbr -a yarn-create-vite-react "yarn add react react-dom @vitejs/plugin-react"

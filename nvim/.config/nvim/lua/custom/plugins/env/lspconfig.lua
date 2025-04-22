@@ -284,7 +284,8 @@ return { -- LSP Configuration & Plugins
       'superhtml',
       'prettierd',
       'black',
-      'php-cs-fixer',
+      -- 'php-cs-fixer',
+      'blade-formatter',
       'goimports',
       'google-java-format',
 
