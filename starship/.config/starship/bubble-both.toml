@@ -280,8 +280,9 @@ format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [python]
 style = "fg:#F1CA81 bg:#111111"
-symbol = " "
-format = "[](#111111)[ $symbol($version) ]($style)[](#111111))"
+symbol = ' '
+format = '[](#111111)[ ${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)[](#111111)'
+
 # pyenv_version_name = true
 # pyenv_prefix = ''
 
