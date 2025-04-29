@@ -23,6 +23,8 @@ return {
               luasnip.filetype_extend('django', { 'django' })
               luasnip.filetype_extend('django', { 'python' })
               require('luasnip.loaders.from_vscode').lazy_load()
+
+              require 'snippets.typescript'
             end,
           },
         },
