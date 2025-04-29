@@ -1,19 +1,30 @@
 local ls = require 'luasnip'
 local s = ls.snippet
-local t = ls.text_node
+local i = ls.insert_node
 local fmt = require('luasnip.extras.fmt').fmt
 
 ls.add_snippets('javascript', {
-  s({ trig = 'afn', dscr = 'Arrow Function' }, fmt 'const ${1:name} = (${2:args}) => {\n  ${3}\n}'),
+  s(
+    { trig = 'afn', dscr = 'Custom - Arrow Function' },
+    fmt(
+      [[const {} = ({}) => {{
+  {}
+}}]],
+      { i(1, 'name'), i(2, 'args'), i(3, '// code') }
+    )
+  ),
 })
 
 ls.add_snippets('javascript', {
   s(
-    { trig = 'tryc', dscr = 'Try Catch' },
-    fmt [[try {
-  ${1}
-} catch (error) {
+    { trig = 'tryc', dscr = 'Custom - Try Catch' },
+    fmt(
+      [[try {{
+  {}
+}} catch (error) {{
   console.error(error)
-}]]
+}}]],
+      { i(1, '// code') }
+    )
   ),
 })
