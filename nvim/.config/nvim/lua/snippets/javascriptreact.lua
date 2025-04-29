@@ -1,11 +1,12 @@
 local ls = require 'luasnip'
 local s = ls.snippet
 local i = ls.insert_node
+local t = ls.text_node
 local fmt = require('luasnip.extras.fmt').fmt
 
 ls.add_snippets('javascriptreact', {
   s(
-    { trig = 'jedf', dscr = 'Custom - Export Default Function - React JSX Component' },
+    { trig = 'jedf', dscr = 'Custom - Export Default Function Name - React JSX Component' },
     fmt(
       [[
 export default function {}({}) {{
@@ -15,15 +16,13 @@ export default function {}({}) {{
     </div>
   )
 }}
-    ]],
+      ]],
       { i(1, 'ComponentName'), i(2, 'props'), i(0) }
     )
   ),
-})
 
-ls.add_snippets('javascriptreact', {
   s(
-    { trig = 'jef', dscr = 'Custom - Export Function - React JSX Component' },
+    { trig = 'jef', dscr = 'Custom - Export Function Name - React JSX Component' },
     fmt(
       [[
 export function {}({}) {{
@@ -33,7 +32,7 @@ export function {}({}) {{
     </div>
   )
 }}
-    ]],
+      ]],
       { i(1, 'ComponentName'), i(2, 'props'), i(0) }
     )
   ),
