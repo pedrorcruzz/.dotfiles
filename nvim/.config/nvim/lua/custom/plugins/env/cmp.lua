@@ -25,6 +25,9 @@ return {
               require('luasnip.loaders.from_vscode').lazy_load()
 
               require 'snippets.typescript'
+              require 'snippets.typescriptreact'
+              require 'snippets.javascript'
+              require 'snippets.javascriptreact'
             end,
           },
         },
