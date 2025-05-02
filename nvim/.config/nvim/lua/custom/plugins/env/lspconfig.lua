@@ -342,9 +342,18 @@ return { -- LSP Configuration & Plugins
         },
       },
       virtual_text = {
-        true,
+        current_line = true,
         spacing = 4,
         prefix = '',
+        -- prefix = function(diagnostic)
+        --   local symbols = {
+        --     [vim.diagnostic.severity.ERROR] = '󰅚 ',
+        --     [vim.diagnostic.severity.WARN] = '󰀪 ',
+        --     [vim.diagnostic.severity.HINT] = '󰌶 ',
+        --     [vim.diagnostic.severity.INFO] = ' ',
+        --   }
+        --   return symbols[diagnostic.severity] or ''
+        -- end,
       },
       underline = true,
       update_in_insert = false,
