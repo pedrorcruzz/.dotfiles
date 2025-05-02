@@ -8,7 +8,7 @@ return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = true
+      local transparent_background = false
       require('min-theme').setup {
         transparent = transparent_background,
         italics = {
@@ -27,7 +27,7 @@ return {
           -- VertSplit = { fg = '#4c4c4c' },
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#1A1A1A' },
 
-          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
+          Visual = { bg = transparent_background and '#4c4c4c' or '#4c4c4c' }, --606060
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = transparent_background and 'none' or '#323232' },
