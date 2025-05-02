@@ -26,13 +26,14 @@ return {
           NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },
           -- VertSplit = { fg = '#4c4c4c' },
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#1A1A1A' },
+          WinSeparator = { fg = '#1f1f1f' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#4c4c4c' }, --606060
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = transparent_background and 'none' or '#323232' },
           LineNr = { fg = '#505050' }, --#4b5263 #727272
-          FloatBorder = { fg = '#1f1f1f' }, --#4c4c4c
+          FloatBorder = { fg = '#4c4c4c' }, --#4c4c4c
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
           Search = { bg = '#606060', fg = '#abb2bf' },
@@ -47,6 +48,11 @@ return {
           NonText = { fg = '#727272' },
           Title = { fg = '#FFFFFF' },
           Question = { fg = '#FFFFFF' },
+
+          TreesitterContext = { fg = '#505050', bg = '#1c1c1c' },
+          TreesitterContextLineNumber = { fg = '#505050', bg = '#1c1c1c' },
+          TreesitterContextBottom = { sp = '#505050', underline = true },
+
           --underline cmp preview
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
 
@@ -223,12 +229,21 @@ return {
         },
         custom_highlights = function(colors)
           return {
-            -- CursorLine = { bg = '#45475C' },
-            -- NormalFloat = { bg =  '#1E1E2F' },
+            NormalFloat = { bg = '#1E1E2F' },
+            WinSeparator = { fg = '#1E1E2F' },
+            FloatBorder = { fg = '#4c4c4c' }, --#4c4c4c
+            Border = { fg = '#4c4c4c' },
+            FloatShadow = { fg = '#4c4c4c' },
+            VertSplit = { fg = '#4c4c4c' },
+            CursorLine = { bg = '#45475C' },
 
             -- Snacks
-            -- SnacksPicker = { bg = '#181826' },
-            -- SnacksPickerBorder = { fg = '#7DB6FF', bg = '#181826' },
+            SnacksPicker = { bg = '#181826' },
+            SnacksPickerBorder = { fg = '#7DB6FF', bg = '#181826' },
+
+            TreesitterContext = { bg = '#181826' },
+            TreesitterContextLineNumber = { bg = '#181826', fg = '#45475C' },
+            TreesitterContextBottom = { fg = '#45475c', underline = true },
 
             ['@punctuation.special'] = { fg = '#4c4c4c' },
             ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },
