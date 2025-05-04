@@ -231,7 +231,7 @@ return {
           {
             'mode',
             fmt = function(mode)
-              return '󰊠 ' .. mode
+              return '󰨈 ' .. mode
             end,
             separator = { left = '', right = '' },
             right_padding = 2,

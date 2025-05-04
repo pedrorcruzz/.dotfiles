@@ -25,7 +25,7 @@ return {
           EndOfBuffer = { fg = '#1F1F1F', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },
           -- VertSplit = { fg = '#4c4c4c' },
-          VertSplit = { fg = transparent_background and '#1F1F1F' or '#1A1A1A' },
+          VertSplit = { fg = transparent_background and '#1F1F1F' or '#1f1f1f' }, -- #1a1a1a
           WinSeparator = { fg = '#1f1f1f' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#4c4c4c' }, --606060
@@ -49,8 +49,8 @@ return {
           Title = { fg = '#FFFFFF' },
           Question = { fg = '#FFFFFF' },
 
-          TreesitterContext = { fg = '#505050', bg = '#1c1c1c' },
-          TreesitterContextLineNumber = { fg = '#505050', bg = '#1c1c1c' },
+          TreesitterContext = { fg = '#505050', bg = transparent_background and 'none' or '#1c1c1c' },
+          TreesitterContextLineNumber = { fg = '#505050', bg = transparent_background and 'none' or '#1c1c1c' },
           TreesitterContextBottom = { sp = '#505050', underline = true },
 
           --underline cmp preview
@@ -158,7 +158,6 @@ return {
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
           -- SnacksPicker = { bg = '#1A1A1A' },
-          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' }, -- fg 323232
           SnacksPicker = { bg = transparent_background and 'none' or '#1A1A1A' },
           SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'none' or '#1A1A1A' },
 
@@ -218,10 +217,16 @@ return {
   {
     'catppuccin/nvim',
     config = function()
+      local transparent_background = false
       require('catppuccin').setup {
+        flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },
-        transparent_background = false,
+        transparent_background = transparent_background,
         term_colors = true,
+        integrations = {
+          notify = true,
+          mini = true,
+        },
         styles = {
           comments = { 'italic' },
           functions = { 'bold' },
@@ -229,20 +234,19 @@ return {
         },
         custom_highlights = function(colors)
           return {
-            NormalFloat = { bg = '#1E1E2F' },
+            NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#1E1E2F' },
-            FloatBorder = { fg = '#4c4c4c' }, --#4c4c4c
+            FloatBorder = { fg = '#4c4c4c' },
             Border = { fg = '#4c4c4c' },
             FloatShadow = { fg = '#4c4c4c' },
             VertSplit = { fg = '#4c4c4c' },
             CursorLine = { bg = '#45475C' },
 
-            -- Snacks
-            SnacksPicker = { bg = '#181826' },
-            SnacksPickerBorder = { fg = '#7DB6FF', bg = '#181826' },
+            SnacksPicker = { bg = transparent_background and 'NONE' or '#181826' },
+            SnacksPickerBorder = { fg = '#7DB6FF', bg = 'NONE' },
 
-            TreesitterContext = { bg = '#181826' },
-            TreesitterContextLineNumber = { bg = '#181826', fg = '#45475C' },
+            TreesitterContext = { bg = transparent_background and 'NONE' or '#181826' },
+            TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextBottom = { fg = '#45475c', underline = true },
 
             ['@punctuation.special'] = { fg = '#4c4c4c' },
