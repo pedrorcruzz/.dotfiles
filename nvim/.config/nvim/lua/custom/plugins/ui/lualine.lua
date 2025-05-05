@@ -20,7 +20,7 @@ return {
     { 'AndreM222/copilot-lualine' },
   },
   config = function()
-    local custom_min_theme = true
+    local custom_min_theme = false
     local custom_vesper = false
 
     local colors = {}

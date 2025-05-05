@@ -236,7 +236,7 @@ return {
           return {
             NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#1E1E2F' },
-            FloatBorder = { fg = '#4c4c4c' },
+            FloatBorder = { fg = '#6BB8FF' },
             Border = { fg = '#4c4c4c' },
             FloatShadow = { fg = '#4c4c4c' },
             VertSplit = { fg = '#4c4c4c' },
@@ -250,6 +250,8 @@ return {
             TreesitterContextBottom = { fg = '#45475c', underline = true },
 
             ['@punctuation.special'] = { fg = '#4c4c4c' },
+            ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
+            ['@punctuation.special.jsx'] = { fg = '#FFC0EA' },
             ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },
             ['@punctuation.special.javascript'] = { fg = '#FFC0EA' },
             ['@punctuation.special.typescript'] = { fg = '#FFC0EA' },
