@@ -2,13 +2,13 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'catppuccin-mocha'
 
 return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('min-theme').setup {
         transparent = transparent_background,
         italics = {
@@ -217,7 +217,7 @@ return {
   {
     'catppuccin/nvim',
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },

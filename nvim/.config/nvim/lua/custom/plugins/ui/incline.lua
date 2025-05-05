@@ -18,7 +18,7 @@ return {
       window = {
         padding = 0,
         margin = { horizontal = 0, vertical = 0 },
-        placement = { vertical = 'top', horizontal = 'right' },
+        placement = { vertical = 'bottom', horizontal = 'center' }, --bottom, center, right, left, top
       },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')

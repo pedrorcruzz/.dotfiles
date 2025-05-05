@@ -20,11 +20,18 @@ return { -- LSP Configuration & Plugins
     --   lazy = true,
     --   version = false,
     -- },
-    { 'SmiteshP/nvim-navic', opts = {
-      lsp = {
-        auto_attach = true,
+    {
+      'SmiteshP/nvim-navic',
+      opts = {
+        lsp = {
+          auto_attach = true,
+          preference = {
+            ['typescript-tools'] = 2,
+            ['tsserver'] = 1,
+          },
+        },
       },
-    } },
+    },
   },
 
   config = function()
