@@ -349,7 +349,8 @@ return { -- LSP Configuration & Plugins
         },
       },
       virtual_text = {
-        current_line = true,
+        true,
+        current_line = false,
         spacing = 4,
         prefix = '',
         -- prefix = function(diagnostic)

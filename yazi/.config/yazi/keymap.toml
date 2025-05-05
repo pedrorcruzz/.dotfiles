@@ -6,34 +6,34 @@
 
 [[manager.prepend_keymap]]
 on   = [ "g", "d" ]
-run  = "cd ~/Workspace"
-desc = "Go Workspace"
+run  = "cd ~/Developer"
+desc = "Go Developer"
 
 
 [[manager.prepend_keymap]]
 on   = [ "g", "p" ]
-run  = "cd ~/Workspace/Projects"
+run  = "cd ~/Developer/Projects"
 desc = "Go Projects"
 
 
 [[manager.prepend_keymap]]
 on   = [ "g", "w" ]
-run  = "cd ~/Workspace/Seven"
+run  = "cd ~/Developer/Seven"
 desc = "Go Work Projects"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "f" ]
-run  = "cd ~/Workspace/Freelas"
+run  = "cd ~/Developer/Freelas"
 desc = "Go Freelas Projects"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "s" ]
-run  = "cd ~/Workspace/Studies"
+run  = "cd ~/Developer/Studies"
 desc = "Go Studies Projects"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "t" ]
-run  = "cd ~/Workspace/Cesmac"
+run  = "cd ~/Developer/Cesmac"
 desc = "Go Cesmac Projects"
 
 
