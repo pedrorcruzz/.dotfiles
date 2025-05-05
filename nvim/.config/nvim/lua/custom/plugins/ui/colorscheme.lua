@@ -241,13 +241,14 @@ return {
             FloatShadow = { fg = '#4c4c4c' },
             VertSplit = { fg = '#4c4c4c' },
             CursorLine = { bg = '#45475C' },
+            Underlined = { bg = '#45475C' },
 
             SnacksPicker = { bg = transparent_background and 'NONE' or '#181826' },
             SnacksPickerBorder = { fg = '#7DB6FF', bg = 'NONE' },
 
-            TreesitterContext = { bg = transparent_background and 'NONE' or '#181826' },
+            TreesitterContext = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
-            TreesitterContextBottom = { fg = '#45475c', underline = true },
+            TreesitterContextBottom = { sp = '#45475c', underline = true },
 
             ['@punctuation.special'] = { fg = '#4c4c4c' },
             ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
