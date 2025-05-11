@@ -33,12 +33,12 @@ return {
           ]],
         },
       },
-      width = 72,
+      width = 80,
       sections = {
         {
           pane = 1,
           -- section = 'header',
-          padding = 3,
+          padding = 7,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -48,13 +48,15 @@ return {
           section = 'terminal',
           -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
 
-          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --format symbols --size 54x55 --align center; sleep .1',
+          cmd = 'ascii-image-converter --color -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy28.jpg"', -- -c
 
-          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .22 --quant 16 --with-color', -- --no-with-color --scale 24
+          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
+
+          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --threshold 50 --scale .22 --quant 16 --with-color', -- --no-with-color --scale 24
           height = 26, --26
           width = 65,
-          padding = 2,
-          -- indent = 6,
+          -- padding = 2,
+          indent = 16,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -69,27 +71,51 @@ return {
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
-          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .17 --quant 16 --with-color',
+          cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
+
+          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .17 --quant 16 --with-color',
 
           height = 16, --25
           width = 56,
           padding = 2,
-          indent = 12,
+          indent = 16,
           enabled = function()
             return not (vim.o.columns > 135)
           end,
         },
-        --Right Rosavim
-        -- {
-        --   pane = 2,
-        --   -- section = 'header',
-        --   gap = 0,
-        --   padding = 0, --1
-        --   enabled = function()
-        --     return not (vim.o.columns < 135)
-        --   end,
-        -- },
+        -- Right Rosavim
+        {
+          pane = 2,
+          -- section = 'header',
+          gap = 0,
+          padding = 5, --1
+          enabled = function()
+            return not (vim.o.columns < 135)
+          end,
+        },
         -- Narrow screen
+        function()
+          local in_git = Snacks.git.get_root() ~= nil
+          local cmds = {
+            {
+              title = 'Git Graph',
+              icon = ' ',
+              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 6']],
+              indent = 1,
+              -- height = 35,
+            },
+          }
+          return vim.tbl_map(function(cmd)
+            return vim.tbl_extend('force', {
+              pane = 1,
+              section = 'terminal',
+              enabled = function()
+                return in_git and vim.o.columns > 130
+              end,
+              padding = 1,
+            }, cmd)
+          end, cmds)
+        end,
         {
           pane = 2,
           section = 'startup',
@@ -123,7 +149,7 @@ return {
             return not (vim.o.columns < 135)
           end,
           indent = 1,
-          limit = 5,
+          limit = 8,
           padding = 2,
         },
         {
