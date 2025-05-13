@@ -8,7 +8,7 @@ return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = true
+      local transparent_background = false
       require('min-theme').setup {
         transparent = transparent_background,
         italics = {

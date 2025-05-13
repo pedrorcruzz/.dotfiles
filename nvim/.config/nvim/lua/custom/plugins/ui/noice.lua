@@ -13,7 +13,7 @@ return {
         opts = {
           -- position = { row = 0.2, col = 0.5 }, -- Centraliza a popup (50% da altura e largura da tela)
           -- size = { width = 55, height = 1 },
-        }, -- Opções globais para a linha de comando
+        },
         format = {
           cmdline = { pattern = '^:', icon = '', lang = 'vim' },
           search_down = { kind = 'search', pattern = '^/', icon = ' ', lang = 'regex' },
@@ -21,7 +21,7 @@ return {
           filter = { pattern = '^:%s*!', icon = '$', lang = 'bash' },
           lua = { pattern = '^:%s*lua%s+', icon = '', lang = 'lua' },
           help = { pattern = '^:%s*he?l?p?%s+', icon = '' },
-          input = {}, -- Usado por comandos de entrada
+          input = {},
         },
       },
       messages = {

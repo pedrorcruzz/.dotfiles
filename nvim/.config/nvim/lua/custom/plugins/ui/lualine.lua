@@ -29,8 +29,8 @@ return {
       colors = {
         min_fg_branch = '#a9a9a9',
         min_bg_branch = '#2d2d2d',
-        -- min_bar_bg = '#2d2d2d',
-        min_bar_bg = nil,
+        min_bar_bg = '#1C1C1C', --2d2d2d
+        -- min_bar_bg = nil,
         min_git = '#FFFFFF',
         min_y_bg = '#2d2d2d',
         -- min_y_bg = nil,
@@ -223,8 +223,8 @@ return {
         --   
         --   
 
-        section_separators = { left = '', right = '' },
-        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
       },
       sections = {
         lualine_a = {
