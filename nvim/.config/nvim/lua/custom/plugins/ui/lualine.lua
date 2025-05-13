@@ -55,7 +55,7 @@ return {
     else
       colors = {
         default_branch_fg = '#abb2bf',
-        default_branch_bg = '#202020', -- 2d2d2d
+        default_branch_bg = nil, -- 2d2d2d 202020
         default_fg_color = '#1A1A1A',
         default_y_bg = nil,
         -- default_bar_bg = '#2d2d2d',

@@ -11,7 +11,7 @@ if status is-interactive
     fish_add_path "$HOME/.local/bin"
 
     starship init fish | source
-    set -Ux STARSHIP_CONFIG $HOME/.config/starship/zen.toml
+    set -Ux STARSHIP_CONFIG $HOME/.config/starship/bubble-both.toml
 
     zoxide init fish | source
     set -U fish_greeting
