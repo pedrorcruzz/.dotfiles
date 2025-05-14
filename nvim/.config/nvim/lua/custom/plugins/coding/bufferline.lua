@@ -18,6 +18,26 @@ return {
       right_mouse_command = function(bufnum)
         require('mini.bufremove').delete(bufnum, false)
       end,
+
+      diagnostics = 'nvim_lsp',
+      diagnostics_indicator = function(_, _, diagnostics)
+        local symbols = {
+          error = '',
+          warning = '',
+          info = '',
+          hint = '',
+        }
+
+        local result = {}
+        for name, count in pairs(diagnostics) do
+          local sym = symbols[name]
+          if sym and count > 0 then
+            table.insert(result, sym .. count)
+          end
+        end
+
+        return ' ' .. table.concat(result, ' ')
+      end,
     },
   },
   config = function(_, opts)
@@ -50,9 +70,10 @@ return {
           vim.keymap.del('n', '<leader>bp')
           vim.keymap.del('n', '<leader>bf')
           vim.keymap.del('n', '<leader>bh')
-          vim.keymap.del('n', '<leader>bj')
+          vim.keymap.del('n', '<leader>bl')
           vim.keymap.del('n', '<leader>bC')
           vim.keymap.del('n', '<leader>bd')
+          vim.keymap.del('n', '<leader>ba')
           vim.keymap.del('n', '<leader>bq')
           vim.keymap.del('n', '<leader>be')
           vim.keymap.del('n', '<leader>br')

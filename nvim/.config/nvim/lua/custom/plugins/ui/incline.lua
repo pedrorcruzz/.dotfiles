@@ -1,3 +1,5 @@
+local incline_active = true
+
 return {
   'b0o/incline.nvim',
   dependencies = {
@@ -97,4 +99,24 @@ return {
       --   end,
     }
   end,
+  keys = {
+    {
+      '<leader>lq',
+      function()
+        local loaded = package.loaded['incline']
+        if not loaded then
+          require('lazy').load { plugins = { 'incline.nvim' } }
+        end
+
+        if incline_active then
+          require('incline').disable()
+          incline_active = false
+        else
+          require('incline').enable()
+          incline_active = true
+        end
+      end,
+      desc = 'Incline: Toggle',
+    },
+  },
 }
