@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'catppuccin-mocha'
 
 return {
   {
@@ -228,7 +228,7 @@ return {
   {
     'catppuccin/nvim',
     config = function()
-      local transparent_background = true
+      local transparent_background = false
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },
@@ -246,7 +246,7 @@ return {
         custom_highlights = function(colors)
           return {
             NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
-            WinSeparator = { fg = '#1E1E2F' },
+            WinSeparator = { fg = '#181826' },
             FloatBorder = { fg = '#6BB8FF' },
             Border = { fg = '#4c4c4c' },
             FloatShadow = { fg = '#4c4c4c' },
@@ -255,7 +255,7 @@ return {
             Underlined = { bg = '#45475C' },
 
             SnacksPicker = { bg = transparent_background and 'NONE' or '#181826' },
-            SnacksPickerBorder = { fg = '#7DB6FF', bg = 'NONE' },
+            SnacksPickerBorder = { fg = '#7DB6FF', bg = transparent_background and 'NONE' or '#181826' },
 
             TreesitterContext = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
