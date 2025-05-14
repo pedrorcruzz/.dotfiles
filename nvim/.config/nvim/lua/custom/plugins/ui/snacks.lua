@@ -78,7 +78,7 @@ return {
           height = 16, --25
           width = 56,
           padding = 2,
-          indent = 16,
+          indent = 18,
           enabled = function()
             return not (vim.o.columns > 135)
           end,
@@ -220,7 +220,7 @@ return {
           finder = 'explorer',
           diagnostics = true,
           diagnostics_open = false,
-          layout = { layout = { position = 'left', width = 37 }, preview = false }, --explorer side width 40 default
+          layout = { layout = { position = 'right', width = 38 }, preview = false }, --explorer side width 40 default
           focus = 'list',
           auto_close = false,
           git_untracked = true,

@@ -39,6 +39,7 @@ return {
       { '<leader>p', group = 'Languages Tools', icon = ' ' },
       { '<leader>pp', group = 'PHP Tools', icon = ' ' },
       { '<leader>pg', group = 'GO Tools', icon = ' ' },
+      { '<leader>ps', group = 'Spring Tools', icon = ' ' },
       { '<leader>pgd', group = 'Debug', icon = ' ' },
 
       { '<leader>c', group = 'Window', icon = '󰶛' },

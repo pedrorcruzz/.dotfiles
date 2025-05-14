@@ -8,3 +8,7 @@ abbr -a dv "deactivate"
 #Alias Laravel
 abbr -a laravel-composer "composer create-project --prefer-dist laravel/laravel"
 abbr -a laravel-inertia "composer require inertiajs/inertia-laravel"
+
+
+#Alias Java
+abbr -a spring-maven "spring init --build=maven --dependencies=web "
