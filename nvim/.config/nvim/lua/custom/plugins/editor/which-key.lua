@@ -20,7 +20,7 @@ return {
       { '<leader>vt', group = 'Tabs', icon = '' },
       { '<leader>vw', group = 'Windows', icon = '' },
       { '<leader>v', group = 'DBUI', icon = '' },
-      { '<leader>b', group = 'Bufferlines', icon = '' },
+      { '<leader>b', group = 'BufferLine', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
       { '<leader>n', group = 'Neotest', icon = '' },
       { '<leader>y', group = 'Yazi', icon = '' },
