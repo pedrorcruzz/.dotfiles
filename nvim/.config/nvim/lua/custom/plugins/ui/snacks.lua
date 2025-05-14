@@ -692,7 +692,13 @@ return {
       desc = 'LSP Workspace Symbols',
     },
 
-    -- { '<leader>gG', function() Snacks.lazygit.open() end, desc = 'Lazygit', },
+    {
+      '<leader>gg',
+      function()
+        Snacks.lazygit.open()
+      end,
+      desc = 'Lazygit',
+    },
     {
       '<leader>;',
       function()
