@@ -25,12 +25,12 @@ return {
         },
       },
       messages = {
-        enabled = true,
-        view = 'notify',
-        view_error = 'notify',
-        view_warn = 'notify',
-        view_history = 'messages',
-        view_search = 'virtualtext',
+        enabled = true, -- Desabilita todas as mensagens
+        -- view = 'notify', -- Remova ou comente esta linha
+        -- view_error = 'notify', -- Remova ou comente esta linha
+        -- view_warn = 'notify', -- Remova ou comente esta linha
+        -- view_history = 'messages', -- Remova ou comente esta linha
+        -- view_search = 'virtualtext', -- Remova ou comente esta linha
       },
       popupmenu = {
         enabled = true,
@@ -45,11 +45,11 @@ return {
       },
       lsp = {
         progress = {
-          enabled = true,
-          format = 'lsp_progress',
-          format_done = 'lsp_progress_done',
-          throttle = 1000 / 30,
-          view = 'mini',
+          enabled = false, -- Desabilita o progresso do LSP
+          -- format = 'lsp_progress', -- Remova ou comente esta linha
+          -- format_done = 'lsp_progress_done', -- Remova ou comente esta linha
+          -- throttle = 1000 / 30, -- Remova ou comente esta linha
+          -- view = 'mini', -- Remova ou comente esta linha
         },
         override = {
           ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
@@ -74,8 +74,8 @@ return {
           opts = {},
         },
         message = {
-          enabled = true,
-          view = 'notify',
+          enabled = false, -- Desabilita mensagens do LSP
+          -- view = 'notify', -- Remova ou comente esta linha
           opts = {},
         },
         documentation = {

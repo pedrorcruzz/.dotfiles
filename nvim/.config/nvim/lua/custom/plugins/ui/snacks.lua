@@ -211,6 +211,12 @@ return {
     input = {
       enabled = false,
     },
+    terminal = {
+      enabled = true,
+    },
+    edgy = {
+      enabled = true,
+    },
     picker = {
       enabled = true,
       hidden = false,
@@ -715,6 +721,21 @@ return {
       end,
       desc = 'Snacks: Image Preview',
     },
+    -- {
+    --   '<S-test>',
+    --   function()
+    --     Snacks.terminal.toggle()
+    --   end,
+    --   desc = 'Snacks: Terminal Toggle',
+    -- },
+    --
+    -- {
+    --   '<leader>lT>',
+    --   function()
+    --     Snacks.terminal.open(nil, { win = { position = 'right' } })
+    --   end,
+    --   desc = 'Snacks: Terminal Split',
+    -- },
   },
   init = function()
     vim.api.nvim_create_autocmd('User', {
@@ -732,7 +753,7 @@ return {
         -- Create some toggle mappings
         -- Snacks.toggle.option('spell', { name = 'Spelling' }):map '<leader>us'
         Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>lw'
-        Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>lt'
+        Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>lo'
         -- Snacks.toggle.diagnostics():map '<leader>ud'
         Snacks.toggle.line_number():map '<leader>ln'
         Snacks.toggle.zen():map '<leader>lz'

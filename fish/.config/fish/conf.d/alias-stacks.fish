@@ -3,7 +3,8 @@ abbr -a pipu "pip install --upgrade pip"
 abbr -a pyvenv "python3 -m venv venv"
 abbr -a sv "source venv/bin/activate.fish"
 abbr -a dv "deactivate"
-abbr -a fastapi-create "pip install fastapi uvicorn"
+abbr -a fastapi-create-back "pip install fastapi uvicorn"
+abbr -a fastapi-create-all "pip install fastapi[all]"
 
 
 #Alias Laravel
