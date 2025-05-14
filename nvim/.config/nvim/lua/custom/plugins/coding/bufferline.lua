@@ -37,10 +37,13 @@ return {
           vim.keymap.set('n', '<leader>bp', '<cmd>BufferLinePickClose<cr>', { desc = 'Delete Buffer' })
           vim.keymap.set('n', '<leader>bf', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
           vim.keymap.set('n', '<leader>bh', '<cmd>BufferLineCloseLeft<cr>', { desc = 'Close Left' })
-          vim.keymap.set('n', '<leader>bj', '<cmd>BufferLineCloseRight<cr>', { desc = 'Close Right' })
+          vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineCloseRight<cr>', { desc = 'Close Right' })
           vim.keymap.set('n', '<leader>bC', '<cmd>BufferLineCloseOthers<cr>', { desc = 'Close Others' })
-          vim.keymap.set('n', '<leader>bd', '<cmd>BufferLineMoveNext<cr>', { desc = 'Next Buffer' })
-          vim.keymap.set('n', '<leader>ba', '<cmd>BufferLineMovePrev<cr>', { desc = 'Prev Buffer' })
+          vim.keymap.set('n', '<leader>bd', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
+          vim.keymap.set('n', '<leader>ba', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
+          vim.keymap.set('n', '<leader>bq', '<cmd>BufferLineSortByDirectory<cr>', { desc = 'Sort Directory' })
+          vim.keymap.set('n', '<leader>be', '<cmd>BufferLineSortByExtension<cr>', { desc = 'Sort Extension' })
+          vim.keymap.set('n', '<leader>br', '<cmd>BufferLineSortByRelativeDirectory<cr>', { desc = 'Sort Relative Directory' })
           bufferline_active = true
         else
           vim.opt.showtabline = 0
@@ -50,7 +53,9 @@ return {
           vim.keymap.del('n', '<leader>bj')
           vim.keymap.del('n', '<leader>bC')
           vim.keymap.del('n', '<leader>bd')
-          vim.keymap.del('n', '<leader>ba')
+          vim.keymap.del('n', '<leader>bq')
+          vim.keymap.del('n', '<leader>be')
+          vim.keymap.del('n', '<leader>br')
           bufferline_active = false
         end
       end,

@@ -43,7 +43,10 @@ return {
           Folded = { fg = '#B990F6', bg = '#1a1a1a' },
 
           Underlined = { bg = nil },
-          winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
+          -- WinBarNC = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
+          -- WinBar = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
+          -- TabLine = { bg = transparent_background and 'NONE' or '#202020' },
+          -- TabLineFill = { bg = transparent_background and 'NONE' or '#202020' },
           MatchParen = { fg = '#abb2bf' }, --quando coloca o cursor em cima de um parênteses / tag
           NonText = { fg = '#727272' },
           Title = { fg = '#FFFFFF' },
@@ -57,6 +60,14 @@ return {
           ['@markup.heading.1.markdown'] = { fg = '#abb2bf' },
 
           ['@punctuation.bracket'] = { fg = '#abb2bf' },
+
+          --Buferlines
+          -- BufferLinePick = { fg = '#CA8BFF' },
+          -- BufferLinePickVisible = { fg = '#CA8BFF' },
+          -- BufferLinePickSelected = { fg = '#CA8BFF' },
+          BufferLineModified = { fg = '#A9A9A9' },
+          BufferLineModifiedVisible = { fg = '#A9A9A9' },
+          BufferLineModifiedSelected = { fg = '#A9A9A9' },
 
           --Punctuation Special
           ['@punctuation.special'] = { fg = '#323232' },
