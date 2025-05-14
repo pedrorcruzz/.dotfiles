@@ -100,6 +100,15 @@ return {
     { '<leader>tC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
     { '<leader>tf', '<cmd>FzfLua tabs<cr>', desc = 'Tabs: Find' },
     { '<leader>fv', '<cmd>FzfLua tabs<cr>', desc = 'Find Tabs' },
+    { '<leader>t1', '<cmd>tabn 1<cr>', desc = 'Tabs: 1' },
+    { '<leader>t3', '<cmd>tabn 3<cr>', desc = 'Tabs: 3' },
+    { '<leader>t4', '<cmd>tabn 4<cr>', desc = 'Tabs: 4' },
+    { '<leader>t5', '<cmd>tabn 5<cr>', desc = 'Tabs: 5' },
+    { '<leader>t6', '<cmd>tabn 6<cr>', desc = 'Tabs: 6' },
+    { '<leader>t7', '<cmd>tabn 7<cr>', desc = 'Tabs: 7' },
+    { '<leader>t8', '<cmd>tabn 8<cr>', desc = 'Tabs: 8' },
+    { '<leader>t9', '<cmd>tabn 9<cr>', desc = 'Tabs: 9' },
+    { '<leader>t0', '<cmd>tabn 10<cr>', desc = 'Tabs: 10' },
 
     -- Neotest
     -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
