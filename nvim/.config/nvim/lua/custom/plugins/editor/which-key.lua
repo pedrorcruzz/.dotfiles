@@ -101,6 +101,7 @@ return {
     { '<leader>tf', '<cmd>FzfLua tabs<cr>', desc = 'Tabs: Find' },
     { '<leader>fv', '<cmd>FzfLua tabs<cr>', desc = 'Find Tabs' },
     { '<leader>t1', '<cmd>tabn 1<cr>', desc = 'Tabs: 1' },
+    { '<leader>t2', '<cmd>tabn 2<cr>', desc = 'Tabs: 2' },
     { '<leader>t3', '<cmd>tabn 3<cr>', desc = 'Tabs: 3' },
     { '<leader>t4', '<cmd>tabn 4<cr>', desc = 'Tabs: 4' },
     { '<leader>t5', '<cmd>tabn 5<cr>', desc = 'Tabs: 5' },
