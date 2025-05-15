@@ -1,24 +1,22 @@
-local enabled = true
-
 local bufferline_active = false
 
 return {
   'akinsho/bufferline.nvim',
-  enabled = enabled,
-  lazy = true,
-  event = false,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
+    'echasnovski/mini.bufremove',
   },
+  lazy = true,
+  event = 'VeryLazy',
   opts = {
     options = {
+      show_bufferline = bufferline_active,
       close_command = function(bufnum)
         require('mini.bufremove').delete(bufnum, false)
       end,
       right_mouse_command = function(bufnum)
         require('mini.bufremove').delete(bufnum, false)
       end,
-
       diagnostics = 'nvim_lsp',
       diagnostics_indicator = function(_, _, diagnostics)
         local symbols = {
@@ -27,7 +25,6 @@ return {
           info = '',
           hint = '',
         }
-
         local result = {}
         for name, count in pairs(diagnostics) do
           local sym = symbols[name]
@@ -35,13 +32,13 @@ return {
             table.insert(result, sym .. count)
           end
         end
-
         return ' ' .. table.concat(result, ' ')
       end,
     },
   },
   config = function(_, opts)
     require('bufferline').setup(opts)
+    vim.opt.showtabline = bufferline_active and 2 or 0
   end,
   keys = {
     {
@@ -52,33 +49,14 @@ return {
           require('lazy').load { plugins = { 'bufferline.nvim' } }
         end
 
-        if not bufferline_active then
-          vim.opt.showtabline = 2
-          vim.keymap.set('n', '<leader>bp', '<cmd>BufferLinePickClose<cr>', { desc = 'Delete Buffer' })
-          vim.keymap.set('n', '<leader>bf', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
-          vim.keymap.set('n', '<leader>bh', '<cmd>BufferLineCloseLeft<cr>', { desc = 'Close Left' })
-          vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineCloseRight<cr>', { desc = 'Close Right' })
-          vim.keymap.set('n', '<leader>bC', '<cmd>BufferLineCloseOthers<cr>', { desc = 'Close Others' })
-          vim.keymap.set('n', '<leader>bd', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
-          vim.keymap.set('n', '<leader>ba', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
-          vim.keymap.set('n', '<leader>bq', '<cmd>BufferLineSortByDirectory<cr>', { desc = 'Sort Directory' })
-          vim.keymap.set('n', '<leader>be', '<cmd>BufferLineSortByExtension<cr>', { desc = 'Sort Extension' })
-          vim.keymap.set('n', '<leader>br', '<cmd>BufferLineSortByRelativeDirectory<cr>', { desc = 'Sort Relative Directory' })
-          bufferline_active = true
-        else
-          vim.opt.showtabline = 0
-          vim.keymap.del('n', '<leader>bp')
-          vim.keymap.del('n', '<leader>bf')
-          vim.keymap.del('n', '<leader>bh')
-          vim.keymap.del('n', '<leader>bl')
-          vim.keymap.del('n', '<leader>bC')
-          vim.keymap.del('n', '<leader>bd')
-          vim.keymap.del('n', '<leader>ba')
-          vim.keymap.del('n', '<leader>bq')
-          vim.keymap.del('n', '<leader>be')
-          vim.keymap.del('n', '<leader>br')
-          bufferline_active = false
-        end
+        bufferline_active = not bufferline_active
+
+        require('bufferline').setup {
+          options = {
+            show_bufferline = bufferline_active,
+          },
+        }
+        vim.opt.showtabline = bufferline_active and 2 or 0
       end,
       desc = 'Bufferline: Toggle',
     },

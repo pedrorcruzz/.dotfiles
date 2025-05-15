@@ -13,6 +13,6 @@ abbr -a laravel-inertia "composer require inertiajs/inertia-laravel"
 
 
 #Alias Java
-abbr -a spring-maven "spring init --build=maven --dependencies=web --java-version=x "
-abbr -a spring-gradle "spring init --dependencies=web --java-version=x "
+abbr -a spring-create-maven "spring init --build=maven --dependencies=web --java-version=x "
+abbr -a spring-create-gradle "spring init --dependencies=web --java-version=x "
 abbr -a build-gradle "./gradlew build"

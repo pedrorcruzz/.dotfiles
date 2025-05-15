@@ -38,7 +38,7 @@ return {
         {
           pane = 1,
           -- section = 'header',
-          padding = 3,
+          padding = 5,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -48,7 +48,7 @@ return {
           section = 'terminal',
           -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
 
-          cmd = 'ascii-image-converter --color -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/kirby.png"', -- -c
+          cmd = 'ascii-image-converter --color -c -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png"', -- -c
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
 
@@ -56,7 +56,7 @@ return {
           height = 26, --26
           width = 65,
           -- padding = 2,
-          indent = 16,
+          indent = 10,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -88,7 +88,7 @@ return {
           pane = 2,
           -- section = 'header',
           gap = 0,
-          padding = 2, --1
+          padding = 1, --1
           enabled = function()
             return not (vim.o.columns < 135)
           end,

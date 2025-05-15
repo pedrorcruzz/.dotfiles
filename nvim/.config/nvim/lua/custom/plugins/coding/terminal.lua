@@ -25,9 +25,9 @@ return {
           return term.name
         end,
       },
-      responsiveness = {
-        horizontal_breakpoint = 135,
-      },
+      -- responsiveness = {
+      --   horizontal_breakpoint = 135,
+      -- },
       shell = vim.o.shell,
       float_opts = {
         border = 'curved',

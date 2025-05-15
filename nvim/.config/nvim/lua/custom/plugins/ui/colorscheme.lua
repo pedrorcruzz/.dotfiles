@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'catppuccin-mocha'
+local default_theme = 'min-theme'
 
 return {
   {
@@ -247,6 +247,8 @@ return {
           return {
             NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#181826' },
+            BufferLineFill = { bg = '#181827' },
+
             FloatBorder = { fg = '#6BB8FF' },
             Border = { fg = '#4c4c4c' },
             FloatShadow = { fg = '#4c4c4c' },
@@ -261,7 +263,7 @@ return {
             TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextBottom = { sp = '#45475c', underline = true },
 
-            ['@punctuation.special'] = { fg = '#4c4c4c' },
+            ['@punctuation.special'] = { fg = '#45475c' },
             ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
             ['@punctuation.special.jsx'] = { fg = '#FFC0EA' },
             ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },

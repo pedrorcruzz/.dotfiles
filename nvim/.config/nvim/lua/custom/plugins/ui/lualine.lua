@@ -231,9 +231,10 @@ return {
           {
             'mode',
             fmt = function(mode)
-              return '󰨈 ' .. mode
+              return '󰅶 ' .. mode
             end,
             separator = { left = '', right = '' },
+            -- separator = { right = '' },
             right_padding = 2,
             color = { gui = 'bold' },
           },
@@ -249,7 +250,8 @@ return {
           'diagnostics',
         },
         lualine_z = {
-          { 'location', separator = { right = '' }, left_padding = 2 },
+          { 'location', separator = { left = '', right = '' }, left_padding = 2 },
+          -- { 'location', separator = { left = '', right = '' }, left_padding = 2 },
         },
         lualine_y = {
           -- {
@@ -267,7 +269,7 @@ return {
               return get_venv_name() ~= '' and ' ' .. get_venv_name() or ''
             end,
             color = { fg = '#ffffff', gui = 'bold' },
-            separator = { right = '' },
+            -- separator = { right = '' },
             left_padding = 2,
           },
         },
