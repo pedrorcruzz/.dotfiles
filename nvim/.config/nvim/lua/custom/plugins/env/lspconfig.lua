@@ -309,6 +309,7 @@ return { -- LSP Configuration & Plugins
       -- 'typescript-language-server',
       'intelephense',
       'jdtls',
+      'sqlls',
 
       -- Debuggers
       'php-debug-adapter',
