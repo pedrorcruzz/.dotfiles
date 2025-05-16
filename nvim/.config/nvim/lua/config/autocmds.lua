@@ -74,9 +74,17 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 -- Snacks Explorer
-vim.api.nvim_create_autocmd('BufReadPost', {
-  once = true,
-  callback = function()
-    require('snacks').explorer()
-  end,
-})
+SNACKS_START_WITH_EXPLORER = false
+if SNACKS_START_WITH_EXPLORER then
+  vim.api.nvim_create_autocmd('BufReadPost', {
+    once = true,
+    callback = function()
+      local ok, snacks = pcall(require, 'snacks')
+      if ok and snacks and snacks.explorer then
+        snacks.explorer()
+      else
+        vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
+      end
+    end,
+  })
+end
