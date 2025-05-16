@@ -40,7 +40,6 @@ return {
     require('bufferline').setup(opts)
     vim.opt.showtabline = bufferline_active and 2 or 0
 
-    -- Override highlights para o buffer selecionado (ativo)
     vim.api.nvim_set_hl(0, 'BufferLineErrorSelected', { link = 'BufferLineBufferSelected' })
     vim.api.nvim_set_hl(0, 'BufferLineWarningSelected', { link = 'BufferLineBufferSelected' })
     vim.api.nvim_set_hl(0, 'BufferLineInfoSelected', { link = 'BufferLineBufferSelected' })
@@ -64,7 +63,6 @@ return {
         }
         vim.opt.showtabline = bufferline_active and 2 or 0
 
-        -- Override highlights para o buffer selecionado (ativo) após toggle
         vim.api.nvim_set_hl(0, 'BufferLineErrorSelected', { link = 'BufferLineBufferSelected' })
         vim.api.nvim_set_hl(0, 'BufferLineWarningSelected', { link = 'BufferLineBufferSelected' })
         vim.api.nvim_set_hl(0, 'BufferLineInfoSelected', { link = 'BufferLineBufferSelected' })
