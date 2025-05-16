@@ -88,7 +88,7 @@ return {
           pane = 2,
           -- section = 'header',
           gap = 0,
-          padding = 4, --1
+          padding = 1, --1
           enabled = function()
             return not (vim.o.columns < 135)
           end,

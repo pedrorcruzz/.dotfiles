@@ -20,25 +20,31 @@ return {
       diagnostics = 'nvim_lsp',
       diagnostics_indicator = function(_, _, diagnostics)
         local symbols = {
-          error = '',
-          warning = '',
-          info = '',
-          hint = '',
+          error = { icon = '', hl = 'DiagnosticError' },
+          warning = { icon = '', hl = 'DiagnosticWarn' },
+          info = { icon = '', hl = 'DiagnosticInfo' },
+          hint = { icon = '', hl = 'DiagnosticHint' },
         }
         local result = {}
         for name, count in pairs(diagnostics) do
           local sym = symbols[name]
           if sym and count > 0 then
-            table.insert(result, sym .. count)
+            table.insert(result, string.format('%%#%s#%s%%*%d', sym.hl, sym.icon, count))
           end
         end
-        return ' ' .. table.concat(result, ' ')
+        return table.concat(result, ' ')
       end,
     },
   },
   config = function(_, opts)
     require('bufferline').setup(opts)
     vim.opt.showtabline = bufferline_active and 2 or 0
+
+    -- Override highlights para o buffer selecionado (ativo)
+    vim.api.nvim_set_hl(0, 'BufferLineErrorSelected', { link = 'BufferLineBufferSelected' })
+    vim.api.nvim_set_hl(0, 'BufferLineWarningSelected', { link = 'BufferLineBufferSelected' })
+    vim.api.nvim_set_hl(0, 'BufferLineInfoSelected', { link = 'BufferLineBufferSelected' })
+    vim.api.nvim_set_hl(0, 'BufferLineHintSelected', { link = 'BufferLineBufferSelected' })
   end,
   keys = {
     {
@@ -57,6 +63,12 @@ return {
           },
         }
         vim.opt.showtabline = bufferline_active and 2 or 0
+
+        -- Override highlights para o buffer selecionado (ativo) após toggle
+        vim.api.nvim_set_hl(0, 'BufferLineErrorSelected', { link = 'BufferLineBufferSelected' })
+        vim.api.nvim_set_hl(0, 'BufferLineWarningSelected', { link = 'BufferLineBufferSelected' })
+        vim.api.nvim_set_hl(0, 'BufferLineInfoSelected', { link = 'BufferLineBufferSelected' })
+        vim.api.nvim_set_hl(0, 'BufferLineHintSelected', { link = 'BufferLineBufferSelected' })
       end,
       desc = 'Bufferline: Toggle',
     },
