@@ -64,3 +64,19 @@ vim.cmd [[
     autocmd TermOpen term://*toggleterm#* lua set_terminal_keymaps()
   augroup END
 ]]
+
+-- AvanteInlineHint
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = function()
+    vim.api.nvim_set_hl(0, 'AvanteInlineHint', { fg = '#606060', bg = 'none' })
+  end,
+})
+
+-- Snacks Explorer
+vim.api.nvim_create_autocmd('BufReadPost', {
+  once = true,
+  callback = function()
+    require('snacks').explorer()
+  end,
+})
