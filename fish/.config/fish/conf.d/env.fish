@@ -7,8 +7,6 @@ fish_add_path "/Users/phrosa/Library/Application Support/Herd/bin/"
 set -gx HERD_PHP_84_INI_SCAN_DIR "/Users/phrosa/Library/Application Support/Herd/config/php/84/"
 
 
-# Npm
-
 # Bun
 set -gx BUN_INSTALL "$HOME/.bun"
 fish_add_path "$BUN_INSTALL/bin"
