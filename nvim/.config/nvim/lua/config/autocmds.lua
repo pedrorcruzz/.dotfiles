@@ -69,12 +69,14 @@ vim.cmd [[
 vim.api.nvim_create_autocmd('ColorScheme', {
   pattern = '*',
   callback = function()
-    vim.api.nvim_set_hl(0, 'AvanteInlineHint', { fg = '#606060', bg = 'none' })
+    vim.defer_fn(function()
+      vim.api.nvim_set_hl(0, 'AvanteInlineHint', { fg = '#606060', bg = 'none' })
+    end, 10)
   end,
 })
 
 -- Snacks Explorer
-SNACKS_START_WITH_EXPLORER = false
+SNACKS_START_WITH_EXPLORER = true
 if SNACKS_START_WITH_EXPLORER then
   vim.api.nvim_create_autocmd('BufReadPost', {
     once = true,

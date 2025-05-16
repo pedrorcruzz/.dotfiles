@@ -67,7 +67,8 @@ return {
           -- BufferLinePickSelected = { fg = '#CA8BFF' },
           BufferLineModified = { fg = '#A9A9A9' },
           BufferLineModifiedVisible = { fg = '#A9A9A9' },
-          BufferLineModifiedSelected = { fg = '#A9A9A9' },
+          BufferLineBufferSelected = { fg = '#A9A9A9' },
+          BufferLineBackground = { fg = '#606060' },
 
           --Punctuation Special
           ['@punctuation.special'] = { fg = '#323232' },
