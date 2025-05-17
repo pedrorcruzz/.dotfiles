@@ -24,10 +24,10 @@ return {
               luasnip.filetype_extend('django', { 'python' })
               require('luasnip.loaders.from_vscode').lazy_load()
 
-              require 'snippets.typescript'
-              require 'snippets.typescriptreact'
-              require 'snippets.javascript'
-              require 'snippets.javascriptreact'
+              require 'config.snippets.typescript'
+              require 'config.snippets.typescriptreact'
+              require 'config.snippets.javascript'
+              require 'config.snippets.javascriptreact'
             end,
           },
         },

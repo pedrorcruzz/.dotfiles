@@ -1,4 +1,3 @@
-# teste
 command_timeout = 1000
 
 palette = "custom"
@@ -208,7 +207,9 @@ format = '[via](#52676b)[ $symbol( $version) ]($style)'
 
 [nodejs]
 symbol = ' '
-format = '[via](#52676B)[ $symbol( $version) ]($style)'
+format = '[$symbol( $version) ]($style)'
+detect_extensions = ["js", "mjs", "cjs","jsx", "ts", "tsx"]
+detect_files = ["package.json", "node_modules"]
 
 [custom.pnpm]
 style = "bold #FFC4C0"

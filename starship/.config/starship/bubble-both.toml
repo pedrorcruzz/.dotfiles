@@ -208,8 +208,11 @@ format = '[ $symbol( $version) ]($style)'
 
 [nodejs]
 style = "fg:#00FC71 bg:#111111"
-symbol = " "
+symbol = ' '
 format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
+detect_extensions = ["js", "mjs", "cjs","jsx", "ts", "tsx"]
+detect_files = ["package.json", "node_modules"]
+
 
 [custom.pnpm]
 style = "bold #FFC4C0"
