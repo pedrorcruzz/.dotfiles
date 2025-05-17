@@ -46,17 +46,17 @@ return {
         {
           pane = 1,
           section = 'terminal',
-          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.9 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-gear.gif"; sleep .1',
+          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
 
           -- cmd = 'ascii-image-converter --color -c -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png"', -- -c
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
 
-          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
-          height = 26, --26
-          width = 65,
+          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
+          height = 15, --26
+          width = 35, --65
           -- padding = 2,
-          indent = 10,
+          indent = 18,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -100,7 +100,7 @@ return {
             {
               title = 'Git Graph',
               icon = ' ',
-              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 6']],
+              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
               indent = 1,
               -- height = 35,
             },
