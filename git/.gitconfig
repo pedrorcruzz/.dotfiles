@@ -1,0 +1,10 @@
+
+[core]
+	editor = vim
+[user]
+	name = pedrorcruzz
+	email = phrosa.dev@gmail.com
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
