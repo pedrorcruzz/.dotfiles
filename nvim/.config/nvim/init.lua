@@ -114,3 +114,5 @@ require('nvim-web-devicons').setup {
     },
   },
 }
+
+-- teste
