@@ -55,7 +55,7 @@ return {
 
           -- gif
           cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 15,
+          height = 17,
           width = 35,
           indent = 18,
 
@@ -82,7 +82,7 @@ return {
 
           --gif
           cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 13,
+          height = 14,
           width = 32,
           indent = 22,
 
@@ -776,7 +776,7 @@ return {
         Snacks.toggle.line_number():map '<leader>ln'
         Snacks.toggle.zen():map '<leader>lz'
         -- Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>uc'
-        -- Snacks.toggle.treesitter():map '<leader>lxt'
+        -- Snacks.toggle.treesitter():map '<leader>lg'
         -- Snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map '<leader>ub'
         -- Snacks.toggle.inlay_hints():map '<leader>uh'
         Snacks.toggle.indent():map '<leader>li'

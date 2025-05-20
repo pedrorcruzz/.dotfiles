@@ -1,6 +1,9 @@
 return {
   { -- Copilot
     'zbirenbaum/copilot.lua',
+    lazy = true,
+    event = 'InsertEnter',
+    cmd = 'Copilot',
     cond = function()
       local handle = io.popen 'ping -c 1 github.com >/dev/null 2>&1 && echo ok || echo fail'
       local result = handle:read '*a'
@@ -36,6 +39,9 @@ return {
 
   {
     'zbirenbaum/copilot-cmp',
+    dependencies = { 'zbirenbaum/copilot.lua' },
+    lazy = true,
+    event = { 'InsertEnter', 'LspAttach' },
     opts = {},
     cond = function()
       local handle = io.popen 'ping -c 1 github.com >/dev/null 2>&1 && echo ok || echo fail'

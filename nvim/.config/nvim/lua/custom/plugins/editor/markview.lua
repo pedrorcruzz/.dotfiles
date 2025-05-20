@@ -1,4 +1,6 @@
 return {
   'OXY2DEV/markview.nvim',
-  lazy = false,
+  lazy = true,
+  ft = { 'markdown' },
+  cmd = { 'MarkviewToggle', 'MarkviewOpen', 'MarkviewClose' },
 }

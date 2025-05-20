@@ -1,6 +1,9 @@
 return {
   {
     'coffebar/neovim-project',
+    event = 'VeryLazy', -- otimizado: carrega só quando o Neovim estiver ocioso
+    -- lazy = false, -- removido para otimizar o ms
+    -- priority = 100, -- removido para otimizar o ms
     opts = {
       projects = { -- define project roots
         '~/Developer/Projects/*',
@@ -47,12 +50,10 @@ return {
       vim.opt.sessionoptions:append 'globals'
     end,
     dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-      { 'nvim-telescope/telescope.nvim' }, -- optional picker
-      { 'ibhagwan/fzf-lua' }, -- optional picker
-      { 'Shatur/neovim-session-manager' },
+      { 'nvim-lua/plenary.nvim', lazy = true },
+      { 'nvim-telescope/telescope.nvim', lazy = true }, -- optional picker
+      { 'ibhagwan/fzf-lua', lazy = true }, -- optional picker
+      { 'Shatur/neovim-session-manager', lazy = true },
     },
-    lazy = false,
-    priority = 100,
   },
 }
