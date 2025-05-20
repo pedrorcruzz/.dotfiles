@@ -4,8 +4,8 @@ window-colorspace = "display-p3"
 # 1A1A1A 1E1E2F 101010
 # 0.85 26
 background = #101010
-background-opacity = 0.85
-background-blur-radius = 40
+background-opacity = 0.97
+background-blur-radius = 35
 cursor-style = block
 
 font-size = 12
