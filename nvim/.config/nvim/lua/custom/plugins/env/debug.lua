@@ -24,9 +24,10 @@ return {
         'williamboman/mason.nvim',
         opts = function(_, opts)
           opts.ensure_installed = {
-            'js-debug-adapter',
             'debugpy',
             'delve',
+            'php-debug-adapter',
+            'java-debug-adapter',
           }
         end,
       },
@@ -37,53 +38,8 @@ return {
 
     opts = function()
       local dap = require 'dap'
-      local mason_registry_ok, mason_registry = pcall(require, 'mason-registry')
-      local js_debug_adapter_path = nil
 
-      if mason_registry_ok and mason_registry.has_package 'js-debug-adapter' then
-        local js_debug_adapter = mason_registry.get_package 'js-debug-adapter'
-        js_debug_adapter_path = js_debug_adapter:get_install_path()
-      else
-        vim.notify('[nvim-dap] js-debug-adapter package not found or Mason registry not ready yet', vim.log.levels.WARN)
-      end
-
-      if not dap.adapters['pwa-node'] and js_debug_adapter_path then
-        dap.adapters['pwa-node'] = {
-          type = 'server',
-          host = 'localhost',
-          port = '${port}',
-          executable = {
-            command = 'node',
-            args = {
-              js_debug_adapter_path .. '/js-debug/src/dapDebugServer.js',
-              '${port}',
-            },
-          },
-        }
-      end
-
-      for _, language in ipairs { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' } do
-        dap.configurations[language] = dap.configurations[language]
-          or {
-            {
-              type = 'pwa-node',
-              request = 'launch',
-              name = 'Launch file',
-              program = '${file}',
-              runtimeExecutable = 'ts-node',
-              cwd = '${workspaceFolder}',
-            },
-            {
-              type = 'pwa-node',
-              request = 'attach',
-              name = 'Attach',
-              processId = require('dap.utils').pick_process,
-              cwd = '${workspaceFolder}',
-            },
-          }
-      end
-
-      -- Django/Python
+      -- Python DAP config
       if not dap.adapters.python then
         dap.adapters.python = {
           type = 'server',
@@ -96,37 +52,113 @@ return {
         }
       end
 
-      for _, language in ipairs { 'python' } do
-        dap.configurations[language] = dap.configurations[language]
-          or {
-            {
-              type = 'python',
-              request = 'launch',
-              name = 'Launch Django server',
-              program = '${workspaceFolder}/manage.py',
-              args = { 'runserver', '127.0.0.1:8000' },
-              pythonPath = function()
-                return vim.fn.input('Python path: ', (vim.env.VIRTUAL_ENV and vim.env.VIRTUAL_ENV .. '/bin/python') or 'python', 'file')
-              end,
-            },
-            {
-              type = 'python',
-              request = 'launch',
-              name = 'Launch Django shell',
-              program = '${workspaceFolder}/manage.py',
-              args = { 'shell' },
-              pythonPath = function()
-                return vim.fn.input('Python path: ', (vim.env.VIRTUAL_ENV and vim.env.VIRTUAL_ENV .. '/bin/python') or 'python', 'file')
-              end,
-            },
-            {
-              type = 'python',
-              request = 'attach',
-              name = 'Attach to Django process',
-              processId = require('dap.utils').pick_process,
-            },
-          }
+      dap.configurations.python = dap.configurations.python
+        or {
+          {
+            type = 'python',
+            request = 'launch',
+            name = 'Launch Django server',
+            program = '${workspaceFolder}/manage.py',
+            args = { 'runserver', '127.0.0.1:8000' },
+            pythonPath = function()
+              return vim.fn.input('Python path: ', (vim.env.VIRTUAL_ENV and vim.env.VIRTUAL_ENV .. '/bin/python') or 'python', 'file')
+            end,
+          },
+          {
+            type = 'python',
+            request = 'launch',
+            name = 'Launch Django shell',
+            program = '${workspaceFolder}/manage.py',
+            args = { 'shell' },
+            pythonPath = function()
+              return vim.fn.input('Python path: ', (vim.env.VIRTUAL_ENV and vim.env.VIRTUAL_ENV .. '/bin/python') or 'python', 'file')
+            end,
+          },
+          {
+            type = 'python',
+            request = 'attach',
+            name = 'Attach to Django process',
+            processId = require('dap.utils').pick_process,
+          },
+        }
+
+      -- Go DAP config (delve)
+      if not dap.adapters.go then
+        dap.adapters.go = {
+          type = 'server',
+          port = '${port}',
+          executable = {
+            command = 'dlv',
+            args = { 'dap', '-l', '127.0.0.1:${port}' },
+          },
+        }
       end
+
+      dap.configurations.go = dap.configurations.go
+        or {
+          {
+            type = 'go',
+            name = 'Debug',
+            request = 'launch',
+            program = '${file}',
+          },
+          {
+            type = 'go',
+            name = 'Debug (test file)',
+            request = 'launch',
+            mode = 'test',
+            program = '${file}',
+          },
+          {
+            type = 'go',
+            name = 'Attach',
+            request = 'attach',
+            processId = require('dap.utils').pick_process,
+            program = '${file}',
+          },
+        }
+
+      -- PHP DAP config
+      if not dap.adapters.php then
+        dap.adapters.php = {
+          type = 'executable',
+          command = 'php-debug-adapter',
+          args = {},
+        }
+      end
+
+      dap.configurations.php = dap.configurations.php
+        or {
+          {
+            type = 'php',
+            request = 'launch',
+            name = 'Listen for Xdebug',
+            port = 9003,
+            pathMappings = {
+              ['/var/www/html'] = '${workspaceFolder}',
+            },
+          },
+        }
+
+      -- Java DAP config
+      if not dap.adapters.java then
+        dap.adapters.java = {
+          type = 'server',
+          host = '127.0.0.1',
+          port = 5005,
+        }
+      end
+
+      dap.configurations.java = dap.configurations.java
+        or {
+          {
+            type = 'java',
+            request = 'attach',
+            name = 'Attach to remote',
+            hostName = '127.0.0.1',
+            port = 5005,
+          },
+        }
     end,
 
     config = function()
