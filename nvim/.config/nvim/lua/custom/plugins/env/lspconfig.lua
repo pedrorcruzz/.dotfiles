@@ -191,7 +191,6 @@ return { -- LSP Configuration & Plugins
       'sqlls',
       -- Debuggers
       'php-debug-adapter',
-      'js-debug-adapter',
       'go-debug-adapter',
       'debugpy',
       'java-debug-adapter',
