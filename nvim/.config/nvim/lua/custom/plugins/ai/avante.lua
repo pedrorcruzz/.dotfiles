@@ -87,3 +87,7 @@ return {
     -- },
   },
 }
+
+-- Caso o plugin não funcione, tente compilar manualmente:
+-- cd ~/.local/share/nvim/lazy/avante.nvim
+-- make
