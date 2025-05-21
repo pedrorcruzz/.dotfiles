@@ -51,15 +51,18 @@ return {
     },
   },
   build = 'make',
+  keys = {
+    { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
+  },
   dependencies = {
-    { 'nvim-treesitter/nvim-treesitter', lazy = true }, -- lazy para otimizar ms
+    { 'nvim-treesitter/nvim-treesitter', lazy = true },
     { 'stevearc/dressing.nvim', lazy = true },
     { 'nvim-lua/plenary.nvim', lazy = true },
     { 'MunifTanjim/nui.nvim', lazy = true },
     -- Dependências opcionais, mantenha comentadas se não usar
     -- { 'nvim-tree/nvim-web-devicons', lazy = true },
     -- { 'echasnovski/mini.icons', lazy = true },
-    { 'zbirenbaum/copilot.lua', lazy = true }, -- só carrega se provider for copilot
+    { 'zbirenbaum/copilot.lua', lazy = true },
     -- {
     --   'HakonHarnes/img-clip.nvim',
     --   event = 'VeryLazy',
@@ -81,9 +84,6 @@ return {
     --     file_types = { 'markdown', 'Avante' },
     --   },
     --   ft = { 'markdown', 'Avante' },
-    keys = {
-      { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
-    },
     -- },
   },
 }
