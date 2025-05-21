@@ -81,9 +81,9 @@ return {
     --     file_types = { 'markdown', 'Avante' },
     --   },
     --   ft = { 'markdown', 'Avante' },
-    --   keys = {
-    --     { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
-    --   },
+    keys = {
+      { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
+    },
     -- },
   },
 }
