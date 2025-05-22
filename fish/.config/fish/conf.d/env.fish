@@ -35,8 +35,37 @@ set -x PATH /opt/homebrew/opt/tcl-tk/bin $PATH
 
 # NVM FISHER
 # fisher install jorgebucaran/nvm.fish
+abbr -a nvm_dir "echo "x" > .nvmrc"
+
 function nvm_default
   set --universal nvm_default_version $argv[1]
   echo "Default Node.js version set to $argv[1]"
 end
 
+function __load_nvmrc --on-variable PWD
+  if test -f .nvmrc
+    set -l nvmrc_version (string trim < .nvmrc)
+    set -l current_version (nvm current 2>/dev/null)
+
+    if test "$nvmrc_version" != "$current_version"
+      nvm use $nvmrc_version > /dev/null 2>&1
+    end
+  else
+    set -l default_version (nvm default 2>/dev/null)
+    set -l current_version (nvm current 2>/dev/null)
+
+    if test "$default_version" != "$current_version"
+      nvm use default > /dev/null 2>&1
+    end
+  end
+end
+
+functions -c nvm __original_nvm
+
+function nvm
+  if test (count $argv) -eq 2 -a "$argv[1]" = "use"
+    set -l nvmrc_ver $argv[2]
+    echo $nvmrc_ver > .nvmrc
+  end
+  __original_nvm $argv
+end
