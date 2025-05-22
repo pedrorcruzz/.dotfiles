@@ -103,22 +103,11 @@ return { -- LSP Configuration & Plugins
       lua_ls = {
         settings = {
           Lua = {
-            runtime = {
-              -- Tell the language server which version of Lua you're using
-              version = 'LuaJIT',
-            },
-            diagnostics = {
-              -- Get the language server to recognize the `vim` global
-              globals = { 'vim' },
-              disable = { 'missing-fields' },
-            },
+            runtime = { version = 'LuaJIT' },
+            diagnostics = { globals = { 'vim' } },
             workspace = {
-              -- Make the server aware of Neovim runtime files
               library = vim.api.nvim_get_runtime_file('', true),
               checkThirdParty = false,
-            },
-            completion = {
-              callSnippet = 'Replace',
             },
           },
         },
@@ -218,8 +207,8 @@ return { -- LSP Configuration & Plugins
           if server_name == 'tsserver' then
             server_name = 'ts_ls'
           end
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
+          local opts = vim.tbl_deep_extend('force', {}, server, { capabilities = capabilities })
+          require('lspconfig')[server_name].setup(opts)
         end,
       },
     }
