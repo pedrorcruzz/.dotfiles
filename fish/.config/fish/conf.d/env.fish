@@ -34,6 +34,7 @@ set -x PATH /opt/homebrew/opt/tcl-tk/bin $PATH
 
 
 # NVM FISHER
+# fisher install jorgebucaran/nvm.fish
 function nvm_default
   set --universal nvm_default_version $argv[1]
   echo "Default Node.js version set to $argv[1]"
