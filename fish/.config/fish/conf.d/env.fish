@@ -64,8 +64,9 @@ functions -c nvm __original_nvm
 
 function nvm
   if test (count $argv) -eq 2 -a "$argv[1]" = "use"
-    set -l nvmrc_ver $argv[2]
-    echo $nvmrc_ver > .nvmrc
+    if test "$argv[2]" != "default"
+      echo $argv[2] > .nvmrc
+    end
   end
   __original_nvm $argv
 end
