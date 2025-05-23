@@ -2,6 +2,16 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
+    lazy = true,
+    cmd = { 'ToggleTerm' },
+    keys = {
+      { '<c-\\>', desc = 'Toggle terminal' },
+      { '<leader>ltd', '<cmd>ToggleTerm 3 direction=horizontal<CR>', desc = 'ToggleTerm: Horizontal Split' },
+      { '<leader>lta', '<cmd>ToggleTerm 4 direction=vertical<CR>', desc = 'ToggleTerm: Vertical Split' },
+      { '<S-x>', '<cmd>ToggleTerm 1 direction=horizontal size=20<CR>', desc = 'ToggleTerm: Horizontal' },
+      -- { '<C-o>', '<cmd>ToggleTerm 1 direction=vertical size=20<CR>', desc = 'ToggleTerm: Vertical' },
+      { '<S-z>', '<cmd>ToggleTerm 1 direction=float<CR>', desc = 'ToggleTerm: Float' },
+    },
     opts = {
       size = 16,
       open_mapping = [[<c-\>]],
@@ -68,12 +78,5 @@ return {
         lazygit:toggle()
       end, { desc = 'ToggleTerm: LazyGit' })
     end,
-    keys = {
-      { '<leader>ltd', '<cmd>ToggleTerm 3 direction=horizontal<CR>', desc = 'ToggleTerm: Horizontal Split' },
-      { '<leader>lta', '<cmd>ToggleTerm 4 direction=vertical<CR>', desc = 'ToggleTerm: Vertical Split' },
-      { '<S-x>', '<cmd>ToggleTerm 1 direction=horizontal size=20<CR>', desc = 'ToggleTerm: Horizontal' },
-      -- { '<C-o>', '<cmd>ToggleTerm 1 direction=vertical size=20<CR>', desc = 'ToggleTerm: Vertical' },
-      { '<S-z>', '<cmd>ToggleTerm 1 direction=float<CR>', desc = 'ToggleTerm: Float' },
-    },
   },
 }

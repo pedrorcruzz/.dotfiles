@@ -8,7 +8,7 @@ return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('min-theme').setup {
         transparent = transparent_background,
         italics = {
@@ -43,6 +43,11 @@ return {
           Folded = { fg = '#B990F6', bg = '#1a1a1a' },
 
           Underlined = { bg = nil },
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1a1a1a' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1a1a1a' },
+          -- StatusLineNC = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
+          -- StatusLine = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
+
           -- WinBarNC = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
           -- WinBar = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
           -- TabLine = { bg = transparent_background and 'NONE' or '#202020' },
@@ -66,10 +71,14 @@ return {
           -- BufferLinePickVisible = { fg = '#CA8BFF' },
           -- BufferLinePickSelected = { fg = '#CA8BFF' },
           BufferLineModified = { fg = '#A9A9A9' },
+          -- BufferLineFill = { bg = '#da70d6' },
           BufferLineModifiedVisible = { fg = '#A9A9A9' },
           BufferLineModifiedSelected = { fg = '#A9A9A9' },
           BufferLineBufferSelected = { fg = '#A9A9A9' },
           BufferLineBackground = { fg = '#606060' },
+          -- BufferLineBufferVisible = { bg = '#606060' },
+          BufferLineSeparator = { fg = '#323232' },
+          BufferLineIndicatorSelected = { fg = '#1a1a1a' },
 
           --Punctuation Special
           ['@punctuation.special'] = { fg = '#323232' },
@@ -230,7 +239,7 @@ return {
   {
     'catppuccin/nvim',
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },
@@ -249,7 +258,9 @@ return {
           return {
             NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#181826' },
-            BufferLineFill = { bg = '#181827' },
+            BufferLineFill = { bg = transparent_background and 'NONE' or '#181826' },
+            BufferLineTabSelected = { fg = '#181827' },
+            BufferLineIndicatorSelected = { fg = '#181827' },
 
             FloatBorder = { fg = '#6BB8FF' },
             Border = { fg = '#4c4c4c' },

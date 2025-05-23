@@ -18,6 +18,8 @@ abbr -a rn "nvim"
 abbr -a vim "nvim"
 abbr -a y "yazi"
 abbr -a live "live-server"
+abbr -a rf "rm -rf"
+abbr -a mk "mkdir"
 
 
 #Alias Kill Process

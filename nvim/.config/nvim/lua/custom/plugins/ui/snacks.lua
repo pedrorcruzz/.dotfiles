@@ -46,23 +46,23 @@ return {
         {
           pane = 1,
           section = 'terminal',
+          --normal(png,jpg)
 
           -- cmd = 'ascii-image-converter --color -c -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png"', -- -c
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
 
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
+          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
+          width = 65, --65
+          height = 20, --26
+          indent = 10,
 
           -- gif
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 15,
-          width = 35,
-          indent = 18,
+          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          -- height = 17,
+          -- width = 35,
+          -- indent = 18,
 
-          --normal(png,jpg)
-          -- width = 65, --65
-          -- height = 26, --26
-          -- indent = 10,
           -- padding = 2,
           enabled = function()
             return not (vim.o.columns < 135)
@@ -72,25 +72,25 @@ return {
         --Narrow screen
         {
           pane = 1,
+          padding = 2,
           section = 'terminal',
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
-          -- cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
+          cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
 
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .17 --quant 16 --with-color',
+          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .17 --quant 16 --with-color',
+          --normal(png,jpg)
+          height = 16, --25
+          width = 56,
+          indent = 18,
 
           --gif
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 13,
-          width = 32,
-          indent = 22,
+          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          -- height = 14,
+          -- width = 32,
+          -- indent = 22,
 
-          --normal(png,jpg)
-          -- height = 16, --25
-          -- width = 56,
-          -- padding = 2,
-          -- indent = 18,
           enabled = function()
             return not (vim.o.columns > 135)
           end,
@@ -238,7 +238,7 @@ return {
           finder = 'explorer',
           diagnostics = true,
           diagnostics_open = false,
-          layout = { layout = { position = 'right', width = 38 }, preview = false }, --explorer side width 40 default
+          layout = { layout = { position = 'right', width = 37 }, preview = false }, --explorer side width 40 default
           focus = 'list',
           auto_close = false,
           git_untracked = true,
@@ -776,7 +776,7 @@ return {
         Snacks.toggle.line_number():map '<leader>ln'
         Snacks.toggle.zen():map '<leader>lz'
         -- Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>uc'
-        -- Snacks.toggle.treesitter():map '<leader>lxt'
+        -- Snacks.toggle.treesitter():map '<leader>lg'
         -- Snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map '<leader>ub'
         -- Snacks.toggle.inlay_hints():map '<leader>uh'
         Snacks.toggle.indent():map '<leader>li'

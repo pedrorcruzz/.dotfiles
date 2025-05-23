@@ -1,17 +1,20 @@
 return {
   {
     'windwp/nvim-ts-autotag',
+    event = 'InsertEnter',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {},
   },
 
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    event = 'BufReadPost',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 
-  { -- Highlight, edit, and navigate code
+  {
     'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPost', 'BufNewFile' },
     build = ':TSUpdate',
     opts = {
       ensure_installed = {
@@ -34,7 +37,6 @@ return {
         'php_only',
         'markdown_inline',
       },
-      -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
         enable = true,
@@ -53,9 +55,9 @@ return {
             ['ic'] = '@class.inner',
           },
           selection_modes = {
-            ['@parameter.outer'] = 'v', -- charwise
-            ['@function.outer'] = 'V', -- linewise
-            ['@class.outer'] = '<c-v>', -- blockwise
+            ['@parameter.outer'] = 'v',
+            ['@function.outer'] = 'V',
+            ['@class.outer'] = '<c-v>',
           },
         },
         move = { enable = true, set_jumps = true },
@@ -89,25 +91,13 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter-context',
+    event = 'BufReadPost',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('treesitter-context').setup {
         enable = false,
         max_lines = 0,
       }
-
-      -- local function toggle_context()
-      --   local context_enabled = vim.g.treesitter_context_enabled or false
-      --   context_enabled = not context_enabled
-      --   vim.g.treesitter_context_enabled = context_enabled
-      --
-      --   require('treesitter-context').setup {
-      --     enable = context_enabled,
-      --     max_lines = 0,
-      --   }
-      -- end
-
-      -- vim.keymap.set('n', '<leader>v', toggle_context, { silent = true, desc = 'Toggle: Sticky Scroll' })
     end,
   },
 }
