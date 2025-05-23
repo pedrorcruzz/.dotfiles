@@ -26,6 +26,9 @@ fish_add_path "$YARN_HOME/bin"
 # Python 
 set -gx PATH "$HOME/.asdf/installs/python/3.13.2/bin" $PATH
 
+# Go
+set -x PATH /Users/phrosa/.asdf/installs/golang/1.24.3/bin $PATH
+
 # Set up for tcl-tk
 set -x LDFLAGS "-L/opt/homebrew/opt/tcl-tk/lib"
 set -x CPPFLAGS "-I/opt/homebrew/opt/tcl-tk/include"
@@ -81,3 +84,4 @@ function nvm
 
   __original_nvm $argv > /dev/null 2>&1
 end
+
