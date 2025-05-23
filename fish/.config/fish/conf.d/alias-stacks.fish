@@ -23,3 +23,9 @@ abbr -a spring-classes-maven "./mvnw compile"
 abbr -a spring-build-gradle "./gradlew build"
 abbr -a spring-run-gradle "./gradlew bootRun"
 abbr -a spring-classes-gradle "./gradlew classes"
+
+
+#Alias Go
+abbr -a go-get-gin "go get -u github.com/gin-gonic/gin"
+abbr -a go-get-mongo "go get -u go.mongodb.org/mongo-driver/mongo"
+abbr -a go-install-air "go install github.com/air-verse/air@latest"
