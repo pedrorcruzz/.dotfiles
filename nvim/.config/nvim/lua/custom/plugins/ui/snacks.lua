@@ -45,6 +45,7 @@ return {
         },
         {
           pane = 1,
+          -- padding = 2,
           section = 'terminal',
           --normal(png,jpg)
 
@@ -52,18 +53,17 @@ return {
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
 
-          cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
-          width = 65, --65
-          height = 20, --26
-          indent = 10,
+          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
+          -- width = 65, --65
+          -- height = 20, --26
+          -- indent = 10,
 
           -- gif
-          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          -- height = 17,
-          -- width = 35,
-          -- indent = 18,
+          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          height = 17,
+          width = 35,
+          indent = 18,
 
-          -- padding = 2,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -77,7 +77,7 @@ return {
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
-          cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
+          -- cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
 
           -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .17 --quant 16 --with-color',
           --normal(png,jpg)
@@ -86,10 +86,10 @@ return {
           indent = 18,
 
           --gif
-          -- cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          -- height = 14,
-          -- width = 32,
-          -- indent = 22,
+          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          height = 14,
+          width = 32,
+          indent = 22,
 
           enabled = function()
             return not (vim.o.columns > 135)

@@ -8,7 +8,7 @@ return {
       projects = { -- define project roots
         '~/Developer/Projects/*',
         '~/Developer/Studies/*',
-        '~/Developer/Studies/Udemy*',
+        '~/Developer/Studies/Udemy/*',
         '~/Developer/Freelas/*',
         '~/Developer/Cesmac/*',
         '~/Developer/Seven/*',

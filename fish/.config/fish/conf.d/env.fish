@@ -1,6 +1,7 @@
 # asdf
 fish_add_path $HOME/.asdf/bin
 fish_add_path $HOME/.asdf/shims
+set -Ux GLIBC_TUNABLES glibc.pthread.rseq=0
 
 # Homebrew
 set -gx PATH /opt/homebrew/bin $PATH
