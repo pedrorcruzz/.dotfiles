@@ -44,6 +44,7 @@ abbr -a gtagdr "git push origin --delete refs/tags/"
 abbr -a ghcs "gh copilot suggest"
 abbr -a ghcf "gh copilot fix"
 abbr -a ghce "gh copilot explain"
+abbr -a gh-create-desc "gh repo edit --description"
 
 
 #Alias Tmux
