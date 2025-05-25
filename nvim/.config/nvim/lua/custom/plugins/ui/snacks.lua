@@ -166,7 +166,7 @@ return {
         },
         {
           pane = 2,
-          limit = 5,
+          limit = 10,
           icon = '',
           title = 'Projects',
           section = 'projects',
