@@ -60,7 +60,7 @@ return {
 
           -- gif
           cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 17,
+          height = 16,
           width = 35,
           indent = 18,
 
@@ -81,7 +81,7 @@ return {
 
           -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .17 --quant 16 --with-color',
           --normal(png,jpg)
-          height = 17, --25
+          height = 16, --25
           width = 56,
           indent = 18,
 
