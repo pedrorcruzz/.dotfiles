@@ -81,7 +81,7 @@ return {
 
           -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .17 --quant 16 --with-color',
           --normal(png,jpg)
-          height = 16, --25
+          height = 17, --25
           width = 56,
           indent = 18,
 
