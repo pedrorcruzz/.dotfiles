@@ -18,12 +18,12 @@ desc = "Go Projects"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "w" ]
-run  = "cd ~/Developer/Seven"
+run  = "cd ~/Developer/Business/Seven"
 desc = "Go Work Projects"
 
 [[manager.prepend_keymap]]
 on   = [ "g", "f" ]
-run  = "cd ~/Developer/Freelas"
+run  = "cd ~/Developer/Business/Freelas"
 desc = "Go Freelas Projects"
 
 [[manager.prepend_keymap]]
