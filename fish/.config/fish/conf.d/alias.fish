@@ -3,11 +3,19 @@ abbr -a D "cd ~/Developer"
 abbr -a S "cd ~/Developer/Studies"
 abbr -a SRC "cd ~/Developer/Scripts"
 abbr -a C "cd ~/Developer/Cesmac"
-abbr -a F "cd ~/Developer/Freelas"
-abbr -a W "cd ~/Developer/Seven"
-abbr -a U "cd ~/Developer/Studies/Udemy"
+
+abbr -a B "cd ~/Developer/Business"
+abbr -a BF "cd ~/Developer/Business/Freelas"
+abbr -a BW "cd ~/Developer/Business/Seven"
+abbr -a BG "cd ~/Developer/Business/Guru"
+
+abbr -a SU "cd ~/Developer/Studies/Udemy"
+abbr -a SS "cd ~/Developer/Studies/Sandbox"
+
 abbr -a P "cd ~/Developer/Projects"
-abbr -a G "cd ~/Developer/Guru"
+abbr -a PP "cd ~/Developer/Projects/Personal"
+abbr -a PG "cd ~/Developer/Projects/Garage"
+
 abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 

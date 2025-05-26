@@ -6,13 +6,14 @@ return {
     -- priority = 100, -- removido para otimizar o ms
     opts = {
       projects = { -- define project roots
-        '~/Developer/Projects/*',
-        '~/Developer/Studies/*',
+        '~/Developer/Projects/Garage/*',
+        '~/Developer/Projects/Personal/*',
+        '~/Developer/Studies/Sandbox/*',
         '~/Developer/Studies/Udemy/*',
-        '~/Developer/Freelas/*',
+        '~/Developer/Business/Seven/*',
+        '~/Developer/Business/Guru/*',
+        '~/Developer/Business/Freelas/*',
         '~/Developer/Cesmac/*',
-        '~/Developer/Seven/*',
-        '~/Developer/Guru/*',
       },
       -- Path to store history and sessions
       datapath = vim.fn.stdpath 'data', -- ~/.local/share/nvim/
