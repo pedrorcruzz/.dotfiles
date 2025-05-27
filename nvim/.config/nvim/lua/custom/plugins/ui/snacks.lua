@@ -114,7 +114,6 @@ return {
           end,
         },
         function()
-          local in_git = Snacks.git.get_root() ~= nil
           local cmds = {
             {
               title = 'Git Graph',
@@ -129,6 +128,7 @@ return {
               pane = 1,
               section = 'terminal',
               enabled = function()
+                local in_git = Snacks.git.get_root() ~= nil
                 return in_git and vim.o.columns > 130
               end,
               padding = 0,
