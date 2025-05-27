@@ -275,6 +275,7 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [ruby]
+style = "fg:#E0115F"
 symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
