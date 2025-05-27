@@ -76,10 +76,15 @@ function asdf
 
         if test -f .gitignore
             if not grep -q ".tool-versions" .gitignore
-                echo ".tool-versions" >> .gitignore
+                set last_char (tail -c1 .gitignore)
+                if test "$last_char" != "\n"
+                    printf ".tool-versions\n" >> .gitignore
+                else
+                    printf ".tool-versions\n" >> .gitignore
+                end
             end
         else
-            echo ".tool-versions" > .gitignore
+            printf ".tool-versions\n" > .gitignore
         end
     else
         command asdf $argv
