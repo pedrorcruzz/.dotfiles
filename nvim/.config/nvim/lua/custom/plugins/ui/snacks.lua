@@ -41,12 +41,12 @@ return {
           ]],
         },
       },
-      width = 78,
+      width = 76,
       sections = {
         {
           pane = 1,
           -- section = 'header',
-          padding = 2,
+          padding = 5,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -68,9 +68,9 @@ return {
 
           -- gif
           cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 13, --16
-          width = 30, --35
-          indent = 18, --18
+          height = 14, --16
+          width = 32, --35
+          indent = 18,
 
           enabled = function()
             return not (vim.o.columns < 135)
@@ -108,19 +108,18 @@ return {
           pane = 2,
           -- section = 'header',
           gap = 0,
-          padding = 6, --1
+          padding = 1, --1
           enabled = function()
             return not (vim.o.columns < 135)
           end,
         },
-        -- Narrow screen
         function()
           local in_git = Snacks.git.get_root() ~= nil
           local cmds = {
             {
               title = 'Git Graph',
               icon = ' ',
-              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 5']],
+              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
               indent = 1,
               -- height = 35,
             },
@@ -146,65 +145,59 @@ return {
         --     Snacks.gitbrowse()
         --   end,
         -- },
-        function()
-          local in_git = Snacks.git.get_root() ~= nil
-          local cmds = {
-            {
-              icon = ' ',
-              title = 'Git Status',
-              cmd = 'git --no-pager diff --stat -B -M -C',
-              height = 1,
-              enabled = function()
-                return not (vim.o.columns < 135)
-              end,
-            },
-
-            {
-              title = 'Notifications',
-              cmd = 'gh notify -s -a -n5',
-              action = function()
-                vim.ui.open 'https://github.com/notifications'
-              end,
-              key = 'N',
-              icon = '󰎟 ',
-              height = 3,
-              enabled = true,
-              enabled = function()
-                return not (vim.o.columns < 135)
-              end,
-            },
-            -- {
-            --   title = 'Open Issues',
-            --   cmd = 'gh issue list -L 3',
-            --   key = 'i',
-            --   action = function()
-            --     vim.fn.jobstart('gh issue list --web', { detach = true })
-            --   end,
-            --   icon = 'ÔÜà ',
-            --   height = 7,
-            -- },
-            -- {
-            --   icon = 'Ôêá ',
-            --   title = 'Open PRs',
-            --   cmd = 'gh pr list -L 3',
-            --   key = 'P',
-            --   action = function()
-            --     vim.fn.jobstart('gh pr list --web', { detach = true })
-            --   end,
-            --   height = 7,
-            -- },
-          }
-          return vim.tbl_map(function(cmd)
-            return vim.tbl_extend('force', {
-              pane = 1,
-              section = 'terminal',
-              enabled = in_git,
-              padding = 1,
-              -- ttl = 5 * 60,
-              -- indent = 3,
-            }, cmd)
-          end, cmds)
-        end,
+        -- function()
+        --   local in_git = Snacks.git.get_root() ~= nil
+        --   local cmds = {
+        --     {
+        --       icon = ' ',
+        --       title = 'Git Status',
+        --       cmd = 'git --no-pager diff --stat -B -M -C',
+        --       height = 1,
+        --     },
+        --
+        --     {
+        --       title = 'Notifications',
+        --       cmd = 'gh notify -s -a -n5',
+        --       action = function()
+        --         vim.ui.open 'https://github.com/notifications'
+        --       end,
+        --       key = 'N',
+        --       icon = '󰎟 ',
+        --       height = 3,
+        --       enabled = true,
+        --     },
+        -- {
+        --   title = 'Open Issues',
+        --   cmd = 'gh issue list -L 3',
+        --   key = 'i',
+        --   action = function()
+        --     vim.fn.jobstart('gh issue list --web', { detach = true })
+        --   end,
+        --   icon = 'ÔÜà ',
+        --   height = 7,
+        -- },
+        -- {
+        --   icon = 'Ôêá ',
+        --   title = 'Open PRs',
+        --   cmd = 'gh pr list -L 3',
+        --   key = 'P',
+        --   action = function()
+        --     vim.fn.jobstart('gh pr list --web', { detach = true })
+        --   end,
+        --   height = 7,
+        -- },
+        --   }
+        --   return vim.tbl_map(function(cmd)
+        --     return vim.tbl_extend('force', {
+        --       pane = 1,
+        --       section = 'terminal',
+        --       enabled = in_git,
+        --       padding = 1,
+        --       -- ttl = 5 * 60,
+        --       -- indent = 3,
+        --     }, cmd)
+        --   end, cmds)
+        -- end,
 
         {
           pane = 2,
@@ -239,12 +232,12 @@ return {
             return not (vim.o.columns < 135)
           end,
           indent = 1,
-          limit = 5,
+          limit = 6,
           padding = 2,
         },
         {
           pane = 2,
-          limit = 5,
+          limit = 6,
           icon = '',
           title = 'Projects',
           section = 'projects',
