@@ -41,19 +41,19 @@ return {
           ]],
         },
       },
-      width = 80,
+      width = 78,
       sections = {
         {
           pane = 1,
           -- section = 'header',
-          padding = 5,
+          padding = 2,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
         },
         {
           pane = 1,
-          padding = 4,
+          padding = 1,
           section = 'terminal',
           --normal(png,jpg)
 
@@ -68,9 +68,9 @@ return {
 
           -- gif
           cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 16,
-          width = 35,
-          indent = 18,
+          height = 13, --16
+          width = 30, --35
+          indent = 18, --18
 
           enabled = function()
             return not (vim.o.columns < 135)
@@ -108,7 +108,7 @@ return {
           pane = 2,
           -- section = 'header',
           gap = 0,
-          padding = 10, --1
+          padding = 6, --1
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -154,6 +154,9 @@ return {
               title = 'Git Status',
               cmd = 'git --no-pager diff --stat -B -M -C',
               height = 1,
+              enabled = function()
+                return not (vim.o.columns < 135)
+              end,
             },
 
             {
@@ -166,6 +169,9 @@ return {
               icon = '󰎟 ',
               height = 3,
               enabled = true,
+              enabled = function()
+                return not (vim.o.columns < 135)
+              end,
             },
             -- {
             --   title = 'Open Issues',
