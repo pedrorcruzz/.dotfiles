@@ -20,6 +20,14 @@ return {
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
           { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
           { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
+          {
+            icon = ' ',
+            key = 'b',
+            desc = 'Browse Repo',
+            action = function()
+              Snacks.gitbrowse()
+            end,
+          },
           { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
         },
         header = {
@@ -45,7 +53,7 @@ return {
         },
         {
           pane = 1,
-          -- padding = 2,
+          padding = 4,
           section = 'terminal',
           --normal(png,jpg)
 
@@ -100,7 +108,7 @@ return {
           pane = 2,
           -- section = 'header',
           gap = 0,
-          padding = 1, --1
+          padding = 10, --1
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -112,7 +120,7 @@ return {
             {
               title = 'Git Graph',
               icon = ' ',
-              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
+              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 5']],
               indent = 1,
               -- height = 35,
             },
@@ -124,10 +132,74 @@ return {
               enabled = function()
                 return in_git and vim.o.columns > 130
               end,
-              padding = 1,
+              padding = 0,
             }, cmd)
           end, cmds)
         end,
+        -- {
+        --   pane = 1,
+        --   icon = ' ',
+        --   desc = 'Browse Repo',
+        --   padding = 1,
+        --   key = 'b',
+        --   action = function()
+        --     Snacks.gitbrowse()
+        --   end,
+        -- },
+        function()
+          local in_git = Snacks.git.get_root() ~= nil
+          local cmds = {
+            {
+              icon = ' ',
+              title = 'Git Status',
+              cmd = 'git --no-pager diff --stat -B -M -C',
+              height = 1,
+            },
+
+            {
+              title = 'Notifications',
+              cmd = 'gh notify -s -a -n5',
+              action = function()
+                vim.ui.open 'https://github.com/notifications'
+              end,
+              key = 'N',
+              icon = '󰎟 ',
+              height = 3,
+              enabled = true,
+            },
+            -- {
+            --   title = 'Open Issues',
+            --   cmd = 'gh issue list -L 3',
+            --   key = 'i',
+            --   action = function()
+            --     vim.fn.jobstart('gh issue list --web', { detach = true })
+            --   end,
+            --   icon = 'ÔÜà ',
+            --   height = 7,
+            -- },
+            -- {
+            --   icon = 'Ôêá ',
+            --   title = 'Open PRs',
+            --   cmd = 'gh pr list -L 3',
+            --   key = 'P',
+            --   action = function()
+            --     vim.fn.jobstart('gh pr list --web', { detach = true })
+            --   end,
+            --   height = 7,
+            -- },
+          }
+          return vim.tbl_map(function(cmd)
+            return vim.tbl_extend('force', {
+              pane = 1,
+              section = 'terminal',
+              enabled = in_git,
+              padding = 1,
+              -- ttl = 5 * 60,
+              -- indent = 3,
+            }, cmd)
+          end, cmds)
+        end,
+
         {
           pane = 2,
           section = 'startup',
@@ -161,12 +233,12 @@ return {
             return not (vim.o.columns < 135)
           end,
           indent = 1,
-          limit = 10,
+          limit = 5,
           padding = 2,
         },
         {
           pane = 2,
-          limit = 10,
+          limit = 5,
           icon = '',
           title = 'Projects',
           section = 'projects',
