@@ -46,7 +46,7 @@ return {
         {
           pane = 1,
           -- section = 'header',
-          padding = 5,
+          padding = 6,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -67,7 +67,7 @@ return {
           -- indent = 10,
 
           -- gif
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
           height = 14, --16
           width = 32, --35
           indent = 18,
@@ -232,7 +232,7 @@ return {
             return not (vim.o.columns < 135)
           end,
           indent = 1,
-          limit = 6,
+          limit = 7,
           padding = 2,
         },
         {
