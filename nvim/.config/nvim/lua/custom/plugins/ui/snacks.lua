@@ -116,8 +116,8 @@ return {
         function()
           local cmds = {
             {
-              title = 'Git Graph',
-              icon = ' ',
+              -- title = 'Git Graph',
+              -- icon = ' ',
               cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
               indent = 1,
               -- height = 35,
