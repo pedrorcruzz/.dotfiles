@@ -20,3 +20,12 @@ function ccache
 end
 
 
+function gestor-renda
+    set prev_dir (pwd)
+    cd ~/.dotfiles/scripts
+    ./smart-spending-checker.sh
+    cd $prev_dir
+end
+
+
+

@@ -1,5 +1,5 @@
-# Check if the shell is interactive
-if status is-interactive
+# Check if the shell is interactive 
+if status is-interactive 
     fish_add_path /Users/phrosa/.local/bin
     fish_add_path "$HOME/.dotfiles/bin"
     fish_add_path /usr/local/bin
@@ -20,6 +20,9 @@ if status is-interactive
 
 
 end
+
+set -Ux LANG en_US.UTF-8
+set -Ux LC_ALL en_US.UTF-8
 
 #Start Tmux automatically
 set -g USE_TMUX false  # Set to true to use tmux or false to disable
