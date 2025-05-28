@@ -2,8 +2,8 @@
 
 cd ~/Developer/Scripts/smart-spending-checker
 
-make run
+./gestor-renda
 
 sleep 1.3
-clear
 
+clear
