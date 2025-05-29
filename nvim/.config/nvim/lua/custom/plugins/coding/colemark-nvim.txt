@@ -3,14 +3,14 @@ return {
   lazy = false,
   keys = {
     {
-      '<leader>lCe',
+      '<leader>lpe',
       function()
         vim.cmd 'ColemakEnable'
       end,
       desc = 'Enable Colemak mappings',
     },
     {
-      '<leader>lCd',
+      '<leader>lpd',
       function()
         vim.cmd 'ColemakDisable'
       end,

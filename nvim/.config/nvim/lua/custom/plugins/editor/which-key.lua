@@ -16,6 +16,7 @@ return {
       -- { "<leader>'", group = 'Wrap', icon = '󰭷' },
       { '<leader>z', group = 'Obsidian', icon = '' },
       { '<leader>,', group = 'Mini Map', icon = '' },
+      { '<leader>lp', group = 'Colemark', icon = '' },
       { '<leader>vb', group = 'Buffers', icon = '' },
       { '<leader>vt', group = 'Tabs', icon = '' },
       { '<leader>vw', group = 'Windows', icon = '' },
