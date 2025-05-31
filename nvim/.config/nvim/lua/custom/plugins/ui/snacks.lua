@@ -94,7 +94,7 @@ return {
           indent = 18,
 
           --gif
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
           height = 12, --14
           width = 30, --32
           indent = 21, --22
