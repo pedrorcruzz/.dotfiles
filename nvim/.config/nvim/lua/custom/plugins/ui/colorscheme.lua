@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'catppuccin-mocha'
+local default_theme = 'vesper'
 
 return {
   {
@@ -317,7 +317,7 @@ return {
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#101010' }, --#202020 #000000 #0D0D0D
           EndOfBuffer = { fg = '#101010', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#101010' },
-          VertSplit = { fg = transparent_background and '#101010' or '#101010' },
+          VertSplit = { fg = transparent_background and '#101010' or '#121212' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
           CursorLine = { bg = '#323232' },
@@ -336,10 +336,18 @@ return {
           Title = { fg = '#FFFFFF' },
           Comment = { fg = '#585858' },
           Question = { fg = '#FFFFFF' },
+
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#101010' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#101010' },
+
           --underline cmp preview
           ['@markup.heading.1.markdown'] = { fg = '#323232' },
 
           -- ['@punctuation.bracket'] = { fg = '#323232' },
+
+          TreesitterContext = { fg = '#505050', bg = transparent_background and 'none' or '#121212' },
+          TreesitterContextLineNumber = { fg = '#727272', bg = transparent_background and 'none' or '#121212' },
+          TreesitterContextBottom = { sp = '#323232', underline = true },
 
           -- Avante
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
@@ -458,7 +466,7 @@ return {
           SnacksDashboardFile = { fg = '#ffffff' },
           SnacksDashboardTitle = { fg = '#ffffff' },
           -- snacksdashboardspecial = { fg = '#ff657e' },
-          SnacksDashboardNormal = { fg = '#4b4f6b' }, --4b4f6b
+          SnacksDashboardNormal = { fg = '#4c4c4c' }, --4b4f6b
 
           -- noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
