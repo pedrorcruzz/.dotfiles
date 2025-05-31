@@ -1,14 +1,14 @@
 {
 	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 	"logo": {
-		"source": "./images/anime-girl-mask-nobg.png",
+		"source": "./images/luffy-5.png",
 		"type": "kitty",
 		"position": "left",
 		"padding": {
-			"top": 2,
+			"top": 3,
 			"left": 3
 		},
-		"width": 40
+		"width": 55
 	},
 	"display": {
 		"separator": " "
