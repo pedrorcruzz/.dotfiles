@@ -1,20 +1,21 @@
 # ghostty +list-themes rose-pine
+# JetBrainsMono Nerd Font   MesloLGL Nerd Font  ComicShannsMono Nerd Font 
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
 # 1A1A1A 1E1E2F 101010
 # 0.85 26
 background = #101010
-background-opacity = 0.90
+background-opacity = 0.95
 background-blur-radius = 0
 cursor-style = block
 
-font-size = 13
+font-family = ""
+font-family = "ComicShannsMono Nerd Font"
+font-size = 14
 font-feature = -liga
-font-family = JetBrainsMono Nerd Font Mono
 font-thicken = true
-adjust-cell-height = 15%
+adjust-cell-height = 35%
 
-# font-family = MesloLGLDZ Nerd Font Mono
 # font-style = default
 # font-style-bold = default
 # font-style-italic = default
