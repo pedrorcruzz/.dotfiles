@@ -240,6 +240,7 @@ return {
     'catppuccin/nvim',
     config = function()
       local transparent_background = false
+
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },
@@ -255,6 +256,10 @@ return {
           keywords = { 'italic' },
         },
         custom_highlights = function(colors)
+          if colors.name ~= 'mocha' then
+            return {}
+          end
+
           return {
             NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#181826' },
