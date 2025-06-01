@@ -1,4 +1,4 @@
-local lualine_visible = false
+local lualine_visible = true
 
 local function create_theme()
   local custom_min_theme = true
