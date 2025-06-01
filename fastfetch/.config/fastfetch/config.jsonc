@@ -11,9 +11,6 @@
 		"width": 55
 	},
 	"display": {
-		"separator": " "
-	},
-	"display": {
 		"separator": " ➜  ",
 		"color": {
 			"separator": "30",

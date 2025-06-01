@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'vesper'
 
 return {
   {
@@ -314,9 +314,9 @@ return {
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
 
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#101010' }, --#202020 #000000 #0D0D0D
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020 #000000 #0D0D0D #101010
           EndOfBuffer = { fg = '#101010', bg = 'none' },
-          NormalFloat = { bg = transparent_background and 'none' or '#101010' },
+          NormalFloat = { bg = transparent_background and 'none' or '#303030' }, --#101010
           VertSplit = { fg = transparent_background and '#101010' or '#121212' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
@@ -337,17 +337,31 @@ return {
           Comment = { fg = '#585858' },
           Question = { fg = '#FFFFFF' },
 
-          StatusLineNC = { bg = transparent_background and 'NONE' or '#101010' },
-          StatusLine = { bg = transparent_background and 'NONE' or '#101010' },
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1c1c1c' },
 
           --underline cmp preview
           ['@markup.heading.1.markdown'] = { fg = '#323232' },
 
           -- ['@punctuation.bracket'] = { fg = '#323232' },
 
-          TreesitterContext = { fg = '#505050', bg = transparent_background and 'none' or '#121212' },
-          TreesitterContextLineNumber = { fg = '#727272', bg = transparent_background and 'none' or '#121212' },
+          TreesitterContext = { fg = '#505050', bg = transparent_background and 'none' or '#000000' },
+          TreesitterContextLineNumber = { fg = '#727272', bg = transparent_background and 'none' or '#000000' },
           TreesitterContextBottom = { sp = '#323232', underline = true },
+
+          --Buferlines
+          BufferLineFill = { bg = '#1C1C1C' },
+          BufferLineModifiedVisible = { fg = '#A9A9A9', bg = '#161616' },
+          BufferLineModifiedSelected = { fg = '#A9A9A9', bg = '#161616' },
+          BufferLineBufferSelected = { fg = '#A9A9A9', bg = '#1616161' },
+          BufferLineBackground = { fg = '#606060', bg = '#161616' },
+          BufferLineBufferVisible = { fg = '#606060', bg = '#161616' },
+          BufferLineBufferSelected = { fg = '#a9a9a9', bg = '#161616' },
+          BufferLineSeparator = { fg = '#323232', bg = '#161616' },
+          BufferLineIndicatorSelected = { fg = '#1c1c1c', bg = '#161616' },
+          BufferLineCloseButton = { fg = '#606060', bg = '#161616' },
+          BufferLineCloseButtonVisible = { fg = '#606060', bg = '#161616' },
+          BufferLineCloseButtonSelected = { fg = '#606060', bg = '#161616' },
 
           -- Avante
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
@@ -441,14 +455,14 @@ return {
           SnacksNotifierBorderError = { fg = '#F67582' },
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
-          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
-          SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1A1A1A' }, --explorer
+          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' }, --#1a1a1a
+          SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --explorer
           SnacksPickerBorder = { fg = transparent_background and '#101010' or '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
-          SnacksPicker = { bg = transparent_background and 'none' or '#101010' },
-          -- SnacksPicker = { bg = '#1A1A1A' },
-          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
+          SnacksPicker = { bg = transparent_background and 'NONE' or '#303030' }, --#101010
+          -- SnacksPicker = { bg = '#303030' }, --#1a1a1a
+          SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'NONE' or '#767676' }, --#1a1a1a
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
