@@ -1,4 +1,4 @@
-local bufferline_active = false
+local bufferline_active = true
 
 return {
   'akinsho/bufferline.nvim',

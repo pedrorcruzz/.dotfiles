@@ -3,7 +3,6 @@ local function set_theme(theme)
 end
 
 local default_theme = 'vesper'
-
 return {
   {
     'datsfilipe/min-theme.nvim',
