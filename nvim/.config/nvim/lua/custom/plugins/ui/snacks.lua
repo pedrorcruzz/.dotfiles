@@ -232,12 +232,12 @@ return {
             return not (vim.o.columns < 135)
           end,
           indent = 1,
-          limit = 7,
+          limit = 5,
           padding = 2,
         },
         {
           pane = 2,
-          limit = 6,
+          limit = 5,
           icon = '',
           title = 'Projects',
           section = 'projects',
