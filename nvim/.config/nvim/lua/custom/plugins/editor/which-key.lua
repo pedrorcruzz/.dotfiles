@@ -33,7 +33,7 @@ return {
       { '<leader>]', group = 'Next', icon = '󰙡' },
       { '<leader>a', group = 'Avante', icon = ' ' },
       { '<leader>lx', group = 'Virtual Environment', icon = ' ' },
-      { '<leader>lt', group = 'ToggleTerm', icon = ' ' },
+      { '<leader>c;', group = 'ToggleTerm', icon = ' ' },
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },
       { '<leader>m', group = 'Codi', icon = '' },
