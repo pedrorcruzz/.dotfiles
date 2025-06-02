@@ -446,7 +446,7 @@ return {
           -- diagnosticerror = { fg = '#be5046' },
           DiagnosticWarn = { fg = '#ffa868' },
           DiagnosticInfo = { fg = '#64baff' },
-          DiagnosticHint = { fg = '#c18efe' },
+          DiagnosticHint = { fg = '#60DCC1' },
 
           -- snacks notifier
           SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
