@@ -454,7 +454,7 @@ return {
           SnacksNotifierBorderError = { fg = '#F67582' },
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
-          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' }, --#1a1a1a
+          SnacksPickerTitle = { fg = '#abb2bf', bg = '#000000' }, --#1a1a1a
           SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --explorer
           SnacksPickerBorder = { fg = transparent_background and '#101010' or '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
