@@ -488,7 +488,7 @@ return {
           NoiceCmdlinePopupTitleCmdline = { fg = '#ffffff' },
           NoiceCmdlinePopupTitle = { fg = '#ffffff' },
           NoiceCmdlineTitle = { fg = '#ffffff' },
-          NoiceCmdlineIcon = { fg = '#abb2bf' }, --#ffffff
+          NoiceCmdlineIcon = { fg = '#62747F' }, --#ffffff
           NoiceCmdlineIconSearch = { fg = '#FFCDA2' }, --#ffffff
 
           -- whichkey
