@@ -432,11 +432,11 @@ return {
 
           --todo
           TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },
-          TodoBgNOTE = { bg = '#c18efe', fg = '#111111', bold = true },
+          TodoBgNOTE = { bg = '#60DCC1', fg = '#111111', bold = true },
           TodoBgWARN = { bg = '#ffa868', fg = '#111111', bold = true },
           TodoBgFIX = { bg = '#F67582', fg = '#111111', bold = true },
           TodoFgTODO = { fg = '#64baff' },
-          TodoFgNOTE = { fg = '#c18efe' },
+          TodoFgNOTE = { fg = '#60DCC1' },
           TodoFgWARN = { fg = '#ffa868' },
           TodoFgFIX = { fg = '#F67582' },
           -- todobghack = { bg = '#c18efe', fg = '#111111', bold = true },
