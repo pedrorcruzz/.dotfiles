@@ -92,20 +92,24 @@ if SNACKS_START_WITH_EXPLORER then
 end
 
 -- Relative Number
--- vim.api.nvim_create_augroup('RelativeNumberToggle', { clear = true })
---
--- vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufEnter', 'FocusGained' }, {
---   group = 'RelativeNumberToggle',
---   callback = function()
---     if vim.o.number then
---       vim.wo.relativenumber = true
---     end
---   end,
--- })
---
--- vim.api.nvim_create_autocmd({ 'InsertEnter', 'BufLeave', 'FocusLost' }, {
---   group = 'RelativeNumberToggle',
---   callback = function()
---     vim.wo.relativenumber = false
---   end,
--- })
+local enable_relative_number_toggle = true
+
+if enable_relative_number_toggle then
+  vim.api.nvim_create_augroup('RelativeNumberToggle', { clear = true })
+
+  vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufEnter', 'FocusGained' }, {
+    group = 'RelativeNumberToggle',
+    callback = function()
+      if vim.o.number then
+        vim.wo.relativenumber = true
+      end
+    end,
+  })
+
+  vim.api.nvim_create_autocmd({ 'InsertEnter', 'BufLeave', 'FocusLost' }, {
+    group = 'RelativeNumberToggle',
+    callback = function()
+      vim.wo.relativenumber = false
+    end,
+  })
+end
