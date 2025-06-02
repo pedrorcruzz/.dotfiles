@@ -28,4 +28,10 @@ function gestor-renda
 end
 
 
+function ver-lucro
+    set prev_dir (pwd)
+    cd ~/.dotfiles/scripts
+    ./monthly-investments-cli.sh
+    cd $prev_dir
+end
 
