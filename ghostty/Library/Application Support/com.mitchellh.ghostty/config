@@ -14,7 +14,7 @@ font-family = "ComicShannsMono Nerd Font"
 font-size = 13
 font-feature = -liga
 font-thicken = true
-adjust-cell-height = 25%
+adjust-cell-height = 16%
 
 # font-style = default
 # font-style-bold = default

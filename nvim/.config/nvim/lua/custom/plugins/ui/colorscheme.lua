@@ -345,7 +345,7 @@ return {
           -- ['@punctuation.bracket'] = { fg = '#323232' },
 
           TreesitterContext = { fg = '#505050', bg = transparent_background and 'none' or '#111111' },
-          TreesitterContextLineNumber = { fg = '#727272', bg = transparent_background and 'none' or '#000000' },
+          TreesitterContextLineNumber = { fg = '#727272', bg = transparent_background and 'none' or '#111111' },
           TreesitterContextBottom = { sp = '#323232', underline = true },
 
           --Buferlines
