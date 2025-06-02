@@ -461,7 +461,7 @@ return {
 
           SnacksPicker = { bg = transparent_background and 'NONE' or '#303030' }, --#101010
           -- SnacksPicker = { bg = '#303030' }, --#1a1a1a
-          SnacksPickerBorder = { fg = '#323232', bg = transparent_background and 'NONE' or '#767676' }, --#1a1a1a
+          SnacksPickerBorder = { fg = '#303030', bg = transparent_background and 'NONE' or '#767676' }, --#1a1a1a
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
