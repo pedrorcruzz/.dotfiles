@@ -314,7 +314,7 @@ return {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
 
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020 #000000 #0D0D0D #101010
-          EndOfBuffer = { fg = '#101010', bg = 'none' },
+          EndOfBuffer = { fg = '#000000', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#000000' }, --#101010
           VertSplit = { fg = transparent_background and '#101010' or '#121212' },
 
