@@ -10,11 +10,11 @@ background-blur-radius = 0
 cursor-style = block
 
 font-family = ""
-font-family = "ComicaShannsMono Nerd Font"
-font-size = 13
+font-family = "ComicShannsMono Nerd Font"
+font-size = 14
 font-feature = -liga
 font-thicken = true
-adjust-cell-height = 42%
+adjust-cell-height = 35%
 
 # font-style = default
 # font-style-bold = default

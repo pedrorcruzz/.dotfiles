@@ -71,7 +71,7 @@ return {
       desc = 'Bufferline: Toggle',
     },
     { '<leader>bb', '<cmd>BufferLinePick<cr>', desc = 'Pick Buffer' },
-    { '<leader>bp', '<cmd>BufferLinePickClose<cr>', desc = 'Pick Close Buffer' },
+    { '<leader>bf', '<cmd>BufferLinePickClose<cr>', desc = 'Pick Close Buffer' },
     { '<leader>bh', '<cmd>BufferLineCloseLeft<cr>', desc = 'Close Left' },
     { '<leader>bl', '<cmd>BufferLineCloseRight<cr>', desc = 'Close Right' },
     { '<leader>bC', '<cmd>BufferLineCloseOthers<cr>', desc = 'Close Others' },
