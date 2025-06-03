@@ -68,7 +68,7 @@ return {
           --Buferlines
           -- BufferLinePick = { fg = '#CA8BFF' },
           -- BufferLinePickVisible = { fg = '#CA8BFF' },
-          BufferLinePickSelected = { fg = '#64BAFF' },
+          -- BufferLinePickSelected = { fg = '#A9A9A9' },
           BufferLineModified = { fg = '#A9A9A9' },
           -- BufferLineFill = { bg = '#da70d6' },
           BufferLineModifiedVisible = { fg = '#A9A9A9' },
@@ -352,7 +352,7 @@ return {
           BufferLineFill = { bg = '#1C1C1C' },
           BufferLinePick = { fg = '#00E0C0' },
           BufferLinePickVisible = { fg = '#00E0C0' },
-          BufferLinePickSelected = { fg = '#FFCB9B' },
+          BufferLinePickSelected = { fg = '#00E0C0' },
           BufferLineModifiedVisible = { fg = '#A9A9A9', bg = '#161616' },
           BufferLineModifiedSelected = { fg = '#A9A9A9', bg = '#161616' },
           BufferLineBufferSelected = { fg = '#A9A9A9', bg = '#1616161' },
