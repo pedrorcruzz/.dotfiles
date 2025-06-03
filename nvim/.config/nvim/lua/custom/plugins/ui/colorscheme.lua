@@ -68,7 +68,7 @@ return {
           --Buferlines
           -- BufferLinePick = { fg = '#CA8BFF' },
           -- BufferLinePickVisible = { fg = '#CA8BFF' },
-          -- BufferLinePickSelected = { fg = '#CA8BFF' },
+          BufferLinePickSelected = { fg = '#64BAFF' },
           BufferLineModified = { fg = '#A9A9A9' },
           -- BufferLineFill = { bg = '#da70d6' },
           BufferLineModifiedVisible = { fg = '#A9A9A9' },
