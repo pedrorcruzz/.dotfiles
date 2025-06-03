@@ -1,4 +1,4 @@
-local bufferline_active = true
+local bufferline_active = false
 
 return {
   'akinsho/bufferline.nvim',
@@ -71,7 +71,15 @@ return {
       desc = 'Bufferline: Toggle',
     },
     { '<leader>bb', '<cmd>BufferLinePick<cr>', desc = 'Pick Buffer' },
-    { '<leader>bf', '<cmd>BufferLinePickClose<cr>', desc = 'Pick Close Buffer' },
+    {
+      '<leader>bf',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Find Buffers',
+    },
+
+    { '<leader>bp', '<cmd>BufferLinePickClose<cr>', desc = 'Pick Close Buffer' },
     { '<leader>bh', '<cmd>BufferLineCloseLeft<cr>', desc = 'Close Left' },
     { '<leader>bl', '<cmd>BufferLineCloseRight<cr>', desc = 'Close Right' },
     { '<leader>bC', '<cmd>BufferLineCloseOthers<cr>', desc = 'Close Others' },

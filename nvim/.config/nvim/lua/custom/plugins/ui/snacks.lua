@@ -477,6 +477,13 @@ return {
       desc = 'Find Files',
     },
     {
+      '<leader>fb',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Find Buffers',
+    },
+    {
       '<leader>fg',
       function()
         Snacks.picker.git_files()
