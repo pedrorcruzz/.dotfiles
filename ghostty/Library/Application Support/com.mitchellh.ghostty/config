@@ -11,10 +11,10 @@ cursor-style = block
 
 font-family = ""
 font-family = "ComicShannsMono Nerd Font"
-font-size = 14
+font-size = 15
 font-feature = -liga
 font-thicken = true
-adjust-cell-height = 35%
+adjust-cell-height = 25%
 
 # font-style = default
 # font-style-bold = default
