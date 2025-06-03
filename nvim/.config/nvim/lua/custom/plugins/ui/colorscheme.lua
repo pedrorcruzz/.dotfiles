@@ -350,6 +350,9 @@ return {
 
           --Buferlines
           BufferLineFill = { bg = '#1C1C1C' },
+          BufferLinePick = { fg = '#00E0C0' },
+          BufferLinePickVisible = { fg = '#00E0C0' },
+          BufferLinePickSelected = { fg = '#FFCB9B' },
           BufferLineModifiedVisible = { fg = '#A9A9A9', bg = '#161616' },
           BufferLineModifiedSelected = { fg = '#A9A9A9', bg = '#161616' },
           BufferLineBufferSelected = { fg = '#A9A9A9', bg = '#1616161' },
