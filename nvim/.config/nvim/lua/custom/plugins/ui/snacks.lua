@@ -95,9 +95,9 @@ return {
 
           --gif
           cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 12, --14
-          width = 30, --32
-          indent = 21, --22
+          height = 10, --14
+          width = 27, --32
+          indent = 22, --22
 
           enabled = function()
             return not (vim.o.columns > 135)
