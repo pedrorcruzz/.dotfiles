@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'vesper'
+local default_theme = 'min-theme'
 return {
   {
     'datsfilipe/min-theme.nvim',
