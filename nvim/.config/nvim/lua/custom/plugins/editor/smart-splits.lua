@@ -37,33 +37,33 @@ return {
       end,
       desc = 'Move to previous split',
     },
-    {
-      '<left>',
-      function()
-        require('smart-splits').resize_left()
-      end,
-      desc = 'Resize left',
-    },
-    {
-      '<down>',
-      function()
-        require('smart-splits').resize_down()
-      end,
-      desc = 'Resize down',
-    },
-    {
-      '<up>',
-      function()
-        require('smart-splits').resize_up()
-      end,
-      desc = 'Resize up',
-    },
-    {
-      '<right>',
-      function()
-        require('smart-splits').resize_right()
-      end,
-      desc = 'Resize right',
-    },
+    -- {
+    --   '<left>',
+    --   function()
+    --     require('smart-splits').resize_left()
+    --   end,
+    --   desc = 'Resize left',
+    -- },
+    -- {
+    --   '<down>',
+    --   function()
+    --     require('smart-splits').resize_down()
+    --   end,
+    --   desc = 'Resize down',
+    -- },
+    -- {
+    --   '<up>',
+    --   function()
+    --     require('smart-splits').resize_up()
+    --   end,
+    --   desc = 'Resize up',
+    -- },
+    -- {
+    --   '<right>',
+    --   function()
+    --     require('smart-splits').resize_right()
+    --   end,
+    --   desc = 'Resize right',
+    -- },
   },
 }
