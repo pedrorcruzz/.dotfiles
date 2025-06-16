@@ -14,7 +14,7 @@ font-family = "JetBrainsMono Nerd Font"
 font-size = 13
 font-feature = -liga
 font-thicken = true
-adjust-cell-height = 29%
+adjust-cell-height = 22%
 
 # font-style = default
 # font-style-bold = default

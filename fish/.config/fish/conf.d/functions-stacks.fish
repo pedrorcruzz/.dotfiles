@@ -14,3 +14,131 @@ function create-jsconfig-json
 }' > jsconfig.json
     end
 end
+
+function laravel-composer
+    echo "Enter project name (e.g., my-laravel-app):"
+    read projectName
+
+    composer create-project --prefer-dist laravel/laravel $projectName
+
+end
+
+function java-create-maven
+    echo "Enter project name (e.g., my-app):"
+    read artifactId
+
+    echo "Enter groupId (e.g., com.example):"
+    read groupId
+
+    echo "Enter Java version (e.g., 21):"
+    read javaVersion
+
+    mvn archetype:generate \
+        -DgroupId=$groupId \
+        -DartifactId=$artifactId \
+        -DarchetypeArtifactId=maven-archetype-quickstart \
+        -DinteractiveMode=false
+
+    set pom "$artifactId/pom.xml"
+    if test -f $pom
+        sed -i '' "/<\/project>/i\\
+  <build>\\
+    <plugins>\\
+      <plugin>\\
+        <groupId>org.apache.maven.plugins</groupId>\\
+        <artifactId>maven-compiler-plugin</artifactId>\\
+        <version>3.8.1</version>\\
+        <configuration>\\
+          <source>$javaVersion</source>\\
+          <target>$javaVersion</target>\\
+        </configuration>\\
+      </plugin>\\
+    </plugins>\\
+  </build>" $pom
+    end
+
+   # cd $artifactId
+end
+
+
+function spring-create-maven
+    echo "Enter project name (e.g., my-app):"
+    read artifactId
+
+    echo "Enter groupId (e.g., com.example):"
+    read groupId
+
+    echo "Enter Java version (e.g., 17):"
+    read javaVersion
+
+    echo "Optional: Add more dependencies (comma-separated, e.g., 'security,data-jpa')"
+    echo "Default: web,devtools,lombok"
+    read extraDeps
+
+    set defaultDeps "web,devtools,lombok"
+
+    if test -n "$extraDeps"
+        set deps "$defaultDeps,$extraDeps"
+    else
+        set deps "$defaultDeps"
+    end
+
+    spring init \
+        --build=maven \
+        --dependencies=$deps \
+        --groupId=$groupId \
+        --artifactId=$artifactId \
+        --java-version=$javaVersion \
+        $artifactId
+
+    # cd $artifactId
+
+end
+
+
+function spring-create-gradle
+    echo "Enter project name (e.g., my-app):"
+    read artifactId
+
+    echo "Enter groupId (e.g., com.example):"
+    read groupId
+
+    echo "Enter Java version (e.g., 17):"
+    read javaVersion
+
+    echo "Optional: Add more dependencies (comma-separated, e.g., 'security,data-jpa')"
+    echo "Default: web,devtools,lombok"
+    read extraDeps
+
+    set defaultDeps "web,devtools,lombok"
+
+    if test -n "$extraDeps"
+        set deps "$defaultDeps,$extraDeps"
+    else
+        set deps "$defaultDeps"
+    end
+
+    spring init \
+        --build=gradle \
+        --dependencies=$deps \
+        --groupId=$groupId \
+        --artifactId=$artifactId \
+        --java-version=$javaVersion \
+        $artifactId
+
+     # cd $artifactId
+end
+
+function java-create-gradle
+    echo "Enter project name (e.g., my-app):"
+    read projectName
+
+    echo "Enter project type (e.g., java-application, java-library):"
+    read projectType
+
+    mkdir $projectName
+    # cd $projectName
+
+    gradle init --type $projectType
+
+end
