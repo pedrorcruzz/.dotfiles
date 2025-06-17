@@ -15,6 +15,41 @@ function create-jsconfig-json
     end
 end
 
+function go-create-gin
+    echo "Enter project directory name (e.g., gin-app):"
+    read projectDir
+
+    echo "Enter Go module name (e.g., github.com/username/gin-app):"
+    read moduleName
+
+    mkdir -p $projectDir
+    cd $projectDir
+
+    go mod init $moduleName
+    go get -u github.com/gin-gonic/gin
+
+    string join "\n" \
+    "package main" \
+    "" \
+    "import (" \
+    "  \"net/http\"" \
+    "" \
+    "  \"github.com/gin-gonic/gin\"" \
+    ")" \
+    "" \
+    "func main() {" \
+    "  r := gin.Default()" \
+    "  r.GET(\"/ping\", func(c *gin.Context) {" \
+    "    c.JSON(http.StatusOK, gin.H{" \
+    "      \"message\": \"pong\"," \
+    "    })" \
+    "  })" \
+    "  r.Run() // listen and serve on 0.0.0.0:8080 (for windows \"localhost:8080\")" \
+    "}" \
+    > main.go
+
+end
+
 function laravel-composer
     echo "Enter project name (e.g., my-laravel-app):"
     read projectName
