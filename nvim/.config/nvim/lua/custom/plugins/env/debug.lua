@@ -20,6 +20,14 @@ return {
 
       'nvim-neotest/nvim-nio',
 
+      -- Virtual text DAP
+      {
+        'theHamsta/nvim-dap-virtual-text',
+        config = function()
+          require('nvim-dap-virtual-text').setup()
+        end,
+      },
+
       {
         'williamboman/mason.nvim',
         opts = function(_, opts)
@@ -107,7 +115,8 @@ return {
             name = 'Debug (test file)',
             request = 'launch',
             mode = 'test',
-            program = '${file}',
+            -- program = '${file}',
+            program = '${fileDirname}',
           },
           {
             type = 'go',
@@ -239,11 +248,11 @@ return {
         mode = 'n',
       },
       {
-        '<F7>',
+        '<leader>dt',
         function()
           require('dapui').toggle()
         end,
-        desc = 'Debug: See last session result.',
+        desc = 'Debug: Toggle Ui',
         mode = 'n',
       },
     },

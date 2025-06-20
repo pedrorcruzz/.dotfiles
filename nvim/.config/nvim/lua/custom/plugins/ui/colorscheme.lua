@@ -2,7 +2,7 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'catppuccin-mocha'
+local default_theme = 'min-theme'
 return {
   {
     'datsfilipe/min-theme.nvim',
@@ -274,6 +274,9 @@ return {
             TreesitterContext = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextBottom = { sp = '#45475c', underline = true },
+
+            debugBreakpoint = { fg = '#B2BEFF' },
+            DapUiBreakpointsDisabledLine = { fg = '#B2BEFF' },
 
             ['@punctuation.special'] = { fg = '#45475c' },
             ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },

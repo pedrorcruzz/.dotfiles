@@ -24,5 +24,6 @@ abbr -a spring-classes-gradle "./gradlew classes"
 #Alias Go
 abbr -a go-get-gin "go get -u github.com/gin-gonic/gin"
 abbr -a go-get-mongo "go get -u go.mongodb.org/mongo-driver/mongo"
+abbr -a go-install-debug "go install github.com/go-delve/delve/cmd/dlv@latest"
 abbr -a go-install-air "go install github.com/air-verse/air@latest"
 abbr -a go-ls-global "ls /Users/phrosa/.asdf/installs/golang/1.24.3/bin | grep air"

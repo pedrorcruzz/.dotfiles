@@ -6,8 +6,8 @@ return {
     cmd = { 'ToggleTerm' },
     keys = {
       { '<c-\\>', desc = 'Toggle terminal' },
-      { '<leader>c;d', '<cmd>ToggleTerm 3 direction=horizontal<CR>', desc = 'ToggleTerm: Horizontal Split' },
-      { '<leader>c;a', '<cmd>ToggleTerm 4 direction=vertical<CR>', desc = 'ToggleTerm: Vertical Split' },
+      { '<leader>cii', '<cmd>ToggleTerm 3 direction=horizontal<CR>', desc = 'ToggleTerm: Horizontal Split' },
+      { '<leader>cie', '<cmd>ToggleTerm 4 direction=vertical<CR>', desc = 'ToggleTerm: Vertical Split' },
       { '<S-x>', '<cmd>ToggleTerm 1 direction=horizontal size=20<CR>', desc = 'ToggleTerm: Horizontal' },
       -- { '<C-o>', '<cmd>ToggleTerm 1 direction=vertical size=20<CR>', desc = 'ToggleTerm: Vertical' },
       { '<S-z>', '<cmd>ToggleTerm 1 direction=float<CR>', desc = 'ToggleTerm: Float' },

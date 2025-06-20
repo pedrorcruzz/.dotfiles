@@ -15,10 +15,25 @@ return {
   keys = {
     { '<leader>pgr', '<cmd>GoRun<cr>', desc = 'Go Run' },
     { '<leader>pgb', '<cmd>GoBuild<cr>', desc = 'Go Build' },
+    { '<leader>pgD', '<cmd>GoDocBrowser<cr>', desc = 'Go Doc Browser' },
+    { '<leader>pgi', '<cmd>GoImports<cr>', desc = 'Go Imports' },
 
     --DEBUG
+    { '<leader>pgdd', '<cmd>GoDebug<cr>', desc = 'Go Debug' },
     { '<leader>pgdt', '<cmd>GoBreakToggle<cr>', desc = 'Go Break Toggle' },
-    { '<leader>pgds', '<cmd>GoBreakSave<cr>', desc = 'Go Break Save' },
+    { '<leader>pgdS', '<cmd>GoBreakSave<cr>', desc = 'Go Break Save' },
     { '<leader>pgdl', '<cmd>GoBreakLoad<cr>', desc = 'Go Break Load' },
+    { '<leader>pgdc', '<cmd>GoDbgContinue<cr>', desc = 'Go Continue' },
+    { '<leader>pgdk', '<cmd>GoDbgKeys<cr>', desc = 'Go Keys' },
+    { '<leader>pgds', '<cmd>GoDbgStop<cr>', desc = 'Go Stop' },
+
+    --Test
+    { '<leader>pgta', '<cmd>GoAddTest<cr>', desc = 'Go Add Test' },
+    { '<leader>pgtA', '<cmd>GoAddAllTest<cr>', desc = 'Go Add All Test' },
+    { '<leader>pgte', '<cmd>GoAddExpTest<cr>', desc = 'Go Add Exp Test' },
+    { '<leader>pgtf', '<cmd>GoTestFunc<cr>', desc = 'Go Test Func' },
+    { '<leader>pgtF', '<cmd>GoTestFile<cr>', desc = 'Go Test File' },
+    { '<leader>pgtt', '<cmd>GoTest<cr>', desc = 'Go Test' },
+    { '<leader>pgts', '<cmd>GoTestSum<cr>', desc = 'Go Test Sum' },
   },
 }
