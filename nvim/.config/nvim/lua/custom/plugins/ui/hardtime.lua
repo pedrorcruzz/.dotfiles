@@ -6,6 +6,12 @@ return {
   dependencies = { 'MunifTanjim/nui.nvim' },
   opts = {
     enabled = hardtime_enabled,
+    disabled_keys = {
+      ['<Up>'] = {},
+      ['<Down>'] = {},
+      ['<Left>'] = {},
+      ['<Right>'] = {},
+    },
   },
   keys = {
     {
