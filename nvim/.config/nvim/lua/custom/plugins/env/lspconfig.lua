@@ -210,7 +210,6 @@ return { -- LSP Configuration & Plugins
       },
     }
 
-    -- Diagnóstico visual
     vim.diagnostic.config {
       signs = {
         text = {

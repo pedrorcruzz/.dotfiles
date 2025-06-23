@@ -92,7 +92,7 @@ if SNACKS_START_WITH_EXPLORER then
 end
 
 -- Relative Number
-local enable_relative_number_toggle = true
+local enable_relative_number_toggle = false
 
 if enable_relative_number_toggle then
   vim.api.nvim_create_augroup('RelativeNumberToggle', { clear = true })
@@ -110,6 +110,25 @@ if enable_relative_number_toggle then
     group = 'RelativeNumberToggle',
     callback = function()
       vim.wo.relativenumber = false
+    end,
+  })
+end
+
+-- Highlight LSP references
+local enable_custom_reference_highlights = true
+
+if enable_custom_reference_highlights then
+  local my_highlights = vim.api.nvim_create_augroup('MyHighlights', { clear = true })
+
+  vim.api.nvim_create_autocmd('ColorScheme', {
+    group = my_highlights,
+    pattern = '*',
+    callback = function()
+      local highlight_style = { bold = true, bg = 'none', fg = '#FFFFFF' }
+
+      vim.api.nvim_set_hl(0, 'LspReferenceRead', highlight_style)
+      vim.api.nvim_set_hl(0, 'LspReferenceWrite', highlight_style)
+      vim.api.nvim_set_hl(0, 'LspReferenceText', highlight_style)
     end,
   })
 end
