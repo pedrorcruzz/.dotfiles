@@ -2,7 +2,8 @@ local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
 end
 
-local default_theme = 'min-theme'
+local default_theme = 'gruvbox'
+
 return {
   {
     'datsfilipe/min-theme.nvim',
@@ -35,8 +36,8 @@ return {
           FloatBorder = { fg = '#4c4c4c' }, --#4c4c4c
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
-          Search = { bg = '#606060', fg = '#abb2bf' },
-          IncSearch = { bg = '#606060', fg = '#F67582' },
+          Search = { bg = transparent_background and 'none' or '#606060', fg = '#abb2bf' },
+          IncSearch = { bg = transparent_background and 'none' or '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060', bg = 'none' }, --#abb2bf
           -- Keyword = { fg = '#606060' }, --#abb2bf
           Folded = { fg = '#B990F6', bg = '#1a1a1a' },
@@ -293,7 +294,39 @@ return {
   },
   {
     'ellisonleao/gruvbox.nvim',
-    config = function() end,
+    config = function()
+      local transparent_background = true
+      require('gruvbox').setup {
+        transparent_mode = transparent_background,
+        overrides = {
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+          TreesitterContext = { bg = transparent_background and 'NONE' or '#1C1C1C', fg = '#7C6F64' },
+          TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#1C1C1C', fg = '#7C6F64' },
+          TreesitterContextBottom = { sp = '#45475c', underline = true },
+          ['@punctuation.special'] = { fg = '#59514B' },
+          -- Search = { bg = '#FABD2E', fg = '#000000' },
+          -- IncSearch = { bg = '#FABD2E', fg = '#FE8018' },
+          ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.jsx'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.javascript'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.typescript'] = { fg = '#FFC0EA' },
+          SnacksPicker = { bg = transparent_background and 'NONE' or '#1C1C1C' },
+          SnacksPickerBorder = { fg = '#665C54', bg = transparent_background and 'NONE' or '#1C1C1C' },
+          EndOfBuffer = { fg = '#282828', bg = 'none' },
+          NormalFloat = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+          NoiceConfirmBorder = { fg = '#3C3836' },
+          NoiceCmdlinePrompt = { fg = '#3c3836' },
+          NoiceCmdlinePopupBorder = { fg = '#3c3836' },
+          NoiceCmdlinePopupTitleCmdline = { fg = '#EBDBB2' },
+          NoiceCmdlinePopupTitle = { fg = '#EBDBB2' },
+          NoiceCmdlineTitle = { fg = '#EBDBB2' },
+          NoiceCmdlineIcon = { fg = '#FB4A34' }, --#ffffff
+          NoiceCmdlineIconSearch = { fg = '#c18efe' }, --#ffffff
+        },
+      }
+    end,
   },
   {
     'luisiacc/gruvbox-baby',

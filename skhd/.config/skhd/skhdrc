@@ -20,7 +20,6 @@ alt - 6 : yabai -m space --focus 6
 alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
-
 ### Change Spaces Prev-Next ####
 alt - p : yabai -m space --focus prev || yabai -m space --focus last
 alt - n : yabai -m space --focus next || yabai -m space --focus first
@@ -147,7 +146,8 @@ ctrl + alt - r : yabai --restart-service
 
 ### Apps Shortcut ####
 lshift + rshift - s : open -a Spotify
-lshift + rshift - t : open -a Ghostty
+# lshift + rshift - t : open -a Ghostty
+lshift + rshift - t : open -a Warp
 lshift + rshift - a: open -a Dia
 lshift + rshift - o: open -a Obsidian
 lshift + rshift - f: open -a Finder

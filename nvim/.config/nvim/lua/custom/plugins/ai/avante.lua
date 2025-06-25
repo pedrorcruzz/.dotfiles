@@ -9,7 +9,7 @@ return {
       auto_suggestions = false,
     },
     windows = {
-      position = 'left',
+      position = 'right',
       width = 30,
     },
     mappings = {
