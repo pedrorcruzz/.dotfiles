@@ -304,6 +304,7 @@ return {
       enabled = true,
       hidden = false,
       ignored = false,
+      layout = { preset = 'dropdown' }, --default, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left
       sources = {
         explorer = {
           finder = 'explorer',
