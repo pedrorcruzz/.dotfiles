@@ -7,6 +7,7 @@ return {
       preset = 'modern', --classic, modern, helix
       win = {
         border = 'single', -- none, single, double, shadow
+        -- width = 165,
       },
     }
 
