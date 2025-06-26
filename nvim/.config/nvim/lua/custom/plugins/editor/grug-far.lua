@@ -3,7 +3,29 @@ return {
   lazy = true,
   cmd = { 'GrugFar' },
   keys = {
-    { '<leader>le', '<cmd>GrugFar<cr>', desc = 'GrugFar' },
+    { '<leader>lee', '<cmd>GrugFar<cr>', desc = 'GrugFar' },
+    {
+      '<leader>lei',
+      function()
+        require('grug-far').open { prefills = { paths = vim.fn.expand '%' } }
+      end,
+      desc = 'GrugFar Current File',
+    },
+    {
+      '<leader>lev',
+      mode = 'v',
+      function()
+        require('grug-far').with_visual_selection { prefills = { paths = vim.fn.expand '%' } }
+      end,
+      desc = 'GrugFar Visual Selection',
+    },
+    {
+      '<leader>lew',
+      function()
+        require('grug-far').open { prefills = { search = vim.fn.expand '<cword>' } }
+      end,
+      desc = 'GrugFar Current Word',
+    },
   },
   config = function()
     require('grug-far').setup {

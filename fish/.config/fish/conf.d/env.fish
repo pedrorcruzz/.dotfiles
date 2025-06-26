@@ -25,7 +25,7 @@ set -gx YARN_HOME "$HOME/.yarn"
 fish_add_path "$YARN_HOME/bin"
 
 # Python 
-set -gx PATH "$HOME/.asdf/installs/python/3.13.2/bin" $PATH
+set -gx PATH "$HOME/.asdf/installs/python/3.13.3/bin" $PATH
 
 # Go
 set -x PATH /Users/phrosa/.asdf/installs/golang/1.24.3/bin $PATH

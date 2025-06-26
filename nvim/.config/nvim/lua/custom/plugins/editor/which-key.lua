@@ -40,6 +40,7 @@ return {
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },
 
       { '<leader>l', group = 'Tools', icon = ' ' },
+      { '<leader>le', group = 'GrugFar', icon = '󰛔' },
       { '<leader>p', group = 'Languages Tools', icon = ' ' },
       { '<leader>pp', group = 'PHP Tools', icon = ' ' },
       { '<leader>pg', group = 'GO Tools', icon = ' ' },
