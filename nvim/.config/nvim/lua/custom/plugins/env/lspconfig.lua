@@ -225,6 +225,10 @@ return { -- LSP Configuration & Plugins
         --   [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
         -- },
       },
+      underline = true,
+      update_in_insert = false,
+      severity_sort = false,
+
       virtual_text = {
         true,
         current_line = false,
