@@ -316,8 +316,9 @@ return {
           SnacksPickerBorder = { fg = '#665C54', bg = transparent_background and 'NONE' or '#1C1C1C' },
           SnacksInputIcon = { fg = '#fb4a34' },
           SnacksInputTitle = { fg = '#EBDBB2' },
+          Visual = { bg = transparent_background and '#4c4c4c' or '#4c4c4c' }, --606060
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1F1F1F' }, --#202020 #000000 #1F1F1F
           SnacksInputBorder = { fg = '#3c3836' },
-
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'NONE' or '#282828' },
           GruvboxGray = { bg = transparent_background and 'NONE' or '#504944' },
