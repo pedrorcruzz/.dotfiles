@@ -301,7 +301,7 @@ return {
         col = 0.35,
         border = 'rounded', --rounded, shadow, single, double, solid, none
         width = 65,
-        height = 1,
+        height = 2,
       },
     },
     terminal = {
