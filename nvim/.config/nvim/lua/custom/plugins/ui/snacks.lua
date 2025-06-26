@@ -317,8 +317,8 @@ return {
       layout = { preset = 'dropdown' }, --default, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left
       sources = {
         files = {
-          hidden = true,
-          ignored = true,
+          hidden = false,
+          ignored = false,
         },
         explorer = {
           finder = 'explorer',
@@ -338,15 +338,15 @@ return {
         -- input window
         input = {
           keys = {
-            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
-            ['<c-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
+            ['<s-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<s-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
           },
         },
 
         list = {
           keys = {
-            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
-            ['<c-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
+            ['<s-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<s-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
           },
         },
       },
