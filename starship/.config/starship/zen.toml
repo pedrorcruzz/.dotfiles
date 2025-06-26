@@ -76,7 +76,7 @@ style = "none"
 # format = '[ $user ]($style)'
 
 [directory]
-style = "bold #ffffff"   #72879D #c18efe
+style = "bold #e0e0e0"   #72879D #c18efe
 format = "[ $path ]($style)"
 truncation_length = 4
 truncation_symbol = '󱄛 / ' #../ 
