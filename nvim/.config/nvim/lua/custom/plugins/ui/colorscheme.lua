@@ -320,7 +320,7 @@ return {
           SnacksInputBorder = { fg = '#3c3836' },
 
           EndOfBuffer = { fg = '#282828', bg = 'none' },
-          NormalFloat = { bg = transparent_background and 'NONE' or '#504944' },
+          NormalFloat = { bg = transparent_background and 'NONE' or '#282828' },
           GruvboxGray = { bg = transparent_background and 'NONE' or '#504944' },
           NoiceConfirmBorder = { fg = '#3C3836' },
           NoiceCmdlinePrompt = { fg = '#3c3836' },
