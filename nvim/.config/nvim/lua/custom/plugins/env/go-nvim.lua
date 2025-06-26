@@ -17,6 +17,7 @@ return {
     { '<leader>pgb', '<cmd>GoBuild<cr>', desc = 'Go Build' },
     { '<leader>pgD', '<cmd>GoDocBrowser<cr>', desc = 'Go Doc Browser' },
     { '<leader>pgi', '<cmd>GoImports<cr>', desc = 'Go Imports' },
+    { '<leader>pgm', '<cmd>GoMockGen<cr>', desc = 'Go Mock Generator' },
 
     --DEBUG
     { '<leader>pgdd', '<cmd>GoDebug<cr>', desc = 'Go Debug' },
