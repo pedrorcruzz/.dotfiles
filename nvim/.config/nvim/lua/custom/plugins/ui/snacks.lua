@@ -68,7 +68,7 @@ return {
 
           -- gif
           cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 12, --16
+          height = 13, --16
           width = 30, --35
           indent = 19,
 
@@ -95,9 +95,9 @@ return {
 
           --gif
           cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 10, --14
+          height = 12, --14
           width = 27, --32
-          indent = 22, --22
+          indent = 24, --22
 
           enabled = function()
             return not (vim.o.columns > 135)
@@ -291,11 +291,21 @@ return {
         return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
       end,
     },
+    profiler = {
+      enabled = true,
+    },
     input = {
-      enabled = false,
+      enabled = true,
+      win = {
+        row = 0.35,
+        col = 0.35,
+        border = 'rounded', --rounded, shadow, single, double, solid, none
+        width = 65,
+        height = 2,
+      },
     },
     terminal = {
-      enabled = true,
+      enabled = false,
     },
     edgy = {
       enabled = true,
@@ -375,7 +385,7 @@ return {
       padding = true,
       sort = { 'level', 'added' },
       level = vim.log.levels.TRACE,
-      style = 'compact',
+      style = 'fancy', --compact, fancy, minimal
       top_down = true,
       date_format = '%R',
       more_format = ' ↓ %d lines ',
@@ -863,7 +873,9 @@ return {
         -- Snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map '<leader>ub'
         -- Snacks.toggle.inlay_hints():map '<leader>uh'
         Snacks.toggle.indent():map '<leader>li'
-        -- Snacks.toggle.dim():map '<leader>uD'
+        -- Snacks.toggle.profiler():map '<leader>lk'
+        -- Snacks.toggle.profiler_highlights():map '<leader>lj'
+        Snacks.toggle.dim():map '<leader>lk'
       end,
     })
   end,

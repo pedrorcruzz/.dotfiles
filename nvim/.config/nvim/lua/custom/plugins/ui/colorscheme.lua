@@ -314,6 +314,10 @@ return {
           ['@punctuation.special.typescript'] = { fg = '#FFC0EA' },
           SnacksPicker = { bg = transparent_background and 'NONE' or '#1C1C1C' },
           SnacksPickerBorder = { fg = '#665C54', bg = transparent_background and 'NONE' or '#1C1C1C' },
+          SnacksInputIcon = { fg = '#fb4a34' },
+          SnacksInputTitle = { fg = '#EBDBB2' },
+          SnacksInputBorder = { fg = '#3c3836' },
+
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'NONE' or '#504944' },
           GruvboxGray = { bg = transparent_background and 'NONE' or '#504944' },
@@ -324,7 +328,7 @@ return {
           NoiceCmdlinePopupTitle = { fg = '#EBDBB2' },
           NoiceCmdlineTitle = { fg = '#EBDBB2' },
           NoiceCmdlineIcon = { fg = '#FB4A34' }, --#ffffff
-          NoiceCmdlineIconSearch = { fg = '#c18efe' }, --#ffffff
+          NoiceCmdlineIconSearch = { fg = '#FB4A34' }, --#ffffff
         },
       }
     end,
