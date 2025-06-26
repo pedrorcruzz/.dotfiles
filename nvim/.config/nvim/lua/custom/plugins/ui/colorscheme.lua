@@ -321,6 +321,7 @@ return {
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'NONE' or '#282828' },
           GruvboxGray = { bg = transparent_background and 'NONE' or '#504944' },
+          FloatBorder = { fg = '#4c4c4c' },
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           WinSeparator = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           NoiceConfirmBorder = { fg = '#3C3836' },
