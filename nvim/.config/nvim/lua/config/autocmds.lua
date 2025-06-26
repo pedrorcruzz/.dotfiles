@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('BufLeave', {
   end,
 })
 
--- USAR O NVIM .
+-- USE THE NVIM . (dot)
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     local arg = vim.fn.argv(0) -- Obtém o primeiro argumento passado para o Neovim
