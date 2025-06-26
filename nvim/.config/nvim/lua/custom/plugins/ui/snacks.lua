@@ -717,19 +717,27 @@ return {
       desc = 'Search for Plugin Spec',
     },
     {
-      '<leader>sq',
+      '<leader>sR',
       function()
         Snacks.picker.qflist()
       end,
       desc = 'Quickfix List',
     },
+    -- {
+    --   '<leader>sR',
+    --   function()
+    --     Snacks.picker.resume()
+    --   end,
+    --   desc = 'Resume',
+    -- },
     {
-      '<leader>sR',
+      '<leader>sq',
       function()
-        Snacks.picker.resume()
+        Snacks.picker.registers()
       end,
-      desc = 'Resume',
+      desc = 'Search Registers',
     },
+
     {
       '<leader>su',
       function()
