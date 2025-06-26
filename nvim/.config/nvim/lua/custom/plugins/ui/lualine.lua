@@ -1,4 +1,4 @@
-local lualine_visible = false
+local lualine_visible = true
 
 local function create_theme()
   local custom_min_theme = true
@@ -183,7 +183,7 @@ local lualine_config = {
       {
         'mode',
         fmt = function(mode)
-          return '󰅶 ' .. mode
+          return '󱄛 ' .. mode --󰅶
         end,
         separator = { left = '', right = '' },
         right_padding = 2,

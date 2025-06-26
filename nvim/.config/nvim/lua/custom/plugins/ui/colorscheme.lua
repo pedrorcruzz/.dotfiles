@@ -27,7 +27,6 @@ return {
           -- VertSplit = { fg = '#4c4c4c' },
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#1A1A1A' }, -- #1a1a1a
           WinSeparator = { fg = '#1A1A1A' },
-
           Visual = { bg = transparent_background and '#4c4c4c' or '#4c4c4c' }, --606060
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
@@ -322,6 +321,8 @@ return {
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'NONE' or '#282828' },
           GruvboxGray = { bg = transparent_background and 'NONE' or '#504944' },
+          VertSplit = { fg = transparent_background and '#1F1F1F' or '#665C54' },
+          WinSeparator = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           NoiceConfirmBorder = { fg = '#3C3836' },
           NoiceCmdlinePrompt = { fg = '#3c3836' },
           NoiceCmdlinePopupBorder = { fg = '#3c3836' },
