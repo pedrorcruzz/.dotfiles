@@ -5,6 +5,12 @@ return {
     lazy = true,
     opts = {},
   },
+
+  {
+    'moyiz/blink-emoji.nvim',
+    ft = { 'markdown', 'norg', 'gitcommit' },
+  },
+
   {
     'saghen/blink.cmp',
     dependencies = {
@@ -26,9 +32,17 @@ return {
 
       'mikavilpas/blink-ripgrep.nvim',
       'folke/snacks.nvim',
-      'moyiz/blink-emoji.nvim',
-      'ray-x/cmp-sql',
-      'kristijanhusak/vim-dadbod-completion',
+      {
+        'ray-x/cmp-sql',
+        lazy = true,
+        ft = { 'sql', 'mysql', 'plsql' },
+      },
+
+      {
+        'kristijanhusak/vim-dadbod-completion',
+        lazy = true,
+        ft = { 'sql', 'mysql', 'plsql' },
+      },
     },
     version = '1.*',
 
@@ -130,10 +144,12 @@ return {
             name = 'Emoji',
             score_offset = 15,
             opts = { insert = true },
+
             should_show_items = function()
-              return vim.tbl_contains({ 'gitcommit', 'markdown' }, vim.o.filetype)
+              return vim.tbl_contains({ 'gitcommit', 'markdown', 'norg' }, vim.o.filetype)
             end,
           },
+
           vim_dadbod = {
             name = 'vim-dadbod-completion',
             module = 'blink.compat.source',
@@ -142,6 +158,7 @@ return {
               return vim.tbl_contains({ 'sql', 'mysql', 'plsql' }, vim.o.filetype)
             end,
           },
+
           sql = {
             name = 'sql',
             module = 'blink.compat.source',
@@ -159,11 +176,15 @@ return {
         --   end,
         -- },
       },
+
       filetype = {
         ['htmldjango'] = { 'lsp', 'snippets', 'buffer', 'path' },
         ['sql'] = { 'vim_dadbod', 'sql', 'buffer' },
         ['mysql'] = { 'vim_dadbod', 'sql', 'buffer' },
         ['plsql'] = { 'vim_dadbod', 'sql', 'buffer' },
+        ['markdown'] = { 'emoji', 'buffer' },
+        ['norg'] = { 'emoji', 'buffer' },
+        ['gitcommit'] = { 'emoji', 'buffer' },
       },
 
       fuzzy = { implementation = 'prefer_rust_with_warning' },
