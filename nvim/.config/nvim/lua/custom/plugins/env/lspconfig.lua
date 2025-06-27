@@ -78,6 +78,7 @@ return { -- LSP Configuration & Plugins
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- INFO: if u use nvim-cmp, uncomment the line below
     -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
