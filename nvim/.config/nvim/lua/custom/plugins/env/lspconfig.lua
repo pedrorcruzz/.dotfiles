@@ -174,6 +174,7 @@ return { -- LSP Configuration & Plugins
       'superhtml',
       'prettierd',
       'black',
+      'sql-formatter',
       -- 'php-cs-fixer',
       'blade-formatter',
       'goimports',
@@ -189,7 +190,7 @@ return { -- LSP Configuration & Plugins
       'typescript-language-server',
       'intelephense',
       'jdtls',
-      'sqlls',
+      'sqls',
       -- Debuggers
       'php-debug-adapter',
       'go-debug-adapter',
