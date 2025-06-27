@@ -28,13 +28,14 @@ return {
       'folke/snacks.nvim',
       'moyiz/blink-emoji.nvim',
       'ray-x/cmp-sql',
+      'kristijanhusak/vim-dadbod-completion',
     },
     version = '1.*',
 
     -- -@module 'blink.cmp'
     -- -@type blink.cmp.Config
-    opts ={
-      keymap ={
+    opts = {
+      keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
         -- 'super-tab' for mappings similar to vscode (tab to accept)
         -- 'enter' for enter to accept
@@ -133,7 +134,14 @@ return {
               return vim.tbl_contains({ 'gitcommit', 'markdown' }, vim.o.filetype)
             end,
           },
-
+          vim_dadbod = {
+            name = 'vim-dadbod-completion',
+            module = 'blink.compat.source',
+            opts = {},
+            should_show_items = function()
+              return vim.tbl_contains({ 'sql', 'mysql', 'plsql' }, vim.o.filetype)
+            end,
+          },
           sql = {
             name = 'sql',
             module = 'blink.compat.source',
@@ -150,6 +158,12 @@ return {
         --     require('blink-cmp').show { providers = { 'ripgrep' } }
         --   end,
         -- },
+      },
+      filetype = {
+        ['htmldjango'] = { 'lsp', 'snippets', 'buffer', 'path' },
+        ['sql'] = { 'vim_dadbod', 'sql', 'buffer' },
+        ['mysql'] = { 'vim_dadbod', 'sql', 'buffer' },
+        ['plsql'] = { 'vim_dadbod', 'sql', 'buffer' },
       },
 
       fuzzy = { implementation = 'prefer_rust_with_warning' },
