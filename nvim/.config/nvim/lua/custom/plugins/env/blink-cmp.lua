@@ -54,8 +54,8 @@ return {
         -- 'super-tab' for mappings similar to vscode (tab to accept)
         -- 'enter' for enter to accept
         -- 'none' for no mappings
-        preset = 'enter',
-        -- ['<C-y>'] = { 'accept', 'fallback' },
+        preset = 'none',
+        ['<CR>'] = { 'accept', 'fallback' },
         ['<C-j>'] = { 'show', 'show_documentation', 'hide_documentation' },
         ['<C-e>'] = { 'hide', 'fallback' },
         ['<S-k>'] = { 'select_prev', 'fallback' },
@@ -81,7 +81,7 @@ return {
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
-          window = { border = 'rounded' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          window = { border = 'solid' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
         },
         ghost_text = {
           enabled = false,
@@ -97,7 +97,7 @@ return {
             emoji = 'ﲃ',
             sql = '',
           },
-          border = 'rounded', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          border = 'solid', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
           scrollbar = false,
           draw = {
             treesitter = { 'lsp' },
