@@ -472,18 +472,46 @@ return {
       desc = 'Find Config File',
     },
     {
-      '<leader>ft',
+      '<leader>ftt',
       function()
         Snacks.picker.todo_comments()
+      end,
+      desc = 'Todo Comments',
+    },
+    {
+      '<leader>ftf',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'FIX', 'FIXME' } }
+      end,
+      desc = 'Fix/Fixme',
+    },
+    {
+      '<leader>fte',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'TODO' } }
       end,
       desc = 'Todo',
     },
     {
-      '<leader>fT',
+      '<leader>fti',
       function()
-        Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
+        Snacks.picker.todo_comments { keywords = { 'INFO' } }
       end,
-      desc = 'Todo/Fix/Fixme',
+      desc = 'Info',
+    },
+    {
+      '<leader>fth',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'HACK' } }
+      end,
+      desc = 'Hack',
+    },
+    {
+      '<leader>ftw',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'WARN' } }
+      end,
+      desc = 'Warn',
     },
     {
       '<leader>ff',
