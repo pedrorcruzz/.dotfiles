@@ -1,4 +1,4 @@
-local hardtime_enabled = true
+local hardtime_enabled = false
 
 return {
   'm4xshen/hardtime.nvim',

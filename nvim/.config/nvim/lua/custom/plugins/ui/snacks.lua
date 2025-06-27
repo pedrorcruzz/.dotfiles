@@ -11,10 +11,11 @@ return {
       preset = {
         keys = {
           { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
-          { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Workspace/second-brain/Segundo\\ Cérebro.md' },
+          { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Developer/second-brain/Segundo\\ Cérebro.md' },
           { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
           { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = ' ', key = 'n', desc = 'New file', action = ':enew' },
+          { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
           { icon = ' ', key = 'w', desc = 'Worktree', action = ':Yazi cwd' },
           { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },

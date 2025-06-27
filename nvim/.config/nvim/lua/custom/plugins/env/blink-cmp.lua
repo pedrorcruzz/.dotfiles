@@ -1,12 +1,5 @@
 return {
   {
-    'saghen/blink.compat',
-    version = '*',
-    lazy = true,
-    opts = {},
-  },
-
-  {
     'moyiz/blink-emoji.nvim',
     ft = { 'markdown', 'norg', 'gitcommit' },
   },
@@ -32,17 +25,7 @@ return {
 
       'mikavilpas/blink-ripgrep.nvim',
       'folke/snacks.nvim',
-      {
-        'ray-x/cmp-sql',
-        lazy = true,
-        ft = { 'sql', 'mysql', 'plsql' },
-      },
-
-      {
-        'kristijanhusak/vim-dadbod-completion',
-        lazy = true,
-        ft = { 'sql', 'mysql', 'plsql' },
-      },
+      'kristijanhusak/vim-dadbod-completion',
     },
     version = '1.*',
 
@@ -106,7 +89,10 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep', 'emoji', 'sql' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep', 'emoji' },
+        per_filetype = {
+          sql = { 'dadbod' },
+        },
 
         providers = {
           ripgrep = {
@@ -151,24 +137,7 @@ return {
             end,
           },
 
-          vim_dadbod = {
-            name = 'vim-dadbod-completion',
-            module = 'blink.compat.source',
-            opts = {},
-            should_show_items = function()
-              return vim.tbl_contains({ 'sql', 'mysql', 'plsql' }, vim.o.filetype)
-            end,
-          },
-
-          sql = {
-            name = 'sql',
-            module = 'blink.compat.source',
-            score_offset = -3,
-            opts = {},
-            should_show_items = function()
-              return vim.tbl_contains({ 'sql' }, vim.o.filetype)
-            end,
-          },
+          dadbod = { module = 'vim_dadbod_completion.blink' },
         },
 
         -- keymap = {
@@ -180,9 +149,9 @@ return {
 
       filetype = {
         ['htmldjango'] = { 'lsp', 'snippets', 'buffer', 'path' },
-        ['sql'] = { 'vim_dadbod', 'sql', 'buffer' },
-        ['mysql'] = { 'vim_dadbod', 'sql', 'buffer' },
-        ['plsql'] = { 'vim_dadbod', 'sql', 'buffer' },
+        ['sql'] = { 'dadbod', 'buffer' },
+        ['mysql'] = { 'dadbod', 'buffer' },
+        ['plsql'] = { 'dadbod', 'buffer' },
         ['markdown'] = { 'emoji', 'buffer' },
         ['norg'] = { 'emoji', 'buffer' },
         ['gitcommit'] = { 'emoji', 'buffer' },

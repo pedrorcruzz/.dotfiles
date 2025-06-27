@@ -77,15 +77,32 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 
 -- Snacks Explorer
 SNACKS_START_WITH_EXPLORER = true
+
 if SNACKS_START_WITH_EXPLORER then
+  vim.api.nvim_create_autocmd('VimEnter', {
+    callback = function()
+      if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
+        local ok, snacks = pcall(require, 'snacks')
+        if ok and snacks and snacks.explorer then
+          snacks.explorer()
+        else
+          vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
+        end
+      end
+    end,
+  })
+
   vim.api.nvim_create_autocmd('BufReadPost', {
     once = true,
-    callback = function()
-      local ok, snacks = pcall(require, 'snacks')
-      if ok and snacks and snacks.explorer then
-        snacks.explorer()
-      else
-        vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
+    callback = function(args)
+      local path = args.file or ''
+      if not path:match '/nvim%.phrosa/' then
+        local ok, snacks = pcall(require, 'snacks')
+        if ok and snacks and snacks.explorer then
+          snacks.explorer()
+        else
+          vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
+        end
       end
     end,
   })
