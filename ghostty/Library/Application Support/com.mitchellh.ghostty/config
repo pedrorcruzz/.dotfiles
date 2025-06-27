@@ -1,5 +1,5 @@
 # ghostty +list-themes rose-pine
-# JetBrainsMono Nerd Font   MesloLGL Nerd Font  ComicShannsMono Nerd Font 
+# JetBrainsMono Nerd Font   MesloLGL Nerd Font  ComicShannsMono Nerd Font  Hack Nerd Font
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
 # 1A1A1A 1E1E2F 101010
@@ -10,7 +10,7 @@ background-blur-radius = 30
 cursor-style = block
 
 font-family = ""
-font-family = "JetBrainsMono Nerd Font"
+font-family = "Hack Nerd Font"
 font-size = 13
 font-feature = -liga
 font-thicken = true
