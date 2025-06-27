@@ -81,7 +81,7 @@ return {
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
-          window = { border = 'rounded' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          window = { border = 'rounded, scrollbar = true,' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
         },
         ghost_text = {
           enabled = false,
@@ -98,6 +98,7 @@ return {
             sql = '',
           },
           border = 'rounded', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          scrollbar = false,
           draw = {
             treesitter = { 'lsp' },
           },
