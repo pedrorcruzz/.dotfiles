@@ -483,35 +483,42 @@ return {
       function()
         Snacks.picker.todo_comments { keywords = { 'FIX', 'FIXME' } }
       end,
-      desc = 'Fix/Fixme',
+      desc = 'Find Fix/Fixme',
     },
     {
       '<leader>fte',
       function()
         Snacks.picker.todo_comments { keywords = { 'TODO' } }
       end,
-      desc = 'Todo',
+      desc = 'Find Todo',
+    },
+    {
+      '<leader>ftn',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'NOTE' } }
+      end,
+      desc = 'Find Note',
     },
     {
       '<leader>fti',
       function()
         Snacks.picker.todo_comments { keywords = { 'INFO' } }
       end,
-      desc = 'Info',
+      desc = 'Find Info',
     },
     {
       '<leader>fth',
       function()
         Snacks.picker.todo_comments { keywords = { 'HACK' } }
       end,
-      desc = 'Hack',
+      desc = 'Find Hack',
     },
     {
       '<leader>ftw',
       function()
         Snacks.picker.todo_comments { keywords = { 'WARN' } }
       end,
-      desc = 'Warn',
+      desc = 'Find Warn',
     },
     {
       '<leader>ff',

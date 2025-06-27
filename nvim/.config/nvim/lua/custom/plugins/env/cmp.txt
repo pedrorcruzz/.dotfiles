@@ -14,7 +14,7 @@ return {
         end)(),
         dependencies = {
           {
-            'rafamadriz/friendly-snippets',
+           'rafamadriz/friendly-snippets',
             config = function()
               local luasnip = require 'luasnip'
               luasnip.filetype_extend('typescriptreact', { 'javascript' })

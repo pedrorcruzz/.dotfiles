@@ -2,36 +2,36 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[mgr]
+[manager]
 
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "d" ]
 run  = "cd ~/Developer"
 desc = "Go Developer"
 
 
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "p" ]
 run  = "cd ~/Developer/Projects"
 desc = "Go Projects"
 
 
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "w" ]
 run  = "cd ~/Developer/Business/Seven"
 desc = "Go Work Projects"
 
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "f" ]
 run  = "cd ~/Developer/Business/Freelas"
 desc = "Go Freelas Projects"
 
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "s" ]
 run  = "cd ~/Developer/Studies"
 desc = "Go Studies Projects"
 
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "t" ]
 run  = "cd ~/Developer/Cesmac"
 desc = "Go Cesmac Projects"

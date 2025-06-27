@@ -37,35 +37,35 @@ return {
     },
   },
 
-  {
-    'zbirenbaum/copilot-cmp',
-    dependencies = { 'zbirenbaum/copilot.lua' },
-    lazy = true,
-    event = { 'InsertEnter', 'LspAttach' },
-    opts = {},
-    cond = function()
-      local handle = io.popen 'ping -c 1 github.com >/dev/null 2>&1 && echo ok || echo fail'
-      local result = handle:read '*a'
-      handle:close()
-      return result:match 'ok'
-    end,
-  },
   -- {
-  --   'saghen/blink.cmp',
-  --   optional = true,
-  --   dependencies = { 'fang2hou/blink-copilot' },
-  --   opts = {
-  --     sources = {
-  --       default = { 'copilot' },
-  --       providers = {
-  --         copilot = {
-  --           name = 'copilot',
-  --           module = 'blink-copilot',
-  --           score_offset = 100,
-  --           async = true,
-  --         },
-  --       },
-  --     },
-  --   },
+  --   'zbirenbaum/copilot-cmp',
+  --   dependencies = { 'zbirenbaum/copilot.lua' },
+  --   lazy = true,
+  --   event = { 'InsertEnter', 'LspAttach' },
+  --   opts = {},
+  --   cond = function()
+  --     local handle = io.popen 'ping -c 1 github.com >/dev/null 2>&1 && echo ok || echo fail'
+  --     local result = handle:read '*a'
+  --     handle:close()
+  --     return result:match 'ok'
+  --   end,
   -- },
+  {
+    'saghen/blink.cmp',
+    optional = true,
+    dependencies = { 'fang2hou/blink-copilot' },
+    opts = {
+      sources = {
+        default = { 'copilot' },
+        providers = {
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+          },
+        },
+      },
+    },
+  },
 }
