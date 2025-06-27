@@ -26,6 +26,7 @@ return {
       'mikavilpas/blink-ripgrep.nvim',
       'folke/snacks.nvim',
       'kristijanhusak/vim-dadbod-completion',
+      'bydlw98/blink-cmp-env',
     },
     version = '1.*',
 
@@ -89,7 +90,7 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep', 'emoji' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep', 'emoji', 'env' },
         per_filetype = {
           sql = { 'dadbod' },
         },
@@ -124,6 +125,16 @@ return {
               end
               return items
             end,
+          },
+          env = {
+            name = 'Env',
+            module = 'blink-cmp-env',
+            --- @type blink-cmp-env.Options
+            opts = {
+              item_kind = vim.lsp.protocol.CompletionItemKind.Variable,
+              show_braces = false,
+              show_documentation_window = true,
+            },
           },
 
           emoji = {
