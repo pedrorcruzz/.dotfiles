@@ -3,6 +3,8 @@ fish_add_path $HOME/.asdf/bin
 fish_add_path $HOME/.asdf/shims
 set -Ux GLIBC_TUNABLES glibc.pthread.rseq=0
 
+set -U fish_user_paths /opt/homebrew/opt/libpq/bin $fish_user_paths
+
 # Homebrew
 set -gx PATH /opt/homebrew/bin $PATH
 set -gx GPG_TTY (tty)
