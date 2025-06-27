@@ -299,7 +299,6 @@ return {
       require('gruvbox').setup {
         transparent_mode = transparent_background,
         overrides = {
-          BufferLineFill = { bg = transparent_background and 'NONE' or '#3C3836' },
           Directory = { fg = '#83A598' }, --#A1BCC5
           StatusLineNC = { bg = transparent_background and 'NONE' or '#1c1c1c' },
           StatusLine = { bg = transparent_background and 'NONE' or '#1c1c1c' },
