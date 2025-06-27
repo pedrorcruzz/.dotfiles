@@ -68,8 +68,8 @@ return {
 
           -- gif
           cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 14, --16
-          width = 30, --35
+          height = 12, --16
+          width = 27, --35
           indent = 19,
 
           enabled = function()
