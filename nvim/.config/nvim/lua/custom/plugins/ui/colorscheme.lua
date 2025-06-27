@@ -305,6 +305,7 @@ return {
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           WinSeparator = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           Pmenu = { bg = transparent_background and 'NONE' or '#504944' },
+          PmenuSel = { bg = '#83A598' },
           GitSignsCurrentLineBlame = { fg = '#717171' },
           -- Search = { bg = '#FABD2E', fg = '#000000' },
           -- IncSearch = { bg = '#FABD2E', fg = '#FE8018' },
