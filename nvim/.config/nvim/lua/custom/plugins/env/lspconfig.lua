@@ -6,11 +6,9 @@ return { -- LSP Configuration & Plugins
     { 'williamboman/mason-lspconfig.nvim', lazy = true },
     { 'WhoIsSethDaniel/mason-tool-installer.nvim', lazy = true },
 
-    -- Status updates úteis para LSP.
-    -- NOTE: `opts = {}` é o mesmo que chamar `require('fidget').setup({})`
+    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     -- { 'j-hui/fidget.nvim', opts = {} },
 
-    -- Configura o Lua LSP para seu Neovim config, runtime e plugins
     { 'folke/neodev.nvim', opts = {}, lazy = true },
     { 'folke/neoconf.nvim', opts = {}, lazy = true },
     -- {
@@ -35,14 +33,7 @@ return { -- LSP Configuration & Plugins
 
   config = function()
     -- Brief aside: **What is LSP?**
-    --
-    -- LSP é um protocolo que padroniza a comunicação entre editores e ferramentas de linguagem.
-    -- Fornece recursos como: Go to definition, Find references, Autocompletion, Symbol Search, etc.
-    -- Os servidores LSP são ferramentas externas e precisam ser instalados separadamente.
-    -- Mason e plugins relacionados ajudam nisso.
-    -- Veja também: `:help lsp-vs-treesitter`
 
-    -- Função executada quando um LSP é anexado a um buffer
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
