@@ -4,8 +4,8 @@ theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
 # 1A1A1A 1E1E2F 101010
 # 0.85 26
-background = #101010
-background-opacity = 0.90
+background = #000000
+background-opacity = 0.89
 background-blur-radius = 30
 cursor-style = block
 
