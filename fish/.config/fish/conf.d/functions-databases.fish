@@ -9,24 +9,34 @@ function pg-stop
     /Users/phrosa/.asdf/installs/postgres/17.4/bin/pg_ctl -D /Users/phrosa/.asdf/installs/postgres/17.4/data stop
 end
 
-#User PostgreSQL
-function pg-connect-admin
-    psql -U postgres -d postgres
 
-end
-#Input User
+#Connect to PostgreSQL
 function pg-connect
-    psql -U $argv
+    echo "Enter PostgreSQL user (default: postgres):"
+    read user_input
+
+    if test -z "$user_input"
+        set user postgres
+    else
+        set user $user_input
+    end
+
+    psql -U $user -d postgres
 end
 
 #Docker PostgreSQL
-function docker-pg-connect-admin
-    docker exec -it postgres-container psql -U postgres -d postgres
-end
 function docker-pg-connect
-    docker exec -it postgres-container psql -U $argv
-end
+    echo "Enter PostgreSQL user (default: postgres):"
+    read user_input
 
+    if test -z "$user_input"
+        set user postgres
+    else
+        set user $user_input
+    end
+
+    docker exec -it postgres-container psql -U $user -d postgres
+end
 
 #MongoDB
 function mongo-start
@@ -41,6 +51,15 @@ function mongo-stop
     ps aux | grep mongod
 end
 
-function mongo-connect-admin
-    mongosh -u phrosa -p mongo --authenticationDatabase admin
+function mongo-connect
+    echo "Enter MongoDB user (default: phrosa):"
+    read user_input
+
+    if test -z "$user_input"
+        set user phrosa
+    else
+        set user $user_input
+    end
+
+    mongosh -u $user -p mongo --authenticationDatabase admin
 end
