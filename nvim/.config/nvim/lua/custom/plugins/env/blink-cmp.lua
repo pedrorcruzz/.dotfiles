@@ -106,12 +106,17 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep', 'emoji', 'env' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep', 'emoji', 'env', 'laravel' },
         per_filetype = {
           sql = { 'dadbod' },
         },
 
         providers = {
+          laravel = {
+            name = 'laravel',
+            module = 'laravel.blink_source',
+            score_offset = 1000,
+          },
           ripgrep = {
             module = 'blink-ripgrep',
             name = 'Ripgrep',

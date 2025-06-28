@@ -302,6 +302,7 @@ return {
         transparent_mode = transparent_background,
         overrides = {
           Normal = { bg = transparent_background and 'none' or '#282828' }, --#202020 #000000 #1F1F1F
+          Underlined = { bg = nil },
           Directory = { fg = '#83A598' }, --#A1BCC5
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           FloatBorder = { fg = '#4c4c4c' },

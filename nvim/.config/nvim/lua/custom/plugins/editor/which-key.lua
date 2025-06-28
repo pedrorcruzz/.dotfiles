@@ -44,6 +44,7 @@ return {
       { '<leader>le', group = 'GrugFar', icon = '󰛔' },
       { '<leader>p', group = 'Languages Tools', icon = ' ' },
       { '<leader>pp', group = 'PHP Tools', icon = ' ' },
+      { '<leader>pl', group = 'Laravel Tools', icon = ' ' },
       { '<leader>pg', group = 'GO Tools', icon = ' ' },
       { '<leader>pj', group = 'Javascript Tools', icon = ' ' },
       { '<leader>pjc', group = 'Codi', icon = ' ' },
