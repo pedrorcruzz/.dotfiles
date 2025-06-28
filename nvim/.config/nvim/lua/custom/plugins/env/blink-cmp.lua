@@ -77,7 +77,6 @@ return {
       },
 
       completion = {
-        auto_trigger = false,
         documentation = {
           auto_show = false,
           auto_show_delay_ms = 200,
@@ -87,16 +86,6 @@ return {
           enabled = false,
         },
         menu = {
-          icons = {
-            lsp = '',
-            copilot = '',
-            path = '',
-            snippets = '',
-            buffer = '﬘',
-            ripgrep = '',
-            emoji = 'ﲃ',
-            sql = '',
-          },
           border = 'rounded', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
           scrollbar = false,
           draw = {
@@ -173,17 +162,6 @@ return {
         --   end,
         -- },
       },
-
-      filetype = {
-        ['htmldjango'] = { 'lsp', 'snippets', 'buffer', 'path' },
-        ['sql'] = { 'dadbod', 'buffer' },
-        ['mysql'] = { 'dadbod', 'buffer' },
-        ['plsql'] = { 'dadbod', 'buffer' },
-        ['markdown'] = { 'emoji', 'buffer' },
-        ['norg'] = { 'emoji', 'buffer' },
-        ['gitcommit'] = { 'emoji', 'buffer' },
-      },
-
       fuzzy = { implementation = 'prefer_rust_with_warning' },
     },
 
