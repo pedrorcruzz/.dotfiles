@@ -1,7 +1,5 @@
 return {
   'adibhanna/laravel.nvim',
-  lazy = true,
-  cmd = { 'Laravel', 'LaravelArtisan', 'LaravelRoute', 'LaravelMake' },
   dependencies = {
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
