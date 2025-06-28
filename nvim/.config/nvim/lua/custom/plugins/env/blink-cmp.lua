@@ -37,7 +37,6 @@ return {
       },
 
       'mikavilpas/blink-ripgrep.nvim',
-      'folke/snacks.nvim',
       'kristijanhusak/vim-dadbod-completion',
       'bydlw98/blink-cmp-env',
     },
@@ -78,6 +77,7 @@ return {
       },
 
       completion = {
+        auto_trigger = false,
         documentation = {
           auto_show = false,
           auto_show_delay_ms = 200,

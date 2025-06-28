@@ -362,7 +362,7 @@ return {
     scroll = {
       enabled = true,
       animate = {
-        duration = { step = 15, total = 105 }, --step 20 | total 120
+        duration = { step = 12, total = 100 }, --step 20 | total 120  | step 15 | total 105
       },
     },
     rename = { enabled = true },
