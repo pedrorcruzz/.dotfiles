@@ -1,5 +1,7 @@
 return {
   'adibhanna/laravel.nvim',
+  lazy = true,
+  cmd = { 'Laravel', 'LaravelArtisan', 'LaravelRoute', 'LaravelMake' },
   dependencies = {
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
@@ -10,6 +12,8 @@ return {
     { '<leader>plm', ':LaravelMake<cr>', desc = 'Laravel Make' },
   },
   config = function()
-    require('laravel').setup()
+    require('laravel').setup {
+      notifications = false,
+    }
   end,
 }
