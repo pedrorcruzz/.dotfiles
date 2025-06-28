@@ -1,5 +1,6 @@
 local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
+  vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#4c4c4c' })
 end
 local default_theme = 'gruvbox'
 
@@ -21,7 +22,6 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
-
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1F1F1F' }, --#202020 #000000 #1F1F1F
           EndOfBuffer = { fg = '#1F1F1F', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },
@@ -299,6 +299,7 @@ return {
       require('gruvbox').setup {
         transparent_mode = transparent_background,
         overrides = {
+          Normal = { bg = transparent_background and 'none' or '#282828' }, --#202020 #000000 #1F1F1F
           Directory = { fg = '#83A598' }, --#A1BCC5
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           FloatBorder = { fg = '#4c4c4c' },
@@ -324,11 +325,12 @@ return {
           ['@punctuation.special.javascript'] = { fg = '#FFC0EA' },
           ['@punctuation.special.typescript'] = { fg = '#FFC0EA' },
 
-          SnacksPicker = { bg = transparent_background and 'NONE' or '#1C1C1C' },
-          SnacksPickerBorder = { fg = '#665C54', bg = transparent_background and 'NONE' or '#1C1C1C' },
+          SnacksPicker = { bg = transparent_background and 'NONE' or '#443F3E' }, --1c1c1c
+          SnacksPickerBorder = { fg = '#665C54', bg = transparent_background and 'NONE' or '#443f3e' },
           SnacksInputIcon = { fg = '#fb4a34' },
+          DiagnosticVirtualTextInfo = { bg = transparent_background and 'NONE' or '#443F3E', fg = '#FB4A34' },
           SnacksInputTitle = { fg = '#EBDBB2' },
-          SnacksInputBorder = { fg = '#3c3836' },
+          SnacksInputBorder = { fg = '#3c3836' }, --3c3836
           -- SnacksIndent = { fg = '#4c4c4c' },
           -- SnacksIndentScope = { fg = '#abb2bf' },
 

@@ -7,21 +7,34 @@ return {
   {
     'saghen/blink.cmp',
     dependencies = {
-      'rafamadriz/friendly-snippets',
-      config = function()
-        local luasnip = require 'luasnip'
-        luasnip.filetype_extend('typescriptreact', { 'javascript' })
-        luasnip.filetype_extend('typescript', { 'javascript' })
-        luasnip.filetype_extend('vue', { 'vue' })
-        luasnip.filetype_extend('django', { 'django' })
-        luasnip.filetype_extend('django', { 'python' })
-        require('luasnip.loaders.from_vscode').lazy_load()
+      {
+        'L3MON4D3/LuaSnip',
+        build = (function()
+          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+            return
+          end
+          return 'make install_jsregexp'
+        end)(),
+        dependencies = {
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              local luasnip = require 'luasnip'
+              luasnip.filetype_extend('typescriptreact', { 'javascript' })
+              luasnip.filetype_extend('typescript', { 'javascript' })
+              luasnip.filetype_extend('vue', { 'vue' })
+              luasnip.filetype_extend('django', { 'django' })
+              luasnip.filetype_extend('django', { 'python' })
+              require('luasnip.loaders.from_vscode').lazy_load()
 
-        require 'config.snippets.typescript'
-        require 'config.snippets.typescriptreact'
-        require 'config.snippets.javascript'
-        require 'config.snippets.javascriptreact'
-      end,
+              require 'config.snippets.typescript'
+              require 'config.snippets.typescriptreact'
+              require 'config.snippets.javascript'
+              require 'config.snippets.javascriptreact'
+            end,
+          },
+        },
+      },
 
       'mikavilpas/blink-ripgrep.nvim',
       'folke/snacks.nvim',
@@ -33,6 +46,7 @@ return {
     -- -@module 'blink.cmp'
     -- -@type blink.cmp.Config
     opts = {
+      snippets = { preset = 'luasnip' },
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
         -- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -60,14 +74,14 @@ return {
       },
       signature = {
         enabled = true,
-        window = { border = 'rounded' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+        window = { border = 'none' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
       },
 
       completion = {
         documentation = {
           auto_show = false,
           auto_show_delay_ms = 200,
-          window = { border = 'solid' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          window = { border = 'rounded' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
         },
         ghost_text = {
           enabled = false,
@@ -83,7 +97,7 @@ return {
             emoji = 'ﲃ',
             sql = '',
           },
-          border = 'solid', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          border = 'rounded', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
           scrollbar = false,
           draw = {
             treesitter = { 'lsp' },
