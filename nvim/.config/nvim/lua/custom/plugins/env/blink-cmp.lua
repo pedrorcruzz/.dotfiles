@@ -44,6 +44,8 @@ return {
         ['<C-e>'] = { 'hide', 'fallback' },
         ['<S-k>'] = { 'select_prev', 'fallback' },
         ['<S-j>'] = { 'select_next', 'fallback' },
+        ['<UP>'] = { 'select_prev', 'fallback' },
+        ['<DOWN>'] = { 'select_next', 'fallback' },
         ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
         ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
 
@@ -63,7 +65,7 @@ return {
 
       completion = {
         documentation = {
-          auto_show = true,
+          auto_show = false,
           auto_show_delay_ms = 200,
           window = { border = 'solid' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
         },
