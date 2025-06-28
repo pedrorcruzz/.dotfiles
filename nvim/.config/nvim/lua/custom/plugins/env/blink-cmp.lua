@@ -9,6 +9,7 @@ return {
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
+        event = 'InsertEnter',
         build = (function()
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
@@ -18,6 +19,7 @@ return {
         dependencies = {
           {
             'rafamadriz/friendly-snippets',
+            event = 'InsertEnter',
             config = function()
               local luasnip = require 'luasnip'
               luasnip.filetype_extend('typescriptreact', { 'javascript' })
