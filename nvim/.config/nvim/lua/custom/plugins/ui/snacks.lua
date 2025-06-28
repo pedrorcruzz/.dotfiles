@@ -387,7 +387,7 @@ return {
       padding = true,
       sort = { 'level', 'added' },
       level = vim.log.levels.TRACE,
-      style = 'fancy', --compact, fancy, minimal
+      style = 'compact', --compact, fancy, minimal
       top_down = true,
       date_format = '%R',
       more_format = ' ↓ %d lines ',
