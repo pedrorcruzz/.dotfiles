@@ -34,6 +34,7 @@ brew "libtool"
 brew "imagemagick"
 brew "lazydocker"
 brew "lazygit"
+brew "libpq", link: true
 brew "lolcat"
 brew "neovim"
 brew "pkgconf"
