@@ -79,14 +79,31 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 SNACKS_START_WITH_EXPLORER = true
 
 if SNACKS_START_WITH_EXPLORER then
+  local function is_opened_with_dot()
+    if vim.fn.argc() == 1 then
+      local arg = vim.fn.argv(0)
+      local arg_path = vim.fn.fnamemodify(arg, ':p'):gsub('/$', '')
+      local cwd = vim.fn.getcwd():gsub('/$', '')
+      return arg == '.' or arg_path == cwd
+    end
+    return false
+  end
+
+  local opened_with_dot = is_opened_with_dot()
+
   vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
-      if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
-        local ok, snacks = pcall(require, 'snacks')
-        if ok and snacks and snacks.explorer then
-          snacks.explorer()
-        else
-          vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
+      if opened_with_dot then
+        return
+      end
+
+      if vim.fn.argc() == 1 then
+        local arg = vim.fn.argv(0)
+        if vim.fn.isdirectory(arg) == 1 then
+          local ok, snacks = pcall(require, 'snacks')
+          if ok and snacks and snacks.explorer then
+            snacks.explorer()
+          end
         end
       end
     end,
@@ -95,14 +112,20 @@ if SNACKS_START_WITH_EXPLORER then
   vim.api.nvim_create_autocmd('BufReadPost', {
     once = true,
     callback = function(args)
+      if opened_with_dot then
+        return
+      end
+
       local path = args.file or ''
-      if not path:match '/nvim%.phrosa/' then
-        local ok, snacks = pcall(require, 'snacks')
-        if ok and snacks and snacks.explorer then
-          snacks.explorer()
-        else
-          vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
-        end
+      local bufname = vim.api.nvim_buf_get_name(args.buf)
+
+      if bufname == '' or bufname:match 'snacks_picker_input' or bufname:match 'NvimTree_' or bufname:match '^%[.*%]$' or path:match '/nvim%.phrosa/' then
+        return
+      end
+
+      local ok, snacks = pcall(require, 'snacks')
+      if ok and snacks and snacks.explorer then
+        snacks.explorer()
       end
     end,
   })

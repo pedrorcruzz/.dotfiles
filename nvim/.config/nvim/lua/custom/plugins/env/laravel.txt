@@ -1,0 +1,46 @@
+-- init.lua ou onde você configura os plugins com lazy.nvim
+return {
+  {
+    'MunifTanjim/nui.nvim',
+    lazy = true,
+  },
+  {
+    'nvim-lua/plenary.nvim',
+    lazy = true,
+  },
+  {
+    'adibhanna/laravel.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    ft = { 'php', 'blade' }, -- carrega quando abrir arquivos PHP/Blade
+    cmd = {
+      'Artisan',
+      'LaravelArtisan',
+      'LaravelStatus',
+      'LaravelRoute',
+      'LaravelMake',
+      'LaravelController',
+      'LaravelModel',
+      'LaravelView',
+      'LaravelSchema',
+      'LaravelSchemaExport',
+      'LaravelArchitecture',
+      'LaravelClearCache',
+      'LaravelCompletions',
+    },
+    keys = {
+      { '<leader>la', ':LaravelArtisan<CR>', desc = 'Laravel Artisan' },
+      { '<leader>ls', ':LaravelStatus<CR>', desc = 'Laravel Status' },
+      { '<leader>lr', ':LaravelRoute<CR>', desc = 'Laravel Routes' },
+      { '<leader>lm', ':LaravelMake<CR>', desc = 'Laravel Make' },
+    },
+    config = function()
+      require('laravel').setup {
+        notifications = false,
+        debug = false,
+      }
+    end,
+  },
+}
