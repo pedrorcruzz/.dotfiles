@@ -29,7 +29,7 @@ return {
       date_format = 'n-%Y-%m-%d',
       alias_format = '%B %-d, %Y',
       default_tags = { 'diarias' },
-      template = 'Templates/template-daily-note.md', -- renomeie o arquivo se necessário
+      template = 'Templates/template-daily-note.md',
     },
 
     completion = {
