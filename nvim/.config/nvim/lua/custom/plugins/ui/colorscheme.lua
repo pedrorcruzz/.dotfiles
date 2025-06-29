@@ -307,6 +307,8 @@ return {
           EndOfBuffer = { fg = '#282828', bg = 'none' },
           FloatBorder = { fg = '#4c4c4c' },
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#665C54' },
+          TabLineFill = { bg = transparent_background and 'none' or '#3C3836' },
+          TabLineSel = { bg = transparent_background and 'none' or '#3C3836' },
           WinSeparator = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           Pmenu = { bg = transparent_background and 'NONE' or '#504944' },
           PmenuSel = { bg = '#83A598' },
