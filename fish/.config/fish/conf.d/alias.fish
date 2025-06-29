@@ -21,8 +21,9 @@ abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 #Alias System
 abbr -a lg "lazygit"
+abbr -a ld "lazydocker"
+abbr -a lp "posting"
 abbr -a cd "z"
-abbr -a lzd "lazydocker"
 abbr -a rn "nvim"
 abbr -a vim "nvim"
 abbr -a y "yazi"
