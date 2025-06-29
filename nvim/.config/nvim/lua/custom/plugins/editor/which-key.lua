@@ -87,6 +87,8 @@ return {
     { '<leader>zo', '<cmd>e ~/Developer/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
     { '<leader>zO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
     { '<leader>zd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
+    { '<leader>zg', '<cmd>ObsidianDailies<cr>', desc = 'List Dailies' },
+    { '<leader>zc', '<cmd>ObsidianCheck<cr>', desc = 'Check' },
     { '<leader>zf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
     { '<leader>zs', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
     { '<leader>zr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
@@ -116,7 +118,7 @@ return {
     { '<leader>t5', '<cmd>tabn 5<cr>', desc = 'Tabs: 5' },
     { '<leader>t6', '<cmd>tabn 6<cr>', desc = 'Tabs: 6' },
     { '<leader>t7', '<cmd>tabn 7<cr>', desc = 'Tabs: 7' },
-    { '<leader>t8', '<cmd>tabn 8<cr>', desc = 'Tabs: 8' },
+    { '<leader>t8', '<cmd>tabn 8ba<cr>', desc = 'Tabs: 8' },
     { '<leader>t9', '<cmd>tabn 9<cr>', desc = 'Tabs: 9' },
     { '<leader>t0', '<cmd>tabn 10<cr>', desc = 'Tabs: 10' },
 
