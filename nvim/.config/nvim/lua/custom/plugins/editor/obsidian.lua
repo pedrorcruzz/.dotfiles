@@ -38,7 +38,7 @@ return {
     -- dir = "~/vaults/work",
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
-    notes_subdir = 'home/Anotacoes/NotasRealocar',
+    notes_subdir = 'Home/Anotacoes/NotasRealocar',
 
     -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
     -- levels defined by "vim.log.levels.*".
@@ -95,7 +95,7 @@ return {
     -- Where to put new notes. Valid options are
     --  * "current_dir" - put new notes in same directory as the current buffer.
     --  * "notes_subdir" - put new notes in the default notes subdirectory.
-    new_notes_location = 'home/Anotacoes/NotasRealocar',
+    new_notes_location = 'Home/Anotacoes/NotasRealocar',
 
     -- Optional, customize how note IDs are generated given an optional title.
     ---@param title string|?

@@ -1,4 +1,4 @@
-local start_active = false
+local start_active = true
 
 return {
   'sphamba/smear-cursor.nvim',
