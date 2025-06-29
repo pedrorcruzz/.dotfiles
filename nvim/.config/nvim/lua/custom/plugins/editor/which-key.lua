@@ -84,14 +84,16 @@ return {
     -- { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
 
     --Obsidian
-
-    { '<leader>zo', '<cmd>e ~/Workspace/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
+    { '<leader>zo', '<cmd>e ~/Developer/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
     { '<leader>zO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
     { '<leader>zd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
     { '<leader>zf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
     { '<leader>zs', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
     { '<leader>zr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
-    { '<leader>za', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note' },
+    { '<leader>ze', '<cmd>ObsidianExtractNote<cr>', desc = 'Extract Note' },
+    { '<leader>zl', '<cmd>ObsidianLinkNew<cr>', desc = 'Link New' },
+    { '<leader>za', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note With Template' },
+    { '<leader>zz', '<cmd>ObsidianNew<cr>', desc = 'Create Note' },
     { '<leader>zm', '<cmd>ObsidianToggleCheckbox<cr>', desc = 'Toggle Checkbox' },
     { '<leader>zp', '<cmd>ObsidianPasteImage<cr>', desc = 'Paste Image' },
 
