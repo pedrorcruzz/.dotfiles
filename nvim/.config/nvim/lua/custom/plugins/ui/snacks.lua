@@ -315,7 +315,7 @@ return {
       enabled = true,
       hidden = false,
       ignored = true,
-      layout = { preset = 'dropdown' }, --default, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left
+      layout = { preset = 'default' }, --default, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left
       sources = {
         files = {
           hidden = false,
