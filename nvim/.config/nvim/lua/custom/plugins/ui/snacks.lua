@@ -850,7 +850,7 @@ return {
       desc = 'Lazygit',
     },
     {
-      '<leader>v',
+      '<leader>;',
       function()
         Snacks.dashboard()
       end,

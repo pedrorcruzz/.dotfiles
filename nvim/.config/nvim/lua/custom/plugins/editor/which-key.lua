@@ -27,7 +27,7 @@ return {
       { '<leader>x', group = 'Explorer Tools', icon = '' },
       { '<leader>n', group = 'Neotest', icon = '' },
       { '<leader>y', group = 'Yazi', icon = '' },
-      { '<leader>v', group = 'Home', icon = '' },
+      { '<leader>;', group = 'Home', icon = '' },
       { '<leader>w', group = 'Save', icon = '' },
       { '<leader>W', group = 'Save Without Formatter', icon = '' },
       { '<leader>[', group = 'Previous', icon = '󰙣' },
