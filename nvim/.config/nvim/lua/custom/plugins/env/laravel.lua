@@ -14,7 +14,7 @@ return {
 
     -- Composer
     { '<leader>plcc', ':Composer', desc = 'Composer [name]' },
-    { '<leader>plci', '<cmd>Composer install<cr>', desc = 'Composer Install' },
+    { '<leader>plci', ':Composer install', desc = 'Composer Install' },
     { '<leader>plcu', '<cmd>Composer update<cr>', desc = 'Composer Update' },
     { '<leader>plcr', '<cmd>ComposerRequire<cr> ', desc = 'Composer Require Package' },
     { '<leader>plcd', '<cmd>ComposerDependencies<cr>', desc = 'Composer Dependencies' },
