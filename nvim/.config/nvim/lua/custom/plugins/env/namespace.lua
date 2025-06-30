@@ -1,7 +1,7 @@
 return { -- lazy
   'ccaglak/namespace.nvim',
   keys = {
-    { '<leader>ppa', '<cmd>Php classes<cr>', desc = 'Find all classes, traits, implementations, and attributes from Composer or local search' },
+    { '<leader>ppf', '<cmd>Php classes<cr>', desc = 'Find all classes, traits, implementations, and attributes from Composer or local search' },
     { '<leader>ppc', '<cmd>Php class<cr>', desc = 'Get the class under the cursor' },
     { '<leader>ppn', '<cmd>Php namespace<cr>', desc = 'Generate namespace for the current file' },
     { '<leader>pps', '<cmd>Php sort<cr>', desc = 'Sorts namespaces in current file with 6 options' },
