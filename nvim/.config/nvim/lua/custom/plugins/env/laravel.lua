@@ -3,7 +3,6 @@ return {
   dependencies = {
     'MunifTanjim/nui.nvim',
     'nvim-lua/plenary.nvim',
-    'folke/snacks.nvim',
   },
   ft = { 'php', 'blade' },
   keys = {
