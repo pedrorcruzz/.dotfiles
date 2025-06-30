@@ -109,7 +109,7 @@ return {
     --Tabs
     { '<leader>tt', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
     { '<leader>ta', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
-    { '<leader>td', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
+    { '<leader>ts', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
     { '<leader>tc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
     { '<leader>tC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
     { '<leader>tf', '<cmd>FzfLua tabs<cr>', desc = 'Tabs: Find' },
