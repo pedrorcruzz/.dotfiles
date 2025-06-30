@@ -21,7 +21,7 @@ return {
     { '<leader>plcx', ':ComposerRemove ', desc = 'Composer Remove Package' },
 
     -- Navigation
-    { '<leader>plc', ':LaravelController ', desc = 'Goto Controller' },
+    { '<leader>ple', ':LaravelController ', desc = 'Goto Controller' },
     { '<leader>plm', ':LaravelModel ', desc = 'Goto Model' },
     { '<leader>plv', ':LaravelView ', desc = 'Goto View' },
     -- { '<leader>plg', ':LaravelGoto<CR>', desc = 'Laravel Goto Definition' },
