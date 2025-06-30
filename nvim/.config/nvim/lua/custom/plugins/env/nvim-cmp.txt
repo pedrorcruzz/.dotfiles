@@ -86,6 +86,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'buffer' },
+          { name = 'laravel' },
           { name = 'path' },
           { name = 'copilot' },
           { name = 'neorg' },
