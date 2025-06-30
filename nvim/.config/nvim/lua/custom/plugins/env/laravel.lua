@@ -1,4 +1,4 @@
-rettrueurn {
+return {
   'adibhanna/laravel.nvim',
   dependencies = {
     'MunifTanjim/nui.nvim',
