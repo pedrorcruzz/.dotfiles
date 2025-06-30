@@ -13,6 +13,7 @@ return {
     { '<leader>plg', '<cmd>LaravelMake<cr>', desc = 'Laravel Make' },
 
     -- Composer
+    { '<leader>plcc', ':Composer', desc = 'Composer [name]' },
     { '<leader>plci', '<cmd>Composer install<cr>', desc = 'Composer Install' },
     { '<leader>plcu', '<cmd>Composer update<cr>', desc = 'Composer Update' },
     { '<leader>plcr', '<cmd>ComposerRequire<cr> ', desc = 'Composer Require Package' },
@@ -31,8 +32,17 @@ return {
     { '<leader>plda', '<cmd>LaravelArchitecture<cr>', desc = 'Show App Architecture' },
 
     -- Cache
+    { '<leader>plxx', ':LaravelCompletions', desc = 'Show Laravel Completions [type]' },
     { '<leader>plxc', '<cmd>LaravelClearCache<cr>', desc = 'Clear Laravel Cache' },
     { '<leader>plxo', '<cmd>LaravelCompletions<cr> ', desc = 'Show Laravel Completions' },
+
+    -- IDE HELPER
+    { '<leader>plhh', ':LaravelIdeHelper', desc = 'Generate IDE Helper files [action]' },
+    { '<leader>plhi', '<cmd>LaravelInstallIdeHelper<cr>', desc = 'Install Laravel IDE Helper package' },
+    { '<leader>plhc', '<cmd>LaravelIdeHelperCheck<cr> ', desc = 'Check IDE Helper status and files' },
+    { '<leader>plhg', '<cmd>LaravelIdeHelper<cr>', desc = 'Generate IDE Helper files' },
+    { '<leader>plhr', '<cmd>LaravelIdeHelperClean<cr> ', desc = 'Remove generated files (keep package)' },
+    { '<leader>plhu', '<cmd>LaravelRemoveIdeHelper<cr> ', desc = 'Completely remove IDE Helper package and files' },
   },
   config = function()
     require('laravel').setup {

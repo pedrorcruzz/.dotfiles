@@ -48,6 +48,7 @@ return {
       { '<leader>plc', group = 'Composer', icon = ' ' },
       { '<leader>pld', group = 'Diagrams', icon = ' ' },
       { '<leader>plx', group = 'Cache', icon = '󰃨 ' },
+      { '<leader>plh', group = 'Helper', icon = ' ' },
       { '<leader>pg', group = 'GO Tools', icon = ' ' },
       { '<leader>pj', group = 'Javascript Tools', icon = ' ' },
       { '<leader>pjc', group = 'Codi', icon = ' ' },
