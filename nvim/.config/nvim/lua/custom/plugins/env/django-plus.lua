@@ -1,4 +1,5 @@
 return {
   'tweekmonster/django-plus.vim',
-  lazy = false,
+  lazy = true,
+  ft = { 'python', 'htmldjango', 'djangohtml' },
 }

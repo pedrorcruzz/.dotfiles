@@ -6,6 +6,7 @@ return {
       -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
+        event = 'InsertEnter',
         build = (function()
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
@@ -14,7 +15,8 @@ return {
         end)(),
         dependencies = {
           {
-            'rafamadriz/friendly-snippets',
+           'rafamadriz/friendly-snippets',
+            event = 'InsertEnter',
             config = function()
               local luasnip = require 'luasnip'
               luasnip.filetype_extend('typescriptreact', { 'javascript' })
@@ -84,6 +86,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'buffer' },
+          { name = 'laravel' },
           { name = 'path' },
           { name = 'copilot' },
           { name = 'neorg' },

@@ -1,12 +1,13 @@
--- tailwind-tools.lua
 return {
   'luckasRanarison/tailwind-tools.nvim',
   name = 'tailwind-tools',
   build = ':UpdateRemotePlugins',
+  lazy = true,
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-    -- 'nvim-telescope/telescope.nvim', -- opcional
-    'neovim/nvim-lspconfig', -- opcional
+    { 'nvim-treesitter/nvim-treesitter', lazy = true },
+    -- { 'nvim-telescope/telescope.nvim', lazy = true }, -- opcional
+    { 'neovim/nvim-lspconfig', lazy = true }, -- opcional
   },
   opts = {
     document_color = {
@@ -31,9 +32,7 @@ return {
 
     telescope = {
       utilities = {
-        callback = function(name, class)
-          -- callback ao selecionar classe utilitária no Telescope
-        end,
+        callback = function(name, class) end,
       },
     },
 

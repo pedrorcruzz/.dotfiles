@@ -1,0 +1,33 @@
+return {
+  'linduxed/colemak.nvim',
+  lazy = false,
+  keys = {
+    {
+      '<leader>lpe',
+      function()
+        vim.cmd 'ColemakEnable'
+      end,
+      desc = 'Enable Colemak mappings',
+    },
+    {
+      '<leader>lpd',
+      function()
+        vim.cmd 'ColemakDisable'
+      end,
+      desc = 'Disable Colemak mappings',
+    },
+  },
+  config = function()
+    local colemak = require 'colemak'
+
+    local enable_at_startup = false
+
+    colemak.setup()
+
+    if enable_at_startup then
+      vim.cmd 'ColemakEnable'
+    else
+      vim.cmd 'ColemakDisable'
+    end
+  end,
+}

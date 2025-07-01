@@ -65,3 +65,28 @@ function stardew
     ./StardewModdingAPI
 end
 
+function asdf
+    if test (pwd) = $HOME
+        command asdf $argv
+        return
+    end
+
+    if test (count $argv) -ge 3; and test $argv[1] = "set"
+        command asdf $argv
+
+        if test -f .gitignore
+            if not grep -q ".tool-versions" .gitignore
+                set last_char (tail -c1 .gitignore)
+                if test "$last_char" != "\n"
+                    printf ".tool-versions\n" >> .gitignore
+                else
+                    printf ".tool-versions\n" >> .gitignore
+                end
+            end
+        else
+            printf ".tool-versions\n" > .gitignore
+        end
+    else
+        command asdf $argv
+    end
+end

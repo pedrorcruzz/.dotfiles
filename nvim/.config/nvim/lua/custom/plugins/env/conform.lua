@@ -26,6 +26,7 @@ return {
           go = { 'goimports' },
           java = { 'google-java-format' },
           blade = { 'blade-formatter' },
+          sql = { 'sql_formatter' },
         },
         format_on_save = {
           lsp_fallback = true,

@@ -52,7 +52,7 @@ return {
           end
 
           if #label > 0 then
-            table.insert(label, 1, { '󰛢 ', guifg = '#CA8BFF' })
+            table.insert(label, 1, { '󰛢 ', guifg = '#928374' }) --CA8BFF
           end
           return label
         end

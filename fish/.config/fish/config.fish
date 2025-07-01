@@ -1,5 +1,5 @@
-# Check if the shell is interactive
-if status is-interactive
+# Check if the shell is interactive 
+if status is-interactive 
     fish_add_path /Users/phrosa/.local/bin
     fish_add_path "$HOME/.dotfiles/bin"
     fish_add_path /usr/local/bin
@@ -21,17 +21,25 @@ if status is-interactive
 
 end
 
+set -Ux LANG en_US.UTF-8
+set -Ux LC_ALL en_US.UTF-8
+
 #Start Tmux automatically
-if type -q tmux
-    if not set -q TMUX
-        tmux attach || begin
-            cd ~
-            tmux new-session -s Home
+set -g USE_TMUX false  # Set to true to use tmux or false to disable
+
+if test $USE_TMUX = true
+    if type -q tmux
+        if not set -q TMUX
+            tmux attach || begin
+                cd ~
+                tmux new-session -s Home
+            end
         end
     end
 end
 
-
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+

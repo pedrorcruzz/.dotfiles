@@ -11,15 +11,32 @@ return {
       preset = {
         keys = {
           { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
-          { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Workspace/second-brain/Segundo\\ Cérebro.md' },
+          -- { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Developer/second-brain/Segundo\\ Cérebro.md' },
+          {
+            icon = ' ',
+            key = 'o',
+            desc = 'Obsidian',
+            action = function()
+              Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
+            end,
+          },
           { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
           { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = ' ', key = 'n', desc = 'New file', action = ':enew' },
-          { icon = ' ', key = 'w', desc = 'Worktree', action = ':Yazi cwd' },
+          { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
+          { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
           { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
           { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
           { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
+          {
+            icon = ' ',
+            key = 'b',
+            desc = 'Browse Repo',
+            action = function()
+              Snacks.gitbrowse()
+            end,
+          },
           { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
         },
         header = {
@@ -33,7 +50,7 @@ return {
           ]],
         },
       },
-      width = 80,
+      width = 70,
       sections = {
         {
           pane = 1,
@@ -45,25 +62,25 @@ return {
         },
         {
           pane = 1,
+          padding = 1,
           section = 'terminal',
+          --normal(png,jpg)
 
           -- cmd = 'ascii-image-converter --color -c -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png"', -- -c
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
 
           -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
+          -- width = 65, --65
+          -- height = 20, --26
+          -- indent = 10,
 
           -- gif
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 15,
-          width = 35,
-          indent = 18,
+          cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          height = 12, --16
+          width = 27, --35
+          indent = 19,
 
-          --normal(png,jpg)
-          -- width = 65, --65
-          -- height = 26, --26
-          -- indent = 10,
-          -- padding = 2,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -72,25 +89,25 @@ return {
         --Narrow screen
         {
           pane = 1,
+          padding = 2,
           section = 'terminal',
 
           -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
 
           -- cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
 
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/hq.png --threshold 50 --scale .17 --quant 16 --with-color',
+          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .17 --quant 16 --with-color',
+          --normal(png,jpg)
+          height = 16, --25
+          width = 56,
+          indent = 18,
 
           --gif
-          cmd = 'chafa -f symbols --symbols sextant -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 13,
-          width = 32,
-          indent = 22,
+          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          height = 12, --14
+          width = 27, --32
+          indent = 19, --22
 
-          --normal(png,jpg)
-          -- height = 16, --25
-          -- width = 56,
-          -- padding = 2,
-          -- indent = 18,
           enabled = function()
             return not (vim.o.columns > 135)
           end,
@@ -105,13 +122,11 @@ return {
             return not (vim.o.columns < 135)
           end,
         },
-        -- Narrow screen
         function()
-          local in_git = Snacks.git.get_root() ~= nil
           local cmds = {
             {
-              title = 'Git Graph',
-              icon = ' ',
+              -- title = 'Git Graph',
+              -- icon = ' ',
               cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
               indent = 1,
               -- height = 35,
@@ -122,12 +137,77 @@ return {
               pane = 1,
               section = 'terminal',
               enabled = function()
+                local in_git = Snacks.git.get_root() ~= nil
                 return in_git and vim.o.columns > 130
               end,
-              padding = 1,
+              padding = 0,
             }, cmd)
           end, cmds)
         end,
+        -- {
+        --   pane = 1,
+        --   icon = ' ',
+        --   desc = 'Browse Repo',
+        --   padding = 1,
+        --   key = 'b',
+        --   action = function()
+        --     Snacks.gitbrowse()
+        --   end,
+        -- },
+        -- function()
+        --   local in_git = Snacks.git.get_root() ~= nil
+        --   local cmds = {
+        --     {
+        --       icon = ' ',
+        --       title = 'Git Status',
+        --       cmd = 'git --no-pager diff --stat -B -M -C',
+        --       height = 1,
+        --     },
+        --
+        --     {
+        --       title = 'Notifications',
+        --       cmd = 'gh notify -s -a -n5',
+        --       action = function()
+        --         vim.ui.open 'https://github.com/notifications'
+        --       end,
+        --       key = 'N',
+        --       icon = '󰎟 ',
+        --       height = 3,
+        --       enabled = true,
+        --     },
+        -- {
+        --   title = 'Open Issues',
+        --   cmd = 'gh issue list -L 3',
+        --   key = 'i',
+        --   action = function()
+        --     vim.fn.jobstart('gh issue list --web', { detach = true })
+        --   end,
+        --   icon = 'ÔÜà ',
+        --   height = 7,
+        -- },
+        -- {
+        --   icon = 'Ôêá ',
+        --   title = 'Open PRs',
+        --   cmd = 'gh pr list -L 3',
+        --   key = 'P',
+        --   action = function()
+        --     vim.fn.jobstart('gh pr list --web', { detach = true })
+        --   end,
+        --   height = 7,
+        -- },
+        --   }
+        --   return vim.tbl_map(function(cmd)
+        --     return vim.tbl_extend('force', {
+        --       pane = 1,
+        --       section = 'terminal',
+        --       enabled = in_git,
+        --       padding = 1,
+        --       -- ttl = 5 * 60,
+        --       -- indent = 3,
+        --     }, cmd)
+        --   end, cmds)
+        -- end,
+
         {
           pane = 2,
           section = 'startup',
@@ -161,7 +241,7 @@ return {
             return not (vim.o.columns < 135)
           end,
           indent = 1,
-          limit = 10,
+          limit = 5,
           padding = 2,
         },
         {
@@ -220,11 +300,21 @@ return {
         return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == '' and vim.fn.line '$' > 1
       end,
     },
+    profiler = {
+      enabled = true,
+    },
     input = {
-      enabled = false,
+      enabled = true,
+      win = {
+        row = 0.35,
+        col = 0.35,
+        border = 'rounded', --rounded, shadow, single, double, solid, none
+        width = 65,
+        height = 2,
+      },
     },
     terminal = {
-      enabled = true,
+      enabled = false,
     },
     edgy = {
       enabled = true,
@@ -232,13 +322,18 @@ return {
     picker = {
       enabled = true,
       hidden = false,
-      ignored = false,
+      ignored = true,
+      layout = { preset = 'default' }, --default, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left
       sources = {
+        files = {
+          hidden = false,
+          ignored = false,
+        },
         explorer = {
           finder = 'explorer',
           diagnostics = true,
           diagnostics_open = false,
-          layout = { layout = { position = 'right', width = 38 }, preview = false }, --explorer side width 40 default
+          layout = { layout = { position = 'left', width = 35 }, preview = false }, --explorer side width 40 default
           focus = 'list',
           auto_close = false,
           git_untracked = true,
@@ -252,15 +347,15 @@ return {
         -- input window
         input = {
           keys = {
-            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
-            ['<c-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
+            ['<s-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<s-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
           },
         },
 
         list = {
           keys = {
-            ['<c-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
-            ['<c-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
+            ['<s-h>'] = { 'toggle_hidden', mode = { 'i', 'n' } },
+            ['<s-i>'] = { 'toggle_ignored', mode = { 'i', 'n' } },
           },
         },
       },
@@ -269,12 +364,13 @@ return {
     scope = { enabled = true },
     statuscolumn = { enabled = true },
     image = { enabled = false },
+    indent = { enabled = false },
     animate = { enabled = true },
     words = { enabled = true },
     scroll = {
       enabled = true,
       animate = {
-        duration = { step = 15, total = 105 }, --step 20 | total 120
+        duration = { step = 12, total = 100 }, --step 20 | total 120  | step 15 | total 105
       },
     },
     rename = { enabled = true },
@@ -299,7 +395,7 @@ return {
       padding = true,
       sort = { 'level', 'added' },
       level = vim.log.levels.TRACE,
-      style = 'compact',
+      style = 'compact', --compact, fancy, minimal
       top_down = true,
       date_format = '%R',
       more_format = ' ↓ %d lines ',
@@ -385,18 +481,53 @@ return {
       desc = 'Find Config File',
     },
     {
-      '<leader>ft',
+      '<leader>ftt',
       function()
         Snacks.picker.todo_comments()
       end,
-      desc = 'Todo',
+      desc = 'Todo Comments',
     },
     {
-      '<leader>fT',
+      '<leader>ftf',
       function()
-        Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
+        Snacks.picker.todo_comments { keywords = { 'FIX', 'FIXME' } }
       end,
-      desc = 'Todo/Fix/Fixme',
+      desc = 'Find Fix/Fixme',
+    },
+    {
+      '<leader>fte',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'TODO' } }
+      end,
+      desc = 'Find Todo',
+    },
+    {
+      '<leader>ftn',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'NOTE' } }
+      end,
+      desc = 'Find Note',
+    },
+    {
+      '<leader>fti',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'INFO' } }
+      end,
+      desc = 'Find Info',
+    },
+    {
+      '<leader>fth',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'HACK' } }
+      end,
+      desc = 'Find Hack',
+    },
+    {
+      '<leader>ftw',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'WARN' } }
+      end,
+      desc = 'Find Warn',
     },
     {
       '<leader>ff',
@@ -404,6 +535,13 @@ return {
         Snacks.picker.files()
       end,
       desc = 'Find Files',
+    },
+    {
+      '<leader>fb',
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = 'Find Buffers',
     },
     {
       '<leader>fg',
@@ -624,19 +762,27 @@ return {
       desc = 'Search for Plugin Spec',
     },
     {
-      '<leader>sq',
+      '<leader>sR',
       function()
         Snacks.picker.qflist()
       end,
       desc = 'Quickfix List',
     },
+    -- {
+    --   '<leader>sR',
+    --   function()
+    --     Snacks.picker.resume()
+    --   end,
+    --   desc = 'Resume',
+    -- },
     {
-      '<leader>sR',
+      '<leader>sq',
       function()
-        Snacks.picker.resume()
+        Snacks.picker.registers()
       end,
-      desc = 'Resume',
+      desc = 'Search Registers',
     },
+
     {
       '<leader>su',
       function()
@@ -776,11 +922,13 @@ return {
         Snacks.toggle.line_number():map '<leader>ln'
         Snacks.toggle.zen():map '<leader>lz'
         -- Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>uc'
-        -- Snacks.toggle.treesitter():map '<leader>lxt'
+        -- Snacks.toggle.treesitter():map '<leader>lg'
         -- Snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map '<leader>ub'
         -- Snacks.toggle.inlay_hints():map '<leader>uh'
         Snacks.toggle.indent():map '<leader>li'
-        -- Snacks.toggle.dim():map '<leader>uD'
+        -- Snacks.toggle.profiler():map '<leader>lk'
+        -- Snacks.toggle.profiler_highlights():map '<leader>lj'
+        Snacks.toggle.dim():map '<leader>lk'
       end,
     })
   end,

@@ -1,6 +1,10 @@
 -- Array of file names indicating root directory. Modify to your liking.
 local root_names = { '.git', 'Makefile', '.rn' }
 
+vim.opt.lazyredraw = false
+
+vim.opt.fileencoding = 'utf-8'
+
 -- Cache to use for speed up (at cost of possibly outdated results)
 local root_cache = {}
 
@@ -83,7 +87,7 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true

@@ -1,16 +1,20 @@
 local function set_theme(theme)
   vim.cmd('colorscheme ' .. theme)
+  vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#4c4c4c' })
+  vim.api.nvim_set_hl(0, 'BlinkCmpDocBorder', { fg = '#4c4c4c' })
+  vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { fg = '#4c4c4c' })
 end
-
-local default_theme = 'min-theme'
+local default_theme = 'gruvbox'
 
 return {
   {
     'datsfilipe/min-theme.nvim',
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('min-theme').setup {
         transparent = transparent_background,
+        bold = true,
+        strikethrough = true,
         italics = {
           comments = true,
           keywords = true,
@@ -20,14 +24,12 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
-
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1F1F1F' }, --#202020 #000000 #1F1F1F
           EndOfBuffer = { fg = '#1F1F1F', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },
           -- VertSplit = { fg = '#4c4c4c' },
           VertSplit = { fg = transparent_background and '#1F1F1F' or '#1A1A1A' }, -- #1a1a1a
           WinSeparator = { fg = '#1A1A1A' },
-
           Visual = { bg = transparent_background and '#4c4c4c' or '#4c4c4c' }, --606060
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
@@ -36,13 +38,18 @@ return {
           FloatBorder = { fg = '#4c4c4c' }, --#4c4c4c
           Border = { fg = '#4c4c4c' },
           FloatShadow = { fg = '#4c4c4c' },
-          Search = { bg = '#606060', fg = '#abb2bf' },
-          IncSearch = { bg = '#606060', fg = '#F67582' },
+          Search = { bg = transparent_background and 'none' or '#606060', fg = '#abb2bf' },
+          IncSearch = { bg = transparent_background and 'none' or '#606060', fg = '#F67582' },
           AvanteInlineHint = { fg = '#606060', bg = 'none' }, --#abb2bf
           -- Keyword = { fg = '#606060' }, --#abb2bf
           Folded = { fg = '#B990F6', bg = '#1a1a1a' },
 
           Underlined = { bg = nil },
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1a1a1a' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1a1a1a' },
+          -- StatusLineNC = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
+          -- StatusLine = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
+
           -- WinBarNC = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
           -- WinBar = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
           -- TabLine = { bg = transparent_background and 'NONE' or '#202020' },
@@ -64,12 +71,16 @@ return {
           --Buferlines
           -- BufferLinePick = { fg = '#CA8BFF' },
           -- BufferLinePickVisible = { fg = '#CA8BFF' },
-          -- BufferLinePickSelected = { fg = '#CA8BFF' },
+          -- BufferLinePickSelected = { fg = '#A9A9A9' },
           BufferLineModified = { fg = '#A9A9A9' },
+          -- BufferLineFill = { bg = '#da70d6' },
           BufferLineModifiedVisible = { fg = '#A9A9A9' },
           BufferLineModifiedSelected = { fg = '#A9A9A9' },
           BufferLineBufferSelected = { fg = '#A9A9A9' },
           BufferLineBackground = { fg = '#606060' },
+          -- BufferLineBufferVisible = { bg = '#606060' },
+          BufferLineSeparator = { fg = '#323232' },
+          BufferLineIndicatorSelected = { fg = '#1a1a1a' },
 
           --Punctuation Special
           ['@punctuation.special'] = { fg = '#323232' },
@@ -230,7 +241,7 @@ return {
   {
     'catppuccin/nvim',
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },
@@ -249,7 +260,9 @@ return {
           return {
             NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#181826' },
-            BufferLineFill = { bg = '#181827' },
+            BufferLineFill = { bg = transparent_background and 'NONE' or '#181826' },
+            BufferLineTabSelected = { fg = '#181827' },
+            BufferLineIndicatorSelected = { fg = '#181827' },
 
             FloatBorder = { fg = '#6BB8FF' },
             Border = { fg = '#4c4c4c' },
@@ -264,6 +277,9 @@ return {
             TreesitterContext = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#181826', fg = '#45475C' },
             TreesitterContextBottom = { sp = '#45475c', underline = true },
+
+            debugBreakpoint = { fg = '#B2BEFF' },
+            DapUiBreakpointsDisabledLine = { fg = '#B2BEFF' },
 
             ['@punctuation.special'] = { fg = '#45475c' },
             ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
@@ -280,10 +296,68 @@ return {
   },
   {
     'ellisonleao/gruvbox.nvim',
-    config = function() end,
+    config = function()
+      local transparent_background = true
+      require('gruvbox').setup {
+        transparent_mode = transparent_background,
+        overrides = {
+          Normal = { bg = transparent_background and 'none' or '#282828' }, --#202020 #000000 #1F1F1F
+          Underlined = { bg = nil },
+          Directory = { fg = '#83A598' }, --#A1BCC5
+          NonText = { fg = '#7C6F64' }, --#A1BCC5
+          EndOfBuffer = { fg = '#282828', bg = 'none' },
+          FloatBorder = { fg = '#4c4c4c' },
+          VertSplit = { fg = transparent_background and '#1F1F1F' or '#665C54' },
+          TabLineFill = { bg = transparent_background and 'none' or '#3C3836' },
+          TabLineSel = { bg = transparent_background and 'none' or '#3C3836' },
+          WinSeparator = { fg = transparent_background and '#1F1F1F' or '#665C54' },
+          Pmenu = { bg = transparent_background and 'NONE' or '#504944' },
+          PmenuSel = { bg = '#83A598' },
+          GitSignsCurrentLineBlame = { fg = '#717171' },
+          -- Search = { bg = '#FABD2E', fg = '#000000' },
+          -- IncSearch = { bg = '#FABD2E', fg = '#FE8018' },
+
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+
+          TreesitterContext = { bg = transparent_background and 'NONE' or '#1C1C1C', fg = '#7C6F64' },
+          TreesitterContextLineNumber = { bg = transparent_background and 'NONE' or '#1C1C1C', fg = '#7C6F64' },
+          TreesitterContextBottom = { sp = '#45475c', underline = true },
+
+          ['@punctuation.special'] = { fg = '#59514B' },
+          ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.jsx'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.javascript'] = { fg = '#FFC0EA' },
+          ['@punctuation.special.typescript'] = { fg = '#FFC0EA' },
+
+          SnacksPicker = { bg = transparent_background and 'NONE' or '#443F3E' }, --333333 443f3e
+          SnacksPickerBorder = { fg = '#665C54', bg = transparent_background and 'NONE' or '#443f3e' },
+          SnacksInputIcon = { fg = '#fb4a34' },
+          DiagnosticVirtualTextInfo = { bg = transparent_background and 'NONE' or '#443F3E', fg = '#FB4A34' },
+          SnacksInputTitle = { fg = '#EBDBB2' },
+          SnacksInputBorder = { fg = '#3c3836' }, --3c3836
+          -- SnacksIndent = { fg = '#4c4c4c' },
+          -- SnacksIndentScope = { fg = '#abb2bf' },
+
+          NoiceConfirmBorder = { fg = '#3C3836' },
+          NoiceCmdlinePrompt = { fg = '#3c3836' },
+          NoiceCmdlinePopupBorder = { fg = '#3c3836' },
+          NoiceCmdlinePopupTitleCmdline = { fg = '#EBDBB2' },
+          NoiceCmdlinePopupTitle = { fg = '#EBDBB2' },
+          NoiceCmdlineTitle = { fg = '#EBDBB2' },
+          NoiceCmdlineIcon = { fg = '#FB4A34' }, --#ffffff
+          NoiceCmdlineIconSearch = { fg = '#FB4A34' }, --#ffffff
+        },
+      }
+    end,
   },
   {
     'luisiacc/gruvbox-baby',
+    config = function() end,
+  },
+  {
+    'EdenEast/nightfox.nvim',
     config = function() end,
   },
 
@@ -303,12 +377,12 @@ return {
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
 
-          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#101010' }, --#202020 #000000 #0D0D0D
-          EndOfBuffer = { fg = '#101010', bg = 'none' },
-          NormalFloat = { bg = transparent_background and 'none' or '#101010' },
-          VertSplit = { fg = transparent_background and '#101010' or '#101010' },
+          Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020 #000000 #0D0D0D #101010
+          EndOfBuffer = { fg = '#000000', bg = 'none' },
+          NormalFloat = { bg = transparent_background and 'none' or '#000000' }, --#101010
+          VertSplit = { fg = transparent_background and '#101010' or '#121212' },
 
-          Visual = { bg = transparent_background and '#4c4c4c' or '#606060' },
+          Visual = { bg = transparent_background and '#4c4c4c' or '#525252' }, --#606060
           CursorLine = { bg = '#323232' },
           CursorLineNr = { fg = '#C6C6C6' },
           SignColumn = { bg = '#323232' },
@@ -325,10 +399,35 @@ return {
           Title = { fg = '#FFFFFF' },
           Comment = { fg = '#585858' },
           Question = { fg = '#FFFFFF' },
+
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1c1c1c' },
+
           --underline cmp preview
           ['@markup.heading.1.markdown'] = { fg = '#323232' },
 
           -- ['@punctuation.bracket'] = { fg = '#323232' },
+
+          TreesitterContext = { fg = '#505050', bg = transparent_background and 'none' or '#111111' },
+          TreesitterContextLineNumber = { fg = '#727272', bg = transparent_background and 'none' or '#111111' },
+          TreesitterContextBottom = { sp = '#323232', underline = true },
+
+          --Buferlines
+          BufferLineFill = { bg = '#1C1C1C' },
+          BufferLinePick = { fg = '#00E0C0' },
+          BufferLinePickVisible = { fg = '#00E0C0' },
+          BufferLinePickSelected = { fg = '#00E0C0' },
+          BufferLineModifiedVisible = { fg = '#A9A9A9', bg = '#161616' },
+          BufferLineModifiedSelected = { fg = '#A9A9A9', bg = '#161616' },
+          BufferLineBufferSelected = { fg = '#A9A9A9', bg = '#1616161' },
+          BufferLineBackground = { fg = '#606060', bg = '#161616' },
+          BufferLineBufferVisible = { fg = '#606060', bg = '#161616' },
+          BufferLineBufferSelected = { fg = '#a9a9a9', bg = '#161616' },
+          BufferLineSeparator = { fg = '#323232', bg = '#161616' },
+          BufferLineIndicatorSelected = { fg = '#1c1c1c', bg = '#161616' },
+          BufferLineCloseButton = { fg = '#606060', bg = '#161616' },
+          BufferLineCloseButtonVisible = { fg = '#606060', bg = '#161616' },
+          BufferLineCloseButtonSelected = { fg = '#606060', bg = '#161616' },
 
           -- Avante
           AvanteInlineHint = { fg = '#606060' }, --#abb2bf
@@ -400,11 +499,11 @@ return {
 
           --todo
           TodoBgTODO = { bg = '#64baff', fg = '#111111', bold = true },
-          TodoBgNOTE = { bg = '#c18efe', fg = '#111111', bold = true },
+          TodoBgNOTE = { bg = '#60DCC1', fg = '#111111', bold = true },
           TodoBgWARN = { bg = '#ffa868', fg = '#111111', bold = true },
           TodoBgFIX = { bg = '#F67582', fg = '#111111', bold = true },
           TodoFgTODO = { fg = '#64baff' },
-          TodoFgNOTE = { fg = '#c18efe' },
+          TodoFgNOTE = { fg = '#60DCC1' },
           TodoFgWARN = { fg = '#ffa868' },
           TodoFgFIX = { fg = '#F67582' },
           -- todobghack = { bg = '#c18efe', fg = '#111111', bold = true },
@@ -414,7 +513,7 @@ return {
           -- diagnosticerror = { fg = '#be5046' },
           DiagnosticWarn = { fg = '#ffa868' },
           DiagnosticInfo = { fg = '#64baff' },
-          DiagnosticHint = { fg = '#c18efe' },
+          DiagnosticHint = { fg = '#60DCC1' },
 
           -- snacks notifier
           SnacksNotifierBorderInfo = { fg = '#4c4c4c' },
@@ -422,14 +521,14 @@ return {
           SnacksNotifierBorderError = { fg = '#F67582' },
           SnacksNotifierTitleInfo = { fg = '#ffffff' },
 
-          SnacksPickerTitle = { fg = '#ffffff', bg = '#1A1A1A' },
-          SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1A1A1A' }, --explorer
+          SnacksPickerTitle = { fg = '#abb2bf', bg = '#000000' }, --#1a1a1a
+          SnacksPickerInputTitle = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --explorer
           SnacksPickerBorder = { fg = transparent_background and '#101010' or '#101010', bg = transparent_background and 'none' or '#101010' }, --#323232
           SnacksPickerToggle = { fg = '#abb2bf', bg = '#1A1A1A' },
 
-          SnacksPicker = { bg = transparent_background and 'none' or '#101010' },
-          -- SnacksPicker = { bg = '#1A1A1A' },
-          -- SnacksPickerBorder = { fg = '#323232', bg = '#1A1A1A' },
+          SnacksPicker = { bg = transparent_background and 'NONE' or '#303030' }, --#101010
+          -- SnacksPicker = { bg = '#303030' }, --#1a1a1a
+          SnacksPickerBorder = { fg = '#303030', bg = transparent_background and 'NONE' or '#767676' }, --#1a1a1a
 
           SnacksInputIcon = { fg = '#abb2bf' }, --#ff657e
           SnacksInputTitle = { fg = '#ffffff' },
@@ -447,7 +546,7 @@ return {
           SnacksDashboardFile = { fg = '#ffffff' },
           SnacksDashboardTitle = { fg = '#ffffff' },
           -- snacksdashboardspecial = { fg = '#ff657e' },
-          SnacksDashboardNormal = { fg = '#4b4f6b' }, --4b4f6b
+          SnacksDashboardNormal = { fg = '#4c4c4c' }, --4b4f6b
 
           -- noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },
@@ -456,7 +555,7 @@ return {
           NoiceCmdlinePopupTitleCmdline = { fg = '#ffffff' },
           NoiceCmdlinePopupTitle = { fg = '#ffffff' },
           NoiceCmdlineTitle = { fg = '#ffffff' },
-          NoiceCmdlineIcon = { fg = '#abb2bf' }, --#ffffff
+          NoiceCmdlineIcon = { fg = '#62747F' }, --#ffffff
           NoiceCmdlineIconSearch = { fg = '#FFCDA2' }, --#ffffff
 
           -- whichkey
