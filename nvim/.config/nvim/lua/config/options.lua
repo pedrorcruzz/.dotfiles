@@ -109,5 +109,5 @@ vim.opt.cursorcolumn = false
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Enable line wrapping
-vim.opt.laststatus = 3
+-- Status line
+vim.o.laststatus = 0 -- or 3,  if u want global bar even hidden

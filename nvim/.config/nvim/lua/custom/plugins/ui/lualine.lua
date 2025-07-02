@@ -231,7 +231,7 @@ local lualine_config = {
 function ToggleLualine()
   if lualine_visible then
     require('lualine').hide { unhide = false }
-    vim.o.laststatus = 2 -- or 3,  if u want global bar even hidden
+    vim.o.laststatus = 0 -- or 3,  if u want global bar even hidden
     lualine_visible = false
   else
     vim.o.laststatus = 3
@@ -258,7 +258,7 @@ return {
       vim.o.laststatus = 3
       require('lualine').setup(lualine_config)
     else
-      vim.o.laststatus = 2 -- or 3,  if u want global bar even hidden
+      vim.o.laststatus = 0 -- or 3,  if u want global bar even hidden
     end
   end,
 }
