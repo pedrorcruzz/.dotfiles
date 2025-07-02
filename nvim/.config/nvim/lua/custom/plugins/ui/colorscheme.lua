@@ -305,7 +305,7 @@ return {
           Underlined = { bg = nil },
           Directory = { fg = '#83A598' }, --#A1BCC5
           NonText = { fg = '#7C6F64' }, --#A1BCC5
-          EndOfBuffer = { fg = '#282828', bg = 'none' },
+          EndOfBuffer = { fg = '#120B0A', bg = 'none' }, --#282828
           FloatBorder = { fg = '#4c4c4c' },
           TelescopePromptBorder = { fg = '#4c4c4c' },
           TelescopePreviewBorder = { fg = '#4c4c4c' },
