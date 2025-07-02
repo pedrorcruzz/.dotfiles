@@ -323,7 +323,7 @@ return {
       enabled = true,
       hidden = false,
       ignored = true,
-      layout = { preset = 'telescope' }, --default,telescope, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left, bottom,
+      layout = { preset = 'vscode', preview = true }, --default,telescope, vertical, ivy, dropdown, ivy_split,sidebar,vscode,select,top,right,left, bottom,
       sources = {
         files = {
           hidden = false,
