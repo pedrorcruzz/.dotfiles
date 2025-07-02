@@ -7,7 +7,7 @@ cursor-style = block
 # JetBrainsMono Nerd Font   MesloLGL Nerd Font  ComicShannsMono Nerd Font  Hack Nerd Font
 font-family = ""
 font-family = "Hack Nerd Font"
-font-size = 13
+font-size = 12
 font-feature = -liga
 font-thicken = true
 adjust-cell-height = 15%
@@ -83,7 +83,7 @@ keybind = super+s>l=goto_split:right
 # custom-shader = shaders/bloom075.glsl
 # custom-shader = shaders/bloom060.glsl
 # custom-shader = shaders/bloom050.glsl
-custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/bloom025.glsl
 # custom-shader = shaders/bloom050.glsl
 # custom-shader = shaders/bloom060.glsl
 # custom-shader = shaders/bloom075.glsl

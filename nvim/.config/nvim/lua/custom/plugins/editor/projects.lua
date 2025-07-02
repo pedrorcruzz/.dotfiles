@@ -44,7 +44,7 @@ return {
       },
       -- Picker configuration
       picker = {
-        type = 'fzf-lua', -- or "telescope"
+        type = 'telescope', -- or "telescope"
       },
     },
     init = function()
@@ -54,7 +54,7 @@ return {
     dependencies = {
       { 'nvim-lua/plenary.nvim', lazy = true },
       { 'nvim-telescope/telescope.nvim', lazy = true }, -- optional picker
-      { 'ibhagwan/fzf-lua', lazy = true }, -- optional picker
+      -- { 'ibhagwan/fzf-lua', lazy = true }, -- optional picker
       { 'Shatur/neovim-session-manager', lazy = true },
     },
   },

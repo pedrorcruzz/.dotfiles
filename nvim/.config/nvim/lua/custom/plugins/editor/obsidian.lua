@@ -5,7 +5,7 @@ return {
   ft = 'markdown',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'ibhagwan/fzf-lua',
+    -- 'ibhagwan/fzf-lua',
   },
   keys = {
     -- { '<leader>vo', '<cmd>e ~/Developer/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },

@@ -1,4 +1,4 @@
-local incline_active = false
+local incline_active = true
 
 return {
   'b0o/incline.nvim',
