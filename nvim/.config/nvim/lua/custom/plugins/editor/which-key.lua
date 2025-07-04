@@ -23,7 +23,7 @@ return {
       { '<leader>b', group = 'DBUI', icon = '' },
       -- { '<leader>b', group = 'BufferLine', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
-      { '<leader>n', group = 'Neotest', icon = '' },
+      -- { '<leader>n', group = 'Neotest', icon = '' },
       { '<leader>y', group = 'Yazi', icon = '' },
       { '<leader>;', group = 'Home', icon = '' },
       { '<leader>w', group = 'Save', icon = '' },
