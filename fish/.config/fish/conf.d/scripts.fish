@@ -35,3 +35,11 @@ function ver-lucro
     cd $prev_dir
 end
 
+function remove-dsstore
+    set prev_dir (pwd)
+    cd ~/.dotfiles/scripts
+    ./remove-dsstore.sh
+    cd $prev_dir
+end
+
+
