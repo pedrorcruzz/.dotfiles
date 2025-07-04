@@ -1,6 +1,7 @@
 return {
   -- Useful plugin to show you pending keybinds.
   'folke/which-key.nvim',
+  lazy = true,
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup {
@@ -113,15 +114,6 @@ return {
     { '<leader>t8', '<cmd>tabn 8ba<cr>', desc = 'Tabs: 8' },
     { '<leader>t9', '<cmd>tabn 9<cr>', desc = 'Tabs: 9' },
     { '<leader>t0', '<cmd>tabn 10<cr>', desc = 'Tabs: 10' },
-
-    -- Neotest
-    -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
-    -- { "<leader>ns", "<cmd>NeoTest stop<cr>", desc = "Stop" },
-    -- { "<leader>nj", "<cmd>NeoTest jump<cr>", desc = "Jump" },
-    -- { "<leader>na", "<cmd>NeoTest attach<cr>", desc = "Attach" },
-    -- { "<leader>no", "<cmd>NeoTest output<cr>", desc = "Output" },
-    -- { "<leader>np", "<cmd>NeoTest output-panel<cr>", desc = "Output Panel" },
-    -- { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
 
     --Git
     -- { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Git: Commits' },
