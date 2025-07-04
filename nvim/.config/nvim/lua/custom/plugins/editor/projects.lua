@@ -1,6 +1,7 @@
 return {
   {
     'coffebar/neovim-project',
+    lazy = true,
     event = 'VeryLazy', -- otimizado: carrega só quando o Neovim estiver ocioso
     -- lazy = false, -- removido para otimizar o ms
     -- priority = 100, -- removido para otimizar o ms
