@@ -11,19 +11,19 @@ return { -- LSP Configuration & Plugins
 
     { 'folke/neodev.nvim', opts = {}, lazy = true },
     { 'folke/neoconf.nvim', opts = {}, lazy = true },
-    {
-      'SmiteshP/nvim-navic',
-      opts = {
-        lsp = {
-          auto_attach = true,
-          preference = {
-            ['typescript-tools'] = 2,
-            ['tsserver'] = 1,
-          },
-        },
-      },
-      lazy = true,
-    },
+    -- {
+    --   'SmiteshP/nvim-navic',
+    --   opts = {
+    --     lsp = {
+    --       auto_attach = true,
+    --       preference = {
+    --         ['typescript-tools'] = 2,
+    --         ['tsserver'] = 1,
+    --       },
+    --     },
+    --   },
+    --   lazy = true,
+    -- },
   },
 
   config = function()
@@ -150,7 +150,11 @@ return { -- LSP Configuration & Plugins
       },
     }
 
-    require('mason').setup()
+    require('mason').setup {
+      ui = {
+        border = 'rounded',
+      },
+    }
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       --Formatters
