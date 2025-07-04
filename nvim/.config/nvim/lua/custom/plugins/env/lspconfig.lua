@@ -198,6 +198,12 @@ return { -- LSP Configuration & Plugins
         end,
       },
     }
+    -- NOTE: maybe comment this, if don't work
+    local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+    for type, icon in pairs(signs) do
+      local hl = 'DiagnosticSign' .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    end
 
     vim.diagnostic.config {
       signs = {
@@ -238,12 +244,6 @@ return { -- LSP Configuration & Plugins
       severity_sort = false,
     }
 
-    -- local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
-    -- for type, icon in pairs(signs) do
-    --   local hl = 'DiagnosticSign' .. type
-    --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    -- end
-    --
     -- vim.diagnostic.config {
     --   virtual_text = {
     --     spacing = 4,
