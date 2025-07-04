@@ -11,11 +11,6 @@ return { -- LSP Configuration & Plugins
 
     { 'folke/neodev.nvim', opts = {}, lazy = true },
     { 'folke/neoconf.nvim', opts = {}, lazy = true },
-    -- {
-    --   'b0o/SchemaStore.nvim',
-    --   lazy = true,
-    --   version = false,
-    -- },
     {
       'SmiteshP/nvim-navic',
       opts = {
@@ -32,8 +27,6 @@ return { -- LSP Configuration & Plugins
   },
 
   config = function()
-    -- Brief aside: **What is LSP?**
-
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)

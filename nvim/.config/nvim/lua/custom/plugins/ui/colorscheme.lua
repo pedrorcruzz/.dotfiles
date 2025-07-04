@@ -356,10 +356,6 @@ return {
     end,
   },
   {
-    'luisiacc/gruvbox-baby',
-    config = function() end,
-  },
-  {
     'EdenEast/nightfox.nvim',
     config = function() end,
   },
