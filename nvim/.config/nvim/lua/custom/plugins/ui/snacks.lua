@@ -76,9 +76,9 @@ return {
           -- indent = 10,
 
           -- gif
-          cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
+          cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher-rgb.gif"; sleep .1',
           height = 12, --16
-          width = 27, --35
+          width = 31, --35
           indent = 19,
 
           enabled = function()
@@ -103,10 +103,10 @@ return {
           indent = 18,
 
           --gif
-          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/golang.gif"; sleep .1',
-          height = 12, --14
+          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher-rgb.gif"; sleep .1',
+          height = 11, --14
           width = 27, --32
-          indent = 19, --22
+          indent = 21, --22
 
           enabled = function()
             return not (vim.o.columns > 135)

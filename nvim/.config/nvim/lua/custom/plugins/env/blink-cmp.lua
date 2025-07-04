@@ -2,10 +2,13 @@ return {
   {
     'moyiz/blink-emoji.nvim',
     ft = { 'markdown', 'norg', 'gitcommit' },
+    lazy = true,
   },
 
   {
     'saghen/blink.cmp',
+    event = 'InsertEnter',
+    version = '1.*',
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
@@ -25,8 +28,7 @@ return {
               luasnip.filetype_extend('typescriptreact', { 'javascript' })
               luasnip.filetype_extend('typescript', { 'javascript' })
               luasnip.filetype_extend('vue', { 'vue' })
-              luasnip.filetype_extend('django', { 'django' })
-              luasnip.filetype_extend('django', { 'python' })
+              luasnip.filetype_extend('django', { 'django', 'python' })
               require('luasnip.loaders.from_vscode').lazy_load()
 
               require 'config.snippets.typescript'
@@ -38,21 +40,14 @@ return {
         },
       },
 
-      'mikavilpas/blink-ripgrep.nvim',
-      'kristijanhusak/vim-dadbod-completion',
-      'bydlw98/blink-cmp-env',
+      { 'mikavilpas/blink-ripgrep.nvim', lazy = true },
+      { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql' }, lazy = true },
+      { 'bydlw98/blink-cmp-env', lazy = true },
     },
-    version = '1.*',
 
-    -- -@module 'blink.cmp'
-    -- -@type blink.cmp.Config
     opts = {
       snippets = { preset = 'luasnip' },
       keymap = {
-        -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-        -- 'super-tab' for mappings similar to vscode (tab to accept)
-        -- 'enter' for enter to accept
-        -- 'none' for no mappings
         preset = 'none',
         ['<CR>'] = { 'accept', 'fallback' },
         ['<C-j>'] = { 'show', 'show_documentation', 'hide_documentation' },
@@ -63,32 +58,29 @@ return {
         ['<DOWN>'] = { 'select_next', 'fallback' },
         ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
         ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-
         ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
         ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
       },
 
       appearance = {
         nerd_font_variant = 'mono',
       },
+
       signature = {
         enabled = true,
-        window = { border = 'none' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+        window = { border = 'none' },
       },
 
       completion = {
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
-          window = { border = 'rounded' }, -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          window = { border = 'rounded' },
         },
-        ghost_text = {
-          enabled = false,
-        },
+        ghost_text = { enabled = false },
         menu = {
-          border = 'rounded', -- 'rounded' | 'single' | 'double' | 'solid' | 'shadow' | 'none'
+          border = 'rounded',
           scrollbar = false,
           draw = {
             treesitter = { 'lsp' },
@@ -101,7 +93,6 @@ return {
         per_filetype = {
           sql = { 'dadbod' },
         },
-
         providers = {
           laravel = {
             name = 'laravel',
@@ -140,34 +131,27 @@ return {
           env = {
             name = 'Env',
             module = 'blink-cmp-env',
-            --- @type blink-cmp-env.Options
             opts = {
               item_kind = vim.lsp.protocol.CompletionItemKind.Variable,
               show_braces = false,
               show_documentation_window = true,
             },
           },
-
           emoji = {
             module = 'blink-emoji',
             name = 'Emoji',
             score_offset = 15,
             opts = { insert = true },
-
             should_show_items = function()
               return vim.tbl_contains({ 'gitcommit', 'markdown', 'norg' }, vim.o.filetype)
             end,
           },
-
-          dadbod = { module = 'vim_dadbod_completion.blink' },
+          dadbod = {
+            module = 'vim_dadbod_completion.blink',
+          },
         },
-
-        -- keymap = {
-        --   ['<c-g>'] = function()
-        --     require('blink-cmp').show { providers = { 'ripgrep' } }
-        --   end,
-        -- },
       },
+
       fuzzy = { implementation = 'prefer_rust_with_warning' },
     },
 
