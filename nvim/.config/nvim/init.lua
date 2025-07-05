@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   { import = 'custom.plugins.env' },
+  { import = 'custom.plugins.language' },
   { import = 'custom.plugins.ui' },
   { import = 'custom.plugins.coding' },
   { import = 'custom.plugins.editor' },
@@ -114,4 +115,3 @@ require('nvim-web-devicons').setup {
     },
   },
 }
-
