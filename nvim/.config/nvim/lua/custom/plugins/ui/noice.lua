@@ -11,8 +11,8 @@ return {
         enabled = true,
         view = 'cmdline_popup',
         opts = {
-          -- position = { row = 0.2, col = 0.5 }, -- Centraliza a popup (50% da altura e largura da tela)
-          -- size = { width = 55, height = 1 },
+          position = { row = 0.4, col = 0.5 }, -- Centraliza a popup (50% da altura e largura da tela)
+          size = { width = 65, height = 2 },
         },
         format = {
           cmdline = { pattern = '^:', icon = '', lang = 'vim' },

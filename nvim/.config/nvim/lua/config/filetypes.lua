@@ -11,7 +11,13 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'typescriptreact' },
+  pattern = {
+    'typescript',
+    'typescriptreact',
+    'javascript',
+    'javascriptreact',
+    'json',
+  },
   callback = function()
     vim.bo.shiftwidth = 2
     vim.bo.tabstop = 2
@@ -21,41 +27,13 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'javascriptreact' },
+  pattern = {
+    'go',
+  },
   callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.expandtab = true
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'javascript' },
-  callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.expandtab = true
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'typescript' },
-  callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.expandtab = true
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'json' },
-  callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.expandtab = true
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+    vim.bo.expandtab = false
   end,
 })

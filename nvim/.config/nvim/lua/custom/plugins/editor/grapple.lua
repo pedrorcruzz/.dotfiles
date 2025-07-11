@@ -22,7 +22,7 @@ return {
     { '<leader>o0', '<cmd>Grapple select index=10<cr>', desc = 'Grapple: Tenth Tag' },
     { '<leader>of', '<cmd>Telescope grapple tags<cr>', desc = 'Grapple: Telescope' },
 
-    { '<leader>od', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple: Next Tag' },
     { '<leader>oa', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Grapple: Previous Tag' },
+    { '<leader>os', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple: Next Tag' },
   },
 }

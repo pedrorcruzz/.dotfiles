@@ -6,7 +6,7 @@ local fmt = require('luasnip.extras.fmt').fmt
 
 ls.add_snippets('javascriptreact', {
   s(
-    { trig = 'jedf', dscr = 'Custom - Export Default Function Name - React JSX Component' },
+    { trig = 'cjedf', dscr = 'Custom - Export Default Function Name - React JSX Component' },
     fmt(
       [[
 export default function {}({}) {{
@@ -22,7 +22,7 @@ export default function {}({}) {{
   ),
 
   s(
-    { trig = 'jef', dscr = 'Custom - Export Function Name - React JSX Component' },
+    { trig = 'cjef', dscr = 'Custom - Export Function Name - React JSX Component' },
     fmt(
       [[
 export function {}({}) {{

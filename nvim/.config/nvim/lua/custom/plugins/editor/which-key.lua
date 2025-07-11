@@ -1,11 +1,14 @@
 return {
   -- Useful plugin to show you pending keybinds.
   'folke/which-key.nvim',
+  lazy = true,
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup {
+      preset = 'helix', --classic, modern, helix
       win = {
         border = 'single', -- none, single, double, shadow
+        -- width = 60,
       },
     }
 
@@ -14,15 +17,14 @@ return {
       { '<leader>', group = ' 󰠥 ROSAVIM' }, --󰧵
       { '<leader>e', group = 'File Explorer', icon = '' },
       -- { "<leader>'", group = 'Wrap', icon = '󰭷' },
-      { '<leader>z', group = 'Obsidian', icon = '' },
-      { '<leader>,', group = 'Mini Map', icon = '' },
-      { '<leader>vb', group = 'Buffers', icon = '' },
-      { '<leader>vt', group = 'Tabs', icon = '' },
+      { '<leader>ft', group = 'Todo Comments', icon = ' ' },
+      { '<leader>z', group = 'Mini Map', icon = '' },
+      { '<leader>,', group = 'Trouble Diagnostic', icon = '󰁨' },
       { '<leader>vw', group = 'Windows', icon = '' },
-      { '<leader>v', group = 'DBUI', icon = '' },
-      { '<leader>b', group = 'BufferLine', icon = '' },
+      { '<leader>b', group = 'DBUI', icon = '' },
+      -- { '<leader>b', group = 'BufferLine', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
-      { '<leader>n', group = 'Neotest', icon = '' },
+      -- { '<leader>n', group = 'Neotest', icon = '' },
       { '<leader>y', group = 'Yazi', icon = '' },
       { '<leader>;', group = 'Home', icon = '' },
       { '<leader>w', group = 'Save', icon = '' },
@@ -31,18 +33,37 @@ return {
       { '<leader>h', group = 'No Highlight', icon = '󰸱' },
       { '<leader>]', group = 'Next', icon = '󰙡' },
       { '<leader>a', group = 'Avante', icon = ' ' },
-      { '<leader>lx', group = 'Virtual Environment', icon = ' ' },
-      { '<leader>lt', group = 'ToggleTerm', icon = ' ' },
+      { '<leader>ci', group = 'ToggleTerm', icon = ' ' },
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },
-      { '<leader>m', group = 'Codi', icon = '' },
+
+      { '<leader>v', group = 'Obsidian', icon = '' },
+      { '<leader>vb', group = 'Buffers', icon = '' },
+      { '<leader>vt', group = 'Tabs', icon = '' },
+
+      { '<leader>L', group = 'Lazy', icon = '󰒲 ' },
 
       { '<leader>l', group = 'Tools', icon = ' ' },
+      { '<leader>lp', group = 'Colemark', icon = '' },
+      { '<leader>lx', group = 'Virtual Environment', icon = ' ' },
+      { '<leader>le', group = 'GrugFar', icon = '󰛔' },
+
       { '<leader>p', group = 'Languages Tools', icon = ' ' },
       { '<leader>pp', group = 'PHP Tools', icon = ' ' },
       { '<leader>pg', group = 'GO Tools', icon = ' ' },
+      { '<leader>pj', group = 'Javascript Tools', icon = ' ' },
       { '<leader>ps', group = 'Spring Tools', icon = ' ' },
+
+      { '<leader>pjc', group = 'Codi', icon = ' ' },
       { '<leader>pgd', group = 'Debug', icon = ' ' },
+      { '<leader>pgt', group = 'Test', icon = '󰙨 ' },
+
+      { '<leader>pl', group = 'Laravel Tools', icon = ' ' },
+      { '<leader>plc', group = 'Composer', icon = ' ' },
+      { '<leader>pln', group = 'Sail', icon = ' ' },
+      { '<leader>pld', group = 'Diagrams', icon = ' ' },
+      { '<leader>plx', group = 'Cache', icon = '󰃨 ' },
+      { '<leader>plh', group = 'IDE Helper', icon = ' ' },
 
       { '<leader>c', group = 'Window', icon = '󰶛' },
       { '<leader>t', group = 'Tabs', icon = '󱦞' },
@@ -50,9 +71,7 @@ return {
       { '<leader>i', group = 'Copilot', icon = '' },
       { '<leader>u', group = 'Markdown', icon = '' },
       { '<leader>d', group = 'Debug' },
-      { '<leader>d_', hidden = true },
       { '<leader>f', group = 'Find' },
-      { '<leader>p_', hidden = true },
       { '<leader>g', group = 'Git', icon = { name = 'git', cat = 'filetype' } },
       { '<leader>r', group = 'Refactor' },
       { '<leader>s', group = 'Search' },
@@ -67,27 +86,24 @@ return {
     { '<leader>w', '<cmd>w!<cr>', desc = 'Save' },
     { '<leader>W', '<cmd>noa w<cr>', desc = 'Save Without Formatter' },
     -- { '<leader>c', '<cmd>close<cr>', desc = 'Close Window' },
-    -- { "<leader>;", "<cmd>Dashboard<cr>", desc = "Home" },
     { '<leader>h', '<cmd>nohlsearch<cr>', desc = 'No Highlight' },
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
-    { '<leader>le', '<cmd>GrugFar<cr>', desc = 'GrugFar' },
-    { '<leader>lg', '<cmd>TSContextToggle<cr>', desc = 'TSCOntext: Toggle' },
+    { '<leader>lt', '<cmd>TSContextToggle<cr>', desc = 'TSCOntext: Toggle' },
     { '<leader>fp', '<cmd>NeovimProjectDiscover<cr>', desc = 'Discover Projects' },
+
+    --Lazy
+    { '<leader>Ll', '<cmd>Lazy<cr>', desc = 'Lazy' },
+    { '<leader>Lp', '<cmd>Lazy profile<cr>', desc = 'Profile' },
+    { '<leader>Lh', '<cmd>LazyHealth<cr>', desc = 'Health' },
+    { '<leader>LH', '<cmd>Lazy help<cr>', desc = 'Help' },
+    { '<leader>Lb', '<cmd>Lazy build<cr>', desc = 'Build' },
+    { '<leader>Lc', '<cmd>Lazy clean<cr>', desc = 'Clean' },
+    { '<leader>LC', '<cmd>Lazy clear<cr>', desc = 'Clear' },
+    { '<leader>Lu', '<cmd>Lazy update<cr>', desc = 'Update' },
+    { '<leader>Ls', '<cmd>Lazy sync<cr>', desc = 'Sync' },
 
     --Wrap
     -- { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
-
-    --Obsidian
-
-    { '<leader>zo', '<cmd>e ~/Workspace/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
-    { '<leader>zO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
-    { '<leader>zd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
-    { '<leader>zf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
-    { '<leader>zs', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
-    { '<leader>zr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
-    { '<leader>za', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note' },
-    { '<leader>zm', '<cmd>ObsidianToggleCheckbox<cr>', desc = 'Toggle Checkbox' },
-    { '<leader>zp', '<cmd>ObsidianPasteImage<cr>', desc = 'Paste Image' },
 
     --Bufers
     { '<leader>[', '<cmd>bprevious<cr>', desc = 'Previous' },
@@ -96,7 +112,7 @@ return {
     --Tabs
     { '<leader>tt', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
     { '<leader>ta', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
-    { '<leader>td', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
+    { '<leader>ts', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
     { '<leader>tc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
     { '<leader>tC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
     { '<leader>tf', '<cmd>FzfLua tabs<cr>', desc = 'Tabs: Find' },
@@ -108,18 +124,9 @@ return {
     { '<leader>t5', '<cmd>tabn 5<cr>', desc = 'Tabs: 5' },
     { '<leader>t6', '<cmd>tabn 6<cr>', desc = 'Tabs: 6' },
     { '<leader>t7', '<cmd>tabn 7<cr>', desc = 'Tabs: 7' },
-    { '<leader>t8', '<cmd>tabn 8<cr>', desc = 'Tabs: 8' },
+    { '<leader>t8', '<cmd>tabn 8ba<cr>', desc = 'Tabs: 8' },
     { '<leader>t9', '<cmd>tabn 9<cr>', desc = 'Tabs: 9' },
     { '<leader>t0', '<cmd>tabn 10<cr>', desc = 'Tabs: 10' },
-
-    -- Neotest
-    -- { "<leader>nr", "<cmd>NeoTest run<cr>", desc = "Run" },
-    -- { "<leader>ns", "<cmd>NeoTest stop<cr>", desc = "Stop" },
-    -- { "<leader>nj", "<cmd>NeoTest jump<cr>", desc = "Jump" },
-    -- { "<leader>na", "<cmd>NeoTest attach<cr>", desc = "Attach" },
-    -- { "<leader>no", "<cmd>NeoTest output<cr>", desc = "Output" },
-    -- { "<leader>np", "<cmd>NeoTest output-panel<cr>", desc = "Output Panel" },
-    -- { "<leader>nh", "<cmd>NeoTest summary<cr>", desc = "Summary" },
 
     --Git
     -- { '<leader>gc', '<cmd>FzfLua git_commits<CR>', desc = 'Git: Commits' },
@@ -128,9 +135,6 @@ return {
     -- { '<leader>gs', '<cmd>FzfLua git_status<CR>', desc = 'Git: Status' },
     -- { '<leader>gl', '<cmd>FzfLua git_blame<CR>', desc = 'Git: Blame' },
     -- { '<leader>gt', '<cmd>FzfLua git_stash<CR>', desc = 'Git: Stash' },
-
-    -- Nvim-tree
-    -- { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
 
     --Window
     { '<leader>1', '<cmd>wincmd h<cr>', desc = 'Focus Left' },

@@ -35,14 +35,19 @@ rm -rf ~/.config/nvim \
        ~/.zshrc \
        ~/.gitconfig \
        ~/.tmux.conf \
-       ~/.config/fastfetch\
-       ~/.config/yabai \
+       ~/.config/fastfetch \
        ~/.config/yabai \
        ~/.config/skhd \
-      ~/.config/starship \
-      ~/.config/wezterm \
-
-
+       ~/.config/starship \
+       ~/.config/wezterm \
+       ~/.config/fish \
+       ~/.config/yazi \
+       ~/.config/posting \
+       ~/.config/lazygit \
+       ~/.hushlogin \
+       ~/.config/ghostty \
+       ~/.config/ghostty/Library/Application\ Support/com.mitchellh.ghostty \
+       ~/.config/lazygit/Library/Application\ Support/lazygit \
 ```
 
 3. **Navigate to the .dotfiles directory**:

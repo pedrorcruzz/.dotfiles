@@ -5,6 +5,8 @@ return {
     config = function()
       local conform = require 'conform'
 
+      local enable_auto_format_on_focus = true
+
       local function has_biome()
         return vim.fn.filereadable(vim.fn.getcwd() .. '/node_modules/.bin/biome') == 1
       end
@@ -26,6 +28,7 @@ return {
           go = { 'goimports' },
           java = { 'google-java-format' },
           blade = { 'blade-formatter' },
+          sql = { 'sql_formatter' },
         },
         format_on_save = {
           lsp_fallback = true,
@@ -41,6 +44,22 @@ return {
           timeout_ms = 500,
         }
       end, { desc = 'Format current file' })
+
+      if enable_auto_format_on_focus then
+        vim.api.nvim_create_autocmd({ 'FocusLost', 'BufLeave' }, {
+          pattern = '*',
+          callback = function(args)
+            local buf = args.buf or vim.api.nvim_get_current_buf()
+            if require('lazyvim.util').format.enabled(buf) and vim.fn.mode() == 'n' then
+              vim.defer_fn(function()
+                if vim.api.nvim_buf_is_valid(buf) then
+                  require('conform').format { bufnr = buf }
+                end
+              end, 100)
+            end
+          end,
+        })
+      end
     end,
   },
 }

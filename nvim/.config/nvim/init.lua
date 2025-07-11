@@ -10,13 +10,15 @@ local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end ---@diagnostic disable-next-line: undefined-field
+end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
   { import = 'custom.plugins.env' },
+  { import = 'custom.plugins.language' },
   { import = 'custom.plugins.ui' },
+  { import = 'custom.plugins.ui.colorschemes' },
   { import = 'custom.plugins.coding' },
   { import = 'custom.plugins.editor' },
   { import = 'custom.plugins.ai' },
@@ -41,76 +43,3 @@ require('lazy').setup({
     },
   },
 })
-
-require('nvim-web-devicons').setup {
-  override = {
-    go = {
-      icon = '',
-      color = '#00ADD8',
-      cterm_color = '74',
-      name = 'Go',
-    },
-    html = {
-      icon = '',
-      color = '#EA580B',
-      cterm_color = '74',
-      name = 'Html',
-    },
-    css = {
-      icon = '',
-      color = '#c18efe',
-      cterm_color = '74',
-      name = 'Css',
-    },
-  },
-  override_by_filename = {
-    ['go.mod'] = {
-      icon = '',
-      color = '#F471B5',
-      cterm_color = '74',
-      name = 'GoMod',
-    },
-    ['go.sum'] = {
-      icon = '',
-      color = '#F471B5',
-      cterm_color = '74',
-      name = 'GoSum',
-    },
-    ['go-test'] = {
-      icon = '',
-      color = '#606060',
-      cterm_color = '74',
-      name = 'GoTest',
-    },
-    ['README.md'] = {
-      icon = '',
-      color = '#ffffff',
-      cterm_color = '74',
-      name = 'Readme',
-    },
-    ['Makefile'] = {
-      icon = '',
-      color = '#F471B5',
-      cterm_color = '74',
-      name = 'Makefile',
-    },
-    ['package-lock.json'] = {
-      icon = '',
-      color = '#2DD4BF',
-      cterm_color = '74',
-      name = 'PackageLock',
-    },
-    ['package.json'] = {
-      icon = '',
-      color = '#2DD4BF',
-      cterm_color = '74',
-      name = 'PackageJson',
-    },
-    ['.gitignore'] = {
-      icon = '',
-      color = '#F87171',
-      cterm_color = '74',
-      name = 'Gitignore',
-    },
-  },
-}

@@ -12,7 +12,7 @@ yabai -m config top_padding 5
 yabai -m config bottom_padding 5
 yabai -m config left_padding 5
 yabai -m config right_padding 5
-yabai -m config window_gap 7
+yabai -m config window_gap 6
 
 # center mouse on window with focus
 yabai -m config mouse_follows_focus on
@@ -31,6 +31,9 @@ yabai -m mouse_drop_action swap
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Preferences" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^ChatGPT$" manage=off
+yabai -m rule --add app="^Bitwarden$" manage=off
 yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
 yabai -m rule --add app="^Homerow" manage=off
@@ -47,3 +50,49 @@ borders active_color=0xff707070 width=5.0 &
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
+
+# Startup spaces
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$idx" --label "$name"
+}
+
+setup_space 1 web
+setup_space 2 code
+setup_space 3 devtools
+setup_space 4 tools
+setup_space 5 note
+setup_space 6 media
+setup_space 7 social
+
+yabai -m rule --add app="^Safari$" space=^1
+yabai -m rule --add app="^Dia$" space=^1
+
+yabai -m rule --add app="^Warp$" space=^2
+yabai -m rule --add app="^Ghostty$" space=^2
+yabai -m rule --add app="^Cursor$" space=^2
+
+yabai -m rule --add app="^Insomnia$" space=^3
+yabai -m rule --add app="^Postman$" space=^3
+yabai -m rule --add app="^Bruno$" space=^3
+yabai -m rule --add app="^OrbStack$" space=^3
+
+yabai -m rule --add app=".*Figma$" space=^4
+yabai -m rule --add app="^Linear$" space=^4
+yabai -m rule --add app=".*ChatGPT$" space=^4
+
+yabai -m rule --add app="^Obsidian$" space=^5
+
+yabai -m rule --add app="^Spotify$" space=^6
+
+yabai -m rule --add app=".*WhatsApp$" space=^7
+yabai -m rule --add app=".*Discord$" space=^7
