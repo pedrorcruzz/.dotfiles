@@ -32,7 +32,8 @@ $java\
 $swift\
 $rust\
 $ruby\
-${custom.docker}\
+$docker_context\
+${custom.docker_version}\
 ${custom.yarn}\
 ${custom.pnpm}\
 $bun\
@@ -275,6 +276,7 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [ruby]
+style = "fg:#E0115F"
 symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
@@ -292,18 +294,17 @@ symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
 [docker_context]
-# symbol = ' '
-symbol = ' 🐳 '
-style = 'fg:#06969A'
-format = '[$symbol]($style) $path'
+disabled = true
+style = 'fg:#019CFE'
+format = '[[via](#52676B) 🐋  $context ]($style)'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
-[custom.docker]
-disabled = false
-symbol = '🐳 '
-detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
-
+[custom.docker_version]
+style = 'fg:#019CFE'
+command = "docker --version | cut -d ' ' -f3 | tr -d ','"
+detect_files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
+format = "[[via](#52676B)   $output]($style) "
 
 
 [cmd_duration]

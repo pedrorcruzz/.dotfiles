@@ -1,5 +1,10 @@
 return {
   'neysanfoo/coderunner.nvim',
+  lazy = true,
+  cmd = { 'Run' },
+  keys = {
+    { '<leader>lc', '<cmd>Run<cr>', desc = 'Code: Run' },
+  },
   config = function()
     require('coderunner').setup {
       filetype_commands = {
@@ -14,11 +19,8 @@ return {
         elixir = 'elixir "$fullFilePath"',
         php = 'php "$fullFilePath"',
       },
-      buffer_height = 20, -- height in lines
-      focus_back = false, -- whether to set the cursor back to the original window after running the code
+      buffer_height = 20,
+      focus_back = false,
     }
   end,
-  keys = {
-    { '<leader>lc', '<cmd>Run<cr>', desc = ' Code: Run' },
-  },
 }

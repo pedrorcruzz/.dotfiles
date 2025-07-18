@@ -1,5 +1,6 @@
 return {
   'mistweaverco/discord.nvim',
+  lazy = true,
   event = 'VeryLazy',
   config = function()
     local is_discord_running = os.execute 'pgrep Discord > /dev/null'

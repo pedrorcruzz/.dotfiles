@@ -1,14 +1,20 @@
 return {
   {
     'coffebar/neovim-project',
+    lazy = true,
+    event = 'VeryLazy', -- otimizado: carrega só quando o Neovim estiver ocioso
+    -- lazy = false, -- removido para otimizar o ms
+    -- priority = 100, -- removido para otimizar o ms
     opts = {
       projects = { -- define project roots
-        '~/Developer/Projects/*',
-        '~/Developer/Studies/*',
-        '~/Developer/Freelas/*',
+        '~/Developer/Projects/Garage/*',
+        '~/Developer/Projects/Personal/*',
+        '~/Developer/Projects/Sandbox/*',
+        '~/Developer/Projects/Udemy/*',
+        '~/Developer/Business/Seven/*',
+        '~/Developer/Business/Guru/*',
+        '~/Developer/Business/Freelas/*',
         '~/Developer/Cesmac/*',
-        '~/Developer/Seven/*',
-        '~/Developer/Guru/*',
       },
       -- Path to store history and sessions
       datapath = vim.fn.stdpath 'data', -- ~/.local/share/nvim/
@@ -39,7 +45,7 @@ return {
       },
       -- Picker configuration
       picker = {
-        type = 'fzf-lua', -- or "telescope"
+        type = 'telescope', -- or "telescope"
       },
     },
     init = function()
@@ -47,12 +53,10 @@ return {
       vim.opt.sessionoptions:append 'globals'
     end,
     dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-      { 'nvim-telescope/telescope.nvim' }, -- optional picker
-      { 'ibhagwan/fzf-lua' }, -- optional picker
-      { 'Shatur/neovim-session-manager' },
+      { 'nvim-lua/plenary.nvim', lazy = true },
+      { 'nvim-telescope/telescope.nvim', lazy = true }, -- optional picker
+      -- { 'ibhagwan/fzf-lua', lazy = true }, -- optional picker
+      { 'Shatur/neovim-session-manager', lazy = true },
     },
-    lazy = false,
-    priority = 100,
   },
 }

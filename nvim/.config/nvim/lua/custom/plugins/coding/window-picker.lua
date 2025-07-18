@@ -1,7 +1,8 @@
 return {
   'yorickpeterse/nvim-window',
   keys = {
-    { '<leader>cf', "<cmd>lua require('nvim-window').pick()<cr>", desc = 'Pick a Window' },
+    { '<leader>cn', "<cmd>lua require('nvim-window').pick()<cr>", desc = 'Pick a Window' },
+    { '<leader>m', "<cmd>lua require('nvim-window').pick()<cr>", desc = 'Pick a Window' },
   },
   config = true,
 }

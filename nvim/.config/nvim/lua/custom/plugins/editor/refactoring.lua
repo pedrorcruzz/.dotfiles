@@ -1,100 +1,96 @@
 return {
-  "ThePrimeagen/refactoring.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  'ThePrimeagen/refactoring.nvim',
+  lazy = true,
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter',
   },
   keys = {
-    { "<leader>r", "", desc = "+refactor", mode = { "n", "v" } },
+    { '<leader>r', '', desc = '+refactor', mode = { 'n', 'v' } },
+    { '<leader>rs', pick, mode = 'v', desc = 'Refactor' },
     {
-      "<leader>rs",
-      pick,
-      mode = "v",
-      desc = "Refactor",
+      '<leader>ri',
+      function()
+        require('refactoring').refactor 'Inline Variable'
+      end,
+      mode = { 'n', 'v' },
+      desc = 'Inline Variable',
     },
     {
-      "<leader>ri",
+      '<leader>rb',
       function()
-        require("refactoring").refactor("Inline Variable")
+        require('refactoring').refactor 'Extract Block'
       end,
-      mode = { "n", "v" },
-      desc = "Inline Variable",
+      desc = 'Extract Block',
     },
     {
-      "<leader>rb",
+      '<leader>rf',
       function()
-        require("refactoring").refactor("Extract Block")
+        require('refactoring').refactor 'Extract Block To File'
       end,
-      desc = "Extract Block",
+      desc = 'Extract Block To File',
     },
     {
-      "<leader>rf",
+      '<leader>rP',
       function()
-        require("refactoring").refactor("Extract Block To File")
+        require('refactoring').debug.printf { below = false }
       end,
-      desc = "Extract Block To File",
+      desc = 'Debug Print',
     },
     {
-      "<leader>rP",
+      '<leader>rp',
       function()
-        require("refactoring").debug.printf({ below = false })
+        require('refactoring').debug.print_var { normal = true }
       end,
-      desc = "Debug Print",
+      desc = 'Debug Print Variable',
     },
     {
-      "<leader>rp",
+      '<leader>rc',
       function()
-        require("refactoring").debug.print_var({ normal = true })
+        require('refactoring').debug.cleanup {}
       end,
-      desc = "Debug Print Variable",
+      desc = 'Debug Cleanup',
     },
     {
-      "<leader>rc",
+      '<leader>rf',
       function()
-        require("refactoring").debug.cleanup({})
+        require('refactoring').refactor 'Extract Function'
       end,
-      desc = "Debug Cleanup",
+      mode = 'v',
+      desc = 'Extract Function',
     },
     {
-      "<leader>rf",
+      '<leader>rF',
       function()
-        require("refactoring").refactor("Extract Function")
+        require('refactoring').refactor 'Extract Function To File'
       end,
-      mode = "v",
-      desc = "Extract Function",
+      mode = 'v',
+      desc = 'Extract Function To File',
     },
     {
-      "<leader>rF",
+      '<leader>rx',
       function()
-        require("refactoring").refactor("Extract Function To File")
+        require('refactoring').refactor 'Extract Variable'
       end,
-      mode = "v",
-      desc = "Extract Function To File",
+      mode = 'v',
+      desc = 'Extract Variable',
     },
     {
-      "<leader>rx",
+      '<leader>rp',
       function()
-        require("refactoring").refactor("Extract Variable")
+        require('refactoring').debug.print_var()
       end,
-      mode = "v",
-      desc = "Extract Variable",
+      mode = 'v',
+      desc = 'Debug Print Variable',
     },
     {
-      "<leader>rp",
+      '<leader>rr',
       function()
-        require("refactoring").debug.print_var()
+        require('refactoring').select_refactor()
       end,
-      mode = "v",
-      desc = "Debug Print Variable",
-    },
-    {
-      "<leader>rr",
-      function()
-        require("refactoring").select_refactor()
-      end,
-      mode = { "n", "x" },
-      desc = "Select Refactor",
+      mode = { 'n', 'x' },
+      desc = 'Select Refactor',
     },
   },
   opts = {
@@ -118,7 +114,6 @@ return {
     },
     printf_statements = {},
     print_var_statements = {},
-    show_success_message = true, -- shows a message with information about the refactor on success
-    -- i.e. [Refactor] Inlined 3 variable occurrences
+    show_success_message = true,
   },
 }

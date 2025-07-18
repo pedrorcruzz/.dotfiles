@@ -1,6 +1,13 @@
 -- Array of file names indicating root directory. Modify to your liking.
 local root_names = { '.git', 'Makefile', '.rn' }
 
+-- Enable loader (speed up startup time)
+vim.loader.enable()
+
+vim.opt.lazyredraw = false
+
+vim.opt.fileencoding = 'utf-8'
+
 -- Cache to use for speed up (at cost of possibly outdated results)
 local root_cache = {}
 
@@ -83,7 +90,7 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -105,5 +112,5 @@ vim.opt.cursorcolumn = false
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Enable line wrapping
-vim.opt.laststatus = 3
+-- Status line
+vim.o.laststatus = 3 -- or 3,  if u want global bar even hidden or 0 if u want to disable it

@@ -31,7 +31,8 @@ $java\
 $swift\
 $rust\
 $ruby\
-${custom.docker}\
+$docker_context\
+${custom.docker_version}\
 ${custom.yarn}\
 ${custom.pnpm}\
 $bun\
@@ -76,15 +77,15 @@ style = "none"
 # format = '[ $user ]($style)'
 
 [directory]
-style = "bold #72879D"   #72879D #c18efe
+style = "bold #e0e0e0"   #72879D #c18efe
 format = "[ $path ]($style)"
 truncation_length = 4
-truncation_symbol = ' / ' #../
+truncation_symbol = '󱄛 / ' #../ 
 truncate_to_repo = false
 
 
 [directory.substitutions]
-"~" = " " 
+"~" = "󱄛 "  #   󰕕  
 ".dotfiles" =" "
 "Documents" = "󰈙 "
 "Downloads" = " "
@@ -274,6 +275,7 @@ symbol = " "
 format = '[ $symbol( $version) ]($style)'
 
 [ruby]
+style = "fg:#E0115F"
 symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
@@ -290,18 +292,17 @@ symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
 [docker_context]
-# symbol = ' '
-symbol = ' 🐳 '
-style = 'fg:#06969A'
-format = '[$symbol]($style) $path'
+disabled = true
+style = 'fg:#019CFE'
+format = '[[via](#52676B) 🐋  $context ]($style)'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
-[custom.docker]
-disabled = false
-symbol = '🐳 '
-detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
-
+[custom.docker_version]
+style = 'fg:#019CFE'
+command = "docker --version | cut -d ' ' -f3 | tr -d ','"
+detect_files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
+format = "[[via](#52676B)   $output]($style) "
 
 
 [cmd_duration]
@@ -327,7 +328,7 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[➜](bold fg:#72879D)' # ➜ ❯ #72879D purple
+success_symbol = '[➜](bold fg:#72879D)' # ➜ ❯ #72879D purple ➜
 error_symbol = '[✘](bold fg:red)'
 # success_symbol = '[╰⎯](bold fg:white)'
 # error_symbol = '[╰⎯](bold fg:red)'

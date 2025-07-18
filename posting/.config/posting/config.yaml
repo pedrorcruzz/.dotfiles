@@ -1,0 +1,11 @@
+theme: flexoki
+layout: horizontal
+
+keymap:
+  search-requests: ctrl+f
+  send-request: ctrl+o
+  jump: ctrl+j
+  open-in-pager: ctrl+/
+  open-in-editor: ctrl+e
+  quit: ctrl+q,ctrl+c
+

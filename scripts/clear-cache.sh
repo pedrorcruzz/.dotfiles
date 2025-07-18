@@ -2,7 +2,7 @@
 
 cd ~/Developer/Scripts/nuke-macOS-caches
 
-make run
+./nuke-cache
 
 sleep 1.3
 clear

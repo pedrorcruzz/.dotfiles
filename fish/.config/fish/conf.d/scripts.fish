@@ -20,3 +20,24 @@ function ccache
 end
 
 
+function invista
+    set prev_dir (pwd)
+    cd ~/.dotfiles/scripts
+    ./invista-ai-cli.sh
+    cd $prev_dir
+end
+
+function remove-dsstore
+    set prev_dir (pwd)
+    cd ~/.dotfiles/scripts
+    ./remove-dsstore.sh
+    cd $prev_dir
+end
+
+function sya
+    set prev_dir (pwd)
+    cd ~/.dotfiles/scripts
+    ./api-collections.sh
+    cd $prev_dir
+end
+

@@ -8,14 +8,10 @@ abbr -a fastapi-create-all "pip install fastapi[all]"
 
 
 #Alias Laravel
-abbr -a laravel-composer "composer create-project --prefer-dist laravel/laravel"
 abbr -a laravel-inertia "composer require inertiajs/inertia-laravel"
 
 
 #Alias Java
-abbr -a spring-create-maven "spring init --build=maven --dependencies=web,devtools,lombok --groupId=x --java-version=x "
-abbr -a spring-create-gradle "spring init --dependencies=web,devtools,lombok --groupId=x --java-version=x "
-
 abbr -a spring-build-maven "./mvnw clean install"
 abbr -a spring-run-maven "./mvnw spring-boot:run"
 abbr -a spring-classes-maven "./mvnw compile"
@@ -23,3 +19,16 @@ abbr -a spring-classes-maven "./mvnw compile"
 abbr -a spring-build-gradle "./gradlew build"
 abbr -a spring-run-gradle "./gradlew bootRun"
 abbr -a spring-classes-gradle "./gradlew classes"
+
+
+#Alias Go
+abbr -a go-get-gin "go get -u github.com/gin-gonic/gin"
+abbr -a go-get-godotenv "go get github.com/joho/godotenv"
+abbr -a go-get-mongo "go get -u go.mongodb.org/mongo-driver/mongo"
+abbr -a go-get-gorm "go get -u gorm.io/gorm"
+abbr -a go-get-gorm-postgres "go get -u gorm.io/gorm gorm.io/driver/postgres"
+abbr -a go-install-debug "go install github.com/go-delve/delve/cmd/dlv@latest"
+abbr -a go-install-air "go install github.com/air-verse/air@latest"
+abbr -a go-install-godotenv "go install github.com/joho/godotenv/cmd/godotenv@latest"
+abbr -a go-install-goblueprint "go install github.com/melkeydev/go-blueprint@latest"
+abbr -a go-ls-global "ls /Users/phrosa/.asdf/installs/golang/1.24.4/bin | grep air"

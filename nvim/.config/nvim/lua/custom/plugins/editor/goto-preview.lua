@@ -1,14 +1,38 @@
 return {
   'rmagatti/goto-preview',
-  dependencies = { 'rmagatti/logger.nvim' },
+  lazy = true,
   event = 'BufEnter',
-  config = true, -- necessary as per https://github.com/rmagatti/goto-preview/issues/88
-  vim.keymap.set('n', 'gp', "<cmd>lua require('goto-preview').goto_preview_definition()<CR>,", { noremap = true }),
-  vim.keymap.set('n', 'gP', "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true }),
-  -- nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>
-  -- nnoremap gpt <cmd>lua require('goto-preview').goto_preview_type_definition()<CR>
-  -- nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>
-  -- nnoremap gpD <cmd>lua require('goto-preview').goto_preview_declaration()<CR>
-  -- nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>
-  -- nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR>
+  dependencies = { 'rmagatti/logger.nvim' },
+  config = function()
+    require('goto-preview').setup {
+      -- width = 120,
+      -- height = 15,
+      default_mappings = false,
+      post_open_hook = function(bufnr, winid)
+        vim.api.nvim_buf_set_keymap(
+          bufnr,
+          'n',
+          '<leader>Q',
+          string.format([[<cmd>lua vim.api.nvim_win_close(%d, true); vim.cmd("vsplit | buffer %d")<CR>]], winid, bufnr),
+          { noremap = true, silent = true, desc = 'Expand preview (vsplit)' }
+        )
+
+        vim.api.nvim_buf_set_keymap(
+          bufnr,
+          'n',
+          '<leader>M',
+          string.format([[<cmd>lua vim.api.nvim_win_close(%d, true); vim.cmd("buffer %d")<CR>]], winid, bufnr),
+          { noremap = true, silent = true, desc = 'Expand preview (replace window)' }
+        )
+      end,
+    }
+
+    local gp = require 'goto-preview'
+    vim.keymap.set('n', 'gp', gp.goto_preview_definition, { noremap = true, desc = 'Preview Definition' })
+    vim.keymap.set('n', 'gP', gp.close_all_win, { noremap = true, desc = 'Close All Preview Windows' })
+    -- vim.keymap.set('n', 'gpt', gp.goto_preview_type_definition, { noremap = true })
+    -- vim.keymap.set('n', 'gpi', gp.goto_preview_implementation, { noremap = true })
+    -- vim.keymap.set('n', 'gpD', gp.goto_preview_declaration, { noremap = true })
+    -- vim.keymap.set('n', 'gpr', gp.goto_preview_references, { noremap = true })
+  end,
 }

@@ -6,7 +6,7 @@ local fmt = require('luasnip.extras.fmt').fmt
 
 ls.add_snippets('typescriptreact', {
   s(
-    { trig = 'edf', dscr = 'Custom - Export Default Function Name - React TSX Component' },
+    { trig = 'cedf', dscr = 'Custom - Export Default Function Name - React TSX Component' },
     fmt(
       [[
 export default function {}({}: {}): JSX.Element {{
@@ -22,7 +22,7 @@ export default function {}({}: {}): JSX.Element {{
   ),
 
   s(
-    { trig = 'ef', dscr = 'Custom - Export Function - React TSX Component' },
+    { trig = 'cef', dscr = 'Custom - Export Function - React TSX Component' },
     fmt(
       [[
 export function {}({}: {}): JSX.Element {{

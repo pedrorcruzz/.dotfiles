@@ -1,8 +1,7 @@
 return {
   'yetone/avante.nvim',
   event = 'VeryLazy',
-  lazy = false,
-  version = false, -- set this if you want to always pull the latest change
+  version = false,
   branch = 'main',
   opts = {
     provider = 'copilot',
@@ -10,11 +9,10 @@ return {
       auto_suggestions = false,
     },
     windows = {
-      position = 'left', -- 'left', 'right'
-      width = 30, -- width of the window
+      position = 'right',
+      width = 30,
     },
     mappings = {
-      --- @class AvanteConflictMappings
       diff = {
         ours = 'co',
         theirs = 'ct',
@@ -48,23 +46,32 @@ return {
         remove_file = 'd',
         add_file = '@',
         close = { '<Esc>', 'q' },
-        close_from_input = nil, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
+        close_from_input = nil,
       },
     },
   },
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make',
-  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+  keys = {
+    { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
+  },
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-    'stevearc/dressing.nvim',
-    'nvim-lua/plenary.nvim',
-    'MunifTanjim/nui.nvim',
-    --- The below dependencies are optional,
-    'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
-    'zbirenbaum/copilot.lua', -- for providers='copilot'
+    { 'nvim-treesitter/nvim-treesitter', lazy = true },
+    { 'stevearc/dressing.nvim', lazy = true },
+    { 'nvim-lua/plenary.nvim', lazy = true },
+    { 'MunifTanjim/nui.nvim', lazy = true },
+    -- Dependências opcionais, mantenha comentadas se não usar
+    -- { 'nvim-tree/nvim-web-devicons', lazy = true },
+    -- { 'echasnovski/mini.icons', lazy = true },
+    { 'zbirenbaum/copilot.lua', lazy = true },
     -- {
-    --   -- support for image pasting
+    --   'MeanderingProgrammer/render-markdown.nvim',
+    --   lazy = true,
+    --   dependencies = {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     'nvim-tree/nvim-web-devicons',
+    --   },
+    -- },
+    -- {
     --   'HakonHarnes/img-clip.nvim',
     --   event = 'VeryLazy',
     --   opts = {
@@ -74,22 +81,14 @@ return {
     --       drag_and_drop = {
     --         insert_mode = true,
     --       },
-    --       -- required for Windows users
     --       use_absolute_path = true,
     --       silent = true,
     --     },
     --   },
     -- },
-    -- {
-    --   -- Make sure to set this up properly if you have lazy=true
-    --   'MeanderingProgrammer/render-markdown.nvim',
-    --   opts = {
-    --     file_types = { 'markdown', 'Avante' },
-    --   },
-    --   ft = { 'markdown', 'Avante' },
-    --   keys = {
-    --     { '<leader>av', '<cmd>AvanteClear<cr>', desc = 'avante: clear' },
-    --   },
-    -- },
   },
 }
+
+-- Caso o plugin não funcione, tente compilar manualmente:
+-- cd ~/.local/share/nvim/lazy/avante.nvim
+-- make

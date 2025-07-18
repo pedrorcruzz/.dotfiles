@@ -6,7 +6,7 @@ local fmt = require('luasnip.extras.fmt').fmt
 
 ls.add_snippets('javascript', {
   s(
-    { trig = 'jafn', dscr = 'Custom - Arrow Function' },
+    { trig = 'cjafn', dscr = 'Custom - Arrow Function' },
     fmt(
       [[const {} = ({}) => {{
   {}
@@ -18,7 +18,7 @@ ls.add_snippets('javascript', {
 
 ls.add_snippets('javascript', {
   s(
-    { trig = 'jtryc', dscr = 'Custom - Try Catch' },
+    { trig = 'cjtryc', dscr = 'Custom - Try Catch' },
     fmt(
       [[try {{
   {}

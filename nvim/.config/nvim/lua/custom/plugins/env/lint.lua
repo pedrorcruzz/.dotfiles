@@ -48,7 +48,7 @@ return {
     php_linters = #php_linters > 0 and php_linters or nil
 
     local go_linters = {}
-    if has_exe 'golangcilint' then
+    if has_exe 'golangci-lint' then
       table.insert(go_linters, 'golangcilint')
     end
     go_linters = #go_linters > 0 and go_linters or nil

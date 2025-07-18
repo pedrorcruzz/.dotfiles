@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('BufLeave', {
   end,
 })
 
--- USAR O NVIM .
+-- USE THE NVIM . (dot)
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     local arg = vim.fn.argv(0) -- Obtém o primeiro argumento passado para o Neovim
@@ -77,16 +77,120 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 
 -- Snacks Explorer
 SNACKS_START_WITH_EXPLORER = true
+
 if SNACKS_START_WITH_EXPLORER then
+  local function is_opened_with_dot()
+    if vim.fn.argc() == 1 then
+      local arg = vim.fn.argv(0)
+      local arg_path = vim.fn.fnamemodify(arg, ':p'):gsub('/$', '')
+      local cwd = vim.fn.getcwd():gsub('/$', '')
+      return arg == '.' or arg_path == cwd
+    end
+    return false
+  end
+
+  local opened_with_dot = is_opened_with_dot()
+
+  vim.api.nvim_create_autocmd('VimEnter', {
+    callback = function()
+      if opened_with_dot then
+        return
+      end
+
+      if vim.fn.argc() == 1 then
+        local arg = vim.fn.argv(0)
+        if vim.fn.isdirectory(arg) == 1 then
+          local ok, snacks = pcall(require, 'snacks')
+          if ok and snacks and snacks.explorer then
+            snacks.explorer()
+          end
+        end
+      end
+    end,
+  })
+
   vim.api.nvim_create_autocmd('BufReadPost', {
     once = true,
-    callback = function()
+    callback = function(args)
+      if opened_with_dot then
+        return
+      end
+
+      local path = args.file or ''
+      local bufname = vim.api.nvim_buf_get_name(args.buf)
+
+      if bufname == '' or bufname:match 'snacks_picker_input' or bufname:match 'NvimTree_' or bufname:match '^%[.*%]$' or path:match '/nvim%.phrosa/' then
+        return
+      end
+
       local ok, snacks = pcall(require, 'snacks')
       if ok and snacks and snacks.explorer then
         snacks.explorer()
-      else
-        vim.notify('Snacks Explorer não pôde ser carregado', vim.log.levels.WARN)
       end
+    end,
+  })
+end
+
+-- Relative Number
+local enable_relative_number_toggle = false
+
+if enable_relative_number_toggle then
+  vim.api.nvim_create_augroup('RelativeNumberToggle', { clear = true })
+
+  vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufEnter', 'FocusGained' }, {
+    group = 'RelativeNumberToggle',
+    callback = function()
+      if vim.o.number then
+        vim.wo.relativenumber = true
+      end
+    end,
+  })
+
+  vim.api.nvim_create_autocmd({ 'InsertEnter', 'BufLeave', 'FocusLost' }, {
+    group = 'RelativeNumberToggle',
+    callback = function()
+      vim.wo.relativenumber = false
+    end,
+  })
+end
+
+-- Highlight LSP references
+local enable_custom_reference_highlights = true
+
+if enable_custom_reference_highlights then
+  local my_highlights = vim.api.nvim_create_augroup('MyHighlights', { clear = true })
+
+  vim.api.nvim_create_autocmd('ColorScheme', {
+    group = my_highlights,
+    pattern = '*',
+    callback = function()
+      local highlight_style = { bold = true, bg = 'none', fg = '#FFFFFF' }
+
+      vim.api.nvim_set_hl(0, 'LspReferenceRead', highlight_style)
+      vim.api.nvim_set_hl(0, 'LspReferenceWrite', highlight_style)
+      vim.api.nvim_set_hl(0, 'LspReferenceText', highlight_style)
+    end,
+  })
+end
+
+-- Custom Colorscheme
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = function()
+    vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#4c4c4c' })
+    vim.api.nvim_set_hl(0, 'BlinkCmpDocBorder', { fg = '#4c4c4c' })
+    vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { fg = '#4c4c4c' })
+  end,
+})
+
+-- DBUI NO FOLDING
+local enable_dbout_no_folding = true
+
+if enable_dbout_no_folding then
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'dbout',
+    callback = function()
+      vim.cmd 'normal! zR'
     end,
   })
 end

@@ -1,23 +1,38 @@
 #Alias Directory
 abbr -a D "cd ~/Developer"
-abbr -a S "cd ~/Developer/Studies"
 abbr -a SRC "cd ~/Developer/Scripts"
 abbr -a C "cd ~/Developer/Cesmac"
-abbr -a F "cd ~/Developer/Freelas"
-abbr -a W "cd ~/Developer/Seven"
+
+abbr -a B "cd ~/Developer/Business"
+abbr -a BF "cd ~/Developer/Business/Freelas"
+abbr -a BW "cd ~/Developer/Business/Seven"
+abbr -a BG "cd ~/Developer/Business/Guru"
+
+abbr -a AC "cd ~/Developer/api-collections"
+abbr -a ACB "cd ~/Developer/api-collections/bruno-collections"
+abbr -a ACI "cd ~/Developer/api-collections/insomnia-collections"
+
+
 abbr -a P "cd ~/Developer/Projects"
-abbr -a G "cd ~/Developer/Guru"
+abbr -a PP "cd ~/Developer/Projects/Personal"
+abbr -a PG "cd ~/Developer/Projects/Garage"
+abbr -a PU "cd ~/Developer/Projects/Udemy"
+abbr -a PS "cd ~/Developer/Projects/Sandbox"
+
 abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"
 
 
 #Alias System
 abbr -a lg "lazygit"
+abbr -a ld "lazydocker"
+abbr -a lp "posting"
 abbr -a cd "z"
-abbr -a lzd "lazydocker"
 abbr -a rn "nvim"
 abbr -a vim "nvim"
 abbr -a y "yazi"
 abbr -a live "live-server"
+abbr -a rf "rm -rf"
+abbr -a mk "mkdir"
 
 
 #Alias Kill Process
@@ -41,6 +56,7 @@ abbr -a gtagdr "git push origin --delete refs/tags/"
 abbr -a ghcs "gh copilot suggest"
 abbr -a ghcf "gh copilot fix"
 abbr -a ghce "gh copilot explain"
+abbr -a gh-create-desc "gh repo edit --description"
 
 
 #Alias Tmux

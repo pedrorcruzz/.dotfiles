@@ -1,5 +1,6 @@
 return {
   'mistricky/codesnap.nvim',
+  lazy = true,
   build = 'make build_generator',
   keys = {
     { '<leader>lP', '<cmd>CodeSnap<cr>', mode = 'x', desc = 'Codesnap: Save on clipboard' },
