@@ -360,7 +360,7 @@ return {
       icons = {
         files = {
           enabled = true,
-          dir = ' ', --
+          dir = ' ', --   
           dir_open = ' ', --
           file = ' ',
           test_dir = ' ',
