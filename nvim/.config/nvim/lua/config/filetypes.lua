@@ -29,6 +29,7 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     'go',
+    'php',
   },
   callback = function()
     vim.bo.shiftwidth = 4
