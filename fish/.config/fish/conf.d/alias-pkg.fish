@@ -15,6 +15,7 @@ abbr -a bun-create-react "bunx create-react-app@latest"
 abbr -a bun-create-next "bunx create-next-app@latest"
 abbr -a bun-create-vite "bunx create-vite@latest"
 abbr -a bun-create-vite-react "bun add react react-dom @vitejs/plugin-react"
+abbr -a bun-create-tanstack "bunx gitpick TanStack/router/tree/main/examples/react/start-basic"
 
 abbr -a bun-create-remix "bunx create-remix@latest"
 
@@ -36,6 +37,7 @@ abbr -a npm-create-react "npx create-react-app@latest"
 abbr -a npm-create-next "npx create-next-app@latest"
 abbr -a npm-create-vite "npx create-vite@latest"
 abbr -a npm-create-vite-react "npm install react react-dom @vitejs/plugin-react"
+abbr -a npm-create-tanstack "npx gitpick TanStack/router/tree/main/examples/react/start-basic"
 
 abbr -a npm-create-remix "npx create-remix@latest"
 
@@ -57,6 +59,7 @@ abbr -a pnpm-create-react "pnpm create react-app@latest"
 abbr -a pnpm-create-next "pnpm create next-app@latest"
 abbr -a pnpm-create-vite "pnpm create vite@latest"
 abbr -a pnpm-create-vite-react "pnpm add react react-dom @vitejs/plugin-react"
+abbr -a pnpm-create-tanstack "pnpm exec gitpick TanStack/router/tree/main/examples/react/start-basic"
 
 abbr -a pnpm-create-remix "pnpm create remix@latest"
 
@@ -78,5 +81,6 @@ abbr -a yarn-create-react "yarn create react-app@latest"
 abbr -a yarn-create-next "yarn create next-app@latest"
 abbr -a yarn-create-vite "yarn create vite@latest"
 abbr -a yarn-create-vite-react "yarn add react react-dom @vitejs/plugin-react"
+abbr -a yarn-create-tanstack "yarn dlx gitpick TanStack/router/tree/main/examples/react/start-basic"
 
 abbr -a yarn-create-remix "yarn create remix@latest"

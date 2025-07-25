@@ -19,7 +19,7 @@ abbr -a PG "cd ~/Developer/Projects/Garage"
 abbr -a PU "cd ~/Developer/Projects/Udemy"
 abbr -a PS "cd ~/Developer/Projects/Sandbox"
 
-abbr -a PH "cd ~/Applications/XAMPP/xamppfiles/htdocs/projects"
+abbr -a PH "cd /Applications/XAMPP/xamppfiles/htdocs"
 
 
 #Alias System

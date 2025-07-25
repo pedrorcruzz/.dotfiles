@@ -73,9 +73,9 @@ vim.opt.breakindent = true
 
 -- Enable line wrap
 -- vim.opt.wrap = true
--- Set the line wrap to be at 120 characters
+-- Set the line wrap to be at 100 characters
 vim.opt.textwidth = 100
--- vim.opt.formatoptions:append 't'
+vim.opt.formatoptions:append 't'
 
 -- Save undo history
 vim.opt.undofile = true
