@@ -3,7 +3,7 @@ return {
     'datsfilipe/min-theme.nvim',
     lazy = true,
     config = function()
-      local transparent_background = true
+      local transparent_background = false
       require('min-theme').setup {
         transparent = transparent_background,
         bold = true,
