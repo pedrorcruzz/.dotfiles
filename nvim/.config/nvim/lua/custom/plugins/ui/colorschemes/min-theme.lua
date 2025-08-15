@@ -3,7 +3,7 @@ return {
     'datsfilipe/min-theme.nvim',
     lazy = true,
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('min-theme').setup {
         transparent = transparent_background,
         bold = true,
@@ -43,8 +43,8 @@ return {
           -- StatusLineNC = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
           -- StatusLine = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
 
-          -- WinBarNC = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
-          -- WinBar = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
+          WinBarNC = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
+          WinBar = { fg = '#202020', bg = transparent_background and 'NONE' or '#202020' }, -- barra de janelas não ativa
           -- TabLine = { bg = transparent_background and 'NONE' or '#202020' },
           -- TabLineFill = { bg = transparent_background and 'NONE' or '#202020' },
           MatchParen = { fg = '#abb2bf' }, --quando coloca o cursor em cima de um parênteses / tag

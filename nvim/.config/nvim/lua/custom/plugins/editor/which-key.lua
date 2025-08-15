@@ -18,7 +18,7 @@ return {
       { '<leader>e', group = 'File Explorer', icon = '' },
       -- { "<leader>'", group = 'Wrap', icon = '󰭷' },
       { '<leader>ft', group = 'Todo Comments', icon = ' ' },
-      -- { '<leader>z', group = 'Mini Map', icon = '' },
+      { '<leader>z', group = 'Dropbar', icon = '󰳯' },
       { '<leader>,', group = 'Trouble Diagnostic', icon = '󰁨' },
       { '<leader>vw', group = 'Windows', icon = '' },
       { '<leader>b', group = 'DBUI', icon = '' },

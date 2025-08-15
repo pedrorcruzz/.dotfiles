@@ -11,7 +11,7 @@ return {
       end)
     end,
     opts = {
-      colorscheme = 'min-theme', -- min-theme, vesper, catppuccin-mocha, gruvbox, nightfox, dayfox, emperor, marduk, gorgoroth, khold, venom
+      colorscheme = 'gruvbox', -- min-theme, vesper, catppuccin-mocha, gruvbox, nightfox, dayfox, emperor, marduk, gorgoroth, khold, venom
     },
   },
 }
