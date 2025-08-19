@@ -1,4 +1,4 @@
-local lualine_visible = false
+local lualine_visible = true
 
 local function create_theme()
   local custom_min_theme = true
@@ -174,8 +174,8 @@ end
 local lualine_config = {
   options = {
     theme = create_theme(),
-    section_separators = { left = '', right = '' },
-    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
   },
   sections = {
     lualine_a = {

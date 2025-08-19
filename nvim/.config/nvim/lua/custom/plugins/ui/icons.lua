@@ -15,12 +15,12 @@ return {
           color = '#428850',
           name = 'Zshrc',
         },
-        go = {
-          icon = '',
-          color = '#00ADD8',
-          cterm_color = '74',
-          name = 'Go',
-        },
+        -- go = {
+        --   icon = '',
+        --   color = '#00ADD8',
+        --   cterm_color = '74',
+        --   name = 'Go',
+        -- },
         html = {
           icon = '',
           color = '#EA580B',
