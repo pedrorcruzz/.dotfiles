@@ -13,7 +13,6 @@ set -gx PKG_CONFIG_PATH "/opt/homebrew/opt/icu4c/lib/pkgconfig"
 # Herd PHP paths
 fish_add_path "/Users/phrosa/Library/Application Support/Herd/bin/"
 set -gx HERD_PHP_84_INI_SCAN_DIR "/Users/phrosa/Library/Application Support/Herd/config/php/84/"
-set -gx HERD_PHP_74_INI_SCAN_DIR "/Users/phrosa/Library/Application Support/Herd/config/php/74/"
 
 # Bun
 set -gx BUN_INSTALL "$HOME/.bun"
