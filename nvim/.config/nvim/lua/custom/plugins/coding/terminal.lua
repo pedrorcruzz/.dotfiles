@@ -1,3 +1,7 @@
+vim.keymap.set({ 'n', 't' }, 'X', function()
+  term:toggle()
+end, { desc = 'Toggle Terminal (horizontal)' })
+
 return {
   {
     'akinsho/toggleterm.nvim',
