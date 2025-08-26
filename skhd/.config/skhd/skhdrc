@@ -146,8 +146,8 @@ ctrl + alt - r : yabai --restart-service
 
 ### Apps Shortcut ####
 lshift + rshift - s : open -a Spotify
-# lshift + rshift - t : open -a Ghostty
-lshift + rshift - t : open -a Warp
+lshift + rshift - t : open -a Ghostty
+# lshift + rshift - t : open -a Warp
 lshift + rshift - a: open -a Dia
 lshift + rshift - o: open -a Obsidian
 lshift + rshift - f: open -a Finder

@@ -1,8 +1,8 @@
 # 1A1A1A 1E1E2F 101010 #0D1116
 
 background = #101010
-background-opacity = 0.97
-background-blur-radius = 10
+background-opacity = 0.95
+background-blur-radius = 0
 foreground = #ffffff
 
 cursor-color = #E0E0E0
