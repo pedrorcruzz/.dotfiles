@@ -48,13 +48,13 @@ return {
       },
       override_by_filename = {
         ['go.mod'] = {
-          icon = '󰟓',
+          icon = '',
           color = '#F471B5',
           cterm_color = '74',
           name = 'GoMod',
         },
         ['go.sum'] = {
-          icon = '',
+          icon = '',
           color = '#F471B5',
           cterm_color = '74',
           name = 'GoSum',
