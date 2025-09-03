@@ -173,16 +173,6 @@ if enable_custom_reference_highlights then
   })
 end
 
--- Custom Colorscheme
--- vim.api.nvim_create_autocmd('ColorScheme', {
---   pattern = '*',
---   callback = function()
---     vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { fg = '#4c4c4c' })
---     vim.api.nvim_set_hl(0, 'BlinkCmpDocBorder', { fg = '#4c4c4c' })
---     vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpBorder', { fg = '#4c4c4c' })
---   end,
--- })
-
 -- DBUI NO FOLDING
 local enable_dbout_no_folding = true
 
