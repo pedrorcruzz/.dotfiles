@@ -37,7 +37,7 @@ yabai -m rule --add app="^Bitwarden$" manage=off
 yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
 yabai -m rule --add app="^Homerow" manage=off
-yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
+yabai -m rule --add app="^Raycast$" title="^ettings$" manage=off
 
 # Active borders to show which window is active
 borders active_color=0xff707070 width=5.0 &
