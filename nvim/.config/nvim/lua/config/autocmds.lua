@@ -76,7 +76,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 -- Snacks Explorer
-SNACKS_START_WITH_EXPLORER = true
+SNACKS_START_WITH_EXPLORER = false
 
 if SNACKS_START_WITH_EXPLORER then
   local function is_opened_with_dot()

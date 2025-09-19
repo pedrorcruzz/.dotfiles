@@ -1,4 +1,4 @@
-# ghostty +list-themes rose-pine
+# ghostty +list-themes 
 # theme = dark:catppuccin-mocha,light:catppuccin-latte
 window-colorspace = "display-p3"
 config-file = ghostty-theme
