@@ -35,7 +35,7 @@ return {
       { '<leader>[', group = 'Previous', icon = '󰙣' },
       { '<leader>h', group = 'No Highlight', icon = '󰸱' },
       { '<leader>]', group = 'Next', icon = '󰙡' },
-      { '<leader>a', group = 'Avante', icon = ' ' },
+      { '<leader>a', group = 'Sidesick', icon = ' ' },
       { '<leader>ci', group = 'ToggleTerm', icon = ' ' },
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },

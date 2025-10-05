@@ -169,12 +169,14 @@ automatically-unhide-macos-hidden-apps = false
   up = 'volume up'
   shift-down = ['volume set 0', 'mode main']
 
+# to find the app id run: osascript -e 'id of app AppName'
+
 [[on-window-detected]]
-  if.app-id = 'com.github.wez.wezterm'
+  if.app-id = 'com.mitchellh.ghostty'
   run = 'move-node-to-workspace T'     # mnemonics T - Terminal
 
 [[on-window-detected]]
-  if.app-id = 'company.thebrowser.Browser'
+  if.app-id = 'company.thebrowser.dia'
   run = 'move-node-to-workspace W'         # mnemonics W - Web browser
 
 [[on-window-detected]]
