@@ -115,27 +115,27 @@ automatically-unhide-macos-hidden-apps = false
   # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
   alt-1 = 'workspace 1'
   alt-2 = 'workspace 2'
-  alt-3 = 'workspace 3'
-  alt-0 = 'workspace 0'
   alt-a = 'workspace A' # (A)ctions - TickTick
+  alt-i = 'workspace I' # (I)A - Gpt
   alt-c = 'workspace C' # (C)hat - Whatsapp, Discord
   alt-f = 'workspace F' # (F)iles - Finder
   alt-m = 'workspace M' # (M)usic - Spotify
   alt-n = 'workspace N' # (N)otes - Obsidian
   alt-t = 'workspace T' # (T)erminal - WezTerm
+  alt-d = 'workspace D' # (D)ev - Insomnia, Postman, Orbstack
   alt-w = 'workspace W' # (W)eb - Browser
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
   alt-shift-1 = 'move-node-to-workspace 1'
   alt-shift-2 = 'move-node-to-workspace 2'
-  alt-shift-3 = 'move-node-to-workspace 3'
-  alt-shift-0 = 'move-node-to-workspace 0'
   alt-shift-a = 'move-node-to-workspace A'
+  alt-shift-g = 'move-node-to-workspace I'
   alt-shift-c = 'move-node-to-workspace C'
   alt-shift-f = 'move-node-to-workspace F'
   alt-shift-m = 'move-node-to-workspace M'
   alt-shift-n = 'move-node-to-workspace N'
   alt-shift-t = 'move-node-to-workspace T'
+  alt-shift-d = 'move-node-to-workspace D'
   alt-shift-w = 'move-node-to-workspace W'
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -169,11 +169,27 @@ automatically-unhide-macos-hidden-apps = false
   up = 'volume up'
   shift-down = ['volume set 0', 'mode main']
 
-# to find the app id run: osascript -e 'id of app AppName'
+# to find the app id run: osascript -e 'id of app "App Name"'
 
 [[on-window-detected]]
   if.app-id = 'com.mitchellh.ghostty'
   run = 'move-node-to-workspace T'     # mnemonics T - Terminal
+
+[[on-window-detected]]
+  if.app-id = 'com.postmanlabs.mac'
+  run = 'move-node-to-workspace D'     # mnemonics D - Dev
+
+[[on-window-detected]]
+  if.app-id = 'com.insomnia.app'
+  run = 'move-node-to-workspace D'     # mnemonics D - Dev
+
+[[on-window-detected]]
+  if.app-id = 'dev.kdrag0n.MacVirt'
+  run = 'move-node-to-workspace D'     # mnemonics D - Dev
+
+[[on-window-detected]]
+  if.app-id = 'com.openai.chat'
+  run = 'move-node-to-workspace I'         # mnemonics I - IA
 
 [[on-window-detected]]
   if.app-id = 'company.thebrowser.dia'
