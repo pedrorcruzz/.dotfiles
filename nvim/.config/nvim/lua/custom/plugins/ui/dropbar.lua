@@ -38,7 +38,7 @@ return {
       desc = 'Select next context',
     },
     {
-      '<leader>zt',
+      '<leader>lb',
       function()
         dropbar_active = not dropbar_active
         if dropbar_active then
