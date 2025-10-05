@@ -1,6 +1,7 @@
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
-  lazy = false,
+  lazy = true,
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     { 'williamboman/mason.nvim', lazy = true },
     { 'williamboman/mason-lspconfig.nvim', lazy = true },
@@ -151,10 +152,9 @@ return { -- LSP Configuration & Plugins
     }
 
     require('mason').setup {
-      ui = {
-        border = 'rounded',
-      },
+      ui = { border = 'rounded' },
     }
+
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       --Formatters
@@ -185,7 +185,9 @@ return { -- LSP Configuration & Plugins
       'debugpy',
       'java-debug-adapter',
     })
+
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
     require('mason-lspconfig').setup {
       handlers = {
         function(server_name)
@@ -193,8 +195,14 @@ return { -- LSP Configuration & Plugins
           if server_name == 'tsserver' then
             server_name = 'ts_ls'
           end
+
           local opts = vim.tbl_deep_extend('force', {}, server, { capabilities = capabilities })
-          require('lspconfig')[server_name].setup(opts)
+
+          if vim.lsp.configs[server_name] then
+            vim.lsp.configs[server_name].setup(opts)
+          else
+            vim.lsp.config[server_name] = opts
+          end
         end,
       },
     }
