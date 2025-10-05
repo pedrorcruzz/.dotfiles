@@ -4,7 +4,7 @@ return {
   config = function()
     require('nvim-highlight-colors').setup {
       render = 'virtual', --foreground or background or virtual
-      virtual_symbol = '', -- ■
+      virtual_symbol = '■', -- ■ 
       virtual_symbol_prefix = '',
       virtual_symbol_suffix = ' ',
       virtual_symbol_position = 'inline', -- inline or eow (end of word) or eol (end of line)
