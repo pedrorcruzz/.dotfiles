@@ -26,8 +26,6 @@ fish_add_path "$PNPM_HOME"
 set -gx YARN_HOME "$HOME/.yarn"
 fish_add_path "$YARN_HOME/bin"
 
-# Python 
-# set -gx PATH "$HOME/.asdf/installs/python/3.13.3/bin" $PATH
 
 if test -f "$HOME/.tool-versions"
   for line in (cat "$HOME/.tool-versions")
@@ -41,8 +39,6 @@ if test -f "$HOME/.tool-versions"
   end
 end
 
-# Go
-# set -x PATH /Users/phrosa/.asdf/installs/golang/1.24.4/bin $PATH
 
 if test -f "$HOME/.tool-versions"
   for line in (cat "$HOME/.tool-versions")
@@ -63,51 +59,3 @@ set -x PKG_CONFIG_PATH "/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
 set -x PATH /opt/homebrew/opt/tcl-tk/bin $PATH
 
 
-# NVM FISHER
-# fisher install jorgebucaran/nvm.fish
-# abbr -a nvm_dir "echo "x" > .nvmrc"
-#
-# function nvm-default
-#   set --universal nvm_default_version $argv[1]
-#   echo "Default Node.js version set to $argv[1]"
-# end
-#
-# function __load_nvmrc --on-variable PWD
-#   if test -f .nvmrc
-#     set -l nvmrc_version (string trim < .nvmrc)
-#     set -l current_version (nvm current 2>/dev/null)
-#
-#     if test "$nvmrc_version" != "$current_version"
-#       nvm use $nvmrc_version > /dev/null 2>&1
-#     end
-#   else
-#     set -l default_version (nvm default 2>/dev/null)
-#     set -l current_version (nvm current 2>/dev/null)
-#
-#     if test "$default_version" != "$current_version"
-#       nvm use default > /dev/null 2>&1
-#     end
-#   end
-# end
-#
-# functions -c nvm __original_nvm
-# function nvm
-#   if test (count $argv) -eq 2 -a "$argv[1]" = "use"
-#     if test "$argv[2]" != "default"
-#       set node_version $argv[2]
-#       echo $node_version > .nvmrc
-#
-#       if not test -e .gitignore
-#         echo ".nvmrc" > .gitignore
-#       else
-#         set found (grep -Fx ".nvmrc" .gitignore 2> /dev/null)
-#         if test -z "$found"
-#           echo ".nvmrc" >> .gitignore
-#         end
-#       end
-#     end
-#   end
-#
-#   __original_nvm $argv > /dev/null 2>&1
-# end
-#
