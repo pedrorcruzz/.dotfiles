@@ -150,6 +150,7 @@ automatically-unhide-macos-hidden-apps = false
 
 
 [workspace-to-monitor-force-assignment]
+1 = 'main'  
 C = 'secondary'  
 3 = 'secondary'  
 4 = 'secondary'  
