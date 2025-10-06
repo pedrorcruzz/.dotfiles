@@ -119,10 +119,10 @@ automatically-unhide-macos-hidden-apps = false
   alt-4 = 'workspace 4'
   alt-w = 'workspace W' # Browser
   alt-d = 'workspace D' # Ghostty, Cursor 
-  alt-s = 'workspace S' # Insomnia, Postman, Orbstack
+  alt-s = 'workspace S' # Tools dev 1
   alt-a = 'workspace A' # Whatsapp, Discord
   alt-g = 'workspace G' # TickTick
-  alt-f = 'workspace F' # Gpt
+  alt-f = 'workspace F' # Tools dev 2
   alt-m = 'workspace M' # Spotify
   alt-n = 'workspace N' # Obsidian
 
@@ -208,6 +208,10 @@ G = 'secondary'
 
 [[on-window-detected]]
   if.app-id = 'com.openai.chat'
+  run = 'move-node-to-workspace F'         # mnemonics F 
+
+[[on-window-detected]]
+  if.app-id = 'io.beekeeperstudio.desktop'
   run = 'move-node-to-workspace F'         # mnemonics F 
 
 [[on-window-detected]]
