@@ -323,7 +323,7 @@ return {
       enabled = true,
       hidden = false,
       ignored = true,
-      layout = { preset = 'telescope', preview = true, border = 'rounded' }, -- default, vscode, telescope, dropdown, ivy, ivy_split, vertical, select, horizontal, sidebar
+      layout = { preset = 'default', preview = true, border = 'rounded' }, -- default, vscode, telescope, dropdown, ivy, ivy_split, vertical, select, horizontal, sidebar
       sources = {
         files = {
           hidden = false,

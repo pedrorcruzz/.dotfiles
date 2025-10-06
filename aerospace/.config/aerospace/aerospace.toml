@@ -120,8 +120,8 @@ automatically-unhide-macos-hidden-apps = false
   alt-w = 'workspace W' # Browser
   alt-d = 'workspace D' # Ghostty, Cursor 
   alt-s = 'workspace S' # Insomnia, Postman, Orbstack
-  alt-g = 'workspace G' # Whatsapp, Discord
-  alt-a = 'workspace A' # TickTick
+  alt-g = 'workspace A' # Whatsapp, Discord
+  alt-a = 'workspace G' # TickTick
   alt-f = 'workspace F' # Gpt
   alt-m = 'workspace M' # Spotify
   alt-n = 'workspace N' # Obsidian
@@ -224,13 +224,13 @@ G = 'secondary'
 
 [[on-window-detected]]
   if.app-id = 'com.TickTick.task.mac'
-  run = 'move-node-to-workspace A'    # mnemonics A 
+  run = 'move-node-to-workspace G'    # mnemonics G 
 
 
 [[on-window-detected]]
   if.app-id = 'net.whatsapp.WhatsApp'
-  run = 'move-node-to-workspace G'    # mnemonics G 
+  run = 'move-node-to-workspace A'    # mnemonics A
 
 [[on-window-detected]]
   if.app-id = 'com.hnc.Discord'
-  run = 'move-node-to-workspace G' # mnemonics G 
+  run = 'move-node-to-workspace A' # mnemonics A 
