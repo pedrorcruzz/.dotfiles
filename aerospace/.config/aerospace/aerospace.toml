@@ -117,32 +117,32 @@ automatically-unhide-macos-hidden-apps = false
   alt-2 = 'workspace 2'
   alt-3 = 'workspace 3'
   alt-4 = 'workspace 4'
-  alt-a = 'workspace A' # (A)ctions - TickTick
-  alt-i = 'workspace I' # (I)A - Gpt
-  alt-c = 'workspace C' # (C)hat - Whatsapp, Discord
-  alt-m = 'workspace M' # (M)usic - Spotify
-  alt-n = 'workspace N' # (N)otes - Obsidian
-  alt-t = 'workspace T' # (T)erminal - Ghostty
-  alt-d = 'workspace D' # (D)ev - Insomnia, Postman, Orbstack
-  alt-w = 'workspace W' # (W)eb - Browser
+  alt-w = 'workspace W' # Browser
+  alt-d = 'workspace D' # Ghostty, Cursor 
+  alt-s = 'workspace S' # Insomnia, Postman, Orbstack
+  alt-g = 'workspace G' # Whatsapp, Discord
+  alt-a = 'workspace A' # TickTick
+  alt-f = 'workspace F' # Gpt
+  alt-m = 'workspace M' # Spotify
+  alt-n = 'workspace N' # Obsidian
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
   alt-shift-1 = 'move-node-to-workspace 1'
   alt-shift-2 = 'move-node-to-workspace 2'
   alt-shift-3 = 'move-node-to-workspace 3'
   alt-shift-4 = 'move-node-to-workspace 4'
+  alt-shift-w = 'move-node-to-workspace W'
+  alt-shift-d = 'move-node-to-workspace D'
+  alt-shift-s = 'move-node-to-workspace S'
+  alt-shift-g = 'move-node-to-workspace G'
   alt-shift-a = 'move-node-to-workspace A'
-  alt-shift-i = 'move-node-to-workspace I'
-  alt-shift-c = 'move-node-to-workspace C'
+  alt-shift-f = 'move-node-to-workspace F'
   alt-shift-m = 'move-node-to-workspace M'
   alt-shift-n = 'move-node-to-workspace N'
-  alt-shift-t = 'move-node-to-workspace T'
-  alt-shift-d = 'move-node-to-workspace D'
-  alt-shift-w = 'move-node-to-workspace W'
 
 alt-ctrl-backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-f = 'layout floating tiling'
+alt-c = 'layout floating tiling'
 
   ctrl-alt-shift-cmd-semicolon = 'mode service'
 
@@ -155,7 +155,7 @@ alt-f = 'layout floating tiling'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'  
-C = 'secondary'  
+G = 'secondary'  
 3 = 'secondary'  
 4 = 'secondary'  
 
@@ -188,45 +188,49 @@ C = 'secondary'
 
 [[on-window-detected]]
   if.app-id = 'com.mitchellh.ghostty'
-  run = 'move-node-to-workspace T'     # mnemonics T - Terminal
+  run = 'move-node-to-workspace D'     # mnemonics D 
+
+[[on-window-detected]]
+  if.app-id = 'com.todesktop.230313mzl4w4u92'
+  run = 'move-node-to-workspace D'     # mnemonics D 
 
 [[on-window-detected]]
   if.app-id = 'com.postmanlabs.mac'
-  run = 'move-node-to-workspace D'     # mnemonics D - Dev
+  run = 'move-node-to-workspace S'     # mnemonics S 
 
 [[on-window-detected]]
   if.app-id = 'com.insomnia.app'
-  run = 'move-node-to-workspace D'     # mnemonics D - Dev
+  run = 'move-node-to-workspace S'     # mnemonics S 
 
 [[on-window-detected]]
   if.app-id = 'dev.kdrag0n.MacVirt'
-  run = 'move-node-to-workspace D'     # mnemonics D - Dev
+  run = 'move-node-to-workspace S'     # mnemonics S 
 
 [[on-window-detected]]
   if.app-id = 'com.openai.chat'
-  run = 'move-node-to-workspace I'         # mnemonics I - IA
+  run = 'move-node-to-workspace F'         # mnemonics F 
 
 [[on-window-detected]]
   if.app-id = 'company.thebrowser.dia'
-  run = 'move-node-to-workspace W'         # mnemonics W - Web browser
+  run = 'move-node-to-workspace W'         # mnemonics W 
 
 [[on-window-detected]]
   if.app-id = 'com.spotify.client'
-  run = 'move-node-to-workspace M' # mnemonics M - Music
+  run = 'move-node-to-workspace M' # mnemonics M 
 
 [[on-window-detected]]
   if.app-id = 'md.obsidian'
-  run = 'move-node-to-workspace N' # mnemonics N - Notes
+  run = 'move-node-to-workspace N' # mnemonics N 
 
 [[on-window-detected]]
   if.app-id = 'com.TickTick.task.mac'
-  run = 'move-node-to-workspace A'    # mnemonics A - Actions
+  run = 'move-node-to-workspace A'    # mnemonics A 
 
 
 [[on-window-detected]]
   if.app-id = 'net.whatsapp.WhatsApp'
-  run = 'move-node-to-workspace C'    # mnemonics C - Chat
+  run = 'move-node-to-workspace G'    # mnemonics G 
 
 [[on-window-detected]]
   if.app-id = 'com.hnc.Discord'
-  run = 'move-node-to-workspace C' # mnemonics C - Chat
+  run = 'move-node-to-workspace G' # mnemonics G 
