@@ -140,6 +140,8 @@ automatically-unhide-macos-hidden-apps = false
   alt-shift-d = 'move-node-to-workspace D'
   alt-shift-w = 'move-node-to-workspace W'
 
+alt-f = 'layout floating tiling'
+
   ctrl-alt-shift-cmd-semicolon = 'mode service'
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
