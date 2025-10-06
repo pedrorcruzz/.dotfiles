@@ -94,7 +94,7 @@ automatically-unhide-macos-hidden-apps = false
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#layout
   alt-slash = 'layout tiles horizontal vertical'
-  alt-semicolon = 'layout accordion horizontal vertical'
+  alt-semicolon = 'layout v_accordion horizontal vertical' # v_accordion = vertical accordion | accordion = horizontal accordion
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#focus
   alt-h = 'focus left'
@@ -139,6 +139,8 @@ automatically-unhide-macos-hidden-apps = false
   alt-shift-t = 'move-node-to-workspace T'
   alt-shift-d = 'move-node-to-workspace D'
   alt-shift-w = 'move-node-to-workspace W'
+
+alt-ctrl-backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-f = 'layout floating tiling'
 
