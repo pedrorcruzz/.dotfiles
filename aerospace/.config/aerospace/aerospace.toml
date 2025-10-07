@@ -204,11 +204,11 @@ G = 'secondary'
 
 [[on-window-detected]]
   if.app-id = 'dev.kdrag0n.MacVirt'
-  run = 'move-node-to-workspace S'     # mnemonics S 
+  run = 'move-node-to-workspace F'     # mnemonics F 
 
 [[on-window-detected]]
   if.app-id = 'com.openai.chat'
-  run = 'move-node-to-workspace F'         # mnemonics F 
+  run = 'move-node-to-workspace S'         # mnemonics S 
 
 [[on-window-detected]]
   if.app-id = 'io.beekeeperstudio.desktop'
