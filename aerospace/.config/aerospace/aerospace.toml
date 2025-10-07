@@ -215,6 +215,10 @@ G = 'secondary'
   run = 'move-node-to-workspace F'         # mnemonics F 
 
 [[on-window-detected]]
+  if.app-id = 'com.figma.Desktop'
+  run = 'move-node-to-workspace F'         # mnemonics F 
+
+[[on-window-detected]]
   if.app-id = 'company.thebrowser.dia'
   run = 'move-node-to-workspace W'         # mnemonics W 
 
