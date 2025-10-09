@@ -1,12 +1,27 @@
+-- lua/plugins/sidekick.lua
 return {
   {
     'folke/sidekick.nvim',
     opts = {
-      -- add any options here
       cli = {
         mux = {
           backend = 'zellij',
           enabled = false,
+        },
+        win = {
+          layout = 'left',
+          split = {
+            width = 60,
+            height = 20,
+          },
+          keys = {
+            hide_n = { 'q', 'hide', mode = 'n' },
+            hide_ctrl_q_n = { '<c-q>', 'hide', mode = 'n' },
+            hide_ctrl_dot = { '<c-.>', 'hide', mode = 't' },
+            hide_ctrl_z = { '<c-z>', 'hide', mode = 't' },
+            prompt = { '<c-p>', 'prompt', mode = 't' },
+            stopinsert = { '<c-q>', 'stopinsert', mode = 't' },
+          },
         },
       },
     },
@@ -14,9 +29,8 @@ return {
       {
         '<tab>',
         function()
-          -- if there is a next edit, jump to it, otherwise apply it if any
           if not require('sidekick').nes_jump_or_apply() then
-            return '<Tab>' -- fallback to normal tab
+            return '<Tab>'
           end
         end,
         expr = true,
@@ -65,7 +79,7 @@ return {
       {
         '<leader>ap',
         function()
-          require('sidekick.cli').select_prompt()
+          require('sidekick.cli').prompt()
         end,
         desc = 'Sidekick Ask Prompt',
         mode = { 'n', 'v' },
@@ -74,13 +88,11 @@ return {
   },
   {
     'saghen/blink.cmp',
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
     opts = {
       keymap = {
         ['<Tab>'] = {
           'snippet_forward',
-          function() -- sidekick next edit suggestion
+          function()
             return require('sidekick').nes_jump_or_apply()
           end,
           'fallback',

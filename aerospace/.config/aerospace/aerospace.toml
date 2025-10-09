@@ -140,7 +140,7 @@ automatically-unhide-macos-hidden-apps = false
   alt-shift-m = 'move-node-to-workspace M'
   alt-shift-n = 'move-node-to-workspace N'
 
-alt-ctrl-backspace = ['close-all-windows-but-current', 'mode main']
+alt-shift-backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-c = 'layout floating tiling'
 

@@ -333,7 +333,7 @@ return {
           finder = 'explorer',
           diagnostics = true,
           diagnostics_open = false,
-          layout = { layout = { position = 'left', width = 34 }, preview = false },
+          layout = { layout = { position = 'right', width = 34 }, preview = false },
           focus = 'list',
           auto_close = false,
           git_untracked = true,
