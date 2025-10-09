@@ -1,6 +1,7 @@
 # Check if the shell is interactive 
 if status is-interactive 
     fish_add_path /Users/phrosa/.local/bin
+    fish_add_path ~/.local/share/bob/nvim-bin
     fish_add_path "$HOME/.dotfiles/bin"
     fish_add_path /usr/local/bin
     fish_add_path /opt/homebrew/bin  # For Apple Silicon Macs
