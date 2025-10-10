@@ -9,7 +9,7 @@ return {
           enabled = false,
         },
         win = {
-          layout = 'left',
+          layout = 'right',
           split = {
             width = 60,
             height = 20,
