@@ -142,7 +142,7 @@ automatically-unhide-macos-hidden-apps = false
 
 alt-shift-backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-c = 'layout floating tiling'
+alt-t = 'layout floating tiling'
 
   ctrl-alt-shift-cmd-semicolon = 'mode service'
 
