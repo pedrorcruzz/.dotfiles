@@ -1,7 +1,7 @@
 # ghostty +list-themes 
-# theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme= Catppuccin Mocha 
+# config-file = ghostty-theme
 window-colorspace = "display-p3"
-config-file = ghostty-theme
 cursor-style = block
 
 # JetBrainsMono Nerd Font   MesloLGL Nerd Font  ComicShannsMono Nerd Font  Hack Nerd Font
