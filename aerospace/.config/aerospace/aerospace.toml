@@ -109,8 +109,10 @@ automatically-unhide-macos-hidden-apps = false
   alt-shift-l = 'move right'
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-  alt-comma = 'resize smart -50'
-  alt-period = 'resize smart +50'
+  alt-comma = 'resize smart -150'
+  alt-period = 'resize smart +150'
+  alt-shift-comma = 'resize smart -50'
+  alt-shift-period = 'resize smart +50'
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
   alt-1 = 'workspace 1'
