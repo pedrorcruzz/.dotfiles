@@ -1,7 +1,7 @@
 local lualine_visible = true
 
 local function create_theme()
-  local custom_min_theme = true
+  local custom_min_theme = false
   local custom_vesper = false
   local colors = {}
 
