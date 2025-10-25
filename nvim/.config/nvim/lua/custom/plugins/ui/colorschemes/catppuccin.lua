@@ -3,7 +3,7 @@ return {
     'catppuccin/nvim',
     lazy = true,
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },
@@ -46,7 +46,7 @@ return {
             debugBreakpoint = { fg = '#B2BEFF' },
             DapUiBreakpointsDisabledLine = { fg = '#B2BEFF' },
 
-            ['@punctuation.special'] = { fg = '#45475c' },
+            ['@punctuation.special'] = { fg = '#abb2bf' }, --#45475c
             ['@punctuation.special.tsx'] = { fg = '#FFC0EA' },
             ['@punctuation.special.jsx'] = { fg = '#FFC0EA' },
             ['@punctuation.special.htmldjango'] = { fg = '#FFC0EA' },

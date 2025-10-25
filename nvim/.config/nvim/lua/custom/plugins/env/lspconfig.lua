@@ -28,6 +28,7 @@ return { -- LSP Configuration & Plugins
   },
 
   config = function()
+    vim.lsp.handlers['textDocument/signatureHelp'] = function() end
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)

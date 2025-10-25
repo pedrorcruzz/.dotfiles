@@ -146,6 +146,7 @@ alt-shift-backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-t = 'layout floating tiling'
 
+
   ctrl-alt-shift-cmd-semicolon = 'mode service'
 
   # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -234,6 +235,10 @@ G = 'secondary'
 
 [[on-window-detected]]
   if.app-id = 'com.TickTick.task.mac'
+  run = 'move-node-to-workspace G'    # mnemonics G 
+
+[[on-window-detected]]
+  if.app-id = 'com.linear'
   run = 'move-node-to-workspace G'    # mnemonics G 
 
 

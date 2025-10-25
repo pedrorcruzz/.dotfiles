@@ -69,13 +69,14 @@ return {
 
       signature = {
         enabled = true,
+        -- auto_show = true,
         window = { border = 'none' },
       },
 
       completion = {
         documentation = {
           auto_show = true,
-          auto_show_delay_ms = 200,
+          auto_show_delay_ms = 400,
           window = { border = 'rounded' },
         },
         ghost_text = { enabled = false },

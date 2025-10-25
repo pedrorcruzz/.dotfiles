@@ -1,6 +1,6 @@
 # ghostty +list-themes 
-theme= Catppuccin Mocha 
-# config-file = ghostty-theme
+# theme= Catppuccin Mocha 
+config-file = ghostty-theme
 window-colorspace = "display-p3"
 cursor-style = block
 
