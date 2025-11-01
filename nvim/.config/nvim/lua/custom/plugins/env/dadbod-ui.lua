@@ -15,8 +15,8 @@ return {
     vim.g.db_ui_use_nerd_fonts = 1
   end,
   keys = {
-    { '<leader>bb', '<cmd>DBUIToggle<cr>', desc = 'DBUI: Toggle' },
-    { '<leader>ba', '<cmd>DBUIAddConnection<cr>', desc = 'DBUI: Add Connection' },
-    { '<leader>bf', '<cmd>DBUIFindBuffer<cr>', desc = 'DBUI: Find Buffer' },
+    { '<leader>vb', '<cmd>DBUIToggle<cr>', desc = 'DBUI: Toggle' },
+    { '<leader>va', '<cmd>DBUIAddConnection<cr>', desc = 'DBUI: Add Connection' },
+    { '<leader>vf', '<cmd>DBUIFindBuffer<cr>', desc = 'DBUI: Find Buffer' },
   },
 }

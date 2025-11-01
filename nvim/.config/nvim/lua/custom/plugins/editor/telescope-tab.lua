@@ -3,13 +3,13 @@ return {
   dependencies = { 'nvim-telescope/telescope.nvim' },
   cmd = { 'Telescope' },
   keys = {
-    {
-      '<leader>tt',
-      function()
-        require('telescope').extensions['telescope-tabs'].list_tabs()
-      end,
-      desc = 'List Tabs (Telescope)',
-    },
+    -- {
+    --   '<leader>tt',
+    --   function()
+    --     require('telescope').extensions['telescope-tabs'].list_tabs()
+    --   end,
+    --   desc = 'List Tabs (Telescope)',
+    -- },
   },
   config = function()
     local telescope = require 'telescope'

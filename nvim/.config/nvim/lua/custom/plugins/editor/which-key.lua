@@ -5,9 +5,9 @@ return {
   event = 'VimEnter', -- Sets the loading event to 'VimEnter'
   config = function() -- This is the function that runs, AFTER loading
     require('which-key').setup {
-      preset = 'helix', --classic, modern, helix
+      preset = 'modern', --classic, modern, helix
       win = {
-        border = 'single', -- none, single, double, shadow
+        border = 'shadow', -- none, single, double, shadow
         -- width = 60,
       },
     }
@@ -20,8 +20,8 @@ return {
       { '<leader>ft', group = 'Todo Comments', icon = ' ' },
       { '<leader>z', group = 'Dropbar', icon = '󰳯' },
       { '<leader>,', group = 'Trouble Diagnostic', icon = '󰁨' },
-      { '<leader>vw', group = 'Windows', icon = '' },
-      { '<leader>b', group = 'DBUI', icon = '' },
+      { '<leader>j', group = 'Windows', icon = '' },
+      { '<leader>v', group = 'DBUI', icon = '' },
       -- { '<leader>b', group = 'BufferLine', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
 
@@ -40,7 +40,7 @@ return {
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },
 
-      { '<leader>v', group = 'Obsidian', icon = '' },
+      { '<leader>j', group = 'Obsidian', icon = '' },
       { '<leader>vb', group = 'Buffers', icon = '' },
       { '<leader>vt', group = 'Tabs', icon = '' },
 

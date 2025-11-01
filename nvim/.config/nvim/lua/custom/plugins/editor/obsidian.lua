@@ -10,37 +10,37 @@ return {
   keys = {
     -- { '<leader>vo', '<cmd>e ~/Developer/second-brain/Segundo\\ Cérebro.md<cr>', desc = 'Open Obsidian Neovim' },
     {
-      '<leader>vo',
+      '<leader>jo',
       function()
         Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
       end,
       desc = 'Open Obsidian Neovim',
     },
-    { '<leader>vO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
-    { '<leader>vd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
-    { '<leader>vy', '<CMD>Obsidian today -1<CR>', desc = 'Open Obsidian yesterday note' },
-    { '<leader>vt', '<CMD>Obsidian today +1<CR>', desc = 'Open Obsidian tomorrow note' },
-    { '<leader>vg', '<cmd>ObsidianDailies<cr>', desc = 'List Dailies' },
-    { '<leader>vc', '<cmd>ObsidianCheck<cr>', desc = 'Check' },
-    -- { '<leader>vf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
-    { '<leader>vs', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
-    { '<leader>vr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
-    { '<leader>ve', '<cmd>ObsidianExtractNote<cr>', desc = 'Extract Note' },
-    { '<leader>vl', '<cmd>ObsidianLinkNew<cr>', desc = 'Link New' },
-    { '<leader>va', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note With Template' },
-    { '<leader>vz', '<cmd>ObsidianNew<cr>', desc = 'Create Note' },
+    { '<leader>jO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
+    { '<leader>jd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
+    { '<leader>jy', '<CMD>Obsidian today -1<CR>', desc = 'Open Obsidian yesterday note' },
+    { '<leader>jt', '<CMD>Obsidian today +1<CR>', desc = 'Open Obsidian tomorrow note' },
+    { '<leader>jg', '<cmd>ObsidianDailies<cr>', desc = 'List Dailies' },
+    { '<leader>jc', '<cmd>ObsidianCheck<cr>', desc = 'Check' },
+    -- { '<leader>jf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
+    { '<leader>js', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
+    { '<leader>jr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
+    { '<leader>je', '<cmd>ObsidianExtractNote<cr>', desc = 'Extract Note' },
+    { '<leader>jl', '<cmd>ObsidianLinkNew<cr>', desc = 'Link New' },
+    { '<leader>ja', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note With Template' },
+    { '<leader>jz', '<cmd>ObsidianNew<cr>', desc = 'Create Note' },
     {
-      '<leader>vm',
+      '<leader>jm',
       function()
         return require('obsidian').util.toggle_checkbox()
       end,
       desc = 'Toggle Checkbox',
     },
-    { '<leader>vp', '<cmd>ObsidianPasteImage<cr>', desc = 'Paste Image' },
+    { '<leader>jp', '<cmd>ObsidianPasteImage<cr>', desc = 'Paste Image' },
 
-    { '<leader>vf', '<CMD>Obsidian search<CR>', desc = 'Open Obsidian grep picker' },
-    { '<leader>fo', '<CMD>Obsidian search<CR>', desc = 'Find note [Obsidian]' },
-    { '<leader>vb', '<CMD>Obsidian backlinks<CR>', desc = 'Open Obsidian backlinks picker' },
+    { '<leader>jf', '<CMD>Obsidian search<CR>', desc = 'Open Obsidian grep picker' },
+    { '<leader>jo', '<CMD>Obsidian search<CR>', desc = 'Find note [Obsidian]' },
+    { '<leader>jb', '<CMD>Obsidian backlinks<CR>', desc = 'Open Obsidian backlinks picker' },
   },
   config = function()
     require('obsidian').setup {

@@ -47,7 +47,7 @@ return {
   end,
   keys = {
     {
-      '<leader>lb',
+      '<leader>lj',
       function()
         local loaded = package.loaded['bufferline']
         if not loaded then
