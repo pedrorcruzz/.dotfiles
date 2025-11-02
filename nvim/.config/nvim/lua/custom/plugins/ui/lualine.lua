@@ -23,9 +23,10 @@ local function create_theme()
     colors = {
       multiple_min_fg_branch = '#a9a9a9',
       multiple_min_bg_branch = '#2d2d2d', --#1A1A1A
-      multiple_min_bar_bg = nil,
-      multiple_min_git = '#ECEFF4',
-      multiple_min_y_bg = '#101010',
+      vesper_bar_bg = nil,
+      vesper_git = '#ECEFF4',
+      vesper_y_bg = '#101010',
+      -- vesper_y_bg = nil,
       vesper_y_fg = '#b0c4de',
       vesper_uni_fg_color = '#D8DEE9',
       vesper_uni_bg_color = '#101010', --#0D0D0D
@@ -62,10 +63,10 @@ local function create_theme()
         bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
         gui = 'bold',
       },
-      c = { fg = colors.min_git or colors.multiple_min_git, bg = colors.min_bar_bg or colors.multiple_min_bar_bg or colors.default_bar_bg },
+      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
       y = {
         fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.multiple_min_y_bg or colors.default_y_bg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
@@ -85,10 +86,10 @@ local function create_theme()
         bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
         gui = 'bold',
       },
-      c = { fg = colors.min_git or colors.multiple_min_git, bg = colors.min_bar_bg or colors.multiple_min_bar_bg or colors.default_bar_bg },
+      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
       y = {
         fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.multiple_min_y_bg or colors.default_y_bg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
@@ -108,10 +109,10 @@ local function create_theme()
         bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
         gui = 'bold',
       },
-      c = { fg = colors.min_git or colors.multiple_min_git, bg = colors.min_bar_bg or colors.multiple_min_bar_bg or colors.default_bar_bg },
+      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
       y = {
         fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.multiple_min_y_bg or colors.default_y_bg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
@@ -131,10 +132,10 @@ local function create_theme()
         bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
         gui = 'bold',
       },
-      c = { fg = colors.min_git or colors.multiple_min_git, bg = colors.min_bar_bg or colors.multiple_min_bar_bg or colors.default_bar_bg },
+      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
       y = {
         fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.multiple_min_y_bg or colors.default_y_bg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
@@ -154,10 +155,10 @@ local function create_theme()
         bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
         gui = 'bold',
       },
-      c = { fg = colors.min_git or colors.multiple_min_git, bg = colors.min_bar_bg or colors.multiple_min_bar_bg or colors.default_bar_bg },
+      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
       y = {
         fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.multiple_min_y_bg or colors.default_y_bg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {

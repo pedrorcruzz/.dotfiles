@@ -1,4 +1,4 @@
-local bufferline_active = false
+local bufferline_active = true
 
 return {
   'akinsho/bufferline.nvim',
@@ -34,8 +34,26 @@ return {
         end
         return table.concat(result, ' ')
       end,
+
+      offsets = {
+        {
+          filetype = 'snacks_picker_list',
+          text = 'Snacks Explorer',
+          highlight = 'Directory',
+          text_align = 'left',
+          separator = true,
+        },
+        {
+          filetype = 'snacks_layout_box',
+          text = '',
+          highlight = 'Directory',
+          text_align = 'left',
+          separator = true,
+        },
+      },
     },
   },
+
   config = function(_, opts)
     require('bufferline').setup(opts)
     vim.opt.showtabline = bufferline_active and 2 or 0
@@ -45,6 +63,7 @@ return {
     vim.api.nvim_set_hl(0, 'BufferLineInfoSelected', { link = 'BufferLineBufferSelected' })
     vim.api.nvim_set_hl(0, 'BufferLineHintSelected', { link = 'BufferLineBufferSelected' })
   end,
+
   keys = {
     {
       '<leader>lj',
@@ -59,6 +78,22 @@ return {
         require('bufferline').setup {
           options = {
             show_bufferline = bufferline_active,
+            offsets = {
+              {
+                filetype = 'snacks_picker_list',
+                text = 'Snacks Explorer',
+                highlight = 'Directory',
+                text_align = 'left',
+                separator = true,
+              },
+              {
+                filetype = 'snacks_layout_box',
+                text = 'Snacks Explorer',
+                highlight = 'Directory',
+                text_align = 'left',
+                separator = true,
+              },
+            },
           },
         }
         vim.opt.showtabline = bufferline_active and 2 or 0
@@ -83,7 +118,7 @@ return {
     { '<leader>bh', '<cmd>BufferLineCloseLeft<cr>', desc = 'Close Left' },
     { '<leader>bl', '<cmd>BufferLineCloseRight<cr>', desc = 'Close Right' },
     { '<leader>bC', '<cmd>BufferLineCloseOthers<cr>', desc = 'Close Others' },
-    { '<leader>bd', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
+    { '<leader>bs', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
     { '<leader>ba', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
     { '<leader>bq', '<cmd>BufferLineSortByDirectory<cr>', desc = 'Sort Directory' },
     { '<leader>be', '<cmd>BufferLineSortByExtension<cr>', desc = 'Sort Extension' },

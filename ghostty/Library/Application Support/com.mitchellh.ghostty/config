@@ -7,7 +7,7 @@ cursor-style = block
 # JetBrainsMono Nerd Font   MesloLGL Nerd Font  ComicShannsMono Nerd Font  Hack Nerd Font
 # Mono and Propo
 font-family = ""
-font-family = "JetBrainsMono Nerd Font Propo"
+font-family = "Hack Nerd Font Propo"
 font-size = 12
 font-feature = -liga
 font-thicken = true
