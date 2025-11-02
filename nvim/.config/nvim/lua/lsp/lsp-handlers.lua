@@ -37,7 +37,7 @@ local severity = vim.diagnostic.severity
 vim.diagnostic.config {
   virtual_lines = { true },
   -- virtual_lines = { current_line = true },
-  virtual_text = { false },
+  -- virtual_text = { true },
   -- virtual_text = { current_line = true },
   signs = {
     text = {
