@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 -- Auto Save
-local enable_autosave = true -- set to false to disable auto save
+local enable_autosave = true
 
 if enable_autosave then
   -- Auto save files when focus is lost
