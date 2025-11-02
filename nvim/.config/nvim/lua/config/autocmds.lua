@@ -11,29 +11,33 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+-- Auto Save
+local enable_autosave = true -- set to false to disable auto save
 
--- Auto save files when focus is lost
-vim.api.nvim_create_autocmd('FocusLost', {
-  desc = 'Auto save files when focus is lost',
-  group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = true }),
-  callback = function()
-    vim.cmd 'silent! wa'
-  end,
-})
+if enable_autosave then
+  -- Auto save files when focus is lost
+  vim.api.nvim_create_autocmd('FocusLost', {
+    desc = 'Auto save files when focus is lost',
+    group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = true }),
+    callback = function()
+      vim.cmd 'silent! wa'
+    end,
+  })
 
--- Auto save files when buffer is hidden
-vim.api.nvim_create_autocmd('BufLeave', {
-  desc = 'Auto save files when buffer is hidden',
-  group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = false }),
-  callback = function()
-    vim.cmd 'silent! wa'
-  end,
-})
+  -- Auto save files when buffer is hidden
+  vim.api.nvim_create_autocmd('BufLeave', {
+    desc = 'Auto save files when buffer is hidden',
+    group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = false }),
+    callback = function()
+      vim.cmd 'silent! wa'
+    end,
+  })
+end
 
 -- USE THE NVIM . (dot)
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
-    local arg = vim.fn.argv(0) -- Obtém o primeiro argumento passado para o Neovim
+    local arg = vim.fn.argv(0)
     if vim.fn.argc() == 1 and vim.fn.isdirectory(arg) == 1 then
       Snacks.picker.smart()
       -- vim.cmd 'FzfLua files'

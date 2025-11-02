@@ -5,6 +5,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
+    --INFO: Some keymaps are in Snacks.lua
     -- map('gd', '<cmd>Telescope lsp_definitions<cr>', 'Goto Definition')
     map('gd', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
     -- map('<leader>lg', '<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>', 'Goto Definition')
