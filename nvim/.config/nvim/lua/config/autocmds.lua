@@ -87,7 +87,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 -- Snacks Explorer
-SNACKS_START_WITH_EXPLORER = false
+local SNACKS_START_WITH_EXPLORER = true
+local SNACKS_FOCUS_EXPLORER = false
 
 if SNACKS_START_WITH_EXPLORER then
   local function is_opened_with_dot()
@@ -102,6 +103,23 @@ if SNACKS_START_WITH_EXPLORER then
 
   local opened_with_dot = is_opened_with_dot()
 
+  local function focus_buffer_after_snacks(bufnr)
+    local attempts = 0
+    local function try_focus()
+      if vim.api.nvim_buf_is_valid(bufnr) then
+        local current_buf = vim.api.nvim_get_current_buf()
+        if current_buf ~= bufnr then
+          vim.api.nvim_set_current_buf(bufnr)
+        end
+      end
+      attempts = attempts + 1
+      if attempts < 10 then
+        vim.defer_fn(try_focus, 20)
+      end
+    end
+    try_focus()
+  end
+
   vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
       if opened_with_dot then
@@ -113,7 +131,11 @@ if SNACKS_START_WITH_EXPLORER then
         if vim.fn.isdirectory(arg) == 1 then
           local ok, snacks = pcall(require, 'snacks')
           if ok and snacks and snacks.explorer then
+            local bufnr = vim.api.nvim_get_current_buf()
             snacks.explorer()
+            if not SNACKS_FOCUS_EXPLORER then
+              focus_buffer_after_snacks(bufnr)
+            end
           end
         end
       end
@@ -127,8 +149,8 @@ if SNACKS_START_WITH_EXPLORER then
         return
       end
 
-      local path = args.file or ''
       local bufname = vim.api.nvim_buf_get_name(args.buf)
+      local path = args.file or ''
 
       if bufname == '' or bufname:match 'snacks_picker_input' or bufname:match 'NvimTree_' or bufname:match '^%[.*%]$' or path:match '/nvim%.phrosa/' then
         return
@@ -136,7 +158,11 @@ if SNACKS_START_WITH_EXPLORER then
 
       local ok, snacks = pcall(require, 'snacks')
       if ok and snacks and snacks.explorer then
+        local bufnr = args.buf
         snacks.explorer()
+        if not SNACKS_FOCUS_EXPLORER then
+          focus_buffer_after_snacks(bufnr)
+        end
       end
     end,
   })
