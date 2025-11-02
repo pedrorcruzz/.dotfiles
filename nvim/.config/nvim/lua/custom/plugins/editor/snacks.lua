@@ -26,6 +26,14 @@ return {
           { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
           { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
           { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+          -- {
+          --   icon = ' ',
+          --   key = 's',
+          --   desc = 'Restore Session',
+          --   action = function()
+          --     require('persistence').load()
+          --   end,
+          -- },
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
           { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
           { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },

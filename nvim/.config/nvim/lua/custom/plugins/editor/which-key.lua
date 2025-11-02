@@ -22,7 +22,7 @@ return {
       { '<leader>,', group = 'Trouble Diagnostic', icon = '󰁨' },
       { '<leader>j', group = 'Windows', icon = '' },
       { '<leader>v', group = 'DBUI', icon = '' },
-      -- { '<leader>b', group = 'BufferLine', icon = '' },
+      { '<leader>b', group = 'BufferLine', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
 
       { '<leader>n', group = 'Neotest', icon = '󰙨' },
