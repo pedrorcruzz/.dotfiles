@@ -41,7 +41,7 @@ return {
         ensure_installed = opts.ensure_installed,
         handlers = {
           function(server_name)
-            local has_custom_config, custom_opts = pcall(require, 'config.lsp.' .. server_name)
+            local has_custom_config, custom_opts = pcall(require, 'lsp.' .. server_name)
             local server_opts = {}
             if has_custom_config then
               server_opts = custom_opts
