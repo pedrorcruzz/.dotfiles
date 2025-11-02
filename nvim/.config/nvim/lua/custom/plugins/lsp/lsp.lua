@@ -10,4 +10,5 @@ return {
     opts = {},
     event = { 'BufReadPre', 'BufNewFile' },
   },
+  -- { 'j-hui/fidget.nvim', opts = {} },
 }
