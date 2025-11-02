@@ -40,8 +40,9 @@ return {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
           EndOfBuffer = { fg = '#282727' },
           Visual = { bg = '#4c4c4c' }, --606060
+          SnacksInputTitle = { fg = '#ffffff' },
+          SnacksInputBorder = { fg = '#4c4c4c' },
           SnacksPicker = { bg = transparent_background and 'none' or '#1a1a1a' },
-          SnacksInputIcon = { fg = '#fb4a34', bg = '#fb4a34' },
           SnacksPickerBorder = { fg = '#606060', bg = transparent_background and 'NONE' or '#1a1a1a' },
           SnacksPickerInputTitle = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#1a1a1a' }, --explorer
           SnacksPickerToggle = { fg = '#4c4c4c', bg = transparent_background and 'NONE' or '#1a1a1a' }, --explorer
