@@ -114,8 +114,8 @@ return {
 
     --Tabs
     { '<leader>tt', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
-    { '<leader>ta', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
-    { '<leader>ts', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
+    { '<leader>tj', '<cmd>tabprevious<cr>', desc = 'Tabs: Previous' },
+    { '<leader>tk', '<cmd>tabnext<cr>', desc = 'Tabs: Next' },
     { '<leader>tc', '<cmd>tabclose<cr>', desc = 'Tabs: Close' },
     { '<leader>tC', '<cmd>tabonly<cr>', desc = 'Tabs: Close other Tabs' },
     { '<leader>tf', '<cmd>Telescope telescope-tabs list_tabs<cr>', desc = 'Tabs: Find' },
@@ -148,10 +148,10 @@ return {
     { '<leader>ce', '<cmd>split<cr>', desc = 'Split Horizontal' },
     { '<leader>cC', '<cmd>only<cr>', desc = 'Close all Others' },
     { '<leader>cc', '<cmd>close<cr>', desc = 'Close Window' },
-    { '<leader>ca', '<cmd>wincmd H<cr>', desc = 'Swap Left' },
-    { '<leader>cd', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
-    { '<leader>cw', '<cmd>wincmd K<cr>', desc = 'Swap Up' },
-    { '<leader>cs', '<cmd>wincmd J<cr>', desc = 'Swap Down' },
+    { '<leader>ch', '<cmd>wincmd H<cr>', desc = 'Swap Left' },
+    { '<leader>cl', '<cmd>wincmd L<cr>', desc = 'Swap Right' },
+    { '<leader>ck', '<cmd>wincmd K<cr>', desc = 'Swap Up' },
+    { '<leader>cj', '<cmd>wincmd J<cr>', desc = 'Swap Down' },
     { '<leader>cm', '<cmd>MaximizerToggle<cr>', desc = 'Maximizer' },
     {
       '<leader>c1',
