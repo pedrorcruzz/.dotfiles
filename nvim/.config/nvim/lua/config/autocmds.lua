@@ -34,6 +34,13 @@ if enable_autosave then
   })
 end
 
+-- Notify AutoSave status
+-- vim.schedule(function()
+--   local message = enable_autosave and 'AutoSave enabled ⚡' or 'AutoSave disabled ⛔'
+--   local level = enable_autosave and vim.log.levels.INFO or vim.log.levels.WARN
+--   vim.notify(message, level, { title = 'Neovim', timeout = 2000 })
+-- end)
+
 -- USE THE NVIM . (dot)
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
