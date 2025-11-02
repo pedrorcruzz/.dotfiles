@@ -21,7 +21,7 @@ return {
       end)
     end,
     opts = {
-      colorscheme = 'kanagawa-dragon', -- min-theme,kanagawa-dragon, peachpuff, vesper, catppuccin-mocha, gruvbox, emperor, marduk, gorgoroth, khold, venom
+      colorscheme = 'kanagawa-dragon', -- min-theme,rusticated,kanagawa-dragon, peachpuff, vesper, catppuccin-mocha, gruvbox, emperor, marduk, gorgoroth, khold, venom
     },
   },
 }

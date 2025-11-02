@@ -94,10 +94,16 @@ return {
     event = 'BufReadPost',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
-      require('treesitter-context').setup {
+      local context = require 'treesitter-context'
+
+      context.setup {
         enable = false,
         max_lines = 0,
       }
+
+      vim.api.nvim_create_user_command('TSContextToggle', function()
+        context.toggle()
+      end, { desc = 'Toggle Treesitter Context' })
     end,
   },
 }

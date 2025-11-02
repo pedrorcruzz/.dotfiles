@@ -1,5 +1,5 @@
 # ghostty +list-themes 
-# theme= Catppuccin Mocha 
+# theme= Belafonte Day 
 config-file = ghostty-theme
 window-colorspace = "display-p3"
 cursor-style = block
