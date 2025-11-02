@@ -49,13 +49,13 @@ return {
           StatusLine = { bg = transparent_background and 'NONE' or '#1c1c1c', fg = '#606060' },
           -- VertSplit = { fg = transparent_background and '#1F1F1F' or '#665C54' },
           -- WinSeparator = { fg = transparent_background and '#1F1F1F' or '#665C54' },
-          WinBar = { bg = transparent_background and 'NONE' or '#504944' },
-          WinBarNC = { bg = transparent_background and 'NONE' or '#504944' },
           Pmenu = { bg = transparent_background and 'NONE' or '#504944' },
           PmenuSel = { bg = '#282727' },
           TreesitterContext = { bg = transparent_background and 'NONE' or '#282727', fg = '#282727' },
           TreesitterContextLineNumber = { bg = '#282727', fg = '#665c54' },
           TreesitterContextBottom = { sp = '#4c4c4c', underline = true },
+          WinBarNC = { fg = '#9c9ea4', bg = transparent_background and 'NONE' or '#1c1c1c' },
+          WinBar = { fg = '#9c9ea4', bg = transparent_background and 'NONE' or '#1c1c1c' },
         }
       end,
 

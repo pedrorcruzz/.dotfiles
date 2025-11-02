@@ -38,8 +38,8 @@ return {
           Folded = { fg = '#B990F6', bg = '#1a1a1a' },
 
           Underlined = { bg = nil },
-          StatusLineNC = { bg = transparent_background and 'NONE' or '#1a1a1a' },
-          StatusLine = { bg = transparent_background and 'NONE' or '#1a1a1a' },
+          StatusLineNC = { bg = transparent_background and 'NONE' or '#1a1a1a', fg = '#606060' },
+          StatusLine = { bg = transparent_background and 'NONE' or '#1a1a1a', fg = '#606060' },
           -- StatusLineNC = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
           -- StatusLine = { fg = '#A9B2C0', bg = transparent_background and 'NONE' or '#1a1a1a' },
 
