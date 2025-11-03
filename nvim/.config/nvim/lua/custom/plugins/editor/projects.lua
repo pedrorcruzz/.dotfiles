@@ -45,7 +45,7 @@ return {
       },
       -- Picker configuration
       picker = {
-        type = 'telescope', -- or "telescope"
+        type = 'telescope', -- "telescope" or "fzf-lua"
       },
     },
     init = function()

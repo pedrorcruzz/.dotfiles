@@ -2,7 +2,7 @@ return {
   'rebelot/kanagawa.nvim',
   lazy = true,
   config = function()
-    local transparent_background = true
+    local transparent_background = false
 
     require('kanagawa').setup {
       compile = false,

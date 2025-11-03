@@ -114,7 +114,7 @@ if SNACKS_START_WITH_EXPLORER then
       end
       attempts = attempts + 1
       if attempts < 10 then
-        vim.defer_fn(try_focus, 20)
+        vim.defer_fn(try_focus, 15)
       end
     end
     try_focus()
