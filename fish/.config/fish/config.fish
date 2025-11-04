@@ -26,7 +26,7 @@ set -Ux LANG en_US.UTF-8
 set -Ux LC_ALL en_US.UTF-8
 
 #Start Tmux automatically
-set -g USE_TMUX false  # Set to true to use tmux or false to disable
+set -g USE_TMUX true  # Set to true to use tmux or false to disable
 
 if test $USE_TMUX = true
     if type -q tmux
