@@ -28,6 +28,7 @@ return {
         recommendedVariantOrder = 'warning',
       },
       experimental = {
+        enableDefaultDecorators = false,
         classRegex = {
           [[class= "([^"]*)]],
           [[class: "([^"]*)]],
