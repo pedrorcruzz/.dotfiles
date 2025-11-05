@@ -79,6 +79,7 @@ return {
         'django-template-lsp',
         -- Linters
         'djlint',
+        'biome',
         'eslint_d',
         -- Debuggers
         'php-debug-adapter',
