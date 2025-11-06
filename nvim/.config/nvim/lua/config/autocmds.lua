@@ -11,6 +11,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- disable background color for LSP document colors (tailwindcss, etc.)
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function()
+    vim.lsp.document_color.enable(false)
+  end,
+})
+
 -- Auto Save
 local enable_autosave = true
 
