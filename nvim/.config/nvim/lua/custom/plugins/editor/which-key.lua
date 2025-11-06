@@ -32,9 +32,9 @@ return {
       { '<leader>;', group = 'Home', icon = '' },
       { '<leader>w', group = 'Save', icon = '' },
       { '<leader>W', group = 'Save Without Formatter', icon = '' },
-      { '<leader>[', group = 'Previous', icon = '󰙣' },
+      { '<leader>J', group = 'Previous', icon = '󰙣' },
+      { '<leader>K', group = 'Next', icon = '󰙡' },
       { '<leader>h', group = 'No Highlight', icon = '󰸱' },
-      { '<leader>]', group = 'Next', icon = '󰙡' },
       { '<leader>a', group = 'Avante', icon = ' ' },
       { '<leader>ci', group = 'ToggleTerm', icon = ' ' },
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
@@ -109,8 +109,8 @@ return {
     -- { "<leader>'", '<cmd>:set wrap<cr>', desc = 'Wrap' },
 
     --Bufers
-    { '<leader>[', '<cmd>bprevious<cr>', desc = 'Previous' },
-    { '<leader>]', '<cmd>bnext<cr>', desc = 'Next' },
+    { '<leader>J', '<cmd>bprevious<cr>', desc = 'Previous' },
+    { '<leader>K', '<cmd>bnext<cr>', desc = 'Next' },
 
     --Tabs
     { '<leader>tt', '<cmd>tabnew<cr>', desc = 'Tabs: New Tab' },
