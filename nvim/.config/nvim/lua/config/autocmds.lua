@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- disable background color for LSP document colors (tailwindcss, etc.)
+-- disable background color for LSP document colors (tailwindcss, etc.) NOTE: if u use NEOVIM NIGHTLY this is important
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
     vim.lsp.document_color.enable(false)
