@@ -3,7 +3,7 @@ return {
     'datsfilipe/vesper.nvim',
     lazy = true,
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('vesper').setup {
         transparent = transparent_background,
         italics = {
@@ -54,7 +54,7 @@ return {
           TreesitterContextBottom = { sp = '#323232', underline = true },
 
           --Buferlines
-          BufferLineFill = { bg = '#1C1C1C' },
+          BufferLineFill = { bg = transparent_background and 'none' or '#1C1C1C' },
           BufferLinePick = { fg = '#00E0C0' },
           BufferLinePickVisible = { fg = '#00E0C0' },
           BufferLinePickSelected = { fg = '#00E0C0' },
@@ -186,8 +186,8 @@ return {
           SnacksDashboardIcon = { fg = '#60DCC1' },
           SnacksDashboardFile = { fg = '#ffffff' },
           SnacksDashboardTitle = { fg = '#ffffff' },
-          -- snacksdashboardspecial = { fg = '#ff657e' },
-          SnacksDashboardNormal = { fg = '#4c4c4c' }, --4b4f6b
+          snacksdashboardspecial = { fg = '#ff657e' },
+          -- SnacksDashboardNormal = { fg = '#4c4c4c' }, --4b4f6b
 
           -- noice
           NoiceConfirmBorder = { fg = '#4c4c4c' },

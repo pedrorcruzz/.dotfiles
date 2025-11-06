@@ -2,7 +2,7 @@
 
 background = #101010
 background-opacity = 0.96
-background-blur-radius = 0
+background-blur-radius = 25
 foreground = #ffffff
 
 cursor-color = #E0E0E0
