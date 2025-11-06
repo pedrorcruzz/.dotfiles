@@ -20,6 +20,8 @@ return {
           EndOfBuffer = { fg = '#000000', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#000000' }, --#101010
           VertSplit = { fg = transparent_background and '#101010' or '#121212' },
+          WinBarNC = { bg = transparent_background and 'NONE' or '#000000' },
+          WinBar = { bg = transparent_background and 'NONE' or '#000000' },
 
           Visual = { bg = transparent_background and '#4c4c4c' or '#525252' }, --#606060
           CursorLine = { bg = '#323232' },
