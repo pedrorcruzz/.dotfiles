@@ -1,9 +1,26 @@
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+-- disable background color for LSP document colors (tailwindcss, etc.) NOTE: if u use NEOVIM NIGHTLY this is important
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function()
+    vim.lsp.document_color.enable(false)
+  end,
+})
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
+-- Trigger the Snacks picker if Neovim is started with a single directory as an argument
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    local arg = vim.fn.argv(0)
+    if vim.fn.argc() == 1 and vim.fn.isdirectory(arg) == 1 then
+      Snacks.picker.smart()
+      -- vim.cmd 'FzfLua files'
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'dashboard',
+  command = 'setlocal nolist',
+})
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -11,6 +28,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Syntax highlighting for dotenv files
+local enable_dotenv_syntax = true
+
+if enable_dotenv_syntax then
+  local dotenv_ft = vim.api.nvim_create_augroup('dotenv_ft', { clear = true })
+
+  vim.api.nvim_create_autocmd('BufRead', {
+    group = dotenv_ft,
+    pattern = { '.env*', '.env' },
+    callback = function()
+      vim.bo.filetype = 'dosini'
+    end,
+  })
+end
 
 -- Disable auto comment continuation on new lines
 local disable_auto_comment_continuation = true
@@ -25,13 +57,6 @@ if disable_auto_comment_continuation then
     end,
   })
 end
-
--- disable background color for LSP document colors (tailwindcss, etc.) NOTE: if u use NEOVIM NIGHTLY this is important
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function()
-    vim.lsp.document_color.enable(false)
-  end,
-})
 
 -- Auto Save
 local enable_autosave = true
@@ -55,29 +80,6 @@ if enable_autosave then
     end,
   })
 end
-
--- Notify AutoSave status
--- vim.schedule(function()
---   local message = enable_autosave and 'AutoSave enabled ⚡' or 'AutoSave disabled ⛔'
---   local level = enable_autosave and vim.log.levels.INFO or vim.log.levels.WARN
---   vim.notify(message, level, { title = 'Neovim', timeout = 2000 })
--- end)
-
--- USE THE NVIM . (dot)
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    local arg = vim.fn.argv(0)
-    if vim.fn.argc() == 1 and vim.fn.isdirectory(arg) == 1 then
-      Snacks.picker.smart()
-      -- vim.cmd 'FzfLua files'
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'dashboard',
-  command = 'setlocal nolist',
-})
 
 -- ToggleTerm
 function _G.set_terminal_keymaps()
@@ -262,17 +264,9 @@ if enable_dbout_no_folding then
   })
 end
 
--- Syntax highlighting for dotenv files
-local enable_dotenv_syntax = true
-
-if enable_dotenv_syntax then
-  local dotenv_ft = vim.api.nvim_create_augroup('dotenv_ft', { clear = true })
-
-  vim.api.nvim_create_autocmd('BufRead', {
-    group = dotenv_ft,
-    pattern = { '.env*', '.env' },
-    callback = function()
-      vim.bo.filetype = 'dosini'
-    end,
-  })
-end
+-- Notify AutoSave status
+-- vim.schedule(function()
+--   local message = enable_autosave and 'AutoSave enabled ⚡' or 'AutoSave disabled ⛔'
+--   local level = enable_autosave and vim.log.levels.INFO or vim.log.levels.WARN
+--   vim.notify(message, level, { title = 'Neovim', timeout = 2000 })
+-- end)
