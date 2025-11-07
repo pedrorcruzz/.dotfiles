@@ -1,3 +1,5 @@
+-- plugins/neotest.lua
+
 return {
   {
     'nvim-neotest/neotest',
@@ -8,7 +10,8 @@ return {
       'nvim-treesitter/nvim-treesitter',
 
       -- Adapters:
-      'nvim-neotest/neotest-go',
+      -- 'nvim-neotest/neotest-go',
+      'fredrikaverpil/neotest-golang',
       'nvim-neotest/neotest-jest',
       'nvim-neotest/neotest-python',
       'V13Axel/neotest-pest',
@@ -53,7 +56,8 @@ return {
           watch = true,
         },
         adapters = {
-          require 'neotest-go' {},
+          -- require 'neotest-go' {},
+          require 'neotest-golang' {},
           require 'neotest-jest' {
             jestCommand = 'npx jest',
             jestConfigFile = 'jest.config.ts',
