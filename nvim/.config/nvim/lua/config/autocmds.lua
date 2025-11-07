@@ -12,6 +12,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Disable auto comment continuation on new lines
+local disable_auto_comment_continuation = true
+
+if disable_auto_comment_continuation then
+  local no_auto_comment = vim.api.nvim_create_augroup('no_auto_comment', { clear = true })
+
+  vim.api.nvim_create_autocmd('FileType', {
+    group = no_auto_comment,
+    callback = function()
+      vim.opt_local.formatoptions:remove { 'c', 'r', 'o' }
+    end,
+  })
+end
+
 -- disable background color for LSP document colors (tailwindcss, etc.) NOTE: if u use NEOVIM NIGHTLY this is important
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
@@ -218,6 +232,24 @@ if enable_custom_reference_highlights then
   })
 end
 
+-- Restore last cursor position
+local enable_restore_last_cursor = false
+
+if enable_restore_last_cursor then
+  local restore_cursor_group = vim.api.nvim_create_augroup('RestoreLastCursor', { clear = true })
+
+  vim.api.nvim_create_autocmd('BufReadPost', {
+    group = restore_cursor_group,
+    callback = function()
+      local mark = vim.api.nvim_buf_get_mark(0, '"')
+      local lcount = vim.api.nvim_buf_line_count(0)
+      if mark[1] > 0 and mark[1] <= lcount then
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      end
+    end,
+  })
+end
+
 -- DBUI NO FOLDING
 local enable_dbout_no_folding = true
 
@@ -226,6 +258,21 @@ if enable_dbout_no_folding then
     pattern = 'dbout',
     callback = function()
       vim.cmd 'normal! zR'
+    end,
+  })
+end
+
+-- Syntax highlighting for dotenv files
+local enable_dotenv_syntax = true
+
+if enable_dotenv_syntax then
+  local dotenv_ft = vim.api.nvim_create_augroup('dotenv_ft', { clear = true })
+
+  vim.api.nvim_create_autocmd('BufRead', {
+    group = dotenv_ft,
+    pattern = { '.env*', '.env' },
+    callback = function()
+      vim.bo.filetype = 'dosini'
     end,
   })
 end
