@@ -123,7 +123,7 @@ automatically-unhide-macos-hidden-apps = false
   alt-d = 'workspace D' # Terminal, Cursor 
   alt-s = 'workspace S' # Tools dev 1
   alt-a = 'workspace A' # Whatsapp, Discord
-  alt-g = 'workspace G' # TickTick
+  alt-g = 'workspace G' # TickTick, Linear
   alt-f = 'workspace F' # Tools dev 2
   alt-m = 'workspace M' # Spotify
   alt-v = 'workspace V' # Obsidian
@@ -158,6 +158,7 @@ alt-t = 'layout floating tiling'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'  
+A = 'secondary'  
 G = 'secondary'  
 3 = 'secondary'  
 4 = 'secondary'  
