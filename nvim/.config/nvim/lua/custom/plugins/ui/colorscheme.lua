@@ -21,7 +21,7 @@ return {
       end)
     end,
     opts = {
-      colorscheme = 'rose-pine', -- min-theme,rusticated,rose-pine,kanagawa-dragon, peachpuff, vesper, catppuccin-mocha, gruvbox, emperor, marduk, gorgoroth, khold, venom
+      colorscheme = 'rose-pine', -- min-theme,rusticated,rose-pine,kanagawa-dragon, peachpuff, vesper, catppuccin-mocha, gruvbox
     },
   },
 }
