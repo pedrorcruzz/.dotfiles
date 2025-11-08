@@ -16,8 +16,8 @@ return {
         auto_trigger = true,
         keymap = {
           accept = '<Tab>',
-          next = '<C-]>',
-          prev = '<C-[>',
+          next = '<C-l>',
+          prev = '<C-h>',
           dismiss = '<C-d>',
         },
       },
@@ -25,7 +25,7 @@ return {
         enabled = true,
       },
       experimental = {
-        ghost_text = true,
+        ghost_text = false,
       },
     },
     keys = {
