@@ -38,19 +38,19 @@ return {
       desc = 'Yeet: execute selected lines',
     },
     {
-      '<leader>kt',
+      '<leader>ks',
       function()
         require('yeet').select_target()
       end,
       desc = 'Yeet: choose execution target',
     },
-    -- {
-    --   '<leader>ks',
-    --   function()
-    --     require('yeet').toggle_post_write()
-    --   end,
-    --   desc = 'Yeet: toggle run on save',
-    -- },
+    {
+      '<leader>kt',
+      function()
+        require('yeet').toggle_post_write()
+      end,
+      desc = 'Yeet: toggle run on save',
+    },
     {
       '<leader>ko',
       function()
