@@ -44,13 +44,13 @@ return {
       end,
       desc = 'Yeet: choose execution target',
     },
-    {
-      '<leader>ks',
-      function()
-        require('yeet').toggle_post_write()
-      end,
-      desc = 'Yeet: toggle run on save',
-    },
+    -- {
+    --   '<leader>ks',
+    --   function()
+    --     require('yeet').toggle_post_write()
+    --   end,
+    --   desc = 'Yeet: toggle run on save',
+    -- },
     {
       '<leader>ko',
       function()
