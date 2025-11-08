@@ -11,18 +11,19 @@
 -- }
 
 return {
-  a_fg = '#ECEFF4',
-  a_bg = '#2d2d2d',
-  b_fg = '#a9a9a9',
-  b_bg = '#2d2d2d',
-  c_fg = '#D8DEE9',
-  c_bg = '#101010',
-  y_fg = '#b0c4de',
-  y_bg = '#101010',
-  z_fg = '#ECEFF4',
-  z_bg = '#3B4252',
+  a_fg = '#a9a9a9', -- equivalente a min_fg_branch
+  a_bg = '#2d2d2d', -- equivalente a min_bg_branch
+  b_fg = '#FFFFFF', -- equivalente a min_git
+  b_bg = '#2d2d2d', -- equivalente a min_bg_branch
+  c_fg = '#FEFEFE', -- equivalente a min_uni_fg_color
+  c_bg = '#1a1a1a', -- equivalente a min_uni_bg_color
+  y_fg = '#a9a9a9', -- equivalente a min_y_fg
+  y_bg = '#2d2d2d', -- equivalente a min_y_bg
+  z_fg = '#FEFEFE', -- equivalente a min_uni_fg_color
+  z_bg = nil, -- equivalente a min_uni_bg_color_z
   insert_bg = '#89b4fa',
   visual_bg = '#f38ba8',
   replace_bg = '#fab387',
   command_bg = '#f9e2af',
+  bar_bg = nil, -- equivalente a min_bar_bg
 }

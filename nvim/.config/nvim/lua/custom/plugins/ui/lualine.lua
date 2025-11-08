@@ -1,8 +1,8 @@
-local lualine_visible = false
+local lualine_visible = true
 local use_custom_theme = true
 
 local function load_colors()
-  local use_custom_only_bg_min = false
+  local use_custom_only_bg_min = true
   local use_custom_multiple_bg_min = false
 
   if use_custom_only_bg_min then
