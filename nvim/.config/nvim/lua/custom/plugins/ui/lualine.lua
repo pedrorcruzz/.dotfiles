@@ -92,6 +92,18 @@ local lualine_config = {
     },
     lualine_y = {
       'copilot',
+
+      {
+        'lsp_status',
+        icon = '',
+        symbols = {
+          spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
+          done = '✓',
+          separator = ' ',
+        },
+        ignore_lsp = { 'copilot', 'tailwindcss' },
+      },
+
       'progress',
       { 'filename', symbols = { modified = '●', readonly = '' } },
       'filetype',
