@@ -25,7 +25,7 @@ return {
       { '<leader>b', group = 'BufferLine', icon = '' },
       { '<leader>x', group = 'Explorer Tools', icon = '' },
 
-      { '<leader>n', group = 'Neotest', icon = '󰙨' },
+      { '<leader>n', group = 'Vimtest', icon = '󰙨' },
       { '<leader>ng', group = 'Go Test', icon = '' },
 
       { '<leader>y', group = 'Yazi', icon = '' },
