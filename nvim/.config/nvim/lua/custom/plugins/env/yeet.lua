@@ -1,33 +1,33 @@
 return {
   'samharju/yeet.nvim',
   dependencies = {
-    'stevearc/dressing.nvim', -- optional, provides sane UX
+    'stevearc/dressing.nvim', -- optional, improves UI
   },
-  version = '*', -- use the latest release, remove for master
+  version = '*', -- use latest release
   cmd = 'Yeet',
   event = 'VeryLazy',
   opts = {},
   keys = {
     {
-      '<leader>kl',
+      '<leader>ka',
       function()
         require('yeet').list_cmd()
       end,
-      desc = 'Yeet: listar comandos',
+      desc = 'Yeet: list and create commands',
     },
     {
-      '<leader>ke',
+      '<leader>kk',
       function()
         require('yeet').execute()
       end,
-      desc = 'Yeet: executar comando',
+      desc = 'Yeet: execute last command',
     },
     {
-      '<leader>kE',
+      '<leader>kK',
       function()
         require('yeet').execute(nil, { clear_before_yeet = false, interrupt_before_yeet = true })
       end,
-      desc = 'Yeet: executar sem limpar terminal',
+      desc = 'Yeet: execute last command without clearing terminal',
     },
     {
       '<leader>kq',
@@ -35,28 +35,28 @@ return {
         require('yeet').execute_selection { yeet_and_run = true, clear_before_yeet = false }
       end,
       mode = { 'v' },
-      desc = 'Yeet: executar seleção',
+      desc = 'Yeet: execute selected lines',
     },
     {
-      '<leader>ky',
+      '<leader>kt',
       function()
         require('yeet').select_target()
       end,
-      desc = 'Yeet: selecionar alvo',
+      desc = 'Yeet: choose execution target',
     },
     {
       '<leader>ks',
       function()
         require('yeet').toggle_post_write()
       end,
-      desc = 'Yeet: alternar execução pós-salvar',
+      desc = 'Yeet: toggle run on save',
     },
     {
       '<leader>ko',
       function()
         require('yeet').setqflist { open = true }
       end,
-      desc = 'Yeet: enviar saída ao quickfix',
+      desc = 'Yeet: send output to quickfix list',
     },
   },
 }
