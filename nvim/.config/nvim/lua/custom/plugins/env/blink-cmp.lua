@@ -68,7 +68,7 @@ return {
       },
 
       signature = {
-        enabled = true,
+        enabled = false,
         -- auto_show = true,
         window = { border = 'none' },
       },
