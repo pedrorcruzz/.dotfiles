@@ -9,7 +9,7 @@ return {
   config = function()
     require('nvim-newfile').setup {
       notifications = {
-        enabled = false,
+        enabled = true,
       },
     }
   end,
