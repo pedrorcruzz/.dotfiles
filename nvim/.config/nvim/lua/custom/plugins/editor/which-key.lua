@@ -23,7 +23,7 @@ return {
       { '<leader>j', group = 'Windows', icon = '' },
       { '<leader>v', group = 'DBUI', icon = '' },
       { '<leader>b', group = 'BufferLine', icon = '' },
-      { '<leader>x', group = 'Explorer Tools', icon = '' },
+      { '<leader>x', group = 'File Tools', icon = '' },
 
       { '<leader>n', group = 'Vimtest', icon = '󰙨' },
       { '<leader>ng', group = 'Go Test', icon = '' },
@@ -185,16 +185,16 @@ return {
     { '<leader>cr', '<cmd>resize | vertical resize | wincmd =<cr>', desc = 'Reset Window Sizes' },
 
     --Delete and Create Files
-    {
-      '<leader>xa',
-      function()
-        local new_file_path = vim.fn.input('New file path: ', vim.fn.expand '%:p:h' .. '/', 'file')
-        if new_file_path ~= '' then
-          vim.fn.execute('edit ' .. new_file_path)
-        end
-      end,
-      desc = 'Create New File',
-    },
+    -- {
+    --   '<leader>xx',
+    --   function()
+    --     local new_file_path = vim.fn.input('New file path: ', vim.fn.expand '%:p:h' .. '/', 'file')
+    --     if new_file_path ~= '' then
+    --       vim.fn.execute('edit ' .. new_file_path)
+    --     end
+    --   end,
+    --   desc = 'Create New File',
+    -- },
 
     {
       '<leader>xd',
