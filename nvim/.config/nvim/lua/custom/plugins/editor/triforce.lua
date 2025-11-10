@@ -2,6 +2,10 @@ return {
   'gisketch/triforce.nvim',
   event = 'VeryLazy',
   dependencies = { 'nvzone/volt' },
+  keys = {
+    { '<leader>lpp', '<cmd>Triforce profile<cr>', desc = 'Triforce: Show Profile' },
+    { '<leader>lpr', '<cmd>Triforce reset<cr>', desc = 'Triforce: Reset' },
+  },
   config = function()
     require('triforce').setup {
       enabled = true,
@@ -11,10 +15,6 @@ return {
         enabled = true,
         level_up = true,
         achievements = true,
-      },
-
-      keymap = {
-        show_profile = '<leader>lp',
       },
 
       auto_save_interval = 300,

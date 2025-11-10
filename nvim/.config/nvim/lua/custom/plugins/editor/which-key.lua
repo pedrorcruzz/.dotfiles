@@ -48,7 +48,7 @@ return {
       { '<leader>L', group = 'Lazy', icon = '󰒲 ' },
 
       { '<leader>l', group = 'Tools', icon = ' ' },
-      { '<leader>lp', group = 'Colemark', icon = '' },
+      { '<leader>lp', group = 'Triforce', icon = ' ' },
       { '<leader>lx', group = 'Virtual Environment', icon = ' ' },
       { '<leader>le', group = 'GrugFar', icon = '󰛔' },
 
