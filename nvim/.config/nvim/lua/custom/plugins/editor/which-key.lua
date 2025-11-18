@@ -38,7 +38,6 @@ return {
       { '<leader>a', group = 'Avante', icon = ' ' },
       { '<leader>ci', group = 'ToggleTerm', icon = ' ' },
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
-      { '<leader>k', group = 'Yeet Tmux', icon = ' ' },
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },
 
       { '<leader>j', group = 'Obsidian', icon = '' },
