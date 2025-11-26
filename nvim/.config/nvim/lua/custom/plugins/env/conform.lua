@@ -21,7 +21,7 @@ return {
           html = { 'prettierd', 'prettier' },
           css = { 'prettierd', 'prettier' },
           htmldjango = { 'djlint' },
-          python = { 'black', 'autopep8' },
+          python = { 'autopep8', 'black' },
           ruby = { 'rubocop' },
           lua = { 'stylua' },
           php = { 'php_cs_fixer' },

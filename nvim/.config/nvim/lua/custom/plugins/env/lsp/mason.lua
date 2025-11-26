@@ -76,10 +76,11 @@ return {
         'blade-formatter',
         'goimports',
         'google-java-format',
-        'django-template-lsp',
+        -- 'django-template-lsp',
         -- Linters
         'djlint',
         'biome',
+        'mypy',
         'eslint_d',
         -- Debuggers
         'php-debug-adapter',
