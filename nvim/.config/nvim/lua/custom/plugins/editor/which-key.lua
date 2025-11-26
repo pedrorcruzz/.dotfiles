@@ -103,9 +103,9 @@ return {
       function()
         vim.o.spell = not vim.o.spell
         if vim.o.spell then
-          vim.notify('Spellcheck: ON', vim.log.levels.INFO)
+          vim.notify('Spellcheck: On', vim.log.levels.INFO)
         else
-          vim.notify('Spellcheck: OFF', vim.log.levels.INFO)
+          vim.notify('Spellcheck: Off', vim.log.levels.INFO)
         end
       end,
       desc = 'Toggle Spell',
