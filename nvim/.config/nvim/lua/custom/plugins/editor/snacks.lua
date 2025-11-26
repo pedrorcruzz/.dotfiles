@@ -9,82 +9,9 @@ return {
     dashboard = {
       enabled = true,
       preset = {
-        keys = {},
-        header = {
-          [[
-         ██████╗  ██████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗
-         ██╔══██╗██╔═══██╗██╔════╝██╔══██╗██║   ██║██║████╗ ████║
-         ██████╔╝██║   ██║███████╗███████║██║   ██║██║██╔████╔██║
-         ██╔══██╗██║   ██║╚════██║██╔══██║╚██╗ ██╔╝██║██║╚██╔╝██║
-         ██║  ██║╚██████╔╝███████║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║
-         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
-          ]],
-        },
-      },
-      width = 70,
-      sections = {
-        {
-          pane = 1,
-          padding = 1,
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
-        {
-          pane = 1,
-          padding = 1,
-          section = 'terminal',
-          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif"; sleep .1',
-          height = 12,
-          width = 28,
-          indent = 19,
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
-        {
-          pane = 1,
-          padding = 2,
-          section = 'terminal',
-          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif"; sleep .1',
-          height = 10,
-          width = 26,
-          indent = 21,
-          enabled = function()
-            return not (vim.o.columns > 135)
-          end,
-        },
-
-        function()
-          local cmds = {
-            {
-              cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
-              indent = 1,
-            },
-          }
-          return vim.tbl_map(function(cmd)
-            return vim.tbl_extend('force', {
-              pane = 1,
-              section = 'terminal',
-              enabled = function()
-                local in_git = Snacks.git.get_root() ~= nil
-                return in_git and vim.o.columns > 130
-              end,
-              padding = 0,
-            }, cmd)
-          end, cmds)
-        end,
-
-        {
-          pane = 2,
-          gap = 0,
-          padding = 1,
-          indent = 1,
-
-          { section = 'startup', padding = 1 },
-
+        keys = {
           { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
-
+          -- { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Developer/second-brain/Segundo\\ Cérebro.md' },
           {
             icon = ' ',
             key = 'o',
@@ -93,19 +20,23 @@ return {
               Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
             end,
           },
-
           { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
           { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = ' ', key = 'n', desc = 'New file', action = ':enew' },
+          { icon = '', key = 'n', desc = 'New file', action = ':enew' },
           { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
           { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
           { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-
+          -- {
+          --   icon = ' ',
+          --   key = 's',
+          --   desc = 'Restore Session',
+          --   action = function()
+          --     require('persistence').load()
+          --   end,
+          -- },
           { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
-
           { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
           { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
-
           {
             icon = ' ',
             key = 'b',
@@ -114,27 +45,169 @@ return {
               Snacks.gitbrowse()
             end,
           },
-
           { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
-
-          { padding = 1 },
-
+        },
+        header = {
+          [[
+    ██████╗  ██████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗
+    ██╔══██╗██╔═══██╗██╔════╝██╔══██╗██║   ██║██║████╗ ████║
+    ██████╔╝██║   ██║███████╗███████║██║   ██║██║██╔████╔██║
+    ██╔══██╗██║   ██║╚════██║██╔══██║╚██╗ ██╔╝██║██║╚██╔╝██║
+    ██║  ██║╚██████╔╝███████║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║
+    ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+          ]],
+        },
+      },
+      sections = {
+        -- Wide version (180 columns or more)
+        {
+          enabled = function()
+            return (vim.o.columns >= 180)
+          end,
           {
-            icon = ' ',
-            title = 'Recent Files',
-            section = 'recent_files',
-            indent = 2,
-            limit = 5,
-            padding = 1,
+            -- section = 'terminal',
+            section = 'header',
+            -- cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch $HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif; sleep .1',
+            indent = 64, --64 if use section terminal
+            -- height = 12, --16
+            -- width = 28, --35
+
+            enabled = function()
+              return not (vim.o.columns < 135)
+            end,
           },
-
           {
-            limit = 5,
-            icon = ' ',
-            title = 'Projects',
-            section = 'projects',
-            indent = 2,
-            padding = 1,
+            section = 'startup',
+            indent = 64,
+          },
+          {
+            pane = 1,
+            {
+              padding = 0, --1 if use section terminal
+            },
+
+            { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
+            -- { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Developer/second-brain/Segundo\\ Cérebro.md' },
+            {
+              icon = ' ',
+              key = 'o',
+              desc = 'Obsidian',
+              action = function()
+                Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
+              end,
+            },
+            { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            { icon = '', key = 'n', desc = 'New file', action = ':enew' },
+            { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
+            { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
+            { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            -- {
+            --   icon = ' ',
+            --   key = 's',
+            --   desc = 'Restore Session',
+            --   action = function()
+            --     require('persistence').load()
+            --   end,
+            -- },
+            { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
+            { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+            { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
+            {
+              icon = ' ',
+              key = 'b',
+              desc = 'Browse Repo',
+              action = function()
+                Snacks.gitbrowse()
+              end,
+            },
+            { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+          },
+          {
+            pane = 2,
+            {
+              padding = 10, --14 if use section terminal
+            },
+            {
+              icon = ' ',
+              title = 'Recent Files',
+              section = 'recent_files',
+              indent = 3,
+              padding = 1,
+              limit = 7,
+            },
+            {
+              icon = ' ',
+              title = 'Projects',
+              section = 'projects',
+              limit = 4,
+              indent = 3,
+            },
+          },
+        },
+
+        -- Slim version (less than 180 columns)
+        {
+          enabled = function()
+            return (vim.o.columns < 180)
+          end,
+          {
+            { section = 'header' },
+            {
+              section = 'startup',
+              padding = 1,
+            },
+            { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
+            -- { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Developer/second-brain/Segundo\\ Cérebro.md' },
+            {
+              icon = ' ',
+              key = 'o',
+              desc = 'Obsidian',
+              action = function()
+                Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
+              end,
+            },
+            { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
+            { icon = '', key = 'n', desc = 'New file', action = ':enew' },
+            { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
+            { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
+            { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+            -- {
+            --   icon = ' ',
+            --   key = 's',
+            --   desc = 'Restore Session',
+            --   action = function()
+            --     require('persistence').load()
+            --   end,
+            -- },
+            { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
+            { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+            { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
+            {
+              icon = ' ',
+              key = 'b',
+              desc = 'Browse Repo',
+              action = function()
+                Snacks.gitbrowse()
+              end,
+            },
+            { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+            {
+              padding = 1,
+            },
+            {
+              icon = ' ',
+              title = 'Recent Files',
+              section = 'recent_files',
+              padding = 1,
+            },
+            {
+              icon = ' ',
+              title = 'Projects',
+              section = 'projects',
+              padding = 3,
+            },
           },
         },
       },
@@ -160,6 +233,7 @@ return {
       },
       -- scope = {
       --   enabled = true, -- Habilitar destaque do escopo atual
+      width = 70,
       --   priority = 200,
       --   char = '│',
       --   underline = true, -- Sublinhado no início do escopo
