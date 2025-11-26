@@ -16,6 +16,20 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 
+-- Disable last position restore Cursor
+local disable_last_pos_restore = true
+
+if disable_last_pos_restore then
+  local grp = vim.api.nvim_create_augroup('disable_last_pos_restore', { clear = true })
+
+  vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWinEnter' }, {
+    group = grp,
+    callback = function()
+      vim.cmd 'normal! gg'
+    end,
+  })
+end
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'dashboard',
   command = 'setlocal nolist',
