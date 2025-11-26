@@ -62,8 +62,10 @@ function go-create-gin
     echo "3 - SQLC (generate type-safe code from SQL queries)"
     echo "4 - PostgreSQL driver (pgx)"
     echo "5 - MongoDB driver"
-    echo "6 - ALL"
-    echo "7 - Enter custom install command"
+    echo "6 - MySQL + GORM"
+    echo "7 - MySQL driver only"
+    echo "8 - ALL"
+    echo "9 - Enter custom install command"
     echo "0 - None"
     echo -n "Choose an option: "
     read choice
@@ -86,6 +88,13 @@ function go-create-gin
             echo "⬇ Installing MongoDB driver..."
             go get -u go.mongodb.org/mongo-driver/mongo
         case 6
+            echo "⬇ Installing GORM + MySQL driver..."
+            go get -u gorm.io/gorm
+            go get -u gorm.io/driver/mysql
+        case 7
+            echo "⬇ Installing MySQL driver (for sqlc/database/sql)..."
+            go get -u github.com/go-sql-driver/mysql
+        case 8
             echo "⬇ Installing SQLC..."
             go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
             echo "⬇ Installing PostgreSQL driver (pgx)..."
@@ -96,7 +105,11 @@ function go-create-gin
             go get -u gorm.io/driver/postgres
             echo "⬇ Installing MongoDB driver..."
             go get -u go.mongodb.org/mongo-driver/mongo
-        case 7
+            echo "⬇ Installing GORM MySQL driver..."
+            go get -u gorm.io/driver/mysql
+            echo "⬇ Installing MySQL driver (for sqlc/database/sql)..."
+            go get -u github.com/go-sql-driver/mysql
+        case 9
             echo "⌨️ Enter full 'go get' or 'go install' command:"
             read customLib
             eval $customLib
@@ -149,16 +162,13 @@ function java-create-maven
         <version>3.8.1</version>\\
         <configuration>\\
           <source>$javaVersion</source>\\
-          <target>$javaVersion</target>\\
+          <target>$javaVersion\\
         </configuration>\\
       </plugin>\\
     </plugins>\\
   </build>" $pom
     end
-
-   # cd $artifactId
 end
-
 
 function spring-create-maven
     echo "Enter project name (e.g., my-app):"
@@ -189,11 +199,7 @@ function spring-create-maven
         --artifactId=$artifactId \
         --java-version=$javaVersion \
         $artifactId
-
-    # cd $artifactId
-
 end
-
 
 function spring-create-gradle
     echo "Enter project name (e.g., my-app):"
@@ -224,8 +230,6 @@ function spring-create-gradle
         --artifactId=$artifactId \
         --java-version=$javaVersion \
         $artifactId
-
-     # cd $artifactId
 end
 
 function java-create-gradle
@@ -236,8 +240,5 @@ function java-create-gradle
     read projectType
 
     mkdir $projectName
-    # cd $projectName
-
     gradle init --type $projectType
-
 end
