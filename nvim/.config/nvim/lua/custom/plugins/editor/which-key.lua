@@ -110,7 +110,7 @@ return {
       end,
       desc = 'Toggle Spell',
     },
-    { '<leader>ljp', '<cmd>set spelllang=pt_br<cr>', desc = 'Set Spell Pt Br' },
+    { '<leader>ljp', '<cmd>set spelllang=pt<cr>', desc = 'Set Spell Pt Br' },
     {
       '<leader>ljl',
       function()
@@ -118,7 +118,7 @@ return {
       end,
       desc = 'Spell Suggestions',
     },
-    { '<leader>lje', '<cmd>set spelllang=en_us<cr>', desc = 'Set Spell En Us' },
+    { '<leader>lje', '<cmd>set spelllang=en<cr>', desc = 'Set Spell En Us' },
 
     --Lazy
     { '<leader>Ll', '<cmd>Lazy<cr>', desc = 'Lazy' },
