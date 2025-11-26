@@ -144,6 +144,16 @@ return {
               indent = 3,
             },
           },
+          {
+            padding = 2,
+          },
+          {
+            section = 'terminal',
+            cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch $HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif; sleep .1',
+            height = 8, --16
+            width = 20, --35
+            indent = 50,
+          },
         },
 
         -- Slim version (less than 180 columns)
