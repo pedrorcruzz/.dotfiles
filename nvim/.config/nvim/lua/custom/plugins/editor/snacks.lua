@@ -9,44 +9,7 @@ return {
     dashboard = {
       enabled = true,
       preset = {
-        keys = {
-          { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
-          -- { icon = ' ', key = 'o', desc = 'Obsidian', action = ':e ~/Developer/second-brain/Segundo\\ Cérebro.md' },
-          {
-            icon = ' ',
-            key = 'o',
-            desc = 'Obsidian',
-            action = function()
-              Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
-            end,
-          },
-          { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = '', key = 'n', desc = 'New file', action = ':enew' },
-          { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
-          { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
-          { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-          -- {
-          --   icon = ' ',
-          --   key = 's',
-          --   desc = 'Restore Session',
-          --   action = function()
-          --     require('persistence').load()
-          --   end,
-          -- },
-          { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
-          { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
-          { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
-          {
-            icon = ' ',
-            key = 'b',
-            desc = 'Browse Repo',
-            action = function()
-              Snacks.gitbrowse()
-            end,
-          },
-          { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
-        },
+        keys = {},
         header = {
           [[
          ██████╗  ██████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗
@@ -62,8 +25,7 @@ return {
       sections = {
         {
           pane = 1,
-          -- section = 'header',
-          padding = 5,
+          padding = 1,
           enabled = function()
             return not (vim.o.columns < 135)
           end,
@@ -72,72 +34,32 @@ return {
           pane = 1,
           padding = 1,
           section = 'terminal',
-          --normal(png,jpg)
-
-          -- cmd = 'ascii-image-converter --color -c -H23   "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png"', -- -c
-
-          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg --format symbols --size 54x55 --align center; sleep .1',
-
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .10 --quant 16 --with-color', -- --no-with-color --scale 24
-          -- width = 65, --65
-          -- height = 20, --26
-          -- indent = 10,
-
-          -- gif
-          cmd = 'chafa -f symbols  -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif"; sleep .1',
-          height = 12, --16
-          width = 28, --35
+          cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif"; sleep .1',
+          height = 12,
+          width = 28,
           indent = 19,
-
           enabled = function()
             return not (vim.o.columns < 135)
           end,
         },
-
-        --Narrow screen
         {
           pane = 1,
           padding = 2,
           section = 'terminal',
-
-          -- cmd = 'chafa ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/anime-girl-mask-nobg.png --format symbols --size 54x55 --align center; sleep .1',
-
-          -- cmd = 'ascii-image-converter --color -H23    "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/zoro.jpg"', -- -c
-
-          -- cmd = 'img2art ~/.config/nvim/lua/custom/plugins/ui/dashboard_img/luffy-haha.png --threshold 50 --scale .17 --quant 16 --with-color',
-          --normal(png,jpg)
-          height = 16, --25
-          width = 56,
-          indent = 18,
-
-          --gif
           cmd = 'chafa -f symbols -c full --speed=0.8 --clear --stretch "$HOME/.config/nvim/lua/custom/plugins/ui/dashboard_img/gopher.gif"; sleep .1',
-          height = 10, --14
-          width = 26, --32
-          indent = 21, --22
-
+          height = 10,
+          width = 26,
+          indent = 21,
           enabled = function()
             return not (vim.o.columns > 135)
           end,
         },
-        -- Right Rosavim
-        {
-          pane = 2,
-          -- section = 'header',
-          gap = 0,
-          padding = 1, --1
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
+
         function()
           local cmds = {
             {
-              -- title = 'Git Graph',
-              -- icon = ' ',
               cmd = [[fish -c 'git log --graph --oneline --decorate --all --color=always -n 15']],
               indent = 1,
-              -- height = 35,
             },
           }
           return vim.tbl_map(function(cmd)
@@ -152,130 +74,68 @@ return {
             }, cmd)
           end, cmds)
         end,
-        -- {
-        --   pane = 1,
-        --   icon = ' ',
-        --   desc = 'Browse Repo',
-        --   padding = 1,
-        --   key = 'b',
-        --   action = function()
-        --     Snacks.gitbrowse()
-        --   end,
-        -- },
-        -- function()
-        --   local in_git = Snacks.git.get_root() ~= nil
-        --   local cmds = {
-        --     {
-        --       icon = ' ',
-        --       title = 'Git Status',
-        --       cmd = 'git --no-pager diff --stat -B -M -C',
-        --       height = 1,
-        --     },
-        --
-        --     {
-        --       title = 'Notifications',
-        --       cmd = 'gh notify -s -a -n5',
-        --       action = function()
-        --         vim.ui.open 'https://github.com/notifications'
-        --       end,
-        --       key = 'N',
-        --       icon = '󰎟 ',
-        --       height = 3,
-        --       enabled = true,
-        --     },
-        -- {
-        --   title = 'Open Issues',
-        --   cmd = 'gh issue list -L 3',
-        --   key = 'i',
-        --   action = function()
-        --     vim.fn.jobstart('gh issue list --web', { detach = true })
-        --   end,
-        --   icon = 'ÔÜà ',
-        --   height = 7,
-        -- },
-        -- {
-        --   icon = 'Ôêá ',
-        --   title = 'Open PRs',
-        --   cmd = 'gh pr list -L 3',
-        --   key = 'P',
-        --   action = function()
-        --     vim.fn.jobstart('gh pr list --web', { detach = true })
-        --   end,
-        --   height = 7,
-        -- },
-        --   }
-        --   return vim.tbl_map(function(cmd)
-        --     return vim.tbl_extend('force', {
-        --       pane = 1,
-        --       section = 'terminal',
-        --       enabled = in_git,
-        --       padding = 1,
-        --       -- ttl = 5 * 60,
-        --       -- indent = 3,
-        --     }, cmd)
-        --   end, cmds)
-        -- end,
 
         {
           pane = 2,
-          section = 'startup',
-          padding = 2,
-          enabled = function()
-            return not (vim.o.columns > 135)
-          end,
-        },
-        {
-          pane = 2,
-          section = 'startup',
-          padding = 2,
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-        },
-        {
-          pane = 2,
-          icon = ' ',
-          section = 'keys',
-          indent = 1,
           gap = 0,
-          padding = 2,
-        },
-        {
-          pane = 2,
-          icon = '',
-          title = 'Recent Files',
-          section = 'recent_files',
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
+          padding = 1,
           indent = 1,
-          limit = 5,
-          padding = 2,
-        },
-        {
-          pane = 2,
-          limit = 5,
-          icon = '',
-          title = 'Projects',
-          section = 'projects',
-          enabled = function()
-            return not (vim.o.columns < 135)
-          end,
-          indent = 1,
-          padding = 2,
-        },
 
-        -- Narrow screen
-        {
-          pane = 1,
-          icon = '',
-          title = 'Recent Files',
-          section = 'recent_files',
-          enabled = function()
-            return not (vim.o.columns > 135)
-          end,
-          indent = 1,
-          limit = 5,
+          { section = 'startup', padding = 1 },
+
+          { icon = ' ', key = 'p', desc = 'Projects', action = ':NeovimProjectDiscover' },
+
+          {
+            icon = ' ',
+            key = 'o',
+            desc = 'Obsidian',
+            action = function()
+              Snacks.picker.smart { cwd = vim.fn.expand '~/Developer/second-brain/' }
+            end,
+          },
+
+          { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = ' ', key = 'n', desc = 'New file', action = ':enew' },
+          { icon = ' ', key = 'd', desc = 'Database UI', action = ':DBUIToggle' },
+          { icon = ' ', key = 'w', desc = 'Yazi', action = ':Yazi cwd' },
+          { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+
+          { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
+
+          { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+          { icon = ' ', key = 'x', desc = 'Colorscheme', action = ':e ~/.config/nvim/lua/custom/plugins/ui/colorscheme.lua' },
+
+          {
+            icon = ' ',
+            key = 'b',
+            desc = 'Browse Repo',
+            action = function()
+              Snacks.gitbrowse()
+            end,
+          },
+
+          { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+
+          { padding = 1 },
+
+          {
+            icon = ' ',
+            title = 'Recent Files',
+            section = 'recent_files',
+            indent = 2,
+            limit = 5,
+            padding = 1,
+          },
+
+          {
+            limit = 5,
+            icon = ' ',
+            title = 'Projects',
+            section = 'projects',
+            indent = 2,
+            padding = 1,
+          },
         },
       },
     },
