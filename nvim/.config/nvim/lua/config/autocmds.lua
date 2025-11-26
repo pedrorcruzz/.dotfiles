@@ -111,7 +111,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 -- Snacks Explorer
-local SNACKS_START_WITH_EXPLORER = true
+local SNACKS_START_WITH_EXPLORER = false
 local SNACKS_FOCUS_EXPLORER = false
 
 if SNACKS_START_WITH_EXPLORER then

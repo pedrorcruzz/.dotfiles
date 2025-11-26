@@ -16,19 +16,19 @@ return {
       end,
       desc = 'Open Obsidian Neovim',
     },
-    { '<leader>jO', '<cmd>ObsidianOpen<cr>', desc = 'Open Obsidian' },
-    { '<leader>jd', '<cmd>ObsidianToday<cr>', desc = 'Daily Note' },
+    { '<leader>jO', '<cmd>Obsidian open<cr>', desc = 'Open Obsidian' },
+    { '<leader>jd', '<cmd>Obsidian today<cr>', desc = 'Daily Note' },
     { '<leader>jy', '<CMD>Obsidian today -1<CR>', desc = 'Open Obsidian yesterday note' },
     { '<leader>jt', '<CMD>Obsidian today +1<CR>', desc = 'Open Obsidian tomorrow note' },
-    { '<leader>jg', '<cmd>ObsidianDailies<cr>', desc = 'List Dailies' },
-    { '<leader>jc', '<cmd>ObsidianCheck<cr>', desc = 'Check' },
-    -- { '<leader>jf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'Find Note' },
-    { '<leader>js', '<cmd>ObsidianSearch<cr>', desc = 'Search Note' },
-    { '<leader>jr', '<cmd>ObsidianRename<cr>', desc = 'Rename' },
-    { '<leader>je', '<cmd>ObsidianExtractNote<cr>', desc = 'Extract Note' },
-    { '<leader>jl', '<cmd>ObsidianLinkNew<cr>', desc = 'Link New' },
-    { '<leader>ja', '<cmd>ObsidianNewFromTemplate<cr>', desc = 'Create Note With Template' },
-    { '<leader>jz', '<cmd>ObsidianNew<cr>', desc = 'Create Note' },
+    { '<leader>jg', '<cmd>Obsidian dailies<cr>', desc = 'List Dailies' },
+    { '<leader>jc', '<cmd>Obsidian toggle_checkbox<cr>', desc = 'Check' },
+    -- { '<leader>jf', '<cmd>Obsidian quick_switch<cr>', desc = 'Find Note' },
+    { '<leader>js', '<cmd>Obsidian search<cr>', desc = 'Search Note' },
+    { '<leader>jr', '<cmd>Obsidian rename<cr>', desc = 'Rename' },
+    { '<leader>je', '<cmd>Obsidian extract<cr>', desc = 'Extract Note' },
+    { '<leader>jl', '<cmd>Obsidian link_new<cr>', desc = 'Link New' },
+    { '<leader>ja', '<cmd>Obsidian template<cr>', desc = 'Create Note With Template' },
+    { '<leader>jz', '<cmd>Obsidian new<cr>', desc = 'Create Note' },
     {
       '<leader>jm',
       function()
@@ -36,7 +36,7 @@ return {
       end,
       desc = 'Toggle Checkbox',
     },
-    { '<leader>jp', '<cmd>ObsidianPasteImage<cr>', desc = 'Paste Image' },
+    { '<leader>jp', '<cmd>Obsidian paste_img<cr>', desc = 'Paste Image' },
 
     { '<leader>jf', '<CMD>Obsidian search<CR>', desc = 'Open Obsidian grep picker' },
     { '<leader>jo', '<CMD>Obsidian search<CR>', desc = 'Find note [Obsidian]' },
@@ -58,6 +58,7 @@ return {
         },
       },
 
+      legacy_commands = false,
       notes_subdir = 'Home/Anotacoes/NotasRealocar',
       log_level = vim.log.levels.INFO,
 
@@ -73,6 +74,13 @@ return {
         blink = true, --cmp
         min_chars = 2,
         create_new = true,
+      },
+
+      -- CONFIGURAÇÃO NOVA DE CHECKBOX (Substitui ui.checkboxes para ordem)
+      checkbox = {
+        order = { ' ', 'x', '>', '~', '!' },
+        -- Nota: Se você usa render-markdown.nvim, ele cuidará dos ícones.
+        -- O obsidian.nvim cuidará apenas da lógica de alternar entre esses caracteres.
       },
 
       note_id_func = function(title)
@@ -101,18 +109,20 @@ return {
       preferred_link_style = 'wiki',
       disable_frontmatter = false,
 
-      note_frontmatter_func = function(note)
-        if note.title then
-          note:add_alias(note.title)
-        end
-        local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-          for k, v in pairs(note.metadata) do
-            out[k] = v
+      frontmatter = {
+        func = function(note)
+          if note.title then
+            note:add_alias(note.title)
           end
-        end
-        return out
-      end,
+          local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+            for k, v in pairs(note.metadata) do
+              out[k] = v
+            end
+          end
+          return out
+        end,
+      },
 
       templates = {
         folder = 'Templates',
@@ -152,38 +162,11 @@ return {
       search_max_lines = 1000,
       open_notes_in = 'current',
 
-      mappings = {
-        ['gf'] = {
-          action = function()
-            return require('obsidian').util.gf_passthrough()
-          end,
-          opts = { noremap = false, expr = true, buffer = true },
-        },
-        -- ['<leader>vm'] = {
-        --   action = function()
-        --     return require('obsidian').util.toggle_checkbox()
-        --   end,
-        --   opts = { buffer = true },
-        -- },
-        ['<cr>'] = {
-          action = function()
-            return require('obsidian').util.smart_action()
-          end,
-          opts = { buffer = true, expr = true },
-        },
-      },
-
       ui = {
-        enable = false,
+        enable = false, -- Se estiver false, não precisa definir ícones aqui
         update_debounce = 200,
         max_file_length = 5000,
-        checkboxes = {
-          [' '] = { char = '󰄱', hl_group = 'ObsidianTodo' },
-          ['x'] = { char = '', hl_group = 'ObsidianDone' },
-          ['>'] = { char = '', hl_group = 'ObsidianRightArrow' },
-          ['~'] = { char = '󰰱', hl_group = 'ObsidianTilde' },
-          ['!'] = { char = '', hl_group = 'ObsidianImportant' },
-        },
+        -- 'checkboxes' REMOVIDO DAQUI para corrigir o erro da issue #262
         bullets = { char = '•', hl_group = 'ObsidianBullet' },
         external_link_icon = { char = '', hl_group = 'ObsidianExtLinkIcon' },
         reference_text = { hl_group = 'ObsidianRefText' },
@@ -217,5 +200,19 @@ return {
         confirm_img_paste = true,
       },
     }
+
+    -- Mappings replacement via autocmd
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'markdown',
+      callback = function()
+        vim.keymap.set('n', 'gf', function()
+          return require('obsidian').util.gf_passthrough()
+        end, { noremap = false, expr = true, buffer = true, desc = 'Obsidian GF' })
+
+        vim.keymap.set('n', '<cr>', function()
+          return require('obsidian').util.smart_action()
+        end, { noremap = false, expr = true, buffer = true, desc = 'Obsidian Smart Action' })
+      end,
+    })
   end,
 }
