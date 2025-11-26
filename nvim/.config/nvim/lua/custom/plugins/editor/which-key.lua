@@ -38,6 +38,7 @@ return {
       { '<leader>a', group = 'Avante', icon = ' ' },
       { '<leader>ci', group = 'ToggleTerm', icon = ' ' },
       { '<leader>o', group = 'Grapple', icon = '󱝩' },
+      { '<leader>k', group = 'Yeet Tmux', icon = ' ' },
       -- { '<leader>o', group = 'Harpoon', icon = '󱝩' },
 
       { '<leader>j', group = 'Obsidian', icon = '' },
@@ -47,9 +48,11 @@ return {
       { '<leader>L', group = 'Lazy', icon = '󰒲 ' },
 
       { '<leader>l', group = 'Tools', icon = ' ' },
-      { '<leader>lp', group = 'Triforce', icon = ' ' },
+      { '<leader>lp', group = 'Triforce', icon = '' },
       { '<leader>lx', group = 'Virtual Environment', icon = ' ' },
       { '<leader>le', group = 'GrugFar', icon = '󰛔' },
+
+      { '<leader>lj', group = 'Spell', icon = '󰓆 ' },
 
       { '<leader>p', group = 'Languages Tools', icon = ' ' },
       { '<leader>pp', group = 'PHP Tools', icon = ' ' },
@@ -93,6 +96,29 @@ return {
     { '<leader>q', '<cmd>confirm q<cr>', desc = 'Exit' },
     { '<leader>lt', '<cmd>TSContextToggle<cr>', desc = 'TSCOntext: Toggle' },
     { '<leader>fp', '<cmd>NeovimProjectDiscover<cr>', desc = 'Discover Projects' },
+
+    --Spell
+    {
+      '<leader>ljj',
+      function()
+        vim.o.spell = not vim.o.spell
+        if vim.o.spell then
+          vim.notify('Spellcheck: ON', vim.log.levels.INFO)
+        else
+          vim.notify('Spellcheck: OFF', vim.log.levels.INFO)
+        end
+      end,
+      desc = 'Toggle Spell',
+    },
+    { '<leader>ljp', '<cmd>set spelllang=pt_br<cr>', desc = 'Set Spell Pt Br' },
+    {
+      '<leader>ljl',
+      function()
+        vim.api.nvim_feedkeys('z=', 'n', false)
+      end,
+      desc = 'Spell Suggestions',
+    },
+    { '<leader>lje', '<cmd>set spelllang=en_us<cr>', desc = 'Set Spell En Us' },
 
     --Lazy
     { '<leader>Ll', '<cmd>Lazy<cr>', desc = 'Lazy' },

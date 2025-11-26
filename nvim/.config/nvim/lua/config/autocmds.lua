@@ -31,6 +31,20 @@ if disable_last_pos_restore then
   })
 end
 
+-- Initialize spell checking on buffer read
+local spell_enabled_on_start = false
+
+if spell_enabled_on_start then
+  local grp = vim.api.nvim_create_augroup('auto_spell', { clear = true })
+
+  vim.api.nvim_create_autocmd('BufReadPost', {
+    group = grp,
+    callback = function()
+      vim.opt.spell = true
+    end,
+  })
+end
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'dashboard',
   command = 'setlocal nolist',
