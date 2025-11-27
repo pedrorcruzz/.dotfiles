@@ -145,7 +145,7 @@ return {
             },
           },
           {
-            padding = 2,
+            padding = 3,
           },
           {
             section = 'terminal',
