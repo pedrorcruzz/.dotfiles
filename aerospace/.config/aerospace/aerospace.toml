@@ -161,6 +161,7 @@ alt-t = 'layout floating tiling'
 A = 'secondary'  
 G = 'secondary'  
 V = 'secondary'  
+S = 'secondary'  
 3 = 'secondary'  
 4 = 'secondary'  
 
