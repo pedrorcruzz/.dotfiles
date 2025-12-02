@@ -4,7 +4,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       ensure_installed = {
-        'ts_ls',
+        'vtsls',
         'tailwindcss',
         'emmet_ls',
         'pyright',
@@ -48,9 +48,9 @@ return {
               server_opts = custom_opts
             end
 
-            if server_name == 'tsserver' then
-              server_name = 'ts_ls'
-            end
+            -- if server_name == 'tsserver' then
+            --   server_name = 'ts_ls'
+            -- end
 
             local final_opts = vim.tbl_deep_extend('force', {}, server_opts, {
               capabilities = capabilities,
