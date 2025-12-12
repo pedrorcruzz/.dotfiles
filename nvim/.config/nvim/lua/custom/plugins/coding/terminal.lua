@@ -1,7 +1,3 @@
-vim.keymap.set({ 'n', 't' }, 'X', function()
-  term:toggle()
-end, { desc = 'Toggle Terminal (horizontal)' })
-
 return {
   {
     'akinsho/toggleterm.nvim',
@@ -12,26 +8,26 @@ return {
       { '<c-\\>', desc = 'Toggle terminal' },
       { '<leader>cii', '<cmd>ToggleTerm 3 direction=horizontal<CR>', desc = 'ToggleTerm: Horizontal Split' },
       { '<leader>cie', '<cmd>ToggleTerm 4 direction=vertical<CR>', desc = 'ToggleTerm: Vertical Split' },
-      { '<S-x>', '<cmd>ToggleTerm 1 direction=horizontal size=20<CR>', desc = 'ToggleTerm: Horizontal' },
-      -- { '<C-o>', '<cmd>ToggleTerm 1 direction=vertical size=20<CR>', desc = 'ToggleTerm: Vertical' },
-      { '<S-z>', '<cmd>ToggleTerm 1 direction=float<CR>', desc = 'ToggleTerm: Float' },
+      { '<S-x>', desc = 'ToggleTerm: Horizontal' },
+      { '<S-z>', desc = 'ToggleTerm: Float' },
+      { '<leader>lg', desc = 'ToggleTerm: LazyGit' },
     },
     opts = {
       size = 16,
       open_mapping = [[<c-\>]],
       hide_numbers = true,
-      terminal_mappings = true,
       shade_terminals = true,
       shading_factor = 2,
       start_in_insert = false,
+      persist_mode = false,
       insert_mappings = true,
       persist_size = false,
       direction = 'float',
       close_on_exit = true,
       highlights = {
-        Normal = { guibg = '#1c1c1c' },
-        NormalFloat = { link = 'Normal' },
-        FloatBorder = { guifg = '#1a1a1a' },
+        Normal = { link = 'Normal' },
+        NormalFloat = { link = 'NormalFloat' },
+        FloatBorder = { link = 'FloatBorder' },
       },
       winbar = {
         enabled = false,
@@ -39,15 +35,12 @@ return {
           return term.name
         end,
       },
-      -- responsiveness = {
-      --   horizontal_breakpoint = 135,
-      -- },
       shell = vim.o.shell,
       float_opts = {
         border = 'curved',
         winblend = 0,
         highlights = {
-          border = 'NONE',
+          border = 'Normal',
           background = 'Normal',
         },
       },
@@ -56,15 +49,27 @@ return {
       require('toggleterm').setup(opts)
 
       local Terminal = require('toggleterm.terminal').Terminal
+
       local function create_terminal(direction, size, keymap)
-        local term = Terminal:new { direction = direction, size = size }
+        local term = Terminal:new {
+          direction = direction,
+          size = size,
+          on_open = function(term)
+            vim.cmd 'stopinsert'
+            vim.opt_local.winbar = nil
+
+            vim.schedule(function()
+              vim.cmd 'redrawstatus!'
+            end)
+          end,
+        }
+
         vim.keymap.set({ 'n', 't' }, keymap, function()
           term:toggle()
         end, { desc = 'Toggle Terminal (' .. direction .. ')' })
       end
 
       create_terminal('horizontal', 20, '<S-x>')
-      create_terminal('vertical', 20, '<C-o>')
       create_terminal('float', nil, '<S-z>')
 
       local lazygit = Terminal:new {
@@ -74,6 +79,7 @@ return {
         float_opts = { border = 'none', width = 100000, height = 100000 },
         on_open = function(_)
           vim.cmd 'startinsert!'
+          vim.opt_local.winbar = nil
         end,
         count = 99,
       }
