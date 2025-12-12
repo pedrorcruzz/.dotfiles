@@ -1,6 +1,6 @@
 # 1A1A1A 1E1E2F 101010 #0D1116
 
-background = #000000
+background = #1A1A1A
 background-opacity = 0.92
 background-blur-radius = 20
 foreground = #ffffff
