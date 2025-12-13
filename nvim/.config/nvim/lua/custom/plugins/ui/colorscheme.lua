@@ -21,7 +21,7 @@ return {
       end)
     end,
     opts = {
-      colorscheme = 'min-theme', -- min-theme,rusticated,rose-pine,kanagawa-dragon, peachpuff, vesper, catppuccin-mocha, gruvbox
+      colorscheme = 'vesper', -- min-theme,rusticated,rose-pine,kanagawa-dragon, peachpuff, vesper, catppuccin-mocha, gruvbox
     },
   },
 }

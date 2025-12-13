@@ -34,7 +34,6 @@ return {
           Search = { bg = '#606060', fg = '#abb2bf' },
           IncSearch = { bg = '#606060', fg = '#FFCDA2' },
           Underlined = { bg = nil },
-          winbarnc = { fg = '#202020', bg = '#202020' }, -- barra de janelas não ativa
           MatchParen = { fg = '#abb2bf' },
           NonText = { fg = '#727272' },
           Title = { fg = '#FFFFFF' },
