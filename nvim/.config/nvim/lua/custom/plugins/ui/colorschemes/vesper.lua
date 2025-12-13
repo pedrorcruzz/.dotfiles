@@ -19,7 +19,7 @@ return {
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#000000' }, --#202020 #000000 #0D0D0D #101010
           EndOfBuffer = { fg = '#000000', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#000000' }, --#101010
-          VertSplit = { fg = transparent_background and '#101010' or '#121212' },
+          VertSplit = { fg = transparent_background and '#121212' or '#121212' },
           WinBarNC = { bg = transparent_background and 'NONE' or '#000000' },
           WinBar = { bg = transparent_background and 'NONE' or '#000000' },
 
