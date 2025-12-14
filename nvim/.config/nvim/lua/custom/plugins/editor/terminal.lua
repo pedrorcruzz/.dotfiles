@@ -84,9 +84,9 @@ return {
         count = 99,
       }
 
-      vim.keymap.set('n', '<leader>lg', function()
-        lazygit:toggle()
-      end, { desc = 'ToggleTerm: LazyGit' })
+      -- vim.keymap.set('n', '<leader>lg', function()
+      --   lazygit:toggle()
+      -- end, { desc = 'ToggleTerm: LazyGit' })
     end,
   },
 }

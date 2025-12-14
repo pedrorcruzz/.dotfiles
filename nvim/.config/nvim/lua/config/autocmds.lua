@@ -6,6 +6,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Disable a winbar for terminal buffers (Dropbar)
+-- vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
+--   callback = function(args)
+--     local buf = args.buf
+--     if vim.bo[buf].buftype == 'terminal' then
+--       vim.schedule(function()
+--         if vim.api.nvim_buf_is_valid(buf) then
+--           vim.opt_local.winbar = ''
+--
+--           vim.cmd 'redraw!'
+--
+--           vim.cmd 'startinsert'
+--         end
+--       end)
+--     end
+--   end,
+-- })
+
 -- Trigger the Snacks picker if Neovim is started with a single directory as an argument
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
