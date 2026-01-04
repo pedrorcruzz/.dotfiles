@@ -48,73 +48,136 @@ local function create_theme()
     }
   end
 
-  local function mode_section(bg)
-    return {
-      fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-      bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or bg,
-      gui = 'bold',
-    }
-  end
-
-  local function branch_section()
-    return {
-      fg = colors.min_fg_branch or colors.multiple_min_fg_branch or colors.default_branch_fg,
-      bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
-      gui = 'bold',
-    }
-  end
-
-  local function y_section()
-    return {
-      fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-      bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
-      gui = 'bold',
-    }
-  end
-
-  local function z_section(bg)
-    return {
-      fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-      bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or bg,
-      gui = 'bold',
-    }
-  end
-
   return {
     normal = {
-      a = mode_section(colors.default_normal),
-      b = branch_section(),
-      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
-      y = y_section(),
-      z = z_section(colors.default_normal),
+      a = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+        gui = 'bold',
+      },
+      b = {
+        fg = colors.min_fg_branch or colors.multiple_min_fg_branch or colors.default_branch_fg,
+        bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
+        gui = 'bold',
+      },
+      c = {
+        fg = colors.min_git or colors.vesper_git,
+        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+      },
+      y = {
+        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        gui = 'bold',
+      },
+      z = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+        gui = 'bold',
+      },
     },
     insert = {
-      a = mode_section(colors.default_insert),
-      b = branch_section(),
-      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
-      y = y_section(),
-      z = z_section(colors.default_insert),
+      a = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_insert,
+        gui = 'bold',
+      },
+      b = {
+        fg = colors.min_fg_branch or colors.multiple_min_fg_branch or colors.default_branch_fg,
+        bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
+        gui = 'bold',
+      },
+      c = {
+        fg = colors.min_git or colors.vesper_git,
+        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+      },
+      y = {
+        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        gui = 'bold',
+      },
+      z = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_insert,
+        gui = 'bold',
+      },
     },
     visual = {
-      a = mode_section(colors.default_visual),
-      b = branch_section(),
-      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
-      y = y_section(),
-      z = z_section(colors.default_visual),
+      a = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_visual,
+        gui = 'bold',
+      },
+      b = {
+        fg = colors.min_fg_branch or colors.multiple_min_fg_branch or colors.default_branch_fg,
+        bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
+        gui = 'bold',
+      },
+      c = {
+        fg = colors.min_git or colors.vesper_git,
+        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+      },
+      y = {
+        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        gui = 'bold',
+      },
+      z = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_visual,
+        gui = 'bold',
+      },
     },
     replace = {
-      a = mode_section(colors.default_replace),
-      b = branch_section(),
-      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
-      y = y_section(),
-      z = z_section(colors.default_replace),
+      a = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_replace,
+        gui = 'bold',
+      },
+      b = {
+        fg = colors.min_fg_branch or colors.multiple_min_fg_branch or colors.default_branch_fg,
+        bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
+        gui = 'bold',
+      },
+      c = {
+        fg = colors.min_git or colors.vesper_git,
+        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+      },
+      y = {
+        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        gui = 'bold',
+      },
+      z = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_replace,
+        gui = 'bold',
+      },
     },
     command = {
-      a = mode_section(colors.default_command),
-      b = branch_section(),
-      c = { fg = colors.min_git or colors.vesper_git, bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg },
-      y = y_section(),
-      z = z_section(colors.default_command),
+      a = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_command,
+        gui = 'bold',
+      },
+      b = {
+        fg = colors.min_fg_branch or colors.multiple_min_fg_branch or colors.default_branch_fg,
+        bg = colors.min_bg_branch or colors.multiple_min_bg_branch or colors.default_branch_bg,
+        gui = 'bold',
+      },
+      c = {
+        fg = colors.min_git or colors.vesper_git,
+        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+      },
+      y = {
+        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        gui = 'bold',
+      },
+      z = {
+        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_command,
+        gui = 'bold',
+      },
     },
   }
 end
@@ -134,6 +197,8 @@ local lualine_config = {
           return '󰅶 ' .. mode
         end,
         separator = { left = '', right = '' },
+        -- separator = { left = '', right = '' },
+        -- separator = { left = '', right = '' },
         right_padding = 10,
         color = { gui = 'bold' },
       },
@@ -142,7 +207,12 @@ local lualine_config = {
     lualine_c = {
       {
         'diff',
-        symbols = { added = ' ', modified = ' ', removed = ' ', untracked = '󰝤' },
+        symbols = {
+          added = ' ',
+          modified = ' ',
+          removed = ' ',
+          untracked = '󰝤',
+        },
       },
     },
     lualine_x = { 'diagnostics' },
@@ -164,7 +234,7 @@ local lualine_config = {
       {
         function()
           local venv = os.getenv 'VIRTUAL_ENV'
-          return venv and (' ' .. venv:match '([^/]+)$') or ''
+          return venv and venv:match '([^/]+)$' and (' ' .. venv:match '([^/]+)$') or ''
         end,
         color = { fg = '#ffffff', gui = 'bold' },
         left_padding = 2,
@@ -172,10 +242,16 @@ local lualine_config = {
     },
     lualine_z = {
       { 'location', separator = { left = '', right = '' }, left_padding = 2 },
+      -- { 'location', separator = { left = '', right = '' }, left_padding = 2 },
+      -- { 'location', separator = { left = '', right = '' }, left_padding = 2 },
     },
   },
   inactive_sections = {
     lualine_a = { 'filename' },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
     lualine_z = { 'location' },
   },
 }
@@ -189,14 +265,14 @@ function ToggleLualine()
   lualine.hide { unhide = lualine_visible }
 end
 
-vim.keymap.set('n', '<leader>ll', ToggleLualine, { silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ll', ':lua ToggleLualine()<CR>', { noremap = true, silent = true })
 
 return {
   'nvim-lualine/lualine.nvim',
   event = 'VeryLazy',
   lazy = true,
   dependencies = {
-    { 'nvim-tree/nvim-web-devicons', lazy = true },
+    { 'nvim-tree/nvim-web-devicons', lazy = true, enabled = vim.g.have_nerd_font },
     { 'AndreM222/copilot-lualine', lazy = true },
   },
   config = function()
