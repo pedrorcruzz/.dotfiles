@@ -107,9 +107,9 @@ return {
       end,
 
       preferred_link_style = 'wiki',
-      disable_frontmatter = false,
 
       frontmatter = {
+        enabled = true,
         func = function(note)
           if note.title then
             note:add_alias(note.title)
@@ -156,10 +156,11 @@ return {
           insert_tag = '<C-l>',
         },
       },
-
-      sort_by = 'modified',
-      sort_reversed = true,
-      search_max_lines = 1000,
+      search = {
+        sort_by = 'modified',
+        sort_reversed = true,
+        max_lines = 1000,
+      },
       open_notes_in = 'current',
 
       ui = {
