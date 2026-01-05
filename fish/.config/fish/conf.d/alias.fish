@@ -22,6 +22,7 @@ abbr -a PS "cd ~/Developer/Projects/Sandbox"
 
 abbr -a PH "cd /Applications/XAMPP/xamppfiles/htdocs"
 
+abbr -a lazyvim "cd ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config"
 
 #Alias System
 abbr -a lg "lazygit"

@@ -35,16 +35,29 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 
--- Disable last position restore Cursor
-local disable_last_pos_restore = true
+--last cursor position
+local restore_last_pos = false
+if restore_last_pos then
+  local grp = vim.api.nvim_create_augroup('LastCursorPos', { clear = true })
 
-if disable_last_pos_restore then
-  local grp = vim.api.nvim_create_augroup('disable_last_pos_restore', { clear = true })
-
-  vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWinEnter' }, {
+  vim.api.nvim_create_autocmd('BufReadPost', {
     group = grp,
-    callback = function()
-      vim.cmd 'normal! gg'
+    callback = function(event)
+      local buf = event.buf
+      local exclude = { 'gitcommit', 'gitrebase' }
+
+      if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].last_cursor_restored then
+        return
+      end
+
+      vim.b[buf].last_cursor_restored = true
+
+      local mark = vim.api.nvim_buf_get_mark(buf, '"')
+      local line_count = vim.api.nvim_buf_line_count(buf)
+
+      if mark[1] > 0 and mark[1] <= line_count then
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      end
     end,
   })
 end
