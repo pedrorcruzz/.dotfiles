@@ -51,17 +51,15 @@ end
 
 -- Initialize spell checking on buffer read
 local spell_enabled_on_start = false
+local spell_group = vim.api.nvim_create_augroup('SpellByDefault', { clear = true })
 
-if spell_enabled_on_start then
-  local grp = vim.api.nvim_create_augroup('auto_spell', { clear = true })
-
-  vim.api.nvim_create_autocmd('BufReadPost', {
-    group = grp,
-    callback = function()
-      vim.opt.spell = true
-    end,
-  })
-end
+vim.api.nvim_create_autocmd({ 'BufEnter', 'FileType' }, {
+  group = spell_group,
+  pattern = { 'markdown', '*.md', 'text' },
+  callback = function()
+    vim.opt_local.spell = spell_enabled_on_start
+  end,
+})
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'dashboard',

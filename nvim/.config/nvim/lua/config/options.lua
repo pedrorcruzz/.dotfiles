@@ -116,3 +116,5 @@ vim.opt.scrolloff = 10
 
 -- Status line
 vim.o.laststatus = 3 -- or 3,  if u want global bar even hidden or 0 if u want to disable it
+
+vim.opt.spell = false
