@@ -17,6 +17,7 @@ return {
         },
         overrides = {
           Directory = { fg = '#DAE7EC' }, --#A1BCC5
+          MiniPickIconDirectory = { fg = '#DAE7EC' }, --#A1BCC5
           Normal = { fg = '#abb2bf', bg = transparent_background and 'none' or '#1F1F1F' }, --#202020 #000000 #1F1F1F
           EndOfBuffer = { fg = '#1F1F1F', bg = 'none' },
           NormalFloat = { bg = transparent_background and 'none' or '#1F1F1F' },

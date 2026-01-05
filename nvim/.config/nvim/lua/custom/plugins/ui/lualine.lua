@@ -272,7 +272,8 @@ return {
   event = 'VeryLazy',
   lazy = true,
   dependencies = {
-    { 'nvim-tree/nvim-web-devicons', lazy = true, enabled = vim.g.have_nerd_font },
+    -- { 'nvim-tree/nvim-web-devicons', lazy = true, enabled = vim.g.have_nerd_font },
+    { 'echasnovski/mini.icons' },
     { 'AndreM222/copilot-lualine', lazy = true },
   },
   config = function()
