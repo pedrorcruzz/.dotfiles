@@ -209,25 +209,63 @@ return {
     },
     { '<leader>cr', '<cmd>resize | vertical resize | wincmd =<cr>', desc = 'Reset Window Sizes' },
 
-    --Delete and Create Files
-    -- {
-    --   '<leader>xx',
-    --   function()
-    --     local new_file_path = vim.fn.input('New file path: ', vim.fn.expand '%:p:h' .. '/', 'file')
-    --     if new_file_path ~= '' then
-    --       vim.fn.execute('edit ' .. new_file_path)
-    --     end
-    --   end,
-    --   desc = 'Create New File',
-    -- },
+    -- Delete and Create Files
+    {
+      '<leader>xa',
+      function()
+        local new_file_path = vim.fn.input('Create New File: ', vim.fn.expand '%:p:h' .. '/', 'file')
+        if new_file_path ~= '' then
+          local dir = vim.fn.fnamemodify(new_file_path, ':p:h')
+          vim.fn.mkdir(dir, 'p')
+          if vim.fn.filereadable(new_file_path) == 0 then
+            vim.fn.writefile({}, new_file_path)
+          end
+          vim.cmd('edit ' .. new_file_path)
+        end
+      end,
+      desc = 'New File: Create in Current Directory',
+    },
+
+    {
+      '<leader>xe',
+      function()
+        local new_file_path = vim.fn.input('Enter File Path: ', '', 'file')
+        if new_file_path ~= '' then
+          local dir = vim.fn.fnamemodify(new_file_path, ':p:h')
+          vim.fn.mkdir(dir, 'p')
+          if vim.fn.filereadable(new_file_path) == 0 then
+            vim.fn.writefile({}, new_file_path)
+          end
+          vim.cmd('edit ' .. new_file_path)
+        end
+      end,
+      desc = 'New File: Create Anywhere',
+    },
+
+    {
+      '<leader>xx',
+      function()
+        local project_root = vim.fn.getcwd() .. '/'
+        local new_file_path = vim.fn.input('Create File at Project Root: ', project_root, 'file')
+        if new_file_path ~= '' then
+          local dir = vim.fn.fnamemodify(new_file_path, ':p:h')
+          vim.fn.mkdir(dir, 'p')
+          if vim.fn.filereadable(new_file_path) == 0 then
+            vim.fn.writefile({}, new_file_path)
+          end
+          vim.cmd('edit ' .. new_file_path)
+        end
+      end,
+      desc = 'New File: Create from Project Root',
+    },
 
     {
       '<leader>xd',
       function()
         local file_name = vim.api.nvim_buf_get_name(0)
-        if vim.fn.confirm('Are you sure you want to delete this file?', '&Yes\n&No', 2) == 1 then
+        if file_name ~= '' and vim.fn.confirm('Are you sure you want to delete this file?', '&Yes\n&No', 2) == 1 then
           vim.fn.delete(file_name)
-          vim.api.nvim_command 'bdelete!'
+          vim.cmd 'bdelete!'
         end
       end,
       desc = 'Delete File',

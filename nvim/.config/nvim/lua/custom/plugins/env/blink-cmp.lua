@@ -90,17 +90,17 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'emoji', 'laravel' },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'emoji' }, --laravel
         per_filetype = {
           sql = { 'dadbod' },
           mysql = { 'dadbod' },
           plsql = { 'dadbod' },
         },
         providers = {
-          laravel = {
-            name = 'laravel',
-            module = 'laravel.blink_source',
-          },
+          -- laravel = {
+          --   name = 'laravel',
+          --   module = 'laravel.blink_source',
+          -- },
           ripgrep = {
             module = 'blink-ripgrep',
             name = 'Ripgrep',
