@@ -16,6 +16,7 @@ return {
       ['package-lock.json'] = { glyph = '', hl = 'MiniIconsCyan' },
       ['.gitignore'] = { glyph = '', hl = 'MiniIconsRed' },
       ['LICENSE'] = { glyph = '', hl = 'MiniIconsGrey' },
+      ['README.md'] = { glyph = '', hl = 'MiniIconsGrey' },
 
       ['tsconfig.node.json'] = { glyph = '', hl = 'MiniIconsAzure' },
 
