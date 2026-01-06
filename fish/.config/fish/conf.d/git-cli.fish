@@ -3,7 +3,7 @@ function gh-create-pri
     git commit -m "chore: upload project to GitHub"
     gh repo create --private --source=. --remote=origin
     git push -u --all
-    gh browse
+    # gh browse
 end
 
 
@@ -12,7 +12,7 @@ function gh-create-pub
     git commit -m "chore: upload project to GitHub"
     gh repo create --public --source=. --remote=origin
     git push -u --all
-    gh browse
+    # gh browse
 end
 
 
