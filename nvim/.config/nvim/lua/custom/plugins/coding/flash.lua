@@ -18,7 +18,7 @@ return {
       modes = {
         char = {
           -- if true, so use flash.nvim as a replacement for the default f/F/t/T keys
-          enabled = false,
+          enabled = true,
           highlight = { backdrop = false },
         },
       },

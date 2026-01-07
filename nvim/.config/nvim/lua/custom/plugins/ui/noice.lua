@@ -11,7 +11,7 @@ return {
         enabled = true,
         view = 'cmdline_popup',
         opts = {
-          position = { row = 0.4, col = 0.5 }, -- Centraliza a popup (50% da altura e largura da tela)
+          position = { row = 0.4, col = 0.5 },
           size = { width = 65, height = 2 },
         },
         format = {
@@ -25,12 +25,12 @@ return {
         },
       },
       messages = {
-        enabled = true, -- Desabilita todas as mensagens
-        -- view = 'notify', -- Remova ou comente esta linha
-        -- view_error = 'notify', -- Remova ou comente esta linha
-        -- view_warn = 'notify', -- Remova ou comente esta linha
-        -- view_history = 'messages', -- Remova ou comente esta linha
-        -- view_search = 'virtualtext', -- Remova ou comente esta linha
+        enabled = true,
+        -- view = 'notify',
+        -- view_error = 'notify',
+        -- view_warn = 'notify',
+        -- view_history = 'messages',
+        -- view_search = 'virtualtext',
       },
       popupmenu = {
         enabled = true,
@@ -45,11 +45,11 @@ return {
       },
       lsp = {
         progress = {
-          enabled = false, -- Desabilita o progresso do LSP
-          -- format = 'lsp_progress', -- Remova ou comente esta linha
-          -- format_done = 'lsp_progress_done', -- Remova ou comente esta linha
-          -- throttle = 1000 / 30, -- Remova ou comente esta linha
-          -- view = 'mini', -- Remova ou comente esta linha
+          enabled = false,
+          -- format = 'lsp_progress',
+          -- format_done = 'lsp_progress_done',
+          -- throttle = 1000 / 30,
+          -- view = 'mini',
         },
         override = {
           ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
@@ -74,8 +74,8 @@ return {
           opts = {},
         },
         message = {
-          enabled = false, -- Desabilita mensagens do LSP
-          -- view = 'notify', -- Remova ou comente esta linha
+          enabled = false,
+          -- view = 'notify',
           opts = {},
         },
         documentation = {
@@ -132,6 +132,22 @@ return {
           filter = {
             event = 'msg_show',
             kind = 'search_count',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'lines yanked',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            kind = '',
+            find = 'fewer lines',
           },
           opts = { skip = true },
         },
