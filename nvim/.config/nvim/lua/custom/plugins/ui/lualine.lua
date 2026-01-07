@@ -3,7 +3,7 @@ local use_custom_theme = false
 
 local function create_theme()
   local custom_only_bg_min = true
-  local custom_multiple_bg_min = false
+  local custom_only_bg_catpuccin = false
   local colors = {}
 
   if custom_only_bg_min then
@@ -18,17 +18,17 @@ local function create_theme()
       min_uni_bg_color = '#1a1a1a',
       min_uni_bg_color_z = nil,
     }
-  elseif custom_multiple_bg_min then
+  elseif custom_only_bg_catpuccin then
     colors = {
-      multiple_min_fg_branch = '#a9a9a9',
-      multiple_min_bg_branch = '#2d2d2d',
-      vesper_bar_bg = nil,
-      vesper_git = '#ECEFF4',
-      vesper_y_bg = '#101010',
-      vesper_y_fg = '#b0c4de',
-      vesper_uni_fg_color = '#D8DEE9',
-      vesper_uni_bg_color = '#101010',
-      vesper_uni_bg_color_z = '#3B4252',
+      multiple_min_fg_branch = '#7DB6FF',
+      multiple_min_bg_branch = '#313245',
+      catpuccin_bar_bg = nil,
+      catpuccin_git = '#ECEFF4',
+      catpuccin_y_bg = '#313245',
+      catpuccin_y_fg = '#7DB6FF',
+      catpuccin_uni_fg_color = '#181826',
+      catpuccin_uni_bg_color = '#7DB6FF',
+      catpuccin_uni_bg_color_z = '#3B4252',
     }
   else
     colors = {
@@ -51,8 +51,8 @@ local function create_theme()
   return {
     normal = {
       a = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_normal,
         gui = 'bold',
       },
       b = {
@@ -61,24 +61,24 @@ local function create_theme()
         gui = 'bold',
       },
       c = {
-        fg = colors.min_git or colors.vesper_git,
-        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+        fg = colors.min_git or colors.catpuccin_git,
+        bg = colors.min_bar_bg or colors.catpuccin_bar_bg or colors.default_bar_bg,
       },
       y = {
-        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        fg = colors.min_y_fg or colors.catpuccin_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.catpuccin_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_normal,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_normal,
         gui = 'bold',
       },
     },
     insert = {
       a = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_insert,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_insert,
         gui = 'bold',
       },
       b = {
@@ -87,24 +87,24 @@ local function create_theme()
         gui = 'bold',
       },
       c = {
-        fg = colors.min_git or colors.vesper_git,
-        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+        fg = colors.min_git or colors.catpuccin_git,
+        bg = colors.min_bar_bg or colors.catpuccin_bar_bg or colors.default_bar_bg,
       },
       y = {
-        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        fg = colors.min_y_fg or colors.catpuccin_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.catpuccin_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_insert,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_insert,
         gui = 'bold',
       },
     },
     visual = {
       a = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_visual,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_visual,
         gui = 'bold',
       },
       b = {
@@ -113,24 +113,24 @@ local function create_theme()
         gui = 'bold',
       },
       c = {
-        fg = colors.min_git or colors.vesper_git,
-        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+        fg = colors.min_git or colors.catpuccin_git,
+        bg = colors.min_bar_bg or colors.catpuccin_bar_bg or colors.default_bar_bg,
       },
       y = {
-        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        fg = colors.min_y_fg or colors.catpuccin_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.catpuccin_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_visual,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_visual,
         gui = 'bold',
       },
     },
     replace = {
       a = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_replace,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_replace,
         gui = 'bold',
       },
       b = {
@@ -139,24 +139,24 @@ local function create_theme()
         gui = 'bold',
       },
       c = {
-        fg = colors.min_git or colors.vesper_git,
-        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+        fg = colors.min_git or colors.catpuccin_git,
+        bg = colors.min_bar_bg or colors.catpuccin_bar_bg or colors.default_bar_bg,
       },
       y = {
-        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        fg = colors.min_y_fg or colors.catpuccin_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.catpuccin_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_replace,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_replace,
         gui = 'bold',
       },
     },
     command = {
       a = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_command,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_command,
         gui = 'bold',
       },
       b = {
@@ -165,17 +165,17 @@ local function create_theme()
         gui = 'bold',
       },
       c = {
-        fg = colors.min_git or colors.vesper_git,
-        bg = colors.min_bar_bg or colors.vesper_bar_bg or colors.default_bar_bg,
+        fg = colors.min_git or colors.catpuccin_git,
+        bg = colors.min_bar_bg or colors.catpuccin_bar_bg or colors.default_bar_bg,
       },
       y = {
-        fg = colors.min_y_fg or colors.vesper_y_fg or colors.default_y_fg,
-        bg = colors.min_y_bg or colors.vesper_y_bg or colors.default_y_bg,
+        fg = colors.min_y_fg or colors.catpuccin_y_fg or colors.default_y_fg,
+        bg = colors.min_y_bg or colors.catpuccin_y_bg or colors.default_y_bg,
         gui = 'bold',
       },
       z = {
-        fg = colors.min_uni_fg_color or colors.vesper_uni_fg_color or colors.default_fg_color,
-        bg = colors.min_uni_bg_color or colors.vesper_uni_bg_color or colors.default_command,
+        fg = colors.min_uni_fg_color or colors.catpuccin_uni_fg_color or colors.default_fg_color,
+        bg = colors.min_uni_bg_color or colors.catpuccin_uni_bg_color or colors.default_command,
         gui = 'bold',
       },
     },
