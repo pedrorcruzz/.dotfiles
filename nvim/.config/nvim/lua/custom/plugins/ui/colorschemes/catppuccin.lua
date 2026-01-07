@@ -3,7 +3,7 @@ return {
     'catppuccin/nvim',
     lazy = true,
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('catppuccin').setup {
         flavour = 'mocha',
         background = { light = 'latte', dark = 'mocha' },

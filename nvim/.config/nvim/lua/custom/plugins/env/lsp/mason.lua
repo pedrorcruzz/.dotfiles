@@ -13,6 +13,7 @@ return {
         'gopls',
         'jdtls',
         'sqlls',
+        'lua_ls',
       },
     },
     dependencies = {
