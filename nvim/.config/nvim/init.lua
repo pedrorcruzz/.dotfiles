@@ -15,7 +15,7 @@ require('lazy').setup({
 
   { import = 'custom.plugins.env.lsp' },
   { import = 'custom.plugins.env' },
-  -- { import = 'custom.plugins.language' },
+  { import = 'custom.plugins.language' },
   { import = 'custom.plugins.ui' },
   { import = 'custom.plugins.ui.colorschemes' },
   { import = 'custom.plugins.coding' },
