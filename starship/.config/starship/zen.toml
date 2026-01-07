@@ -168,8 +168,8 @@ tag_symbol = '🔖 '
 
 [git_status]
 conflicted = '[ (#FF0000)]'
-ahead = '[⬆ \($count\)](#ffffff)'  
-behind = '[⬇ \($count\)](#8A2BE2)'
+ahead = '[ \($count\)](#ffffff)'  
+behind = '[ \($count\)](#8A2BE2)'
 diverged = '[ ](#FF4500)'
 up_to_date = '[✔](#cacaca)'
 untracked = '[ \($count\)](#3CBDFF)' 
@@ -193,29 +193,29 @@ symbol = " "
 
 [lua]
 symbol = ' '
-format = ' [ $symbol( $version) ]($style)'
+format = ' [ $symbol($version) ]($style)'
 
 
 [dart]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [elixir]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 detect_extensions = ['ex', 'exs']
 detect_files = ['mix.exs']
 
 [erlang]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 detect_extensions = ['erl', 'hrl']
 detect_files = ['rebar.config', 'erlang.mk']
 
 
 [nodejs]
 symbol = ' '
-format = '[$symbol( $version) ]($style)'
+format = '[$symbol($version) ]($style)'
 detect_extensions = ["js", "mjs", "cjs","jsx", "ts", "tsx"]
 detect_files = ["package.json", "node_modules"]
 
@@ -250,50 +250,50 @@ detect_extensions = ["ts", "tsx"]
 
 [c]
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [rust]
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [golang]
 symbol = " " # 
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 detect_files = ["go.mod"]
 
 [php]
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [java]
 style = "fg:#EC7063"
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [kotlin]
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [haskell]
 symbol = " "
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 [ruby]
 style = "fg:#E0115F"
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 
 [python]
 symbol = ' '
 style = "fg:#F1CA81"
-format = '[${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
+format = '[${symbol}${asdf_prefix}(${version} )(\($virtualenv\) )]($style)'
 # asdf_version_name = true
 # asdf_prefix = ''
 
 [swift]
 symbol = ' '
-format = '[ $symbol( $version) ]($style)'
+format = '[ $symbol($version) ]($style)'
 
 
 [custom.docker_version]
