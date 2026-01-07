@@ -308,12 +308,11 @@ detect_files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
 format = "[   $output]($style) "
 
 [custom.podman_version]
-style = 'fg:#8E44AD'
-symbol = '󰌽 '  
+style = 'fg:#6D48BF'
+symbol = '🦭 '  
 command = "podman --version | awk '{print $3}'"
-detect_files = "Containerfile", "Dockerfile", "docker-compose.yml", "compose.yml", "podman-compose.yml", "podman-compose.yaml"]
+detect_files = ["Containerfile", "Dockerfile", "docker-compose.yml", "compose.yml", "podman-compose.yml", "podman-compose.yaml"]
 format = "[[via](#52676B) $symbol$output]($style) "
-
 
 
 [cmd_duration]
