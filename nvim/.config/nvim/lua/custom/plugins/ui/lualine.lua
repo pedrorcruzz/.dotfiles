@@ -1,5 +1,5 @@
-local lualine_visible = false
-local use_custom_theme = true
+local lualine_visible = true
+local use_custom_theme = false
 
 local function create_theme()
   local custom_only_bg_min = true

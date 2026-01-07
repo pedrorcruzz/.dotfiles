@@ -5,8 +5,6 @@ return {
     file = {
       ['docker-compose.yml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
       ['docker-compose.yaml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['compose.yml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['compose.yaml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
       ['Dockerfile'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
 
       ['go.mod'] = { glyph = '', hl = 'MiniIconsPurple' },
