@@ -31,7 +31,6 @@ $java\
 $swift\
 $rust\
 $ruby\
-$docker_context\
 ${custom.podman_version}\
 ${custom.docker_version}\
 ${custom.yarn}\
@@ -296,25 +295,21 @@ format = '[${symbol}${asdf_prefix}( ${version} )(\($virtualenv\) )]($style)'
 symbol = ' '
 format = '[ $symbol( $version) ]($style)'
 
-[docker_context]
-disabled = true
-style = 'fg:#019CFE'
-format = '[[via](#52676B) 🐋  $context ]($style)'
-detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
-detect_extensions = ['Dockerfile']
 
 [custom.docker_version]
 style = 'fg:#019CFE'
 command = "docker --version | cut -d ' ' -f3 | tr -d ','"
 detect_files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml","compose.yml"]
-format = "[[via](#52676B)   $output]($style) "
+# format = "[[via](#52676B)   $output]($style) "
+format = "[(#52676B)   $output]($style) "
 
 [custom.podman_version]
 style = 'fg:#8E44AD'
 symbol = '󰌽 '  
 command = "podman --version | awk '{print $3}'"
 detect_files = ["Containerfile", "Dockerfile", "docker-compose.yml", "compose.yml", "podman-compose.yml", "podman-compose.yaml"]
-format = "[[via](#52676B) $symbol$output]($style) "
+# format = "[[via](#52676B) $symbol$output]($style) "
+format = "[(#52676B) $symbol$output]($style) "
 
 
 [cmd_duration]

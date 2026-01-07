@@ -31,7 +31,6 @@ $java\
 $swift\
 $rust\
 $ruby\
-$docker_context\
 ${custom.podman_version}\
 ${custom.docker_version}\
 ${custom.yarn}\
@@ -301,12 +300,6 @@ style = "fg:#FF6B83 bg:#111111"
 symbol = " "
 format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
-[docker_context]
-disabled = true
-style = 'fg:#019CFE'
-format = '[ 🐋  $context ]($style)'
-detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
-detect_extensions = ['Dockerfile']
 
 [custom.docker_version]
 style = 'fg:#019CFE'
