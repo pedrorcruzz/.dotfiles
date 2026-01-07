@@ -54,22 +54,23 @@ return {
 
       { '<leader>lj', group = 'Spell', icon = '󰓆 ' },
 
-      { '<leader>p', group = 'Languages Tools', icon = ' ' },
-      { '<leader>pp', group = 'PHP Tools', icon = ' ' },
-      { '<leader>pg', group = 'GO Tools', icon = ' ' },
-      { '<leader>pj', group = 'Javascript Tools', icon = ' ' },
-      { '<leader>ps', group = 'Spring Tools', icon = ' ' },
+      -- Languagens tools
+      -- { '<leader>p', group = 'Languages Tools', icon = ' ' },
+      -- { '<leader>pp', group = 'PHP Tools', icon = ' ' },
+      -- { '<leader>pg', group = 'GO Tools', icon = ' ' },
+      -- { '<leader>pj', group = 'Javascript Tools', icon = ' ' },
+      -- { '<leader>ps', group = 'Spring Tools', icon = ' ' },
 
-      { '<leader>pjc', group = 'Codi', icon = ' ' },
-      { '<leader>pgd', group = 'Debug', icon = ' ' },
-      { '<leader>pgt', group = 'Test', icon = '󰙨 ' },
+      -- { '<leader>pjc', group = 'Codi', icon = ' ' },
+      -- { '<leader>pgd', group = 'Debug', icon = ' ' },
+      -- { '<leader>pgt', group = 'Test', icon = '󰙨 ' },
 
-      { '<leader>pl', group = 'Laravel Tools', icon = ' ' },
-      { '<leader>plc', group = 'Composer', icon = ' ' },
-      { '<leader>pln', group = 'Sail', icon = ' ' },
-      { '<leader>pld', group = 'Diagrams', icon = ' ' },
-      { '<leader>plx', group = 'Cache', icon = '󰃨 ' },
-      { '<leader>plh', group = 'IDE Helper', icon = ' ' },
+      -- { '<leader>pl', group = 'Laravel Tools', icon = ' ' },
+      -- { '<leader>plc', group = 'Composer', icon = ' ' },
+      -- { '<leader>pln', group = 'Sail', icon = ' ' },
+      -- { '<leader>pld', group = 'Diagrams', icon = ' ' },
+      -- { '<leader>plx', group = 'Cache', icon = '󰃨 ' },
+      -- { '<leader>plh', group = 'IDE Helper', icon = ' ' },
 
       { '<leader>c', group = 'Window', icon = '󰶛' },
       { '<leader>t', group = 'Tabs', icon = '󱦞' },
