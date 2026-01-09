@@ -5,7 +5,7 @@ return {
     config = function()
       local conform = require 'conform'
 
-      local enable_auto_format_on_focus = true
+      local enable_auto_format_on_focus = false
 
       local function has_biome()
         return vim.fn.filereadable(vim.fn.getcwd() .. '/node_modules/.bin/biome') == 1

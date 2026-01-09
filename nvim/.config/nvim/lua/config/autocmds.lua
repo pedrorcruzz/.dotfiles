@@ -116,25 +116,16 @@ if disable_auto_comment_continuation then
   })
 end
 
--- Auto Save
+--Auto Save
 local enable_autosave = true
 
 if enable_autosave then
-  -- Auto save files when focus is lost
-  vim.api.nvim_create_autocmd('FocusLost', {
-    desc = 'Auto save files when focus is lost',
-    group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = true }),
-    callback = function()
-      vim.cmd 'silent! wa'
-    end,
-  })
+  local group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = true })
 
-  -- Auto save files when buffer is hidden
-  vim.api.nvim_create_autocmd('BufLeave', {
-    desc = 'Auto save files when buffer is hidden',
-    group = vim.api.nvim_create_augroup('kickstart-autosave', { clear = false }),
+  vim.api.nvim_create_autocmd({ 'FocusLost', 'BufLeave' }, {
+    group = group,
     callback = function()
-      vim.cmd 'silent! wa'
+      vim.cmd 'silent! update'
     end,
   })
 end
