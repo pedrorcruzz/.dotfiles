@@ -215,12 +215,22 @@ local lualine_config = {
         },
       },
     },
-    lualine_x = { 'diagnostics' },
+    lualine_x = {
+      {
+        'diagnostics',
+        symbols = {
+          error = ' ',
+          warn = ' ',
+          info = ' ',
+          hint = ' ',
+        },
+      },
+    },
     lualine_y = {
       'copilot',
       {
         'lsp_status',
-        icon = '',
+        icon = ' ',
         symbols = {
           spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
           done = '✓',
