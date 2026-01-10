@@ -21,6 +21,7 @@ return {
         custom_highlights = function(colors)
           return {
             WinBarNC = { bg = transparent_background and 'NONE' or '#1E1E2F' },
+            NormalFloat = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinBar = { bg = transparent_background and 'NONE' or '#1E1E2F' },
             WinSeparator = { fg = '#181826' },
             BufferLineFill = { bg = transparent_background and 'NONE' or '#181826' },
