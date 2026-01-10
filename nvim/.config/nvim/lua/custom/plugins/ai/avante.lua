@@ -59,9 +59,8 @@ return {
     { 'stevearc/dressing.nvim', lazy = true },
     { 'nvim-lua/plenary.nvim', lazy = true },
     { 'MunifTanjim/nui.nvim', lazy = true },
-    -- Dependências opcionais, mantenha comentadas se não usar
     -- { 'nvim-tree/nvim-web-devicons', lazy = true },
-    -- { 'echasnovski/mini.icons', lazy = true },
+    { 'echasnovski/mini.icons', lazy = true },
     { 'zbirenbaum/copilot.lua', lazy = true },
     -- {
     --   'MeanderingProgrammer/render-markdown.nvim',
@@ -89,6 +88,5 @@ return {
   },
 }
 
--- Caso o plugin não funcione, tente compilar manualmente:
 -- cd ~/.local/share/nvim/lazy/avante.nvim
 -- make
