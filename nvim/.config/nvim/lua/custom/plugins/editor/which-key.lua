@@ -277,24 +277,19 @@ return {
           local current_win = vim.api.nvim_get_current_win()
 
           -- Get all windows and their buffers
-          local windows = vim.api.nvim_list_wins()
           local buffers_in_windows = {}
-          for _, win in ipairs(windows) do
-            if vim.api.nvim_win_is_valid(win) then
-              local buf = vim.api.nvim_win_get_buf(win)
-              buffers_in_windows[buf] = true
-            end
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            buffers_in_windows[vim.api.nvim_win_get_buf(win)] = true
           end
 
           -- Check if there are multiple windows (splits)
-          local has_multiple_windows = #windows > 1
 
           -- Get alternative buffer (previous buffer)
           local alt_bufnr = vim.fn.bufnr '#'
           local alt_buf_is_valid = alt_bufnr > 0 and vim.api.nvim_buf_is_valid(alt_bufnr) and vim.bo[alt_bufnr].buflisted and alt_bufnr ~= current_bufnr
 
           -- Check if alternative buffer is already open in another window
-          local alt_buf_in_other_window = alt_buf_is_valid and buffers_in_windows[alt_bufnr] and has_multiple_windows
+          local alt_buf_in_other_window = alt_buf_is_valid and buffers_in_windows[alt_bufnr] and current_win ~= vim.fn.bufwinid(alt_bufnr)
 
           -- If we have multiple windows and the previous buffer is already in another split,
           -- just close the current window (which closes the split)
