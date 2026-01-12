@@ -3,7 +3,7 @@ return {
     'ellisonleao/gruvbox.nvim',
     lazy = true,
     config = function()
-      local transparent_background = false
+      local transparent_background = true
       require('gruvbox').setup {
         transparent_mode = transparent_background,
         overrides = {

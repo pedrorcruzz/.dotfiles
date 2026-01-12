@@ -1,3 +1,16 @@
+local copilot_autotoggle = false
+
+if copilot_autotoggle then
+  vim.api.nvim_create_autocmd('InsertEnter', {
+    once = true,
+    callback = function()
+      vim.schedule(function()
+        vim.cmd 'Copilot toggle'
+      end)
+    end,
+  })
+end
+
 return {
   { -- Copilot
     'zbirenbaum/copilot.lua',

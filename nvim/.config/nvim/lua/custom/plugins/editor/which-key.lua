@@ -264,9 +264,50 @@ return {
       '<leader>xd',
       function()
         local file_name = vim.api.nvim_buf_get_name(0)
-        if file_name ~= '' and vim.fn.confirm('Are you sure you want to delete this file?', '&Yes\n&No', 2) == 1 then
-          vim.fn.delete(file_name)
-          vim.cmd 'bdelete!'
+        if file_name == '' then
+          vim.notify('No file to delete', vim.log.levels.WARN)
+          return
+        end
+
+        if vim.fn.confirm('Are you sure you want to delete this file?', '&Yes\n&No', 2) == 1 then
+          local dir = vim.fs.dirname(file_name)
+          local bufnr = vim.api.nvim_get_current_buf()
+
+          -- Check if there are other buffers to navigate to
+          local buffers = vim.tbl_filter(function(b)
+            return vim.api.nvim_buf_is_valid(b) and vim.bo[b].buflisted and b ~= bufnr
+          end, vim.api.nvim_list_bufs())
+
+          -- If there are other buffers, go to previous one before closing
+          if #buffers > 0 then
+            vim.cmd('bprevious')
+          end
+
+          -- Close the buffer of the file being deleted
+          vim.cmd('bdelete! ' .. bufnr)
+
+          -- Delete the file
+          local ok, err = pcall(vim.fn.delete, file_name)
+          if not ok then
+            vim.notify('Failed to delete file: ' .. (err or 'unknown error'), vim.log.levels.ERROR)
+            return
+          end
+
+          -- Refresh snacks explorer if available
+          vim.defer_fn(function()
+            local snacks_ok, snacks = pcall(require, 'snacks')
+            if snacks_ok and snacks then
+              -- Try to refresh the tree using Tree:refresh
+              local tree_ok, tree_module = pcall(function()
+                return require('snacks.tree')
+              end)
+              if tree_ok and tree_module and type(tree_module.refresh) == 'function' then
+                tree_module.refresh(dir)
+              end
+            end
+          end, 50)
+
+          vim.notify('File deleted: ' .. vim.fn.fnamemodify(file_name, ':t'), vim.log.levels.INFO)
         end
       end,
       desc = 'Delete File',

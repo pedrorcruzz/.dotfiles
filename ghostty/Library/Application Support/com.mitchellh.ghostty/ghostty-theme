@@ -1,7 +1,7 @@
-# 1A1A1A 1E1E2F 101010 0D1116 181827
+# 1A1A1A  101010  181827 
 
-background = #181827
-background-opacity = 0.90
+background = #000000
+background-opacity = 0.86
 background-blur-radius = 25
 foreground = #ffffff
 
