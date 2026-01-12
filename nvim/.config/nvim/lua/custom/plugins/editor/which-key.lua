@@ -263,6 +263,8 @@ return {
     {
       '<leader>xd',
       function()
+        local refresh_snacks_explorer = true
+
         local file_name = vim.api.nvim_buf_get_name(0)
         if file_name == '' then
           vim.notify('No file to delete', vim.log.levels.WARN)
@@ -271,20 +273,48 @@ return {
 
         if vim.fn.confirm('Are you sure you want to delete this file?', '&Yes\n&No', 2) == 1 then
           local dir = vim.fs.dirname(file_name)
-          local bufnr = vim.api.nvim_get_current_buf()
+          local current_bufnr = vim.api.nvim_get_current_buf()
+          local current_win = vim.api.nvim_get_current_win()
 
-          -- Check if there are other buffers to navigate to
-          local buffers = vim.tbl_filter(function(b)
-            return vim.api.nvim_buf_is_valid(b) and vim.bo[b].buflisted and b ~= bufnr
-          end, vim.api.nvim_list_bufs())
-
-          -- If there are other buffers, go to previous one before closing
-          if #buffers > 0 then
-            vim.cmd('bprevious')
+          -- Get all windows and their buffers
+          local windows = vim.api.nvim_list_wins()
+          local buffers_in_windows = {}
+          for _, win in ipairs(windows) do
+            if vim.api.nvim_win_is_valid(win) then
+              local buf = vim.api.nvim_win_get_buf(win)
+              buffers_in_windows[buf] = true
+            end
           end
 
-          -- Close the buffer of the file being deleted
-          vim.cmd('bdelete! ' .. bufnr)
+          -- Check if there are multiple windows (splits)
+          local has_multiple_windows = #windows > 1
+
+          -- Get alternative buffer (previous buffer)
+          local alt_bufnr = vim.fn.bufnr '#'
+          local alt_buf_is_valid = alt_bufnr > 0 and vim.api.nvim_buf_is_valid(alt_bufnr) and vim.bo[alt_bufnr].buflisted and alt_bufnr ~= current_bufnr
+
+          -- Check if alternative buffer is already open in another window
+          local alt_buf_in_other_window = alt_buf_is_valid and buffers_in_windows[alt_bufnr] and has_multiple_windows
+
+          -- If we have multiple windows and the previous buffer is already in another split,
+          -- just close the current window (which closes the split)
+          if alt_buf_in_other_window then
+            -- Close the window (split), then close the buffer
+            vim.api.nvim_win_close(current_win, true)
+            vim.cmd('bdelete! ' .. current_bufnr)
+          else
+            -- Otherwise, navigate to previous buffer if available
+            local buffers = vim.tbl_filter(function(b)
+              return vim.api.nvim_buf_is_valid(b) and vim.bo[b].buflisted and b ~= current_bufnr
+            end, vim.api.nvim_list_bufs())
+
+            if #buffers > 0 then
+              vim.cmd 'bprevious'
+            end
+
+            -- Close the buffer of the file being deleted
+            vim.cmd('bdelete! ' .. current_bufnr)
+          end
 
           -- Delete the file
           local ok, err = pcall(vim.fn.delete, file_name)
@@ -293,19 +323,21 @@ return {
             return
           end
 
-          -- Refresh snacks explorer if available
-          vim.defer_fn(function()
-            local snacks_ok, snacks = pcall(require, 'snacks')
-            if snacks_ok and snacks then
-              -- Try to refresh the tree using Tree:refresh
-              local tree_ok, tree_module = pcall(function()
-                return require('snacks.tree')
-              end)
-              if tree_ok and tree_module and type(tree_module.refresh) == 'function' then
-                tree_module.refresh(dir)
+          -- Refresh snacks explorer if enabled and available
+          if refresh_snacks_explorer then
+            vim.defer_fn(function()
+              local snacks_ok, snacks = pcall(require, 'snacks')
+              if snacks_ok and snacks then
+                -- Try to refresh the tree using Tree:refresh
+                local tree_ok, tree_module = pcall(function()
+                  return require 'snacks.tree'
+                end)
+                if tree_ok and tree_module and type(tree_module.refresh) == 'function' then
+                  tree_module.refresh(dir)
+                end
               end
-            end
-          end, 50)
+            end, 50)
+          end
 
           vim.notify('File deleted: ' .. vim.fn.fnamemodify(file_name, ':t'), vim.log.levels.INFO)
         end
