@@ -392,7 +392,7 @@ return {
     animate = { enabled = true },
     words = { enabled = true },
     scroll = {
-      enabled = true,
+      enabled = false,
       animate = {
         duration = { step = 12, total = 100 }, --step 20 | total 120  | step 15 | total 105
       },
