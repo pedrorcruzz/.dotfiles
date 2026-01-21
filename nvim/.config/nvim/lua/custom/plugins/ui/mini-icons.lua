@@ -3,19 +3,19 @@ return {
   lazy = true,
   opts = {
     file = {
-      ['docker-compose.yml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['docker-compose.yaml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
+      ['docker-compose.yml'] = { glyph = '󰡨', hl = 'MiniIconsAzure' },
+      ['docker-compose.yaml'] = { glyph = '󰡨', hl = 'MiniIconsAzure' },
       ['docker-compose.override.yml'] = { glyph = '󰡨', hl = 'MiniIconsPurple' },
       ['docker-compose.override.yaml'] = { glyph = '󰡨', hl = 'MiniIconsPurle' },
       ['docker-compose.prod.yml'] = { glyph = '󰡨', hl = 'MiniIconsGreen' },
       ['docker-compose.prod.yaml'] = { glyph = '󰡨', hl = 'MiniIconsGreen' },
-      ['Dockerfile'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
+      ['Dockerfile'] = { glyph = '󰡨', hl = 'MiniIconsAzure' },
 
       ['go.mod'] = { glyph = '', hl = 'MiniIconsPurple' },
       ['go.sum'] = { glyph = '', hl = 'MiniIconsPurple' },
       ['Makefile'] = { glyph = '', hl = 'MiniIconsRed' },
-      ['package.json'] = { glyph = '', hl = 'MiniIconsCyan' },
-      ['package-lock.json'] = { glyph = '', hl = 'MiniIconsCyan' },
+      ['package.json'] = { glyph = '', hl = 'MiniIconsGreen' },
+      ['package-lock.json'] = { glyph = '', hl = 'MiniIconsGreen' },
       ['.gitignore'] = { glyph = '', hl = 'MiniIconsRed' },
       ['LICENSE'] = { glyph = '', hl = 'MiniIconsGrey' },
       ['README.md'] = { glyph = '', hl = 'MiniIconsGrey' },
@@ -37,8 +37,10 @@ return {
     },
 
     extension = {
-      go = { glyph = '', hl = 'MiniIconsBlue' },
-
+      go = { glyph = '', hl = 'MiniIconsCyan' },
+      txt = { glyph = '', hl = 'MiniIconsGrey' },
+      lua = { glyph = '', hl = 'MiniIconsAzure' },
+      php = { glyph = '', hl = 'MiniIconsPurple' },
       html = { glyph = '', hl = 'MiniIconsOrange' },
       css = { glyph = '', hl = 'MiniIconsPurple' },
       js = { glyph = '', hl = 'MiniIconsYellow' },
@@ -84,7 +86,7 @@ return {
 
     mini_icons.get = function(category, name)
       if category == 'file' and name and (name:find '%.test' or name:find '_test') then
-        return '', 'MiniIconsYellow'
+        return '', 'MiniIconsGrey'
       end
 
       if use_theme_directory_color and category == 'directory' then
