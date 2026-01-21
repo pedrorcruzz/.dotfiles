@@ -5,10 +5,10 @@ return {
     file = {
       ['docker-compose.yml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
       ['docker-compose.yaml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['docker-compose.override.yml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['docker-compose.override.yaml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['docker-compose-prod.yml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
-      ['docker-compose-prod.yaml'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
+      ['docker-compose.override.yml'] = { glyph = '󰡨', hl = 'MiniIconsPurple' },
+      ['docker-compose.override.yaml'] = { glyph = '󰡨', hl = 'MiniIconsPurle' },
+      ['docker-compose.prod.yml'] = { glyph = '󰡨', hl = 'MiniIconsGreen' },
+      ['docker-compose.prod.yaml'] = { glyph = '󰡨', hl = 'MiniIconsGreen' },
       ['Dockerfile'] = { glyph = '󰡨', hl = 'MiniIconsBlue' },
 
       ['go.mod'] = { glyph = '', hl = 'MiniIconsPurple' },
