@@ -263,6 +263,7 @@ format = '[via](#52676b)[ $symbol( $version) ]($style)'
 detect_files = ["go.mod"]
 
 [php]
+style = "fg:#777BB4"
 symbol = " "
 format = '[via](#52676b)[ $symbol( $version) ]($style)'
 

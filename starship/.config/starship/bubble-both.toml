@@ -261,7 +261,8 @@ symbol = ' '
 format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 
 [php]
-style = "fg:#AFAFFF bg:#111111"
+style = "fg:#777BB4 bg: #111111"
+# style = "fg:#AFAFFF bg:#111111"
 symbol = " "
 format = "[](#111111)[ $symbol($version) ]($style)[](#111111)"
 

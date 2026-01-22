@@ -14,11 +14,14 @@ return {
       ['go.mod'] = { glyph = '', hl = 'MiniIconsPurple' },
       ['go.sum'] = { glyph = '', hl = 'MiniIconsPurple' },
       ['Makefile'] = { glyph = '', hl = 'MiniIconsRed' },
+      ['README.md'] = { glyph = '', hl = 'MiniIconsCyan' },
       ['package.json'] = { glyph = '', hl = 'MiniIconsGreen' },
       ['package-lock.json'] = { glyph = '', hl = 'MiniIconsGreen' },
       ['.gitignore'] = { glyph = '', hl = 'MiniIconsRed' },
       ['LICENSE'] = { glyph = '', hl = 'MiniIconsGrey' },
-      ['README.md'] = { glyph = '', hl = 'MiniIconsGrey' },
+      ['.env.example'] = { glyph = '', hl = 'MiniIconsGreen' },
+      ['.env.example.docker'] = { glyph = '', hl = 'MiniIconsGreen' },
+      ['.env.example.docker-prod'] = { glyph = '', hl = 'MiniIconsGreen' },
 
       ['tsconfig.node.json'] = { glyph = '', hl = 'MiniIconsAzure' },
 
@@ -46,7 +49,10 @@ return {
       js = { glyph = '', hl = 'MiniIconsYellow' },
       mjs = { glyph = '', hl = 'MiniIconsYellow' },
       ts = { glyph = '', hl = 'MiniIconsAzure' },
+      json = { glyph = '', hl = 'MiniIconsOrange' },
+      lock = { glyph = '', hl = 'MiniIconsGrey' },
       zsh = { glyph = '', hl = 'MiniIconsGreen' },
+      md = { glyph = '', hl = 'MiniIconsCyan' },
     },
 
     -- directory = {
