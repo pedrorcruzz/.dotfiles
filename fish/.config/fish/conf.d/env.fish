@@ -6,7 +6,8 @@ set -Ux GLIBC_TUNABLES glibc.pthread.rseq=0
 set -U fish_user_paths /opt/homebrew/opt/libpq/bin $fish_user_paths
 
 # Homebrew
-set -gx PATH /opt/homebrew/bin $PATH
+fish_add_path /opt/homebrew/bin
+# set -gx PATH /opt/homebrew/bin $PATH
 set -gx GPG_TTY (tty)
 set -gx PKG_CONFIG_PATH "/opt/homebrew/opt/icu4c/lib/pkgconfig"
 

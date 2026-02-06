@@ -49,6 +49,8 @@ return {
       js = { glyph = '', hl = 'MiniIconsYellow' },
       mjs = { glyph = '', hl = 'MiniIconsYellow' },
       ts = { glyph = '', hl = 'MiniIconsAzure' },
+      tsx = { glyph = '', hl = 'MiniIconsAzure' },
+      jsx = { glyph = '', hl = 'MiniIconsCyan' },
       json = { glyph = '', hl = 'MiniIconsOrange' },
       lock = { glyph = '', hl = 'MiniIconsGrey' },
       zsh = { glyph = '', hl = 'MiniIconsGreen' },
